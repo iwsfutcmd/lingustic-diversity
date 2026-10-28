@@ -373,7 +373,7 @@
       "n_doculects": 64,
       "n_glottocodes": 34,
       "max_ldnd": 0.8594576057939411,
-      "spread": 1.8263768559012332,
+      "spread": 1.826376855901233,
       "spread_rarefied_m3": 1.0290699023459036,
       "d_max_kcal": 1.2707023589813908,
       "uniform_d2_kcal": 1.2455044744410362,
@@ -1289,9 +1289,9 @@
     {
       "sample": "all + 3x duplicated Tokyo",
       "n": 36,
-      "d_max_kcal": 1.2229845994898207,
+      "d_max_kcal": 1.2229845994898214,
       "uniform_d2_kcal": 1.2034028262627188,
-      "spread": 1.522117847907657
+      "spread": 1.5221178479076563
     }
   ]
 }
