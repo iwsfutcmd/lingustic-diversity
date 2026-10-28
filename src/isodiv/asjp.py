@@ -59,6 +59,15 @@ def _read_csv(path: Path) -> Iterable[dict[str, str]]:
         yield from csv.DictReader(fh)
 
 
+def load_exclusions(path: Path | None) -> dict[str, str]:
+    """{doculect ID: reason} from a TSV with columns ``id`` and ``reason`` (``#`` lines ignored)."""
+    if path is None or not Path(path).exists():
+        return {}
+    with Path(path).open(encoding="utf-8", newline="") as fh:
+        rows = csv.DictReader((ln for ln in fh if not ln.startswith("#")), delimiter="\t")
+        return {r["id"].strip(): (r.get("reason") or "").strip() for r in rows if r.get("id", "").strip()}
+
+
 def core_concepts(cldf_dir: Path) -> frozenset[str]:
     """The 40-item ASJP list (concept names marked with a leading '*')."""
     return frozenset(
@@ -73,11 +82,12 @@ def load(
     concepts: frozenset[str] | None = None,
     tokenization: Tokenization = "asjp",
     drop_loans: bool = True,
+    exclude: Iterable[str] = (),
 ) -> dict[str, Doculect]:
     """Return {doculect ID: Doculect} for languages where ``keep(row)`` is true."""
     cldf_dir = Path(cldf_dir)
     concepts = core_concepts(cldf_dir) if concepts is None else concepts
-    langs = {r["ID"]: r for r in _read_csv(cldf_dir / "languages.csv") if keep(r)}
+    langs = {r["ID"]: r for r in _read_csv(cldf_dir / "languages.csv") if keep(r) and r["ID"] not in set(exclude)}
 
     words: dict[str, dict[str, list[Word]]] = defaultdict(lambda: defaultdict(list))
     for r in _read_csv(cldf_dir / "forms.csv"):

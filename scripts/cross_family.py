@@ -20,7 +20,7 @@ from isodiv.asjp import load
 from isodiv.distance import ldnd
 from isodiv.diversity import max_diversity, similarity_matrix
 
-from run_analysis import LINEAGES, ISOLATE_CANDIDATES, stratified
+from run_analysis import LINEAGES, ISOLATE_CANDIDATES, load_all, stratified
 
 
 def cross_matrix(a, b) -> np.ndarray:
@@ -38,7 +38,7 @@ def main() -> None:
     k_cal = summary["k_cal"]
 
     rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
-    all_docs = load(args.cldf, keep=lambda r: any(p(r) for p in LINEAGES.values()))
+    all_docs = load_all(args.cldf)
     names = list(LINEAGES)
     samples = {
         n: stratified([x for x in all_docs.values() if LINEAGES[n](rows[x.id])], args.cap)

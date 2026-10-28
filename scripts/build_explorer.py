@@ -32,6 +32,23 @@ def clean(x):
     return x
 
 
+def excluded_by_lineage(excluded: dict[str, str], results: Path) -> dict[str, list[dict]]:
+    """Which lineage each excluded ID belongs to, using the lineage predicates on languages.csv."""
+    import csv
+    from run_analysis import LINEAGES
+
+    cldf = results.parent / "data" / "asjp" / "cldf" / "languages.csv"
+    if not excluded or not cldf.exists():
+        return {}
+    rows = {x["ID"]: x for x in csv.DictReader(cldf.open(encoding="utf-8"))}
+    out: dict[str, list[dict]] = {}
+    for doc_id, reason in excluded.items():
+        for name, pred in LINEAGES.items():
+            if doc_id in rows and pred(rows[doc_id]):
+                out.setdefault(name, []).append({"id": doc_id, "reason": reason})
+    return out
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--results", type=Path, default=Path("results"))
@@ -44,6 +61,8 @@ def main() -> None:
     cross = json.loads((r / "cross_family.json").read_text(encoding="utf-8"))
     boot = json.loads((r / "bootstrap.json").read_text(encoding="utf-8"))["lineages"]
 
+    audit_path = r / "audit.json"
+    audit = json.loads(audit_path.read_text(encoding="utf-8")) if audit_path.exists() else {"excluded": {}, "flagged": []}
     names = cross["lineages"]
     matrix = [[clean(v) for v in row] for row in cross["mean_ldnd_matrix"]]
     within = {n: matrix[i][i] for i, n in enumerate(names)}
@@ -72,6 +91,11 @@ def main() -> None:
         "k_cal": summary["k_cal"], "noise": summary["noise_floor_quantiles_10_50_90"],
         "lineages": lineages, "names": names, "matrix": matrix, "pairs": pairs,
         "unrelated": {"mean": float(np.mean(unrel)), "min": float(np.min(unrel)), "max": float(np.max(unrel))},
+        "audit": {
+            "excluded_by_lineage": excluded_by_lineage(summary.get("excluded", {}), r),
+            "flagged": [{k: clean(f[k]) for k in ("lineage", "id", "mean_ldnd", "n_concepts", "loo_delta_dmax")}
+                        for f in audit["flagged"]],
+        },
         "ks": profiles["ks"], "profiles": profiles["profiles"],
     }
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")

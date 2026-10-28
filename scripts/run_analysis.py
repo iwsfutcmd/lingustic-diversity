@@ -18,7 +18,7 @@ from itertools import combinations
 import numpy as np
 from scipy.optimize import brentq
 
-from isodiv.asjp import Doculect, load
+from isodiv.asjp import Doculect, load, load_exclusions
 from isodiv.distance import ldnd, ldnd_matrix
 from isodiv.diversity import max_diversity, similarity_matrix, uniform_diversity
 
@@ -61,6 +61,15 @@ MAX_PER_LINEAGE = 80          # stratified cap keeps pairwise LDND tractable
 KS = np.geomspace(0.1, 40, 48)
 RAREFY_M = 3          # compare lineages at a fixed number of distinct-Glottocode doculects
 RAREFY_DRAWS = 40
+
+
+EXCLUSIONS_FILE = Path(__file__).resolve().parent.parent / "config" / "exclusions.tsv"
+
+
+def load_all(cldf: Path, tokenization: str = "asjp") -> dict[str, Doculect]:
+    """All doculects of every configured lineage, minus those listed in config/exclusions.tsv."""
+    return load(cldf, keep=lambda r: any(p(r) for p in LINEAGES.values()), tokenization=tokenization,
+                exclude=load_exclusions(EXCLUSIONS_FILE))
 
 
 def stratified(docs: list[Doculect], cap: int, seed: int = 0) -> list[Doculect]:
@@ -244,8 +253,7 @@ def main() -> None:
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
 
-    keep_any = lambda r: any(pred(r) for pred in LINEAGES.values())
-    all_docs = load(args.cldf, keep=keep_any, tokenization=args.tokens)
+    all_docs = load_all(args.cldf, args.tokens)
     rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
 
     floor = noise_floor(args.cldf)
@@ -272,6 +280,7 @@ def main() -> None:
     (args.out / "summary.json").write_text(
         json.dumps({"tokenization": args.tokens, "k_cal": k_cal,
                     "noise_floor_quantiles_10_50_90": np.quantile(floor, [.1, .5, .9]).tolist(),
+                    "excluded": load_exclusions(EXCLUSIONS_FILE),
                     "lineages": summary, "japonic_sampling": robust},
                    ensure_ascii=False, indent=2), encoding="utf-8")
     (args.out / "profiles.json").write_text(json.dumps(

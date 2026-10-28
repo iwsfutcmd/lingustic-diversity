@@ -18,7 +18,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
-from run_analysis import LINEAGES, drop_nan, stratified  # noqa: E402
+from run_analysis import LINEAGES, drop_nan, load_all, stratified  # noqa: E402
 
 from isodiv.asjp import core_concepts, load
 from isodiv.distance import ldnd_matrix
@@ -39,7 +39,7 @@ def main() -> None:
     k_cal = args.k_cal or json.loads((args.out / "summary.json").read_text(encoding="utf-8"))["k_cal"]
     concepts = sorted(core_concepts(args.cldf))
     rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
-    all_docs = load(args.cldf, keep=lambda r: any(p(r) for p in LINEAGES.values()))
+    all_docs = load_all(args.cldf)
     rng = np.random.default_rng(42)
     draws = [frozenset(rng.choice(concepts, size=args.keep, replace=False)) for _ in range(args.draws)]
 

@@ -159,6 +159,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
         <li>Same-language doculect pairs differ by LDND 0.11 / 0.30 / 0.57 (10th / 50th / 90th percentile). Lineages in the lowest band cannot be ranked against each other.</li>
         <li>D_max is stable against duplicates, not against sampling more distinct varieties. Lineages with few doculects are lower bounds.</li>
         <li>Contact shortens distances. The 40-item list resists borrowing but is not immune.</li>
+        <li>Doculects listed in <code>config/exclusions.tsv</code> are left out of every number here, each with its reason. <code>scripts/audit.py</code> flags candidates (far from the rest of the lineage, fewer than 30 of 40 concepts, or removing it lowers D_max by 0.015 or more) but never excludes automatically. A deep branch such as Chuvash is flagged and kept; a list distorted by contact or a transcription problem is excluded.</li>
         <li>Samples: up to 80 doculects per lineage for diversity and profiles, 40 for the concept resampling, 25 for between-lineage comparisons, chosen round-robin across genera and Glottocodes.</li>
       </ul>
       <p class="muted">Wichmann, Holman, Bakker &amp; Brown 2010, <i>Physica A</i> 389. Leinster &amp; Meckes 2016, <i>Entropy</i> 18(3). ASJP Database v21, CC-BY-4.0.</p>
@@ -250,6 +251,13 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
     });
     drawDetail();
   }
+  function auditHtml(name) {
+    const ex = DATA.audit.excluded_by_lineage[name] || [], fl = DATA.audit.flagged.filter(f => f.lineage === name);
+    if (!ex.length && !fl.length) return "";
+    return `<h3>Data review</h3>` +
+      ex.map(e => `<p style="margin:0 0 6px"><b dir="auto">${esc(e.id)}</b> <span class="muted">excluded</span><br><span class="muted">${esc(e.reason)}</span></p>`).join("") +
+      fl.map(f => `<p style="margin:0 0 6px"><b dir="auto">${esc(f.id)}</b> <span class="muted">flagged: mean LDND ${fmt(f.mean_ldnd, 2)}, ${f.n_concepts}/40 concepts, removing it lowers D_max by ${fmt(f.loo_delta_dmax)}</span></p>`).join("");
+  }
   function drawDetail() {
     const d = byName.get(selected); if (!d) return;
     $("detail").innerHTML = `
@@ -269,6 +277,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
         <dt>Largest LDND</dt><dd>${fmt(d.max_ldnd)}</dd>
         <dt>Mean within LDND</dt><dd>${fmt(d.within)}</dd>
       </dl>
+      ${auditHtml(d.name)}
       <h3>Representatives (D_max weights)</h3>
       <ul class="reps">${d.reps.map(([id, w]) => `<li><span dir="auto">${esc(id)}</span><span>${w.toFixed(3)}</span></li>`).join("")}</ul>`;
   }

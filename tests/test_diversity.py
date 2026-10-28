@@ -68,3 +68,12 @@ def test_ldnd_identity_and_unicode_tokens():
     assert ldnd(a, b) == pytest.approx(0.0)
     c = Doculect("C", "C", "", "F", "", {k: (("x", "y", "z", "q"),) for k in words})
     assert ldnd(a, c) > 0.9
+
+
+def test_exclusions_file_and_filter(tmp_path):
+    from isodiv.asjp import load_exclusions
+
+    f = tmp_path / "ex.tsv"
+    f.write_text("id\treason\n# comment\nA\tbad list\nB\t\n", encoding="utf-8")
+    assert load_exclusions(f) == {"A": "bad list", "B": ""}
+    assert load_exclusions(tmp_path / "missing.tsv") == {}
