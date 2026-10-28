@@ -1,0 +1,21 @@
+noise floor LDND quantiles 10/50/90: [0.11  0.298 0.573]; k_cal=0.353
+Basque         n=  2 glotto=  1 maxLDND=0.209 spread=0.209 rare3=nan Dmax@kcal=1.037 naive@kcal=1.037 kkt=True
+Ainu           n= 23 glotto=  1 maxLDND=0.558 spread=0.938 rare3=nan Dmax@kcal=1.136 naive@kcal=1.094 kkt=True
+Japonic        n= 33 glotto= 11 maxLDND=0.764 spread=1.522 rare3=0.850 Dmax@kcal=1.223 naive@kcal=1.202 kkt=True
+Koreanic       n=  3 glotto=  2 maxLDND=0.537 spread=0.707 rare3=nan Dmax@kcal=1.110 naive@kcal=1.107 kkt=True
+Burushaski     n= 10 glotto=  1 maxLDND=0.523 spread=0.763 rare3=nan Dmax@kcal=1.113 naive@kcal=1.070 kkt=True
+Nivkh          n=  7 glotto=  1 maxLDND=0.558 spread=0.894 rare3=nan Dmax@kcal=1.131 naive@kcal=1.116 kkt=True
+Haida          n=  2 glotto=  2 maxLDND=0.383 spread=0.383 rare3=nan Dmax@kcal=1.068 naive@kcal=1.068 kkt=True
+Yeniseian      n=  9 glotto=  6 maxLDND=0.848 spread=1.583 rare3=1.102 Dmax@kcal=1.236 naive@kcal=1.223 kkt=True
+Kartvelian     n=  6 glotto=  4 maxLDND=0.899 spread=1.519 rare3=1.193 Dmax@kcal=1.230 naive@kcal=1.216 kkt=True
+Romance        n= 64 glotto= 34 maxLDND=0.859 spread=1.826 rare3=1.029 Dmax@kcal=1.271 naive@kcal=1.246 kkt=True
+Germanic       n= 61 glotto= 45 maxLDND=0.884 spread=1.807 rare3=0.929 Dmax@kcal=1.268 naive@kcal=1.232 kkt=True
+Slavic         n= 34 glotto= 19 maxLDND=0.761 spread=1.502 rare3=0.831 Dmax@kcal=1.220 naive@kcal=1.188 kkt=True
+Turkic         n= 72 glotto= 34 maxLDND=1.020 spread=2.014 rare3=0.962 Dmax@kcal=1.304 naive@kcal=1.207 kkt=True
+Mongolic       n= 29 glotto= 14 maxLDND=0.884 spread=1.804 rare3=1.103 Dmax@kcal=1.267 naive@kcal=1.256 kkt=True
+Uralic         n= 64 glotto= 35 maxLDND=1.030 spread=2.342 rare3=1.322 Dmax@kcal=1.358 naive@kcal=1.335 kkt=True
+Indo-European  n= 63 glotto= 63 maxLDND=1.016 spread=2.393 rare3=1.333 Dmax@kcal=1.367 naive@kcal=1.343 kkt=True
+{'sample': 'all doculects', 'n': 33, 'd_max_kcal': 1.2229845994898252, 'uniform_d2_kcal': 1.202214897522778, 'spread': 1.5221178479076631}
+{'sample': 'one per Glottocode', 'n': 10, 'd_max_kcal': 1.194872275461811, 'uniform_d2_kcal': 1.1815673299753675, 'spread': 1.331613197327363}
+{'sample': 'Tokyo + Shuri only', 'n': 2, 'd_max_kcal': 1.1110566310068632, 'uniform_d2_kcal': 1.1110566310068632, 'spread': 0.6317228553841412}
+{'sample': 'all + 3x duplicated Tokyo', 'n': 36, 'd_max_kcal': 1.2229845994898207, 'uniform_d2_kcal': 1.2034028262627188, 'spread': 1.522117847907657}

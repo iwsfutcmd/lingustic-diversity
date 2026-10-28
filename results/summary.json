@@ -1,0 +1,1297 @@
+{
+  "tokenization": "asjp",
+  "k_cal": 0.3530473005054366,
+  "noise_floor_quantiles_10_50_90": [
+    0.11021969220439123,
+    0.2984317271566387,
+    0.5729734519996272
+  ],
+  "lineages": [
+    {
+      "lineage": "Basque",
+      "n_doculects": 2,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.20856886737091104,
+      "spread": 0.2085665429376615,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.0368007113110504,
+      "uniform_d2_kcal": 1.0368007113110507,
+      "representatives_kcal": [
+        [
+          "BASQUE",
+          0.5
+        ],
+        [
+          "BASQUE_2",
+          0.5
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Ainu",
+      "n_doculects": 23,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.5579399177667577,
+      "spread": 0.9384010231930769,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.136304908517517,
+      "uniform_d2_kcal": 1.094019386495088,
+      "representatives_kcal": [
+        [
+          "KURIL_AINU",
+          0.284
+        ],
+        [
+          "AINU_SARU",
+          0.214
+        ],
+        [
+          "AINU_RAICHISHKA",
+          0.147
+        ],
+        [
+          "AINU_NAIRO",
+          0.123
+        ],
+        [
+          "AINU_OCHIHO",
+          0.058
+        ],
+        [
+          "HOKKAIDO_AINU",
+          0.055
+        ],
+        [
+          "SAKHALIN_AINU",
+          0.043
+        ],
+        [
+          "AINU_SAMANI",
+          0.036
+        ],
+        [
+          "AINU_BIHORO",
+          0.032
+        ],
+        [
+          "AINU_OSHAMAMBE",
+          0.009
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Japonic",
+      "n_doculects": 33,
+      "n_glottocodes": 11,
+      "max_ldnd": 0.764002627885935,
+      "spread": 1.5221178479076631,
+      "spread_rarefied_m3": 0.8497839166762187,
+      "d_max_kcal": 1.2229845994898252,
+      "uniform_d2_kcal": 1.202214897522778,
+      "representatives_kcal": [
+        [
+          "JAPANESE_3",
+          0.143
+        ],
+        [
+          "HATERUMA_YAEYAMA",
+          0.114
+        ],
+        [
+          "NORTHERN_AMAMI_OSHIMA",
+          0.109
+        ],
+        [
+          "SHURI",
+          0.096
+        ],
+        [
+          "YONAGUNI",
+          0.093
+        ],
+        [
+          "SANI_AMAMI",
+          0.087
+        ],
+        [
+          "FUKUSATO_MIYAKO",
+          0.069
+        ],
+        [
+          "TAKARAJIMA_JAPANESE",
+          0.056
+        ],
+        [
+          "AZA_IRABU_MIYAKO",
+          0.049
+        ],
+        [
+          "IZENA_KUNIGAMI",
+          0.034
+        ],
+        [
+          "MIYAKO",
+          0.031
+        ],
+        [
+          "TOKYO_JAPANESE",
+          0.027
+        ],
+        [
+          "JAPANESE_2",
+          0.023
+        ],
+        [
+          "KUROSHIMA_YAEYAMA",
+          0.02
+        ],
+        [
+          "OKI_NO_ERABU",
+          0.018
+        ],
+        [
+          "KOHAMA_YAEYAMA",
+          0.011
+        ],
+        [
+          "KUNINAKA_MIYAKO",
+          0.009
+        ],
+        [
+          "TAKETOMI_YAEYAMA",
+          0.007
+        ],
+        [
+          "JAPANESE",
+          0.002
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Koreanic",
+      "n_doculects": 3,
+      "n_glottocodes": 2,
+      "max_ldnd": 0.5374956658971798,
+      "spread": 0.7068628626555329,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.1100342523484839,
+      "uniform_d2_kcal": 1.1073161187646514,
+      "representatives_kcal": [
+        [
+          "JEJUEO",
+          0.42
+        ],
+        [
+          "KOREAN",
+          0.299
+        ],
+        [
+          "KOREAN_2",
+          0.281
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Burushaski",
+      "n_doculects": 10,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.5229314925705842,
+      "spread": 0.7630530171607866,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.113102094412681,
+      "uniform_d2_kcal": 1.069538029195812,
+      "representatives_kcal": [
+        [
+          "BURUSHASKI_2",
+          0.339
+        ],
+        [
+          "CENTRAL_YASIN_BURUSHASKI",
+          0.225
+        ],
+        [
+          "BURUSHASKI",
+          0.184
+        ],
+        [
+          "HAIDERABAD_HUNZA_BURUSHASKI",
+          0.132
+        ],
+        [
+          "HOPER_NAGAR_BURUSHASKI",
+          0.12
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Nivkh",
+      "n_doculects": 7,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.557974861701441,
+      "spread": 0.894057764078708,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.131279637681884,
+      "uniform_d2_kcal": 1.1156012627919765,
+      "representatives_kcal": [
+        [
+          "GILYAK_SOUTH_SAKHALIN",
+          0.278
+        ],
+        [
+          "GILYAK",
+          0.266
+        ],
+        [
+          "NIVKH",
+          0.211
+        ],
+        [
+          "GILYAK_WEST_SAKHALIN",
+          0.176
+        ],
+        [
+          "GILYAK_EAST_SAKHALIN",
+          0.04
+        ],
+        [
+          "GILYAK_NORTH_SAKHALIN",
+          0.028
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Haida",
+      "n_doculects": 2,
+      "n_glottocodes": 2,
+      "max_ldnd": 0.3830113406628653,
+      "spread": 0.3830113067920371,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.067507727774692,
+      "uniform_d2_kcal": 1.0675077277746918,
+      "representatives_kcal": [
+        [
+          "HAIDA",
+          0.5
+        ],
+        [
+          "HAIDA_2",
+          0.5
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Yeniseian",
+      "n_doculects": 9,
+      "n_glottocodes": 6,
+      "max_ldnd": 0.8482838318723819,
+      "spread": 1.5831957695134724,
+      "spread_rarefied_m3": 1.1019509543427104,
+      "d_max_kcal": 1.2357406535850066,
+      "uniform_d2_kcal": 1.2230720291478159,
+      "representatives_kcal": [
+        [
+          "PUMPOKOL",
+          0.184
+        ],
+        [
+          "KET_2",
+          0.173
+        ],
+        [
+          "ARIN",
+          0.164
+        ],
+        [
+          "ASSAN",
+          0.14
+        ],
+        [
+          "KOTT",
+          0.1
+        ],
+        [
+          "KET",
+          0.098
+        ],
+        [
+          "YUGH_RECENT",
+          0.077
+        ],
+        [
+          "YUGH",
+          0.065
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Kartvelian",
+      "n_doculects": 6,
+      "n_glottocodes": 4,
+      "max_ldnd": 0.8990771148425096,
+      "spread": 1.518817627777105,
+      "spread_rarefied_m3": 1.1927216743059692,
+      "d_max_kcal": 1.230112308067981,
+      "uniform_d2_kcal": 1.215780738761678,
+      "representatives_kcal": [
+        [
+          "SVAN",
+          0.306
+        ],
+        [
+          "GEORGIAN_2",
+          0.203
+        ],
+        [
+          "LAZ_ARHAVI",
+          0.188
+        ],
+        [
+          "MINGRELIAN",
+          0.135
+        ],
+        [
+          "GEORGIAN",
+          0.111
+        ],
+        [
+          "LAZ",
+          0.057
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Romance",
+      "n_doculects": 64,
+      "n_glottocodes": 34,
+      "max_ldnd": 0.8594576057939411,
+      "spread": 1.8263768559012332,
+      "spread_rarefied_m3": 1.0290699023459036,
+      "d_max_kcal": 1.2707023589813908,
+      "uniform_d2_kcal": 1.2455044744410362,
+      "representatives_kcal": [
+        [
+          "FRENCH_2",
+          0.1
+        ],
+        [
+          "LIGURIAN_STELLA",
+          0.075
+        ],
+        [
+          "LATIN_2",
+          0.067
+        ],
+        [
+          "NONES_GARDENESE",
+          0.062
+        ],
+        [
+          "GASCON",
+          0.058
+        ],
+        [
+          "VLACH",
+          0.054
+        ],
+        [
+          "DALMATIAN",
+          0.053
+        ],
+        [
+          "FALA",
+          0.052
+        ],
+        [
+          "ROMANSH_SURMIRAN",
+          0.05
+        ],
+        [
+          "ROMANIAN_MEGLENO",
+          0.049
+        ],
+        [
+          "MIRANDESE",
+          0.041
+        ],
+        [
+          "SASSARESE",
+          0.038
+        ],
+        [
+          "JUDEO_ESPAGNOL",
+          0.035
+        ],
+        [
+          "FRENCH",
+          0.032
+        ],
+        [
+          "SARDINIAN_CAMPIDANESE",
+          0.031
+        ],
+        [
+          "PORTUGUESE",
+          0.029
+        ],
+        [
+          "LANGUEDOCIEN",
+          0.026
+        ],
+        [
+          "SPANISH_2",
+          0.025
+        ],
+        [
+          "ROMANSH_SURSILVAN",
+          0.023
+        ],
+        [
+          "ARPITAN",
+          0.02
+        ],
+        [
+          "SARDINIAN_LOGUDARESE",
+          0.02
+        ],
+        [
+          "ROMAGNOL_RAVENNATE",
+          0.016
+        ],
+        [
+          "NONES_FASSANO",
+          0.014
+        ],
+        [
+          "CATALAN_2",
+          0.008
+        ],
+        [
+          "FRIULIAN",
+          0.006
+        ],
+        [
+          "ROMANSH_GRISHUN",
+          0.006
+        ],
+        [
+          "NEAPOLITAN_CALABRESE",
+          0.005
+        ],
+        [
+          "LOMBARD_BERGAMO",
+          0.004
+        ],
+        [
+          "ROMAGNOL",
+          0.001
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Germanic",
+      "n_doculects": 61,
+      "n_glottocodes": 45,
+      "max_ldnd": 0.8844464566585248,
+      "spread": 1.8067948321872915,
+      "spread_rarefied_m3": 0.9294866656159183,
+      "d_max_kcal": 1.2682195139176753,
+      "uniform_d2_kcal": 1.231801778917789,
+      "representatives_kcal": [
+        [
+          "PROTO_GERMANIC",
+          0.143
+        ],
+        [
+          "ENGLISH_2",
+          0.097
+        ],
+        [
+          "ICELANDIC_2",
+          0.088
+        ],
+        [
+          "WYMYSORYS",
+          0.076
+        ],
+        [
+          "DANISH_2",
+          0.073
+        ],
+        [
+          "FAROESE",
+          0.055
+        ],
+        [
+          "BAVARIAN_GERMAN_2",
+          0.054
+        ],
+        [
+          "BRABANTIC",
+          0.053
+        ],
+        [
+          "BERNESE_GERMAN",
+          0.045
+        ],
+        [
+          "NORWEGIAN_NYNORSK_TOTEN",
+          0.039
+        ],
+        [
+          "LOWER_SILESIAN",
+          0.036
+        ],
+        [
+          "ZEEUWS",
+          0.034
+        ],
+        [
+          "CIMBRIAN",
+          0.033
+        ],
+        [
+          "GJESTAL_NORWEGIAN",
+          0.033
+        ],
+        [
+          "MOCHENO",
+          0.033
+        ],
+        [
+          "JAMTLANDIC",
+          0.03
+        ],
+        [
+          "SAXON_UPPER",
+          0.023
+        ],
+        [
+          "SWEDISH_2",
+          0.015
+        ],
+        [
+          "NORTH_FRISIAN_AMRUM",
+          0.013
+        ],
+        [
+          "SALLANDS",
+          0.012
+        ],
+        [
+          "DANISH",
+          0.009
+        ],
+        [
+          "GOTHIC",
+          0.006
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Slavic",
+      "n_doculects": 34,
+      "n_glottocodes": 19,
+      "max_ldnd": 0.7605041408049377,
+      "spread": 1.501836814889548,
+      "spread_rarefied_m3": 0.8311949332691613,
+      "d_max_kcal": 1.219858750867704,
+      "uniform_d2_kcal": 1.187526845827879,
+      "representatives_kcal": [
+        [
+          "POLABIAN",
+          0.193
+        ],
+        [
+          "UKRAINIAN_2",
+          0.127
+        ],
+        [
+          "NASHTA",
+          0.095
+        ],
+        [
+          "RUSSIAN_2",
+          0.067
+        ],
+        [
+          "KASHUBIAN",
+          0.066
+        ],
+        [
+          "SLAVOMOLISANO",
+          0.063
+        ],
+        [
+          "POLISH_2",
+          0.057
+        ],
+        [
+          "BELARUSIAN_2",
+          0.053
+        ],
+        [
+          "BULGARIAN",
+          0.052
+        ],
+        [
+          "LOWER_SORBIAN_2",
+          0.052
+        ],
+        [
+          "BULGARIAN_2",
+          0.042
+        ],
+        [
+          "NINILCHIK_RUSSIAN",
+          0.038
+        ],
+        [
+          "OLD_CHURCH_SLAVONIC",
+          0.031
+        ],
+        [
+          "SLOVAK_2",
+          0.029
+        ],
+        [
+          "KHISLAVICHI",
+          0.019
+        ],
+        [
+          "UPPER_SORBIAN",
+          0.015
+        ],
+        [
+          "RUSYN",
+          0.001
+        ],
+        [
+          "UKRAINIAN",
+          0.001
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Turkic",
+      "n_doculects": 72,
+      "n_glottocodes": 34,
+      "max_ldnd": 1.020155792709637,
+      "spread": 2.013929193794048,
+      "spread_rarefied_m3": 0.9616459920459434,
+      "d_max_kcal": 1.3037533926372071,
+      "uniform_d2_kcal": 1.2074028208284964,
+      "representatives_kcal": [
+        [
+          "AYNU",
+          0.197
+        ],
+        [
+          "CHUVASH",
+          0.11
+        ],
+        [
+          "SIBERIAN_TATAR",
+          0.095
+        ],
+        [
+          "CHUVASH_2",
+          0.071
+        ],
+        [
+          "BASHKIR_2",
+          0.06
+        ],
+        [
+          "SHOR",
+          0.056
+        ],
+        [
+          "TOFA",
+          0.049
+        ],
+        [
+          "WEST_YUGUR",
+          0.047
+        ],
+        [
+          "IRAN_TURKIC",
+          0.044
+        ],
+        [
+          "AZERBAIJANI",
+          0.036
+        ],
+        [
+          "KRIMCHAK",
+          0.035
+        ],
+        [
+          "UYGHUR",
+          0.026
+        ],
+        [
+          "KARAIM",
+          0.024
+        ],
+        [
+          "LANGAR_KHORASANI",
+          0.022
+        ],
+        [
+          "SAKHA_2",
+          0.022
+        ],
+        [
+          "SALAR_2",
+          0.021
+        ],
+        [
+          "DOLGAN",
+          0.02
+        ],
+        [
+          "KAZAKH_2",
+          0.02
+        ],
+        [
+          "TURKMEN_2",
+          0.014
+        ],
+        [
+          "MIDDLE_CHULYM",
+          0.013
+        ],
+        [
+          "SAKHA",
+          0.008
+        ],
+        [
+          "TURKISH_2",
+          0.005
+        ],
+        [
+          "KHAKAS",
+          0.004
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Mongolic",
+      "n_doculects": 29,
+      "n_glottocodes": 14,
+      "max_ldnd": 0.8842505434695486,
+      "spread": 1.8037565327878282,
+      "spread_rarefied_m3": 1.103394318528513,
+      "d_max_kcal": 1.2674883474148322,
+      "uniform_d2_kcal": 1.2562789026553038,
+      "representatives_kcal": [
+        [
+          "BURIAT_MONGOLIA",
+          0.111
+        ],
+        [
+          "SANTA_MONGOLIAN",
+          0.102
+        ],
+        [
+          "BAOAN_QINGHAI_BAOAN_XIAZHUANG",
+          0.079
+        ],
+        [
+          "KALMYK",
+          0.067
+        ],
+        [
+          "MOGHOL",
+          0.064
+        ],
+        [
+          "BURIAT_RUSSIA_2",
+          0.062
+        ],
+        [
+          "DAUR",
+          0.06
+        ],
+        [
+          "KALMYK_2",
+          0.056
+        ],
+        [
+          "DONGXIANG_GANSU_SUONANBA",
+          0.043
+        ],
+        [
+          "EASTERN_BONAN",
+          0.042
+        ],
+        [
+          "BONAN_TONGREN_NIANDUHU",
+          0.039
+        ],
+        [
+          "TUZU_QINGHAI_HUZHU_DAZHUANG",
+          0.039
+        ],
+        [
+          "KHALKHA_MONGOLIAN",
+          0.038
+        ],
+        [
+          "KANGJIA_QINGHAI_KANGYANG",
+          0.035
+        ],
+        [
+          "KHAMNIGAN_MONGOL",
+          0.034
+        ],
+        [
+          "KALAQIN",
+          0.031
+        ],
+        [
+          "SHIRA_YUGUR_2",
+          0.022
+        ],
+        [
+          "DAUR_NEIMENGGU_TENGKE",
+          0.02
+        ],
+        [
+          "MONGUOR",
+          0.019
+        ],
+        [
+          "BURIAT_CHINA_CHENBARAG",
+          0.017
+        ],
+        [
+          "MONGOLIAN",
+          0.015
+        ],
+        [
+          "YUGU_EAST_GANSU_SUNAN_KANGLE",
+          0.004
+        ],
+        [
+          "MONGOLIAN_OIRAT_TORGHUT",
+          0.002
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Uralic",
+      "n_doculects": 64,
+      "n_glottocodes": 35,
+      "max_ldnd": 1.0300001896330904,
+      "spread": 2.3415231931430185,
+      "spread_rarefied_m3": 1.322322778435492,
+      "d_max_kcal": 1.358010211417749,
+      "uniform_d2_kcal": 1.3348847971920346,
+      "representatives_kcal": [
+        [
+          "KARAGASSISCH",
+          0.072
+        ],
+        [
+          "SAAMI_UME",
+          0.06
+        ],
+        [
+          "FOREST_ENETS_2",
+          0.055
+        ],
+        [
+          "NORTHERN_MANSI",
+          0.051
+        ],
+        [
+          "KOMI_PERMYAK_2",
+          0.045
+        ],
+        [
+          "TUNDRA_NENETS",
+          0.045
+        ],
+        [
+          "CSANGO",
+          0.043
+        ],
+        [
+          "SOUTH_SAAMI",
+          0.043
+        ],
+        [
+          "NORTHERN_SELKUP",
+          0.037
+        ],
+        [
+          "NORTHERN_KHANTY",
+          0.036
+        ],
+        [
+          "VOTIC_2",
+          0.033
+        ],
+        [
+          "AKKALA_SAMI",
+          0.03
+        ],
+        [
+          "NGANASAN",
+          0.03
+        ],
+        [
+          "NGANASAN_2",
+          0.028
+        ],
+        [
+          "SKOLT_SAAMI_2",
+          0.028
+        ],
+        [
+          "HUNGARIAN",
+          0.027
+        ],
+        [
+          "SELKUP",
+          0.026
+        ],
+        [
+          "MOKSHA",
+          0.024
+        ],
+        [
+          "KAMAS",
+          0.022
+        ],
+        [
+          "ERZYA",
+          0.021
+        ],
+        [
+          "LULE_SAAMI_2",
+          0.02
+        ],
+        [
+          "LUDIAN",
+          0.019
+        ],
+        [
+          "HILL_MARI",
+          0.018
+        ],
+        [
+          "INGRIAN",
+          0.018
+        ],
+        [
+          "SOUTHERN_SAAMI",
+          0.018
+        ],
+        [
+          "KOMI_ZYRIAN_2",
+          0.015
+        ],
+        [
+          "NENETS",
+          0.015
+        ],
+        [
+          "NORTH_SAAMI",
+          0.014
+        ],
+        [
+          "HUNGARIAN_2",
+          0.013
+        ],
+        [
+          "KILDIN_SAAMI_2",
+          0.013
+        ],
+        [
+          "KHANTY",
+          0.012
+        ],
+        [
+          "KOMI_PERMYAK",
+          0.011
+        ],
+        [
+          "VEPS",
+          0.01
+        ],
+        [
+          "MEADOW_MARI",
+          0.009
+        ],
+        [
+          "ERZYA_2",
+          0.008
+        ],
+        [
+          "FINNISH_2",
+          0.008
+        ],
+        [
+          "MANSI",
+          0.008
+        ],
+        [
+          "TSCHEREMISSISCH_KOZMODEMJANSK",
+          0.007
+        ],
+        [
+          "UDMURT_2",
+          0.004
+        ],
+        [
+          "SAAMI_PITE",
+          0.003
+        ],
+        [
+          "LIVE",
+          0.001
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Indo-European",
+      "n_doculects": 63,
+      "n_glottocodes": 63,
+      "max_ldnd": 1.0158544693938834,
+      "spread": 2.3927030365848614,
+      "spread_rarefied_m3": 1.33272307177922,
+      "d_max_kcal": 1.3668597955255204,
+      "uniform_d2_kcal": 1.3434515793950697,
+      "representatives_kcal": [
+        [
+          "ANGOLAR",
+          0.055
+        ],
+        [
+          "ALBANIAN_GHEG",
+          0.051
+        ],
+        [
+          "ARMENIAN",
+          0.051
+        ],
+        [
+          "YASIN_WAKHI",
+          0.042
+        ],
+        [
+          "NORTHERN_PASHTO_2",
+          0.038
+        ],
+        [
+          "BALOCHI_WESTERN",
+          0.038
+        ],
+        [
+          "MEGRA",
+          0.038
+        ],
+        [
+          "BERNESE_GERMAN",
+          0.036
+        ],
+        [
+          "BROKSKAT",
+          0.035
+        ],
+        [
+          "ASTURIAN",
+          0.034
+        ],
+        [
+          "AUKAN",
+          0.034
+        ],
+        [
+          "ALBANIAN_ARBERESHE",
+          0.033
+        ],
+        [
+          "KARAK_PASHTO",
+          0.032
+        ],
+        [
+          "CHITWAN",
+          0.03
+        ],
+        [
+          "NORTHERN_KURDISH",
+          0.029
+        ],
+        [
+          "BRABANTIC",
+          0.029
+        ],
+        [
+          "BRETON_2",
+          0.029
+        ],
+        [
+          "ARMENIAN_CLASSICAL",
+          0.028
+        ],
+        [
+          "BISLAMA",
+          0.027
+        ],
+        [
+          "USHU_KHOWAR",
+          0.027
+        ],
+        [
+          "CHAKMA_UnnamedInSource",
+          0.024
+        ],
+        [
+          "ASHKUN",
+          0.023
+        ],
+        [
+          "CORNISH",
+          0.023
+        ],
+        [
+          "CZECH_2",
+          0.023
+        ],
+        [
+          "ALBANIAN_ARVANITIKA",
+          0.02
+        ],
+        [
+          "ANGLOROMANI",
+          0.019
+        ],
+        [
+          "BAKHTIARI_CHARLANG",
+          0.019
+        ],
+        [
+          "BOSNIAN",
+          0.015
+        ],
+        [
+          "BULGARIAN",
+          0.013
+        ],
+        [
+          "CIMBRIAN",
+          0.013
+        ],
+        [
+          "ASSAMESE",
+          0.011
+        ],
+        [
+          "CHILISSO",
+          0.01
+        ],
+        [
+          "ARPITAN",
+          0.009
+        ],
+        [
+          "AFRIKAANS",
+          0.008
+        ],
+        [
+          "BALOCHI_EASTERN",
+          0.008
+        ],
+        [
+          "AWADHI",
+          0.007
+        ],
+        [
+          "BANATISKI_GURBET_ROMANI",
+          0.007
+        ],
+        [
+          "CORSICAN",
+          0.007
+        ],
+        [
+          "CATALAN_3",
+          0.006
+        ],
+        [
+          "AVESTAN_2",
+          0.005
+        ],
+        [
+          "MANSEHRA_HINDKO",
+          0.005
+        ],
+        [
+          "BELARUSIAN",
+          0.004
+        ],
+        [
+          "DALMATIAN",
+          0.003
+        ],
+        [
+          "ARAGONESE",
+          0.002
+        ],
+        [
+          "CROATIAN_2",
+          0.001
+        ]
+      ],
+      "kkt_all_ok": true
+    }
+  ],
+  "japonic_sampling": [
+    {
+      "sample": "all doculects",
+      "n": 33,
+      "d_max_kcal": 1.2229845994898252,
+      "uniform_d2_kcal": 1.202214897522778,
+      "spread": 1.5221178479076631
+    },
+    {
+      "sample": "one per Glottocode",
+      "n": 10,
+      "d_max_kcal": 1.194872275461811,
+      "uniform_d2_kcal": 1.1815673299753675,
+      "spread": 1.331613197327363
+    },
+    {
+      "sample": "Tokyo + Shuri only",
+      "n": 2,
+      "d_max_kcal": 1.1110566310068632,
+      "uniform_d2_kcal": 1.1110566310068632,
+      "spread": 0.6317228553841412
+    },
+    {
+      "sample": "all + 3x duplicated Tokyo",
+      "n": 36,
+      "d_max_kcal": 1.2229845994898207,
+      "uniform_d2_kcal": 1.2034028262627188,
+      "spread": 1.522117847907657
+    }
+  ]
+}
