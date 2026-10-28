@@ -74,6 +74,14 @@ genuinely different varieties, not a counting artifact.
   borrowing-resistant, but not borrowing-proof.
 - The intervals reflect concept resampling only, not doculect choice or transcription noise.
 
+## Explorer and cross-family check
+
+- `scripts/cross_family.py` compares lineages with each other: mean LDND within and between 48 lineages
+  (the 16 above plus 32 more ASJP families), and D_max of two lineages together vs. apart.
+  Japonic ↔ Kartvelian: mean LDND 0.98 vs. 0.55 / 0.69 within. Across 1,125 unrelated pairs the mean is 0.984.
+- `scripts/build_explorer.py` bundles `results/*.json` into `results/explorer.html`, a self-contained
+  page (diversity ranking, scale profiles, between-lineage heatmap).
+
 ## Run
 
 ```bash
@@ -82,6 +90,8 @@ pip install -e '.[dev]'
 pytest                               # property tests: duplicate invariance, monotonicity, QP == exact
 python scripts/run_analysis.py       # → results/summary.{csv,json}, diversity_profiles.png, ldnd_*.tsv
 python scripts/bootstrap.py          # → results/bootstrap.json
+PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{csv,json,png}
+python scripts/build_explorer.py     # → results/explorer.html
 ```
 
 `--tokens segments` switches from ASJPcode to NFC-normalized CLDF IPA segments. Words are always

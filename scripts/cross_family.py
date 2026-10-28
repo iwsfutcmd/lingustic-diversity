@@ -126,7 +126,7 @@ def plot(names, mean_m, within, between, union_rows, out: Path) -> None:
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(20, 7), gridspec_kw={"width_ratios": [1.15, 1, 1]})
+    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(24, 11), gridspec_kw={"width_ratios": [1.15, 1, 1]})
 
     # 1. mean LDND heatmap; diagonal = within-lineage mean
     order = np.argsort([0 if n in ISOLATE_CANDIDATES else 1 for n in names], kind="stable")
@@ -137,7 +137,7 @@ def plot(names, mean_m, within, between, union_rows, out: Path) -> None:
     ax1.set_yticks(range(len(lab)), lab, fontsize=8)
     for i in range(len(lab)):
         for j in range(len(lab)):
-            if not np.isnan(m[i, j]):
+            if not np.isnan(m[i, j]) and len(lab) <= 20:
                 ax1.text(j, i, f"{m[i, j]:.2f}", ha="center", va="center", fontsize=6.5,
                          color="white" if m[i, j] > 0.55 else "black")
     ax1.set_title("Mean LDND  (diagonal = within lineage, off-diagonal = between)")

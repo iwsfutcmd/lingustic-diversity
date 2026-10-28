@@ -45,6 +45,18 @@ LINEAGES: dict[str, callable] = {
     "Indo-European": lambda r: r["Family"] == "Indo-European",
 }
 ISOLATE_CANDIDATES = list(LINEAGES)[:9]
+CORE_LINEAGES = list(LINEAGES)  # the original 16; everything added below is an extra comparison family
+# More ASJP top-level families (Glottolog-based Family column), small and large, for the explorer.
+EXTRA_FAMILIES = [
+    "Chukotko-Kamchatkan", "Yukaghir", "Eskimo-Aleut", "Tungusic", "Abkhaz-Adyge",
+    "Nakh-Daghestanian", "Dravidian", "Great Andamanese", "Khoe-Kwadi", "Tuu", "Kxa", "Kuliak",
+    "Tarascan", "Araucanian", "Quechuan", "Mayan", "Algic", "Salishan", "Iroquoian", "Siouan",
+    "Athabaskan-Eyak-Tlingit", "Uto-Aztecan", "Hmong-Mien", "Tai-Kadai", "Austroasiatic",
+    "Pama-Nyungan", "Austronesian", "Sino-Tibetan", "Afro-Asiatic", "Atlantic-Congo",
+    "Nuclear Trans New Guinea", "Otomanguean",
+]
+for _fam in EXTRA_FAMILIES:
+    LINEAGES[_fam] = (lambda f: lambda r: r["Family"] == f)(_fam)
 MAX_PER_LINEAGE = 80          # stratified cap keeps pairwise LDND tractable
 KS = np.geomspace(0.1, 40, 48)
 RAREFY_M = 3          # compare lineages at a fixed number of distinct-Glottocode doculects
@@ -197,6 +209,9 @@ def plot(results: list[dict], robust: list[dict], out: Path, k_cal: float) -> No
     cmap = plt.get_cmap("tab20")
     for i, r in enumerate(results):
         iso = r["lineage"] in ISOLATE_CANDIDATES
+        if r["lineage"] not in CORE_LINEAGES:
+            ax1.plot(KS, r["profile_d_max"], lw=0.7, color="0.65", zorder=0)
+            continue
         ax1.plot(KS, r["profile_d_max"], lw=2.2 if iso else 1.2, ls="-" if iso else "--",
                  color=cmap(i % 20), label=f'{r["lineage"]} (n={r["n_doculects"]})')
     ax1.axhline(1.5, color="grey", lw=0.8, ls=":")
@@ -204,7 +219,7 @@ def plot(results: list[dict], robust: list[dict], out: Path, k_cal: float) -> No
     ax1.text(k_cal * 1.08, 2.6, f"k_cal = {k_cal:.2f}\n(noise floor ≈ 0.9 similar)", color="crimson", fontsize=8)
     ax1.set(xscale="log", yscale="log", xlabel="scale k  (Z = exp(−k · LDND))",
             ylabel="maximum diversity D_max (effective # of distinct lineages)",
-            title="Diversity profiles — solid: isolate candidates, dashed: controls")
+            title="Diversity profiles — solid: isolate candidates, dashed: controls, grey: other families")
     ax1.legend(fontsize=8, ncol=2)
 
     labels = [r["sample"] for r in robust]
@@ -259,6 +274,10 @@ def main() -> None:
                     "noise_floor_quantiles_10_50_90": np.quantile(floor, [.1, .5, .9]).tolist(),
                     "lineages": summary, "japonic_sampling": robust},
                    ensure_ascii=False, indent=2), encoding="utf-8")
+    (args.out / "profiles.json").write_text(json.dumps(
+        {"ks": KS.tolist(), "k_cal": k_cal,
+         "profiles": {r["lineage"]: {"d_max": r["profile_d_max"], "uniform": r["profile_uniform"]} for r in results}},
+        ensure_ascii=False), encoding="utf-8")
     with (args.out / "summary.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(["lineage", "n_doculects", "n_glottocodes", "max_ldnd", "spread",
