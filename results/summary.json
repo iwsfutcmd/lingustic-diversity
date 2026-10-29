@@ -7239,6 +7239,704 @@
         ]
       ],
       "kkt_all_ok": true
+    },
+    {
+      "lineage": "Mandarin",
+      "family": "Sino-Tibetan",
+      "n_doculects": 79,
+      "n_glottocodes": 4,
+      "max_ldnd": 0.7500767277070359,
+      "spread": 1.4360344385779735,
+      "spread_rarefied_m3": 0.8220039286361063,
+      "d_max_kcal": 1.2820157707510764,
+      "uniform_d2_kcal": 1.1826794542273742,
+      "representatives_kcal": [
+        [
+          "WUTUN",
+          0.194
+        ],
+        [
+          "MANDARIN_PINGLIANG_SHUILUO",
+          0.133
+        ],
+        [
+          "MANDARIN_XINGTAI_PINGXIANG",
+          0.099
+        ],
+        [
+          "TANGWANG_GANSU_TANGWANG",
+          0.079
+        ],
+        [
+          "MANDARIN_HUAIHUA_ZHONGFANG",
+          0.078
+        ],
+        [
+          "MANDARIN_GUILIN_GUANGYANG",
+          0.069
+        ],
+        [
+          "MANDARIN_YUNCHENG_WANRONG",
+          0.058
+        ],
+        [
+          "MANDARIN_YANGZHOU",
+          0.055
+        ],
+        [
+          "MANDARIN_HANDAN_DAMING",
+          0.046
+        ],
+        [
+          "MANDARIN_3",
+          0.042
+        ],
+        [
+          "MANDARIN_CANGZHOU_XIANXIAN",
+          0.04
+        ],
+        [
+          "MANDARIN_BAISE_TIANLIN",
+          0.038
+        ],
+        [
+          "MANDARIN_JINING_WENSHANG",
+          0.028
+        ],
+        [
+          "MANDARIN_HEFEI_2",
+          0.022
+        ],
+        [
+          "MANDARIN_CHANGDE_TAOYUAN",
+          0.019
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Jin",
+      "family": "Sino-Tibetan",
+      "n_doculects": 23,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.6541667135317445,
+      "spread": 1.2468393356191456,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.2419610933976257,
+      "uniform_d2_kcal": 1.1838921887765987,
+      "representatives_kcal": [
+        [
+          "JIN_LVLIANG_LIULIN",
+          0.197
+        ],
+        [
+          "JIN_CHANGZHI_TUNLIU",
+          0.145
+        ],
+        [
+          "JIN_TAIYUAN_YANGQU",
+          0.103
+        ],
+        [
+          "JIN_LINZHOU_1",
+          0.094
+        ],
+        [
+          "JIN_JINZHONG_MAFANG",
+          0.09
+        ],
+        [
+          "JIN_PINGSHAN",
+          0.086
+        ],
+        [
+          "JIN_XINZHOU",
+          0.061
+        ],
+        [
+          "JIN_HEBI_HEBIJI",
+          0.058
+        ],
+        [
+          "JIN_SHUOZHOU_PINGLU",
+          0.055
+        ],
+        [
+          "JIN_GAOPING",
+          0.051
+        ],
+        [
+          "JIN_XINZHOU_NINGWU",
+          0.05
+        ],
+        [
+          "JIN_LINZHOU_2",
+          0.01
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Wu",
+      "family": "Sino-Tibetan",
+      "n_doculects": 51,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.7289231145612298,
+      "spread": 1.538855452047625,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.3035108681445364,
+      "uniform_d2_kcal": 1.2511760452570375,
+      "representatives_kcal": [
+        [
+          "WU_JINHUA_TANGXI",
+          0.119
+        ],
+        [
+          "WU_LISHUI_QINGYUAN",
+          0.117
+        ],
+        [
+          "WU_RUIAN",
+          0.09
+        ],
+        [
+          "WU_LISHUI_SUICHANG",
+          0.085
+        ],
+        [
+          "SUZHOU_WU",
+          0.079
+        ],
+        [
+          "WU_TAIZHOU_XINQIAO",
+          0.075
+        ],
+        [
+          "WU_SHANGHAI_CHONGMING",
+          0.063
+        ],
+        [
+          "WU_MAANSHAN_HUYANG",
+          0.058
+        ],
+        [
+          "WU_JINHUA_PUJIANG",
+          0.038
+        ],
+        [
+          "WU_WENZHOU_YONGJIA",
+          0.038
+        ],
+        [
+          "WU_HANGZHOU",
+          0.037
+        ],
+        [
+          "WU_WENZHOU_JINXIANG",
+          0.03
+        ],
+        [
+          "WU_DONGYANG",
+          0.029
+        ],
+        [
+          "WU_JINHUA_WUYI",
+          0.029
+        ],
+        [
+          "WU_XUANCHENG_JINPAI",
+          0.028
+        ],
+        [
+          "WU_HUZHOU_CHANGXING",
+          0.023
+        ],
+        [
+          "WU_CHANGZHOU_JINTAN",
+          0.015
+        ],
+        [
+          "WU_NANJING_GUBAI",
+          0.015
+        ],
+        [
+          "WU_SHANGHAI_HONGKOU",
+          0.014
+        ],
+        [
+          "WU_WENZHOU",
+          0.013
+        ],
+        [
+          "WU_YONGKANG",
+          0.005
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Hui",
+      "family": "Sino-Tibetan",
+      "n_doculects": 20,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.6840936676929705,
+      "spread": 1.369643435402053,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.2670158765293664,
+      "uniform_d2_kcal": 1.2461725302135611,
+      "representatives_kcal": [
+        [
+          "HUI_HANGZHOU_FENKOU",
+          0.14
+        ],
+        [
+          "HUI_HUANGSHAN_HONGCUN",
+          0.116
+        ],
+        [
+          "HUI_SHANGRAO_QIUKOU",
+          0.099
+        ],
+        [
+          "HUI_HANGZHOU_WEIPING",
+          0.094
+        ],
+        [
+          "HUI_HUANGSHAN_DAFU",
+          0.083
+        ],
+        [
+          "HUI_HANGZHOU_SHOUCHANG",
+          0.078
+        ],
+        [
+          "HUI_JIANDE",
+          0.073
+        ],
+        [
+          "HUI_XUANCHENG_JINGDE",
+          0.071
+        ],
+        [
+          "HUI_JINGDEZHEN_EHU",
+          0.054
+        ],
+        [
+          "HUI_HUANGSHAN_CHENGKAN",
+          0.048
+        ],
+        [
+          "HUI_HUANGSHAN_SANYANG",
+          0.041
+        ],
+        [
+          "HUI_HUANGSHAN_QIMEN",
+          0.038
+        ],
+        [
+          "HUI_HUANGSHAN_LIUKOU",
+          0.031
+        ],
+        [
+          "HUI_HUANGSHAN_TANGKOU",
+          0.025
+        ],
+        [
+          "HUI_XUANCHENG_JIXI_1",
+          0.008
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Gan",
+      "family": "Sino-Tibetan",
+      "n_doculects": 22,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.7814624459140059,
+      "spread": 1.4715159344019382,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.2902517025665785,
+      "uniform_d2_kcal": 1.2578181288869987,
+      "representatives_kcal": [
+        [
+          "GAN_SHAOWU",
+          0.185
+        ],
+        [
+          "GAN_XIANNING",
+          0.16
+        ],
+        [
+          "GAN_LEIYANG",
+          0.135
+        ],
+        [
+          "GAN_ZHUZHOU_YOUXIAN",
+          0.091
+        ],
+        [
+          "GAN_YICHUN_YIFENG",
+          0.088
+        ],
+        [
+          "GAN_JIAN_JISHUI",
+          0.08
+        ],
+        [
+          "GAN_FUZHOU_NANCHENG",
+          0.063
+        ],
+        [
+          "GAN_YUEYANG_PINGJIANG",
+          0.039
+        ],
+        [
+          "GAN_JIAN_YONGXIN",
+          0.036
+        ],
+        [
+          "GAN_PINGXIANG",
+          0.028
+        ],
+        [
+          "GAN_SANMING_JIANNING",
+          0.028
+        ],
+        [
+          "GAN_JIUJIANG_XIUSHUI",
+          0.016
+        ],
+        [
+          "GAN_SHANGRAO_YANSHAN",
+          0.016
+        ],
+        [
+          "GAN_XINYU",
+          0.015
+        ],
+        [
+          "GAN_FUZHOU_LICHUAN",
+          0.013
+        ],
+        [
+          "GAN_ANQING_SUSONG",
+          0.009
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Xiang",
+      "family": "Sino-Tibetan",
+      "n_doculects": 23,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.7026401625299282,
+      "spread": 1.3283682879270857,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.25974941087372,
+      "uniform_d2_kcal": 1.214220345889975,
+      "representatives_kcal": [
+        [
+          "XIANG_YONGZHOU_SHOUYAN",
+          0.222
+        ],
+        [
+          "XIANG_YONGZHOU_HUAQIAO",
+          0.137
+        ],
+        [
+          "XIANG",
+          0.116
+        ],
+        [
+          "XIANG_HUAIHUA_XUPU",
+          0.108
+        ],
+        [
+          "XIANG_XIANGXIANG",
+          0.09
+        ],
+        [
+          "XIANG_HUAIHUA_HUITONG",
+          0.067
+        ],
+        [
+          "XIANG_LOUDI_SHUANGFENG",
+          0.066
+        ],
+        [
+          "XIANG_LOUDI_2",
+          0.059
+        ],
+        [
+          "XIANG_ZHANGJIAJIE_CILI",
+          0.04
+        ],
+        [
+          "XIANG_YIYANG_NANXIAN",
+          0.032
+        ],
+        [
+          "XIANG_HUAIHUA_HUXI",
+          0.031
+        ],
+        [
+          "XIANG_SHAOYANG_CHENGBU",
+          0.027
+        ],
+        [
+          "XIANG_SHAOYANG",
+          0.004
+        ],
+        [
+          "XIANG_QIYANG",
+          0.001
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Hakka",
+      "family": "Sino-Tibetan",
+      "n_doculects": 46,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.7630777653275018,
+      "spread": 1.4402706889710437,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.2831505211264012,
+      "uniform_d2_kcal": 1.2067928707915514,
+      "representatives_kcal": [
+        [
+          "HAKKA_GANZHOU_DAYU",
+          0.177
+        ],
+        [
+          "HAKKA_LONGYAN_LIANCHENG",
+          0.144
+        ],
+        [
+          "HAKKA_HEYUAN",
+          0.097
+        ],
+        [
+          "HAKKA_JIEYANG_JIEXI",
+          0.086
+        ],
+        [
+          "HAKKA_YULIN_XIANDI",
+          0.086
+        ],
+        [
+          "HAKKA_XIANGGANG",
+          0.085
+        ],
+        [
+          "HAKKA_GANZHOU_YUDU_1",
+          0.076
+        ],
+        [
+          "HAKKA_TAIXING",
+          0.071
+        ],
+        [
+          "HAKKA_LONGYAN_WUPING",
+          0.048
+        ],
+        [
+          "HAKKA_GANZHOU_GANXIAN",
+          0.044
+        ],
+        [
+          "HAKKA_SANMING_NINGHUA",
+          0.044
+        ],
+        [
+          "THONG_BOI",
+          0.03
+        ],
+        [
+          "HAKKA_GANZHOU_YUDU_2",
+          0.007
+        ],
+        [
+          "HAKKA_YULIN_BOBAI_2",
+          0.004
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Yue",
+      "family": "Sino-Tibetan",
+      "n_doculects": 80,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.7816384557383265,
+      "spread": 1.4949264360669838,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.2941781483056172,
+      "uniform_d2_kcal": 1.1966628909440618,
+      "representatives_kcal": [
+        [
+          "YUE_GUILIN_XINGAN",
+          0.166
+        ],
+        [
+          "YUE_GUILIN_LIANGJIANG",
+          0.096
+        ],
+        [
+          "YUE_JIANGMEN_NIUJIANG",
+          0.078
+        ],
+        [
+          "YUE_WUZHOU_CANGWU_1",
+          0.066
+        ],
+        [
+          "YUE_HUAZHOU_CHANGQI",
+          0.065
+        ],
+        [
+          "YUE_HECHI_YIZHOU",
+          0.064
+        ],
+        [
+          "YUE_SHENZHEN_SHAJING",
+          0.063
+        ],
+        [
+          "YUE_YULIN_SHATIAN",
+          0.055
+        ],
+        [
+          "YUE_BEIHAI_YINGPAN",
+          0.052
+        ],
+        [
+          "YUE_TAISHAN_TAICHENG",
+          0.051
+        ],
+        [
+          "YUE_SHUNDE_DALIANG",
+          0.046
+        ],
+        [
+          "YUE_KAIPING",
+          0.041
+        ],
+        [
+          "YUE_DONGGUAN_QISHI",
+          0.038
+        ],
+        [
+          "YUE_FOSHAN_GAOMING",
+          0.034
+        ],
+        [
+          "YUE_DONGGUAN_GUANCHENG",
+          0.033
+        ],
+        [
+          "YUE_BEIHAI_LIANZHOU",
+          0.02
+        ],
+        [
+          "YUE_XIANGGANG_JINTIAN",
+          0.012
+        ],
+        [
+          "YUE_ZHUHAI",
+          0.012
+        ],
+        [
+          "YUE_QINGYUAN_LIANSHAN",
+          0.009
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Pinghua",
+      "family": "Sino-Tibetan",
+      "n_doculects": 29,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.7850320906260478,
+      "spread": 1.5935429235107905,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.3164555103062994,
+      "uniform_d2_kcal": 1.2638286237079266,
+      "representatives_kcal": [
+        [
+          "TUHUA_SHAOGUAN_GUITOU",
+          0.138
+        ],
+        [
+          "PINGHUA_YONGZHOU_NINGYUAN",
+          0.124
+        ],
+        [
+          "TUHUA_CHENZHOU_LIYUAN",
+          0.107
+        ],
+        [
+          "PINGHUA_YONGZHOU_SHOUYAN",
+          0.101
+        ],
+        [
+          "PINGHUA_NANNING_BINYANG",
+          0.087
+        ],
+        [
+          "TUHUA_SHAOGUAN_XIANGYANG",
+          0.081
+        ],
+        [
+          "PINGHUA_BAISE_TIANYANG",
+          0.062
+        ],
+        [
+          "TUHUA_SHAOGUAN_DACUN",
+          0.058
+        ],
+        [
+          "PINGHUA_GUILIN",
+          0.052
+        ],
+        [
+          "PINGHUA_NANNING_SITANG",
+          0.052
+        ],
+        [
+          "PINGHUA_GUILIN_LINGUI",
+          0.034
+        ],
+        [
+          "PINGHUA_GUILIN_WUTONG",
+          0.025
+        ],
+        [
+          "PINGHUA_QINZHOU_QINBEI",
+          0.025
+        ],
+        [
+          "PINGHUA_GUILIN_QINGLONG",
+          0.023
+        ],
+        [
+          "PINGHUA_NANNING_3",
+          0.019
+        ],
+        [
+          "TUHUA_SHAOGUAN_ZHOUTIAN",
+          0.005
+        ],
+        [
+          "TUHUA_SHAOGUAN_SHITANG",
+          0.003
+        ]
+      ],
+      "kkt_all_ok": true
     }
   ],
   "japonic_sampling": [

@@ -174,6 +174,17 @@
       "review": true
     },
     {
+      "lineage": "Xiang",
+      "id": "XIANG_YONGZHOU_SHOUYAN",
+      "language": "Xiang Chinese",
+      "n_concepts": 31,
+      "mean_ldnd": 0.6416545454545454,
+      "z": 4.626887934102988,
+      "weight": 0.2217403341133182,
+      "loo_delta_dmax": 0.025250995888922212,
+      "review": true
+    },
+    {
       "lineage": "Eskimo-Aleut",
       "id": "ALEUT_2",
       "language": "Aleut",
@@ -182,6 +193,17 @@
       "z": 3.2636273769593447,
       "weight": 0.17766161524759114,
       "loo_delta_dmax": 0.02068819027485369,
+      "review": true
+    },
+    {
+      "lineage": "Mandarin",
+      "id": "WUTUN",
+      "language": "Wutunhua",
+      "n_concepts": 40,
+      "mean_ldnd": 0.6351474358974359,
+      "z": 4.599750682499519,
+      "weight": 0.19447298198091476,
+      "loo_delta_dmax": 0.01994396876439919,
       "review": true
     },
     {
@@ -259,6 +281,28 @@
       "z": 0.10069733732514106,
       "weight": 0.19983007095439984,
       "loo_delta_dmax": 0.01725149465158138,
+      "review": true
+    },
+    {
+      "lineage": "Jin",
+      "id": "JIN_LVLIANG_LIULIN",
+      "language": "Jinyu Chinese",
+      "n_concepts": 29,
+      "mean_ldnd": 0.5598818181818183,
+      "z": 2.703556563632074,
+      "weight": 0.19667359381827645,
+      "loo_delta_dmax": 0.01705043026999764,
+      "review": true
+    },
+    {
+      "lineage": "Gan",
+      "id": "GAN_SHAOWU",
+      "language": "Gan Chinese",
+      "n_concepts": 28,
+      "mean_ldnd": 0.6616047619047619,
+      "z": 3.874987163891013,
+      "weight": 0.1850985022112336,
+      "loo_delta_dmax": 0.01691649340268686,
       "review": true
     },
     {
