@@ -1,0 +1,40 @@
+wold_language,asjp_id,family,wold_loan_share,concepts,gap,best_donor,donor_family
+Vietnamese,JING_GUANGXI_SHANXIN,Austroasiatic,0.054,37,0.174,PINGHUA_NANNING_TINGZI,Sino-Tibetan
+Iraqw,IRAQW,Afro-Asiatic,0.000,37,0.132,INNER_MBUGU_BUMBULI,Atlantic-Congo
+Mandarin Chinese,MANDARIN_DANDONG_1,Sino-Tibetan,0.027,37,0.113,KOREAN,Koreanic
+Indonesian,INDONESIAN,Austronesian,0.028,36,0.113,BATEK_DEQ,Austroasiatic
+Takia,TAKIA,Austronesian,0.028,36,0.113,ISEBE,Nuclear Trans New Guinea
+Kanuri,KANURI,Saharan,0.000,37,0.106,BUDUMA,Afro-Asiatic
+Gurindji,MALNGIN,Pama-Nyungan,0.361,36,0.105,KITJA,Jarrakan
+Kali'na,KALINA,Cariban,0.029,35,0.093,EMERILLON,Tupian
+Wichí,MATACO,Mataguayan,0.086,35,0.093,PAUSERNA,Tupian
+Zinacantán Tzotzil,ZINACANTAN_TZOTZIL,Mayan,0.057,35,0.091,MARIA_CHIMALAPA,Mixe-Zoque
+Hausa,HAUSA,Afro-Asiatic,0.027,37,0.087,GWAMHI_WURI,Atlantic-Congo
+Ket,EIGHTEENTH_CENTURY_KET,Yeniseian,0.000,37,0.085,KHAKAS,Turkic
+Seychelles Creole,SEYCHELLES_CREOLE_2,Indo-European,0.000,37,0.081,AWEER,Afro-Asiatic
+Gawwada,GAWWADA,Afro-Asiatic,0.027,37,0.080,BIRAYLE,Ongota
+Japanese,JAPANESE_2,Japonic,0.000,37,0.073,OROCHI,Tungusic
+Saramaccan,SARAMACCAN,Indo-European,0.189,37,0.073,SATERE_MAWE,Tupian
+Q'eqchi',WESTERN_KEKCHI_SAN_JUAN_CHAMELCO,Mayan,0.054,37,0.071,CHINANTEC_OJITLAN,Otomanguean
+Thai,THAI_2,Tai-Kadai,0.054,37,0.070,MUNG_KOI,Austroasiatic
+White Hmong,PHETCHABUN_HMONG,Hmong-Mien,0.108,37,0.068,JINGHONG_TAI_LUE_2,Tai-Kadai
+Otomi,OTOMI_MEZQUITAL,Otomanguean,0.000,37,0.062,LACANDON,Mayan
+Romanian,ROMANIAN_2,Indo-European,0.000,37,0.059,BEZHTA_2,Nakh-Daghestanian
+Hup,JUPDA,Naduhup,0.000,37,0.058,WAIMAHA,Tucanoan
+Swahili,SWAHILI,Atlantic-Congo,0.054,37,0.056,LENDU_2,Central Sudanic
+Malagasy,MALAGASY_MERINA,Austronesian,0.167,36,0.055,CHINGONI_2,Atlantic-Congo
+Archi,ARCHI,Nakh-Daghestanian,0.081,37,0.054,AZERBAIJANI_SOUTHERN,Turkic
+Old High German,OLD_HIGH_GERMAN,Indo-European,0.000,37,0.053,LULE_SAAMI_2,Uralic
+Oroqen,OROQEN,Tungusic,0.028,36,0.053,BURIAT_CHINA_CHENBARAG,Mongolic-Khitan
+Yaqui,YAQUI,Uto-Aztecan,0.000,37,0.053,S_SIERRA_MIWOK,Miwok-Costanoan
+Manange,MANANGE,Sino-Tibetan,0.000,37,0.051,SHILLONG_WAR_JAINTIA,Austroasiatic
+Sakha,SAKHA_2,Turkic,0.027,37,0.049,BURIAT_MONGOLIA,Mongolic-Khitan
+Ceq Wong,CEQ_WONG,Austroasiatic,0.111,36,0.049,JAKUN,Austronesian
+Tarifiyt Berber,TARIFIT_BENI_IZNASSEN,Afro-Asiatic,0.135,37,0.048,ROMANSH_SURSILVAN,Indo-European
+Imbabura Quechua,QUICHUA_IMBABURA_2,Quechuan,0.081,37,0.046,YUCUNA_2,Arawakan
+Bezhta,BEZHTA,Nakh-Daghestanian,0.027,37,0.043,CRIMEAN_ROMANI,Indo-European
+Kildin Saami,KILDIN_SAAMI,Uralic,0.216,37,0.036,LITHUANIAN_2,Indo-European
+Dutch,DUTCH,Indo-European,0.000,37,0.034,SAAMI_PITE,Uralic
+Lower Sorbian,LOWER_SORBIAN,Indo-European,0.054,37,0.031,MOKSCHA_MORDWINISCH,Uralic
+Hawaiian,HAWAIIAN_2,Austronesian,0.000,37,0.018,HAWAI_CREOLE_ENGLISH,Indo-European
+English,ENGLISH_2,Indo-European,0.054,37,0.005,SOUTHERN_SAAMI,Uralic

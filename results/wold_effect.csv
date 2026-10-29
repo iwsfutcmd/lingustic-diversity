@@ -1,0 +1,19 @@
+lineage,wold_languages,loan_words_masked,d_max,d_max_masked,spread,spread_masked
+Germanic,English,2,1.268,1.268,1.807,1.803
+Slavic,Lower Sorbian,2,1.220,1.220,1.502,1.502
+Turkic,Sakha,1,1.281,1.281,1.881,1.881
+Uralic,Kildin Saami,8,1.358,1.358,2.342,2.342
+Indo-European,English;Lower Sorbian;Saramaccan,11,1.367,1.367,2.393,2.393
+Tungusic,Oroqen,1,1.258,1.258,1.736,1.736
+Nakh-Daghestanian,Archi;Bezhta,4,1.352,1.352,2.310,2.310
+Araucanian,Mapudungun,1,1.071,1.071,0.459,0.459
+Quechuan,Imbabura Quechua,3,1.119,1.119,0.845,0.845
+Mayan,Q'eqchi';Zinacantán Tzotzil,4,1.293,1.293,1.958,1.957
+Hmong-Mien,White Hmong,4,1.355,1.355,2.323,2.323
+Tai-Kadai,Thai,2,1.360,1.360,2.351,2.351
+Austroasiatic,Ceq Wong;Vietnamese,6,1.372,1.372,2.423,2.423
+Pama-Nyungan,Gurindji,13,1.387,1.387,2.505,2.505
+Austronesian,Indonesian;Malagasy;Takia,8,1.385,1.385,2.497,2.497
+Sino-Tibetan,Mandarin Chinese,1,1.379,1.379,2.460,2.460
+Afro-Asiatic,Gawwada;Hausa;Tarifiyt Berber,7,1.393,1.393,2.542,2.542
+Atlantic-Congo,Swahili,2,1.394,1.394,2.546,2.546

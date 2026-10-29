@@ -83,6 +83,7 @@ def load(
     tokenization: Tokenization = "asjp",
     drop_loans: bool = True,
     exclude: Iterable[str] = (),
+    mask: Mapping[str, Iterable[str]] | None = None,
 ) -> dict[str, Doculect]:
     """Return {doculect ID: Doculect} for languages where ``keep(row)`` is true."""
     cldf_dir = Path(cldf_dir)
@@ -95,6 +96,8 @@ def load(
             continue
         if drop_loans and r.get("Loan", "").lower() == "true":
             continue
+        if mask and r["Parameter_ID"] in mask.get(r["Language_ID"], ()):
+            continue                      # externally labelled loan (e.g. WOLD)
         tok = tokenize(r, tokenization)
         if tok:
             words[r["Language_ID"]][r["Parameter_ID"]].append(tok)

@@ -49,6 +49,8 @@ CLOSE = 0.34       # a donor-like word is within about one edit of the donor's w
 MARGIN = 0.20      # ...and at least this much closer than the best relative's word
 GAP_FLAG = 0.25    # doculect-level: closer to a neighbour than relatives are, by this much LDND
 TOP_DONORS = 3
+# Not independent languages: artificial or bookkeeping entries would "donate" to their own sources.
+PSEUDO_FAMILIES = frozenset({"Bookkeeping", "Artificial Language", "Speech Register", "Pidgin", "Unclassifiable"})
 
 
 def km(a: tuple[float, float], b: tuple[float, float]) -> float:
@@ -66,14 +68,20 @@ def main() -> None:
     ap.add_argument("--cldf", type=Path, default=Path("data/asjp/cldf"))
     ap.add_argument("--out", type=Path, default=Path("results"))
     ap.add_argument("--lineage", action="append", default=[])
+    ap.add_argument("--family", action="append", default=[], help="any ASJP Family value, not just the configured lineages")
+    ap.add_argument("--only-ids", nargs="+", help="score just these doculects (relatives are still the whole family)")
+    ap.add_argument("--cap-relatives", type=int, default=0, help="sample at most this many relatives per doculect (big families)")
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--radius", type=float, default=2000.0, help="km: how far away a donor may be")
     ap.add_argument("--max-donors", type=int, default=120, help="nearest outsiders considered per doculect")
     ap.add_argument("--include-excluded", action="store_true", help="also score doculects in config/exclusions.tsv")
     args = ap.parse_args()
-    targets = list(LINEAGES) if args.all else args.lineage
+    preds = dict(LINEAGES)
+    for fam in args.family:
+        preds[fam] = (lambda f: lambda r: r["Family"] == f)(fam)
+    targets = list(LINEAGES) if args.all else args.lineage + args.family
     if not targets:
-        ap.error("give --lineage NAME or --all")
+        ap.error("give --lineage NAME, --family NAME or --all")
 
     concepts = sorted(core_concepts(args.cldf))
     rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
@@ -83,9 +91,9 @@ def main() -> None:
     rng = np.random.default_rng(0)
 
     for name in targets:
-        members = [d for i, d in pool.items() if LINEAGES[name](rows[i]) and i not in excluded]
+        members = [d for i, d in pool.items() if preds[name](rows[i]) and i not in excluded]
         fams = {d.family for d in members}
-        outsiders = [d for d in pool.values() if d.family not in fams]
+        outsiders = [d for d in pool.values() if d.family not in fams and d.family not in PSEUDO_FAMILIES]
         ids = [d.id for d in outsiders]
         lat = np.array([coord[i][0] for i in ids]); lon = np.array([coord[i][1] for i in ids])
 
@@ -95,7 +103,11 @@ def main() -> None:
 
         report = []
         for x in members:
+            if args.only_ids and x.id not in args.only_ids:
+                continue
             rel = [m for m in members if m.id != x.id and m.glottocode != x.glottocode]
+            if args.cap_relatives and len(rel) > args.cap_relatives:
+                rel = [rel[i] for i in rng.choice(len(rel), size=args.cap_relatives, replace=False)]
             la, lo = np.radians(coord[x.id][0]), np.radians(coord[x.id][1])
             h = np.sin((np.radians(lat) - la) / 2) ** 2 + np.cos(la) * np.cos(np.radians(lat)) * np.sin((np.radians(lon) - lo) / 2) ** 2
             far = 12742 * np.arcsin(np.sqrt(h))

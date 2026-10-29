@@ -66,10 +66,15 @@ RAREFY_DRAWS = 40
 EXCLUSIONS_FILE = Path(__file__).resolve().parent.parent / "config" / "exclusions.tsv"
 
 
-def load_all(cldf: Path, tokenization: str = "asjp") -> dict[str, Doculect]:
-    """All doculects of every configured lineage, minus those listed in config/exclusions.tsv."""
+def load_all(cldf: Path, tokenization: str = "asjp", wold: Path | None = None) -> dict[str, Doculect]:
+    """All doculects of every configured lineage, minus those in config/exclusions.tsv; with ``wold``
+    (a WOLD CLDF directory) the words WOLD marks as loans are dropped for the languages it covers."""
+    mask = None
+    if wold is not None:
+        from isodiv.wold import loan_table
+        mask = {i: t.borrowed for i, t in loan_table(wold, cldf).items()}
     return load(cldf, keep=lambda r: any(p(r) for p in LINEAGES.values()), tokenization=tokenization,
-                exclude=load_exclusions(EXCLUSIONS_FILE))
+                exclude=load_exclusions(EXCLUSIONS_FILE), mask=mask)
 
 
 def stratified(docs: list[Doculect], cap: int, seed: int = 0) -> list[Doculect]:
@@ -249,11 +254,12 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cldf", type=Path, default=Path("data/asjp/cldf"))
     ap.add_argument("--out", type=Path, default=Path("results"))
+    ap.add_argument("--wold", type=Path, default=None, help="WOLD CLDF dir (e.g. data/wold/cldf): mask words WOLD marks as loans")
     ap.add_argument("--tokens", choices=["asjp", "segments"], default="asjp")
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
 
-    all_docs = load_all(args.cldf, args.tokens)
+    all_docs = load_all(args.cldf, args.tokens, args.wold)
     rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
 
     floor = noise_floor(args.cldf)

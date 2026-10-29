@@ -94,6 +94,18 @@ language* (within 2000 km) than its own relatives are (`gap`, in LDND units)? Re
 (Aynu 0.23, Moghol 0.24, both with Iranian neighbours); everything else in the lineages tried is below 0.13.
 Word-level masking of suspected loans is experimental.
 
+### WOLD loan labels
+
+WOLD (Haspelmath & Tadmor 2009) gives expert loan labels for 41 languages. `git clone --depth 1
+https://github.com/lexibank/wold data/wold`, then:
+
+- `scripts/run_analysis.py --wold data/wold/cldf` drops the words WOLD marks as borrowed (80 words over 40
+  languages that also have an ASJP list; mapping in `src/isodiv/wold.py`).
+- `scripts/wold_effect.py` shows how much that changes D_max per lineage.
+- `scripts/wold_validate.py` checks `loans.py` against WOLD: no language reaches a gap above 0.17, so
+  gaps above ~0.2 (Aynu 0.23, Moghol 0.24) are unusual. WOLD marks 0–10% of these basic concepts as loans
+  for almost every language, so it cannot calibrate the detector on heavy-loan cases.
+
 ## Run
 
 ```bash
