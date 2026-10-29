@@ -14,7 +14,9 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
-from run_analysis import CORE_LINEAGES, ISOLATE_CANDIDATES  # noqa: E402
+from run_analysis import CORE_LINEAGES, EXCLUSIONS_FILE, ISOLATE_CANDIDATES  # noqa: E402
+
+from isodiv.asjp import load_exclusions
 
 TEMPLATE = Path(__file__).resolve().parent.parent / "explorer" / "template.html"
 
@@ -92,7 +94,7 @@ def main() -> None:
         "lineages": lineages, "names": names, "matrix": matrix, "pairs": pairs,
         "unrelated": {"mean": float(np.mean(unrel)), "min": float(np.min(unrel)), "max": float(np.max(unrel))},
         "audit": {
-            "excluded_by_lineage": excluded_by_lineage(summary.get("excluded", {}), r),
+            "excluded_by_lineage": excluded_by_lineage(load_exclusions(EXCLUSIONS_FILE), r),
             "flagged": [{k: clean(f[k]) for k in ("lineage", "id", "mean_ldnd", "n_concepts", "loo_delta_dmax")}
                         for f in audit["flagged"]],
         },
