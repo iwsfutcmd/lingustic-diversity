@@ -1,0 +1,19 @@
+set,n,d_max,d_max_q05,d_max_q95,d_max_k3
+random unrelated (n=5),5,1.406,1.393,1.417,4.096
+random unrelated (n=10),10,1.484,1.481,1.492,6.716
+random unrelated (n=25),25,1.535,1.529,1.539,10.848
+random unrelated (n=40),40,1.550,1.547,1.553,12.860
+random unrelated (n=60),60,1.559,1.557,1.560,14.333
+random unrelated (n=80),80,1.563,1.561,1.564,15.188
+Altaic,74,1.448,,,8.310
+random 3-family union,,1.509,1.461,1.539,10.367
+Macro-Altaic,62,1.492,,,9.643
+random 5-family union,,1.527,1.508,1.539,11.418
+Ural-Altaic,74,1.499,,,10.585
+random 4-family union,,1.517,1.478,1.540,10.815
+Dene-Yeniseian,42,1.466,,,8.708
+random 2-family union,,1.498,1.282,1.535,9.973
+Khoisan,32,1.452,,,7.588
+random 3-family union,,1.509,1.461,1.539,10.367
+Paleo-Siberian,42,1.480,,,8.220
+random 5-family union,,1.527,1.508,1.539,11.418
