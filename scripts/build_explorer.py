@@ -14,7 +14,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
-from run_analysis import CORE_LINEAGES, EXCLUSIONS_FILE, ISOLATE_CANDIDATES, SINITIC_GROUPS, SUBFAMILIES  # noqa: E402
+from run_analysis import CORE_LINEAGES, EXCLUSIONS_FILE, ISOLATE_CANDIDATES, SEMITIC_GROUPS, SINITIC_GROUPS, SUBFAMILIES  # noqa: E402
 
 from isodiv.asjp import load_exclusions
 
@@ -35,7 +35,7 @@ METHOD = {
 def category(name: str) -> str:
     if name in ISOLATE_CANDIDATES:
         return "iso"
-    if name in SUBFAMILIES or name in SINITIC_GROUPS:
+    if name in SUBFAMILIES or name in SINITIC_GROUPS or name in SEMITIC_GROUPS:
         return "sub"
     return "ctl" if name in CORE_LINEAGES else "oth"
 

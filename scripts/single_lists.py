@@ -10,12 +10,12 @@ Usage:
 
 import csv, json, numpy as np
 from pathlib import Path
-from run_analysis import LINEAGES, SUBFAMILIES, SINITIC_GROUPS, load_all, stratified
+from run_analysis import LINEAGES, SEMITIC_GROUPS, SUBFAMILIES, SINITIC_GROUPS, load_all, stratified
 from isodiv.metric import get_metric
 cldf = Path("data/asjp/cldf")
 rows = {r["ID"]: r for r in csv.DictReader((cldf / "languages.csv").open(encoding="utf-8"))}
 docs = load_all(cldf); m = get_metric("pmi")
-top = [n for n in LINEAGES if n not in SUBFAMILIES and n not in SINITIC_GROUPS]
+top = [n for n in LINEAGES if n not in SUBFAMILIES and n not in SINITIC_GROUPS and n not in SEMITIC_GROUPS]
 samples = {n: stratified([x for x in docs.values() if LINEAGES[n](rows[x.id])], 25) for n in top}
 fam = {n: {x.family for x in samples[n]} for n in top}
 def profile(x):
