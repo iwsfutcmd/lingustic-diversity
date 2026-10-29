@@ -9,7 +9,7 @@
 :root {
   --bg: #f4f7f9; --surface: #ffffff; --ink: #15212b; --muted: #5b6b78; --rule: #d5dde3; --grid: #e6ecf0;
   --accent: #0b7a75; --accent-ink: #ffffff;
-  --c-iso: #b3245b; --c-ctl: #2a5db0; --c-sub: #b7791f; --c-oth: #7b8894;
+  --c-iso: #b3245b; --c-ctl: #2a5db0; --c-sub: #b7791f; --c-oth: #7b8894; --c-adv: #6d28d9;
   --hm-lo: #f3f9f8; --hm-hi: #12303f; --sel: rgba(11,122,117,.14);
   --font-display: "Literata", Georgia, "Times New Roman", serif;
   --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -19,14 +19,14 @@
   :root:not([data-theme="light"]) {
     --bg: #0e151b; --surface: #16202a; --ink: #e5edf2; --muted: #93a3b0; --rule: #2a3946; --grid: #1f2c37;
     --accent: #3fc1b9; --accent-ink: #06201f;
-    --c-iso: #f06a9b; --c-ctl: #6ea2f0; --c-sub: #e3a847; --c-oth: #8c9aa6;
+    --c-iso: #f06a9b; --c-ctl: #6ea2f0; --c-sub: #e3a847; --c-oth: #8c9aa6; --c-adv: #b79cff;
     --hm-lo: #13212b; --hm-hi: #e9f6f4; --sel: rgba(63,193,185,.18); color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0e151b; --surface: #16202a; --ink: #e5edf2; --muted: #93a3b0; --rule: #2a3946; --grid: #1f2c37;
   --accent: #3fc1b9; --accent-ink: #06201f;
-  --c-iso: #f06a9b; --c-ctl: #6ea2f0; --c-sub: #e3a847; --c-oth: #8c9aa6;
+  --c-iso: #f06a9b; --c-ctl: #6ea2f0; --c-sub: #e3a847; --c-oth: #8c9aa6; --c-adv: #b79cff;
   --hm-lo: #13212b; --hm-hi: #e9f6f4; --sel: rgba(63,193,185,.18); color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -55,7 +55,7 @@ section[hidden] { display: none; }
 .controls label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
 select, input[type="search"] { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 5px 8px; min-inline-size: 0; }
 .dot { inline-size: 10px; block-size: 10px; border-radius: 50%; display: inline-block; }
-.dot.iso { background: var(--c-iso); } .dot.ctl { background: var(--c-ctl); } .dot.sub { background: var(--c-sub); } .dot.oth { background: var(--c-oth); }
+.dot.iso { background: var(--c-iso); } .dot.ctl { background: var(--c-ctl); } .dot.sub { background: var(--c-sub); } .dot.oth { background: var(--c-oth); } .dot.adv { background: var(--c-adv); }
 .chart { inline-size: 100%; overflow: hidden; }
 svg text { font-family: var(--font-body); fill: var(--muted); font-size: 11px; }
 svg .lab { fill: var(--ink); font-size: 12px; }
@@ -157,6 +157,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
       <ul>
         <li>The calibrated scale is coarse. Two unrelated lineages (LDND ≈ 1) are still about 0.7 similar at k_cal, so their combined D_max stays small. The Between lineages view therefore also reports a finer scale (k = 3), where distinct lineages should add up.</li>
         <li>Same-language doculect pairs differ by LDND <span id="noisefloor"></span> (10th / 50th / 90th percentile). Lineages in the lowest band cannot be ranked against each other.</li>
+        <li>D_max measures diversity, not relatedness. Purple rows are constructed sets, not families: random sets of lects from unrelated families, and proposed or rejected groupings such as Altaic. Unrelated lects are as diverse as it gets, so random sets score at or above the deepest real families. A low score for a proposed grouping says its members are similar, which shared descent and long contact both produce; it is not evidence for or against the grouping. <code>scripts/adversarial.py</code>.</li>
         <li>D_max is stable against duplicates, not against sampling more distinct varieties. Lineages with few doculects are lower bounds.</li>
         <li>Contact shortens distances. The 40-item list resists borrowing but is not immune.</li>
         <li>Doculects listed in <code>config/exclusions.tsv</code> are left out of every number here, each with its reason. <code>scripts/audit.py</code> flags candidates (far from the rest of the lineage, fewer than 30 of 40 concepts, or removing it lowers D_max by 0.015 or more) but never excludes automatically. A deep branch such as Chuvash is flagged and kept; a list distorted by contact or a transcription problem is excluded.</li>
@@ -175,7 +176,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   const DATA = JSON.parse(document.getElementById("data").textContent);
   const L = DATA.lineages;                       // [{name, cat, n, ...}]
   const byName = new Map(L.map(d => [d.name, d]));
-  const CAT = { iso: "Isolate candidates", ctl: "Control lineages", oth: "Other families", sub: "Subfamilies" };
+  const CAT = { iso: "Isolate candidates", ctl: "Control lineages", oth: "Other families", sub: "Subfamilies", adv: "Constructed (not families)" };
   const fmt = (x, p = 3) => (x == null || Number.isNaN(x)) ? "–" : x.toFixed(p);
   const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -264,10 +265,12 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
     $("detail").innerHTML = `
       <h2 dir="auto">${esc(d.name)}</h2>
       <div class="legend"><span><span class="dot ${d.cat}"></span> ${CAT[d.cat]}</span>${d.family ? `<span>Family: ${esc(d.family)}</span>` : ""}</div>
+      ${d.note ? `<p class="muted" style="margin:8px 0 0">${esc(d.note)}</p>` : ""}
       <h3>Diversity</h3>
       <dl class="kv">
         <dt>D_max at k_cal</dt><dd>${fmt(d.d_max)}</dd>
-        ${d.lo != null ? `<dt>Concept-resample range</dt><dd>${fmt(d.lo)}–${fmt(d.hi)}</dd>` : ""}
+        ${d.lo != null ? `<dt>${esc(d.range_label || "Concept-resample range")}</dt><dd>${fmt(d.lo)}–${fmt(d.hi)}</dd>` : ""}
+        ${d.d_max_k3 != null ? `<dt>D_max at k = 3</dt><dd>${fmt(d.d_max_k3, 2)}</dd>` : ""}
         <dt>Naive D₂, equal weights</dt><dd>${fmt(d.uniform)}</dd>
         <dt>Spread (LDND units)</dt><dd>${fmt(d.spread)}</dd>
         <dt>Spread at 3 Glottocodes</dt><dd>${fmt(d.rare3)}</dd>

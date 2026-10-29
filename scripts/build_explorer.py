@@ -99,6 +99,32 @@ def main() -> None:
             "reps": s["representatives_kcal"][:8],
         })
 
+    adv_path = r / "adversarial.json"
+    profiles_all = dict(profiles["profiles"])
+    if adv_path.exists():
+        adv = json.loads(adv_path.read_text(encoding="utf-8"))
+        for n, x in adv["random_unrelated"].items():
+            name = f"Random unrelated, n={n}"
+            lineages.append({
+                "name": name, "cat": "adv", "family": "", "n": int(n), "glotto": int(n), "max_ldnd": None,
+                "spread": None, "rare3": None, "d_max": x["d_max"]["median"], "uniform": x["uniform"],
+                "lo": x["d_max"]["q05"], "hi": x["d_max"]["q95"], "range_label": "5–95% over random draws",
+                "d_max_k3": x["d_max_k3"]["median"], "within": x["mean_within"], "reps": x["example"],
+                "note": f"{n} doculects, each from a different family. Median of the draws; representatives are from one draw.",
+            })
+            profiles_all[name] = {"d_max": x["profile_d_max"], "uniform": x["profile_uniform"]}
+        for n, x in adv["proposals"].items():
+            bl = adv["matched_baseline"][str(len(x["members"]))]
+            name = f"{n} (constructed)"
+            lineages.append({
+                "name": name, "cat": "adv", "family": "", "n": x["n"], "glotto": None, "max_ldnd": x["max_within"],
+                "spread": None, "rare3": None, "d_max": x["d_max"], "uniform": x["uniform"], "lo": None, "hi": None,
+                "d_max_k3": x["d_max_k3"], "within": x["mean_within"], "reps": x["reps"],
+                "note": f"Union of {', '.join(x['members'])}. Random unions of {len(x['members'])} unrelated families "
+                        f"score {bl['d_max']['median']:.3f} ({bl['d_max']['q05']:.3f}–{bl['d_max']['q95']:.3f}).",
+            })
+            profiles_all[name] = {"d_max": x["profile_d_max"], "uniform": x["profile_uniform"]}
+
     pairs = [{
         "a": p["a"], "b": p["b"], "related": p["related_by_construction"],
         **{k: clean(p[k]) for k in ("mean_between", "min_between", "median_between", "mean_within_a",
@@ -115,7 +141,7 @@ def main() -> None:
             "flagged": [{k: clean(f[k]) for k in ("lineage", "id", "mean_ldnd", "n_concepts", "loo_delta_dmax")}
                         for f in audit["flagged"]],
         },
-        "ks": profiles["ks"], "profiles": profiles["profiles"],
+        "ks": profiles["ks"], "profiles": profiles_all,
     }
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     label = summary.get("distance_label", "LDND")
