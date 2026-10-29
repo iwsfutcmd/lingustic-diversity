@@ -20,6 +20,17 @@
       "review": true
     },
     {
+      "lineage": "Ijoid",
+      "id": "DEFAKA",
+      "language": "Defaka",
+      "n_concepts": 33,
+      "mean_ldnd": 0.7533571428571426,
+      "z": 5.819581337100829,
+      "weight": 0.29855226569907684,
+      "loo_delta_dmax": 0.05846074688525693,
+      "review": true
+    },
+    {
       "lineage": "Iroquoian",
       "id": "CHEROKEE",
       "language": "Cherokee",
@@ -31,6 +42,17 @@
       "review": true
     },
     {
+      "lineage": "Canaanite",
+      "id": "UGARITIC",
+      "language": "Ugaritic",
+      "n_concepts": 36,
+      "mean_ldnd": 0.5528000000000001,
+      "z": 1.9058496876031703,
+      "weight": 0.34418183062437724,
+      "loo_delta_dmax": 0.05406112406148078,
+      "review": true
+    },
+    {
       "lineage": "Tuu",
       "id": "NU",
       "language": "N||ng",
@@ -39,6 +61,28 @@
       "z": 6.688012982887569,
       "weight": 0.2777107613766012,
       "loo_delta_dmax": 0.050702235136355966,
+      "review": true
+    },
+    {
+      "lineage": "Canaanite",
+      "id": "BIBLICAL_HEBREW",
+      "language": "Ancient Hebrew",
+      "n_concepts": 33,
+      "mean_ldnd": 0.5223666666666666,
+      "z": 0.9864059664914204,
+      "weight": 0.3252000694599836,
+      "loo_delta_dmax": 0.04405786160782177,
+      "review": true
+    },
+    {
+      "lineage": "Outer South Ethiopic",
+      "id": "GAFAT",
+      "language": "Gafat",
+      "n_concepts": 31,
+      "mean_ldnd": 0.7504142857142858,
+      "z": 4.136450503656651,
+      "weight": 0.2691812980685002,
+      "loo_delta_dmax": 0.043455773289744704,
       "review": true
     },
     {
@@ -64,6 +108,17 @@
       "review": true
     },
     {
+      "lineage": "Saharan",
+      "id": "BERTI",
+      "language": "Berti",
+      "n_concepts": 33,
+      "mean_ldnd": 0.8380555555555556,
+      "z": 2.3960397178615613,
+      "weight": 0.22407307882056177,
+      "loo_delta_dmax": 0.03270021706678494,
+      "review": true
+    },
+    {
       "lineage": "Tarascan",
       "id": "TARASCAN",
       "language": "Purepecha",
@@ -86,6 +141,17 @@
       "review": true
     },
     {
+      "lineage": "Cochimi-Yuman",
+      "id": "COCHIMI",
+      "language": "Cochimi",
+      "n_concepts": 30,
+      "mean_ldnd": 0.7814416666666668,
+      "z": 3.9576873895476536,
+      "weight": 0.2203574969851013,
+      "loo_delta_dmax": 0.031027445766971473,
+      "review": true
+    },
+    {
       "lineage": "Abkhaz-Adyge",
       "id": "UBYKH",
       "language": "Ubykh",
@@ -94,6 +160,17 @@
       "z": 1.8284426397857798,
       "weight": 0.21384106572951356,
       "loo_delta_dmax": 0.029791551536842098,
+      "review": true
+    },
+    {
+      "lineage": "Saharan",
+      "id": "BERIA",
+      "language": "Beria",
+      "n_concepts": 39,
+      "mean_ldnd": 0.8182333333333334,
+      "z": 2.111277153473109,
+      "weight": 0.21563401720729725,
+      "loo_delta_dmax": 0.029546424505647373,
       "review": true
     },
     {
@@ -116,6 +193,39 @@
       "z": 3.7615272249309575,
       "weight": 0.34011594006927875,
       "loo_delta_dmax": 0.02889698689876763,
+      "review": true
+    },
+    {
+      "lineage": "Songhay",
+      "id": "KORANDJE",
+      "language": "Korandje",
+      "n_concepts": 39,
+      "mean_ldnd": 0.5497166666666667,
+      "z": 3.045276016757103,
+      "weight": 0.2627753164633272,
+      "loo_delta_dmax": 0.028182456230012587,
+      "review": true
+    },
+    {
+      "lineage": "Eastern Arabic",
+      "id": "SOUKHNE_SYRIAN_ARABIC",
+      "language": "Gilit Mesopotamian Arabic",
+      "n_concepts": 39,
+      "mean_ldnd": 0.5258285714285714,
+      "z": 3.774444139276435,
+      "weight": 0.2653465710868647,
+      "loo_delta_dmax": 0.028079395680945307,
+      "review": true
+    },
+    {
+      "lineage": "Nubian",
+      "id": "MEIDOB_NUBIAN",
+      "language": "Midob",
+      "n_concepts": 38,
+      "mean_ldnd": 0.86775,
+      "z": 2.107791710827535,
+      "weight": 0.19006794257068552,
+      "loo_delta_dmax": 0.02714200540208145,
       "review": true
     },
     {
@@ -185,6 +295,61 @@
       "review": true
     },
     {
+      "lineage": "Mixe-Zoque",
+      "id": "TAPACHULTEC",
+      "language": "Tapachultec",
+      "n_concepts": 30,
+      "mean_ldnd": 0.6565045454545454,
+      "z": 2.630544782159327,
+      "weight": 0.21092176597691875,
+      "loo_delta_dmax": 0.024147914912182156,
+      "review": true
+    },
+    {
+      "lineage": "Egyptic Arabic",
+      "id": "SHUWA_CHADIAN_ARABIC_2",
+      "language": "Chadian Arabic",
+      "n_concepts": 27,
+      "mean_ldnd": 0.5269714285714285,
+      "z": 2.1046921247699912,
+      "weight": 0.24705253421504547,
+      "loo_delta_dmax": 0.02368364254088884,
+      "review": true
+    },
+    {
+      "lineage": "Aramaic",
+      "id": "WESTERN_NEO_ARAMAIC",
+      "language": "Western Neo-Aramaic",
+      "n_concepts": 30,
+      "mean_ldnd": 0.6362318181818182,
+      "z": 4.631761824177308,
+      "weight": 0.20973698276735459,
+      "loo_delta_dmax": 0.021681459746482945,
+      "review": true
+    },
+    {
+      "lineage": "North African Arabic",
+      "id": "HASSANIYA",
+      "language": "Hassaniyya",
+      "n_concepts": 27,
+      "mean_ldnd": 0.55522,
+      "z": 2.5478651851382716,
+      "weight": 0.2250546101455408,
+      "loo_delta_dmax": 0.021380549586531794,
+      "review": true
+    },
+    {
+      "lineage": "Egyptic Arabic",
+      "id": "KIBERA_KENYA",
+      "language": "Nubi",
+      "n_concepts": 39,
+      "mean_ldnd": 0.5037714285714285,
+      "z": 1.3884170062423384,
+      "weight": 0.24629951549732215,
+      "loo_delta_dmax": 0.02077372250650078,
+      "review": true
+    },
+    {
       "lineage": "Eskimo-Aleut",
       "id": "ALEUT_2",
       "language": "Aleut",
@@ -193,6 +358,17 @@
       "z": 3.2636273769593447,
       "weight": 0.17766161524759114,
       "loo_delta_dmax": 0.02068819027485369,
+      "review": true
+    },
+    {
+      "lineage": "Miwok-Costanoan",
+      "id": "OLAMENTKE",
+      "language": "Coast Miwok",
+      "n_concepts": 32,
+      "mean_ldnd": 0.7382375,
+      "z": 1.1504786549048078,
+      "weight": 0.20948895208894225,
+      "loo_delta_dmax": 0.020448027662361756,
       "review": true
     },
     {
@@ -237,6 +413,61 @@
       "z": 8.98298775614999,
       "weight": 0.286996644944653,
       "loo_delta_dmax": 0.019206978343934145,
+      "review": true
+    },
+    {
+      "lineage": "North-Eastern Neo-Aramaic",
+      "id": "CHRISTIAN_URMI",
+      "language": "Assyrian Neo-Aramaic",
+      "n_concepts": 40,
+      "mean_ldnd": 0.39923333333333333,
+      "z": 3.4540193415003566,
+      "weight": 0.2810331001460181,
+      "loo_delta_dmax": 0.018980691764346247,
+      "review": true
+    },
+    {
+      "lineage": "Heibanic",
+      "id": "WARNANG",
+      "language": "Warnang",
+      "n_concepts": 39,
+      "mean_ldnd": 0.7800800000000001,
+      "z": 1.8794742527998742,
+      "weight": 0.17218736665366122,
+      "loo_delta_dmax": 0.018955093979286852,
+      "review": true
+    },
+    {
+      "lineage": "Heibanic",
+      "id": "KO1",
+      "language": "Ko",
+      "n_concepts": 39,
+      "mean_ldnd": 0.76733,
+      "z": 1.6474167625079899,
+      "weight": 0.17246069089408628,
+      "loo_delta_dmax": 0.01879719812148095,
+      "review": true
+    },
+    {
+      "lineage": "Nubian",
+      "id": "NOBIIN",
+      "language": "Nobiin",
+      "n_concepts": 32,
+      "mean_ldnd": 0.80191,
+      "z": 0.9665219556319667,
+      "weight": 0.16672609120893303,
+      "loo_delta_dmax": 0.01872568078068837,
+      "review": true
+    },
+    {
+      "lineage": "Miwok-Costanoan",
+      "id": "RUMSEN",
+      "language": "Mutsun",
+      "n_concepts": 31,
+      "mean_ldnd": 0.793975,
+      "z": 2.5979292850345312,
+      "weight": 0.19432701485388224,
+      "loo_delta_dmax": 0.018262138474091305,
       "review": true
     },
     {
@@ -328,6 +559,17 @@
       "review": true
     },
     {
+      "lineage": "South Ethiopic",
+      "id": "GAFAT",
+      "language": "Gafat",
+      "n_concepts": 31,
+      "mean_ldnd": 0.7083799999999999,
+      "z": 2.2632266867104867,
+      "weight": 0.17147445953463503,
+      "loo_delta_dmax": 0.016229595202608804,
+      "review": true
+    },
+    {
       "lineage": "Celtic",
       "id": "GAELIC_SCOTTISH",
       "language": "Scottish Gaelic",
@@ -361,6 +603,17 @@
       "review": true
     },
     {
+      "lineage": "Songhay",
+      "id": "TASAWAQ",
+      "language": "Tasawaq",
+      "n_concepts": 38,
+      "mean_ldnd": 0.5202333333333334,
+      "z": 2.3839984110913677,
+      "weight": 0.2180818498969127,
+      "loo_delta_dmax": 0.01536781112752128,
+      "review": true
+    },
+    {
       "lineage": "Khoe-Kwadi",
       "id": "MASARWA_TATI",
       "language": "Northern Tshwa",
@@ -383,6 +636,17 @@
       "review": true
     },
     {
+      "lineage": "Eastern Arabic",
+      "id": "NORTH_MESOPOTAMIAN_ARABIC",
+      "language": "North Mesopotamian Arabic",
+      "n_concepts": 31,
+      "mean_ldnd": 0.4733,
+      "z": 1.256098119015241,
+      "weight": 0.21787162167972154,
+      "loo_delta_dmax": 0.015153140166975554,
+      "review": true
+    },
+    {
       "lineage": "Samoyedic",
       "id": "FOREST_ENETS_2",
       "language": "Forest Enets",
@@ -394,12 +658,199 @@
       "review": true
     },
     {
+      "lineage": "Egyptic Arabic",
+      "id": "SHUWA_CHADIAN_ARABIC",
+      "language": "Chadian Arabic",
+      "n_concepts": 22,
+      "mean_ldnd": 0.4878571428571429,
+      "z": 1.000288325079377,
+      "weight": 0.18635398173655982,
+      "loo_delta_dmax": 0.012288871509675836,
+      "review": true
+    },
+    {
+      "lineage": "Nubian",
+      "id": "KADARU",
+      "language": "Kadaru",
+      "n_concepts": 22,
+      "mean_ldnd": 0.7575000000000001,
+      "z": 0.35593292287602835,
+      "weight": 0.0720936818780096,
+      "loo_delta_dmax": 0.002419833663979798,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "TORO_SO",
+      "language": "Toro So Dogon",
+      "n_concepts": 21,
+      "mean_ldnd": 0.6938632653061224,
+      "z": -0.055382615174719846,
+      "weight": 0.06898494946137709,
+      "loo_delta_dmax": 0.002009049515908634,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "TOMO_KAN",
+      "language": "Tomo Kan Dogon",
+      "n_concepts": 21,
+      "mean_ldnd": 0.7283979591836736,
+      "z": 0.8310862269088708,
+      "weight": 0.08937235911157482,
+      "loo_delta_dmax": 0.0011882341431403987,
+      "review": true
+    },
+    {
+      "lineage": "Nubian",
+      "id": "KENZI",
+      "language": "Kenuzi",
+      "n_concepts": 22,
+      "mean_ldnd": 0.63263,
+      "z": -1.362262093698571,
+      "weight": 0.04471776982704176,
+      "loo_delta_dmax": 0.00044729378322450053,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "DOGUL_DOM",
+      "language": "Dogul Dom Dogon",
+      "n_concepts": 21,
+      "mean_ldnd": 0.7211326530612244,
+      "z": 0.6427466169264852,
+      "weight": 0.04084579050846433,
+      "loo_delta_dmax": 0.00010044783465756879,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "DOGON_TOMO_KAN",
+      "language": "Tomo Kan Dogon",
+      "n_concepts": 23,
+      "mean_ldnd": 0.7179673469387755,
+      "z": 0.5611370644851463,
+      "weight": 0.005166440848405014,
+      "loo_delta_dmax": 3.46824368135934e-06,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "TENE_KAN_2",
+      "language": "Tengou-Togo Dogon",
+      "n_concepts": 21,
+      "mean_ldnd": 0.6568163265306122,
+      "z": -1.0103996527416064,
+      "weight": 0.0028829327212161367,
+      "loo_delta_dmax": 2.0158610365417218e-06,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "TENE_KAN",
+      "language": "Tengou-Togo Dogon",
+      "n_concepts": 21,
+      "mean_ldnd": 0.6541102040816327,
+      "z": -1.0816963588406632,
+      "weight": 0.0010494662434707167,
+      "loo_delta_dmax": 2.675085992720483e-07,
+      "review": true
+    },
+    {
       "lineage": "Mongolic",
       "id": "BURIAT_RUSSIA",
       "language": "Russia Buriat",
       "n_concepts": 24,
       "mean_ldnd": 0.5057750000000001,
       "z": -1.3192734848347059,
+      "weight": 0.0,
+      "loo_delta_dmax": 0.0,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "DOGON_DOGUL_DOM",
+      "language": "Dogul Dom Dogon",
+      "n_concepts": 23,
+      "mean_ldnd": 0.7143877551020408,
+      "z": 0.46911221657312785,
+      "weight": 0.0,
+      "loo_delta_dmax": 0.0,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "DOGON_DONNO_SO",
+      "language": "Donno So Dogon",
+      "n_concepts": 23,
+      "mean_ldnd": 0.6053857142857142,
+      "z": -2.446402453641293,
+      "weight": 0.0,
+      "loo_delta_dmax": 0.0,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "DOGON_TENE_KAN",
+      "language": "Tengou-Togo Dogon",
+      "n_concepts": 23,
+      "mean_ldnd": 0.6419775510204081,
+      "z": -1.405671155787351,
+      "weight": 0.0,
+      "loo_delta_dmax": 0.0,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "DONNO_SO",
+      "language": "Donno So Dogon",
+      "n_concepts": 21,
+      "mean_ldnd": 0.6260469387755102,
+      "z": -1.8447381035830066,
+      "weight": 0.0,
+      "loo_delta_dmax": 0.0,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "JAMSAY",
+      "language": "Jamsay Dogon",
+      "n_concepts": 21,
+      "mean_ldnd": 0.6620959183673469,
+      "z": -0.8721462109908203,
+      "weight": 0.0,
+      "loo_delta_dmax": 0.0,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "KOLUM_SO_5",
+      "language": "Mombo Dogon",
+      "n_concepts": 21,
+      "mean_ldnd": 0.7006795918367347,
+      "z": 0.11848182255639561,
+      "weight": 0.0,
+      "loo_delta_dmax": 0.0,
+      "review": true
+    },
+    {
+      "lineage": "Dogon",
+      "id": "TOMMO_SO_6",
+      "language": "Tommo So Dogon",
+      "n_concepts": 21,
+      "mean_ldnd": 0.649773469387755,
+      "z": -1.1966390950563706,
+      "weight": 0.0,
+      "loo_delta_dmax": 0.0,
+      "review": true
+    },
+    {
+      "lineage": "North-Eastern Neo-Aramaic",
+      "id": "LISHAN_DIDAN",
+      "language": "Lishán Didán",
+      "n_concepts": 23,
+      "mean_ldnd": 0.2807222222222222,
+      "z": -1.5441020964281202,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
       "review": true
