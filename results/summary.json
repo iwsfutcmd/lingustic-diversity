@@ -6,6 +6,9 @@
     0.2984317271566387,
     0.5729734519996272
   ],
+  "excluded": {
+    "AYNU": "Heavy Persian replacement of basic vocabulary (dEndan, dEstE, SEms, atES, zEbun, ...): contact, not Turkic inheritance; LDND ~1 to nearly every other Turkic list"
+  },
   "lineages": [
     {
       "lineage": "Basque",
@@ -685,105 +688,117 @@
     },
     {
       "lineage": "Turkic",
-      "n_doculects": 72,
-      "n_glottocodes": 34,
-      "max_ldnd": 1.020155792709637,
-      "spread": 2.013929193794048,
-      "spread_rarefied_m3": 0.9616459920459434,
-      "d_max_kcal": 1.3037533926372071,
-      "uniform_d2_kcal": 1.2074028208284964,
+      "n_doculects": 71,
+      "n_glottocodes": 33,
+      "max_ldnd": 0.9256773287712995,
+      "spread": 1.8811256093034547,
+      "spread_rarefied_m3": 0.884277449161664,
+      "d_max_kcal": 1.280797063480179,
+      "uniform_d2_kcal": 1.2030280119601569,
       "representatives_kcal": [
         [
-          "AYNU",
-          0.197
-        ],
-        [
           "CHUVASH",
-          0.11
+          0.124
         ],
         [
           "SIBERIAN_TATAR",
-          0.095
+          0.106
         ],
         [
           "CHUVASH_2",
-          0.071
+          0.091
         ],
         [
           "BASHKIR_2",
-          0.06
+          0.075
         ],
         [
           "SHOR",
-          0.056
-        ],
-        [
-          "TOFA",
-          0.049
-        ],
-        [
-          "WEST_YUGUR",
-          0.047
+          0.066
         ],
         [
           "IRAN_TURKIC",
-          0.044
+          0.064
+        ],
+        [
+          "WEST_YUGUR",
+          0.06
+        ],
+        [
+          "TOFA",
+          0.059
         ],
         [
           "AZERBAIJANI",
-          0.036
+          0.052
         ],
         [
           "KRIMCHAK",
-          0.035
-        ],
-        [
-          "UYGHUR",
-          0.026
+          0.049
         ],
         [
           "KARAIM",
-          0.024
+          0.028
         ],
         [
-          "LANGAR_KHORASANI",
-          0.022
+          "UYGHUR",
+          0.027
+        ],
+        [
+          "KAZAKH_2",
+          0.026
         ],
         [
           "SAKHA_2",
-          0.022
+          0.025
+        ],
+        [
+          "TURKISH",
+          0.023
         ],
         [
           "SALAR_2",
+          0.022
+        ],
+        [
+          "MIDDLE_CHULYM",
           0.021
         ],
         [
           "DOLGAN",
-          0.02
+          0.018
         ],
         [
-          "KAZAKH_2",
-          0.02
+          "LANGAR_KHORASANI",
+          0.017
         ],
         [
-          "TURKMEN_2",
-          0.014
-        ],
-        [
-          "MIDDLE_CHULYM",
-          0.013
-        ],
-        [
-          "SAKHA",
-          0.008
-        ],
-        [
-          "TURKISH_2",
-          0.005
+          "SHEYH_TEYMUR_KHORASANI",
+          0.016
         ],
         [
           "KHAKAS",
+          0.009
+        ],
+        [
+          "SAKHA",
+          0.007
+        ],
+        [
+          "TURKMEN_2",
+          0.006
+        ],
+        [
+          "AZERBAIJANI_NORTH",
           0.004
+        ],
+        [
+          "TUVAN",
+          0.003
+        ],
+        [
+          "TATAR_2",
+          0.001
         ]
       ],
       "kkt_all_ok": true

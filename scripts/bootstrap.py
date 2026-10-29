@@ -33,6 +33,7 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=Path("results"))
     ap.add_argument("--draws", type=int, default=30)
     ap.add_argument("--keep", type=int, default=30)
+    ap.add_argument("--only", nargs="+", help="recompute just these lineages and merge into the existing bootstrap.json")
     ap.add_argument("--k-cal", type=float, default=None, help="default: read from results/summary.json")
     args = ap.parse_args()
 
@@ -43,8 +44,11 @@ def main() -> None:
     rng = np.random.default_rng(42)
     draws = [frozenset(rng.choice(concepts, size=args.keep, replace=False)) for _ in range(args.draws)]
 
-    out = {}
+    path = args.out / "bootstrap.json"
+    out = json.loads(path.read_text(encoding="utf-8"))["lineages"] if args.only and path.exists() else {}
     for name, pred in LINEAGES.items():
+        if args.only and name not in args.only:
+            continue
         docs = stratified([x for x in all_docs.values() if pred(rows[x.id])], CAP)
         vals = []
         for cs in draws:

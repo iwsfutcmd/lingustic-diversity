@@ -1,0 +1,265 @@
+{
+  "thresholds": {
+    "z": 2.0,
+    "loo_delta_dmax": 0.015,
+    "min_concepts": 25
+  },
+  "excluded": {
+    "AYNU": "Heavy Persian replacement of basic vocabulary (dEndan, dEstE, SEms, atES, zEbun, ...): contact, not Turkic inheritance; LDND ~1 to nearly every other Turkic list"
+  },
+  "flagged": [
+    {
+      "lineage": "Kartvelian",
+      "id": "SVAN",
+      "language": "Svan",
+      "n_concepts": 39,
+      "mean_ldnd": 0.885,
+      "z": 5.72,
+      "weight": 0.306,
+      "loo_delta_dmax": 0.053,
+      "review": true
+    },
+    {
+      "lineage": "Araucanian",
+      "id": "RANQUELCHE",
+      "language": "Mapudungun",
+      "n_concepts": 38,
+      "mean_ldnd": 0.337,
+      "z": 13.92,
+      "weight": 0.431,
+      "loo_delta_dmax": 0.038,
+      "review": true
+    },
+    {
+      "lineage": "Iroquoian",
+      "id": "CHEROKEE",
+      "language": "Cherokee",
+      "n_concepts": 40,
+      "mean_ldnd": 0.937,
+      "z": 2.66,
+      "weight": 0.236,
+      "loo_delta_dmax": 0.033,
+      "review": true
+    },
+    {
+      "lineage": "Tuu",
+      "id": "NU",
+      "language": "N||ng",
+      "n_concepts": 35,
+      "mean_ldnd": 0.837,
+      "z": 5.07,
+      "weight": 0.254,
+      "loo_delta_dmax": 0.032,
+      "review": true
+    },
+    {
+      "lineage": "Iroquoian",
+      "id": "NOTTOWAY",
+      "language": "Nottoway",
+      "n_concepts": 29,
+      "mean_ldnd": 0.926,
+      "z": 2.45,
+      "weight": 0.23,
+      "loo_delta_dmax": 0.031,
+      "review": true
+    },
+    {
+      "lineage": "Burushaski",
+      "id": "BURUSHASKI_2",
+      "language": "Burushaski",
+      "n_concepts": 40,
+      "mean_ldnd": 0.48,
+      "z": 3.83,
+      "weight": 0.339,
+      "loo_delta_dmax": 0.029,
+      "review": true
+    },
+    {
+      "lineage": "Tarascan",
+      "id": "TARASCAN",
+      "language": "Purepecha",
+      "n_concepts": 40,
+      "mean_ldnd": 0.298,
+      "z": 1.84,
+      "weight": 0.399,
+      "loo_delta_dmax": 0.025,
+      "review": true
+    },
+    {
+      "lineage": "Abkhaz-Adyge",
+      "id": "ABKHAZ_2",
+      "language": "Abkhaz",
+      "n_concepts": 40,
+      "mean_ldnd": 0.883,
+      "z": 2.33,
+      "weight": 0.211,
+      "loo_delta_dmax": 0.022,
+      "review": true
+    },
+    {
+      "lineage": "Abkhaz-Adyge",
+      "id": "UBYKH",
+      "language": "Ubykh",
+      "n_concepts": 40,
+      "mean_ldnd": 0.871,
+      "z": 1.82,
+      "weight": 0.206,
+      "loo_delta_dmax": 0.022,
+      "review": true
+    },
+    {
+      "lineage": "Siouan",
+      "id": "CATAWBA",
+      "language": "Catawba",
+      "n_concepts": 36,
+      "mean_ldnd": 0.974,
+      "z": 3.67,
+      "weight": 0.191,
+      "loo_delta_dmax": 0.022,
+      "review": true
+    },
+    {
+      "lineage": "Kxa",
+      "id": "HOAN_HUC",
+      "language": "Amkoe",
+      "n_concepts": 33,
+      "mean_ldnd": 0.846,
+      "z": 2.2,
+      "weight": 0.233,
+      "loo_delta_dmax": 0.019,
+      "review": true
+    },
+    {
+      "lineage": "Kxa",
+      "id": "KUNG_EKOKA",
+      "language": "North-Central Ju",
+      "n_concepts": 29,
+      "mean_ldnd": 0.721,
+      "z": 0.44,
+      "weight": 0.219,
+      "loo_delta_dmax": 0.019,
+      "review": true
+    },
+    {
+      "lineage": "Ainu",
+      "id": "KURIL_AINU",
+      "language": "Hokkaido Ainu",
+      "n_concepts": 31,
+      "mean_ldnd": 0.487,
+      "z": 3.98,
+      "weight": 0.284,
+      "loo_delta_dmax": 0.019,
+      "review": true
+    },
+    {
+      "lineage": "Tarascan",
+      "id": "PUREPECHA",
+      "language": "Purepecha",
+      "n_concepts": 35,
+      "mean_ldnd": 0.281,
+      "z": 1.01,
+      "weight": 0.353,
+      "loo_delta_dmax": 0.019,
+      "review": true
+    },
+    {
+      "lineage": "Yukaghir",
+      "id": "SOUTHERN_YUKAGHIR",
+      "language": "Southern Yukaghir",
+      "n_concepts": 38,
+      "mean_ldnd": 0.593,
+      "z": 2.97,
+      "weight": 0.284,
+      "loo_delta_dmax": 0.019,
+      "review": true
+    },
+    {
+      "lineage": "Nivkh",
+      "id": "GILYAK",
+      "language": "Amur Nivkh",
+      "n_concepts": 28,
+      "mean_ldnd": 0.462,
+      "z": 2.02,
+      "weight": 0.266,
+      "loo_delta_dmax": 0.017,
+      "review": true
+    },
+    {
+      "lineage": "Kuliak",
+      "id": "IK_4",
+      "language": "Ik",
+      "n_concepts": 33,
+      "mean_ldnd": 0.614,
+      "z": 0.18,
+      "weight": 0.234,
+      "loo_delta_dmax": 0.017,
+      "review": true
+    },
+    {
+      "lineage": "Great Andamanese",
+      "id": "AKA_KORA",
+      "language": "Akakora",
+      "n_concepts": 37,
+      "mean_ldnd": 0.872,
+      "z": 5.65,
+      "weight": 0.189,
+      "loo_delta_dmax": 0.016,
+      "review": true
+    },
+    {
+      "lineage": "Khoe-Kwadi",
+      "id": "KWADI",
+      "language": "Kwadi",
+      "n_concepts": 29,
+      "mean_ldnd": 0.818,
+      "z": 3.48,
+      "weight": 0.185,
+      "loo_delta_dmax": 0.016,
+      "review": true
+    },
+    {
+      "lineage": "Nivkh",
+      "id": "GILYAK_SOUTH_SAKHALIN",
+      "language": "Amur Nivkh",
+      "n_concepts": 39,
+      "mean_ldnd": 0.444,
+      "z": 1.47,
+      "weight": 0.278,
+      "loo_delta_dmax": 0.016,
+      "review": true
+    },
+    {
+      "lineage": "Eskimo-Aleut",
+      "id": "ALEUT_2",
+      "language": "Aleut",
+      "n_concepts": 39,
+      "mean_ldnd": 0.961,
+      "z": 3.07,
+      "weight": 0.174,
+      "loo_delta_dmax": 0.015,
+      "review": true
+    },
+    {
+      "lineage": "Slavic",
+      "id": "POLABIAN",
+      "language": "Polabian",
+      "n_concepts": 36,
+      "mean_ldnd": 0.691,
+      "z": 4.55,
+      "weight": 0.193,
+      "loo_delta_dmax": 0.015,
+      "review": true
+    },
+    {
+      "lineage": "Mongolic",
+      "id": "BURIAT_RUSSIA",
+      "language": "Russia Buriat",
+      "n_concepts": 24,
+      "mean_ldnd": 0.652,
+      "z": -0.72,
+      "weight": 0.0,
+      "loo_delta_dmax": 0.0,
+      "review": true
+    }
+  ]
+}

@@ -82,6 +82,13 @@ genuinely different varieties, not a counting artifact.
 - `scripts/build_explorer.py` bundles `results/*.json` into `results/explorer.html`, a self-contained
   page (diversity ranking, scale profiles, between-lineage heatmap).
 
+## Excluding bad data
+
+`config/exclusions.tsv` (`id<TAB>reason`) lists doculects left out of every script. `scripts/audit.py` ranks
+doculects by how much removing them lowers their lineage's D_max (also flags thin coverage) and writes
+`results/audit.csv`; it never excludes anything itself. Currently excluded: `AYNU` (Turkic list with heavy
+Persian replacement; Turkic D_max 1.304 → 1.281). Review the audit, edit the file, rerun.
+
 ## Run
 
 ```bash

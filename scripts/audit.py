@@ -28,7 +28,7 @@ from isodiv.diversity import max_diversity, similarity_matrix
 
 Z_FLAG = 2.0          # mean LDND this many SDs above the lineage's other doculects
 LOO_FLAG = 0.015      # D_max drops by at least this when the doculect is removed
-MIN_CONCEPTS = 30     # of the 40-item list
+MIN_CONCEPTS = 25     # of the 40-item list (LDND itself needs 20 shared)
 
 
 def main() -> None:

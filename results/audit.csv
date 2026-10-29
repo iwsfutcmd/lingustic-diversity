@@ -1,0 +1,24 @@
+lineage,id,language,n_concepts,mean_ldnd,z,weight,loo_delta_dmax,review
+Kartvelian,SVAN,Svan,39,0.885,5.72,0.306,0.053,True
+Araucanian,RANQUELCHE,Mapudungun,38,0.337,13.92,0.431,0.038,True
+Iroquoian,CHEROKEE,Cherokee,40,0.937,2.66,0.236,0.033,True
+Tuu,NU,N||ng,35,0.837,5.07,0.254,0.032,True
+Iroquoian,NOTTOWAY,Nottoway,29,0.926,2.45,0.230,0.031,True
+Burushaski,BURUSHASKI_2,Burushaski,40,0.480,3.83,0.339,0.029,True
+Tarascan,TARASCAN,Purepecha,40,0.298,1.84,0.399,0.025,True
+Abkhaz-Adyge,ABKHAZ_2,Abkhaz,40,0.883,2.33,0.211,0.022,True
+Abkhaz-Adyge,UBYKH,Ubykh,40,0.871,1.82,0.206,0.022,True
+Siouan,CATAWBA,Catawba,36,0.974,3.67,0.191,0.022,True
+Kxa,HOAN_HUC,Amkoe,33,0.846,2.20,0.233,0.019,True
+Kxa,KUNG_EKOKA,North-Central Ju,29,0.721,0.44,0.219,0.019,True
+Ainu,KURIL_AINU,Hokkaido Ainu,31,0.487,3.98,0.284,0.019,True
+Tarascan,PUREPECHA,Purepecha,35,0.281,1.01,0.353,0.019,True
+Yukaghir,SOUTHERN_YUKAGHIR,Southern Yukaghir,38,0.593,2.97,0.284,0.019,True
+Nivkh,GILYAK,Amur Nivkh,28,0.462,2.02,0.266,0.017,True
+Kuliak,IK_4,Ik,33,0.614,0.18,0.234,0.017,True
+Great Andamanese,AKA_KORA,Akakora,37,0.872,5.65,0.189,0.016,True
+Khoe-Kwadi,KWADI,Kwadi,29,0.818,3.48,0.185,0.016,True
+Nivkh,GILYAK_SOUTH_SAKHALIN,Amur Nivkh,39,0.444,1.47,0.278,0.016,True
+Eskimo-Aleut,ALEUT_2,Aleut,39,0.961,3.07,0.174,0.015,True
+Slavic,POLABIAN,Polabian,36,0.691,4.55,0.193,0.015,True
+Mongolic,BURIAT_RUSSIA,Russia Buriat,24,0.652,-0.72,0.000,0.000,True
