@@ -89,6 +89,11 @@ doculects by how much removing them lowers their lineage's D_max (also flags thi
 `results/audit.csv`; it never excludes anything itself. Currently excluded: `AYNU` (Turkic list with heavy
 Persian replacement; Turkic D_max 1.304 → 1.281). Review the audit, edit the file, rerun.
 
+`scripts/loans.py` adds a contact check: for each doculect, how much closer is it to a *neighbouring unrelated
+language* (within 2000 km) than its own relatives are (`gap`, in LDND units)? Real contact cases stand out
+(Aynu 0.23, Moghol 0.24, both with Iranian neighbours); everything else in the lineages tried is below 0.13.
+Word-level masking of suspected loans is experimental.
+
 ## Run
 
 ```bash
