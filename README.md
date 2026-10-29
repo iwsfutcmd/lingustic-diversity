@@ -6,65 +6,76 @@
 
 **Approach**
 
-1. **Distances measured in amount of change, not time:** LDND on the 40-item ASJP lists
-   (Wichmann et al. 2010). This is Levenshtein distance normalized by word length, then divided by
-   the same measure computed between words with *different* meanings, which corrects for chance
-   resemblance. No time depth, no rate assumption.
-2. **Diversity that ignores duplicated varieties:** set Z = exp(−k·LDND) and compute the
+1. **Distances measured in amount of change, not time:** PMI-LDND on the 40-item ASJP lists. LDND
+   (Wichmann et al. 2010) is Levenshtein distance normalized by word length, then divided by the same
+   measure computed between words with *different* meanings, which corrects for chance resemblance.
+   PMI-LDND keeps that construction but aligns words with learned sound-correspondence scores instead of
+   a flat cost per changed segment (see [PMI distances](#pmi-distances-learned-sound-correspondences)).
+   No time depth, no rate assumption. `--distance ldnd` reproduces the plain-LDND pipeline.
+2. **Diversity that ignores duplicated varieties:** set Z = exp(−k·d) and compute the
    **Leinster–Meckes maximum diversity** D_max(Z). This is the effective number of fully distinct
    lineages. It is a property of Z alone (no abundance weights, no choice of order q), and adding
    an identical doculect cannot change it. Computed exactly by subset enumeration when n ≤ 14,
    otherwise as min pᵀZp on the probability simplex (multi-start SLSQP + polishing + KKT check).
 3. **Choosing k without a clock:** k_cal is set so that two doculects of the *same* language
-   (same Glottocode, entries named X / X_2) are 0.9-similar. The median LDND between such pairs is
-   0.30, which gives k_cal ≈ 0.35. The full curve of D_max against k is plotted as well.
+   (same Glottocode, entries named X / X_2) are 0.9-similar. The median PMI-LDND between such pairs is
+   0.228, which gives k_cal = 0.463 (LDND: 0.30 and 0.353). The full curve of D_max against k is plotted as well.
 
-## Results (ASJP v21, `asjp` tokenization)
+## Results (ASJP v21, `asjp` tokenization, PMI-LDND)
 
 D_max at k_cal. The interval is the 5–95% range over 30 draws, each keeping 30 of the 40 concepts.
+The LDND column is the previous pipeline (k_cal 0.353). The scales differ, so compare orderings and band gaps,
+not absolute values.
 
-| band | lineage | D_max | interval |
-|---|---|---|---|
-| isolate-like | Basque | 1.038 | 1.029–1.042 |
-| | Haida | 1.070 | 1.061–1.073 |
-| | Koreanic | 1.109 | 1.096–1.118 |
-| | Burushaski | 1.111 | 1.100–1.122 |
-| | Nivkh | 1.132 | 1.124–1.141 |
-| | Ainu | 1.137 | 1.131–1.148 |
-| genus-like | Slavic | 1.220 | 1.210–1.230 |
-| | Japonic | 1.224 | 1.215–1.233 |
-| | Kartvelian | 1.231 | 1.226–1.236 |
-| | Yeniseian | 1.237 | 1.230–1.245 |
-| | Germanic | 1.261 | 1.254–1.270 |
-| | Romance | 1.264 | 1.255–1.272 |
-| | Mongolic | 1.269 | 1.265–1.276 |
-| deep | Turkic | 1.300 | 1.295–1.306 |
-| | Uralic | 1.351 | 1.348–1.357 |
-| | Indo-European | 1.357 | 1.353–1.363 |
+| band | lineage | D_max | interval | LDND D_max |
+|---|---|---|---|---|
+| isolate-like | Basque | 1.032 | 1.026–1.038 | 1.037 |
+| | Haida | 1.073 | 1.062–1.077 | 1.068 |
+| | Koreanic | 1.115 | 1.102–1.128 | 1.110 |
+| | Burushaski | 1.116 | 1.102–1.131 | 1.113 |
+| | Nivkh | 1.139 | 1.129–1.154 | 1.131 |
+| | Ainu | 1.159 | 1.150–1.173 | 1.136 |
+| genus-like | Slavic | 1.238 | 1.224–1.254 | 1.220 |
+| | Japonic | 1.248 | 1.234–1.264 | 1.223 |
+| | Yeniseian | 1.264 | 1.251–1.274 | 1.236 |
+| | Kartvelian | 1.271 | 1.263–1.279 | 1.230 |
+| | Mongolic | 1.294 | 1.287–1.308 | 1.267 |
+| | Germanic | 1.302 | 1.295–1.313 | 1.268 |
+| | Romance | 1.307 | 1.294–1.320 | 1.271 |
+| | Turkic | 1.324 | 1.313–1.336 | 1.281 |
+| deep | Uralic | 1.456 | 1.447–1.466 | 1.358 |
+| | Indo-European | 1.474 | 1.465–1.485 | 1.367 |
+
+Across all 72 lineages the D_max ranking barely changes (Spearman 0.995 against LDND). What changes is the
+spacing. The isolate band hardly moves, while the deep families pull away: Uralic and Indo-European were about 0.08
+above Turkic and are now 0.13–0.15 above it. PMI finds more shared signal between distantly related lists, so a
+family's deep branches count as more distinct from each other relative to its shallow dialect clusters.
 
 **Dialect-counting robustness (Japonic, D_max at k_cal):**
 
-| sample | n | D_max |
-|---|---|---|
-| all doculects | 33 | 1.223 |
-| one per Glottocode | 10 | 1.195 |
-| all + Tokyo duplicated 3× | 36 | 1.223 (unchanged) |
-| Tokyo + Shuri only | 2 | 1.111 |
+| sample | n | D_max | equal-weight |
+|---|---|---|---|
+| all doculects | 33 | 1.248 | 1.212 |
+| one per Glottocode | 10 | 1.217 | 1.191 |
+| all + Tokyo duplicated 3× | 36 | 1.248 (unchanged) | 1.214 |
+| Tokyo + Shuri only | 2 | 1.126 | 1.126 |
 
-The naive equal-weight diversity drops when Tokyo is duplicated; D_max does not move. The last row
+D_max does not move when Tokyo is duplicated. The last row
 falls because two doculects miss real Ryukyuan breadth (e.g. Yonaguni). That is under-sampling of
 genuinely different varieties, not a counting artifact.
 
 **Reading:**
-- The bands do not overlap. Japonic measures as a genus-sized family, level with Slavic and
-  Kartvelian, so including Ryukyuan is not a counting artifact.
+- The bands do not overlap. Japonic measures as a genus-sized family, level with Slavic,
+  so including Ryukyuan is not a counting artifact.
 - Koreanic (with Jeju) stays in the isolate band.
 - Yeniseian scores as genus-sized, so Ket is a "last survivor", not an isolate.
+- Turkic now sits at the top of the genus band rather than at the bottom of the deep band, closer to its usual
+  reading as a shallow family.
 
 ## Caveats
 
-- **Noise floor.** Same-language ASJP doculect pairs have LDND 0.11 / 0.30 / 0.57 at the 10th /
-  50th / 90th percentile. At this resolution the isolate band overlaps "one language transcribed
+- **Noise floor.** Same-language ASJP doculect pairs have PMI-LDND 0.086 / 0.228 / 0.474 at the 10th /
+  50th / 90th percentile (LDND 0.11 / 0.30 / 0.57). At this resolution the isolate band overlaps "one language transcribed
   several times", so lineages *within* that band cannot be ranked against each other.
 - **Sampling.** D_max is invariant to *duplicates*, not to documenting *more distinct* varieties.
   That is intended, since more distinct varieties is real diversity, but undersampled lineages
@@ -83,9 +94,12 @@ statistics, whenever their doculects share a top-level Family.
 
 ## Explorer and cross-family check
 
-- `scripts/cross_family.py` compares lineages with each other: mean LDND within and between 48 lineages
+- `scripts/cross_family.py` compares lineages with each other: mean distance within and between the 72 lineages
   (see Lineages), and D_max of two lineages together vs. apart.
-  Japonic ↔ Kartvelian: mean LDND 0.98 vs. 0.55 / 0.69 within. Across 2,483 unrelated pairs the mean is 0.984 (lowest 0.911).
+  Japonic ↔ Kartvelian: mean PMI-LDND 0.98 vs. 0.43 / 0.60 within. Across 2,483 unrelated lineage pairs the mean is
+  0.973 (LDND 0.984). The closest are Tuu ↔ Kxa 0.857, Mongolic ↔ Tungusic 0.868, Koreanic ↔ Burushaski 0.872 and
+  Khoe-Kwadi ↔ Tuu 0.876 (LDND 0.911–0.929, same pairs). Kalahari Basin and Altaic-area contact fit the others;
+  Koreanic ↔ Burushaski (3 vs 10 doculects, no contact) shows PMI can also pull chance resemblances closer.
 - `scripts/build_explorer.py` bundles `results/*.json` into `results/explorer.html`, a self-contained
   page (diversity ranking, scale profiles, between-lineage heatmap).
 
@@ -94,10 +108,13 @@ statistics, whenever their doculects share a top-level Family.
 `config/exclusions.tsv` (`id<TAB>reason`) lists doculects left out of every script. `scripts/audit.py` ranks
 doculects by how much removing them lowers their lineage's D_max (also flags thin coverage) and writes
 `results/audit.csv`; it never excludes anything itself. Currently excluded: `AYNU` (Turkic list with heavy
-Persian replacement; Turkic D_max 1.304 → 1.281). Review the audit, edit the file, rerun.
+Persian replacement; under LDND, Turkic D_max 1.304 → 1.281). Review the audit, edit the file, rerun.
+The leave-one-out flag (0.015) is in D_max units, so the wider PMI-LDND scale flags more doculects: 32 vs 24
+under LDND, mostly deep single branches (Pumpokol in Yeniseian, Tlingit, Manx and Scottish Gaelic in Celtic).
 
 `scripts/loans.py` adds a contact check: for each doculect, how much closer is it to a *neighbouring unrelated
-language* (within 2000 km) than its own relatives are (`gap`, in LDND units)? Real contact cases stand out
+language* (within 2000 km) than its own relatives are (`gap`, in LDND units; this check stays on plain LDND,
+since its thresholds were set in those units)? Real contact cases stand out
 (Aynu 0.23, Moghol 0.24, both with Iranian neighbours); everything else in the lineages tried is below 0.13.
 Word-level masking of suspected loans is experimental.
 
@@ -117,9 +134,11 @@ https://github.com/lexibank/wold data/wold`, then:
 
 `src/isodiv/pmi.py` replaces Levenshtein's flat substitution cost with segment scores learned as pointwise
 mutual information from probable cognates (after Jäger 2013, 2018): affine-gap Needleman–Wunsch, batched in numpy.
-Training uses no classification. It screens 400k random doculect pairs, keeps those with LDND < 0.7, then keeps
+Training uses no classification. It screens random doculect pairs, keeps those with LDND < 0.7, then keeps
 same-concept word pairs whose score beats the 99th percentile of different-concept pairs, re-estimating until stable.
-The learned scores encode correspondence, not just phonetic closeness: d:t −0.81 vs d:p −7.16, and h:p −0.49
+`scripts/pmi_train.py` trains the pipeline's model on all of ASJP (1M pairs screened, 3,939 kept;
+`results/pmi_model_all.tsv`). The evaluation below trains its own model with the test doculects held out.
+The learned scores (evaluation model) encode correspondence, not just phonetic closeness: d:t −0.81 vs d:p −7.16, and h:p −0.49
 vs t:p −3.49 (Japonic *p > h).
 
 `scripts/pmi_eval.py` tests whether a distance ranks classes of doculect pairs in the right order:
@@ -149,18 +168,21 @@ pairs, all pidgins with their lexifier. Unrelated *neighbours* are closer than d
 distance (AUC 0.64–0.67), so ASJP lists carry some areal signal. PMI-LDND picks up slightly more of it (0.668 vs
 0.644), but it separates real deep relatives from unrelated neighbours better than LDND (0.778 vs 0.740).
 
-The pipeline still uses LDND; switching `run_analysis.py` to PMI-LDND (and re-calibrating k on its noise floor)
-is the next step.
+Every pipeline script takes `--distance pmi|ldnd`. `run_analysis.py` defaults to `pmi` and records the choice in
+`summary.json`; the later scripts follow it. Files and fields keep their `ldnd` names (`ldnd_*.tsv`,
+`max_ldnd`) and hold whichever distance was used.
 
 ## Run
 
 ```bash
 git clone --depth 1 https://github.com/lexibank/asjp.git data/asjp
 pip install -e '.[dev]'
-pytest                               # property tests: duplicate invariance, monotonicity, QP == exact
-python scripts/run_analysis.py       # → results/summary.{csv,json}, diversity_profiles.png, ldnd_*.tsv
+pytest                               # property tests: duplicate invariance, monotonicity, QP == exact, PMI alignment
+python scripts/pmi_train.py          # → results/pmi_model_all.tsv  (~1 min; skip with --distance ldnd)
+python scripts/run_analysis.py       # → results/summary.{csv,json}, diversity_profiles.png, ldnd_*.tsv  (~20 min)
 python scripts/bootstrap.py          # → results/bootstrap.json
-PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{csv,json,png}
+PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{csv,json,png}  (~17 min)
+PYTHONPATH=scripts python scripts/audit.py          # → results/audit.{csv,json}
 python scripts/build_explorer.py     # → results/explorer.html
 python scripts/pmi_eval.py           # → results/pmi_model.tsv, pmi_eval.json, pmi_eval_pairs.csv (--train geo|geo-no-dup to compare)
 ```
@@ -170,7 +192,8 @@ tuples of opaque segment tokens, so any script or segmentation works.
 
 ## Next steps
 
-- Switch the pipeline to PMI-LDND (see above), which separates relatedness levels better than LDND.
+- Recalibrate `loans.py` thresholds in PMI-LDND units, and check whether PMI's pull on chance resemblances
+  (Koreanic ↔ Burushaski) needs a correction.
 - Use longer, expert-cognate-coded lists from Lexibank (Japonic, Koreanic, Ainu datasets) to get
   better resolution inside the isolate band.
 - Report the whole D_max(k) curve as the diversity measure, rather than a single k.

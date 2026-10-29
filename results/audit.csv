@@ -1,192 +1,452 @@
 lineage,id,language,n_concepts,mean_ldnd,z,weight,loo_delta_dmax,review
-Kartvelian,SVAN,Svan,39,0.885,5.72,0.306,0.053,True
-Araucanian,RANQUELCHE,Mapudungun,38,0.337,13.92,0.431,0.038,True
-Iroquoian,CHEROKEE,Cherokee,40,0.937,2.66,0.236,0.033,True
-Tuu,NU,N||ng,35,0.837,5.07,0.254,0.032,True
-Iroquoian,NOTTOWAY,Nottoway,29,0.926,2.45,0.230,0.031,True
-Burushaski,BURUSHASKI_2,Burushaski,40,0.480,3.83,0.339,0.029,True
-Tarascan,TARASCAN,Purepecha,40,0.298,1.84,0.399,0.025,True
-Abkhaz-Adyge,ABKHAZ_2,Abkhaz,40,0.883,2.33,0.211,0.022,True
-Abkhaz-Adyge,UBYKH,Ubykh,40,0.871,1.82,0.206,0.022,True
-Siouan,CATAWBA,Catawba,36,0.974,3.67,0.191,0.022,True
-Kxa,HOAN_HUC,Amkoe,33,0.846,2.20,0.233,0.019,True
-Kxa,KUNG_EKOKA,North-Central Ju,29,0.721,0.44,0.219,0.019,True
-Ainu,KURIL_AINU,Hokkaido Ainu,31,0.487,3.98,0.284,0.019,True
-Tarascan,PUREPECHA,Purepecha,35,0.281,1.01,0.353,0.019,True
-Yukaghir,SOUTHERN_YUKAGHIR,Southern Yukaghir,38,0.593,2.97,0.284,0.019,True
-Kipchak,SIBERIAN_TATAR,Siberian Tatar,36,0.700,3.17,0.209,0.018,True
-Nivkh,GILYAK,Amur Nivkh,28,0.462,2.02,0.266,0.017,True
-Kuliak,IK_4,Ik,33,0.614,0.18,0.234,0.017,True
-Great Andamanese,AKA_KORA,Akakora,37,0.872,5.65,0.189,0.016,True
-Khoe-Kwadi,KWADI,Kwadi,29,0.818,3.48,0.185,0.016,True
-Nivkh,GILYAK_SOUTH_SAKHALIN,Amur Nivkh,39,0.444,1.47,0.278,0.016,True
-Eskimo-Aleut,ALEUT_2,Aleut,39,0.961,3.07,0.174,0.015,True
-Slavic,POLABIAN,Polabian,36,0.691,4.55,0.193,0.015,True
-Celtic,MANX,Manx,40,0.838,1.97,0.180,0.014,False
-Celtic,GAELIC_SCOTTISH,Scottish Gaelic,40,0.836,1.92,0.182,0.014,False
-Oghuz,SALAR_2,Salar,39,0.508,2.56,0.201,0.012,False
-Berber,TAMASHEQ_2,Tamasheq,27,0.831,3.04,0.156,0.012,False
-Saami,SAAMI_UME,Ume Saami,35,0.762,2.19,0.160,0.010,False
-Samoyedic,FOREST_ENETS_2,Forest Enets,39,0.838,2.62,0.147,0.010,False
-Samoyedic,KARAGASSISCH,Mator-Taigi-Karagas,34,0.834,2.22,0.175,0.010,False
-Balto-Slavic,OLD_PRUSSIAN,Old Prussian,38,0.834,2.57,0.137,0.008,False
-Arabic,KIBERA_KENYA,Nubi,39,0.686,2.96,0.143,0.008,False
-Finnic,VOTIC_2,Votic,40,0.575,1.70,0.153,0.007,False
-Kipchak,KRIMCHAK,Krymchak,39,0.605,1.20,0.151,0.007,False
-Saami,SOUTH_SAAMI,South Saami,35,0.754,1.97,0.133,0.007,False
-Oghuz,IRAN_TURKIC,Turkish,40,0.462,1.86,0.160,0.007,False
-Saami,SOUTHERN_SAAMI,South Saami,40,0.738,1.59,0.129,0.007,False
-Min,HAINAN_MINNAN_CHINESE,Min Nan Chinese,37,0.752,1.80,0.129,0.006,False
-Balto-Slavic,POLABIAN,Polabian,36,0.717,1.27,0.118,0.006,False
-Indo-Aryan,BROKSKAT,Brokskat,26,0.824,2.48,0.111,0.006,False
-Finnic,INGRIAN,Ingrian,33,0.567,1.54,0.141,0.006,False
-Polynesian,NUKUORO,Nukuoro,35,0.549,2.27,0.139,0.006,False
-Berber,ZENAGA,Zenaga,36,0.805,2.58,0.116,0.005,False
-Samoyedic,KAMAS,Kamas-Koibal,40,0.792,0.09,0.108,0.005,False
-Finnic,LUDIAN,Ludian,39,0.565,1.50,0.129,0.005,False
-Balto-Slavic,LITHUANIAN_2,Lithuanian,40,0.850,2.76,0.134,0.005,False
-Celtic,OLD_IRISH,Early Irish,39,0.758,0.49,0.112,0.005,False
-Saami,AKKALA_SAMI,Akkala Saami,28,0.690,0.61,0.117,0.005,False
-Indo-Aryan,GARAM_CHISHMA_KHOWAR,Khowar,34,0.832,2.60,0.103,0.005,False
-Finnic,LIVE,Liv,35,0.576,1.73,0.131,0.005,False
-Min,YONGAN_CHINESE,Min Zhong Chinese,40,0.754,1.84,0.107,0.005,False
-Min,MIN_SANMING_TAINING,Min Bei Chinese,29,0.743,1.66,0.105,0.005,False
-Kuki-Chin,KHUMI_MANGLUNG,Khumi Chin,37,0.774,2.50,0.109,0.005,False
-Kipchak,KARAIM,Karaim,31,0.594,1.02,0.124,0.005,False
-Arabic,SOUKHNE_SYRIAN_ARABIC,Gilit Mesopotamian Arabic,39,0.619,1.45,0.114,0.004,False
-Kipchak,KAZAKH_2,Kazakh,40,0.599,1.10,0.121,0.004,False
-South Dravidian,KUI,Kui (India),29,0.821,3.00,0.105,0.004,False
-Polynesian,TUAMOTUAN,Tuamotuan,31,0.527,1.88,0.119,0.004,False
-Sinitic,OLD_CHINESE,Old Chinese,34,0.866,2.82,0.093,0.004,False
-Oghuz,TURKISH,Turkish,39,0.488,2.24,0.155,0.004,False
-Indo-Aryan,KHAH,Khah,40,0.799,2.09,0.095,0.004,False
-Min,PUTIAN_CHINESE,Pu-Xian Chinese,40,0.709,1.13,0.097,0.004,False
-Celtic,IRISH,Irish,40,0.771,0.69,0.102,0.004,False
-Saami,SKOLT_SAAMI_2,Skolt Saami,40,0.680,0.42,0.102,0.004,False
-Min,MIN_NINGDE_GUTIAN,Min Dong Chinese,31,0.721,1.31,0.098,0.004,False
-Oghuz,TURKMEN_2,Turkmen,29,0.458,1.81,0.125,0.004,False
-Indo-Aryan,JADGALI,Jadgali,39,0.773,1.71,0.089,0.003,False
-Samoyedic,TUNDRA_NENETS,Tundra Nenets,40,0.783,-0.29,0.105,0.003,False
-Kuki-Chin,WAKUNG,Mro Chin,39,0.755,2.21,0.090,0.003,False
-Celtic,CORNISH,Cornish,40,0.679,-0.68,0.101,0.003,False
-Kam-Tai,LAKKJA,Lakkia,34,0.872,2.52,0.118,0.003,False
-Finnic,LIVONIAN,Liv,40,0.541,1.05,0.109,0.003,False
-Min,MIN_FUZHOU_QINJIANG,Min Dong Chinese,35,0.758,1.90,0.088,0.003,False
-Berber,CHAOUI,Chaouia of the Aures,34,0.673,0.63,0.085,0.003,False
-Samoyedic,NORTHERN_SELKUP,Selkup,40,0.786,-0.19,0.099,0.003,False
-Berber,ZENAGA_2,Zenaga,40,0.780,2.17,0.084,0.003,False
-Lolo-Burmese,GONG,Ugong,40,0.878,2.86,0.074,0.003,False
-South Dravidian,TODA_2,Toda,40,0.792,2.36,0.081,0.003,False
-Balto-Slavic,LATVIAN,Standard Latvian,40,0.843,2.67,0.095,0.003,False
-Celtic,WELSH_2,Welsh,40,0.663,-0.95,0.131,0.003,False
-Oghuz,AZERBAIJANI,North Azerbaijani,40,0.433,1.48,0.131,0.003,False
-Arabic,NORTH_MESOPOTAMIAN_ARABIC,North Mesopotamian Arabic,31,0.614,1.35,0.092,0.003,False
-Finnic,ESTONIAN_VORO,South Estonian,35,0.495,0.25,0.103,0.003,False
-Arabic,MALTESE,Maltese,40,0.672,2.63,0.099,0.003,False
-Polynesian,TAHITIAN_2,Tahitian,35,0.550,2.29,0.149,0.003,False
-Samoyedic,NGANASAN_2,Nganasan,40,0.787,-0.14,0.098,0.002,False
-Balto-Slavic,LATVIAN_2,Standard Latvian,40,0.837,2.60,0.088,0.002,False
-Samoyedic,SELKUP,Selkup,38,0.781,-0.40,0.094,0.002,False
-Lolo-Burmese,PHUNOI,Phunoi,37,0.874,2.70,0.070,0.002,False
-Semitic,MESMES_2,Mesmes,38,0.907,1.98,0.069,0.002,False
-Kuki-Chin,LAKHER_MARA,Mara,37,0.692,1.32,0.078,0.002,False
-Polynesian,RAPA,Mangaia-Old Rapa,38,0.517,1.71,0.092,0.002,False
-Iranian,IRON_OSSETIAN,Iron Ossetian,40,0.882,2.48,0.074,0.002,False
-South Dravidian,TELUGU_4,Telugu,40,0.801,2.55,0.087,0.002,False
-Kuki-Chin,CHOTHE,Chothe,39,0.691,1.31,0.078,0.002,False
-South Dravidian,TODA,Toda,34,0.788,2.28,0.074,0.002,False
-Cushitic,MOGOGODO,Yaaku,30,0.963,2.10,0.062,0.002,False
-Berber,AWJILAH,Awjilah,33,0.708,1.11,0.074,0.002,False
-Celtic,BRETON,Breton,40,0.672,-0.80,0.096,0.002,False
-Iranian,OSSETIC_DIGOR,Iron Ossetian,40,0.894,2.74,0.071,0.002,False
-Lolo-Burmese,YANGON_BURMESE,Burmese,39,0.866,2.38,0.067,0.002,False
-Oghuz,SHEYH_TEYMUR_KHORASANI,Khorasan Turkic,34,0.339,0.29,0.102,0.002,False
-Polynesian,ANIWA,Futuna-Aniwa,38,0.485,1.17,0.103,0.002,False
-Kuki-Chin,ANAL_2,Anal,37,0.709,1.56,0.075,0.002,False
-South Dravidian,MALAYALAM_3,Malayalam,40,0.734,1.19,0.072,0.002,False
-Min,MIN_NANPING,Min Bei Chinese,35,0.748,1.75,0.074,0.002,False
-Samoyedic,NGANASAN,Nganasan,38,0.781,-0.37,0.089,0.002,False
-Sinitic,WUTUN,Wutunhua,40,0.814,1.55,0.066,0.002,False
-South Dravidian,PENGO,Pengo,32,0.745,1.39,0.073,0.002,False
-Cushitic,KWADZA,Kw'adza,33,0.968,2.21,0.057,0.002,False
-Quichean-Mamean,KEKCHI,Q'eqchi',39,0.666,2.19,0.104,0.002,False
-Semitic,WESTERN_NEO_ARAMAIC,Western Neo-Aramaic,30,0.848,1.08,0.060,0.002,False
-Sinitic,GAN_SHAOWU,Gan Chinese,28,0.819,1.67,0.064,0.002,False
-Semitic,AKKADIAN_2,Akkadian,37,0.858,1.23,0.057,0.002,False
-Celtic,BRETON_2,Breton,40,0.669,-0.85,0.085,0.002,False
-Kam-Tai,DONG_GUIZHOU_ZHANGLU,Southern Dong,35,0.838,2.10,0.078,0.002,False
-Bodic,PATTANI,Pattani,40,0.859,1.56,0.069,0.002,False
-Indo-Aryan,ANGLOROMANI,Archaic Angloromani,40,0.715,0.89,0.063,0.002,False
-Bodic,CHAUDANGSI,Chaudangsi,37,0.856,1.51,0.061,0.001,False
-Semitic,INNEMOR,Inoric,31,0.912,2.07,0.062,0.001,False
-Semitic,GAFAT,Gafat,31,0.896,1.82,0.057,0.001,False
-Sinitic,WU_JINHUA_PUJIANG,Wu Chinese,33,0.800,1.23,0.060,0.001,False
-Bodic,TIBETAN_ALKE_QINGHAI_ALIKE,Amdo Tibetan,36,0.832,1.10,0.062,0.001,False
-Cushitic,AASAX,Aasax,36,0.957,1.95,0.050,0.001,False
-Saami,NORTH_SAAMI,North Saami,33,0.646,-0.21,0.066,0.001,False
-Kam-Tai,LVCHUN_TAI,Tai Hongjin,40,0.719,0.72,0.058,0.001,False
-Bodic,DONGWANG_TIBETAN,Khams Tibetan,40,0.843,1.28,0.057,0.001,False
-Sinitic,MIDDLE_CHINESE,Middle Chinese,40,0.821,1.72,0.055,0.001,False
-Saami,KILDIN_SAAMI_2,Kildin Saami,40,0.659,0.03,0.069,0.001,False
-Bodic,RANG_PAS,Tibetan,31,0.861,1.59,0.072,0.001,False
-Semitic,BIBLICAL_HEBREW,Ancient Hebrew,33,0.856,1.20,0.057,0.001,False
-Samoyedic,NENETS,Tundra Nenets,38,0.764,-1.17,0.065,0.001,False
-Kuki-Chin,HRANGKHOL,Hrangkhol,33,0.664,0.95,0.060,0.001,False
-Indo-Aryan,KASHMIRI,Kashmiri,40,0.788,1.93,0.056,0.001,False
-Oceanic,REEF_ISLANDS,Äiwoo,35,0.981,2.15,0.047,0.001,False
-Iranian,SARIKOLI,Sarikoli,40,0.837,1.56,0.062,0.001,False
-Indo-Aryan,CHAKMA_UnnamedInSource,Chakma,40,0.706,0.76,0.056,0.001,False
-Iranian,ORMURI,Ormuri,35,0.830,1.43,0.052,0.001,False
-Saami,LULE_SAAMI_2,Lule Saami,40,0.662,0.08,0.060,0.001,False
-Quichean-Mamean,IXIL_CHAJUL,Ixil,40,0.627,1.52,0.064,0.001,False
-Bodic,KURTOP,Kurtokha,32,0.825,0.98,0.051,0.001,False
-Cushitic,BEJA,Beja,38,0.952,1.82,0.051,0.001,False
-Quichean-Mamean,MAM_TACANA_2,Mam,36,0.630,1.58,0.076,0.001,False
-Bodic,GHACHOK,Gurung,40,0.836,1.17,0.054,0.001,False
-Sinitic,JIN_CHANGZHI_TUNLIU,Jinyu Chinese,29,0.771,0.60,0.054,0.001,False
-Indo-Aryan,DAMELI_2,Dameli,40,0.765,1.60,0.053,0.001,False
-Kipchak,TATAR_2,Tatar,40,0.548,0.31,0.068,0.001,False
-Berber,TETSERRET_2,Tetserret,32,0.748,1.68,0.066,0.001,False
-Sinitic,MIN_NANPING_WANGTAI,Min Bei Chinese,29,0.826,1.84,0.052,0.001,False
-Min,MIN_WENZHOU_DONGTOU,Min Nan Chinese,28,0.632,-0.00,0.068,0.001,False
-Chadic,BALDEMU,Baldamu,31,0.973,2.81,0.044,0.001,False
-Quichean-Mamean,KICHEE_SAMAYAC_1,K'iche',37,0.543,0.16,0.073,0.001,False
-Kam-Tai,SHAN_3,Shan,33,0.694,0.44,0.056,0.001,False
-Kam-Tai,DONGMEN_MULAM,Mulam,30,0.824,1.93,0.064,0.001,False
-Finnic,VEPS_2,Veps,40,0.469,-0.18,0.075,0.001,False
-Bodic,BAIMA_SICHUAN_JIUZHAIGOU,Baima,28,0.897,2.21,0.066,0.001,False
-Kipchak,BASHKIR_2,Bashkir,40,0.588,0.92,0.136,0.001,False
-Lolo-Burmese,ACHANG,Longchuan Achang,39,0.847,1.66,0.052,0.001,False
-Iranian,SHIMSAL_WAKHI,Wakhi,26,0.858,1.99,0.078,0.001,False
-Kuki-Chin,LAMKANG,Lamkang,36,0.663,0.93,0.054,0.001,False
-Kuki-Chin,ZOTUNG,Zotung Chin,40,0.724,1.77,0.082,0.001,False
-Bodic,BAIMA_SICHUAN_PINGWU,Baima,31,0.881,1.93,0.058,0.001,False
-Kipchak,KARAKALPAK,Kara-Kalpak,39,0.530,0.05,0.065,0.001,False
-Kam-Tai,ONG_BE,Western Ong-Be,37,0.792,1.55,0.073,0.001,False
-Chadic,BACAMA,Bacama,35,0.968,2.46,0.040,0.001,False
-Berber,GHADAMES,Ghadames,38,0.681,0.74,0.061,0.001,False
-Finnic,FINNISH_2,Finnish,40,0.463,-0.28,0.066,0.001,False
-Arabic,MALTESE_ARABIC,Maltese,40,0.634,1.77,0.060,0.001,False
-Balto-Slavic,UKRAINIAN_2,Ukrainian,40,0.640,0.50,0.067,0.001,False
-Arabic,STANDARD_ARABIC,Standard Arabic,37,0.578,0.64,0.057,0.001,False
-Berber,TAMAJEQ_TAYART_AIR,Tayart Tamajeq,38,0.704,1.06,0.051,0.001,False
-Oceanic,ARO_NEW_CALEDONIA,Arhö,30,0.981,2.13,0.041,0.001,False
-Arabic,HIJAZI_ARABIC,Hijazi Arabic,32,0.570,0.47,0.053,0.001,False
-Chadic,KABALAY,Kabalai,37,0.968,2.43,0.038,0.001,False
-Kipchak,CRIMEAN_TATAR,Crimean Tatar,38,0.489,-0.55,0.056,0.001,False
-Saami,INARI_SAAMI,Inari Saami,33,0.601,-1.08,0.072,0.001,False
-Berber,TARIFIT_GUELAIA,Tarifiyt-Beni-Iznasen-Eastern Middle Atlas Berber,35,0.607,-0.25,0.053,0.001,False
-Min,MIN_HAIKOU,Min Nan Chinese,36,0.658,0.37,0.059,0.001,False
-Polynesian,SAMOAN_2,Samoan,36,0.463,0.81,0.060,0.001,False
-Polynesian,MARQUESAN_SOUTH,South Marquesan,37,0.449,0.59,0.057,0.001,False
-Arabic,TRIPOLI_JEWISH_ARABIC,Libyan Arabic,30,0.622,1.52,0.053,0.001,False
-Quichean-Mamean,POCOMAM_EASTERN,Poqomam,40,0.634,1.64,0.097,0.001,False
-Finnic,FINNISH,Finnish,31,0.499,0.32,0.052,0.001,False
-Quichean-Mamean,MAM_TODOS_SANTOS_CUCHUMATAN_1,Mam,40,0.626,1.51,0.051,0.001,False
-Quichean-Mamean,TZUTUJIL_SANTIAGO_ATITLAN,Tz'utujil,40,0.543,0.15,0.058,0.001,False
-Polynesian,NIUAFOOU,Niuafo'ou,34,0.437,0.39,0.063,0.001,False
-Oghuz,LANGAR_KHORASANI,Khorasan Turkic,32,0.345,0.36,0.051,0.000,False
-Polynesian,HAWAIIAN_2,Hawaiian,40,0.486,1.19,0.061,0.000,False
-Balto-Slavic,LITHUANIAN,Lithuanian,40,0.820,2.39,0.002,0.000,False
-Kam-Tai,JINXIU_LAKKIA,Lakkia,30,0.831,2.01,0.000,0.000,False
-Mongolic,BURIAT_RUSSIA,Russia Buriat,24,0.652,-0.72,0.000,0.000,True
+Kartvelian,SVAN,Svan,39,0.804,6.24,0.318,0.070,True
+Iroquoian,CHEROKEE,Cherokee,40,0.922,3.16,0.258,0.055,True
+Tuu,NU,N||ng,35,0.792,6.69,0.278,0.051,True
+Araucanian,RANQUELCHE,Mapudungun,38,0.280,9.91,0.439,0.043,True
+Iroquoian,NOTTOWAY,Nottoway,29,0.868,2.21,0.231,0.041,True
+Tarascan,TARASCAN,Purepecha,40,0.245,3.06,0.425,0.032,True
+Siouan,CATAWBA,Catawba,36,0.939,3.57,0.195,0.031,True
+Abkhaz-Adyge,UBYKH,Ubykh,40,0.782,1.83,0.214,0.030,True
+Abkhaz-Adyge,ABKHAZ_2,Abkhaz,40,0.794,2.37,0.222,0.029,True
+Burushaski,BURUSHASKI_2,Burushaski,40,0.370,3.76,0.340,0.029,True
+Kipchak,SIBERIAN_TATAR,Siberian Tatar,36,0.581,3.78,0.239,0.027,True
+Khoe-Kwadi,KWADI,Kwadi,29,0.788,4.17,0.201,0.026,True
+Kuliak,IK_4,Ik,33,0.561,0.30,0.261,0.026,True
+Kxa,HOAN_HUC,Amkoe,33,0.780,2.43,0.243,0.026,True
+Great Andamanese,AKA_KORA,Akakora,37,0.815,6.21,0.209,0.026,True
+Eskimo-Aleut,ALEUT_2,Aleut,39,0.942,3.26,0.178,0.021,True
+Nivkh,GILYAK,Amur Nivkh,28,0.381,2.53,0.273,0.020,True
+Ainu,KURIL_AINU,Hokkaido Ainu,31,0.415,3.58,0.274,0.019,True
+Yukaghir,NORTHERN_YUKAGHIR,Northern Yukaghir,40,0.519,8.98,0.287,0.019,True
+Yeniseian,PUMPOKOL,Pumpokol,26,0.601,1.00,0.194,0.018,True
+Athabaskan-Eyak-Tlingit,TLINGIT,Tlingit,40,0.943,4.03,0.146,0.018,True
+Berber,TAMASHEQ_2,Tamasheq,27,0.725,3.33,0.173,0.018,True
+Kxa,KUNG_EKOKA,North-Central Ju,29,0.614,0.10,0.200,0.017,True
+Kuliak,TEPES,Soo,31,0.646,1.63,0.230,0.017,True
+Kuliak,NYANGI,Nyang'i,32,0.646,1.63,0.227,0.017,True
+Celtic,GAELIC_SCOTTISH,Scottish Gaelic,40,0.751,1.73,0.175,0.016,True
+Celtic,MANX,Manx,40,0.753,1.77,0.175,0.016,True
+Saami,SAAMI_UME,Ume Saami,35,0.661,2.44,0.179,0.016,True
+Khoe-Kwadi,MASARWA_TATI,Northern Tshwa,39,0.718,1.96,0.167,0.015,True
+Tarascan,PUREPECHA,Purepecha,35,0.204,0.44,0.338,0.015,True
+Samoyedic,FOREST_ENETS_2,Forest Enets,39,0.753,2.66,0.160,0.015,True
+Germanic,PROTO_GERMANIC,,31,0.670,3.95,0.173,0.015,False
+Eskimo-Aleut,ALEUT,Aleut,39,0.908,2.68,0.153,0.015,False
+Samoyedic,KARAGASSISCH,Mator-Taigi-Karagas,34,0.748,2.28,0.198,0.015,False
+Balto-Slavic,OLD_PRUSSIAN,Old Prussian,38,0.772,2.74,0.157,0.015,False
+Kxa,HOAN,Amkoe,37,0.737,1.57,0.184,0.014,False
+Kipchak,KRIMCHAK,Krymchak,39,0.502,1.78,0.195,0.014,False
+Kartvelian,LAZ_ARHAVI,Laz,40,0.575,-0.29,0.212,0.014,False
+Yukaghir,KOLYMA_YUKAGIR,Southern Yukaghir,33,0.500,-0.24,0.255,0.013,False
+Slavic,POLABIAN,Polabian,36,0.549,3.75,0.177,0.013,False
+Yeniseian,ARIN,Arin,34,0.618,1.38,0.169,0.013,False
+Yeniseian,KET_2,Ket,36,0.569,0.41,0.187,0.013,False
+Chukotko-Kamchatkan,CHUKCHEE_2,Chukchi,39,0.640,1.21,0.192,0.012,False
+Nivkh,GILYAK_SOUTH_SAKHALIN,Amur Nivkh,39,0.351,1.27,0.248,0.012,False
+Oghuz,SALAR_2,Salar,39,0.390,2.26,0.191,0.011,False
+Athabaskan-Eyak-Tlingit,EYAK,Eyak,40,0.897,2.99,0.121,0.011,False
+Arabic,KIBERA_KENYA,Nubi,39,0.581,3.10,0.159,0.011,False
+Yukaghir,SOUTHERN_YUKAGHIR,Southern Yukaghir,38,0.494,-0.98,0.239,0.011,False
+Siouan,OFO,Ofo,35,0.822,1.45,0.133,0.011,False
+Yukaghir,YUKAGHIR_TUNDRA,Northern Yukaghir,40,0.495,-0.91,0.219,0.011,False
+Oghuz,IRAN_TURKIC,Turkish,40,0.375,2.02,0.182,0.010,False
+Kartvelian,GEORGIAN_2,Georgian,40,0.614,0.15,0.201,0.010,False
+Finnic,INGRIAN,Ingrian,33,0.495,2.07,0.169,0.010,False
+Indo-Aryan,BROKSKAT,Brokskat,26,0.757,2.67,0.127,0.010,False
+Eskimo-Aleut,EAST_GREENLANDIC,Kalaallisut,40,0.729,0.62,0.128,0.010,False
+Ainu,AINU_SARU,Hokkaido Ainu,38,0.325,1.43,0.227,0.010,False
+Tuu,AUNI,Lower-Nosop,27,0.575,0.17,0.158,0.010,False
+Kxa,JUHOAN,South-Eastern Ju,38,0.582,-0.22,0.154,0.009,False
+Tungusic,EWEN,Even,31,0.687,3.00,0.178,0.009,False
+Great Andamanese,AKAR_BALE,Akarbale,36,0.709,0.34,0.143,0.009,False
+Chukotko-Kamchatkan,ITELMEN,West Itelmen,33,0.646,1.69,0.183,0.009,False
+Burushaski,CENTRAL_YASIN_BURUSHASKI,Burushaski,27,0.230,0.71,0.229,0.009,False
+Sinitic,OLD_CHINESE,Old Chinese,34,0.802,3.30,0.119,0.009,False
+Tungusic,OROCH,Oroch,39,0.636,1.94,0.137,0.009,False
+Indo-Aryan,GARAM_CHISHMA_KHOWAR,Khowar,34,0.770,2.88,0.119,0.009,False
+Arabic,SOUKHNE_SYRIAN_ARABIC,Gilit Mesopotamian Arabic,39,0.538,2.01,0.142,0.008,False
+Turkic,SIBERIAN_TATAR,Siberian Tatar,36,0.662,2.54,0.129,0.008,False
+Lolo-Burmese,GONG,Ugong,40,0.836,3.88,0.108,0.008,False
+Kuki-Chin,KHUMI_MANGLUNG,Khumi Chin,37,0.698,2.76,0.135,0.008,False
+Araucanian,MAPUDUNGUN_2,Mapudungun,37,0.181,-0.28,0.303,0.008,False
+Dravidian,BRAHUI_2,Brahui,40,0.872,3.44,0.147,0.008,False
+Abkhaz-Adyge,KABARDIAN,Kabardian,38,0.685,-0.55,0.162,0.008,False
+Chukotko-Kamchatkan,N_ITELMEN,West Itelmen,39,0.634,0.82,0.164,0.008,False
+Finnic,LUDIAN,Ludian,39,0.472,1.55,0.148,0.008,False
+Polynesian,TUAMOTUAN,Tuamotuan,31,0.499,2.17,0.139,0.008,False
+Indo-Aryan,KHAH,Khah,40,0.731,2.28,0.114,0.008,False
+Saami,AKKALA_SAMI,Akkala Saami,28,0.600,0.97,0.136,0.008,False
+Salishan,BELLA_COOLA,Bella Coola,40,0.887,1.98,0.099,0.008,False
+Eskimo-Aleut,YUPIK_SIRENIK,Old Sirenik,33,0.717,0.50,0.115,0.007,False
+Nivkh,NIVKH,Amur Nivkh,35,0.317,0.37,0.200,0.007,False
+Kuliak,IK,Ik,40,0.494,-0.55,0.168,0.007,False
+Celtic,IRISH,Irish,40,0.715,1.07,0.127,0.007,False
+Siouan,MANDAN,Mandan,39,0.804,1.21,0.105,0.007,False
+Min,MIN_NINGDE_GUTIAN,Min Dong Chinese,31,0.654,1.73,0.124,0.007,False
+Saami,SOUTH_SAAMI,South Saami,35,0.627,1.55,0.128,0.007,False
+Abkhaz-Adyge,ADYGHE_2,West Circassian,40,0.675,-0.77,0.139,0.007,False
+South Dravidian,KUI,Kui (India),29,0.765,2.90,0.113,0.007,False
+Indo-Aryan,JADGALI,Jadgali,39,0.706,1.93,0.106,0.007,False
+Oghuz,TURKMEN_2,Turkmen,29,0.370,1.93,0.151,0.007,False
+Nivkh,GILYAK_WEST_SAKHALIN,Amur Nivkh,36,0.273,-0.65,0.227,0.007,False
+Iroquoian,TUSCARORA,Tuscarora,40,0.651,0.10,0.109,0.006,False
+Japonic,JAPANESE_3,Japanese,40,0.533,2.70,0.153,0.006,False
+Turkic,CHUVASH,Chuvash,40,0.764,3.80,0.149,0.006,False
+Samoyedic,KAMAS,Kamas-Koibal,40,0.693,-0.07,0.109,0.006,False
+Japonic,HATERUMA_YAEYAMA,Yaeyama,38,0.489,1.40,0.133,0.006,False
+Berber,ZENAGA,Zenaga,36,0.691,2.60,0.118,0.006,False
+Finnic,VOTIC_2,Votic,40,0.464,1.39,0.134,0.006,False
+Tuu,XOON,East Taa,39,0.599,0.48,0.134,0.006,False
+Khoe-Kwadi,XIRI,Xiri,34,0.652,0.74,0.122,0.006,False
+Iroquoian,CAYUGA,Cayuga,40,0.593,-0.37,0.126,0.006,False
+Siouan,CROW,Crow,39,0.808,1.27,0.101,0.006,False
+Kipchak,KARAIM,Karaim,31,0.450,0.88,0.140,0.006,False
+Min,HAINAN_MINNAN_CHINESE,Min Nan Chinese,37,0.638,1.45,0.117,0.006,False
+Eskimo-Aleut,YUPIK_PACIFIC_GULF,Pacific Gulf Yupik,34,0.729,0.62,0.105,0.006,False
+Great Andamanese,AKA_BO,Akabo,35,0.691,-0.08,0.111,0.006,False
+Min,PUTIAN_CHINESE,Pu-Xian Chinese,40,0.624,1.23,0.108,0.006,False
+Balto-Slavic,LITHUANIAN_2,Lithuanian,40,0.775,2.78,0.138,0.006,False
+Great Andamanese,AKA_CARI,Akacari,36,0.713,0.42,0.111,0.006,False
+Finnic,ESTONIAN_VORO,South Estonian,35,0.426,0.66,0.141,0.006,False
+Saami,SKOLT_SAAMI_2,Skolt Saami,40,0.580,0.58,0.117,0.006,False
+Celtic,WELSH_2,Welsh,40,0.585,-0.81,0.142,0.006,False
+Min,YONGAN_CHINESE,Min Zhong Chinese,40,0.665,1.90,0.107,0.006,False
+Saami,SOUTHERN_SAAMI,South Saami,40,0.615,1.27,0.114,0.005,False
+Algic,YUROK,Yurok,40,0.924,2.20,0.082,0.005,False
+Tai-Kadai,MULAO_KADAI,Gelao Mulao,33,0.923,2.10,0.083,0.005,False
+Algic,CHEYENNE,Cheyenne,39,0.917,2.08,0.081,0.005,False
+Polynesian,RAPA,Mangaia-Old Rapa,38,0.501,2.19,0.116,0.005,False
+Chukotko-Kamchatkan,KORYAK,Koryak,40,0.596,-1.40,0.136,0.005,False
+Mongolic,SANTA_MONGOLIAN,Dongxiang,36,0.618,2.47,0.115,0.005,False
+Berber,CHAOUI,Chaouia of the Aures,34,0.597,0.95,0.103,0.005,False
+Balto-Slavic,POLABIAN,Polabian,36,0.585,0.78,0.102,0.005,False
+Japonic,NORTHERN_AMAMI_OSHIMA,Northern Amami-Oshima,34,0.516,2.16,0.119,0.005,False
+Japonic,YONAGUNI,Yonaguni,39,0.494,1.54,0.117,0.005,False
+Samoyedic,NORTHERN_SELKUP,Selkup,40,0.697,0.07,0.122,0.005,False
+Min,MIN_FUZHOU_QINJIANG,Min Dong Chinese,35,0.679,2.15,0.105,0.005,False
+Kartvelian,MINGRELIAN,Mingrelian,39,0.527,-0.88,0.135,0.005,False
+Oghuz,TURKISH,Turkish,39,0.390,2.26,0.153,0.005,False
+Hmong-Mien,MIAO_GUIZHOU_ZIYUN_TUANPO,Western Mashan Hmong,28,0.857,3.03,0.084,0.005,False
+Algic,ARAPAHO,Arapaho,31,0.905,1.86,0.078,0.005,False
+Kam-Tai,LAKKJA,Lakkia,34,0.808,2.54,0.126,0.005,False
+Finnic,LIVE,Liv,35,0.465,1.42,0.129,0.005,False
+Germanic,ENGLISH_2,English,40,0.594,2.15,0.117,0.005,False
+Celtic,OLD_IRISH,Early Irish,39,0.676,0.47,0.099,0.005,False
+Burushaski,BURUSHASKI,Burushaski,39,0.283,1.49,0.159,0.005,False
+Salishan,TILLAMOOK,Tillamook,37,0.862,1.42,0.079,0.005,False
+Polynesian,NUKUORO,Nukuoro,35,0.474,1.71,0.111,0.004,False
+Algic,BLACKFOOT,Siksika,38,0.898,1.74,0.076,0.004,False
+Tarascan,PURHEPECHA,Purepecha,29,0.165,-0.85,0.237,0.004,False
+Samoyedic,NGANASAN_2,Nganasan,40,0.699,0.14,0.122,0.004,False
+Tungusic,MANCHU_4,Manchu,40,0.596,1.21,0.109,0.004,False
+Abkhaz-Adyge,ABAZA,Abaza,39,0.693,-0.36,0.111,0.004,False
+Yeniseian,ASSAN,Assan,26,0.606,1.10,0.152,0.004,False
+South Dravidian,TODA,Toda,34,0.739,2.38,0.088,0.004,False
+Great Andamanese,AKA_KEDE,Akakede,37,0.695,-0.00,0.096,0.004,False
+Mongolic,BURIAT_MONGOLIA,Mongolia Buriat,30,0.612,2.21,0.115,0.004,False
+Uralic,KARAGASSISCH,Mator-Taigi-Karagas,34,0.891,2.12,0.078,0.004,False
+Dravidian,MALTO,Sauria Paharia,38,0.814,2.44,0.083,0.004,False
+Algic,MICHIF,Heritage Michif,37,0.870,1.28,0.072,0.004,False
+Algic,WIYOT,Wiyot,33,0.905,1.87,0.071,0.004,False
+South Dravidian,MALAYALAM_3,Malayalam,40,0.675,1.20,0.086,0.004,False
+Arabic,NORTH_MESOPOTAMIAN_ARABIC,North Mesopotamian Arabic,31,0.514,1.48,0.101,0.004,False
+Mongolic,KALMYK,Oirad-Kalmyk-Darkhat,40,0.610,2.13,0.102,0.004,False
+Great Andamanese,AKA_BEA,Akabea,36,0.677,-0.42,0.141,0.004,False
+Kuki-Chin,WAKUNG,Mro Chin,39,0.655,2.07,0.087,0.004,False
+Arabic,MALTESE,Maltese,40,0.565,2.68,0.115,0.004,False
+Uralic,SAAMI_UME,Ume Saami,35,0.852,1.43,0.077,0.004,False
+South Dravidian,TODA_2,Toda,40,0.725,2.11,0.082,0.004,False
+Chukotko-Kamchatkan,CHUKCHEE,Chukchi,40,0.606,-0.74,0.112,0.004,False
+Austronesian,SKIKUN_ATAYAL,Atayal,35,0.950,2.03,0.064,0.004,False
+Chukotko-Kamchatkan,ALUTOR,Alutor,40,0.591,-1.82,0.115,0.004,False
+Algic,MICMAC,Mi'kmaq,40,0.875,1.36,0.068,0.003,False
+Slavic,UKRAINIAN_2,Ukrainian,40,0.493,1.98,0.132,0.003,False
+Abkhaz-Adyge,ABKHAZ,Abkhaz,39,0.695,-0.32,0.101,0.003,False
+Tai-Kadai,HONGFENG_GELAO,A'ou,33,0.934,2.21,0.068,0.003,False
+Min,MIN_NANPING,Min Bei Chinese,35,0.669,1.98,0.087,0.003,False
+Lolo-Burmese,PHUNOI,Phunoi,37,0.793,2.39,0.073,0.003,False
+Tuu,XOON_MASARWA,East Taa,36,0.563,0.03,0.119,0.003,False
+Semitic,INNEMOR,Inoric,31,0.861,2.22,0.081,0.003,False
+Germanic,WYMYSORYS,Wymysorys,33,0.534,0.94,0.097,0.003,False
+Tungusic,EVENKI,Evenki,40,0.559,0.61,0.087,0.003,False
+Salishan,COEUR_DALENE,Coeur d'Alene,40,0.856,1.29,0.069,0.003,False
+Sinitic,GAN_SHAOWU,Gan Chinese,28,0.730,1.76,0.078,0.003,False
+Austronesian,REEF_ISLANDS,Äiwoo,35,0.956,2.17,0.061,0.003,False
+Celtic,CORNISH,Cornish,40,0.587,-0.78,0.100,0.003,False
+Nakh-Daghestanian,LAK_2,Lak,38,0.853,2.00,0.084,0.003,False
+South Dravidian,TELUGU_4,Telugu,40,0.747,2.54,0.092,0.003,False
+Lolo-Burmese,YANGON_BURMESE,Burmese,39,0.789,2.27,0.072,0.003,False
+Indo-European,ANGOLAR,Angolar,32,0.878,1.25,0.066,0.003,False
+Kam-Tai,DONG_GUIZHOU_ZHANGLU,Southern Dong,35,0.782,2.23,0.096,0.003,False
+Balto-Slavic,LATVIAN_2,Standard Latvian,40,0.775,2.78,0.101,0.003,False
+Sinitic,WUTUN,Wutunhua,40,0.716,1.48,0.074,0.003,False
+Kipchak,KAZAKH_2,Kazakh,40,0.452,0.90,0.098,0.003,False
+Semitic,GAFAT,Gafat,31,0.837,1.86,0.070,0.003,False
+Kartvelian,GEORGIAN,Georgian,40,0.579,-0.24,0.112,0.003,False
+Arabic,JUDEO_TUNISIAN_ARABIC,Judeo-Tunisian Arabic,27,0.515,1.50,0.097,0.003,False
+Algic,KASKASKIA_ILLINOIS,Miami,39,0.855,1.04,0.064,0.003,False
+Kuki-Chin,CHOTHE,Chothe,39,0.616,1.47,0.080,0.003,False
+Salishan,COMOX,Comox,26,0.855,1.27,0.079,0.003,False
+Japonic,SHURI,Central Okinawan,40,0.462,0.70,0.108,0.003,False
+Polynesian,TAHITIAN_2,Tahitian,35,0.503,2.23,0.140,0.003,False
+Semitic,MESMES_2,Mesmes,38,0.844,1.97,0.067,0.003,False
+Bodic,PATTANI,Pattani,40,0.783,1.52,0.081,0.003,False
+Kuliak,IK_3,Ik,35,0.452,-1.18,0.114,0.003,False
+Kipchak,BASHKIR_2,Bashkir,40,0.434,0.62,0.155,0.003,False
+Berber,ZENAGA_2,Zenaga,40,0.664,2.09,0.082,0.003,False
+Cushitic,KWADZA,Kw'adza,33,0.939,2.11,0.060,0.003,False
+Cushitic,MOGOGODO,Yaaku,30,0.940,2.13,0.059,0.003,False
+Bodic,GHACHOK,Gurung,40,0.784,1.53,0.073,0.003,False
+Tai-Kadai,LI_HAINAN_BAOTING_JIAMAO,Jiamao,38,0.843,1.33,0.064,0.003,False
+Turkic,IRAN_TURKIC,Turkish,40,0.484,0.64,0.087,0.003,False
+Mayan,CHICOMUCELTEC,Chicomuceltec,31,0.785,2.69,0.081,0.003,False
+Dravidian,MALAYALAM_3,Malayalam,40,0.706,0.80,0.070,0.003,False
+Iroquoian,WENDAT_HURON,Huron-Wyandot,40,0.602,-0.29,0.096,0.003,False
+Samoyedic,TUNDRA_NENETS,Tundra Nenets,40,0.680,-0.51,0.092,0.003,False
+Kxa,KAUEN,South-Eastern Ju,38,0.514,-0.98,0.105,0.003,False
+Germanic,DANISH_2,Danish,40,0.571,1.68,0.108,0.003,False
+Sino-Tibetan,GESHITSA,Stau-Dgebshes,35,0.935,2.32,0.058,0.003,False
+Khoe-Kwadi,NAMA_2,Nama (Namibia),39,0.617,0.19,0.089,0.003,False
+Khoe-Kwadi,NARON,Naro,39,0.620,0.23,0.078,0.003,False
+Austronesian,ARAWE,Solong,38,0.936,1.73,0.057,0.003,False
+Siouan,OMAHA_PONCA,Omaha-Ponca,40,0.670,-0.38,0.076,0.003,False
+Dravidian,KUI,Kui (India),29,0.761,1.61,0.069,0.003,False
+Iroquoian,ONEIDA,Oneida,40,0.564,-0.60,0.081,0.003,False
+Otomanguean,TAMASOPO_PAME,Northern Pame,29,0.958,1.79,0.055,0.003,False
+Kuki-Chin,LAKHER_MARA,Mara,37,0.614,1.44,0.074,0.003,False
+Bodic,CHAUDANGSI,Chaudangsi,37,0.779,1.45,0.070,0.003,False
+Turkic,WEST_YUGUR,West Yugur,40,0.569,1.52,0.075,0.003,False
+Saami,NORTH_SAAMI,North Saami,33,0.537,-0.22,0.085,0.003,False
+Siouan,STONEY,Stoney,33,0.666,-0.43,0.075,0.003,False
+Mongolic,MOGHOL,Mogholi,34,0.586,1.27,0.078,0.003,False
+Athabaskan-Eyak-Tlingit,HAN,Han,30,0.799,1.22,0.063,0.002,False
+Cushitic,BOON,Boon,29,0.888,1.11,0.056,0.002,False
+Iranian,ORMURI,Ormuri,35,0.755,1.50,0.066,0.002,False
+Kuki-Chin,ANAL_2,Anal,37,0.621,1.54,0.075,0.002,False
+Uralic,FOREST_ENETS_2,Forest Enets,39,0.883,1.98,0.061,0.002,False
+Otomanguean,CHIAPANEC_2,Chiapanec,37,0.954,1.62,0.054,0.002,False
+Sino-Tibetan,BAIMA_GANSU_TIELOU,Baima,29,0.907,1.60,0.057,0.002,False
+Yeniseian,KET,Ket,37,0.510,-0.63,0.089,0.002,False
+Austroasiatic,DANAW,Danau,39,0.902,1.81,0.057,0.002,False
+Berber,AWJILAH,Awjilah,33,0.600,0.99,0.073,0.002,False
+Slavic,NASHTA,Macedonian,32,0.468,1.33,0.091,0.002,False
+Indo-Aryan,ANGLOROMANI,Archaic Angloromani,40,0.625,0.83,0.071,0.002,False
+Uto-Aztecan,TUBAR,Tubar,35,0.840,1.22,0.060,0.002,False
+Balto-Slavic,LATVIAN,Standard Latvian,40,0.776,2.79,0.090,0.002,False
+Germanic,ICELANDIC_2,Icelandic,40,0.595,2.18,0.105,0.002,False
+Tai-Kadai,CUN,Cun-Nadou,40,0.835,1.26,0.061,0.002,False
+Khoe-Kwadi,GWI,/Gwi,40,0.601,-0.07,0.100,0.002,False
+Ainu,AINU_NAIRO,Hokkaido Ainu,40,0.295,0.89,0.113,0.002,False
+Dravidian,KURUX_NEPALI,Kurukh,29,0.796,2.15,0.070,0.002,False
+Nakh-Daghestanian,UDI,Udi,37,0.841,1.69,0.058,0.002,False
+Kuki-Chin,LAMKANG,Lamkang,36,0.603,1.28,0.073,0.002,False
+Siouan,BILOXI,Biloxi,38,0.761,0.68,0.064,0.002,False
+Chadic,BALDEMU,Baldamu,31,0.950,2.99,0.053,0.002,False
+Mongolic,DAUR,Dagur,31,0.572,0.80,0.099,0.002,False
+Nakh-Daghestanian,CHECHEN_2,Chechen,40,0.865,2.33,0.074,0.002,False
+Iranian,OSSETIC_DIGOR,Iron Ossetian,40,0.811,2.47,0.075,0.002,False
+Kam-Tai,DONGMEN_MULAM,Mulam,30,0.770,2.09,0.077,0.002,False
+Min,MIN_SANMING_TAINING,Min Bei Chinese,29,0.619,1.15,0.071,0.002,False
+Romance,FRENCH_2,French,40,0.638,2.83,0.117,0.002,False
+Pama-Nyungan,LAMALAMA_COASTAL,Lamalama,34,0.963,1.96,0.052,0.002,False
+Min,MIN_HAIKOU,Min Nan Chinese,36,0.583,0.60,0.081,0.002,False
+Germanic,BAVARIAN_GERMAN_2,Bavarian,40,0.546,1.18,0.088,0.002,False
+Semitic,BIBLICAL_HEBREW,Ancient Hebrew,33,0.792,1.23,0.064,0.002,False
+Oceanic,REEF_ISLANDS,Äiwoo,35,0.953,1.99,0.051,0.002,False
+Indo-European,ALBANIAN_GHEG,Gheg Albanian,40,0.901,1.62,0.064,0.002,False
+Romance,VLACH,Aromanian,32,0.587,1.52,0.078,0.002,False
+Bodic,RANG_PAS,Tibetan,31,0.798,1.76,0.084,0.002,False
+Semitic,HARARI,Harari,33,0.819,1.60,0.060,0.002,False
+Eskimo-Aleut,KALAALLISUT,Kalaallisut,39,0.630,-0.29,0.073,0.002,False
+Finnic,FINNISH,Finnish,31,0.418,0.51,0.094,0.002,False
+Oceanic,GHOVE_BLABLANGA,Blablanga,31,0.944,1.72,0.052,0.002,False
+Austroasiatic,KHMER_2,Central Khmer,39,0.885,1.42,0.054,0.002,False
+Polynesian,ANIWA,Futuna-Aniwa,38,0.423,0.87,0.085,0.002,False
+Chadic,BACAMA,Bacama,35,0.943,2.62,0.052,0.002,False
+Romance,NONES_GARDENESE,Ladin,40,0.579,1.33,0.077,0.002,False
+Tuu,XOON_NUEN,East Taa,36,0.553,-0.09,0.096,0.002,False
+Bodic,TIBETAN_ALKE_QINGHAI_ALIKE,Amdo Tibetan,36,0.742,0.88,0.070,0.002,False
+Uto-Aztecan,GABRIELINO,Serrano,40,0.844,1.27,0.058,0.002,False
+South Dravidian,PENGO,Pengo,32,0.685,1.38,0.066,0.002,False
+Indo-European,YASIN_WAKHI,Wakhi,27,0.871,1.14,0.054,0.002,False
+Tai-Kadai,NA_KHE_GELAO,Red Gelao,36,0.892,1.80,0.054,0.002,False
+Algic,CHIPPEWA,Chippewa,33,0.816,0.43,0.055,0.002,False
+Tai-Kadai,LAKKJA,Lakkia,34,0.841,1.31,0.054,0.002,False
+Tungusic,NAYKHIN_NANAI,Nanai,40,0.563,0.68,0.098,0.002,False
+Sino-Tibetan,DEURI,Deori,40,0.915,1.81,0.052,0.002,False
+Saami,KILDIN_SAAMI_2,Kildin Saami,40,0.562,0.25,0.080,0.002,False
+Dravidian,TODA,Toda,34,0.749,1.42,0.062,0.002,False
+Sino-Tibetan,YUE_TAISHAN_BAISHA,Yue Chinese,29,0.914,1.77,0.055,0.002,False
+Tai-Kadai,WHITE_LACHI,White Lachi,33,0.895,1.83,0.057,0.002,False
+Iranian,SHIMSAL_WAKHI,Wakhi,26,0.805,2.36,0.096,0.002,False
+Athabaskan-Eyak-Tlingit,DEG_XINAG,Degexit'an,29,0.792,1.10,0.056,0.002,False
+Indo-Aryan,CHAKMA_UnnamedInSource,Chakma,40,0.619,0.75,0.063,0.002,False
+Quechuan,INKAWASI,Lambayeque Quechua,37,0.256,1.76,0.128,0.002,False
+Iranian,GURANI,Gurani,29,0.716,0.88,0.061,0.002,False
+Kuki-Chin,CHIRU,Chiru,31,0.585,1.02,0.067,0.002,False
+Quechuan,QUECHUA_HUANCA_HUAYCHA,Huaylla Wanca Quechua,39,0.279,2.60,0.175,0.002,False
+Khoe-Kwadi,KXOE,Kxoe,33,0.580,-0.40,0.076,0.002,False
+Austroasiatic,BUGAN,Bugan,38,0.903,1.82,0.052,0.002,False
+Eskimo-Aleut,C_YUPIK,Central Alaskan Yupik,36,0.661,-0.01,0.065,0.002,False
+Chukotko-Kamchatkan,S_ITELMEN,West Itelmen,38,0.622,0.15,0.097,0.002,False
+Oghuz,AZERBAIJANI,North Azerbaijani,40,0.347,1.59,0.106,0.002,False
+Tungusic,SIBE_MANCHU,Xibe,32,0.594,1.19,0.090,0.002,False
+Turkic,CHUVASH_2,Chuvash,40,0.736,3.43,0.085,0.002,False
+Cushitic,BEJA,Beja,38,0.930,1.92,0.055,0.002,False
+Nuclear Trans New Guinea,AWYU_CENTRAL_TAIM,Central Awyu,34,0.985,2.97,0.047,0.002,False
+Slavic,KASHUBIAN,Kashubian,39,0.466,1.27,0.078,0.002,False
+Quechuan,QUECHUA_HUANUCO_PANAO,Panao Huánuco Quechua,33,0.252,1.62,0.118,0.002,False
+Quichean-Mamean,KEKCHI,Q'eqchi',39,0.613,2.10,0.095,0.002,False
+Mayan,SOUTHEASTERN_HUASTEC,Huastec,33,0.800,2.95,0.076,0.002,False
+Romance,LIGURIAN_STELLA,Ligurian,40,0.548,0.62,0.074,0.002,False
+Kam-Tai,LVCHUN_TAI,Tai Hongjin,40,0.609,0.34,0.063,0.002,False
+Semitic,AKKADIAN_2,Akkadian,37,0.789,1.18,0.053,0.002,False
+Lolo-Burmese,MANTSI,Mantsi,28,0.761,1.42,0.056,0.002,False
+Semitic,SOQOTRI_2,Soqotri,39,0.805,1.40,0.056,0.002,False
+Arabic,HIJAZI_ARABIC,Hijazi Arabic,32,0.493,1.02,0.073,0.002,False
+Great Andamanese,AKA_KOL,Akakol,35,0.662,-0.80,0.085,0.002,False
+Austronesian,XARAGURE_2,Xaragure,35,0.953,2.10,0.047,0.002,False
+Celtic,BRETON_2,Breton,40,0.584,-0.83,0.094,0.002,False
+Japonic,SANI_AMAMI,Northern Amami-Oshima,40,0.467,0.84,0.079,0.002,False
+Kxa,KUNG,North-Central Ju,37,0.508,-1.05,0.088,0.002,False
+Bodic,BAIMA_SICHUAN_JIUZHAIGOU,Baima,28,0.822,2.16,0.068,0.002,False
+Iranian,SARIKOLI,Sarikoli,40,0.747,1.38,0.070,0.002,False
+Araucanian,MAPUDUNGUN_3,Mapudungun,39,0.158,-0.89,0.173,0.002,False
+Lolo-Burmese,AKHA,Akha,38,0.741,0.85,0.054,0.002,False
+Pama-Nyungan,ANGUTHIMRI,Anguthimri,36,0.966,2.02,0.047,0.002,False
+Mongolic,EASTERN_BONAN,Bonan,40,0.576,0.93,0.076,0.002,False
+Tungusic,UDEHE,Udihe,40,0.570,0.79,0.066,0.002,False
+Salishan,KALISPEL_PEND_DOREILLE,Kalispel-Pend d'Oreille,39,0.846,1.08,0.059,0.002,False
+Quichean-Mamean,IXIL_CHAJUL,Ixil,40,0.572,1.46,0.067,0.002,False
+Indo-Aryan,DAMELI_2,Dameli,40,0.684,1.62,0.059,0.002,False
+Burushaski,HAIDERABAD_HUNZA_BURUSHASKI,Burushaski,27,0.142,-0.40,0.141,0.002,False
+Indo-European,ARMENIAN,Eastern Armenian,39,0.880,1.28,0.053,0.002,False
+Semitic,WESTERN_NEO_ARAMAIC,Western Neo-Aramaic,30,0.754,0.70,0.053,0.002,False
+Samoyedic,SELKUP,Selkup,38,0.672,-0.80,0.073,0.002,False
+Uto-Aztecan,UTE_2,Ute-Southern Paiute,40,0.859,1.42,0.058,0.002,False
+Salishan,COLUMBIA_WENATCHI,Columbia-Wenatchi,39,0.846,1.09,0.051,0.002,False
+Polynesian,MARQUESAN_SOUTH,South Marquesan,37,0.434,1.05,0.085,0.002,False
+Hmong-Mien,BAHENG_GUANGXI_LAOBAO_BAIWEN,Pa-Hng,35,0.832,2.13,0.058,0.002,False
+Celtic,BRETON,Breton,40,0.584,-0.83,0.087,0.002,False
+Siouan,HIDATSA,Hidatsa,37,0.752,0.57,0.055,0.002,False
+Dravidian,TODA_2,Toda,40,0.738,1.27,0.054,0.002,False
+Tuu,KAM_KA_KE,/Xam,38,0.528,-0.40,0.082,0.002,False
+Turkic,SHOR,Mrassu Shor-Tutal,39,0.556,1.38,0.065,0.002,False
+Otomanguean,AZOYU_TLAPANEC,Azoyú Me'phaa,40,0.986,2.91,0.056,0.002,False
+Athabaskan-Eyak-Tlingit,KOYUKON,Koyukon,38,0.772,0.79,0.050,0.002,False
+Salishan,TWANA,Twana,39,0.820,0.57,0.050,0.002,False
+South Dravidian,TULU_INDIA_2,Tulu,39,0.671,1.12,0.055,0.002,False
+Kam-Tai,CHADONG_GUANGXI_CHADONG,Chadong,34,0.745,1.81,0.058,0.002,False
+Hmong-Mien,MIAO_EASTERN_XIANGXI_XIAOZHANG,Eastern Xiangxi Miao,40,0.821,1.74,0.051,0.002,False
+Sinitic,MIDDLE_CHINESE,Middle Chinese,40,0.720,1.56,0.053,0.002,False
+Quichean-Mamean,MAM_TODOS_SANTOS_CUCHUMATAN_1,Mam,40,0.583,1.63,0.074,0.002,False
+Atlantic-Congo,ABRON_2,Abron,35,0.964,2.18,0.044,0.002,False
+Salishan,LUSHOOTSEED,Northern Lushootseed,40,0.793,0.05,0.058,0.002,False
+Mongolic,TUZU_QINGHAI_HUZHU_DAZHUANG,Mongghul,38,0.543,-0.13,0.068,0.002,False
+Quichean-Mamean,KICHEE_SAMAYAC_1,K'iche',37,0.476,0.01,0.071,0.002,False
+Sinitic,WU_JINHUA_PUJIANG,Wu Chinese,33,0.681,0.83,0.055,0.001,False
+Turkic,KRIMCHAK,Krymchak,39,0.533,1.14,0.063,0.001,False
+Bodic,MONPA_KALAKTANG,Kalaktang Monpa,37,0.778,1.44,0.061,0.001,False
+Quechuan,QUECHUA_NORTH_JUNIN_TARMA,North Junín Quechua,38,0.271,2.31,0.111,0.001,False
+Chadic,KABALAY,Kabalai,37,0.932,2.01,0.043,0.001,False
+South Dravidian,BETTA_KURUMBA_2,Betta Kurumba,40,0.655,0.83,0.059,0.001,False
+Finnic,LIVONIAN,Liv,40,0.430,0.72,0.078,0.001,False
+Slavic,RUSSIAN_2,Russian,40,0.442,0.69,0.083,0.001,False
+Eskimo-Aleut,YUPIK_CENTRAL_SIBERIAN_CHAPLINO,Central Siberian Yupik,37,0.632,-0.27,0.064,0.001,False
+Sinitic,JIN_CHANGZHI_TUNLIU,Jinyu Chinese,29,0.664,0.50,0.054,0.001,False
+Lolo-Burmese,BURMESE,Burmese,40,0.783,2.09,0.050,0.001,False
+Uto-Aztecan,CENTRAL_TARAHUMARA,Central Tarahumara,40,0.823,1.05,0.053,0.001,False
+Berber,AYT_SEGHROUCHEN,Central Moroccan Berber,33,0.559,0.36,0.059,0.001,False
+Iranian,IRON_OSSETIAN,Iron Ossetian,40,0.795,2.18,0.059,0.001,False
+Yeniseian,KOTT,Kott-Assan,36,0.588,0.75,0.087,0.001,False
+Bodic,BAIMA_SICHUAN_PINGWU,Baima,31,0.808,1.93,0.057,0.001,False
+Burushaski,HOPER_NAGAR_BURUSHASKI,Burushaski,27,0.129,-0.57,0.130,0.001,False
+Polynesian,SAMOAN_2,Samoan,36,0.425,0.90,0.064,0.001,False
+Samoyedic,NENETS,Tundra Nenets,38,0.669,-0.93,0.066,0.001,False
+Berber,SENHAYI,Senhaja De Srair,28,0.556,0.31,0.059,0.001,False
+Quechuan,PUNO_CITY,Puno Quechua,37,0.229,0.87,0.128,0.001,False
+Atlantic-Congo,ATTIE_2,Attié,35,0.960,2.03,0.040,0.001,False
+Athabaskan-Eyak-Tlingit,OUTER_INLET_TANAINA,Dena'ina,38,0.819,1.55,0.070,0.001,False
+Sino-Tibetan,JINDING_BAI,Northern Bai,37,0.920,1.93,0.054,0.001,False
+Arabic,ARABIC_KHUZESTANI,Gulf Arabic,40,0.478,0.70,0.059,0.001,False
+Japonic,FUKUSATO_MIYAKO,Miyako,40,0.446,0.33,0.087,0.001,False
+Slavic,LOWER_SORBIAN_2,Lower Sorbian,37,0.432,0.46,0.078,0.001,False
+Kuki-Chin,HRANGKHOL,Hrangkhol,33,0.566,0.76,0.055,0.001,False
+Turkic,UYGHUR,Uighur,37,0.510,0.90,0.057,0.001,False
+Iranian,SOUTHERN_KURDISH_QORVEH,Southern Kurdish,40,0.677,0.26,0.051,0.001,False
+Ainu,AINU_RAICHISHKA,Hokkaido Ainu,40,0.297,0.92,0.140,0.001,False
+Khoe-Kwadi,NAMA,Nama (Namibia),38,0.596,-0.15,0.063,0.001,False
+Yeniseian,YUGH,Yugh,38,0.502,-0.79,0.069,0.001,False
+Oghuz,LANGAR_KHORASANI,Khorasan Turkic,32,0.281,0.64,0.072,0.001,False
+Mayan,CHORTI,Ch'orti',39,0.716,1.57,0.053,0.001,False
+Uralic,NORTHERN_MANSI,Northern Mansi,40,0.837,1.16,0.055,0.001,False
+Oceanic,ARO_NEW_CALEDONIA,Arhö,30,0.958,2.11,0.042,0.001,False
+Kam-Tai,ZHUANG_GUANGXI_TIANYANG_NAGE,Youjiang Zhuang,40,0.630,0.56,0.050,0.001,False
+Sinitic,MIN_SHANTOU_CHENGHAI,Min Nan Chinese,29,0.709,1.35,0.051,0.001,False
+Oghuz,SHEYH_TEYMUR_KHORASANI,Khorasan Turkic,34,0.252,0.25,0.071,0.001,False
+Mayan,CHONTAL_TABASCO,Tabasco Chontal,39,0.731,1.80,0.052,0.001,False
+Nuclear Trans New Guinea,ABAGA,Abaga,31,0.972,2.09,0.036,0.001,False
+Quichean-Mamean,MAM_NORTHERN,Mam,40,0.568,1.40,0.059,0.001,False
+Tungusic,UILTA,Orok,32,0.526,0.09,0.054,0.001,False
+Kam-Tai,TAI_DAENG,Tai Daeng-Meuay,39,0.571,-0.06,0.052,0.001,False
+Uralic,KOMI_PERMYAK_2,Komi-Permyak,40,0.802,0.56,0.056,0.001,False
+Kipchak,KAZAN_TATAR,Tatar,40,0.373,-0.31,0.070,0.001,False
+Romance,SASSARESE,Sassarese Sardinian,40,0.553,0.73,0.054,0.001,False
+Balto-Slavic,UKRAINIAN_2,Ukrainian,40,0.535,0.31,0.069,0.001,False
+Romance,GASCON,Occitan,40,0.568,1.08,0.061,0.001,False
+Uralic,NORTHERN_SELKUP,Selkup,40,0.856,1.50,0.052,0.001,False
+Quichean-Mamean,MAM_TACANA_2,Mam,36,0.579,1.56,0.064,0.001,False
+Slavic,SLAVOMOLISANO,Slavomolisano,36,0.430,0.43,0.057,0.001,False
+Quichean-Mamean,TZUTUJIL_SANTIAGO_ATITLAN,Tz'utujil,40,0.492,0.25,0.075,0.001,False
+Tungusic,SOLON,Evenki,32,0.511,-0.14,0.052,0.001,False
+Austronesian,ARO_NEW_CALEDONIA,Arhö,30,0.959,2.23,0.038,0.001,False
+Polynesian,NIUAFOOU,Niuafo'ou,34,0.401,0.51,0.076,0.001,False
+Dravidian,TELUGU_2,Telugu,35,0.718,0.97,0.052,0.001,False
+Samoyedic,NGANASAN,Nganasan,38,0.675,-0.70,0.059,0.001,False
+Mayan,MAM_TODOS_SANTOS_CUCHUMATAN_1,Mam,40,0.652,0.61,0.054,0.001,False
+Mayan,KEKCHI,Q'eqchi',39,0.653,0.62,0.062,0.001,False
+Slavic,BULGARIAN,Bulgarian,40,0.457,1.05,0.074,0.001,False
+Balto-Slavic,LOWER_SORBIAN_2,Lower Sorbian,37,0.484,-0.16,0.057,0.001,False
+Iroquoian,WYANDOT,Huron-Wyandot,40,0.590,-0.39,0.056,0.001,False
+Turkic,BASHKIR_2,Bashkir,40,0.551,1.33,0.058,0.001,False
+Min,MIN_WENZHOU_DONGTOU,Min Nan Chinese,28,0.544,0.01,0.056,0.001,False
+Great Andamanese,OKO_JUWOI,Okojuwoi,35,0.654,-1.02,0.060,0.001,False
+Tungusic,AIHUI_MANCHU,Manchu,34,0.585,1.04,0.053,0.001,False
+Arabic,MALTESE_ARABIC,Maltese,40,0.536,1.97,0.058,0.001,False
+Mayan,MAM_CONSEPCION_CHIQUIRICHAPA,Mam,40,0.650,0.57,0.051,0.001,False
+Quichean-Mamean,MAM_CONSEPCION_CHIQUIRICHAPA,Mam,40,0.562,1.30,0.055,0.001,False
+Romance,LATIN_2,Latin,40,0.588,1.56,0.073,0.001,False
+Austronesian,ARSHA,Arhâ,30,0.950,2.03,0.034,0.001,False
+Quechuan,INGA_PUTUMAYO,Colombian Inga,38,0.236,1.09,0.075,0.001,False
+Romance,JUDEO_ESPAGNOL,Ladino,40,0.567,1.04,0.054,0.001,False
+Berber,GHADAMES,Ghadames,38,0.589,0.82,0.060,0.001,False
+Germanic,BRABANTIC,Dutch,40,0.496,0.22,0.050,0.001,False
+Quechuan,QUECHUA_PASTAZA,Southern Pastaza Quechua,36,0.238,1.14,0.074,0.001,False
+Romance,ROMANSH_SURMIRAN,Romansh,40,0.554,0.75,0.052,0.001,False
+Japonic,AZA_IRABU_MIYAKO,Miyako,38,0.442,0.21,0.057,0.001,False
+Balto-Slavic,BULGARIAN,Bulgarian,40,0.501,-0.01,0.058,0.001,False
+Otomanguean,TEOCUITLAPA_MEPHAA,Acatepec Me'phaa,39,0.979,2.60,0.038,0.001,False
+Quechuan,QUECHUA_SAN_MARTIN,San Martín Quechua,38,0.229,0.85,0.070,0.001,False
+Quichean-Mamean,POCOMAM_EASTERN,Poqomam,40,0.574,1.49,0.097,0.001,False
+Tuu,BATWA,//Xegwi,27,0.507,-0.68,0.055,0.001,False
+Kam-Tai,LINGAO_HAINAN_LINGAO_LINCHENG,Western Ong-Be,36,0.689,1.20,0.056,0.001,False
+Yeniseian,YUGH_RECENT,Yugh,34,0.487,-1.09,0.053,0.001,False
+South Dravidian,TELUGU,Telugu,35,0.709,1.80,0.054,0.001,False
+Quichean-Mamean,EASTERN_KEKCHI_CAHABON,Q'eqchi',39,0.599,1.88,0.060,0.001,False
+Finnic,VEPS,Veps,35,0.386,-0.06,0.066,0.001,False
+Mayan,HUASTEC,Huastec,40,0.782,2.63,0.051,0.001,False
+Japonic,JAPANESE_2,Japanese,39,0.489,1.41,0.057,0.001,False
+Abkhaz-Adyge,ADYGHE,West Circassian,38,0.648,-1.51,0.052,0.001,False
+Araucanian,MAPUDUNGUN,Mapudungun,36,0.155,-0.96,0.085,0.001,False
+Ainu,HOKKAIDO_AINU,Hokkaido Ainu,40,0.286,0.74,0.054,0.000,False
+Ainu,AINU_OCHIHO,Hokkaido Ainu,40,0.290,0.81,0.068,0.000,False
+Nivkh,GILYAK_EAST_SAKHALIN,Amur Nivkh,40,0.287,-0.31,0.052,0.000,False
+Romance,FRENCH,French,40,0.612,2.15,0.034,0.000,False
+Polynesian,HAWAIIAN,Hawaiian,40,0.427,0.93,0.050,0.000,False
+Mayan,POCOMAM_EASTERN,Poqomam,40,0.628,0.25,0.050,0.000,False
+Mayan,HUASTEC_VERACRUZ,Huastec,33,0.775,2.52,0.018,0.000,False
+Romance,FRENCH_CAJUN,Louisiana French,40,0.620,2.35,0.006,0.000,False
+Kam-Tai,JINXIU_LAKKIA,Lakkia,30,0.766,2.05,0.000,0.000,False
+Mongolic,BURIAT_RUSSIA,Russia Buriat,24,0.506,-1.32,0.000,0.000,True
+Dravidian,BRAHUI,Brahui,37,0.815,2.46,0.000,0.000,False
+Balto-Slavic,LITHUANIAN,Lithuanian,40,0.746,2.44,0.000,0.000,False
