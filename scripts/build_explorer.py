@@ -115,13 +115,16 @@ def main() -> None:
             profiles_all[name] = {"d_max": x["profile_d_max"], "uniform": x["profile_uniform"]}
         for n, x in adv["proposals"].items():
             bl = adv["matched_baseline"][str(len(x["members"]))]
+            sb = adv.get("shallow_baseline", {}).get(str(len(x["members"])))
             name = f"{n} (constructed)"
             lineages.append({
                 "name": name, "cat": "adv", "family": "", "n": x["n"], "glotto": None, "max_ldnd": x["max_within"],
                 "spread": None, "rare3": None, "d_max": x["d_max"], "uniform": x["uniform"], "lo": None, "hi": None,
                 "d_max_k3": x["d_max_k3"], "within": x["mean_within"], "reps": x["reps"],
                 "note": f"Union of {', '.join(x['members'])}. Random unions of {len(x['members'])} unrelated families "
-                        f"score {bl['d_max']['median']:.3f} ({bl['d_max']['q05']:.3f}–{bl['d_max']['q95']:.3f}).",
+                        f"score {bl['d_max']['median']:.3f} ({bl['d_max']['q05']:.3f}–{bl['d_max']['q95']:.3f})"
+                        + (f"; unions of {len(x['members'])} shallow (genus-level) unrelated families score "
+                           f"{sb['d_max']['median']:.3f} ({sb['d_max']['q05']:.3f}–{sb['d_max']['q95']:.3f})" if sb else "") + ".",
             })
             profiles_all[name] = {"d_max": x["profile_d_max"], "uniform": x["profile_uniform"]}
 

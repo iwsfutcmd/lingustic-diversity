@@ -7,7 +7,8 @@ land on the same scale:
 * random unrelated sets: n doculects, each from a different genealogical family (30 draws per n);
 * proposed / rejected groupings (Altaic, Macro-Altaic, Ural-Altaic, Dene-Yeniseian, "Khoisan", "Paleo-Siberian"):
   the union of their member lineages, capped at 80 doculects like real lineages;
-* a matched baseline for each grouping: unions of the same number of randomly chosen unrelated families.
+* two baselines for each grouping: unions of the same number of randomly chosen unrelated families, of any depth
+  and of *shallow* families only (genus-level D_max, 1.24–1.36, like Turkic, Mongolic and Tungusic).
 
 Reported at k_cal and at k = 3 (a fine scale where unrelated lects count as nearly fully distinct).
 
@@ -125,6 +126,9 @@ def main() -> None:
     by_family = defaultdict(list)
     for n in top:
         by_family[lin[n]["family"]].append(n)
+    shallow = [n for n in top if 1.24 <= lin[n]["d_max_kcal"] <= 1.36 and lin[n]["n_doculects"] >= 6]
+    result["shallow_pool"] = shallow
+    result["shallow_baseline"] = {}
     for name, members in PROPOSALS.items():
         r = score(union(members, all_docs, rows), metric, k_cal, profile=True)
         r["members"] = members
@@ -138,9 +142,22 @@ def main() -> None:
                 b = score(union(names, all_docs, rows, seed=t), metric, k_cal)
                 vals.append(b["d_max"]); vals3.append(b["d_max_k3"])
             result["matched_baseline"][k] = {"d_max": summarize(vals), "d_max_k3": summarize(vals3)}
+            vals, vals3 = [], []
+            for t in range(max(10, args.draws // 2) * 2):
+                while True:                      # distinct families, and not one of the proposals itself
+                    names = list(rng.choice(shallow, size=k, replace=False))
+                    if len({lin[x]["family"] for x in names}) == k and \
+                            not any(set(names) <= set(m) for m in PROPOSALS.values()):
+                        break
+                b = score(union(names, all_docs, rows, seed=t), metric, k_cal)
+                vals.append(b["d_max"]); vals3.append(b["d_max_k3"])
+            result["shallow_baseline"][k] = {"d_max": summarize(vals), "d_max_k3": summarize(vals3)}
         b = result["matched_baseline"][k]
+        sb = result["shallow_baseline"][k]
         print(f"{name:15s} n={r['n']:2d} D_max {r['d_max']:.3f}  k=3 {r['d_max_k3']:.2f}  | random {k}-family unions "
-              f"{b['d_max']['median']:.3f} [{b['d_max']['q05']:.3f}, {b['d_max']['q95']:.3f}]", flush=True)
+              f"{b['d_max']['median']:.3f} [{b['d_max']['q05']:.3f}, {b['d_max']['q95']:.3f}]; shallow {sb['d_max']['median']:.3f} "
+              f"[{sb['d_max']['q05']:.3f}, {sb['d_max']['q95']:.3f}], k=3 {sb['d_max_k3']['median']:.2f} "
+              f"[{sb['d_max_k3']['q05']:.2f}, {sb['d_max_k3']['q95']:.2f}]", flush=True)
 
     # real lineages at the fine scale, from the distance matrices run_analysis.py saved
     result["real_k3"] = {}
@@ -163,6 +180,9 @@ def main() -> None:
             w.writerow([name, r["n"], f"{r['d_max']:.3f}", "", "", f"{r['d_max_k3']:.3f}"])
             w.writerow([f"random {len(r['members'])}-family union", "", *(f"{b['d_max'][q]:.3f}" for q in ("median", "q05", "q95")),
                         f"{b['d_max_k3']['median']:.3f}"])
+            sb = result["shallow_baseline"][len(r["members"])]
+            w.writerow([f"random {len(r['members'])}-shallow-family union", "",
+                        *(f"{sb['d_max'][q]:.3f}" for q in ("median", "q05", "q95")), f"{sb['d_max_k3']['median']:.3f}"])
 
 
 if __name__ == "__main__":
