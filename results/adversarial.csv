@@ -7,13 +7,19 @@ random unrelated (n=60),60,1.559,1.557,1.560,14.333
 random unrelated (n=80),80,1.563,1.561,1.564,15.188
 Altaic,74,1.448,,,8.310
 random 3-family union,,1.509,1.461,1.539,10.367
+random 3-shallow-family union,,1.470,1.453,1.481,8.134
 Macro-Altaic,62,1.492,,,9.643
-random 5-family union,,1.527,1.508,1.539,11.418
+random 5-family union,,1.532,1.493,1.543,11.737
+random 5-shallow-family union,,1.508,1.500,1.517,10.280
 Ural-Altaic,74,1.499,,,10.585
-random 4-family union,,1.517,1.478,1.540,10.815
+random 4-family union,,1.508,1.478,1.537,10.388
+random 4-shallow-family union,,1.491,1.480,1.505,9.385
 Dene-Yeniseian,42,1.466,,,8.708
-random 2-family union,,1.498,1.282,1.535,9.973
+random 2-family union,,1.465,1.313,1.508,8.758
+random 2-shallow-family union,,1.425,1.403,1.453,6.539
 Khoisan,32,1.452,,,7.588
 random 3-family union,,1.509,1.461,1.539,10.367
+random 3-shallow-family union,,1.470,1.453,1.481,8.134
 Paleo-Siberian,42,1.480,,,8.220
-random 5-family union,,1.527,1.508,1.539,11.418
+random 5-family union,,1.532,1.493,1.543,11.737
+random 5-shallow-family union,,1.508,1.500,1.517,10.280

@@ -72,6 +72,58 @@ genuinely different varieties, not a counting artifact.
 - Turkic now sits at the top of the genus band rather than at the bottom of the deep band, closer to its usual
   reading as a shallow family.
 
+**Sinitic groups.** Every major group scores at genus level: Min 1.333, Pinghua 1.316, Wu 1.304, Yue 1.294,
+Gan 1.290, Hakka 1.283, Mandarin 1.282, Hui 1.267, Xiang 1.260, Jin 1.242 (Romance 1.307, Germanic 1.302, Slavic
+1.238). Each group's dialect lists are about as lexically diverse as a whole Western European genus. This is not a
+short-word or transcription artifact: Sinitic words average 3.67 segments (Germanic 3.80), and the 33 same-language
+pairs inside Sinitic have median PMI-LDND 0.19, below the ASJP-wide 0.228. Wutun, heavily restructured by Tibetan and
+Mongolic contact, is Mandarin's top-weighted list; without it Mandarin is 1.262.
+
+**Ancient lists.** Leaving out long-extinct doculects lowers Sinitic 1.389 → 1.375 (Old Chinese −0.009, Middle Chinese
+−0.002) and Germanic 1.302 → 1.286 (eight lists incl. Proto-Germanic and Gothic), each about one concept-resampling
+interval; every other lineage moves by 0.004 or less. Old Chinese gets Sinitic's largest D_max weight because it is the
+most isolated point (nearest neighbour 0.59, Middle Chinese). Only lineages with a written past get this boost.
+
+## Constructed sets (adversarial check)
+
+`scripts/adversarial.py` scores sets that are *not* families, on the same scale. D_max measures diversity, not
+relatedness, so unrelated lects should score at or above real families:
+
+| set | D_max at k_cal | at k = 3 |
+|---|---|---|
+| 10 random unrelated lects (one per family, 30 draws) | 1.484 | 6.7 |
+| 25 random unrelated lects | 1.535 | 10.9 |
+| 80 random unrelated lects | 1.563 | 15.2 |
+| Nuclear Trans New Guinea (deepest real family, 65 doculects) | 1.539 | 13.3 |
+| Indo-European (63) | 1.474 | 9.7 |
+| Uralic (64) | 1.456 | 8.8 |
+
+Ten lects from unrelated families outscore all 63 Indo-European doculects, and 25 or more outscore every real family.
+At k_cal the scale saturates near 1/(e^(−k·0.97)) ≈ 1.57, so the gaps are small there and clearer at k = 3.
+
+Proposed or rejected groupings, as unions of their member lineages (capped at 80 doculects), against random unions of
+as many unrelated families, of any depth and of *shallow* (genus-level) families only:
+
+| grouping | D_max | any-depth unions | shallow unions | at k = 3 | shallow at k = 3 |
+|---|---|---|---|---|---|
+| Altaic (Turkic, Mongolic, Tungusic) | 1.448 | 1.509 (1.461–1.539) | 1.470 (1.453–1.481) | 8.31 | 8.13 (7.56–8.76) |
+| "Khoisan" (Khoe-Kwadi, Tuu, Kxa) | 1.452 | same | same | 7.59 | same |
+| Macro-Altaic (+ Koreanic, Japonic) | 1.492 | 1.532 (1.493–1.543) | 1.508 (1.500–1.517) | 9.64 | 10.28 (9.96–10.66) |
+| Ural-Altaic | 1.499 | 1.508 (1.478–1.537) | 1.491 (1.480–1.505) | 10.58 | 9.39 (8.77–9.90) |
+| Dene-Yeniseian | 1.466 | 1.465 (1.313–1.508) | 1.425 (1.403–1.453) | 8.71 | 6.54 (5.54–7.15) |
+| "Paleo-Siberian" (Chukotko-Kamchatkan, Yukaghir, Nivkh, Yeniseian, Ainu) | 1.480 | as Macro-Altaic | as Macro-Altaic | 8.22 | as Macro-Altaic |
+
+Altaic scores below Indo-European and Uralic, but that is what three shallow families give whether or not they are
+related: it sits at the bottom edge of the shallow baseline at k_cal and in its middle at k = 3. The shallow baseline
+does not fit groupings with deep (Uralic, Athabaskan-Eyak-Tlingit) or isolate members, which score above or below it
+for that reason. Basic-vocabulary *distance* is where Altaic stands out: Mongolic ↔ Tungusic (0.868) is the closest
+unrelated pair in the data and Turkic ↔ Mongolic (0.925) is in the closest 1%. But the "Khoisan" pairs, an areal
+(Kalahari Basin) grouping, are as close (Tuu ↔ Kxa 0.857, Khoe-Kwadi ↔ Tuu 0.876), so contact alone produces this
+signal; neither measure separates it from descent. Koreanic ↔ Japonic (1.012) is farther apart than 99% of unrelated
+pairs, and Dene-Yeniseian (0.956) is unremarkable, which is expected for a proposal argued from morphology.
+
+The explorer shows these sets as a separate "constructed" category.
+
 ## Caveats
 
 - **Noise floor.** Same-language ASJP doculect pairs have PMI-LDND 0.086 / 0.228 / 0.474 at the 10th /
@@ -87,9 +139,11 @@ genuinely different varieties, not a counting artifact.
 
 ## Lineages
 
-48 top-level lineages (the original 16 plus 32 more ASJP families) and 24 subfamilies selected by node in ASJP's
+81 lineages: 48 top-level (the original 16 plus 32 more ASJP families), 24 subfamilies selected by node in ASJP's
 Glottolog classification path (`SUBFAMILIES` in `scripts/run_analysis.py`: Semitic, Arabic, Sinitic, Min, Indo-Aryan,
-Iranian, Oceanic, Polynesian, ...). Two lineages count as related, and are left out of the unrelated-pair
+Iranian, Oceanic, Polynesian, ...), and nine major Sinitic groups (`SINITIC_GROUPS`: Mandarin, Jin, Wu, Hui, Gan,
+Xiang, Hakka, Yue, Pinghua). Glottolog treats most of those groups as one language each, so they are picked by
+Glottocode; Mandarin and Pinghua by node. Two lineages count as related, and are left out of the unrelated-pair
 statistics, whenever their doculects share a top-level Family.
 
 ## Explorer and cross-family check
@@ -183,6 +237,7 @@ python scripts/run_analysis.py       # → results/summary.{csv,json}, diversity
 python scripts/bootstrap.py          # → results/bootstrap.json
 PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{csv,json,png}  (~17 min)
 PYTHONPATH=scripts python scripts/audit.py          # → results/audit.{csv,json}
+PYTHONPATH=scripts python scripts/adversarial.py    # → results/adversarial.{csv,json}  (~7 min)
 python scripts/build_explorer.py     # → results/explorer.html
 python scripts/pmi_eval.py           # → results/pmi_model.tsv, pmi_eval.json, pmi_eval_pairs.csv (--train geo|geo-no-dup to compare)
 ```

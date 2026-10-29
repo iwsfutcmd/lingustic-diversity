@@ -314,7 +314,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
       </dl>
       <h3>Sample</h3>
       <dl class="kv">
-        <dt>Doculects</dt><dd>${d.n}</dd><dt>Glottocodes</dt><dd>${d.glotto}</dd>
+        <dt>Doculects</dt><dd>${d.n}</dd><dt>Glottocodes</dt><dd>${d.glotto ?? "–"}</dd>
         <dt>Largest LDND</dt><dd>${fmt(d.max_ldnd)}</dd>
         <dt>Mean within LDND</dt><dd>${fmt(d.within)}</dd>
       </dl>
