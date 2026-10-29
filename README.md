@@ -117,29 +117,40 @@ https://github.com/lexibank/wold data/wold`, then:
 
 `src/isodiv/pmi.py` replaces Levenshtein's flat substitution cost with segment scores learned as pointwise
 mutual information from probable cognates (after Jäger 2013, 2018): affine-gap Needleman–Wunsch, batched in numpy.
-Training uses no classification. It starts from geographic-neighbour doculects with LDND < 0.7 and keeps
-same-concept word pairs whose score beats the 99th percentile of different-concept pairs, for 7 rounds.
-The learned scores encode correspondence, not just phonetic closeness: d:t −0.38 vs d:p −7.85, and h:p −1.27
-vs t:p −3.97 (Japonic *p > h).
+Training uses no classification. It screens 400k random doculect pairs, keeps those with LDND < 0.7, then keeps
+same-concept word pairs whose score beats the 99th percentile of different-concept pairs, re-estimating until stable.
+The learned scores encode correspondence, not just phonetic closeness: d:t −0.81 vs d:p −7.16, and h:p −0.49
+vs t:p −3.49 (Japonic *p > h).
 
-`scripts/pmi_eval.py` tests whether a distance ranks four classes of doculect pairs in the right order:
+`scripts/pmi_eval.py` tests whether a distance ranks classes of doculect pairs in the right order:
 same language (X / X_2), same WALS genus, same family but different genus, and unrelated.
 That is about 1,000–1,300 pairs per class, and test doculects are excluded from training. The AUC is the
 chance that a pair from the closer class scores below one from the farther class:
 
 | separating… | LDND | PMI-LDND | PMI-ERC | LDN-ERC |
 |---|---|---|---|---|
-| same language vs same genus | 0.899 | **0.908** | 0.901 | 0.901 |
-| same genus vs deeper in family | 0.929 | **0.936** | 0.924 | 0.921 |
-| deeper in family vs unrelated | 0.852 | **0.892** | 0.848 | 0.811 |
+| same language vs same genus | 0.899 | **0.907** | 0.899 | 0.901 |
+| same genus vs deeper in family | 0.929 | **0.935** | 0.922 | 0.921 |
+| deeper in family vs unrelated | 0.852 | **0.891** | 0.852 | 0.811 |
+| deeper in family vs unrelated neighbours (< 500 km) | 0.740 | **0.778** | 0.748 | 0.726 |
 
 PMI-LDND, which is LDND with the word distance 1 − 2·S(a,b)/(S(a,a)+S(b,b)), wins at every level. Paired bootstrap
 95% intervals on the gain exclude zero: +0.009, +0.007 and +0.040, the largest at deep time depth. Per-concept rank
 calibration (ERC) adds nothing over LDND's ratio. A feature-weighted Levenshtein (substitution cost = phonological
 feature distance between ASJP symbols) was also tried on the same pairs and did slightly *worse* than LDND
 (0.882 / 0.904 / 0.823): it rewards sounding alike, which also makes chance resemblances score closer, while
-regular correspondences like h:p are far apart in features. The pipeline still uses LDND; switching
-`run_analysis.py` to PMI-LDND (and re-calibrating k on its noise floor) is the next step.
+regular correspondences like h:p are far apart in features.
+
+**Training pairs and contact.** Choosing training pairs by geographic neighbourhood (`--train geo`, also with
+same-language duplicates removed: `geo-no-dup`) gives the same AUCs within ±0.002, so the result does not depend
+on how training pairs are found. Any similarity-based selection is dominated by shallow pairs (in `geo`, 52% two
+lists of one language, 44% same genus). Unrelated pairs almost never pass LDND < 0.7: 7 of 5,212 neighbour
+pairs, all pidgins with their lexifier. Unrelated *neighbours* are closer than distant unrelated pairs under every
+distance (AUC 0.64–0.67), so ASJP lists carry some areal signal. PMI-LDND picks up slightly more of it (0.668 vs
+0.644), but it separates real deep relatives from unrelated neighbours better than LDND (0.778 vs 0.740).
+
+The pipeline still uses LDND; switching `run_analysis.py` to PMI-LDND (and re-calibrating k on its noise floor)
+is the next step.
 
 ## Run
 
@@ -151,7 +162,7 @@ python scripts/run_analysis.py       # → results/summary.{csv,json}, diversity
 python scripts/bootstrap.py          # → results/bootstrap.json
 PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{csv,json,png}
 python scripts/build_explorer.py     # → results/explorer.html
-python scripts/pmi_eval.py           # → results/pmi_model.tsv, pmi_eval.json, pmi_eval_pairs.csv
+python scripts/pmi_eval.py           # → results/pmi_model.tsv, pmi_eval.json, pmi_eval_pairs.csv (--train geo|geo-no-dup to compare)
 ```
 
 `--tokens segments` switches from ASJPcode to NFC-normalized CLDF IPA segments. Words are always

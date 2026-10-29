@@ -1,0 +1,170 @@
+{
+ "train": "geo",
+ "training_pairs": 4776,
+ "n": {
+  "same language": 1034,
+  "same genus": 1319,
+  "same family, diff. genus": 1301,
+  "unrelated": 1264,
+  "unrelated neighbours": 1304
+ },
+ "quantiles_10_50_90": {
+  "ldnd": {
+   "same language": [
+    0.115,
+    0.313,
+    0.564
+   ],
+   "same genus": [
+    0.394,
+    0.711,
+    0.881
+   ],
+   "same family, diff. genus": [
+    0.842,
+    0.931,
+    0.987
+   ],
+   "unrelated": [
+    0.952,
+    0.987,
+    1.02
+   ],
+   "unrelated neighbours": [
+    0.915,
+    0.971,
+    1.012
+   ]
+  },
+  "ldn_erc": {
+   "same language": [
+    0.015,
+    0.098,
+    0.272
+   ],
+   "same genus": [
+    0.16,
+    0.432,
+    0.716
+   ],
+   "same family, diff. genus": [
+    0.614,
+    0.814,
+    0.974
+   ],
+   "unrelated": [
+    0.831,
+    0.958,
+    1.072
+   ],
+   "unrelated neighbours": [
+    0.781,
+    0.916,
+    1.049
+   ]
+  },
+  "pmi_ldnd": {
+   "same language": [
+    0.09,
+    0.251,
+    0.48
+   ],
+   "same genus": [
+    0.337,
+    0.636,
+    0.83
+   ],
+   "same family, diff. genus": [
+    0.796,
+    0.898,
+    0.971
+   ],
+   "unrelated": [
+    0.936,
+    0.981,
+    1.019
+   ],
+   "unrelated neighbours": [
+    0.893,
+    0.957,
+    1.006
+   ]
+  },
+  "pmi_erc": {
+   "same language": [
+    0.01,
+    0.079,
+    0.228
+   ],
+   "same genus": [
+    0.125,
+    0.382,
+    0.662
+   ],
+   "same family, diff. genus": [
+    0.567,
+    0.763,
+    0.935
+   ],
+   "unrelated": [
+    0.81,
+    0.937,
+    1.059
+   ],
+   "unrelated neighbours": [
+    0.728,
+    0.883,
+    1.018
+   ]
+  }
+ },
+ "auc": {
+  "same language < same genus": {
+   "ldnd": 0.8994490580314787,
+   "ldn_erc": 0.9014456177603629,
+   "pmi_ldnd": 0.9080556015855162,
+   "pmi_erc": 0.9010856064394367
+  },
+  "same genus < same family, diff. genus": {
+   "ldnd": 0.9293591737620621,
+   "ldn_erc": 0.9212418393968831,
+   "pmi_ldnd": 0.936546157122969,
+   "pmi_erc": 0.9237951328044736
+  },
+  "same family, diff. genus < unrelated": {
+   "ldnd": 0.8520964885822979,
+   "ldn_erc": 0.8108715058523628,
+   "pmi_ldnd": 0.891724598410181,
+   "pmi_erc": 0.8479851185553469
+  },
+  "same genus < unrelated": {
+   "ldnd": 0.9940001775414823,
+   "ldn_erc": 0.9895466454256677,
+   "pmi_ldnd": 0.9959633304862717,
+   "pmi_erc": 0.9919755448604141
+  },
+  "same family, diff. genus < unrelated neighbours": {
+   "ldnd": 0.7402369814630558,
+   "ldn_erc": 0.7257041539542495,
+   "pmi_ldnd": 0.779223037493575,
+   "pmi_erc": 0.7473233190136893
+  },
+  "unrelated neighbours < unrelated": {
+   "ldnd": 0.6443192076958919,
+   "ldn_erc": 0.6148110487691232,
+   "pmi_ldnd": 0.6677154519686263,
+   "pmi_erc": 0.6438653946959696
+  }
+ },
+ "resolution": {
+  "ldnd": 2.9449013048667414,
+  "ldn_erc": 6.76639474546381,
+  "pmi_ldnd": 3.6603512961263296,
+  "pmi_erc": 7.643062627280354
+ },
+ "spearman_vs_ldnd": {
+  "ldn_erc": 0.9860172032696324,
+  "pmi_ldnd": 0.9846860817277462,
+  "pmi_erc": 0.9627690038742326
+ }
+}
