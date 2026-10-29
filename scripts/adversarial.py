@@ -35,6 +35,7 @@ from isodiv.diversity import max_diversity, similarity_matrix, uniform_diversity
 from isodiv.metric import get_metric
 
 K_FINE = 3.0
+N_PROFILE_DRAWS = 3     # random sets whose full D_max(k) profile is averaged into the baseline curve
 SIZES = (5, 10, 25, 40, 60, 80)
 NON_GENEALOGICAL = {"", "Bookkeeping", "Speech Register", "Artificial Language", "Pidgin", "Unclassifiable",
                     "Mixed Language"}
@@ -50,6 +51,11 @@ PROPOSALS = {
 }
 
 
+def mean_offdiag(z: np.ndarray) -> float:
+    n = len(z)
+    return float((z.sum() - n) / (n * (n - 1))) if n > 1 else 1.0
+
+
 def score(docs, metric, k_cal, profile: bool = False) -> dict:
     d = metric.matrix(docs)
     docs, d = drop_nan(docs, d)
@@ -57,6 +63,7 @@ def score(docs, metric, k_cal, profile: bool = False) -> dict:
     out = {
         "n": len(docs), "d_max": r.value, "d_max_k3": max_diversity(similarity_matrix(d, K_FINE)).value,
         "uniform": uniform_diversity(similarity_matrix(d, k_cal)),
+        "zbar_kcal": mean_offdiag(similarity_matrix(d, k_cal)),
         "mean_within": float(d[np.triu_indices(len(d), 1)].mean()) if len(d) > 1 else 0.0,
         "max_within": float(d.max()) if len(d) > 1 else 0.0,
         "reps": sorted(((docs[i].id, round(float(w), 3)) for i, w in enumerate(r.weights) if w > 1e-3),
@@ -66,6 +73,7 @@ def score(docs, metric, k_cal, profile: bool = False) -> dict:
         zs = [similarity_matrix(d, k) for k in KS]
         out["profile_d_max"] = [max_diversity(z).value for z in zs]
         out["profile_uniform"] = [uniform_diversity(z) for z in zs]
+        out["profile_zbar"] = [mean_offdiag(z) for z in zs]
     return out
 
 
@@ -96,7 +104,7 @@ def main() -> None:
     rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
     all_docs = load_all(args.cldf)
     rng = np.random.default_rng(7)
-    result: dict = {"k_cal": k_cal, "k_fine": K_FINE, "distance": metric.label, "random_unrelated": {},
+    result: dict = {"ks": KS.tolist(), "k_cal": k_cal, "k_fine": K_FINE, "distance": metric.label, "random_unrelated": {},
                     "proposals": {}, "matched_baseline": {}}
 
     # 1. random sets of unrelated lects, one doculect per family (well-covered lists only), from all of ASJP
@@ -111,13 +119,16 @@ def main() -> None:
         for t in range(args.draws):
             pick = rng.choice(len(fams), size=n, replace=False)
             docs = [by_fam[fams[i]][rng.integers(len(by_fam[fams[i]]))] for i in pick]
-            draws.append(score(docs, metric, k_cal, profile=(t == 0)))
+            draws.append(score(docs, metric, k_cal, profile=(t < N_PROFILE_DRAWS)))
         med = sorted(draws, key=lambda r: r["d_max"])[len(draws) // 2]
         result["random_unrelated"][n] = {
             "d_max": summarize([r["d_max"] for r in draws]), "d_max_k3": summarize([r["d_max_k3"] for r in draws]),
             "mean_within": float(np.mean([r["mean_within"] for r in draws])),
             "uniform": float(np.median([r["uniform"] for r in draws])),
-            "profile_d_max": draws[0]["profile_d_max"], "profile_uniform": draws[0]["profile_uniform"],
+            "profile_d_max": np.mean([r["profile_d_max"] for r in draws if "profile_d_max" in r], axis=0).tolist(),
+            "profile_uniform": np.mean([r["profile_uniform"] for r in draws if "profile_uniform" in r], axis=0).tolist(),
+            "zbar_profile": np.mean([r["profile_zbar"] for r in draws if "profile_zbar" in r], axis=0).tolist(),
+            "zbar_kcal": float(np.mean([r["zbar_kcal"] for r in draws])),
             "example": med["reps"]}
         s = result["random_unrelated"][n]
         print(f"random unrelated n={n:2d}: D_max {s['d_max']['median']:.3f} [{s['d_max']['q05']:.3f}, {s['d_max']['q95']:.3f}]"

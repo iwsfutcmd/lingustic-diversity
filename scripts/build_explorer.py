@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from run_analysis import CORE_LINEAGES, EXCLUSIONS_FILE, ISOLATE_CANDIDATES, NODE_GROUPS, SINITIC_GROUPS, SUBFAMILIES  # noqa: E402
 
 from isodiv.asjp import load_exclusions
+from isodiv.baseline import relative, unrelated_baseline
 
 TEMPLATE = Path(__file__).resolve().parent.parent / "explorer" / "template.html"
 # "LDND" in the template is replaced by the distance actually used (summary.json "distance_label").
@@ -62,6 +63,34 @@ def excluded_by_lineage(excluded: dict[str, str], results: Path) -> dict[str, li
             if doc_id in rows and pred(rows[doc_id]):
                 out.setdefault(name, []).append({"id": doc_id, "reason": reason})
     return out
+
+
+def add_relative(lineages: list[dict], profiles_all: dict, adv: dict, out_csv: Path) -> None:
+    """Score each entry against a set of the same size whose members are mutually unrelated (see isodiv.baseline):
+    ``rel`` = (D_max − 1) / (D_unrelated(n) − 1), at k_cal and along the whole D_max(k) profile."""
+    import csv
+
+    ru = adv["random_unrelated"]
+    sizes = sorted(int(n) for n in ru)
+    last = ru[str(sizes[-1])]
+    at_kcal = lambda n: float(unrelated_baseline(n, sizes, [ru[str(s)]["d_max"]["median"] for s in sizes], last["zbar_kcal"]))
+    along_k = lambda n: unrelated_baseline(n, sizes, [np.array(ru[str(s)]["profile_d_max"]) for s in sizes],
+                                           np.array(last["zbar_profile"]))
+    rows = []
+    for d in lineages:
+        n = d["n"]
+        d["d_rand"] = at_kcal(n)
+        d["rel"] = float(relative(d["d_max"], d["d_rand"]))
+        d["rel_lo"] = float(relative(d["lo"], d["d_rand"])) if d.get("lo") is not None else None
+        d["rel_hi"] = float(relative(d["hi"], d["d_rand"])) if d.get("hi") is not None else None
+        if d["name"] in profiles_all:
+            profiles_all[d["name"]]["rel"] = relative(np.array(profiles_all[d["name"]]["d_max"]), along_k(n)).tolist()
+        rows.append({"lineage": d["name"], "category": d["cat"], "n": n, "d_max": f'{d["d_max"]:.3f}',
+                     "d_unrelated_same_n": f'{d["d_rand"]:.3f}', "relative": f'{d["rel"]:.3f}'})
+    with out_csv.open("w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
+        w.writeheader()
+        w.writerows(sorted(rows, key=lambda x: -float(x["relative"])))
 
 
 def main() -> None:
@@ -147,6 +176,9 @@ def main() -> None:
                            f"{sb['d_max']['median']:.3f} ({sb['d_max']['q05']:.3f}–{sb['d_max']['q95']:.3f})" if sb else "") + ".",
             })
             profiles_all[name] = {"d_max": x["profile_d_max"], "uniform": x["profile_uniform"]}
+
+    if adv_path.exists() and "ks" in adv:
+        add_relative(lineages, profiles_all, adv, r / "relative.csv")
 
     pairs = [{
         "a": p["a"], "b": p["b"], "related": p["related_by_construction"],
