@@ -99,7 +99,7 @@ relatedness, so unrelated lects should score at or above real families:
 | Uralic (64) | 1.456 | 8.8 |
 
 Ten lects from unrelated families outscore all 63 Indo-European doculects, and 25 or more outscore every real family.
-At k_cal the scale saturates near 1/(e^(−k·0.97)) ≈ 1.57, so the gaps are small there and clearer at k = 3.
+At k_cal an unrelated pair is still z = e^(−k_cal·0.97) ≈ 0.64 similar, so the scale saturates near 1/z ≈ 1.57, so the gaps are small there and clearer at k = 3.
 
 Proposed or rejected groupings, as unions of their member lineages (capped at 80 doculects), against random unions of
 as many unrelated families, of any depth and of *shallow* (genus-level) families only:
