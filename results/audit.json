@@ -5,7 +5,7 @@
     "min_concepts": 25
   },
   "excluded": {
-    "AYNU": "Heavy Persian replacement of basic vocabulary (dEndan, dEstE, SEms, atES, zEbun, ...): contact, not Turkic inheritance; LDND ~1 to nearly every other Turkic list"
+    "AYNU": "Mixed Turkic-Iranic lect (classified as Turkic by Glottolog, contested): matches Western Farsi on 9 of 33 shared items vs Uyghur on 2; LDND ~1 to nearly every other Turkic list"
   },
   "flagged": [
     {
@@ -171,6 +171,17 @@
       "z": 2.97,
       "weight": 0.284,
       "loo_delta_dmax": 0.019,
+      "review": true
+    },
+    {
+      "lineage": "Kipchak",
+      "id": "SIBERIAN_TATAR",
+      "language": "Siberian Tatar",
+      "n_concepts": 36,
+      "mean_ldnd": 0.7002705882352941,
+      "z": 3.174630235105771,
+      "weight": 0.20857363868599765,
+      "loo_delta_dmax": 0.018209555739848282,
       "review": true
     },
     {

@@ -45,9 +45,10 @@ def main() -> None:
         for n in names
     }
 
-    # Nested lineages (Romance/Germanic/Slavic ⊂ Indo-European) are related by construction.
-    nested = {frozenset(p) for p in [("Romance", "Indo-European"), ("Germanic", "Indo-European"),
-                                      ("Slavic", "Indo-European")]}
+    # Two lineages are related when their doculects share a top-level Family (this covers subfamilies nested in a
+    # family, siblings inside one family such as Romance/Germanic, and Romance/Indo-European alike).
+    fams = {n: {x.family for x in samples[n] if x.family} for n in names}
+    related = lambda a, b: bool(fams[a] & fams[b])
 
     within_full = {n: cross_matrix(samples[n], samples[n]) for n in names}
     within = {n: d[np.triu_indices(len(d), 1)] for n, d in within_full.items()}
@@ -84,7 +85,7 @@ def main() -> None:
             "dmax_union_k3": max_diversity(similarity_matrix(d, 3.0)).value,
             "dmax_a_k3": _dmax(within_full[a], 3.0),
             "dmax_b_k3": _dmax(within_full[b], 3.0),
-            "related_by_construction": frozenset((a, b)) in nested,
+            "related_by_construction": related(a, b),
         })
 
     args.out.mkdir(parents=True, exist_ok=True)

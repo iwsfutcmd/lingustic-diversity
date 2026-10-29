@@ -74,11 +74,18 @@ genuinely different varieties, not a counting artifact.
   borrowing-resistant, but not borrowing-proof.
 - The intervals reflect concept resampling only, not doculect choice or transcription noise.
 
+## Lineages
+
+48 top-level lineages (the original 16 plus 32 more ASJP families) and 24 subfamilies selected by node in ASJP's
+Glottolog classification path (`SUBFAMILIES` in `scripts/run_analysis.py`: Semitic, Arabic, Sinitic, Min, Indo-Aryan,
+Iranian, Oceanic, Polynesian, ...). Two lineages count as related, and are left out of the unrelated-pair
+statistics, whenever their doculects share a top-level Family.
+
 ## Explorer and cross-family check
 
 - `scripts/cross_family.py` compares lineages with each other: mean LDND within and between 48 lineages
-  (the 16 above plus 32 more ASJP families), and D_max of two lineages together vs. apart.
-  Japonic ↔ Kartvelian: mean LDND 0.98 vs. 0.55 / 0.69 within. Across 1,125 unrelated pairs the mean is 0.984.
+  (see Lineages), and D_max of two lineages together vs. apart.
+  Japonic ↔ Kartvelian: mean LDND 0.98 vs. 0.55 / 0.69 within. Across 2,483 unrelated pairs the mean is 0.984 (lowest 0.911).
 - `scripts/build_explorer.py` bundles `results/*.json` into `results/explorer.html`, a self-contained
   page (diversity ranking, scale profiles, between-lineage heatmap).
 

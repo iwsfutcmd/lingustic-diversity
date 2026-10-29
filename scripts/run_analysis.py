@@ -57,6 +57,19 @@ EXTRA_FAMILIES = [
 ]
 for _fam in EXTRA_FAMILIES:
     LINEAGES[_fam] = (lambda f: lambda r: r["Family"] == f)(_fam)
+
+# Subfamilies, picked by node in ASJP's Glottolog classification path (label -> node). Each is nested in a
+# top-level family above, so cross-family comparisons treat pairs that share a Family as related.
+SUBFAMILIES = {
+    "Semitic": "Semitic", "Arabic": "Arabic", "Chadic": "Chadic", "Cushitic": "Cushitic", "Berber": "Berber",
+    "Sinitic": "Sinitic", "Min": "Min", "Lolo-Burmese": "Lolo-Burmese", "Bodic": "Bodic", "Kuki-Chin": "Kuki-Chin",
+    "Indo-Aryan": "Indo-Aryan", "Iranian": "Iranian", "Celtic": "Celtic", "Balto-Slavic": "Balto-Slavic",
+    "Oceanic": "Oceanic", "Polynesian": "Polynesian", "Finnic": "Finnic", "Saami": "Saami", "Samoyedic": "Samoyedic",
+    "Oghuz": "Oghuz", "Kipchak": "Kipchak", "South Dravidian": "SouthDravidian",
+    "Quichean-Mamean": "Quichean-Mamean", "Kam-Tai": "Kam-Tai",
+}
+for _label, _node in SUBFAMILIES.items():
+    LINEAGES[_label] = (lambda n: lambda r: r["Family"] != "Bookkeeping" and n in r["classification_glottolog"].split(","))(_node)
 MAX_PER_LINEAGE = 80          # stratified cap keeps pairwise LDND tractable
 KS = np.geomspace(0.1, 40, 48)
 RAREFY_M = 3          # compare lineages at a fixed number of distinct-Glottocode doculects
@@ -164,6 +177,7 @@ def analyse(name: str, docs: list[Doculect], k_cal: float) -> dict:
     m_ref = max_diversity(similarity_matrix(d, k_ref))
     return {
         "lineage": name,
+        "family": max({x.family for x in docs}, key=[x.family for x in docs].count) if docs else "",
         "n_doculects": len(docs),
         "n_glottocodes": len({x.glottocode for x in docs}),
         "max_ldnd": float(d.max()) if len(docs) > 1 else 0.0,

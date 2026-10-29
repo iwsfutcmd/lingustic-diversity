@@ -14,7 +14,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
-from run_analysis import CORE_LINEAGES, EXCLUSIONS_FILE, ISOLATE_CANDIDATES  # noqa: E402
+from run_analysis import CORE_LINEAGES, EXCLUSIONS_FILE, ISOLATE_CANDIDATES, SUBFAMILIES  # noqa: E402
 
 from isodiv.asjp import load_exclusions
 
@@ -24,6 +24,8 @@ TEMPLATE = Path(__file__).resolve().parent.parent / "explorer" / "template.html"
 def category(name: str) -> str:
     if name in ISOLATE_CANDIDATES:
         return "iso"
+    if name in SUBFAMILIES:
+        return "sub"
     return "ctl" if name in CORE_LINEAGES else "oth"
 
 
@@ -74,7 +76,7 @@ def main() -> None:
         n = s["lineage"]
         b = boot.get(n, {})
         lineages.append({
-            "name": n, "cat": category(n),
+            "name": n, "cat": category(n), "family": s.get("family", ""),
             "n": s["n_doculects"], "glotto": s["n_glottocodes"], "max_ldnd": s["max_ldnd"],
             "spread": s["spread"], "rare3": clean(s["spread_rarefied_m3"]),
             "d_max": s["d_max_kcal"], "uniform": s["uniform_d2_kcal"],

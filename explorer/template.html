@@ -9,7 +9,7 @@
 :root {
   --bg: #f4f7f9; --surface: #ffffff; --ink: #15212b; --muted: #5b6b78; --rule: #d5dde3; --grid: #e6ecf0;
   --accent: #0b7a75; --accent-ink: #ffffff;
-  --c-iso: #b3245b; --c-ctl: #2a5db0; --c-oth: #7b8894;
+  --c-iso: #b3245b; --c-ctl: #2a5db0; --c-sub: #b7791f; --c-oth: #7b8894;
   --hm-lo: #f3f9f8; --hm-hi: #12303f; --sel: rgba(11,122,117,.14);
   --font-display: "Literata", Georgia, "Times New Roman", serif;
   --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -19,14 +19,14 @@
   :root:not([data-theme="light"]) {
     --bg: #0e151b; --surface: #16202a; --ink: #e5edf2; --muted: #93a3b0; --rule: #2a3946; --grid: #1f2c37;
     --accent: #3fc1b9; --accent-ink: #06201f;
-    --c-iso: #f06a9b; --c-ctl: #6ea2f0; --c-oth: #8c9aa6;
+    --c-iso: #f06a9b; --c-ctl: #6ea2f0; --c-sub: #e3a847; --c-oth: #8c9aa6;
     --hm-lo: #13212b; --hm-hi: #e9f6f4; --sel: rgba(63,193,185,.18); color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0e151b; --surface: #16202a; --ink: #e5edf2; --muted: #93a3b0; --rule: #2a3946; --grid: #1f2c37;
   --accent: #3fc1b9; --accent-ink: #06201f;
-  --c-iso: #f06a9b; --c-ctl: #6ea2f0; --c-oth: #8c9aa6;
+  --c-iso: #f06a9b; --c-ctl: #6ea2f0; --c-sub: #e3a847; --c-oth: #8c9aa6;
   --hm-lo: #13212b; --hm-hi: #e9f6f4; --sel: rgba(63,193,185,.18); color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -55,7 +55,7 @@ section[hidden] { display: none; }
 .controls label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
 select, input[type="search"] { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 5px 8px; min-inline-size: 0; }
 .dot { inline-size: 10px; block-size: 10px; border-radius: 50%; display: inline-block; }
-.dot.iso { background: var(--c-iso); } .dot.ctl { background: var(--c-ctl); } .dot.oth { background: var(--c-oth); }
+.dot.iso { background: var(--c-iso); } .dot.ctl { background: var(--c-ctl); } .dot.sub { background: var(--c-sub); } .dot.oth { background: var(--c-oth); }
 .chart { inline-size: 100%; overflow: hidden; }
 svg text { font-family: var(--font-body); fill: var(--muted); font-size: 11px; }
 svg .lab { fill: var(--ink); font-size: 12px; }
@@ -175,7 +175,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   const DATA = JSON.parse(document.getElementById("data").textContent);
   const L = DATA.lineages;                       // [{name, cat, n, ...}]
   const byName = new Map(L.map(d => [d.name, d]));
-  const CAT = { iso: "Isolate candidates", ctl: "Control lineages", oth: "Other families" };
+  const CAT = { iso: "Isolate candidates", ctl: "Control lineages", oth: "Other families", sub: "Subfamilies" };
   const fmt = (x, p = 3) => (x == null || Number.isNaN(x)) ? "–" : x.toFixed(p);
   const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -262,7 +262,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
     const d = byName.get(selected); if (!d) return;
     $("detail").innerHTML = `
       <h2 dir="auto">${esc(d.name)}</h2>
-      <div class="legend"><span><span class="dot ${d.cat}"></span> ${CAT[d.cat]}</span></div>
+      <div class="legend"><span><span class="dot ${d.cat}"></span> ${CAT[d.cat]}</span>${d.family ? `<span>Family: ${esc(d.family)}</span>` : ""}</div>
       <h3>Diversity</h3>
       <dl class="kv">
         <dt>D_max at k_cal</dt><dd>${fmt(d.d_max)}</dd>
@@ -333,7 +333,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
     return "rgb(" + lo.map((v, i) => Math.round(v + (hi[i] - v) * t)).join(",") + ")";
   };
   function order() {
-    const mode = $("horder").value, catRank = { iso: 0, ctl: 1, oth: 2 };
+    const mode = $("horder").value, catRank = { iso: 0, ctl: 1, sub: 2, oth: 3 };
     const o = L.map(d => d.name);
     if (mode === "name") return o.sort((a, b) => a.localeCompare(b));
     if (mode === "within") return o.sort((a, b) => byName.get(a).within - byName.get(b).within);
@@ -380,7 +380,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
       const wa = swap ? p.mean_within_b : p.mean_within_a, wb = swap ? p.mean_within_a : p.mean_within_b;
       const sum = p.dmax_a_k3 + p.dmax_b_k3, inside = Math.max(wa, wb);
       const far = p.mean_between > inside;
-      body = `<div class="verdict">${p.related ? "These lineages are nested by construction, so a smaller distance is expected." :
+      body = `<div class="verdict">${p.related ? "These lineages belong to the same family, so a smaller distance is expected." :
         far ? `Farther apart (${fmt(p.mean_between, 2)}) than the spread inside either lineage (${fmt(wa, 2)} and ${fmt(wb, 2)}).` :
         `Not clearly farther apart than the spread inside one of them (${fmt(wa, 2)} and ${fmt(wb, 2)}).`}</div>
         <h3>Pairwise LDND, between</h3>

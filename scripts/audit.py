@@ -35,6 +35,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cldf", type=Path, default=Path("data/asjp/cldf"))
     ap.add_argument("--out", type=Path, default=Path("results"))
+    ap.add_argument("--only", nargs="+", help="audit just these lineages and merge into the existing audit files")
     args = ap.parse_args()
 
     k = json.loads((args.out / "summary.json").read_text(encoding="utf-8"))["k_cal"]
@@ -45,6 +46,8 @@ def main() -> None:
 
     rows = []
     for lineage in LINEAGES:
+        if args.only and lineage not in args.only:
+            continue
         path = args.out / f"ldnd_{lineage}.tsv"
         ids = path.open(encoding="utf-8").readline().lstrip("# ").rstrip("\n").split("\t")
         d = np.atleast_2d(np.loadtxt(path, delimiter="\t"))
@@ -71,6 +74,9 @@ def main() -> None:
             })
         print(f"{lineage:26s} n={n:3d} D_max={full.value:.3f}", flush=True)
 
+    if args.only and (args.out / "audit.json").exists():
+        old = json.loads((args.out / "audit.json").read_text(encoding="utf-8"))["flagged"]
+        rows += [r for r in old if r["lineage"] not in args.only]      # earlier review rows for other lineages
     rows.sort(key=lambda r: -(r["loo_delta_dmax"] or 0))
     args.out.mkdir(parents=True, exist_ok=True)
     with (args.out / "audit.csv").open("w", encoding="utf-8", newline="") as fh:
