@@ -5527,6 +5527,288 @@
       "kkt_all_ok": true
     },
     {
+      "lineage": "Mande",
+      "family": "Mande",
+      "n_doculects": 71,
+      "n_glottocodes": 59,
+      "max_ldnd": 1.0385491679717151,
+      "spread": 2.1744303819252635,
+      "spread_rarefied_m3": 1.1584689363350542,
+      "d_max_kcal": 1.450636206177315,
+      "uniform_d2_kcal": 1.401085431844037,
+      "representatives_kcal": [
+        [
+          "BOKOBARU_2",
+          0.077
+        ],
+        [
+          "SAMO_MATYA",
+          0.065
+        ],
+        [
+          "BOZO_HAINYAXO",
+          0.056
+        ],
+        [
+          "LOMA",
+          0.053
+        ],
+        [
+          "GAGU",
+          0.052
+        ],
+        [
+          "BANDI_2",
+          0.051
+        ],
+        [
+          "WAN_2",
+          0.047
+        ],
+        [
+          "DUUNGOMA_2",
+          0.045
+        ],
+        [
+          "YAKOUBA",
+          0.044
+        ],
+        [
+          "BANDI",
+          0.042
+        ],
+        [
+          "BANKA",
+          0.042
+        ],
+        [
+          "KPELLE",
+          0.04
+        ],
+        [
+          "BOMU_BOBO",
+          0.036
+        ],
+        [
+          "DZUUNGOO_2",
+          0.035
+        ],
+        [
+          "NORTHERN_BOBO_MANDARE",
+          0.034
+        ],
+        [
+          "BOZO_SOROGAMA_6",
+          0.034
+        ],
+        [
+          "SAMO_MAYA",
+          0.027
+        ],
+        [
+          "SUSU_2",
+          0.027
+        ],
+        [
+          "BOZO_TIEYAHO",
+          0.024
+        ],
+        [
+          "SEEKU",
+          0.024
+        ],
+        [
+          "LIGBI",
+          0.02
+        ],
+        [
+          "YALUNKA",
+          0.018
+        ],
+        [
+          "SHANGA",
+          0.018
+        ],
+        [
+          "WORODUGUKAKAN",
+          0.017
+        ],
+        [
+          "KAKABE_2",
+          0.016
+        ],
+        [
+          "BOZO_HAINYAHO",
+          0.016
+        ],
+        [
+          "KPELLE_GUINEA_2",
+          0.013
+        ],
+        [
+          "MAUKAKAN",
+          0.009
+        ],
+        [
+          "SIAKAKAN",
+          0.008
+        ],
+        [
+          "JERI_KUO",
+          0.004
+        ],
+        [
+          "BAMBARA_4",
+          0.003
+        ],
+        [
+          "BLE",
+          0.002
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Heibanic",
+      "family": "Heibanic",
+      "n_doculects": 11,
+      "n_glottocodes": 10,
+      "max_ldnd": 0.8424360046225671,
+      "spread": 1.6809123425149193,
+      "spread_rarefied_m3": 1.063575697594691,
+      "d_max_kcal": 1.3375040178800137,
+      "uniform_d2_kcal": 1.3063742480861458,
+      "representatives_kcal": [
+        [
+          "KO1",
+          0.172
+        ],
+        [
+          "WARNANG",
+          0.172
+        ],
+        [
+          "TIRO",
+          0.133
+        ],
+        [
+          "MORO",
+          0.118
+        ],
+        [
+          "LARU_SUDAN",
+          0.117
+        ],
+        [
+          "LOGOL",
+          0.11
+        ],
+        [
+          "SHIRUMBA",
+          0.091
+        ],
+        [
+          "RERE",
+          0.086
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Narrow Talodi",
+      "family": "Narrow Talodi",
+      "n_doculects": 9,
+      "n_glottocodes": 7,
+      "max_ldnd": 0.7659280017779885,
+      "spread": 1.3747413872446574,
+      "spread_rarefied_m3": 0.9358407185814211,
+      "d_max_kcal": 1.2706010016706544,
+      "uniform_d2_kcal": 1.2604779106987591,
+      "representatives_kcal": [
+        [
+          "TOCHO_2",
+          0.182
+        ],
+        [
+          "LUMUN_2",
+          0.164
+        ],
+        [
+          "NGILE",
+          0.15
+        ],
+        [
+          "NDING",
+          0.139
+        ],
+        [
+          "DENGEBU",
+          0.126
+        ],
+        [
+          "JOMANG",
+          0.111
+        ],
+        [
+          "ACHERON",
+          0.088
+        ],
+        [
+          "TOCHO",
+          0.039
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Katla-Tima",
+      "family": "Katla-Tima",
+      "n_doculects": 3,
+      "n_glottocodes": 2,
+      "max_ldnd": 0.7220169941658272,
+      "spread": 0.7965206168152176,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.1722527882226235,
+      "uniform_d2_kcal": 1.1585479899232096,
+      "representatives_kcal": [
+        [
+          "KATLA",
+          0.471
+        ],
+        [
+          "TIMA",
+          0.324
+        ],
+        [
+          "TIMA_2",
+          0.205
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Rashad",
+      "family": "Rashad",
+      "n_doculects": 2,
+      "n_glottocodes": 2,
+      "max_ldnd": 0.5974601342830098,
+      "spread": 0.5974685020975127,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.137414605865474,
+      "uniform_d2_kcal": 1.1374146058654742,
+      "representatives_kcal": [
+        [
+          "ORIG",
+          0.5
+        ],
+        [
+          "TEGALI",
+          0.5
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
       "lineage": "Semitic",
       "family": "Afro-Asiatic",
       "n_doculects": 62,
@@ -8728,6 +9010,1972 @@
         [
           "TUHUA_SHAOGUAN_SHITANG",
           0.003
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Malayo-Polynesian",
+      "family": "Austronesian",
+      "n_doculects": 75,
+      "n_glottocodes": 75,
+      "max_ldnd": 1.059053103747428,
+      "spread": 2.4149320144208355,
+      "spread_rarefied_m3": 1.350976028751201,
+      "d_max_kcal": 1.5106134076882924,
+      "uniform_d2_kcal": 1.4648560616389554,
+      "representatives_kcal": [
+        [
+          "REEF_ISLANDS",
+          0.066
+        ],
+        [
+          "ARAWE",
+          0.058
+        ],
+        [
+          "XARAGURE_2",
+          0.051
+        ],
+        [
+          "ASUMBOA",
+          0.051
+        ],
+        [
+          "ARIBWATSA",
+          0.05
+        ],
+        [
+          "ANUKI",
+          0.045
+        ],
+        [
+          "AJIE",
+          0.043
+        ],
+        [
+          "ARO_NEW_CALEDONIA",
+          0.042
+        ],
+        [
+          "LOMAUMBI_BABATANA",
+          0.039
+        ],
+        [
+          "AMBEL",
+          0.037
+        ],
+        [
+          "ANEITYUM_2",
+          0.037
+        ],
+        [
+          "ARSHA",
+          0.035
+        ],
+        [
+          "GUIANGAN_SIRIB",
+          0.035
+        ],
+        [
+          "AROP_SISSANO",
+          0.029
+        ],
+        [
+          "ADZERA",
+          0.028
+        ],
+        [
+          "ANSUS",
+          0.027
+        ],
+        [
+          "AUHELAWA_2",
+          0.027
+        ],
+        [
+          "AMBELAU",
+          0.026
+        ],
+        [
+          "ACEH",
+          0.021
+        ],
+        [
+          "MENGGALA_TULANG_BAWANG_LAMPUNG_NYO",
+          0.019
+        ],
+        [
+          "AYTA_MAG_ANTSI",
+          0.019
+        ],
+        [
+          "AMARA",
+          0.018
+        ],
+        [
+          "AMAHAI",
+          0.016
+        ],
+        [
+          "AULUA",
+          0.016
+        ],
+        [
+          "WADAPI_LAUT",
+          0.015
+        ],
+        [
+          "ARE",
+          0.014
+        ],
+        [
+          "AS",
+          0.013
+        ],
+        [
+          "AKOLET",
+          0.012
+        ],
+        [
+          "BAHAU",
+          0.012
+        ],
+        [
+          "BAHONSUAI",
+          0.012
+        ],
+        [
+          "AVAU",
+          0.011
+        ],
+        [
+          "ALANGAN",
+          0.01
+        ],
+        [
+          "AOHENG",
+          0.009
+        ],
+        [
+          "AROSI_TAWATANA",
+          0.008
+        ],
+        [
+          "AULU_SAA",
+          0.008
+        ],
+        [
+          "ADUMANIS_ULU_KOMERING",
+          0.007
+        ],
+        [
+          "AXAMB_AVOK",
+          0.006
+        ],
+        [
+          "BACANESE_MALAY",
+          0.006
+        ],
+        [
+          "AMBLONG",
+          0.005
+        ],
+        [
+          "ALOR",
+          0.004
+        ],
+        [
+          "ALU_MONO",
+          0.004
+        ],
+        [
+          "BAETORA_NASAWA",
+          0.004
+        ],
+        [
+          "ADONARA",
+          0.003
+        ],
+        [
+          "URI",
+          0.003
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Formosan",
+      "family": "Austronesian",
+      "n_doculects": 57,
+      "n_glottocodes": 20,
+      "max_ldnd": 0.9913426640991827,
+      "spread": 2.1804576751167986,
+      "spread_rarefied_m3": 1.1904508768642645,
+      "d_max_kcal": 1.452180490211864,
+      "uniform_d2_kcal": 1.4191062673330683,
+      "representatives_kcal": [
+        [
+          "ATAYAL_TAIWAN_YILAN",
+          0.096
+        ],
+        [
+          "CIULI_ATAYAL",
+          0.072
+        ],
+        [
+          "FAVORLANG",
+          0.06
+        ],
+        [
+          "MANTAURAN",
+          0.054
+        ],
+        [
+          "HECUO_TAROKO",
+          0.053
+        ],
+        [
+          "SKIKUN_ATAYAL",
+          0.051
+        ],
+        [
+          "KAVALAN_2",
+          0.049
+        ],
+        [
+          "PAIWAN_TAIWAN_TAINAN",
+          0.049
+        ],
+        [
+          "KANAKANABU",
+          0.042
+        ],
+        [
+          "TSOU_TAIWAN_JIAYI_TEFUYE",
+          0.042
+        ],
+        [
+          "TSOU",
+          0.035
+        ],
+        [
+          "DUHTU_TSOU",
+          0.034
+        ],
+        [
+          "MANTAURAN_RUKAI",
+          0.033
+        ],
+        [
+          "AMIS_SAKIZAYA",
+          0.032
+        ],
+        [
+          "TAAI_SAISIYAT",
+          0.032
+        ],
+        [
+          "MAGA_RUKAI",
+          0.03
+        ],
+        [
+          "SAISIYAT",
+          0.029
+        ],
+        [
+          "LOWER_PINLANG_PUYUMA",
+          0.028
+        ],
+        [
+          "RUKAI",
+          0.028
+        ],
+        [
+          "RUKAI_TAIWAN_TAIDONG",
+          0.027
+        ],
+        [
+          "SAAROA",
+          0.023
+        ],
+        [
+          "TONA_RUKAI",
+          0.023
+        ],
+        [
+          "PARAN_TAROKO",
+          0.018
+        ],
+        [
+          "ATAYAL",
+          0.017
+        ],
+        [
+          "TAKITUDUH_BUNUN",
+          0.012
+        ],
+        [
+          "FATAAN_AMIS",
+          0.011
+        ],
+        [
+          "PILAM_PUYUMA",
+          0.009
+        ],
+        [
+          "AURAN_KULON_PAZEH",
+          0.007
+        ],
+        [
+          "TODA_TAROKO",
+          0.003
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Eastern Malayo-Polynesian",
+      "family": "Austronesian",
+      "n_doculects": 76,
+      "n_glottocodes": 76,
+      "max_ldnd": 1.0570264406143735,
+      "spread": 2.451445367777873,
+      "spread_rarefied_m3": 1.380654273598158,
+      "d_max_kcal": 1.5199893058278826,
+      "uniform_d2_kcal": 1.4876318222297098,
+      "representatives_kcal": [
+        [
+          "GHOVE_BLABLANGA",
+          0.057
+        ],
+        [
+          "ARAWE",
+          0.048
+        ],
+        [
+          "DUNGUNTUNG",
+          0.047
+        ],
+        [
+          "ARO_NEW_CALEDONIA",
+          0.045
+        ],
+        [
+          "ASUMBOA",
+          0.044
+        ],
+        [
+          "BUDIBUD",
+          0.04
+        ],
+        [
+          "AJIE",
+          0.037
+        ],
+        [
+          "ANUKI",
+          0.037
+        ],
+        [
+          "BAROK",
+          0.036
+        ],
+        [
+          "AYIWO",
+          0.033
+        ],
+        [
+          "BONGGO",
+          0.033
+        ],
+        [
+          "ARSHA",
+          0.031
+        ],
+        [
+          "AMBEL",
+          0.03
+        ],
+        [
+          "BILUR",
+          0.03
+        ],
+        [
+          "PATEP",
+          0.028
+        ],
+        [
+          "BEBELI",
+          0.027
+        ],
+        [
+          "AMBAI",
+          0.026
+        ],
+        [
+          "ARIBWATSA",
+          0.026
+        ],
+        [
+          "BUASI",
+          0.026
+        ],
+        [
+          "ANEITYUM_2",
+          0.024
+        ],
+        [
+          "KATAZI_BABATANA",
+          0.024
+        ],
+        [
+          "BIEREBO_BONKOVIA",
+          0.024
+        ],
+        [
+          "XARAGURE",
+          0.023
+        ],
+        [
+          "AUHELAWA_1",
+          0.021
+        ],
+        [
+          "ANSUS",
+          0.014
+        ],
+        [
+          "AROP_SISSANO",
+          0.014
+        ],
+        [
+          "ARE",
+          0.012
+        ],
+        [
+          "AULUA",
+          0.012
+        ],
+        [
+          "SAA",
+          0.012
+        ],
+        [
+          "BALUAN_PAM",
+          0.012
+        ],
+        [
+          "BIGA",
+          0.012
+        ],
+        [
+          "MAPOS",
+          0.012
+        ],
+        [
+          "AXAMB",
+          0.011
+        ],
+        [
+          "BINA",
+          0.011
+        ],
+        [
+          "YAROS",
+          0.01
+        ],
+        [
+          "BIG_NAMBAS_LEVIAMP",
+          0.009
+        ],
+        [
+          "FAURO_MONO",
+          0.008
+        ],
+        [
+          "BUKAUA",
+          0.008
+        ],
+        [
+          "BUHUTU",
+          0.008
+        ],
+        [
+          "AKOLET",
+          0.007
+        ],
+        [
+          "URIPIV",
+          0.007
+        ],
+        [
+          "DHADHAJE_BOGHOTU",
+          0.005
+        ],
+        [
+          "AMARA",
+          0.004
+        ],
+        [
+          "AS",
+          0.004
+        ],
+        [
+          "BAETORA",
+          0.004
+        ],
+        [
+          "BANONI",
+          0.004
+        ],
+        [
+          "BARIAI",
+          0.003
+        ],
+        [
+          "NUMFOR",
+          0.002
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Greater Central Philippine",
+      "family": "Austronesian",
+      "n_doculects": 72,
+      "n_glottocodes": 69,
+      "max_ldnd": 0.843913516770498,
+      "spread": 1.7532912283642446,
+      "spread_rarefied_m3": 0.828777439434171,
+      "d_max_kcal": 1.351871272107976,
+      "uniform_d2_kcal": 1.2596376845221349,
+      "representatives_kcal": [
+        [
+          "TAWBUID",
+          0.128
+        ],
+        [
+          "GORONTALO",
+          0.111
+        ],
+        [
+          "INAGTA_ALABAT",
+          0.102
+        ],
+        [
+          "BOLANGO",
+          0.08
+        ],
+        [
+          "MANOBO_DIBABAWON",
+          0.069
+        ],
+        [
+          "BUOL",
+          0.067
+        ],
+        [
+          "SUWAWA",
+          0.067
+        ],
+        [
+          "AGUTYANEN",
+          0.058
+        ],
+        [
+          "BINATAUNA",
+          0.045
+        ],
+        [
+          "KAIDIPANG",
+          0.039
+        ],
+        [
+          "MANOBO_ATA",
+          0.033
+        ],
+        [
+          "BUHID",
+          0.031
+        ],
+        [
+          "MANOBO_SARANGANI",
+          0.03
+        ],
+        [
+          "TAGBANWA_KALAMIAN",
+          0.028
+        ],
+        [
+          "BUKIDNON_BINUKID",
+          0.02
+        ],
+        [
+          "MAMANWA",
+          0.019
+        ],
+        [
+          "NORTHERN_CATANDUANES",
+          0.019
+        ],
+        [
+          "LOLAK",
+          0.015
+        ],
+        [
+          "TAUSUG",
+          0.015
+        ],
+        [
+          "HIGAONON_BINUKID",
+          0.012
+        ],
+        [
+          "TAGABAWA",
+          0.008
+        ],
+        [
+          "NAGA",
+          0.003
+        ],
+        [
+          "KAGAYANEN",
+          0.002
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Malayic",
+      "family": "Austronesian",
+      "n_doculects": 53,
+      "n_glottocodes": 44,
+      "max_ldnd": 0.6314527626174041,
+      "spread": 1.2425845649086926,
+      "spread_rarefied_m3": 0.5653324202600434,
+      "d_max_kcal": 1.2406711194524602,
+      "uniform_d2_kcal": 1.175268936180702,
+      "representatives_kcal": [
+        [
+          "HAJI",
+          0.169
+        ],
+        [
+          "SALAKO_BADAMEA",
+          0.135
+        ],
+        [
+          "UPCOUNTRY_SRI_LANKA_MALAY",
+          0.135
+        ],
+        [
+          "BACANESE_MALAY",
+          0.131
+        ],
+        [
+          "LOM",
+          0.101
+        ],
+        [
+          "MALAY_PATTANI",
+          0.078
+        ],
+        [
+          "KERINCI",
+          0.059
+        ],
+        [
+          "KERINCI_2",
+          0.058
+        ],
+        [
+          "PEKAL",
+          0.038
+        ],
+        [
+          "MUALANG",
+          0.037
+        ],
+        [
+          "TAMUAN",
+          0.024
+        ],
+        [
+          "KENINJAL",
+          0.02
+        ],
+        [
+          "ORANG_SELETAR",
+          0.009
+        ],
+        [
+          "SEKAK",
+          0.007
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Celebic",
+      "family": "Austronesian",
+      "n_doculects": 80,
+      "n_glottocodes": 58,
+      "max_ldnd": 0.8790956164068803,
+      "spread": 1.754560715411687,
+      "spread_rarefied_m3": 0.9572184732473146,
+      "d_max_kcal": 1.3519638206808557,
+      "uniform_d2_kcal": 1.3071299248579407,
+      "representatives_kcal": [
+        [
+          "SOBOYO",
+          0.096
+        ],
+        [
+          "BATUI",
+          0.092
+        ],
+        [
+          "KIOKO",
+          0.08
+        ],
+        [
+          "BAHONSUAI",
+          0.077
+        ],
+        [
+          "KADAI",
+          0.076
+        ],
+        [
+          "BUSOA",
+          0.063
+        ],
+        [
+          "TOLAKI_MEKONGGA",
+          0.059
+        ],
+        [
+          "TOPOIYO",
+          0.051
+        ],
+        [
+          "MUNA",
+          0.05
+        ],
+        [
+          "WOTU",
+          0.046
+        ],
+        [
+          "UMA",
+          0.044
+        ],
+        [
+          "BANGGAI",
+          0.043
+        ],
+        [
+          "TAJIO",
+          0.037
+        ],
+        [
+          "WARU_LALOMERUI",
+          0.032
+        ],
+        [
+          "DESA_WALI",
+          0.029
+        ],
+        [
+          "BARAS",
+          0.028
+        ],
+        [
+          "TAJE_TANAMPEDAGI",
+          0.023
+        ],
+        [
+          "TOMINI",
+          0.02
+        ],
+        [
+          "LASALIMU",
+          0.016
+        ],
+        [
+          "KADATUA",
+          0.012
+        ],
+        [
+          "BALAESANG",
+          0.011
+        ],
+        [
+          "KAIMBULAWA",
+          0.01
+        ],
+        [
+          "BALANTAK",
+          0.007
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "East Semitic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 3,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.3699434615960366,
+      "spread": 0.45528817204213645,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.0946749970419158,
+      "uniform_d2_kcal": 1.0904526287484217,
+      "representatives_kcal": [
+        [
+          "AKKADIAN_3",
+          0.445
+        ],
+        [
+          "AKKADIAN",
+          0.288
+        ],
+        [
+          "AKKADIAN_2",
+          0.266
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "West Semitic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 63,
+      "n_glottocodes": 63,
+      "max_ldnd": 0.9698971143069349,
+      "spread": 2.0673665502675154,
+      "spread_rarefied_m3": 1.124263679695585,
+      "d_max_kcal": 1.42474874542625,
+      "uniform_d2_kcal": 1.3687429007443732,
+      "representatives_kcal": [
+        [
+          "INNEMOR",
+          0.081
+        ],
+        [
+          "GAFAT",
+          0.074
+        ],
+        [
+          "MESMES_2",
+          0.071
+        ],
+        [
+          "BIBLICAL_HEBREW",
+          0.067
+        ],
+        [
+          "HARARI",
+          0.062
+        ],
+        [
+          "SOQOTRI_2",
+          0.057
+        ],
+        [
+          "WESTERN_NEO_ARAMAIC",
+          0.054
+        ],
+        [
+          "HOBYOT",
+          0.048
+        ],
+        [
+          "TUROYO",
+          0.048
+        ],
+        [
+          "HULAULA",
+          0.043
+        ],
+        [
+          "ARBEL_NEO_ARAMAIC",
+          0.038
+        ],
+        [
+          "NORTH_MESOPOTAMIAN_ARABIC",
+          0.031
+        ],
+        [
+          "ARGOBBA",
+          0.031
+        ],
+        [
+          "KIBERA_KENYA",
+          0.031
+        ],
+        [
+          "MOROCCAN_ARABIC_2",
+          0.031
+        ],
+        [
+          "HARSUSI",
+          0.027
+        ],
+        [
+          "HIJAZI_ARABIC",
+          0.026
+        ],
+        [
+          "SAURI",
+          0.025
+        ],
+        [
+          "ARABIC_CYPRIOT_SPOKEN",
+          0.021
+        ],
+        [
+          "SODDO",
+          0.02
+        ],
+        [
+          "HEBREW",
+          0.017
+        ],
+        [
+          "TIGRINYA_2",
+          0.017
+        ],
+        [
+          "HERTEVIN",
+          0.015
+        ],
+        [
+          "NAJDI_ARABIC",
+          0.015
+        ],
+        [
+          "MEHRI",
+          0.014
+        ],
+        [
+          "IRAQ_MUSLIM_BAGHDAD_ARABIC",
+          0.013
+        ],
+        [
+          "MALTESE_ARABIC",
+          0.007
+        ],
+        [
+          "AMHARIC_2",
+          0.006
+        ],
+        [
+          "TUNISIAN_ARABIC_MAGHRIB",
+          0.005
+        ],
+        [
+          "BOHTAN",
+          0.002
+        ],
+        [
+          "JUDEO_TUNISIAN_ARABIC",
+          0.001
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Central Semitic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 62,
+      "n_glottocodes": 48,
+      "max_ldnd": 0.8776221075551024,
+      "spread": 1.7951887710874306,
+      "spread_rarefied_m3": 0.9803480957603924,
+      "d_max_kcal": 1.3615665547414355,
+      "uniform_d2_kcal": 1.3073706862843886,
+      "representatives_kcal": [
+        [
+          "BIBLICAL_HEBREW",
+          0.141
+        ],
+        [
+          "SOUKHNE_SYRIAN_ARABIC",
+          0.092
+        ],
+        [
+          "WESTERN_NEO_ARAMAIC",
+          0.084
+        ],
+        [
+          "KIBERA_KENYA",
+          0.079
+        ],
+        [
+          "TUROYO",
+          0.07
+        ],
+        [
+          "MALTESE",
+          0.067
+        ],
+        [
+          "ARBEL_NEO_ARAMAIC",
+          0.059
+        ],
+        [
+          "HULAULA",
+          0.059
+        ],
+        [
+          "MODERN_HEBREW",
+          0.049
+        ],
+        [
+          "HIJAZI_ARABIC",
+          0.044
+        ],
+        [
+          "ARABIC_KHUZESTANI",
+          0.043
+        ],
+        [
+          "HERTEVIN",
+          0.04
+        ],
+        [
+          "MOROCCAN_ARABIC_2",
+          0.04
+        ],
+        [
+          "HEBREW",
+          0.029
+        ],
+        [
+          "JUDEO_TUNISIAN_ARABIC",
+          0.028
+        ],
+        [
+          "BOHTAN",
+          0.022
+        ],
+        [
+          "TUNISIAN_ARABIC_MAGHRIB",
+          0.019
+        ],
+        [
+          "NEO_MANDAIC_KHORRAMSHAHR",
+          0.011
+        ],
+        [
+          "ARABIC_SUDANESE_SPOKEN",
+          0.007
+        ],
+        [
+          "AMEDYA_ARAMAIC",
+          0.007
+        ],
+        [
+          "CLASSICAL_MANDAEAN",
+          0.007
+        ],
+        [
+          "URMI_NEO_ARAMAIC",
+          0.002
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Northwest Semitic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 27,
+      "n_glottocodes": 19,
+      "max_ldnd": 0.8643801235473386,
+      "spread": 1.597803390500769,
+      "spread_rarefied_m3": 0.8972154824599506,
+      "d_max_kcal": 1.318251375132232,
+      "uniform_d2_kcal": 1.2644543477964292,
+      "representatives_kcal": [
+        [
+          "BIBLICAL_HEBREW",
+          0.171
+        ],
+        [
+          "WESTERN_NEO_ARAMAIC",
+          0.145
+        ],
+        [
+          "TUROYO",
+          0.1
+        ],
+        [
+          "ARBEL_NEO_ARAMAIC",
+          0.085
+        ],
+        [
+          "MODERN_HEBREW",
+          0.077
+        ],
+        [
+          "UGARITIC",
+          0.071
+        ],
+        [
+          "CHRISTIAN_URMI",
+          0.06
+        ],
+        [
+          "HEBREW",
+          0.06
+        ],
+        [
+          "CLASSICAL_MANDAEAN",
+          0.054
+        ],
+        [
+          "HERTEVIN",
+          0.04
+        ],
+        [
+          "HULAULA",
+          0.04
+        ],
+        [
+          "NEO_MANDAIC_KHORRAMSHAHR",
+          0.039
+        ],
+        [
+          "AMEDYA_ARAMAIC",
+          0.025
+        ],
+        [
+          "SYRIAC",
+          0.022
+        ],
+        [
+          "URMI_NEO_ARAMAIC",
+          0.01
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Aramaic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 23,
+      "n_glottocodes": 16,
+      "max_ldnd": 0.7013739879458221,
+      "spread": 1.3328480836312093,
+      "spread_rarefied_m3": 0.7561822525612366,
+      "d_max_kcal": 1.2603490244002278,
+      "uniform_d2_kcal": 1.2260973747261232,
+      "representatives_kcal": [
+        [
+          "WESTERN_NEO_ARAMAIC",
+          0.21
+        ],
+        [
+          "ARBEL_NEO_ARAMAIC",
+          0.114
+        ],
+        [
+          "TUROYO",
+          0.111
+        ],
+        [
+          "CHRISTIAN_URMI",
+          0.101
+        ],
+        [
+          "CLASSICAL_MANDAEAN",
+          0.091
+        ],
+        [
+          "NEO_MANDAIC_KHORRAMSHAHR",
+          0.073
+        ],
+        [
+          "SYRIAC_2",
+          0.062
+        ],
+        [
+          "HULAULA",
+          0.047
+        ],
+        [
+          "CLASSICAL_MANDAIC",
+          0.046
+        ],
+        [
+          "AMEDYA_ARAMAIC",
+          0.042
+        ],
+        [
+          "HERTEVIN",
+          0.041
+        ],
+        [
+          "SYRIAC",
+          0.021
+        ],
+        [
+          "MLAHSO",
+          0.017
+        ],
+        [
+          "KOY_SANJAQ_SURAT",
+          0.014
+        ],
+        [
+          "BOHTAN",
+          0.01
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "North-Eastern Neo-Aramaic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 10,
+      "n_glottocodes": 7,
+      "max_ldnd": 0.49657439686242644,
+      "spread": 0.8264747065706514,
+      "spread_rarefied_m3": 0.500136485312318,
+      "d_max_kcal": 1.1589020327818957,
+      "uniform_d2_kcal": 1.1430487755216074,
+      "representatives_kcal": [
+        [
+          "CHRISTIAN_URMI",
+          0.281
+        ],
+        [
+          "ARBEL_NEO_ARAMAIC",
+          0.188
+        ],
+        [
+          "AMEDYA_ARAMAIC",
+          0.17
+        ],
+        [
+          "HULAULA",
+          0.151
+        ],
+        [
+          "URMI_NEO_ARAMAIC",
+          0.121
+        ],
+        [
+          "ARAMAIC",
+          0.077
+        ],
+        [
+          "KOY_SANJAQ_SURAT",
+          0.011
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Canaanite",
+      "family": "Afro-Asiatic",
+      "n_doculects": 4,
+      "n_glottocodes": 3,
+      "max_ldnd": 0.6223248067557794,
+      "spread": 0.8983525471068623,
+      "spread_rarefied_m3": 0.8720906161202941,
+      "d_max_kcal": 1.179502554739877,
+      "uniform_d2_kcal": 1.1695616464673577,
+      "representatives_kcal": [
+        [
+          "UGARITIC",
+          0.344
+        ],
+        [
+          "BIBLICAL_HEBREW",
+          0.325
+        ],
+        [
+          "MODERN_HEBREW",
+          0.216
+        ],
+        [
+          "HEBREW",
+          0.115
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "South Semitic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 33,
+      "n_glottocodes": 19,
+      "max_ldnd": 0.9415443288116768,
+      "spread": 1.9033592173582488,
+      "spread_rarefied_m3": 1.1632172187874101,
+      "d_max_kcal": 1.386390105296328,
+      "uniform_d2_kcal": 1.3623631886162428,
+      "representatives_kcal": [
+        [
+          "GAFAT",
+          0.102
+        ],
+        [
+          "MEHRI_2",
+          0.085
+        ],
+        [
+          "HARARI",
+          0.08
+        ],
+        [
+          "INNEMOR",
+          0.076
+        ],
+        [
+          "MESMES",
+          0.073
+        ],
+        [
+          "SOQOTRI_2",
+          0.062
+        ],
+        [
+          "ETHIOPIC",
+          0.054
+        ],
+        [
+          "MESMES_2",
+          0.046
+        ],
+        [
+          "SOQOTRI",
+          0.045
+        ],
+        [
+          "SAURI",
+          0.041
+        ],
+        [
+          "ARGOBBA",
+          0.04
+        ],
+        [
+          "SHEHRI",
+          0.04
+        ],
+        [
+          "ZWAY",
+          0.04
+        ],
+        [
+          "TIGRIGNA",
+          0.036
+        ],
+        [
+          "HOBYOT",
+          0.034
+        ],
+        [
+          "TIGRE_2",
+          0.025
+        ],
+        [
+          "TIGRINYA_2",
+          0.022
+        ],
+        [
+          "MEHRI",
+          0.021
+        ],
+        [
+          "HARSUSI",
+          0.016
+        ],
+        [
+          "WALANI_SILTE",
+          0.015
+        ],
+        [
+          "GETO",
+          0.014
+        ],
+        [
+          "AMHARIC_2",
+          0.008
+        ],
+        [
+          "SODDO",
+          0.008
+        ],
+        [
+          "GEEZ_3",
+          0.007
+        ],
+        [
+          "MESQAN",
+          0.005
+        ],
+        [
+          "TIGRE",
+          0.005
+        ],
+        [
+          "HARARI_2",
+          0.002
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Ethiosemitic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 25,
+      "n_glottocodes": 14,
+      "max_ldnd": 0.8842858573013661,
+      "spread": 1.7105256879418522,
+      "spread_rarefied_m3": 1.0163734743167203,
+      "d_max_kcal": 1.3427076081892435,
+      "uniform_d2_kcal": 1.318560098764628,
+      "representatives_kcal": [
+        [
+          "GAFAT",
+          0.129
+        ],
+        [
+          "MESMES",
+          0.106
+        ],
+        [
+          "HARARI",
+          0.102
+        ],
+        [
+          "ETHIOPIC",
+          0.089
+        ],
+        [
+          "INNEMOR",
+          0.085
+        ],
+        [
+          "TIGRE",
+          0.072
+        ],
+        [
+          "MESMES_2",
+          0.071
+        ],
+        [
+          "TIGRIGNA",
+          0.069
+        ],
+        [
+          "ARGOBBA",
+          0.055
+        ],
+        [
+          "WALANI_SILTE",
+          0.052
+        ],
+        [
+          "ZWAY",
+          0.04
+        ],
+        [
+          "GETO",
+          0.034
+        ],
+        [
+          "GEEZ_3",
+          0.029
+        ],
+        [
+          "TIGRINYA_2",
+          0.017
+        ],
+        [
+          "SODDO",
+          0.014
+        ],
+        [
+          "AMHARIC_2",
+          0.013
+        ],
+        [
+          "CHAHA",
+          0.01
+        ],
+        [
+          "AMHARIC",
+          0.006
+        ],
+        [
+          "TIGRE_2",
+          0.004
+        ],
+        [
+          "MESQAN",
+          0.003
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "North Ethiopic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 9,
+      "n_glottocodes": 3,
+      "max_ldnd": 0.6012565130352641,
+      "spread": 0.9533895041701372,
+      "spread_rarefied_m3": 0.6318614526812799,
+      "d_max_kcal": 1.1849439888187112,
+      "uniform_d2_kcal": 1.167820051457406,
+      "representatives_kcal": [
+        [
+          "TIGRE",
+          0.225
+        ],
+        [
+          "TIGRINYA_2",
+          0.22
+        ],
+        [
+          "TIGRIGNA",
+          0.133
+        ],
+        [
+          "GEEZ_3",
+          0.121
+        ],
+        [
+          "ETHIOPIC",
+          0.116
+        ],
+        [
+          "TIGRE_2",
+          0.11
+        ],
+        [
+          "GEEZ_2",
+          0.076
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "South Ethiopic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 16,
+      "n_glottocodes": 11,
+      "max_ldnd": 0.8280682879300617,
+      "spread": 1.5868693267628577,
+      "spread_rarefied_m3": 0.9757063855778879,
+      "d_max_kcal": 1.3157660370085063,
+      "uniform_d2_kcal": 1.2973444648501957,
+      "representatives_kcal": [
+        [
+          "GAFAT",
+          0.171
+        ],
+        [
+          "HARARI",
+          0.122
+        ],
+        [
+          "MESMES",
+          0.107
+        ],
+        [
+          "MESMES_2",
+          0.099
+        ],
+        [
+          "INNEMOR",
+          0.085
+        ],
+        [
+          "WALANI_SILTE",
+          0.078
+        ],
+        [
+          "ARGOBBA",
+          0.073
+        ],
+        [
+          "ZWAY",
+          0.059
+        ],
+        [
+          "GETO",
+          0.043
+        ],
+        [
+          "CHAHA",
+          0.038
+        ],
+        [
+          "AMHARIC",
+          0.036
+        ],
+        [
+          "HARARI_2",
+          0.034
+        ],
+        [
+          "AMHARIC_3",
+          0.028
+        ],
+        [
+          "SODDO",
+          0.013
+        ],
+        [
+          "MESQAN",
+          0.007
+        ],
+        [
+          "AMHARIC_2",
+          0.005
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Outer South Ethiopic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 8,
+      "n_glottocodes": 6,
+      "max_ldnd": 0.8280682879300617,
+      "spread": 1.3859623494384206,
+      "spread_rarefied_m3": 0.9499342693663207,
+      "d_max_kcal": 1.275532437395788,
+      "uniform_d2_kcal": 1.2569201909846321,
+      "representatives_kcal": [
+        [
+          "GAFAT",
+          0.269
+        ],
+        [
+          "MESMES",
+          0.147
+        ],
+        [
+          "MESMES_2",
+          0.142
+        ],
+        [
+          "SODDO",
+          0.122
+        ],
+        [
+          "INNEMOR",
+          0.105
+        ],
+        [
+          "CHAHA",
+          0.086
+        ],
+        [
+          "GETO",
+          0.072
+        ],
+        [
+          "MESQAN",
+          0.057
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Modern South Arabian",
+      "family": "Afro-Asiatic",
+      "n_doculects": 9,
+      "n_glottocodes": 6,
+      "max_ldnd": 0.6257570697278605,
+      "spread": 1.2258276029352977,
+      "spread_rarefied_m3": 0.8234438853599698,
+      "d_max_kcal": 1.2381661850118424,
+      "uniform_d2_kcal": 1.2346980378831223,
+      "representatives_kcal": [
+        [
+          "SOQOTRI_2",
+          0.155
+        ],
+        [
+          "SHEHRI",
+          0.139
+        ],
+        [
+          "SAURI",
+          0.137
+        ],
+        [
+          "BATHARI",
+          0.127
+        ],
+        [
+          "MEHRI_2",
+          0.122
+        ],
+        [
+          "SOQOTRI",
+          0.104
+        ],
+        [
+          "HARSUSI",
+          0.081
+        ],
+        [
+          "HOBYOT",
+          0.081
+        ],
+        [
+          "MEHRI",
+          0.052
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Ancient South Arabian",
+      "family": "Afro-Asiatic",
+      "n_doculects": 1,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.0,
+      "spread": 0.0,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.0,
+      "uniform_d2_kcal": 1.0,
+      "representatives_kcal": [
+        [
+          "SABEAN",
+          1.0
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Peninsular Arabic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 10,
+      "n_glottocodes": 9,
+      "max_ldnd": 0.5425433753527321,
+      "spread": 1.0261834404643027,
+      "spread_rarefied_m3": 0.6228536827820438,
+      "d_max_kcal": 1.1975284889895343,
+      "uniform_d2_kcal": 1.1746968147923607,
+      "representatives_kcal": [
+        [
+          "HIJAZI_ARABIC",
+          0.199
+        ],
+        [
+          "ARABIC_KHUZESTANI",
+          0.186
+        ],
+        [
+          "NAJDI_ARABIC",
+          0.169
+        ],
+        [
+          "YEMEN_SANAANI_ARABIC",
+          0.133
+        ],
+        [
+          "ZANZIBAR_ARABIC",
+          0.125
+        ],
+        [
+          "DHOFARI_ARABIC",
+          0.098
+        ],
+        [
+          "OGADEN_ARABIC",
+          0.089
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Egyptic Arabic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 8,
+      "n_glottocodes": 6,
+      "max_ldnd": 0.6251571841142436,
+      "spread": 1.0791482787960205,
+      "spread_rarefied_m3": 0.6427544650780354,
+      "d_max_kcal": 1.2110684904304787,
+      "uniform_d2_kcal": 1.1903092448540584,
+      "representatives_kcal": [
+        [
+          "SHUWA_CHADIAN_ARABIC_2",
+          0.247
+        ],
+        [
+          "KIBERA_KENYA",
+          0.246
+        ],
+        [
+          "SHUWA_CHADIAN_ARABIC",
+          0.186
+        ],
+        [
+          "ARABIC_SUDANESE_SPOKEN",
+          0.172
+        ],
+        [
+          "CAIRO_ARABIC",
+          0.144
+        ],
+        [
+          "NIGERIAN_ARABIC",
+          0.004
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "North African Arabic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 11,
+      "n_glottocodes": 8,
+      "max_ldnd": 0.6230843625296046,
+      "spread": 1.1336941413541834,
+      "spread_rarefied_m3": 0.691547556771785,
+      "d_max_kcal": 1.2199701178058004,
+      "uniform_d2_kcal": 1.200578404494385,
+      "representatives_kcal": [
+        [
+          "HASSANIYA",
+          0.225
+        ],
+        [
+          "MALTESE",
+          0.186
+        ],
+        [
+          "ARABIC_LIBYAN_SPOKEN",
+          0.12
+        ],
+        [
+          "MALTESE_ARABIC",
+          0.1
+        ],
+        [
+          "MOROCCAN_ARABIC_2",
+          0.091
+        ],
+        [
+          "JUDEO_TRIPOLITANIAN_ARABIC",
+          0.089
+        ],
+        [
+          "MOROCCAN_ARABIC",
+          0.069
+        ],
+        [
+          "TUNISIAN_ARABIC_MAGHRIB",
+          0.058
+        ],
+        [
+          "JUDEO_MOROCCAN_ARABIC",
+          0.033
+        ],
+        [
+          "TRIPOLI_JEWISH_ARABIC",
+          0.029
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Eastern Arabic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 8,
+      "n_glottocodes": 4,
+      "max_ldnd": 0.6094499043051468,
+      "spread": 1.0103797297615542,
+      "spread_rarefied_m3": 0.6756892715046785,
+      "d_max_kcal": 1.1956049968173228,
+      "uniform_d2_kcal": 1.1816412179571147,
+      "representatives_kcal": [
+        [
+          "SOUKHNE_SYRIAN_ARABIC",
+          0.265
+        ],
+        [
+          "NORTH_MESOPOTAMIAN_ARABIC",
+          0.218
+        ],
+        [
+          "BUCHARA_ARABIC",
+          0.137
+        ],
+        [
+          "JUDEO_IRAQI_ARABIC",
+          0.119
+        ],
+        [
+          "ARABIC_URFA",
+          0.105
+        ],
+        [
+          "ARABIC_MOSUL",
+          0.085
+        ],
+        [
+          "IRAQ_MUSLIM_BAGHDAD_ARABIC",
+          0.05
+        ],
+        [
+          "ARABIC_MARDIN",
+          0.022
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Levantine Arabic",
+      "family": "Afro-Asiatic",
+      "n_doculects": 7,
+      "n_glottocodes": 2,
+      "max_ldnd": 0.39842406233275585,
+      "spread": 0.7161375826957788,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.1356567322008966,
+      "uniform_d2_kcal": 1.1313024979420914,
+      "representatives_kcal": [
+        [
+          "DAMASCUS_ARABIC",
+          0.214
+        ],
+        [
+          "ARABIC_NORTH_LEVANTINE_SPOKEN",
+          0.21
+        ],
+        [
+          "PALESTINIAN_ARABIC",
+          0.16
+        ],
+        [
+          "SAN_ANDRES_ARABIC_2",
+          0.136
+        ],
+        [
+          "SYRIAN_ARABIC",
+          0.118
+        ],
+        [
+          "SAN_ANDRES_ARABIC_3",
+          0.084
+        ],
+        [
+          "SAN_ANDRES_ARABIC_1",
+          0.078
         ]
       ],
       "kkt_all_ok": true
