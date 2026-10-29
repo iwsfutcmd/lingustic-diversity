@@ -2,6 +2,7 @@
 
 Usage:
     python scripts/run_analysis.py [--cldf data/asjp/cldf] [--out results] [--tokens asjp|segments]
+                                   [--distance pmi|ldnd] [--pmi-model results/pmi_model_all.tsv]
 """
 
 from __future__ import annotations
@@ -19,8 +20,8 @@ import numpy as np
 from scipy.optimize import brentq
 
 from isodiv.asjp import Doculect, load, load_exclusions
-from isodiv.distance import ldnd, ldnd_matrix
 from isodiv.diversity import max_diversity, similarity_matrix, uniform_diversity
+from isodiv.metric import DISTANCES, Metric, get_metric
 
 # lineage label -> predicate on a languages.csv row
 IE_GENUS = lambda g: (lambda r: r["classification_wals"] == f"IE.{g}")
@@ -117,7 +118,7 @@ def drop_nan(docs: list[Doculect], d: np.ndarray) -> tuple[list[Doculect], np.nd
 
 
 def spread(d: np.ndarray, level: float = 1.5) -> float:
-    """Clock-free 'diversity radius' in LDND units.
+    """Clock-free 'diversity radius' in distance units (LDND or PMI-LDND).
 
     k* = the scale at which D_max first reaches `level` effective lineages;
     spread = ln 3 / k*. For a two-doculect lineage at distance δ this is exactly δ,
@@ -133,8 +134,8 @@ def spread(d: np.ndarray, level: float = 1.5) -> float:
     return float(np.log(3) / np.exp(brentq(f, lo, hi, xtol=1e-4)))
 
 
-def noise_floor(cldf: Path, n_pairs: int = 400, seed: int = 0) -> np.ndarray:
-    """LDND between doculects of the *same* language (same Glottocode, names X / X_2):
+def noise_floor(cldf: Path, metric: Metric, n_pairs: int = 400, seed: int = 0) -> np.ndarray:
+    """Distance between doculects of the *same* language (same Glottocode, names X / X_2):
     differences here are transcription/source/idiolect noise, not lineage diversity."""
     rows = list(csv.DictReader((cldf / "languages.csv").open(encoding="utf-8")))
     groups: dict[tuple[str, str], list[str]] = defaultdict(list)
@@ -145,7 +146,7 @@ def noise_floor(cldf: Path, n_pairs: int = 400, seed: int = 0) -> np.ndarray:
     pairs = [pairs[i] for i in rng.choice(len(pairs), size=min(n_pairs, len(pairs)), replace=False)]
     ids = {i for p in pairs for i in p}
     docs = load(cldf, keep=lambda r: r["ID"] in ids)
-    v = np.array([ldnd(docs[a], docs[b]) for a, b in pairs if a in docs and b in docs])
+    v = metric.values([(docs[a], docs[b]) for a, b in pairs if a in docs and b in docs])
     return v[~np.isnan(v)]
 
 
@@ -168,8 +169,8 @@ def rarefied_spread(docs: list[Doculect], d: np.ndarray, m: int = RAREFY_M,
     return float(np.mean(vals))
 
 
-def analyse(name: str, docs: list[Doculect], k_cal: float) -> dict:
-    d = ldnd_matrix(docs)
+def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric) -> dict:
+    d = metric.matrix(docs)
     docs, d = drop_nan(docs, d)
     zs = [similarity_matrix(d, k) for k in KS]
     maxes = [max_diversity(z) for z in zs]
@@ -197,7 +198,7 @@ def analyse(name: str, docs: list[Doculect], k_cal: float) -> dict:
     }
 
 
-def sampling_robustness(docs: list[Doculect], k_cal: float) -> list[dict]:
+def sampling_robustness(docs: list[Doculect], k_cal: float, metric: Metric) -> list[dict]:
     """Same lineage, different 'dialect counting' choices."""
     by_glotto: dict[str, Doculect] = {}
     for x in docs:
@@ -210,7 +211,7 @@ def sampling_robustness(docs: list[Doculect], k_cal: float) -> list[dict]:
     }
     out = []
     for label, sub in variants.items():
-        d = ldnd_matrix(sub)
+        d = metric.matrix(sub)
         sub, d = drop_nan(sub, d)
         z = similarity_matrix(d, k_cal)
         out.append({
@@ -223,7 +224,7 @@ def sampling_robustness(docs: list[Doculect], k_cal: float) -> list[dict]:
     return out
 
 
-def plot(results: list[dict], robust: list[dict], out: Path, k_cal: float) -> None:
+def plot(results: list[dict], robust: list[dict], out: Path, k_cal: float, label: str = "LDND") -> None:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -245,7 +246,7 @@ def plot(results: list[dict], robust: list[dict], out: Path, k_cal: float) -> No
     ax1.axhline(1.5, color="grey", lw=0.8, ls=":")
     ax1.axvline(k_cal, color="crimson", lw=0.8, ls=":")
     ax1.text(k_cal * 1.08, 2.6, f"k_cal = {k_cal:.2f}\n(noise floor ≈ 0.9 similar)", color="crimson", fontsize=8)
-    ax1.set(xscale="log", yscale="log", xlabel="scale k  (Z = exp(−k · LDND))",
+    ax1.set(xscale="log", yscale="log", xlabel=f"scale k  (Z = exp(−k · {label}))",
             ylabel="maximum diversity D_max (effective # of distinct lineages)",
             title="Diversity profiles — solid: isolate candidates, dashed: controls, grey: other families")
     ax1.legend(fontsize=8, ncol=2)
@@ -254,7 +255,7 @@ def plot(results: list[dict], robust: list[dict], out: Path, k_cal: float) -> No
     x = np.arange(len(labels))
     ax2.bar(x - 0.27, [r["d_max_kcal"] for r in robust], 0.27, label="D_max at k_cal (Leinster–Meckes)")
     ax2.bar(x, [r["uniform_d2_kcal"] for r in robust], 0.27, label="naive D_2 at k_cal, equal weights")
-    ax2.bar(x + 0.27, [r["spread"] for r in robust], 0.27, label="spread (LDND units)")
+    ax2.bar(x + 0.27, [r["spread"] for r in robust], 0.27, label=f"spread ({label} units)")
     for xi, r in zip(x, robust):
         ax2.text(xi, max(r["d_max_kcal"], r["spread"]) + 0.04, f'n={r["n"]}', ha="center", fontsize=8)
     ax2.set_xticks(x, labels, rotation=20, ha="right", fontsize=8)
@@ -270,41 +271,45 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=Path("results"))
     ap.add_argument("--wold", type=Path, default=None, help="WOLD CLDF dir (e.g. data/wold/cldf): mask words WOLD marks as loans")
     ap.add_argument("--tokens", choices=["asjp", "segments"], default="asjp")
+    ap.add_argument("--distance", choices=DISTANCES, default="pmi")
+    ap.add_argument("--pmi-model", type=Path, default=Path("results/pmi_model_all.tsv"))
     args = ap.parse_args()
+    metric = get_metric(args.distance, args.pmi_model)
     args.out.mkdir(parents=True, exist_ok=True)
 
     all_docs = load_all(args.cldf, args.tokens, args.wold)
     rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
 
-    floor = noise_floor(args.cldf)
+    floor = noise_floor(args.cldf, metric)
     k_cal = float(-np.log(0.9) / np.median(floor))
-    print(f"noise floor LDND quantiles 10/50/90: {np.round(np.quantile(floor, [.1, .5, .9]), 3)}; k_cal={k_cal:.3f}")
+    print(f"noise floor {metric.label} quantiles 10/50/90: {np.round(np.quantile(floor, [.1, .5, .9]), 3)}; k_cal={k_cal:.3f}")
 
     results = []
     for name, pred in LINEAGES.items():
         docs = stratified([x for x in all_docs.values() if pred(rows[x.id])], MAX_PER_LINEAGE)
-        r = analyse(name, docs, k_cal)
+        r = analyse(name, docs, k_cal, metric)
         results.append(r)
         print(f'{name:14s} n={r["n_doculects"]:3d} glotto={r["n_glottocodes"]:3d} '
               f'maxLDND={r["max_ldnd"]:.3f} spread={r["spread"]:.3f} rare3={r["spread_rarefied_m3"]:.3f} '
               f'Dmax@kcal={r["d_max_kcal"]:.3f} naive@kcal={r["uniform_d2_kcal"]:.3f} kkt={r["kkt_all_ok"]}')
 
     japonic = [x for x in all_docs.values() if rows[x.id]["Family"] == "Japonic"]
-    robust = sampling_robustness(japonic, k_cal)
+    robust = sampling_robustness(japonic, k_cal, metric)
     for r in robust:
         print(r)
 
-    plot(results, robust, args.out / "diversity_profiles.png", k_cal)
+    plot(results, robust, args.out / "diversity_profiles.png", k_cal, metric.label)
 
     summary = [{k: v for k, v in r.items() if not k.startswith(("_", "profile"))} for r in results]
     (args.out / "summary.json").write_text(
-        json.dumps({"tokenization": args.tokens, "k_cal": k_cal,
+        json.dumps({"tokenization": args.tokens, "distance": args.distance, "distance_label": metric.label,
+                    "k_cal": k_cal,
                     "noise_floor_quantiles_10_50_90": np.quantile(floor, [.1, .5, .9]).tolist(),
                     "excluded": load_exclusions(EXCLUSIONS_FILE),
                     "lineages": summary, "japonic_sampling": robust},
                    ensure_ascii=False, indent=2), encoding="utf-8")
     (args.out / "profiles.json").write_text(json.dumps(
-        {"ks": KS.tolist(), "k_cal": k_cal,
+        {"ks": KS.tolist(), "k_cal": k_cal, "distance": args.distance,
          "profiles": {r["lineage"]: {"d_max": r["profile_d_max"], "uniform": r["profile_uniform"]} for r in results}},
         ensure_ascii=False), encoding="utf-8")
     with (args.out / "summary.csv").open("w", encoding="utf-8", newline="") as fh:

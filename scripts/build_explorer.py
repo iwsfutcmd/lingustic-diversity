@@ -19,6 +19,17 @@ from run_analysis import CORE_LINEAGES, EXCLUSIONS_FILE, ISOLATE_CANDIDATES, SUB
 from isodiv.asjp import load_exclusions
 
 TEMPLATE = Path(__file__).resolve().parent.parent / "explorer" / "template.html"
+# "LDND" in the template is replaced by the distance actually used (summary.json "distance_label").
+METHOD = {
+    "LDND": "LDND on ASJP 40-item lists (Wichmann et al. 2010): Levenshtein distance normalized by word length, "
+            "divided by the same measure for different meanings to remove chance resemblance. About 0 for identical "
+            "lists and about 1 for unrelated languages.",
+    "PMI-LDND": "PMI-LDND on ASJP 40-item lists: LDND (Wichmann et al. 2010) with word distances from alignments "
+                "scored by learned sound correspondences (pointwise mutual information, after Jäger 2013, 2018) "
+                "instead of a flat cost per changed segment, so regular correspondences such as Japonic h : p count as "
+                "close. Divided by the same measure for different meanings to remove chance resemblance. About 0 for "
+                "identical lists and about 1 for unrelated languages.",
+}
 
 
 def category(name: str) -> str:
@@ -107,7 +118,9 @@ def main() -> None:
         "ks": profiles["ks"], "profiles": profiles["profiles"],
     }
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    html = TEMPLATE.read_text(encoding="utf-8").replace("/*__DATA__*/", blob)
+    label = summary.get("distance_label", "LDND")
+    html = (TEMPLATE.read_text(encoding="utf-8").replace("LDND", label)
+            .replace("<!--__METHOD__-->", METHOD[label]).replace("/*__DATA__*/", blob))
     args.out.write_text(html, encoding="utf-8")
     print(f"{args.out}: {len(html) / 1024:.0f} KB, {len(lineages)} lineages, {len(pairs)} pairs")
 

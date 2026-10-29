@@ -149,14 +149,14 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
     <div class="panel">
       <h2>What is measured</h2>
       <ol>
-        <li><b>Distance, not time.</b> LDND on ASJP 40-item lists (Wichmann et al. 2010): Levenshtein distance normalized by word length, divided by the same measure for different meanings to remove chance resemblance. About 0 for identical lists and about 1 for unrelated languages.</li>
+        <li><b>Distance, not time.</b> <!--__METHOD__--></li>
         <li><b>Diversity that ignores duplicates.</b> Z = exp(−k·LDND), then the Leinster–Meckes maximum diversity D_max(Z): the effective number of fully distinct lineages. Adding another doculect that is identical to one already present does not change it.</li>
         <li><b>Scale without a clock.</b> k is calibrated so two doculects of the same language (same Glottocode) are 0.9 similar. Here k_cal = <code id="kcal"></code>.</li>
       </ol>
       <h2>Reading it</h2>
       <ul>
         <li>The calibrated scale is coarse. Two unrelated lineages (LDND ≈ 1) are still about 0.7 similar at k_cal, so their combined D_max stays small. The Between lineages view therefore also reports a finer scale (k = 3), where distinct lineages should add up.</li>
-        <li>Same-language doculect pairs differ by LDND 0.11 / 0.30 / 0.57 (10th / 50th / 90th percentile). Lineages in the lowest band cannot be ranked against each other.</li>
+        <li>Same-language doculect pairs differ by LDND <span id="noisefloor"></span> (10th / 50th / 90th percentile). Lineages in the lowest band cannot be ranked against each other.</li>
         <li>D_max is stable against duplicates, not against sampling more distinct varieties. Lineages with few doculects are lower bounds.</li>
         <li>Contact shortens distances. The 40-item list resists borrowing but is not immune.</li>
         <li>Doculects listed in <code>config/exclusions.tsv</code> are left out of every number here, each with its reason. <code>scripts/audit.py</code> flags candidates (far from the rest of the lineage, fewer than 30 of 40 concepts, or removing it lowers D_max by 0.015 or more) but never excludes automatically. A deep branch such as Chuvash is flagged and kept; a list distorted by contact or a transcription problem is excluded.</li>
@@ -190,6 +190,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
     ["noise floor LDND 10/50/90%", DATA.noise.map(v => fmt(v, 2)).join(" / ")],
   ].map(([k, v]) => `<span>${k} <b>${v}</b></span>`).join("");
   $("kcal").textContent = fmt(DATA.k_cal);
+  $("noisefloor").textContent = DATA.noise.map(v => fmt(v, 2)).join(" / ");
   $("catlegend").innerHTML = Object.entries(CAT).map(([k, v]) => `<span><span class="dot ${k}"></span> ${v}</span>`).join(" &nbsp; ");
 
   /* ---------- tabs + hash routing ---------- */

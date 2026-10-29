@@ -32,6 +32,7 @@ from dataclasses import dataclass
 import numpy as np
 
 from .asjp import Doculect, Word
+from .distance import PairTable, concept_order, from_table
 
 GAP_OPEN = -2.49     # Jäger (2018)
 GAP_EXTEND = -1.71
@@ -123,8 +124,13 @@ def align(model: PMIModel, aw: Sequence[Word], bw: Sequence[Word], *, traceback:
     """Alignment scores of aw[i] with bw[i]; with ``traceback`` also the aligned segment id pairs."""
     a, la = model.encode(aw)
     b, lb = model.encode(bw)
+    return _align_encoded(model, a, la, b, lb, traceback)
+
+
+def _align_encoded(model: PMIModel, a: np.ndarray, la: np.ndarray, b: np.ndarray, lb: np.ndarray,
+                   traceback: bool = False):
     order = np.lexsort((lb, la))              # similar lengths together keeps padding small
-    score = np.empty(len(aw))
+    score = np.empty(len(a))
     pa, pb = [], []
     for k in range(0, len(order), _BATCH):
         o = order[k : k + _BATCH]
@@ -233,17 +239,8 @@ def _tables(model, a, b, min_shared, concepts):
 
 def pmi_ldnd(model: PMIModel, a: Doculect, b: Doculect, *, min_shared: int = 20,
              concepts: frozenset[str] | None = None) -> float:
-    t = _tables(model, a, b, min_shared, concepts)
-    if t is None:
-        return float("nan")
-    shared, grid, ia, ib, sa, sb, _ = t
-    def dist(x, y):
-        return 1.0 - 2.0 * grid[ia[x], ib[y]] / (sa[x] + sb[y])
-    same = np.mean([min(dist(x, y) for x in a.words[c] for y in b.words[c]) for c in shared])
-    firsts = [(a.words[c][0], b.words[c][0]) for c in shared]
-    n = len(shared)
-    diff = np.mean([dist(firsts[i][0], firsts[j][1]) for i in range(n) for j in range(n) if i != j])
-    return float(same / diff) if diff > 0 else float("nan")
+    """LDND with the PMI word distance 1 − 2·S(x, y) / (S(x, x) + S(y, y))."""
+    return from_table(pmi_tables(model, [(a, b)])[0], min_shared=min_shared, concepts=concepts)
 
 
 def erc(same: np.ndarray, first: np.ndarray) -> float:
@@ -293,3 +290,112 @@ def word_pairs(docs: Iterable[tuple[Doculect, Doculect]]) -> tuple[list[tuple[Wo
                 if c != d:
                     diff.append((a.words[c][0], b.words[d][0]))
     return same, diff
+
+
+# ---- many doculect pairs at once ---------------------------------------------------------------
+# Alignment throughput grows ~10x from batches of 2k to 100k word pairs, so word pairs are pooled
+# across many doculect pairs (deduplicated) before aligning.
+
+_CHUNK_WORD_PAIRS = 300_000
+
+
+class _Engine:
+    def __init__(self, model: PMIModel, docs: Iterable[Doculect]):
+        docs = {d.id: d for d in docs}
+        words = sorted({w for d in docs.values() for ws in d.words.values() for w in ws})
+        wid = {w: i for i, w in enumerate(words)}
+        self.model = model
+        self.n = len(words)
+        self.enc = {i: {c: np.array([wid[w] for w in ws]) for c, ws in d.words.items()} for i, d in docs.items()}
+        self.a, self.la = model.encode(words)
+        self.self = _align_encoded(model, self.a, self.la, self.a, self.la)
+
+    def _dist(self, codes: np.ndarray, uniq: np.ndarray, sc: np.ndarray) -> np.ndarray:
+        s = sc[np.searchsorted(uniq, codes)]
+        return 1.0 - 2.0 * s / (self.self[codes // self.n] + self.self[codes % self.n])
+
+    def tables(self, pairs: Sequence[tuple[str, str]]) -> list[PairTable | None]:
+        w, plans, codes = self.n, [], []
+        for x, y in pairs:
+            ea, eb = self.enc[x], self.enc[y]
+            shared = concept_order(ea.keys() & eb.keys())
+            if not shared:
+                plans.append(None)
+                continue
+            fa = np.array([ea[c][0] for c in shared])
+            fb = np.array([eb[c][0] for c in shared])
+            syn = [(ea[c][:, None] * w + eb[c][None, :]).ravel() for c in shared]
+            grid = (fa[:, None] * w + fb[None, :]).ravel()
+            plans.append((tuple(shared), syn, grid))
+            codes.append(grid)
+            codes.extend(syn)
+        if not codes:
+            return [None] * len(pairs)
+        uniq = np.unique(np.concatenate(codes))
+        x, y = uniq // w, uniq % w
+        sc = _align_encoded(self.model, self.a[x], self.la[x], self.a[y], self.la[y])
+        out = []
+        for p in plans:
+            if p is None:
+                out.append(None)
+                continue
+            shared, syn, grid = p
+            n = len(shared)
+            out.append(PairTable(shared, np.array([self._dist(c, uniq, sc).min() for c in syn]),
+                                 self._dist(grid, uniq, sc).reshape(n, n)))
+        return out
+
+
+def _chunks(pairs: Sequence[tuple[Doculect, Doculect]]) -> list[list[tuple[str, str]]]:
+    out, cur, load_ = [], [], 0
+    for a, b in pairs:
+        cur.append((a.id, b.id))
+        load_ += len(a.words) * len(b.words)
+        if load_ >= _CHUNK_WORD_PAIRS:
+            out.append(cur)
+            cur, load_ = [], 0
+    if cur:
+        out.append(cur)
+    return out
+
+
+_WORKER: dict = {}
+
+
+def _init_worker(model: PMIModel, docs: list[Doculect]) -> None:
+    _WORKER["engine"] = _Engine(model, docs)
+
+
+def _work_tables(chunk):
+    return _WORKER["engine"].tables(chunk)
+
+
+def _work_values(args):
+    chunk, min_shared, concepts = args
+    return [from_table(t, min_shared=min_shared, concepts=concepts) for t in _WORKER["engine"].tables(chunk)]
+
+
+def _run(model, pairs, fn, extra, workers):
+    docs = list({d.id: d for p in pairs for d in p}.values())
+    chunks = _chunks(pairs)
+    tasks = [chunk if extra is None else (chunk, *extra) for chunk in chunks]
+    if workers == 1 or len(chunks) < 2:
+        _init_worker(model, docs)
+        res = [fn(t) for t in tasks]
+    else:
+        from multiprocessing import get_context
+        with get_context("fork").Pool(workers, initializer=_init_worker, initargs=(model, docs)) as pool:
+            res = pool.map(fn, tasks)
+    return [x for r in res for x in r]
+
+
+def pmi_tables(model: PMIModel, pairs: Sequence[tuple[Doculect, Doculect]], *,
+               workers: int | None = None) -> list[PairTable | None]:
+    """PMI word-distance tables for many doculect pairs (see ``distance.PairTable``)."""
+    return _run(model, pairs, _work_tables, None, workers)
+
+
+def pmi_ldnd_values(model: PMIModel, pairs: Sequence[tuple[Doculect, Doculect]], *, min_shared: int = 20,
+                    concepts: frozenset[str] | None = None, workers: int | None = None) -> np.ndarray:
+    """PMI-LDND for many doculect pairs; reduces in the workers, so it scales to millions of pairs."""
+    return np.array(_run(model, pairs, _work_values, (min_shared, concepts), workers), dtype=float)

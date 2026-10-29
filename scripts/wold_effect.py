@@ -16,6 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from run_analysis import LINEAGES, MAX_PER_LINEAGE, analyse, load_all, stratified  # noqa: E402
 
+from isodiv.metric import DISTANCES, get_metric
 from isodiv.wold import loan_table
 
 
@@ -24,9 +25,12 @@ def main() -> None:
     ap.add_argument("--wold", type=Path, default=Path("data/wold/cldf"))
     ap.add_argument("--cldf", type=Path, default=Path("data/asjp/cldf"))
     ap.add_argument("--out", type=Path, default=Path("results"))
+    ap.add_argument("--distance", choices=DISTANCES, default=None, help="default: as in results/summary.json")
+    ap.add_argument("--pmi-model", type=Path, default=Path("results/pmi_model_all.tsv"))
     args = ap.parse_args()
-
-    k_cal = json.loads((args.out / "summary.json").read_text(encoding="utf-8"))["k_cal"]
+    summary = json.loads((args.out / "summary.json").read_text(encoding="utf-8"))
+    k_cal = summary["k_cal"]
+    metric = get_metric(args.distance or summary.get("distance", "ldnd"), args.pmi_model)
     table = loan_table(args.wold, args.cldf)
     rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
     plain, masked = load_all(args.cldf), load_all(args.cldf, wold=args.wold)
@@ -37,8 +41,8 @@ def main() -> None:
         wold_ids = [i for i in ids if i in table and table[i].borrowed]
         if not wold_ids:
             continue
-        a = analyse(name, stratified([plain[i] for i in ids], MAX_PER_LINEAGE), k_cal)
-        b = analyse(name, stratified([masked[i] for i in ids], MAX_PER_LINEAGE), k_cal)
+        a = analyse(name, stratified([plain[i] for i in ids], MAX_PER_LINEAGE), k_cal, metric)
+        b = analyse(name, stratified([masked[i] for i in ids], MAX_PER_LINEAGE), k_cal, metric)
         out.append({"lineage": name, "wold_languages": ";".join(table[i].wold_language for i in wold_ids),
                     "loan_words_masked": sum(len(table[i].borrowed) for i in wold_ids),
                     "d_max": a["d_max_kcal"], "d_max_masked": b["d_max_kcal"],

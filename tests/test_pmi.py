@@ -82,3 +82,55 @@ def test_fit_learns_a_regular_correspondence():
     b = doc("B", shift[:30])
     assert pmi_erc(model, a, b) < 0.1
     assert pmi_ldnd(model, a, b) < 0.3
+
+
+def random_docs(n=6, concepts=30, seed=0):
+    rng = np.random.default_rng(seed)
+    out = []
+    for k in range(n):
+        words = {}
+        for c in range(concepts):
+            if rng.random() < 0.9:
+                syn = 1 + (rng.random() < 0.2)
+                words[str(c + 1)] = tuple(tuple(rng.choice(list("abcdef"), rng.integers(1, 7))) for _ in range(syn))
+        out.append(Doculect(f"D{k}", f"D{k}", "", "", "", words))
+    return out
+
+
+def test_ldnd_metric_matches_original_ldnd():
+    from isodiv.distance import ldnd
+    from isodiv.metric import Metric
+    docs = random_docs()
+    m = Metric("ldnd").matrix(docs)
+    sub = frozenset(str(c) for c in range(1, 26))
+    msub = Metric("ldnd").matrix(docs, concepts=sub, min_shared=15)
+    for i in range(len(docs)):
+        for j in range(i + 1, len(docs)):
+            assert m[i, j] == pytest.approx(ldnd(docs[i], docs[j]))
+            assert msub[i, j] == pytest.approx(ldnd(docs[i], docs[j], concepts=sub, min_shared=15))
+
+
+def test_pmi_tables_match_direct_alignment():
+    model = random_model(3)
+    a, b = random_docs(2, seed=4)
+    from isodiv.pmi import pmi_tables
+    t = pmi_tables(model, [(a, b)])[0]
+    def dist(x, y):
+        s, sx, sy = align(model, [x, x, y], [y, x, y])
+        return 1 - 2 * s / (sx + sy)
+    for k, c in enumerate(t.concepts):
+        assert t.same[k] == pytest.approx(min(dist(x, y) for x in a.words[c] for y in b.words[c]))
+    c0, c1 = t.concepts[0], t.concepts[1]
+    assert t.diff[0, 1] == pytest.approx(dist(a.words[c0][0], b.words[c1][0]))
+
+
+def test_pmi_parallel_equals_serial(monkeypatch):
+    import isodiv.pmi as pmi
+    monkeypatch.setattr(pmi, "_CHUNK_WORD_PAIRS", 2000)      # force several chunks
+    model = random_model(2)
+    docs = random_docs(8, seed=5)
+    pairs = [(docs[i], docs[j]) for i in range(8) for j in range(i + 1, 8)]
+    serial = pmi.pmi_ldnd_values(model, pairs, workers=1)
+    parallel = pmi.pmi_ldnd_values(model, pairs, workers=2)
+    np.testing.assert_allclose(serial, parallel)
+    assert np.all(np.isfinite(serial))
