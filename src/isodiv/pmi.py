@@ -251,8 +251,9 @@ def erc(same: np.ndarray, first: np.ndarray) -> float:
     ``first`` the first-synonym similarity matrix; off-diagonal cells are the chance sample."""
     n = len(same)
     off = np.sort(first[~np.eye(n, dtype=bool)])
-    ge = len(off) - np.searchsorted(off, same, side="left")    # chance pairs at least as similar
-    p = (ge + 1) / (len(off) + 1)
+    above = len(off) - np.searchsorted(off, same, side="right")
+    ties = np.searchsorted(off, same, side="right") - np.searchsorted(off, same, side="left")
+    p = (above + 0.5 * ties + 1) / (len(off) + 1)              # mid-rank: LDN has many ties at 1.0
     return float(2.0 * p.mean())
 
 

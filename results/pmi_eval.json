@@ -1,0 +1,135 @@
+{
+ "n": {
+  "same language": 1034,
+  "same genus": 1319,
+  "same family, diff. genus": 1301,
+  "unrelated": 1264
+ },
+ "quantiles_10_50_90": {
+  "ldnd": {
+   "same language": [
+    0.115,
+    0.313,
+    0.564
+   ],
+   "same genus": [
+    0.394,
+    0.711,
+    0.881
+   ],
+   "same family, diff. genus": [
+    0.842,
+    0.931,
+    0.987
+   ],
+   "unrelated": [
+    0.952,
+    0.987,
+    1.02
+   ]
+  },
+  "ldn_erc": {
+   "same language": [
+    0.015,
+    0.098,
+    0.272
+   ],
+   "same genus": [
+    0.16,
+    0.432,
+    0.716
+   ],
+   "same family, diff. genus": [
+    0.614,
+    0.814,
+    0.974
+   ],
+   "unrelated": [
+    0.831,
+    0.958,
+    1.072
+   ]
+  },
+  "pmi_ldnd": {
+   "same language": [
+    0.091,
+    0.252,
+    0.479
+   ],
+   "same genus": [
+    0.333,
+    0.637,
+    0.831
+   ],
+   "same family, diff. genus": [
+    0.796,
+    0.899,
+    0.971
+   ],
+   "unrelated": [
+    0.936,
+    0.98,
+    1.019
+   ]
+  },
+  "pmi_erc": {
+   "same language": [
+    0.01,
+    0.079,
+    0.228
+   ],
+   "same genus": [
+    0.123,
+    0.382,
+    0.66
+   ],
+   "same family, diff. genus": [
+    0.564,
+    0.764,
+    0.935
+   ],
+   "unrelated": [
+    0.808,
+    0.936,
+    1.059
+   ]
+  }
+ },
+ "auc": {
+  "same language < same genus": {
+   "ldnd": 0.8994490580314787,
+   "ldn_erc": 0.9014456177603629,
+   "pmi_ldnd": 0.9080277392022267,
+   "pmi_erc": 0.9009770897887298
+  },
+  "same genus < same family, diff. genus": {
+   "ldnd": 0.9293591737620621,
+   "ldn_erc": 0.9212418393968831,
+   "pmi_ldnd": 0.9363118939825258,
+   "pmi_erc": 0.923557664571313
+  },
+  "same family, diff. genus < unrelated": {
+   "ldnd": 0.8520964885822979,
+   "ldn_erc": 0.8108715058523628,
+   "pmi_ldnd": 0.891941690423141,
+   "pmi_erc": 0.8477777561564133
+  },
+  "same genus < unrelated": {
+   "ldnd": 0.9940001775414823,
+   "ldn_erc": 0.9895466454256677,
+   "pmi_ldnd": 0.9959225439295208,
+   "pmi_erc": 0.9918696797535532
+  }
+ },
+ "resolution": {
+  "ldnd": 2.9449013048667414,
+  "ldn_erc": 6.76639474546381,
+  "pmi_ldnd": 3.6622880190333342,
+  "pmi_erc": 7.664125897131305
+ },
+ "spearman_vs_ldnd": {
+  "ldn_erc": 0.9860172032696324,
+  "pmi_ldnd": 0.9846759283373134,
+  "pmi_erc": 0.9626098978714781
+ }
+}

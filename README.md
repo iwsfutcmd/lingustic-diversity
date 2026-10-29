@@ -113,6 +113,34 @@ https://github.com/lexibank/wold data/wold`, then:
   gaps above ~0.2 (Aynu 0.23, Moghol 0.24) are unusual. WOLD marks 0–10% of these basic concepts as loans
   for almost every language, so it cannot calibrate the detector on heavy-loan cases.
 
+## PMI distances (learned sound correspondences)
+
+`src/isodiv/pmi.py` replaces Levenshtein's flat substitution cost with segment scores learned as pointwise
+mutual information from probable cognates (after Jäger 2013, 2018): affine-gap Needleman–Wunsch, batched in numpy.
+Training uses no classification. It starts from geographic-neighbour doculects with LDND < 0.7 and keeps
+same-concept word pairs whose score beats the 99th percentile of different-concept pairs, for 7 rounds.
+The learned scores encode correspondence, not just phonetic closeness: d:t −0.38 vs d:p −7.85, and h:p −1.27
+vs t:p −3.97 (Japonic *p > h).
+
+`scripts/pmi_eval.py` tests whether a distance ranks four classes of doculect pairs in the right order:
+same language (X / X_2), same WALS genus, same family but different genus, and unrelated.
+That is about 1,000–1,300 pairs per class, and test doculects are excluded from training. The AUC is the
+chance that a pair from the closer class scores below one from the farther class:
+
+| separating… | LDND | PMI-LDND | PMI-ERC | LDN-ERC |
+|---|---|---|---|---|
+| same language vs same genus | 0.899 | **0.908** | 0.901 | 0.901 |
+| same genus vs deeper in family | 0.929 | **0.936** | 0.924 | 0.921 |
+| deeper in family vs unrelated | 0.852 | **0.892** | 0.848 | 0.811 |
+
+PMI-LDND, which is LDND with the word distance 1 − 2·S(a,b)/(S(a,a)+S(b,b)), wins at every level. Paired bootstrap
+95% intervals on the gain exclude zero: +0.009, +0.007 and +0.040, the largest at deep time depth. Per-concept rank
+calibration (ERC) adds nothing over LDND's ratio. A feature-weighted Levenshtein (substitution cost = phonological
+feature distance between ASJP symbols) was also tried on the same pairs and did slightly *worse* than LDND
+(0.882 / 0.904 / 0.823): it rewards sounding alike, which also makes chance resemblances score closer, while
+regular correspondences like h:p are far apart in features. The pipeline still uses LDND; switching
+`run_analysis.py` to PMI-LDND (and re-calibrating k on its noise floor) is the next step.
+
 ## Run
 
 ```bash
@@ -123,6 +151,7 @@ python scripts/run_analysis.py       # → results/summary.{csv,json}, diversity
 python scripts/bootstrap.py          # → results/bootstrap.json
 PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{csv,json,png}
 python scripts/build_explorer.py     # → results/explorer.html
+python scripts/pmi_eval.py           # → results/pmi_model.tsv, pmi_eval.json, pmi_eval_pairs.csv
 ```
 
 `--tokens segments` switches from ASJPcode to NFC-normalized CLDF IPA segments. Words are always
@@ -130,8 +159,7 @@ tuples of opaque segment tokens, so any script or segmentation works.
 
 ## Next steps
 
-- Use PMI distances from learned sound correspondences (Jäger 2018) instead of LDND, which should
-  lower the noise floor.
+- Switch the pipeline to PMI-LDND (see above), which separates relatedness levels better than LDND.
 - Use longer, expert-cognate-coded lists from Lexibank (Japonic, Koreanic, Ainu datasets) to get
   better resolution inside the isolate band.
 - Report the whole D_max(k) curve as the diversity measure, rather than a single k.
@@ -141,5 +169,6 @@ tuples of opaque segment tokens, so any script or segmentation works.
 - Leinster, T. & C. A. Cobbold. 2012. Measuring diversity: the importance of species similarity. *Ecology* 93: 477–489.
 - Leinster, T. & M. W. Meckes. 2016. Maximizing diversity in biology and beyond. *Entropy* 18(3): 88.
 - Wichmann, S., E. W. Holman, D. Bakker & C. H. Brown. 2010. Evaluating linguistic distance measures. *Physica A* 389: 3632–3639.
+- Jäger, G. 2013. Phylogenetic inference from word lists using weighted alignment with empirically determined weights. *Language Dynamics and Change* 3(2): 245–291.
 - Jäger, G. 2018. Global-scale phylogenetic linguistic inference from lexical resources. *Scientific Data* 5: 180189.
 - Wichmann, S., E. W. Holman, C. H. Brown, M. S. Dryer & Q. Ran (eds.). 2025. *The ASJP Database* v21. CLDF: github.com/lexibank/asjp (CC-BY-4.0).
