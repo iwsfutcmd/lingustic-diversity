@@ -45,7 +45,7 @@ nav.tabs button[aria-selected="true"] { color: var(--ink); border-block-end-colo
 nav.tabs button:hover { color: var(--ink); }
 button:focus-visible, select:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 main { padding-block: 18px 40px; }
-section[hidden] { display: none; }
+section[hidden], [hidden] { display: none !important; }
 .grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 18px; align-items: start; }
 @media (max-width: 860px) { .grid { grid-template-columns: minmax(0, 1fr); } }
 .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; min-inline-size: 0; }
@@ -83,6 +83,8 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
 .chip .dot { margin-inline-end: 6px; }
 .chip[aria-pressed="false"] { opacity: .6; }
 .chip[aria-pressed="true"] .muted { color: inherit; opacity: .8; }
+.seg { display: inline-flex; gap: 4px; padding-inline-end: 6px; border-inline-end: 1px solid var(--rule); }
+.chip .x { margin-inline-start: 6px; opacity: .7; }
 .chip[aria-pressed="false"] .dot { opacity: .5; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--muted); }
 @media (prefers-reduced-motion: no-preference) { .chip, nav.tabs button { transition: background-color .12s, color .12s; } }
@@ -104,8 +106,13 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
 
 <main class="wrap">
   <div class="filterbar" role="group" aria-label="Which lineages to show">
+    <span class="seg" role="group" aria-label="How to choose lineages">
+      <button class="chip" id="mode-cat" aria-pressed="true">By category</button>
+      <button class="chip" id="mode-pick" aria-pressed="false">Hand-picked</button>
+    </span>
     <span class="chips" id="catchips"></span>
-    <label>Family <select id="famsel"></select></label>
+    <span class="chips" id="pickchips" hidden></span>
+    <select id="picksel" aria-label="Add lineages" hidden></select>
     <input id="q" type="search" placeholder="Filter by name" aria-label="Filter lineages by name" autocomplete="off">
     <span class="muted" id="shown"></span>
   </div>
@@ -203,31 +210,55 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   $("kcal").textContent = fmt(DATA.k_cal);
   $("noisefloor").textContent = DATA.noise.map(v => fmt(v, 2)).join(" / ");
 
-  /* ---------- shared filter: categories, family, name ---------- */
-  const F = { cats: new Set(["iso", "ctl", "adv"]), family: "", q: "" };
+  /* ---------- shared filter: by category, or a hand-picked set (e.g. Yue vs Romance) ---------- */
+  const F = { mode: "cat", cats: new Set(["iso", "ctl", "adv"]),
+              picked: ["Yue", "Mandarin", "Wu", "Min", "Romance", "Germanic", "Slavic"].filter(n => byName.has(n)), q: "" };
   try {
     const saved = JSON.parse(localStorage.getItem("isodivFilter") || "null");
-    if (saved) { F.cats = new Set(saved.cats.filter(c => c in CAT)); F.family = saved.family || ""; }
+    if (saved) {
+      F.mode = saved.mode === "pick" ? "pick" : "cat";
+      if (saved.cats) F.cats = new Set(saved.cats.filter(c => c in CAT));
+      if (saved.picked) F.picked = saved.picked.filter(n => byName.has(n));
+    }
   } catch (e) {}
   const families = [...new Set(L.map(d => d.family).filter(Boolean))].sort((a, b) => a.localeCompare(b));
-  if (!families.includes(F.family)) F.family = "";
-  const visible = d => (F.family ? d.family === F.family : F.cats.has(d.cat)) &&
+  const visible = d => (F.mode === "pick" ? F.picked.includes(d.name) : F.cats.has(d.cat)) &&
     (!F.q || d.name.toLowerCase().includes(F.q));
   function drawFilter() {
+    $("mode-cat").setAttribute("aria-pressed", String(F.mode === "cat"));
+    $("mode-pick").setAttribute("aria-pressed", String(F.mode === "pick"));
+    $("catchips").hidden = F.mode !== "cat";
+    $("pickchips").hidden = $("picksel").hidden = F.mode !== "pick";
     $("catchips").innerHTML = Object.entries(CAT).filter(([k]) => L.some(d => d.cat === k)).map(([k, v]) =>
-      `<button class="chip" data-cat="${k}" aria-pressed="${F.cats.has(k)}"${F.family ? " disabled" : ""}><span class="dot ${k}"></span>${v} <span class="muted">${L.filter(d => d.cat === k).length}</span></button>`).join("");
+      `<button class="chip" data-cat="${k}" aria-pressed="${F.cats.has(k)}"><span class="dot ${k}"></span>${v} <span class="muted">${L.filter(d => d.cat === k).length}</span></button>`).join("");
     $("catchips").querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
       const c = b.dataset.cat; F.cats.has(c) ? F.cats.delete(c) : F.cats.add(c); refresh();
     }));
-    $("famsel").innerHTML = `<option value="">All families (use the categories)</option>` + families.map(f =>
-      `<option value="${esc(f)}"${f === F.family ? " selected" : ""} dir="auto">${esc(f)} (${L.filter(d => d.family === f).length})</option>`).join("");
+    $("pickchips").innerHTML = F.picked.map(n => `<button class="chip" data-n="${esc(n)}" aria-pressed="true" aria-label="Remove ${esc(n)}" dir="auto"><span class="dot ${byName.get(n).cat}"></span>${esc(n)}<span class="x" aria-hidden="true">×</span></button>`).join("") +
+      (F.picked.length ? `<button class="chip" id="pickclear">Clear</button>` : `<span class="muted">Add lineages to compare</span>`);
+    $("pickchips").querySelectorAll(".chip[data-n]").forEach(b => b.addEventListener("click", () => {
+      F.picked = F.picked.filter(n => n !== b.dataset.n); refresh();
+    }));
+    $("pickclear")?.addEventListener("click", () => { F.picked = []; refresh(); });
+    const opt = d => `<option value="lin:${esc(d.name)}"${F.picked.includes(d.name) ? " disabled" : ""} dir="auto">${esc(d.name)}</option>`;
+    const byFam = f => L.filter(d => d.family === f).sort((a, b) => a.name.localeCompare(b.name));
+    $("picksel").innerHTML = `<option value="">Add a lineage or family…</option>` +
+      families.map(f => `<optgroup label="${esc(f)}">${byFam(f).length > 1 ? `<option value="fam:${esc(f)}">All of ${esc(f)} (${byFam(f).length})</option>` : ""}${byFam(f).map(opt).join("")}</optgroup>`).join("") +
+      (L.some(d => !d.family) ? `<optgroup label="Constructed (not families)">${L.filter(d => !d.family).map(opt).join("")}</optgroup>` : "");
     $("shown").textContent = `${L.filter(visible).length} of ${L.length} shown`;
   }
   function refresh() {
-    try { localStorage.setItem("isodivFilter", JSON.stringify({ cats: [...F.cats], family: F.family })); } catch (e) {}
+    try { localStorage.setItem("isodivFilter", JSON.stringify({ mode: F.mode, cats: [...F.cats], picked: F.picked })); } catch (e) {}
     drawFilter(); show(location.hash.slice(1));
   }
-  $("famsel").addEventListener("change", e => { F.family = e.target.value; refresh(); });
+  $("mode-cat").addEventListener("click", () => { F.mode = "cat"; refresh(); });
+  $("mode-pick").addEventListener("click", () => { F.mode = "pick"; refresh(); });
+  $("picksel").addEventListener("change", e => {
+    const [kind, v] = [e.target.value.slice(0, 3), e.target.value.slice(4)];
+    const add = kind === "fam" ? L.filter(d => d.family === v).map(d => d.name) : kind === "lin" ? [v] : [];
+    F.picked = [...F.picked, ...add.filter(n => !F.picked.includes(n))];
+    refresh();
+  });
   $("q").addEventListener("input", e => { F.q = e.target.value.trim().toLowerCase(); refresh(); });
   drawFilter();
 
@@ -263,6 +294,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
     const host = $("divchart"), W = Math.max(300, host.clientWidth || 600);
     const sort = $("sort").value;
     let rows = L.filter(visible);
+    if (rows.length && !rows.some(d => d.name === selected)) selected = rows[0].name;
     const key = { d_max: d => -d.d_max, spread: d => -d.spread, n: d => -d.n, name: d => d.name };
     rows.sort((a, b) => sort === "name" ? a.name.localeCompare(b.name) : key[sort](a) - key[sort](b));
     const narrow = W < 480, labW = narrow ? 118 : 178, rowH = 22, top = 8, axisH = 24, right = 14;
