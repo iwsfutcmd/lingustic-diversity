@@ -3,11 +3,19 @@
 Test pairs (fixed seed): two lists of the same language (same Glottocode, X / X_2), same WALS genus,
 same family but different genus, and different families. A distance is better if it ranks the classes
 in that order more reliably (AUC between adjacent classes) and puts unrelated pairs further above
-the same-language noise floor. Doculects in any test pair are left out of PMI training, and training
-uses no classification: language pairs are geographic neighbours with LDND < 0.7.
+the same-language noise floor. A fifth class, unrelated neighbours (different families, among each
+other's 3 nearest doculects and within 500 km), checks that a distance does not mistake contact for
+descent. Doculects in any test pair are left out of PMI training.
+
+Training pairs use no classification and are chosen by ``--train``:
+
+* ``random``     — random doculect pairs with LDND < 0.7 (similarity alone decides);
+* ``geo``        — each doculect's 3 geographic neighbours with LDND < 0.7 (cheaper; about half are two
+                   lists of one language);
+* ``geo-no-dup`` — ``geo`` without pairs whose names differ only by a _N suffix.
 
 Usage:
-    python scripts/pmi_eval.py [--cldf data/asjp/cldf] [--out results] [--n 1500]
+    python scripts/pmi_eval.py [--cldf data/asjp/cldf] [--out results] [--n 1500] [--train random|geo|geo-no-dup]
 """
 
 from __future__ import annotations
@@ -29,6 +37,9 @@ from isodiv.distance import ldnd
 from isodiv.pmi import PMIModel, fit, ldn_erc, pmi_erc, pmi_ldnd, word_pairs
 
 CLASSES = ["same language", "same genus", "same family, diff. genus", "unrelated"]
+CONTACT = "unrelated neighbours"
+NON_GENEALOGICAL = {"", "Bookkeeping", "Speech Register", "Artificial Language", "Pidgin", "Unclassifiable"}
+EARTH_KM = 6371.0
 METHODS = ["ldnd", "ldn_erc", "pmi_ldnd", "pmi_erc"]
 
 
@@ -78,13 +89,34 @@ def sample_classes(rows: list[dict], n: int, seed: int = 0) -> dict[str, list[tu
     }
 
 
-def neighbour_pairs(rows: list[dict], ids: set[str], k: int = 3) -> list[tuple[str, str]]:
+def neighbour_pairs(rows: list[dict], ids: set[str], k: int = 3, max_km: float = np.inf) -> list[tuple[str, str]]:
     pts = [(r["ID"], float(r["Latitude"]), float(r["Longitude"])) for r in rows
            if r["ID"] in ids and r["Latitude"] and r["Longitude"]]
     lat, lon = np.radians([p[1] for p in pts]), np.radians([p[2] for p in pts])
     xyz = np.c_[np.cos(lat) * np.cos(lon), np.cos(lat) * np.sin(lon), np.sin(lat)]
-    _, nn = cKDTree(xyz).query(xyz, k=k + 1)
-    return sorted({tuple(sorted((pts[i][0], pts[j][0]))) for i, row in enumerate(nn) for j in row[1:]})
+    chord, nn = cKDTree(xyz).query(xyz, k=k + 1)
+    km = 2 * EARTH_KM * np.arcsin(np.clip(chord / 2, 0, 1))
+    return sorted({tuple(sorted((pts[i][0], pts[j][0])))
+                   for i, row in enumerate(nn) for j, dk in zip(row[1:], km[i, 1:]) if dk <= max_km})
+
+
+def contact_pairs(rows: list[dict], n: int, seed: int = 0) -> list[tuple[str, str]]:
+    """Neighbouring doculects of different, genealogically classified families."""
+    by = {r["ID"]: r for r in rows}
+    ok = {r["ID"] for r in rows if r["Family"] not in NON_GENEALOGICAL}
+    pairs = [p for p in neighbour_pairs(rows, ok, max_km=500) if by[p[0]]["Family"] != by[p[1]]["Family"]]
+    rng = np.random.default_rng(seed)
+    return [pairs[i] for i in rng.choice(len(pairs), min(n, len(pairs)), replace=False)]
+
+
+def random_pairs(ids: set[str], n: int, rng) -> list[tuple[str, str]]:
+    ids = sorted(ids)
+    a, b = rng.integers(len(ids), size=n), rng.integers(len(ids), size=n)
+    return sorted({tuple(sorted((ids[i], ids[j]))) for i, j in zip(a, b) if i != j})
+
+
+def same_name(a: str, b: str) -> bool:
+    return re.sub(r"_\d+$", "", a) == re.sub(r"_\d+$", "", b)
 
 
 DOCS: dict = {}
@@ -112,55 +144,63 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=Path("results"))
     ap.add_argument("--n", type=int, default=1500)
     ap.add_argument("--max-candidates", type=int, default=150_000)
+    ap.add_argument("--train", choices=["random", "geo", "geo-no-dup"], default="random")
+    ap.add_argument("--random-pairs", type=int, default=400_000, help="doculect pairs screened by --train random")
     args = ap.parse_args()
+    tag = "" if args.train == "random" else f"_{args.train}"
     rng = np.random.default_rng(1)
 
     rows = list(csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8")))
     classes = sample_classes(rows, args.n)
+    classes[CONTACT] = contact_pairs(rows, args.n)
     test_ids = {i for v in classes.values() for p in v for i in p}
     DOCS = load(args.cldf)
     train_ids = set(DOCS) - test_ids
 
-    # --- training data: neighbouring, probably related doculects, no labels used
-    nb = neighbour_pairs(rows, train_ids)
+    # --- training data: probably related doculect pairs, chosen by similarity alone (no labels)
+    nb = random_pairs(train_ids, args.random_pairs, rng) if args.train == "random" else neighbour_pairs(rows, train_ids)
+    if args.train == "geo-no-dup":
+        nb = [p for p in nb if not same_name(*p)]
     with Pool() as pool:
         d = pool.map(_ldnd, nb, chunksize=64)
     close = [p for p, x in zip(nb, d) if x < 0.7]
     cand, chance = word_pairs((DOCS[a], DOCS[b]) for a, b in close)
     cand = [cand[i] for i in rng.choice(len(cand), min(args.max_candidates, len(cand)), replace=False)]
     chance = [chance[i] for i in rng.choice(len(chance), min(args.max_candidates // 3, len(chance)), replace=False)]
-    print(f"training: {len(train_ids)} doculects, {len(nb)} neighbour pairs, {len(close)} with LDND < 0.7, "
+    print(f"training: {len(train_ids)} doculects, {len(nb)} {args.train} pairs, {len(close)} with LDND < 0.7, "
           f"{len(cand)} same-concept word pairs, {len(chance)} chance pairs")
     MODEL = fit(cand, chance, log=print)
     args.out.mkdir(exist_ok=True)
-    with (args.out / "pmi_model.tsv").open("w", encoding="utf-8", newline="") as fh:
+    with (args.out / f"pmi_model{tag}.tsv").open("w", encoding="utf-8", newline="") as fh:
         csv.writer(fh, delimiter="\t").writerows(MODEL.to_rows())
 
     # --- evaluation
     res: dict[str, dict[str, np.ndarray]] = {}
     with Pool() as pool:
-        for c in CLASSES:
+        for c in [*CLASSES, CONTACT]:
             pairs = [p for p in classes[c] if p[0] in DOCS and p[1] in DOCS]
             out = pool.map(_all, pairs, chunksize=8)
             v = {m: np.array([o[m] for o in out]) for m in METHODS}
             ok = np.all([np.isfinite(v[m]) for m in METHODS], axis=0)
             res[c] = {m: v[m][ok] for m in METHODS}
-            with (args.out / "pmi_eval_pairs.csv").open("a" if c != CLASSES[0] else "w", encoding="utf-8", newline="") as fh:
+            with (args.out / f"pmi_eval_pairs{tag}.csv").open("a" if c != CLASSES[0] else "w", encoding="utf-8", newline="") as fh:
                 w = csv.writer(fh)
                 if c == CLASSES[0]:
                     w.writerow(["class", "a", "b", *METHODS])
                 for p, o in zip(pairs, out):
                     w.writerow([c, *p, *(f"{o[m]:.4f}" for m in METHODS)])
 
-    summary = {"n": {c: len(res[c]["ldnd"]) for c in CLASSES}, "quantiles_10_50_90": {}, "auc": {}, "resolution": {}}
+    summary = {"train": args.train, "training_pairs": len(close),
+               "n": {c: len(res[c]["ldnd"]) for c in [*CLASSES, CONTACT]}, "quantiles_10_50_90": {}, "auc": {}, "resolution": {}}
     print("\nn:", summary["n"])
     print("\nquantiles 10/50/90")
     for m in METHODS:
-        q = {c: np.quantile(res[c][m], [.1, .5, .9]).round(3).tolist() for c in CLASSES}
+        q = {c: np.quantile(res[c][m], [.1, .5, .9]).round(3).tolist() for c in [*CLASSES, CONTACT]}
         summary["quantiles_10_50_90"][m] = q
-        print(f"  {m:9s}", "  ".join(f"{c[:14]:>14s} " + "/".join(f"{x:.2f}" for x in q[c]) for c in CLASSES))
+        print(f"  {m:9s}", "  ".join(f"{c[:14]:>14s} " + "/".join(f"{x:.2f}" for x in q[c]) for c in [*CLASSES, CONTACT]))
     print("\nAUC (higher = better separated)")
-    for lo, hi in [*zip(CLASSES, CLASSES[1:]), ("same genus", "unrelated")]:
+    for lo, hi in [*zip(CLASSES, CLASSES[1:]), ("same genus", "unrelated"),
+                   ("same family, diff. genus", CONTACT), (CONTACT, "unrelated")]:
         key = f"{lo} < {hi}"
         summary["auc"][key] = {m: auc(res[lo][m], res[hi][m]) for m in METHODS}
         print(f"  {key:52s}", "  ".join(f"{m}={x:.3f}" for m, x in summary["auc"][key].items()))
@@ -173,7 +213,7 @@ def main() -> None:
     allv = {m: np.concatenate([res[c][m] for c in CLASSES]) for m in METHODS}
     summary["spearman_vs_ldnd"] = {m: float(spearmanr(allv["ldnd"], allv[m])[0]) for m in METHODS[1:]}
     print("\nSpearman vs LDND:", {m: round(x, 3) for m, x in summary["spearman_vs_ldnd"].items()})
-    (args.out / "pmi_eval.json").write_text(json.dumps(summary, indent=1))
+    (args.out / f"pmi_eval{tag}.json").write_text(json.dumps(summary, indent=1))
 
 
 if __name__ == "__main__":
