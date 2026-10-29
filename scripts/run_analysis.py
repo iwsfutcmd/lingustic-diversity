@@ -62,9 +62,10 @@ for _fam in EXTRA_FAMILIES:
 # Isolates with one to three lists, ancient (Sumerian, Elamite, Etruscan) and modern. A single list has no measurable
 # internal diversity (D_max = 1); they are here for the between-lineage distances. Hurro-Urartian has no ASJP list.
 SMALL_ISOLATES = ["Sumerian", "Elamite", "Etruscan", "Kusunda", "Nihali", "Hruso"]
-# Small families from other macroareas, as further points of comparison.
+# Small families from other macroareas, as further points of comparison, and the branches of the proposed
+# Niger-Congo that Glottolog keeps apart from Atlantic-Congo (Mande, Kru, Ijoid, Dogon, the Kordofanian groups).
 SMALL_FAMILIES = ["Jarawa-Onge", "Nubian", "Songhay", "Saharan", "Dogon", "Kru", "Ijoid", "Mixe-Zoque", "Totonacan",
-                  "Cochimi-Yuman", "Miwok-Costanoan"]
+                  "Cochimi-Yuman", "Miwok-Costanoan", "Mande", "Heibanic", "Narrow Talodi", "Katla-Tima", "Rashad"]
 for _fam in SMALL_ISOLATES + SMALL_FAMILIES:
     LINEAGES[_fam] = (lambda f: lambda r: r["Family"] == f)(_fam)
 ISOLATE_CANDIDATES += SMALL_ISOLATES
