@@ -27,6 +27,7 @@ import numpy as np
 from scipy.optimize import minimize
 
 EXACT_MAX_N = 14
+CG_MIN_N = 120      # above this, solve on a small support and grow it (column generation)
 
 
 @dataclass(frozen=True, slots=True)
@@ -96,12 +97,14 @@ def _exact(z: np.ndarray) -> MaxDiversity:
     return MaxDiversity(best_val, best_p, "exact", _kkt(z, best_p))
 
 
-def _qp(z: np.ndarray, *, restarts: int = 24, seed: int = 0) -> MaxDiversity:
+def _qp(z: np.ndarray, *, restarts: int = 24, seed: int = 0, warm: Sequence[np.ndarray] = ()) -> MaxDiversity:
     """Max D_2 ⇔ min pᵀZp on the simplex; by Leinster–Meckes that maximizer is
-    optimal for every q. Z need not be PSD, so use multi-start + polishing."""
+    optimal for every q. Z need not be PSD, so use multi-start + polishing.
+    ``warm`` adds starting distributions (e.g. the optimum of a sub-collection, which makes the result at
+    least as large as that sub-collection's D_max)."""
     n = z.shape[0]
     rng = np.random.default_rng(seed)
-    starts = [np.full(n, 1.0 / n), *rng.dirichlet(np.full(n, 0.5), size=restarts)]
+    starts = [np.full(n, 1.0 / n), *rng.dirichlet(np.full(n, 0.5), size=restarts), *warm]
     cons = ({"type": "eq", "fun": lambda p: p.sum() - 1.0, "jac": lambda p: np.ones_like(p)},)
 
     def solve(p0: np.ndarray) -> np.ndarray:
@@ -130,8 +133,45 @@ def _qp(z: np.ndarray, *, restarts: int = 24, seed: int = 0) -> MaxDiversity:
     return MaxDiversity(float(1.0 / (best @ z @ best)), best, "qp", _kkt(z, best))
 
 
-def max_diversity(z: np.ndarray, *, exact_max_n: int = EXACT_MAX_N) -> MaxDiversity:
-    return _exact(z) if z.shape[0] <= exact_max_n else _qp(z)
+def _qp_cg(z: np.ndarray, *, warm: Sequence[np.ndarray] = (), seed: int = 0, batch: int = 25,
+           max_rounds: int = 40) -> MaxDiversity:
+    """Same optimum as ``_qp`` for large collections. The optimal distribution has a small support, so solve on a
+    working set, then add every point i with (Zp)_i < pᵀZp (a violated KKT condition, i.e. a point that would
+    still lower pᵀZp) until none is left. The last round runs the full multi-start on the final working set."""
+    n = z.shape[0]
+    rng = np.random.default_rng(seed)
+    work = set(rng.choice(n, size=min(n, 40), replace=False).tolist())
+    for w in warm:
+        work |= set(np.flatnonzero(w > 1e-9).tolist())
+    p = np.full(n, 1.0 / n)
+    for rnd in range(max_rounds):
+        idx = np.array(sorted(work))
+        sub_warm = [w[idx] / w[idx].sum() for w in warm if w[idx].sum() > 0]
+        sub = _qp(z[np.ix_(idx, idx)], restarts=4 if rnd < max_rounds - 1 else 24, seed=seed, warm=sub_warm)
+        p = np.zeros(n)
+        p[idx] = sub.weights
+        zp = z @ p
+        lam = float(p @ zp)
+        viol = [i for i in np.argsort(zp) if zp[i] < lam - 1e-7 and i not in work][:batch]
+        if not viol:
+            break
+        work = set(np.flatnonzero(p > 1e-9).tolist()) | set(viol)
+    else:
+        return MaxDiversity(float(1.0 / (p @ z @ p)), p, "qp-cg", False)
+    # converged: re-solve the final working set with the full multi-start and re-check against all points
+    idx = np.array(sorted(work | set(np.flatnonzero(p > 1e-9).tolist())))
+    sub = _qp(z[np.ix_(idx, idx)], restarts=24, seed=seed, warm=[p[idx] / p[idx].sum()])
+    p = np.zeros(n)
+    p[idx] = sub.weights
+    return MaxDiversity(float(1.0 / (p @ z @ p)), p, "qp-cg", _kkt(z, p))
+
+
+def max_diversity(z: np.ndarray, *, exact_max_n: int = EXACT_MAX_N, warm: Sequence[np.ndarray] = ()) -> MaxDiversity:
+    """D_max of Z. ``warm``: distributions on the same points (length n, summing to 1) that the optimizer also
+    starts from, so the answer is never below pᵀZp⁻¹ for any of them."""
+    if z.shape[0] <= exact_max_n:
+        return _exact(z)
+    return _qp_cg(z, warm=warm) if z.shape[0] > CG_MIN_N else _qp(z, warm=warm)
 
 
 def diversity_profile(d: np.ndarray, ks: Sequence[float]) -> dict[str, np.ndarray]:

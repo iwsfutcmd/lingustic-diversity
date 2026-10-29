@@ -77,3 +77,30 @@ def test_exclusions_file_and_filter(tmp_path):
     f.write_text("id\treason\n# comment\nA\tbad list\nB\t\n", encoding="utf-8")
     assert load_exclusions(f) == {"A": "bad list", "B": ""}
     assert load_exclusions(tmp_path / "missing.tsv") == {}
+
+
+def test_column_generation_matches_full_qp():
+    from isodiv.diversity import _qp, _qp_cg
+    rng = np.random.default_rng(3)
+    pts = rng.normal(size=(150, 6))
+    d = np.linalg.norm(pts[:, None] - pts[None], axis=-1)
+    d /= d.max()
+    z = similarity_matrix(d, 4.0)
+    full, cg = _qp(z), _qp_cg(z)
+    assert cg.kkt_ok
+    assert abs(full.value - cg.value) < 1e-4
+
+
+def test_warm_start_makes_superset_at_least_subset():
+    from isodiv.diversity import max_diversity as md
+    rng = np.random.default_rng(5)
+    pts = rng.normal(size=(140, 5))
+    d = np.linalg.norm(pts[:, None] - pts[None], axis=-1)
+    d /= d.max()
+    z = similarity_matrix(d, 2.0)
+    sub = np.arange(40)
+    child = md(z[np.ix_(sub, sub)])
+    warm = np.zeros(140)
+    warm[sub] = child.weights
+    parent = md(z, warm=[warm])
+    assert parent.value >= child.value - 1e-9

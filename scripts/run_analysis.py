@@ -94,7 +94,8 @@ for _label, (_by, _key) in SINITIC_GROUPS.items():
     LINEAGES[_label] = (
         (lambda n: lambda r: r["Family"] != "Bookkeeping" and n in r["classification_glottolog"].split(","))(_key)
         if _by == "node" else (lambda g: lambda r: r["Family"] != "Bookkeeping" and r["Glottocode"] == g)(_key))
-MAX_PER_LINEAGE = 80          # stratified cap keeps pairwise LDND tractable
+MAX_PER_LINEAGE = 80          # each lineage's own top-up cap; a parent also keeps all of its children's samples
+NEST_TOL = 0.02               # a lineage nests in another when at most this share of its pool lies outside it
 KS = np.geomspace(0.1, 40, 48)
 RAREFY_M = 3          # compare lineages at a fixed number of distinct-Glottocode doculects
 RAREFY_DRAWS = 40
@@ -167,12 +168,50 @@ def stratified(docs: list[Doculect], cap: int, seed: int = 0) -> list[Doculect]:
     return out
 
 
-def drop_nan(docs: list[Doculect], d: np.ndarray) -> tuple[list[Doculect], np.ndarray]:
+def nested_samples(pools: dict[str, frozenset[str]], docs: dict[str, Doculect], cap: int = MAX_PER_LINEAGE,
+                   tol: float = NEST_TOL) -> tuple[dict[str, list[Doculect]], dict[str, list[str]]]:
+    """One sample per lineage such that a lineage nested in another is a subset of its sample.
+
+    D_max can only grow when points are added, so a parent whose sample contains its children's samples can never
+    score below a child; independent caps (the earlier scheme) let a child with better coverage of its fast-changing
+    part outscore its parent. Built bottom-up: sample(L) = the samples of L's maximal children, topped up from the rest
+    of L's pool by ``stratified`` to ``cap`` (a parent is therefore larger than ``cap`` when its children already are).
+    Child means at most ``tol`` of its pool outside L's pool, which absorbs ASJP rows with a blank Family. Lineages
+    with identical pools share one sample. Returns (samples, maximal children by lineage).
+    """
+    groups: dict[frozenset[str], list[str]] = defaultdict(list)
+    for name, pool in pools.items():
+        groups[pool].append(name)
+    ordered = sorted(groups, key=len)
+    eff: dict[frozenset[str], frozenset[str]] = {}
+    chosen: dict[frozenset[str], list[Doculect]] = {}
+    kids: dict[frozenset[str], list[frozenset[str]]] = {}
+    for pool in ordered:
+        cand = [c for c in chosen if len(eff[c] - pool) <= tol * len(eff[c]) and len(eff[c] | pool) > len(eff[c])]
+        maximal = [c for c in cand if not any(c is not o and len(eff[c] - eff[o]) <= tol * len(eff[c])
+                                              and len(eff[o]) > len(eff[c]) for o in cand)]
+        eff[pool] = pool.union(*(eff[c] for c in cand))
+        have = {x.id: x for c in maximal for x in chosen[c]}
+        rest = [docs[i] for i in sorted(eff[pool] - have.keys()) if i in docs]
+        extra = stratified(rest, cap - len(have)) if len(have) < cap else []
+        chosen[pool] = sorted([*have.values(), *extra], key=lambda x: x.id)
+        kids[pool] = maximal
+    samples = {name: chosen[pool] for pool, names in groups.items() for name in names}
+    children = {name: [n for c in kids[pool] for n in groups[c][:1]] for pool, names in groups.items() for name in names}
+    return samples, children
+
+
+def drop_nan(docs: list[Doculect], d: np.ndarray, protect: frozenset[str] = frozenset()
+             ) -> tuple[list[Doculect], np.ndarray]:
+    """Drop doculects until no pair is NaN (too few shared concepts), most-affected first. Ids in ``protect`` go
+    last, so a parent keeps every doculect that survived in one of its children."""
     keep = np.ones(len(docs), dtype=bool)
+    prot = np.array([x.id in protect for x in docs])
     while np.isnan(d[np.ix_(keep, keep)]).any():
         sub = d[np.ix_(keep, keep)]
-        worst = np.flatnonzero(keep)[np.isnan(sub).sum(axis=1).argmax()]
-        keep[worst] = False
+        idx = np.flatnonzero(keep)
+        score = np.isnan(sub).sum(axis=1) * np.where(prot[idx], 1e-3, 1.0)   # clean doculects score 0
+        keep[idx[score.argmax()]] = False
     return [x for x, k in zip(docs, keep) if k], d[np.ix_(keep, keep)]
 
 
@@ -228,13 +267,29 @@ def rarefied_spread(docs: list[Doculect], d: np.ndarray, m: int = RAREFY_M,
     return float(np.mean(vals))
 
 
-def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric) -> dict:
+def _embed(child: dict, docs: list[Doculect], weights: np.ndarray) -> np.ndarray | None:
+    """A child's optimal distribution on the parent's doculects (None if none of its support survives)."""
+    pos = {x.id: i for i, x in enumerate(docs)}
+    w = np.zeros(len(docs))
+    for x, p in zip(child["_docs"], weights):
+        if x.id in pos:
+            w[pos[x.id]] = p
+    return w / w.sum() if w.sum() > 0 else None
+
+
+def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, children: tuple[dict, ...] = ()) -> dict:
+    """``children``: results of the lineages nested in this one. Their doculects are kept through ``drop_nan`` and
+    their optimal distributions seed the optimizer, so D_max here is never below a child's at any scale."""
     d = metric.matrix(docs)
-    docs, d = drop_nan(docs, d)
+    docs, d = drop_nan(docs, d, protect=frozenset(x.id for c in children for x in c["_docs"]))
+
+    def warm(ws: list[np.ndarray]) -> list[np.ndarray]:
+        return [w for c, cw in zip(children, ws) if (w := _embed(c, docs, cw)) is not None]
+
     zs = [similarity_matrix(d, k) for k in KS]
-    maxes = [max_diversity(z) for z in zs]
+    maxes = [max_diversity(z, warm=warm([c["_weights"][i] for c in children])) for i, z in enumerate(zs)]
     k_ref = k_cal
-    m_ref = max_diversity(similarity_matrix(d, k_ref))
+    m_ref = max_diversity(similarity_matrix(d, k_ref), warm=warm([c["_weights_kcal"] for c in children]))
     return {
         "lineage": name,
         "family": max({x.family for x in docs}, key=[x.family for x in docs].count) if docs else "",
@@ -254,7 +309,26 @@ def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric) -> di
         "kkt_all_ok": all(m.kkt_ok for m in maxes),
         "_d": d,
         "_docs": docs,
+        "_weights": [m.weights for m in maxes],
+        "_weights_kcal": m_ref.weights,
     }
+
+
+def check_nesting(results: list[dict], children: dict[str, list[str]], tol: float = 1e-6) -> dict:
+    """D_max of a parent must be at least that of every child at every scale (holds when the child's doculects are a
+    subset of the parent's). Lists the pairs where it is not."""
+    res = {r["lineage"]: r for r in results}
+    pairs, bad = 0, []
+    for parent, kids in children.items():
+        for child in kids:
+            if not {x.id for x in res[child]["_docs"]} <= {x.id for x in res[parent]["_docs"]}:
+                continue
+            pairs += 1
+            gap = min([res[parent]["d_max_kcal"] - res[child]["d_max_kcal"],
+                       *(a - b for a, b in zip(res[parent]["profile_d_max"], res[child]["profile_d_max"]))])
+            if gap < -tol:
+                bad.append({"parent": parent, "child": child, "worst_gap": float(gap)})
+    return {"pairs": pairs, "violations": bad}
 
 
 def sampling_robustness(docs: list[Doculect], k_cal: float, metric: Metric) -> list[dict]:
@@ -343,14 +417,26 @@ def main() -> None:
     k_cal = float(-np.log(0.9) / np.median(floor))
     print(f"noise floor {metric.label} quantiles 10/50/90: {np.round(np.quantile(floor, [.1, .5, .9]), 3)}; k_cal={k_cal:.3f}")
 
-    results = []
-    for name, pred in LINEAGES.items():
-        docs = stratified([x for x in all_docs.values() if pred(rows[x.id])], MAX_PER_LINEAGE)
-        r = analyse(name, docs, k_cal, metric)
-        results.append(r)
+    pools = {name: frozenset(i for i in all_docs if pred(rows[i])) for name, pred in LINEAGES.items()}
+    samples, children = nested_samples(pools, all_docs, MAX_PER_LINEAGE)
+    by_name: dict[str, dict] = {}
+
+    def run(name: str) -> None:
+        if name in by_name:
+            return
+        for c in children[name]:
+            run(c)                                                    # children first
+        r = analyse(name, samples[name], k_cal, metric, tuple(by_name[c] for c in children[name]))
+        by_name[name] = r
         print(f'{name:14s} n={r["n_doculects"]:3d} glotto={r["n_glottocodes"]:3d} '
               f'maxLDND={r["max_ldnd"]:.3f} spread={r["spread"]:.3f} rare3={r["spread_rarefied_m3"]:.3f} '
-              f'Dmax@kcal={r["d_max_kcal"]:.3f} naive@kcal={r["uniform_d2_kcal"]:.3f} kkt={r["kkt_all_ok"]}')
+              f'Dmax@kcal={r["d_max_kcal"]:.3f} naive@kcal={r["uniform_d2_kcal"]:.3f} kkt={r["kkt_all_ok"]}', flush=True)
+
+    for name in sorted(LINEAGES, key=lambda n: len(samples[n])):
+        run(name)
+    results = [by_name[n] for n in LINEAGES]
+    nesting = check_nesting(results, children)
+    print(f"nesting: {nesting['pairs']} parent/child pairs, {len(nesting['violations'])} violations")
 
     japonic = [x for x in all_docs.values() if rows[x.id]["Family"] == "Japonic"]
     robust = sampling_robustness(japonic, k_cal, metric)
@@ -365,6 +451,8 @@ def main() -> None:
                     "k_cal": k_cal,
                     "noise_floor_quantiles_10_50_90": np.quantile(floor, [.1, .5, .9]).tolist(),
                     "excluded": load_exclusions(EXCLUSIONS_FILE),
+                    "max_per_lineage": MAX_PER_LINEAGE, "nesting": nesting,
+                    "children": {n: c for n, c in children.items() if c},
                     "lineages": summary, "japonic_sampling": robust},
                    ensure_ascii=False, indent=2), encoding="utf-8")
     (args.out / "profiles.json").write_text(json.dumps(
