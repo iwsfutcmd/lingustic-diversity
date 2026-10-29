@@ -82,6 +82,25 @@ def main() -> None:
     matrix = [[clean(v) for v in row] for row in cross["mean_ldnd_matrix"]]
     within = {n: matrix[i][i] for i, n in enumerate(names)}
 
+    single_path = r / "single_lists.json"
+    single = json.loads(single_path.read_text(encoding="utf-8")) if single_path.exists() else {}
+
+    def single_note(name: str) -> str:
+        note = "One list only: internal diversity cannot be measured (D_max is 1 by definition)."
+        x, null = single.get(name), single.get("_null_nearest")
+        if x and null:
+            near = ", ".join(f"{n} {a:.3f}" for n, a, _ in x["nearest"][:3])
+            best = x["nearest"][0][1]
+            note += (f" Nearest unrelated lineages (mean distance): {near}. For a random list from a known family the"
+                     f" nearest unrelated lineage sits at {null['median']:.3f} ({null['q05']:.3f}–{null['q95']:.3f}, 5–95%),"
+                     + (" so this is within chance." if best >= null["q05"] else
+                        " so the closest match is in the bottom 5%, which one of several isolates tested is expected to"
+                        " reach by chance."))
+            if x.get("dravidian_rank"):
+                note += (f" Dravidian: {x['dravidian'][0]:.3f}, rank {x['dravidian_rank'][0]} of"
+                         f" {x['dravidian_rank'][1]} (Elamo-Dravidian would predict it near the top).")
+        return note
+
     lineages = []
     for s in summary["lineages"]:
         n = s["lineage"]
@@ -97,9 +116,7 @@ def main() -> None:
             "hi": s["d_max_kcal"] + (b["q95"] - b["median"]) if b else None,
             "within": within.get(n),
             "reps": s["representatives_kcal"][:8],
-            **({"note": "One list only: internal diversity cannot be measured (D_max is 1 by definition). "
-                        "Use the Between lineages view to see how far it is from everything else."}
-               if s["n_doculects"] == 1 else {}),
+            **({"note": single_note(n)} if s["n_doculects"] == 1 else {}),
         })
 
     adv_path = r / "adversarial.json"
