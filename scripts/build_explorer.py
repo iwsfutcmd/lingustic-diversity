@@ -80,7 +80,11 @@ def main() -> None:
             "n": s["n_doculects"], "glotto": s["n_glottocodes"], "max_ldnd": s["max_ldnd"],
             "spread": s["spread"], "rare3": clean(s["spread_rarefied_m3"]),
             "d_max": s["d_max_kcal"], "uniform": s["uniform_d2_kcal"],
-            "lo": b.get("q05"), "hi": b.get("q95"), "within": within.get(n),
+            # The bootstrap samples at most 40 doculects (the main run up to 80), so its absolute level sits
+            # lower for big lineages. Keep its width (concept-resampling spread) and centre it on the estimate.
+            "lo": s["d_max_kcal"] + (b["q05"] - b["median"]) if b else None,
+            "hi": s["d_max_kcal"] + (b["q95"] - b["median"]) if b else None,
+            "within": within.get(n),
             "reps": s["representatives_kcal"][:8],
         })
 

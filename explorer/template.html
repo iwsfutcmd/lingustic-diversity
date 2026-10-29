@@ -109,7 +109,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
           <input id="q" type="search" placeholder="Filter lineages" aria-label="Filter lineages" autocomplete="off">
         </div>
         <div class="chart" id="divchart"></div>
-        <p class="muted" style="margin:8px 0 0">Dot: D_max at the calibrated scale. Line: 5–95% over concept resamples (where computed). 1.0 means one lineage; sampled lineages with 2 doculects are lower bounds.</p>
+        <p class="muted" style="margin:8px 0 0">Dot: D_max at the calibrated scale. Line: how far the score moves when 10 of the 40 concepts are left out (5–95% of 30 resamples), centred on the dot; it does not include the effect of which doculects were sampled. 1.0 means one lineage; lineages with 2 doculects are lower bounds.</p>
       </div>
       <aside class="panel" id="detail" aria-live="polite"></aside>
     </div>
@@ -266,7 +266,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
       <h3>Diversity</h3>
       <dl class="kv">
         <dt>D_max at k_cal</dt><dd>${fmt(d.d_max)}</dd>
-        ${d.lo != null ? `<dt>5–95% (concepts)</dt><dd>${fmt(d.lo)}–${fmt(d.hi)}</dd>` : ""}
+        ${d.lo != null ? `<dt>Concept-resample range</dt><dd>${fmt(d.lo)}–${fmt(d.hi)}</dd>` : ""}
         <dt>Naive D₂, equal weights</dt><dd>${fmt(d.uniform)}</dd>
         <dt>Spread (LDND units)</dt><dd>${fmt(d.spread)}</dd>
         <dt>Spread at 3 Glottocodes</dt><dd>${fmt(d.rare3)}</dd>
