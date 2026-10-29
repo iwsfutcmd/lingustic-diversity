@@ -4733,6 +4733,800 @@
       "kkt_all_ok": true
     },
     {
+      "lineage": "Sumerian",
+      "family": "Sumerian",
+      "n_doculects": 1,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.0,
+      "spread": 0.0,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.0,
+      "uniform_d2_kcal": 1.0,
+      "representatives_kcal": [
+        [
+          "SUMERIAN",
+          1.0
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Elamite",
+      "family": "Elamite",
+      "n_doculects": 1,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.0,
+      "spread": 0.0,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.0,
+      "uniform_d2_kcal": 1.0,
+      "representatives_kcal": [
+        [
+          "ELAMITE",
+          1.0
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Etruscan",
+      "family": "Etruscan",
+      "n_doculects": 1,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.0,
+      "spread": 0.0,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.0,
+      "uniform_d2_kcal": 1.0,
+      "representatives_kcal": [
+        [
+          "ETRUSCAN",
+          1.0
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Kusunda",
+      "family": "Kusunda",
+      "n_doculects": 2,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.307387693861809,
+      "spread": 0.3073877839999999,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.071028832868751,
+      "uniform_d2_kcal": 1.0710288328687512,
+      "representatives_kcal": [
+        [
+          "KUSUNDA",
+          0.5
+        ],
+        [
+          "KUSUNDA_2",
+          0.5
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Nihali",
+      "family": "Nihali",
+      "n_doculects": 3,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.29006673419146745,
+      "spread": 0.29888877752265336,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.067210461644811,
+      "uniform_d2_kcal": 1.0600143795687427,
+      "representatives_kcal": [
+        [
+          "NIHALI",
+          0.494
+        ],
+        [
+          "NAHALI",
+          0.419
+        ],
+        [
+          "NIHALI_2",
+          0.087
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Hruso",
+      "family": "Hruso",
+      "n_doculects": 1,
+      "n_glottocodes": 1,
+      "max_ldnd": 0.0,
+      "spread": 0.0,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.0,
+      "uniform_d2_kcal": 1.0,
+      "representatives_kcal": [
+        [
+          "HRUSO",
+          1.0
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Jarawa-Onge",
+      "family": "Jarawa-Onge",
+      "n_doculects": 2,
+      "n_glottocodes": 2,
+      "max_ldnd": 0.4283098239038794,
+      "spread": 0.428305823046383,
+      "spread_rarefied_m3": NaN,
+      "d_max_kcal": 1.0988140409104346,
+      "uniform_d2_kcal": 1.0988140409104348,
+      "representatives_kcal": [
+        [
+          "JARAWA",
+          0.5
+        ],
+        [
+          "ONGE",
+          0.5
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Nubian",
+      "family": "Nubian",
+      "n_doculects": 11,
+      "n_glottocodes": 9,
+      "max_ldnd": 0.9446546550847965,
+      "spread": 1.835678811894123,
+      "spread_rarefied_m3": 1.218891253581559,
+      "d_max_kcal": 1.3726747285904561,
+      "uniform_d2_kcal": 1.3466713736530096,
+      "representatives_kcal": [
+        [
+          "MEIDOB_NUBIAN",
+          0.19
+        ],
+        [
+          "NOBIIN",
+          0.167
+        ],
+        [
+          "BIRKED",
+          0.132
+        ],
+        [
+          "KARKO",
+          0.111
+        ],
+        [
+          "WALI_SUDAN",
+          0.098
+        ],
+        [
+          "KADARU",
+          0.072
+        ],
+        [
+          "UNCUNWEE",
+          0.071
+        ],
+        [
+          "DONGOLESE_NUBIAN",
+          0.062
+        ],
+        [
+          "KENZI",
+          0.045
+        ],
+        [
+          "KUNUZ_NUBIAN",
+          0.034
+        ],
+        [
+          "NUBIAN_OF_DONGOLA",
+          0.019
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Songhay",
+      "family": "Songhay",
+      "n_doculects": 13,
+      "n_glottocodes": 8,
+      "max_ldnd": 0.6767256714531175,
+      "spread": 1.0548621936488407,
+      "spread_rarefied_m3": 0.6456887725623565,
+      "d_max_kcal": 1.20610595226988,
+      "uniform_d2_kcal": 1.1557855447542709,
+      "representatives_kcal": [
+        [
+          "KORANDJE",
+          0.263
+        ],
+        [
+          "TASAWAQ",
+          0.218
+        ],
+        [
+          "DENDI_2",
+          0.188
+        ],
+        [
+          "TONDI_SONGWAY_KIINI",
+          0.118
+        ],
+        [
+          "SONGHAY_KOYRA_CHIINI",
+          0.079
+        ],
+        [
+          "TADAKSAHAK",
+          0.068
+        ],
+        [
+          "DENDI",
+          0.033
+        ],
+        [
+          "ZARMA",
+          0.024
+        ],
+        [
+          "ZARMA_3",
+          0.009
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Saharan",
+      "family": "Saharan",
+      "n_doculects": 10,
+      "n_glottocodes": 7,
+      "max_ldnd": 0.8893427123538735,
+      "spread": 1.5744607514172797,
+      "spread_rarefied_m3": 1.063093333996631,
+      "d_max_kcal": 1.3170224255822984,
+      "uniform_d2_kcal": 1.2659278745916556,
+      "representatives_kcal": [
+        [
+          "BERTI",
+          0.224
+        ],
+        [
+          "BERIA",
+          0.216
+        ],
+        [
+          "TEDAGA",
+          0.201
+        ],
+        [
+          "KANEMBU_3",
+          0.148
+        ],
+        [
+          "KANURI",
+          0.082
+        ],
+        [
+          "MANGA_KANURI",
+          0.082
+        ],
+        [
+          "KANURI_MANGA",
+          0.044
+        ],
+        [
+          "KANEMBU_2",
+          0.003
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Dogon",
+      "family": "Dogon",
+      "n_doculects": 50,
+      "n_glottocodes": 18,
+      "max_ldnd": 0.9334204557430115,
+      "spread": 1.9218734045553527,
+      "spread_rarefied_m3": 1.1314422459937314,
+      "d_max_kcal": 1.3904398435487697,
+      "uniform_d2_kcal": 1.3663407995497385,
+      "representatives_kcal": [
+        [
+          "TOMO_KAN",
+          0.089
+        ],
+        [
+          "WALO_KUMBE",
+          0.087
+        ],
+        [
+          "BUNOGE",
+          0.081
+        ],
+        [
+          "TORO_TEGU",
+          0.071
+        ],
+        [
+          "TORO_SO",
+          0.069
+        ],
+        [
+          "TOMMO_SO_2",
+          0.055
+        ],
+        [
+          "AMPARI_PA",
+          0.044
+        ],
+        [
+          "JAMSAY_2",
+          0.044
+        ],
+        [
+          "KOLUM_SO_4",
+          0.044
+        ],
+        [
+          "BEN_TEY_DOGON",
+          0.043
+        ],
+        [
+          "DOGUL_DOM",
+          0.041
+        ],
+        [
+          "BONDUM_DOM",
+          0.04
+        ],
+        [
+          "YANDA_DOM",
+          0.037
+        ],
+        [
+          "KOLUM_SO_9",
+          0.034
+        ],
+        [
+          "KOLUM_SO_8",
+          0.032
+        ],
+        [
+          "TORO_TEGU_4",
+          0.032
+        ],
+        [
+          "DOGUL_DOM_2",
+          0.03
+        ],
+        [
+          "ANA_TINGA",
+          0.021
+        ],
+        [
+          "KOLUM_SO_6",
+          0.021
+        ],
+        [
+          "DONNO_SO_3",
+          0.018
+        ],
+        [
+          "TOMO_KAN_3",
+          0.018
+        ],
+        [
+          "KOLUM_SO_7",
+          0.015
+        ],
+        [
+          "TOMO_KAN_2",
+          0.011
+        ],
+        [
+          "TOMMO_SO_4",
+          0.007
+        ],
+        [
+          "DOGON_TOMO_KAN",
+          0.005
+        ],
+        [
+          "NANGA",
+          0.005
+        ],
+        [
+          "TENE_KAN_2",
+          0.003
+        ],
+        [
+          "TEBUL_URE",
+          0.002
+        ],
+        [
+          "TENE_KAN",
+          0.001
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Kru",
+      "family": "Kru",
+      "n_doculects": 26,
+      "n_glottocodes": 16,
+      "max_ldnd": 0.8604506291980294,
+      "spread": 1.7161615027799446,
+      "spread_rarefied_m3": 1.0523871979555015,
+      "d_max_kcal": 1.3435861885687936,
+      "uniform_d2_kcal": 1.3196326357266122,
+      "representatives_kcal": [
+        [
+          "AIZI_TIAGBAMRIN",
+          0.142
+        ],
+        [
+          "KRUMEN_PYE",
+          0.086
+        ],
+        [
+          "GREBO",
+          0.076
+        ],
+        [
+          "DIDA_LAKOTA",
+          0.075
+        ],
+        [
+          "DEWOIN_2",
+          0.073
+        ],
+        [
+          "DIDA_LAKOTA_3",
+          0.069
+        ],
+        [
+          "BETE_GUIBEROUA",
+          0.058
+        ],
+        [
+          "KRUMAN",
+          0.058
+        ],
+        [
+          "DIDA_YOCOBOUE",
+          0.05
+        ],
+        [
+          "WOBE_NORTHERN_WE_2",
+          0.05
+        ],
+        [
+          "BAKWE_2",
+          0.048
+        ],
+        [
+          "NEYO",
+          0.042
+        ],
+        [
+          "BETE_DALOA_2",
+          0.041
+        ],
+        [
+          "KRUMEN_TEPO",
+          0.032
+        ],
+        [
+          "BAKWE_3",
+          0.03
+        ],
+        [
+          "BASSA_2",
+          0.026
+        ],
+        [
+          "BASSA_3",
+          0.026
+        ],
+        [
+          "BAKWE",
+          0.019
+        ],
+        [
+          "BETE_DALOA",
+          0.002
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Ijoid",
+      "family": "Ijoid",
+      "n_doculects": 36,
+      "n_glottocodes": 10,
+      "max_ldnd": 0.8336557487901434,
+      "spread": 1.384041153131827,
+      "spread_rarefied_m3": 0.7619303608065089,
+      "d_max_kcal": 1.2747724846458748,
+      "uniform_d2_kcal": 1.1763605371810917,
+      "representatives_kcal": [
+        [
+          "DEFAKA",
+          0.299
+        ],
+        [
+          "IZON_3",
+          0.148
+        ],
+        [
+          "AKAHA",
+          0.101
+        ],
+        [
+          "MEIN",
+          0.089
+        ],
+        [
+          "IBANI_2",
+          0.087
+        ],
+        [
+          "ORUMA",
+          0.087
+        ],
+        [
+          "GBARANMATU",
+          0.056
+        ],
+        [
+          "BISENI",
+          0.054
+        ],
+        [
+          "IBANI",
+          0.034
+        ],
+        [
+          "FURUPAGHA",
+          0.021
+        ],
+        [
+          "IKIBIRI",
+          0.019
+        ],
+        [
+          "KALABARI",
+          0.003
+        ],
+        [
+          "KABOU",
+          0.002
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Mixe-Zoque",
+      "family": "Mixe-Zoque",
+      "n_doculects": 23,
+      "n_glottocodes": 16,
+      "max_ldnd": 0.8163278466132716,
+      "spread": 1.4212956706741005,
+      "spread_rarefied_m3": 0.7991815369589457,
+      "d_max_kcal": 1.2806752726556254,
+      "uniform_d2_kcal": 1.219095012185976,
+      "representatives_kcal": [
+        [
+          "TAPACHULTEC",
+          0.211
+        ],
+        [
+          "AYAPANECO",
+          0.175
+        ],
+        [
+          "AYUTLA_MIXE",
+          0.156
+        ],
+        [
+          "TEXISTEPEC_ZOQUE",
+          0.1
+        ],
+        [
+          "OLUTA_POPOLUCA",
+          0.082
+        ],
+        [
+          "LOWLAND_MIXE",
+          0.059
+        ],
+        [
+          "ZOQUE_RAYON",
+          0.059
+        ],
+        [
+          "NORTH_HIGHLAND_MIXE",
+          0.043
+        ],
+        [
+          "MIGUEL_CHIMALAPA",
+          0.041
+        ],
+        [
+          "MARIA_CHIMALAPA",
+          0.038
+        ],
+        [
+          "GUICHICOVI_MIXE",
+          0.036
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Totonacan",
+      "family": "Totonacan",
+      "n_doculects": 10,
+      "n_glottocodes": 9,
+      "max_ldnd": 0.5668664229289164,
+      "spread": 0.9358203320304651,
+      "spread_rarefied_m3": 0.6010528409445639,
+      "d_max_kcal": 1.1807232763390496,
+      "uniform_d2_kcal": 1.1669602735873161,
+      "representatives_kcal": [
+        [
+          "TOTONAC_MISANTLA",
+          0.203
+        ],
+        [
+          "TEPEHUA_TLACHICHILCO",
+          0.196
+        ],
+        [
+          "TEPEHUA_PISA_FLORES",
+          0.149
+        ],
+        [
+          "PAPANTLA_TOTONAC",
+          0.13
+        ],
+        [
+          "TOTONAC_FILOMENA_MATA",
+          0.124
+        ],
+        [
+          "TEPEHUA_HUEHUETLA",
+          0.066
+        ],
+        [
+          "TOTONAC_UPPER_NEXACA",
+          0.055
+        ],
+        [
+          "TOTONAC_COYUTLA",
+          0.053
+        ],
+        [
+          "XICOTEPEC_TOTONAC",
+          0.024
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Cochimi-Yuman",
+      "family": "Cochimi-Yuman",
+      "n_doculects": 13,
+      "n_glottocodes": 9,
+      "max_ldnd": 0.8708824246277581,
+      "spread": 1.5954842959142874,
+      "spread_rarefied_m3": 0.9239744163123349,
+      "d_max_kcal": 1.3193035958443973,
+      "uniform_d2_kcal": 1.283097205166395,
+      "representatives_kcal": [
+        [
+          "COCHIMI",
+          0.22
+        ],
+        [
+          "HAVASUPAI",
+          0.167
+        ],
+        [
+          "MOHAVE",
+          0.159
+        ],
+        [
+          "DIEGUENO",
+          0.156
+        ],
+        [
+          "KILIWA",
+          0.107
+        ],
+        [
+          "YUMA",
+          0.071
+        ],
+        [
+          "COCOPA",
+          0.042
+        ],
+        [
+          "YAVAPAI",
+          0.038
+        ],
+        [
+          "TIPAI",
+          0.026
+        ],
+        [
+          "MARICOPA",
+          0.012
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
+      "lineage": "Miwok-Costanoan",
+      "family": "Miwok-Costanoan",
+      "n_doculects": 9,
+      "n_glottocodes": 7,
+      "max_ldnd": 0.8985066472289652,
+      "spread": 1.6086680068762995,
+      "spread_rarefied_m3": 1.0049828290553429,
+      "d_max_kcal": 1.3231060772151346,
+      "uniform_d2_kcal": 1.3071607010404638,
+      "representatives_kcal": [
+        [
+          "OLAMENTKE",
+          0.209
+        ],
+        [
+          "RUMSEN",
+          0.194
+        ],
+        [
+          "MUTSUN",
+          0.13
+        ],
+        [
+          "MIWOK_LAKE",
+          0.124
+        ],
+        [
+          "PLAINS_MIWOK",
+          0.121
+        ],
+        [
+          "CENTRAL_SIERRA_MIWOK",
+          0.116
+        ],
+        [
+          "S_SIERRA_MIWOK",
+          0.055
+        ],
+        [
+          "NORTHERN_SIERRA_MIWOK",
+          0.047
+        ],
+        [
+          "MIWOK_BODEGA",
+          0.003
+        ]
+      ],
+      "kkt_all_ok": true
+    },
+    {
       "lineage": "Semitic",
       "family": "Afro-Asiatic",
       "n_doculects": 62,
