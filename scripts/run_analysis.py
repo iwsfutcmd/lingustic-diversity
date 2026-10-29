@@ -71,6 +71,18 @@ SUBFAMILIES = {
 }
 for _label, _node in SUBFAMILIES.items():
     LINEAGES[_label] = (lambda n: lambda r: r["Family"] != "Bookkeeping" and n in r["classification_glottolog"].split(","))(_node)
+
+# The major Sinitic groups. Glottolog treats Yue, Hakka, Gan, Xiang, Jin, Hui and Wu each as one language with many
+# dialect doculects, so those are picked by Glottocode; Mandarin and Pinghua by classification node. Min is above.
+SINITIC_GROUPS = {
+    "Mandarin": ("node", "Mandarinic"), "Jin": ("glottocode", "jiny1235"), "Wu": ("glottocode", "wuch1236"),
+    "Hui": ("glottocode", "huiz1242"), "Gan": ("glottocode", "ganc1239"), "Xiang": ("glottocode", "xian1251"),
+    "Hakka": ("glottocode", "hakk1236"), "Yue": ("glottocode", "yuec1235"), "Pinghua": ("node", "Pinghua"),
+}
+for _label, (_by, _key) in SINITIC_GROUPS.items():
+    LINEAGES[_label] = (
+        (lambda n: lambda r: r["Family"] != "Bookkeeping" and n in r["classification_glottolog"].split(","))(_key)
+        if _by == "node" else (lambda g: lambda r: r["Family"] != "Bookkeeping" and r["Glottocode"] == g)(_key))
 MAX_PER_LINEAGE = 80          # stratified cap keeps pairwise LDND tractable
 KS = np.geomspace(0.1, 40, 48)
 RAREFY_M = 3          # compare lineages at a fixed number of distinct-Glottocode doculects
