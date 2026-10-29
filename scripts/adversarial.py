@@ -28,7 +28,7 @@ from pathlib import Path
 
 import numpy as np
 
-from run_analysis import (EXCLUSIONS_FILE, KS, LINEAGES, MAX_PER_LINEAGE, SEMITIC_GROUPS, SINITIC_GROUPS, SUBFAMILIES,
+from run_analysis import (EXCLUSIONS_FILE, KS, LINEAGES, MAX_PER_LINEAGE, NODE_GROUPS, SINITIC_GROUPS, SUBFAMILIES,
                           drop_nan, load_all, stratified)
 from isodiv.asjp import load, load_exclusions
 from isodiv.diversity import max_diversity, similarity_matrix, uniform_diversity
@@ -125,7 +125,7 @@ def main() -> None:
 
     # 2. proposed / rejected groupings, and 3. random unions of as many unrelated top-level families
     lin = {l["lineage"]: l for l in summary["lineages"]}
-    top = [n for n in LINEAGES if n not in SUBFAMILIES and n not in SINITIC_GROUPS and n not in SEMITIC_GROUPS and n in lin and lin[n]["n_doculects"] >= 2]
+    top = [n for n in LINEAGES if n not in SUBFAMILIES and n not in SINITIC_GROUPS and n not in NODE_GROUPS and n in lin and lin[n]["n_doculects"] >= 2]
     by_family = defaultdict(list)
     for n in top:
         by_family[lin[n]["family"]].append(n)

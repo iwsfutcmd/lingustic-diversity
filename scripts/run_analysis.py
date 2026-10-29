@@ -99,9 +99,18 @@ KS = np.geomspace(0.1, 40, 48)
 RAREFY_M = 3          # compare lineages at a fixed number of distinct-Glottocode doculects
 RAREFY_DRAWS = 40
 
-# Semitic subgroups by Glottolog node (with the traditional South Semitic and North Ethiopic, which Glottolog has no
-# node for, built from nodes). Value: (nodes the path must contain one of, nodes it must not contain).
-SEMITIC_GROUPS = {
+# Subgroups by Glottolog node: (nodes the path must contain one of, nodes it must not contain). Groupings Glottolog
+# has no node for (South Semitic, North Ethiopic, Formosan) are built from nodes; Formosan is not a clade but
+# "Austronesian outside Malayo-Polynesian".
+NODE_GROUPS = {
+    # Austronesian
+    "Malayo-Polynesian": (["Malayo-Polynesian"], []),
+    "Formosan": (["Austronesian"], ["Malayo-Polynesian"]),
+    "Eastern Malayo-Polynesian": (["EasternMalayo-Polynesian"], []),
+    "Greater Central Philippine": (["GreaterCentralPhilippine"], []),
+    "Malayic": (["Malayic"], []),
+    "Celebic": (["Celebic"], []),
+    # Semitic
     "East Semitic": (["EastSemitic"], []),
     "West Semitic": (["WestSemitic"], []),
     "Central Semitic": (["CentralSemitic"], []),
@@ -122,7 +131,7 @@ SEMITIC_GROUPS = {
     "Eastern Arabic": (["EasternArabic"], []),
     "Levantine Arabic": (["Levantine-CypriotArabic"], []),
 }
-for _label, (_any, _none) in SEMITIC_GROUPS.items():
+for _label, (_any, _none) in NODE_GROUPS.items():
     LINEAGES[_label] = (lambda a, z: lambda r: r["Family"] != "Bookkeeping" and
                         bool(set(a) & set(p := r["classification_glottolog"].split(","))) and not set(z) & set(p))(_any, _none)
 
