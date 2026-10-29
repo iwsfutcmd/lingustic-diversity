@@ -84,6 +84,25 @@ Mongolic contact, is Mandarin's top-weighted list; without it Mandarin is 1.262.
 interval; every other lineage moves by 0.004 or less. Old Chinese gets Sinitic's largest D_max weight because it is the
 most isolated point (nearest neighbour 0.59, Middle Chinese). Only lineages with a written past get this boost.
 
+**Change, not time: Austronesian.** Austronesian (1.514) outscores Indo-European (1.474), though it is younger. Size
+is not the reason: at equal numbers of distinct languages (3, 5, 10, 20, 40) Austronesian stays above Indo-European.
+Composition and rate are. Half the capped Austronesian sample is Oceanic, and Oceanic alone (about 3,500 years)
+scores 1.522, above Indo-European at every sample size. Formosan, where Austronesian's deepest splits are, scores
+*lowest* (1.452; at 10 languages 1.376 vs Malayo-Polynesian 1.418 and Oceanic 1.438): its languages kept more of
+the Proto-Austronesian basic vocabulary. D_max measures how much basic vocabulary has changed, so a young, fast lineage
+can outscore an old, slow one. It is a measure of lexical diversity, not of age.
+
+**Semitic.** Semitic 1.426; West Semitic 1.425; South Semitic 1.386 (higher than Central Semitic 1.362, with
+Ethiosemitic 1.343 the deepest part); Northwest Semitic 1.318, Arabic 1.275, Aramaic 1.260, Modern South Arabian
+1.238; Arabic subgroups 1.14–1.22. East Semitic (three Akkadian lists, 1.095) and Canaanite (4 lists, 1.180) are too
+thin to compare; Ancient South Arabian keeps one list after the 20-shared-concept filter.
+
+**Ancient and single-list isolates** (`scripts/single_lists.py`). A single list has D_max = 1 by definition, so only
+its distance to everything else is informative. For a random list from a known family, the nearest unrelated
+lineage sits at mean PMI-LDND 0.908 (5–95%: 0.857–0.935). Sumerian (nearest Etruscan 0.880), Etruscan (Nivkh 0.863;
+24 concepts), Hruso, Kusunda and Nihali are within chance. Elamite is closest to Basque (0.851, bottom 5%, as expected
+for one of six isolates by chance) and only 14th of 69 to Dravidian (0.925): no Elamo-Dravidian signal.
+
 ## Constructed sets (adversarial check)
 
 `scripts/adversarial.py` scores sets that are *not* families, on the same scale. D_max measures diversity, not
@@ -122,6 +141,12 @@ unrelated pair in the data and Turkic ↔ Mongolic (0.925) is in the closest 1%.
 signal; neither measure separates it from descent. Koreanic ↔ Japonic (1.012) is farther apart than 99% of unrelated
 pairs, and Dene-Yeniseian (0.956) is unremarkable, which is expected for a proposal argued from morphology.
 
+**Niger-Congo** (Glottolog splits it into Atlantic-Congo, Mande, Kru, Ijoid, Dogon and the Kordofanian groups): the
+nine-branch union scores 1.527, slightly *below* random nine-family unions (1.536, 1.532–1.543), as large unions of
+deep families saturate. Distances to Atlantic-Congo: Mande 0.949, Kru 0.950, Ijoid 0.947, Dogon 0.947, each closer
+than about 90% of unrelated lineage pairs, a weak signal that West African contact could also produce; the
+Kordofanian groups (0.964–0.977) are at chance. Elamo-Dravidian (1.413) is at its baseline (1.419).
+
 The explorer shows these sets as a separate "constructed" category.
 
 ## Caveats
@@ -139,11 +164,16 @@ The explorer shows these sets as a separate "constructed" category.
 
 ## Lineages
 
-81 lineages: 48 top-level (the original 16 plus 32 more ASJP families), 24 subfamilies selected by node in ASJP's
+128 lineages: 70 top-level (the original 16, 32 more ASJP families, six single- or few-list isolates incl. Sumerian,
+Elamite and Etruscan, and 16 small families incl. Mande, Kru, Ijoid, Dogon and the Kordofanian groups), 24 subfamilies selected by node in ASJP's
 Glottolog classification path (`SUBFAMILIES` in `scripts/run_analysis.py`: Semitic, Arabic, Sinitic, Min, Indo-Aryan,
 Iranian, Oceanic, Polynesian, ...), and nine major Sinitic groups (`SINITIC_GROUPS`: Mandarin, Jin, Wu, Hui, Gan,
 Xiang, Hakka, Yue, Pinghua). Glottolog treats most of those groups as one language each, so they are picked by
-Glottocode; Mandarin and Pinghua by node. Two lineages count as related, and are left out of the unrelated-pair
+Glottocode; Mandarin and Pinghua by node. `NODE_GROUPS` adds 25 more by node: Austronesian (Malayo-Polynesian,
+Formosan = Austronesian outside Malayo-Polynesian, Eastern MP, Greater Central Philippine, Malayic, Celebic) and
+Semitic (East/West/Central/Northwest Semitic, Aramaic, NENA, Canaanite, South Semitic = Ethiosemitic + MSA + Sayhadic,
+Ethiosemitic, North/South/Outer South Ethiopic, Modern and Ancient South Arabian, five Arabic groups). ASJP has no
+Hurrian or Urartian list. Two lineages count as related, and are left out of the unrelated-pair
 statistics, whenever their doculects share a top-level Family.
 
 ## Explorer and cross-family check
