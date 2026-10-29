@@ -97,6 +97,9 @@ def main() -> None:
             "hi": s["d_max_kcal"] + (b["q95"] - b["median"]) if b else None,
             "within": within.get(n),
             "reps": s["representatives_kcal"][:8],
+            **({"note": "One list only: internal diversity cannot be measured (D_max is 1 by definition). "
+                        "Use the Between lineages view to see how far it is from everything else."}
+               if s["n_doculects"] == 1 else {}),
         })
 
     adv_path = r / "adversarial.json"

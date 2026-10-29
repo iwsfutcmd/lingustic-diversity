@@ -5,7 +5,8 @@ real family of the same size. This script measures how much higher, and where pr
 land on the same scale:
 
 * random unrelated sets: n doculects, each from a different genealogical family (30 draws per n);
-* proposed / rejected groupings (Altaic, Macro-Altaic, Ural-Altaic, Dene-Yeniseian, "Khoisan", "Paleo-Siberian"):
+* proposed / rejected groupings (Altaic, Macro-Altaic, Ural-Altaic, Dene-Yeniseian, "Khoisan", "Paleo-Siberian",
+  Elamo-Dravidian):
   the union of their member lineages, capped at 80 doculects like real lineages;
 * two baselines for each grouping: unions of the same number of randomly chosen unrelated families, of any depth
   and of *shallow* families only (genus-level D_max, 1.24–1.36, like Turkic, Mongolic and Tungusic).
@@ -44,6 +45,7 @@ PROPOSALS = {
     "Dene-Yeniseian": ["Athabaskan-Eyak-Tlingit", "Yeniseian"],
     "Khoisan": ["Khoe-Kwadi", "Tuu", "Kxa"],
     "Paleo-Siberian": ["Chukotko-Kamchatkan", "Yukaghir", "Nivkh", "Yeniseian", "Ainu"],
+    "Elamo-Dravidian": ["Elamite", "Dravidian"],
 }
 
 

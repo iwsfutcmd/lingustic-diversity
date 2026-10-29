@@ -59,6 +59,16 @@ EXTRA_FAMILIES = [
 for _fam in EXTRA_FAMILIES:
     LINEAGES[_fam] = (lambda f: lambda r: r["Family"] == f)(_fam)
 
+# Isolates with one to three lists, ancient (Sumerian, Elamite, Etruscan) and modern. A single list has no measurable
+# internal diversity (D_max = 1); they are here for the between-lineage distances. Hurro-Urartian has no ASJP list.
+SMALL_ISOLATES = ["Sumerian", "Elamite", "Etruscan", "Kusunda", "Nihali", "Hruso"]
+# Small families from other macroareas, as further points of comparison.
+SMALL_FAMILIES = ["Jarawa-Onge", "Nubian", "Songhay", "Saharan", "Dogon", "Kru", "Ijoid", "Mixe-Zoque", "Totonacan",
+                  "Cochimi-Yuman", "Miwok-Costanoan"]
+for _fam in SMALL_ISOLATES + SMALL_FAMILIES:
+    LINEAGES[_fam] = (lambda f: lambda r: r["Family"] == f)(_fam)
+ISOLATE_CANDIDATES += SMALL_ISOLATES
+
 # Subfamilies, picked by node in ASJP's Glottolog classification path (label -> node). Each is nested in a
 # top-level family above, so cross-family comparisons treat pairs that share a Family as related.
 SUBFAMILIES = {
