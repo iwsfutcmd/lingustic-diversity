@@ -1,0 +1,631 @@
+<title>From Word Lists to D_max</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Charis+SIL&display=swap">
+<style>
+/* Layout: a single reading column (~68ch) with wide figure insets; the pipeline is a real sequence, so steps are numbered. */
+:root{
+  --bg:#f4f6f9; --surface:#ffffff; --fg:#18202f; --muted:#5a6477; --rule:#d7dce5;
+  --ink:#2a55c9;      /* same-meaning comparisons, the thing measured */
+  --ink-soft:#dbe4fa;
+  --chance:#a8336f;   /* different-meaning comparisons, the chance baseline */
+  --chance-soft:#f5dce9;
+  --ok:#1f7a4d; --cell0:#ffffff;
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --ipa:"Charis SIL","Doulos SIL","Noto Serif","Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11151d; --surface:#181e29; --fg:#e4e8f0; --muted:#97a1b4; --rule:#2c3445;
+  --ink:#7d9cff; --ink-soft:#22305a; --chance:#e27aae; --chance-soft:#4a2238; --ok:#5fcf95; --cell0:#181e29; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11151d; --surface:#181e29; --fg:#e4e8f0; --muted:#97a1b4; --rule:#2c3445;
+  --ink:#7d9cff; --ink-soft:#22305a; --chance:#e27aae; --chance-soft:#4a2238; --ok:#5fcf95; --cell0:#181e29; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px}
+main{max-width:860px;margin-inline:auto;display:flex;flex-direction:column;gap:56px}
+.prose{max-width:68ch}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,5vw,2.9rem)}
+h2{font-size:1.65rem}
+h3{font-size:1.15rem}
+p{margin:0}
+section{display:flex;flex-direction:column;gap:16px}
+.eyebrow{font:600 .78rem/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.step{display:flex;gap:12px;align-items:baseline}
+.step .n{font:600 .9rem var(--mono);color:var(--ink);border:1.5px solid var(--ink);border-radius:50%;inline-size:1.9em;block-size:1.9em;display:inline-grid;place-items:center;flex:none}
+.lede{font-size:1.15rem;color:var(--muted)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.modebar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding-block:10px;border-block-end:1px solid var(--rule)}
+.seg{background:var(--surface);color:var(--fg);border:1px solid var(--rule)}
+.seg[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.seg small{font-weight:400;opacity:.8}
+.align .col.p{grid-template-rows:1.7em 1.7em 1.2em}
+.align .col.p span:not(:last-child){background:color-mix(in srgb,var(--ink) calc(var(--w,0)*100%),var(--surface))}
+.align .col.p span.op{font-variant-numeric:tabular-nums}
+.bars{font-size:.9rem}
+code,.code{font-family:var(--mono);font-size:.9em}
+.ipa{font-family:var(--ipa)}
+.asjp{font-family:var(--mono)}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.scroll{overflow-x:auto;min-width:0}
+table{border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{text-align:start;padding:6px 10px;border-block-end:1px solid var(--rule);vertical-align:top}
+th{font:600 .78rem var(--body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.wl td .asjp{display:block;font-size:.98rem}
+.wl td .ipa{display:block;font-size:.85rem;color:var(--muted)}
+.wl td.gloss{font-weight:600;white-space:nowrap}
+.miss{color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:end}
+label.ctl{display:flex;flex-direction:column;gap:4px;font-size:.82rem;color:var(--muted)}
+select,input[type=range]{font:inherit;font-size:.95rem;color:var(--fg);background:var(--bg);border:1px solid var(--rule);border-radius:6px;padding:4px 8px}
+input[type=range]{padding:0;inline-size:200px;accent-color:var(--ink)}
+button{font:600 .9rem var(--body);color:var(--ink);background:var(--ink-soft);border:1px solid transparent;border-radius:6px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--ink)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:400 .85rem var(--body);border:1px solid var(--rule);border-radius:999px;padding:2px 10px;background:var(--surface)}
+.key{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px 16px;font-size:.9rem}
+.key div{display:flex;gap:10px;align-items:baseline}
+.key b{font-family:var(--mono);inline-size:1.6em;text-align:center;background:var(--ink-soft);border-radius:4px}
+figure{margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+figcaption{font-size:.92rem;color:var(--muted);max-width:68ch}
+svg{max-width:100%;height:auto;display:block}
+.align{display:inline-grid;grid-auto-flow:column;gap:3px;font:600 1.1rem var(--mono)}
+.align .col{display:grid;grid-template-rows:1.7em 1.7em 1.2em;text-align:center;inline-size:1.8em}
+.align .col span{display:grid;place-items:center;border-radius:4px}
+.align .m span:not(:last-child){background:var(--ink-soft)}
+.align .s span:not(:last-child){background:var(--chance-soft)}
+.align .g span:not(:last-child){background:var(--chance-soft)}
+.align .op{font:400 .72rem var(--body);color:var(--muted)}
+.stats{display:flex;flex-wrap:wrap;gap:12px 32px}
+.stat{display:flex;flex-direction:column}
+.stat .v{font:600 1.6rem var(--mono);font-variant-numeric:tabular-nums}
+.stat .l{font-size:.82rem;color:var(--muted)}
+.v.ink{color:var(--ink)} .v.chance{color:var(--chance)}
+.formula{font:400 1rem var(--mono);background:var(--surface);border-inline-start:3px solid var(--ink);padding:10px 14px;border-radius:0 6px 6px 0;overflow-x:auto}
+.hm-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(200px,260px);gap:16px;align-items:start}
+@media (max-width:640px){.hm-wrap{grid-template-columns:minmax(0,1fr)}}
+#hm{inline-size:100%;max-inline-size:440px;aspect-ratio:1;touch-action:none;cursor:crosshair;border:1px solid var(--rule)}
+#hmInfo{font-size:.92rem;display:flex;flex-direction:column;gap:6px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+.sw{display:inline-block;inline-size:12px;block-size:12px;border-radius:2px;margin-inline-end:6px;vertical-align:-1px}
+.set{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px 16px}
+.set label{display:flex;gap:8px;align-items:center;font-size:.95rem}
+.zt td,.zt th{padding:4px 8px;font-size:.85rem;text-align:end}
+.zt th{text-transform:none;letter-spacing:0}
+.note{font-size:.92rem;color:var(--muted)}
+.bands td:first-child{color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.stat .v{transition:color .2s}}
+</style>
+<main>
+<header class="prose" style="display:flex;flex-direction:column;gap:14px">
+  <span class="eyebrow">isodiv · how the numbers are made</span>
+  <h1>From word lists to D<sub>max</sub></h1>
+  <p class="lede">Every number in the results table comes from one kind of raw material: short lists of basic words, written in a coarse phonetic alphabet. This page follows real ASJP lists from Japanese, Okinawan (Naha), Yaeyaman (Hateruma), English, German and Basque through each step. Every figure below is computed live in your browser from the actual ASJP v21 forms.</p>
+  <p class="lede">The pipeline now measures distance with <strong>PMI-LDND</strong>, which aligns words using sound correspondences learned from the data (§3). Switch to the original LDND to compare any step.</p>
+</header>
+<div class="modebar" role="group" aria-label="Distance used on this page">
+  <span class="eyebrow">Distance</span>
+  <button type="button" class="seg" data-mode="pmi" aria-pressed="true">PMI-LDND <small>(pipeline)</small></button>
+  <button type="button" class="seg" data-mode="ldnd" aria-pressed="false">LDND <small>(original)</small></button>
+</div>
+
+<figure>
+  <div class="scroll"><svg viewBox="0 0 860 150" role="img" aria-label="Pipeline: 40-word lists per doculect, compared word by word with an alignment scored by learned sound correspondences (or plain Levenshtein), averaged into one PMI-LDND distance per pair of doculects, converted to similarity, then summarized as one D_max per lineage." style="min-width:640px">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+    <g fill="none" stroke="currentColor" stroke-width="1.3" style="color:var(--fg)">
+      <rect x="4" y="34" width="140" height="64" rx="6"/>
+      <rect x="182" y="34" width="140" height="64" rx="6"/>
+      <rect x="360" y="34" width="140" height="64" rx="6" style="stroke:var(--ink)" stroke-width="2"/>
+      <rect x="538" y="34" width="140" height="64" rx="6"/>
+      <rect x="716" y="34" width="140" height="64" rx="6"/>
+      <line x1="144" y1="66" x2="180" y2="66" marker-end="url(#ar)"/>
+      <line x1="322" y1="66" x2="358" y2="66" marker-end="url(#ar)"/>
+      <line x1="500" y1="66" x2="536" y2="66" marker-end="url(#ar)"/>
+      <line x1="678" y1="66" x2="714" y2="66" marker-end="url(#ar)"/>
+    </g>
+    <g fill="currentColor" style="color:var(--fg);font:600 13px var(--body)" text-anchor="middle">
+      <text x="74" y="60">word list</text><text x="252" y="60">word vs word</text><text x="430" y="60" style="fill:var(--ink)">list vs list</text><text x="608" y="60">similarity</text><text x="786" y="60">lineage</text>
+    </g>
+    <g fill="currentColor" style="color:var(--muted);font:400 12px var(--mono)" text-anchor="middle">
+      <text x="74" y="82">40 concepts</text><text x="252" y="82">PMI or LDN</text><text x="430" y="82">≈ 0 … 1</text><text x="608" y="82">Z = e^(−k·d)</text><text x="786" y="82">D_max ≥ 1</text>
+    </g>
+    <g fill="currentColor" style="color:var(--muted);font:400 11.5px var(--body)" text-anchor="middle">
+      <text x="74" y="122">per doculect</text><text x="252" y="122">per concept, per pair</text><text x="430" y="122">per pair of doculects</text><text x="608" y="122">per pair of doculects</text><text x="786" y="122">per set of doculects</text>
+      <text x="74" y="20">§1</text><text x="252" y="20">§2–3</text><text x="430" y="20">§4–5</text><text x="608" y="20">§6</text><text x="786" y="20">§7</text>
+    </g>
+  </svg></div>
+  <figcaption>Five steps, each reducing the data. The step that does the real linguistic work is list vs list: it turns two 40-word lists into one number.</figcaption>
+</figure>
+
+<section>
+  <div class="step"><span class="n">1</span><h2>What an ASJP word list is</h2></div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>The <a href="https://asjp.clld.org/">Automated Similarity Judgment Program</a> database (v21) holds about <strong>11,500 word lists</strong>. Each one is a <em>doculect</em>: a single documented variety from a single source. The same language can appear more than once. <code>JAPANESE</code> and <code>JAPANESE_2</code> are both Standard Japanese (Glottocode <code>nucl1643</code>), transcribed from different sources.</p>
+    <p>Every list covers the same <strong>40 concepts</strong>. These are the most stable items of an original Swadesh-100, chosen because they are least often replaced or borrowed:</p>
+  </div>
+  <div class="chips" id="conceptChips"></div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>Words are written in <strong>ASJPcode</strong>, a deliberately coarse ASCII alphabet of 7 vowels and 34 consonants. Coarse is on purpose: transcriptions from very different traditions (a Japanese grammar, a Bantu field survey) become comparable, at the cost of phonetic detail. Many distinctions collapse; all front mid vowels, for example, are <code class="asjp">e</code>.</p>
+  </div>
+  <div class="panel">
+    <span class="eyebrow">ASJPcode symbols in these lists that aren't their IPA value</span>
+    <div class="key">
+      <div><b>3</b><span class="ipa">ə</span></div><div><b>E</b><span class="ipa">ɛ, æ</span></div><div><b>S</b><span class="ipa">ʃ</span></div><div><b>C</b><span class="ipa">tʃ</span></div><div><b>c</b><span class="ipa">ts</span></div><div><b>8</b><span class="ipa">θ, ð</span></div><div><b>N</b><span class="ipa">ŋ</span></div><div><b>7</b><span class="ipa">ʔ</span></div><div><b>y</b><span class="ipa">j</span></div><div><b>x</b><span class="ipa">x</span></div>
+    </div>
+    <p class="note">Modifiers <code class="asjp">~ " * $</code> mark things like aspiration, glottalization and nasalization. isodiv strips them and treats each remaining character as one segment, the convention behind published LDND values. So Hateruma <code class="asjp">ph~ana</code> ‘nose’ is compared as <code class="asjp">p h a n a</code>. Spaces and hyphens are dropped too.</p>
+  </div>
+  <div class="panel">
+    <div class="controls">
+      <label class="ctl" for="wlCols">Show
+        <select id="wlCols"><option value="ja">Japonic (3 lists)</option><option value="mix" selected>Japonic + Germanic + Basque</option></select>
+      </label>
+    </div>
+    <div class="scroll"><table class="wl" id="wlTable"></table></div>
+    <p class="note">Each cell: ASJPcode as stored, then the CLDF IPA segmentation underneath. Several forms separated by “/” are synonyms. “—” means the concept is missing from that list; a pair of lists is only compared on the concepts both have.</p>
+  </div>
+</section>
+
+<section>
+  <div class="step"><span class="n">2</span><h2>Comparing one word with one word</h2></div>
+  <p class="prose">For one concept, take the two languages’ words and count the fewest single-segment edits (substitute, insert, delete) that turn one into the other. That count is the <strong>Levenshtein distance</strong>. Divide by the length of the longer word, so long words aren’t penalized for being long. The result is <strong>LDN</strong>: 0 for identical words, 1 for words with nothing in the right place.</p>
+  <div class="formula">LDN(a, b) = Levenshtein(a, b) / max(|a|, |b|)</div>
+  <div class="panel">
+    <div class="controls">
+      <label class="ctl" for="wA">List A<select id="wA"></select></label>
+      <label class="ctl" for="wB">List B<select id="wB"></select></label>
+      <label class="ctl" for="wC">Concept<select id="wC"></select></label>
+    </div>
+    <div class="scroll"><div id="alignOut"></div></div>
+    <div class="stats" id="alignStats"></div>
+    <p class="note" id="alignNote"></p>
+  </div>
+  <p class="prose">LDN knows nothing about sound change. Japanese <span class="asjp">hi</span> and Hateruma <span class="asjp">p3</span> ‘fire’ are regular cognates (Proto-Japonic *pi), yet score 1.0, while chance lookalikes can score low. This method gives up cognate judgments to get a measurement that runs on all 11,500 lists without an expert. §3 fixes the sound-change blindness; §4 deals with chance.</p>
+</section>
+
+<section>
+  <div class="step"><span class="n">3</span><h2>Learned sound correspondences: PMI</h2></div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>Levenshtein charges the same for every changed segment. The pipeline instead <em>learns</em> what each pairing is worth. It takes word pairs that are probably cognate (same meaning, from lists that are already fairly similar), aligns them, and counts how often each pair of segments lines up, compared with how often it would by chance. That ratio, on a log scale, is the pointwise mutual information:</p>
+  </div>
+  <div class="formula">PMI(a, b) = log p(a aligned with b) / (q(a) · q(b))</div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>Positive means the two segments line up more often than chance, negative means less. Identical segments score high. Regular correspondences score near zero or a little below, even when they sound nothing alike. Pairings that cognates never show score strongly negative. No phonology goes in: the scores below were learned from 3,939 similar ASJP list pairs, re-estimated until stable (after Jäger 2013, 2018).</p>
+  </div>
+  <figure>
+    <div class="scroll"><svg id="pmiBars" viewBox="0 0 620 330" role="img" aria-label="Learned PMI scores for selected segment pairs" style="min-width:420px"></svg></div>
+    <figcaption>Selected learned scores. d:t beats d:p, as phonetics would predict, but h:p also beats t:p, because Japonic *p became h in Japanese and stayed p in Yaeyaman. A feature-based cost would get that one backwards.</figcaption>
+  </figure>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>Words are then aligned to maximize the summed score, with gaps costing −2.49 to open and −1.71 to extend. The total S(a, b) becomes a distance comparable to LDN by comparing it with each word’s score against itself:</p>
+  </div>
+  <div class="formula">d(a, b) = 1 − 2·S(a, b) / (S(a, a) + S(b, b))</div>
+  <div class="panel">
+    <div class="controls">
+      <label class="ctl" for="pA">List A<select id="pA"></select></label>
+      <label class="ctl" for="pB">List B<select id="pB"></select></label>
+      <label class="ctl" for="pC">Concept<select id="pC"></select></label>
+    </div>
+    <div class="scroll"><div id="pAlignOut"></div></div>
+    <div class="stats" id="pAlignStats"></div>
+    <p class="note">Each column shows its score: a darker cell is a stronger correspondence; gaps show their penalty.</p>
+  </div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>Word by word, the change is often modest. Japanese <span class="asjp">Ci</span> and Hateruma <span class="asjp">c3</span> ‘blood’ go from LDN 1.00 to 0.65, because tʃ : ts is a common correspondence. Japanese <span class="asjp">hi</span> and Hateruma <span class="asjp">p3</span> ‘fire’ stay at about 1: h : p scores near zero, but i : ə counts against them.</p>
+    <p>The bigger change is in words with <em>different</em> meanings. Unrelated segment pairs score strongly negative, so chance pairs land well above 1, while cognates stay moderate. For Japanese–Naha, same-meaning words average 0.80 and different-meaning words 1.66 (ratio 0.48). With LDN those are 0.515 and 0.854 (ratio 0.60). The signal stands out further from the chance baseline, which is what the next step measures.</p>
+  </div>
+  <p class="prose">Swapping this word distance into LDND gives <strong>PMI-LDND</strong>. Everything after this step is unchanged. On about 5,000 held-out test pairs it separates same-language, same-genus, same-family and unrelated pairs better than LDND at every level, most at deep levels (AUC 0.852 → 0.891).</p>
+</section>
+
+<section>
+  <div class="step"><span class="n">4</span><h2>Comparing one list with another: LDND</h2></div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>To compare two doculects, compute LDN for every pair of words between them. Lay them out in a grid: rows are list A’s concepts, columns are list B’s. Then take two averages:</p>
+    <ul style="margin:0;padding-inline-start:1.2em;display:flex;flex-direction:column;gap:6px">
+      <li><strong style="color:var(--ink)">LDN<sub>same</sub></strong>, the diagonal: words with the <em>same meaning</em>. This is the signal. (Where a list has synonyms, the closest pair counts.)</li>
+      <li><strong style="color:var(--chance)">LDN<sub>diff</sub></strong>, everything off the diagonal: words with <em>different meanings</em>, e.g. Japanese ‘water’ vs Okinawan ‘fire’. No one thinks these are related, so their average shows how alike two random words from these two languages look by accident.</li>
+    </ul>
+    <p>LDND divides the first by the second. Dividing by the baseline cancels out chance similarity from shared sound systems. Two languages with small inventories and simple CV syllables look alike even when unrelated. Japanese and Okinawan have an LDN<sub>diff</sub> around 0.85; English and German, with longer consonant clusters, around 0.91.</p>
+  </div>
+  <div class="formula">LDND = LDN<sub>same</sub> / LDN<sub>diff</sub></div>
+  <p class="prose">PMI-LDND is the same ratio with the §3 word distance in every cell. Use the switch at the top to see the grid both ways.</p>
+  <div class="panel">
+    <div class="controls">
+      <label class="ctl" for="hA">List A (rows)<select id="hA"></select></label>
+      <label class="ctl" for="hB">List B (columns)<select id="hB"></select></label>
+    </div>
+    <div class="hm-wrap">
+      <figure>
+        <canvas id="hm" role="img" aria-label="Grid of LDN between every word of list A and every word of list B; the diagonal holds same-meaning pairs."></canvas>
+        <div class="legend"><span><i class="sw" style="background:var(--ink)"></i>same meaning (diagonal)</span><span><i class="sw" style="background:var(--chance)"></i>different meaning</span><span>darker = more similar</span></div>
+      </figure>
+      <div id="hmInfo"></div>
+    </div>
+    <div class="stats" id="hmStats"></div>
+  </div>
+  <p class="prose note">Hover or tap a cell to see the two words. In a related pair the diagonal stands out from the speckle around it. For Japanese vs English it doesn’t, and the distance comes out near 1: the same-meaning words are no more alike than random ones.</p>
+</section>
+
+<section>
+  <div class="step"><span class="n">5</span><h2>What the distances look like</h2></div>
+  <p class="prose">Both distances measure <em>how much the basic vocabulary has changed</em>, not time. Nothing in it assumes a rate. Here are real values for pairs from these lists, against the spread for two doculects of the <em>same</em> language across all of ASJP.</p>
+  <figure>
+    <div class="scroll"><svg id="scaleSvg" viewBox="0 0 860 220" role="img" aria-label="Number line of distances between example pairs, against the same-language noise band and the unrelated range." style="min-width:600px"></svg></div>
+    <figcaption>The shaded band is the 10th–90th percentile of <span class="dl">PMI-LDND</span> between two lists of the same language (same Glottocode) in ASJP. It is wide: two transcriptions of one language can be as far apart as <span id="fl90"></span>. That is the noise floor. Unrelated lineages average <span id="unrelMean"></span> across 2,483 unrelated lineage pairs in this repo. PMI-LDND moves related pairs closer while leaving unrelated ones near 1, which is what makes it more discriminating.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="step"><span class="n">6</span><h2>Turning distance into similarity</h2></div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>The diversity measure in §7 needs similarities between 0 and 1, not distances. isodiv uses <code>Z = exp(−k · d)</code>. The single knob is <code>k</code>, and it is chosen without any clock. In ASJP, two doculects of the same language have median <span class="dl">PMI-LDND</span> <span id="flMed"></span>. <code>k</code> is set so that such a pair counts as 0.9-similar, giving <strong>k<sub>cal</sub> = <span class="kcal"></span></strong>.</p>
+    <p>One consequence: even fully unrelated lists (distance ≈ 1) are still about <span id="zUnrel"></span>-similar under this <code>k</code>. That is why every D<sub>max</sub> in the results is close to 1. The scale is compressed, not broken. Larger <code>k</code> spreads it out (the explorer plots the whole curve).</p>
+  </div>
+  <figure>
+    <div class="scroll"><svg id="curveSvg" viewBox="0 0 620 300" role="img" aria-label="Curve of similarity Z against distance at the calibrated k, with the calibration point at Z 0.90." style="min-width:420px"></svg></div>
+    <figcaption id="curveCap"></figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="step"><span class="n">7</span><h2>From pairs to a lineage: D<sub>max</sub></h2></div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>A lineage like Japonic has dozens of doculects in ASJP, so it gives a whole matrix of pairwise similarities. D<sub>max</sub> (Leinster &amp; Meckes 2016) reduces that matrix to one number: the <strong>effective number of completely distinct lineages</strong> in it. 1.0 means everything is one undifferentiated variety; higher means more independent diversity.</p>
+    <p>It works by letting an optimizer choose how much weight to give each doculect, picking the weights that make the set look as diverse as possible. Near-copies of something already in the set add nothing, so the optimizer gives them zero weight. That is the property the project needs: adding a fourth transcription of Tokyo Japanese, or splitting one language into ten dialect lists, cannot inflate the number. Only genuinely different material can raise it.</p>
+  </div>
+  <div class="panel">
+    <span class="eyebrow">Build a set and see D_max</span>
+    <div class="set" id="setBox"></div>
+    <div class="controls">
+      <div style="display:flex;gap:8px;align-items:center"><button id="dupAdd" type="button">Add a copy of JAPANESE</button><button id="dupRm" type="button">Remove copies</button><span class="note" id="dupN"></span></div>
+      <label class="ctl" for="kSl">k = <output id="kOut"></output><input id="kSl" type="range" min="0.1" max="3" step="0.001" value="0.463"></label>
+    </div>
+    <div class="stats" id="dmStats"></div>
+    <div class="scroll"><table class="zt" id="zTable"></table></div>
+    <p class="note">Table: similarity Z between every pair, and the weight each doculect gets in the maximizing distribution. “Equal-weight diversity” is the naive alternative: give every list the same weight (Leinster–Cobbold, q = 2). Add copies and watch it drop while D<sub>max</sub> stays put.</p>
+  </div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>Two reference points at k<sub>cal</sub>: two identical lists give exactly <strong>1.00</strong>. Two completely unrelated lists give about <strong id="twoUnrel"></strong> (2 / (1 + <span id="zUnrel2"></span>)). So a single lineage scoring <span id="ieVal"></span>, like Indo-European, has more internal spread than “two unrelated languages” would. That is possible because a big family contains many mutually distant branches, not just two.</p>
+  </div>
+</section>
+
+<section>
+  <div class="step"><span class="n">8</span><h2>So what does the results table compare?</h2></div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>Each row of the results is <strong>one lineage</strong>: every non-excluded ASJP doculect classified under that family (or subfamily node). For each lineage the pipeline computes the PMI-LDND matrix among its own doculects, converts it with k<sub>cal</sub>, and reports D<sub>max</sub>. The interval comes from re-running with 30 random concepts out of 40, thirty times.</p>
+    <p>So the comparison is <em>between lineages</em> but the measurement is <em>within</em> each one: “how much internal lexical divergence does this lineage’s documented material contain?” A few values from <code>results/summary.csv</code>:</p>
+  </div>
+  <div class="scroll"><table class="bands">
+    <thead><tr><th>band</th><th>lineage</th><th>PMI-LDND D<sub>max</sub></th><th>LDND D<sub>max</sub></th><th>doculects measure as…</th></tr></thead>
+    <tbody>
+      <tr><td>isolate-like</td><td>Basque</td><td class="code">1.032</td><td class="code">1.037</td><td>barely more than one list</td></tr>
+      <tr><td></td><td>Koreanic</td><td class="code">1.115</td><td class="code">1.110</td><td>Korean + Jeju, still near the noise floor</td></tr>
+      <tr><td></td><td>Ainu</td><td class="code">1.159</td><td class="code">1.136</td><td>top of the isolate band</td></tr>
+      <tr><td>genus-like</td><td>Japonic</td><td class="code">1.248</td><td class="code">1.223</td><td>level with Slavic (1.238)</td></tr>
+      <tr><td></td><td>Germanic</td><td class="code">1.302</td><td class="code">1.268</td><td></td></tr>
+      <tr><td></td><td>Turkic</td><td class="code">1.324</td><td class="code">1.281</td><td>top of the genus band</td></tr>
+      <tr><td>deep</td><td>Indo-European</td><td class="code">1.474</td><td class="code">1.367</td><td>many mutually distant branches</td></tr>
+    </tbody>
+  </table></div>
+  <p class="prose">The two distances rank the 72 lineages almost identically (Spearman 0.995). PMI-LDND has a higher k<sub>cal</sub> (0.463 vs 0.353) because its noise floor is lower, so its numbers are larger overall; compare rankings and gaps, not raw values. The isolate band barely moves, while the deep families pull further away from the genus band.</p>
+  <p class="prose note">What this does not measure: time depth, or anything below the noise floor. Lineages inside the isolate band can’t be ranked against each other, because two transcriptions of one language can differ by as much as an isolate’s varieties do.</p>
+</section>
+</main>
+<script id="data" type="application/json">
+{"concepts": [["1", "I"], ["2", "you"], ["3", "we"], ["11", "one"], ["12", "two"], ["18", "person"], ["19", "fish"], ["21", "dog"], ["22", "louse"], ["23", "tree"], ["25", "leaf"], ["28", "skin"], ["30", "blood"], ["31", "bone"], ["34", "horn"], ["39", "ear"], ["40", "eye"], ["41", "nose"], ["43", "tooth"], ["44", "tongue"], ["47", "knee"], ["48", "hand"], ["51", "breasts"], ["53", "liver"], ["54", "drink"], ["57", "see"], ["58", "hear"], ["61", "die"], ["66", "come"], ["72", "sun"], ["74", "star"], ["75", "water"], ["77", "stone"], ["82", "fire"], ["85", "path"], ["86", "mountain"], ["92", "night"], ["95", "full"], ["96", "new"], ["100", "name"]], "langs": {"BASQUE": {"name": "BASQUE", "glottocode": "basq1248", "glottolog": "Basque", "family": "Basque"}, "ENGLISH": {"name": "ENGLISH", "glottocode": "stan1293", "glottolog": "English", "family": "Indo-European"}, "HATERUMA_YAEYAMA": {"name": "HATERUMA_YAEYAMA", "glottocode": "yaey1239", "glottolog": "Yaeyama", "family": "Japonic"}, "JAPANESE": {"name": "JAPANESE", "glottocode": "nucl1643", "glottolog": "Japanese", "family": "Japonic"}, "JAPANESE_2": {"name": "JAPANESE_2", "glottocode": "nucl1643", "glottolog": "Japanese", "family": "Japonic"}, "NAHA": {"name": "NAHA", "glottocode": "cent2126", "glottolog": "Central Okinawan", "family": "Japonic"}, "STANDARD_GERMAN": {"name": "STANDARD_GERMAN", "glottocode": "stan1295", "glottolog": "German", "family": "Indo-European"}}, "order": ["JAPANESE", "JAPANESE_2", "NAHA", "HATERUMA_YAEYAMA", "ENGLISH", "STANDARD_GERMAN", "BASQUE"], "forms": {"JAPANESE": {"1": [{"f": "wataSi", "ipa": "w ɐ t ɐ ʃ i", "t": "wataSi"}], "2": [{"f": "anata", "ipa": "ɐ n ɐ t ɐ", "t": "anata"}], "3": [{"f": "wareware", "ipa": "w ɐ r e w ɐ r e", "t": "wareware"}], "11": [{"f": "hitocu", "ipa": "h i t o ts u", "t": "hitocu"}], "12": [{"f": "futacu", "ipa": "f u t ɐ ts u", "t": "futacu"}], "18": [{"f": "hito", "ipa": "h i t o", "t": "hito"}, {"f": "jintai", "ipa": "dʒ i n t ɐ i", "t": "jintai"}], "19": [{"f": "uo", "ipa": "u o", "t": "uo"}], "21": [{"f": "inu", "ipa": "i n u", "t": "inu"}], "23": [{"f": "ki", "ipa": "k i", "t": "ki"}], "25": [{"f": "kono ha", "ipa": "k o n o + h ɐ", "t": "konoha"}], "28": [{"f": "kawa", "ipa": "k ɐ w ɐ", "t": "kawa"}], "30": [{"f": "Ci", "ipa": "tʃ i", "t": "Ci"}], "31": [{"f": "hone", "ipa": "h o n e", "t": "hone"}], "34": [{"f": "cuno", "ipa": "ts u n o", "t": "cuno"}], "39": [{"f": "mimi", "ipa": "m i m i", "t": "mimi"}], "40": [{"f": "me", "ipa": "m e", "t": "me"}], "41": [{"f": "hana", "ipa": "h ɐ n ɐ", "t": "hana"}], "43": [{"f": "ha", "ipa": "h ɐ", "t": "ha"}], "44": [{"f": "Sita", "ipa": "ʃ i t ɐ", "t": "Sita"}], "47": [{"f": "hiza", "ipa": "h i z ɐ", "t": "hiza"}], "48": [{"f": "te", "ipa": "t e", "t": "te"}], "51": [{"f": "mune", "ipa": "m u n e", "t": "mune"}], "54": [{"f": "nomu", "ipa": "n o m u", "t": "nomu"}, {"f": "su", "ipa": "s u", "t": "su"}], "57": [{"f": "mi", "ipa": "m i", "t": "mi"}, {"f": "menkai su", "ipa": "m e n k ɐ i + s u", "t": "menkaisu"}], "58": [{"f": "kiku", "ipa": "k i k u", "t": "kiku"}], "61": [{"f": "Sinu", "ipa": "ʃ i n u", "t": "Sinu"}, {"f": "kare", "ipa": "k ɐ r e", "t": "kare"}], "66": [{"f": "ku", "ipa": "k u", "t": "ku"}, {"f": "yuku", "ipa": "j u k u", "t": "yuku"}], "74": [{"f": "hoSi", "ipa": "h o ʃ i", "t": "hoSi"}], "75": [{"f": "mizu", "ipa": "m i z u", "t": "mizu"}], "77": [{"f": "iSi", "ipa": "i ʃ i", "t": "iSi"}, {"f": "koiSi sekizai", "ipa": "k o i ʃ i + s e k i z ɐ i", "t": "koiSisekizai"}], "82": [{"f": "hi", "ipa": "h i", "t": "hi"}], "85": [{"f": "komiCi", "ipa": "k o m i tʃ i", "t": "komiCi"}, {"f": "hodo", "ipa": "h o d o", "t": "hodo"}], "86": [{"f": "yama", "ipa": "j ɐ m ɐ", "t": "yama"}], "92": [{"f": "yo", "ipa": "j o", "t": "yo"}], "95": [{"f": "miCita", "ipa": "m i tʃ i t ɐ", "t": "miCita"}], "96": [{"f": "ataraSi", "ipa": "ɐ t ɐ r ɐ ʃ i", "t": "ataraSi"}, {"f": "Sinsen", "ipa": "ʃ i n s e n", "t": "Sinsen"}], "100": [{"f": "na", "ipa": "n ɐ", "t": "na"}, {"f": "seimei", "ipa": "s e i m e i", "t": "seimei"}]}, "JAPANESE_2": {"1": [{"f": "ore", "ipa": "o r e", "t": "ore"}], "2": [{"f": "anata", "ipa": "ɐ n ɐ t ɐ", "t": "anata"}, {"f": "kimi", "ipa": "k i m i", "t": "kimi"}, {"f": "omae", "ipa": "o m ɐ e", "t": "omae"}], "3": [{"f": "bokura", "ipa": "b o k u r ɐ", "t": "bokura"}, {"f": "oretCi", "ipa": "o r e t tʃ i", "t": "oretCi"}, {"f": "wareware", "ipa": "w ɐ r e w ɐ r e", "t": "wareware"}, {"f": "wataSitaCi", "ipa": "w ɐ t ɐ ʃ i t ɐ tʃ i", "t": "wataSitaCi"}], "11": [{"f": "hitocu", "ipa": "h i t o ts u", "t": "hitocu"}], "12": [{"f": "futacu", "ipa": "f u t ɐ ts u", "t": "futacu"}], "18": [{"f": "hito", "ipa": "h i t o", "t": "hito"}], "19": [{"f": "sakana", "ipa": "s ɐ k ɐ n ɐ", "t": "sakana"}], "21": [{"f": "inu", "ipa": "i n u", "t": "inu"}], "22": [{"f": "atamajirami", "ipa": "ɐ t ɐ m ɐ dʒ i r ɐ m i", "t": "atamajirami"}], "23": [{"f": "ki", "ipa": "k i", "t": "ki"}], "25": [{"f": "ha", "ipa": "h ɐ", "t": "ha"}], "28": [{"f": "kawa", "ipa": "k ɐ w ɐ", "t": "kawa"}], "30": [{"f": "Ci", "ipa": "tʃ i", "t": "Ci"}], "31": [{"f": "hone", "ipa": "h o n e", "t": "hone"}], "34": [{"f": "cuno", "ipa": "ts u n o", "t": "cuno"}], "40": [{"f": "me", "ipa": "m e", "t": "me"}], "41": [{"f": "hana", "ipa": "h ɐ n ɐ", "t": "hana"}], "43": [{"f": "ha", "ipa": "h ɐ", "t": "ha"}], "44": [{"f": "Sita", "ipa": "ʃ i t ɐ", "t": "Sita"}], "47": [{"f": "hiza", "ipa": "h i z ɐ", "t": "hiza"}], "48": [{"f": "te", "ipa": "t e", "t": "te"}], "51": [{"f": "CiCi", "ipa": "tʃ i tʃ i", "t": "CiCi"}, {"f": "oppai", "ipa": "o p p ɐ i", "t": "oppai"}], "53": [{"f": "kimo", "ipa": "k i m o", "t": "kimo"}], "54": [{"f": "nomu", "ipa": "n o m u", "t": "nomu"}], "57": [{"f": "mieru", "ipa": "m i e r u", "t": "mieru"}, {"f": "miru", "ipa": "m i r u", "t": "miru"}], "58": [{"f": "kikoeru", "ipa": "k i k o e r u", "t": "kikoeru"}, {"f": "kiku", "ipa": "k i k u", "t": "kiku"}], "61": [{"f": "Sinu", "ipa": "ʃ i n u", "t": "Sinu"}], "66": [{"f": "kuru", "ipa": "k u r u", "t": "kuru"}], "72": [{"f": "hi", "ipa": "h i", "t": "hi"}], "74": [{"f": "hoSi", "ipa": "h o ʃ i", "t": "hoSi"}], "75": [{"f": "mizu", "ipa": "m i z u", "t": "mizu"}], "77": [{"f": "iSu", "ipa": "i ʃ u", "t": "iSu"}, {"f": "iwa", "ipa": "i w ɐ", "t": "iwa"}], "82": [{"f": "hi", "ipa": "h i", "t": "hi"}], "85": [{"f": "miCi", "ipa": "m i tʃ i", "t": "miCi"}], "86": [{"f": "oka", "ipa": "o k ɐ", "t": "oka"}, {"f": "yama", "ipa": "j ɐ m ɐ", "t": "yama"}], "92": [{"f": "yoru", "ipa": "j o r u", "t": "yoru"}], "95": [{"f": "miCiru", "ipa": "m i tʃ i r u", "t": "miCiru"}], "96": [{"f": "ataraSi", "ipa": "ɐ t ɐ r ɐ ʃ i", "t": "ataraSi"}], "100": [{"f": "namae", "ipa": "n ɐ m ɐ e", "t": "namae"}]}, "NAHA": {"1": [{"f": "wan", "ipa": "w ɐ n", "t": "wan"}], "2": [{"f": "itta", "ipa": "i t t ɐ", "t": "itta"}], "3": [{"f": "watta", "ipa": "w ɐ t t ɐ", "t": "watta"}], "11": [{"f": "tici", "ipa": "t i ts i", "t": "tici"}], "12": [{"f": "tadi", "ipa": "t ɐ d i", "t": "tadi"}], "18": [{"f": "ccu", "ipa": "ts ts u", "t": "ccu"}], "19": [{"f": "iyu", "ipa": "i j u", "t": "iyu"}], "21": [{"f": "in", "ipa": "i n", "t": "in"}], "22": [{"f": "siran", "ipa": "s i r ɐ n", "t": "siran"}], "23": [{"f": "ki", "ipa": "k i", "t": "ki"}], "25": [{"f": "hw~a", "ipa": "hʷ ɐ", "t": "hwa"}], "28": [{"f": "ka", "ipa": "k ɐ", "t": "ka"}], "30": [{"f": "ci", "ipa": "ts i", "t": "ci"}], "31": [{"f": "huni", "ipa": "h u n i", "t": "huni"}], "34": [{"f": "cinu", "ipa": "ts i n u", "t": "cinu"}], "39": [{"f": "mimi", "ipa": "m i m i", "t": "mimi"}], "40": [{"f": "mui", "ipa": "m u i", "t": "mui"}], "41": [{"f": "hana", "ipa": "h ɐ n ɐ", "t": "hana"}], "43": [{"f": "ha", "ipa": "h ɐ", "t": "ha"}], "44": [{"f": "siba", "ipa": "s i b ɐ", "t": "siba"}], "47": [{"f": "cins~i", "ipa": "ts i ⁿs i", "t": "cinsi"}], "48": [{"f": "ti", "ipa": "t i", "t": "ti"}], "51": [{"f": "nni", "ipa": "n n i", "t": "nni"}], "53": [{"f": "cimu", "ipa": "ts i m u", "t": "cimu"}], "54": [{"f": "numun", "ipa": "n u m u n", "t": "numun"}], "57": [{"f": "nnz~un", "ipa": "n ⁿz u n", "t": "nnzun"}], "58": [{"f": "cicun", "ipa": "ts i ts u n", "t": "cicun"}], "61": [{"f": "sinun", "ipa": "s i n u n", "t": "sinun"}], "66": [{"f": "cun", "ipa": "ts u n", "t": "cun"}], "72": [{"f": "tira", "ipa": "t i r ɐ", "t": "tira"}], "74": [{"f": "husi", "ipa": "h u s i", "t": "husi"}], "75": [{"f": "mizi", "ipa": "m i z i", "t": "mizi"}], "77": [{"f": "isi", "ipa": "i s i", "t": "isi"}], "82": [{"f": "hi", "ipa": "h i", "t": "hi"}], "85": [{"f": "mici", "ipa": "m i ts i", "t": "mici"}], "86": [{"f": "mui", "ipa": "m u i", "t": "mui"}], "92": [{"f": "yuru", "ipa": "j u r u", "t": "yuru"}], "95": [{"f": "mui", "ipa": "m u i", "t": "mui"}], "96": [{"f": "misan", "ipa": "m i s ɐ n", "t": "misan"}], "100": [{"f": "na", "ipa": "n ɐ", "t": "na"}]}, "HATERUMA_YAEYAMA": {"1": [{"f": "banu", "ipa": "b ɐ n u", "t": "banu"}], "2": [{"f": "da", "ipa": "d ɐ", "t": "da"}], "3": [{"f": "baima", "ipa": "b ɐ i m ɐ", "t": "baima"}], "11": [{"f": "p3tuCi", "ipa": "p ə t u tʃ i", "t": "p3tuCi"}], "12": [{"f": "futac3", "ipa": "f u t ɐ ts ə", "t": "futac3"}], "18": [{"f": "p3tu", "ipa": "p ə t u", "t": "p3tu"}], "19": [{"f": "yu", "ipa": "j u", "t": "yu"}], "21": [{"f": "inu", "ipa": "i n u", "t": "inu"}], "22": [{"f": "saN", "ipa": "s ɐ ŋ", "t": "saN"}], "23": [{"f": "ki", "ipa": "k i", "t": "ki"}], "25": [{"f": "pa", "ipa": "p ɐ", "t": "pa"}], "28": [{"f": "p3sa", "ipa": "p ə s ɐ", "t": "p3sa"}], "30": [{"f": "c3", "ipa": "ts ə", "t": "c3"}], "31": [{"f": "puni", "ipa": "p u n i", "t": "puni"}], "34": [{"f": "Sino", "ipa": "ʃ i n o", "t": "Sino"}], "39": [{"f": "misikurumiN", "ipa": "m i s i k u r u m i ŋ", "t": "misikurumiN"}], "40": [{"f": "miN", "ipa": "m i ŋ", "t": "miN"}], "41": [{"f": "ph~ana", "ipa": "pʰ ɐ n ɐ", "t": "phana"}], "43": [{"f": "pan", "ipa": "p ɐ n", "t": "pan"}], "44": [{"f": "s3ta", "ipa": "s ə t ɐ", "t": "s3ta"}], "47": [{"f": "panuyuN", "ipa": "p ɐ n u j u ŋ", "t": "panuyuN"}], "48": [{"f": "s3", "ipa": "s ə", "t": "s3"}], "51": [{"f": "c3", "ipa": "ts ə", "t": "c3"}], "54": [{"f": "numuN", "ipa": "n u m u ŋ", "t": "numuN"}], "57": [{"f": "miruN", "ipa": "m i r u ŋ", "t": "miruN"}], "58": [{"f": "s3kuN", "ipa": "s ə k u ŋ", "t": "s3kuN"}, {"f": "sukuN", "ipa": "s u k u ŋ", "t": "sukuN"}], "61": [{"f": "s3nuN", "ipa": "s ə n u ŋ", "t": "s3nuN"}], "66": [{"f": "kuN", "ipa": "k u ŋ", "t": "kuN"}], "72": [{"f": "Sina", "ipa": "ʃ i n ɐ", "t": "Sina"}], "74": [{"f": "puc3", "ipa": "p u ts ə", "t": "puc3"}, {"f": "pucu", "ipa": "p u ts u", "t": "pucu"}], "75": [{"f": "mic3", "ipa": "m i ts ə", "t": "mic3"}], "77": [{"f": "isi", "ipa": "i s i", "t": "isi"}], "82": [{"f": "p3", "ipa": "p ə", "t": "p3"}], "85": [{"f": "misuna", "ipa": "m i s u n ɐ", "t": "misuna"}], "86": [{"f": "yama", "ipa": "j ɐ m ɐ", "t": "yama"}], "92": [{"f": "yuru", "ipa": "j u r u", "t": "yuru"}], "96": [{"f": "memunu", "ipa": "m e m u n u", "t": "memunu"}], "100": [{"f": "naN", "ipa": "n ɐ ŋ", "t": "naN"}]}, "ENGLISH": {"1": [{"f": "Ei", "ipa": "a i", "t": "Ei"}], "2": [{"f": "yu", "ipa": "j u", "t": "yu"}], "3": [{"f": "wi", "ipa": "w i", "t": "wi"}], "11": [{"f": "w3n", "ipa": "w ə n", "t": "w3n"}], "12": [{"f": "tu", "ipa": "t u", "t": "tu"}], "19": [{"f": "fiS", "ipa": "f i ʃ", "t": "fiS"}], "21": [{"f": "dag", "ipa": "d ɐ g", "t": "dag"}], "22": [{"f": "laus", "ipa": "l ɐ u s", "t": "laus"}], "23": [{"f": "tri", "ipa": "t r i", "t": "tri"}], "25": [{"f": "lif", "ipa": "l i f", "t": "lif"}], "30": [{"f": "bl3d", "ipa": "b l ə d", "t": "bl3d"}], "31": [{"f": "bon", "ipa": "b o n", "t": "bon"}], "34": [{"f": "horn", "ipa": "h o r n", "t": "horn"}], "39": [{"f": "ir", "ipa": "i r", "t": "ir"}], "40": [{"f": "Ei", "ipa": "a i", "t": "Ei"}], "41": [{"f": "noz", "ipa": "n o z", "t": "noz"}], "43": [{"f": "tu8", "ipa": "t u θ", "t": "tu8"}], "44": [{"f": "t3N", "ipa": "t ə ŋ", "t": "t3N"}], "47": [{"f": "ni", "ipa": "n i", "t": "ni"}], "48": [{"f": "hEnd", "ipa": "h a n d", "t": "hEnd"}], "51": [{"f": "brEst", "ipa": "b r a s t", "t": "brEst"}], "53": [{"f": "liv3r", "ipa": "l i v ə r", "t": "liv3r"}], "54": [{"f": "driNk", "ipa": "d r i ŋ k", "t": "driNk"}], "57": [{"f": "si", "ipa": "s i", "t": "si"}], "58": [{"f": "hir", "ipa": "h i r", "t": "hir"}], "61": [{"f": "dEi", "ipa": "d a i", "t": "dEi"}], "66": [{"f": "k3m", "ipa": "k ə m", "t": "k3m"}], "72": [{"f": "s3n", "ipa": "s ə n", "t": "s3n"}], "74": [{"f": "star", "ipa": "s t ɐ r", "t": "star"}], "75": [{"f": "wat3r", "ipa": "w ɐ t ə r", "t": "wat3r"}], "77": [{"f": "ston", "ipa": "s t o n", "t": "ston"}], "82": [{"f": "fEir", "ipa": "f a i r", "t": "fEir"}], "85": [{"f": "pE8", "ipa": "p a θ", "t": "pE8"}], "92": [{"f": "nEit", "ipa": "n a i t", "t": "nEit"}], "95": [{"f": "ful", "ipa": "f u l", "t": "ful"}], "96": [{"f": "nu", "ipa": "n u", "t": "nu"}], "100": [{"f": "nem", "ipa": "n e m", "t": "nem"}]}, "STANDARD_GERMAN": {"1": [{"f": "ix", "ipa": "i x", "t": "ix"}], "2": [{"f": "du", "ipa": "d u", "t": "du"}], "3": [{"f": "vir", "ipa": "v i r", "t": "vir"}], "11": [{"f": "ains", "ipa": "ɐ i n s", "t": "ains"}], "12": [{"f": "cvai", "ipa": "ts v ɐ i", "t": "cvai"}], "18": [{"f": "mEnS", "ipa": "m a n ʃ", "t": "mEnS"}], "19": [{"f": "fiS", "ipa": "f i ʃ", "t": "fiS"}], "21": [{"f": "hunt", "ipa": "h u n t", "t": "hunt"}], "22": [{"f": "laus", "ipa": "l ɐ u s", "t": "laus"}], "23": [{"f": "baum", "ipa": "b ɐ u m", "t": "baum"}], "25": [{"f": "blat", "ipa": "b l ɐ t", "t": "blat"}], "28": [{"f": "haut", "ipa": "h ɐ u t", "t": "haut"}], "30": [{"f": "blut", "ipa": "b l u t", "t": "blut"}], "31": [{"f": "knoX3n", "ipa": "k n o χ ə n", "t": "knoX3n"}], "34": [{"f": "horn", "ipa": "h o r n", "t": "horn"}], "39": [{"f": "or", "ipa": "o r", "t": "or"}], "40": [{"f": "aug3", "ipa": "ɐ u g ə", "t": "aug3"}], "41": [{"f": "naz3", "ipa": "n ɐ z ə", "t": "naz3"}], "43": [{"f": "ch~an", "ipa": "tsʰ ɐ n", "t": "chan"}], "44": [{"f": "ch~uN3", "ipa": "tsʰ u ŋ ə", "t": "chuN3"}], "47": [{"f": "kni", "ipa": "k n i", "t": "kni"}], "48": [{"f": "hant", "ipa": "h ɐ n t", "t": "hant"}], "51": [{"f": "brust", "ipa": "b r u s t", "t": "brust"}], "53": [{"f": "leb3r", "ipa": "l e b ə r", "t": "leb3r"}], "54": [{"f": "triNk3n", "ipa": "t r i ŋ k ə n", "t": "triNk3n"}], "57": [{"f": "ze3n", "ipa": "z e ə n", "t": "ze3n"}], "58": [{"f": "her3n", "ipa": "h e r ə n", "t": "her3n"}], "61": [{"f": "Sterb3n", "ipa": "ʃ t e r b ə n", "t": "Sterb3n"}], "66": [{"f": "kh~om3n", "ipa": "kʰ o m ə n", "t": "khom3n"}], "72": [{"f": "zon3", "ipa": "z o n ə", "t": "zon3"}], "74": [{"f": "StErn", "ipa": "ʃ t a r n", "t": "StErn"}], "75": [{"f": "vas3r", "ipa": "v ɐ s ə r", "t": "vas3r"}], "77": [{"f": "Stain", "ipa": "ʃ t ɐ i n", "t": "Stain"}], "82": [{"f": "foia", "ipa": "f o i ɐ", "t": "foia"}], "85": [{"f": "pf~at", "ipa": "pf ɐ t", "t": "pfat"}, {"f": "vek", "ipa": "v e k", "t": "vek"}], "86": [{"f": "bErk", "ipa": "b a r k", "t": "bErk"}], "92": [{"f": "naXt", "ipa": "n ɐ χ t", "t": "naXt"}], "95": [{"f": "fol", "ipa": "f o l", "t": "fol"}], "96": [{"f": "noi", "ipa": "n o i", "t": "noi"}], "100": [{"f": "nam3", "ipa": "n ɐ m ə", "t": "nam3"}]}, "BASQUE": {"1": [{"f": "nik", "ipa": "n i k", "t": "nik"}, {"f": "neuk", "ipa": "n e u k", "t": "neuk"}], "2": [{"f": "zuek", "ipa": "z u e k", "t": "zuek"}, {"f": "hik", "ipa": "h i k", "t": "hik"}], "3": [{"f": "gu", "ipa": "g u", "t": "gu"}, {"f": "guk", "ipa": "g u k", "t": "guk"}], "11": [{"f": "bat", "ipa": "b ɐ t", "t": "bat"}], "12": [{"f": "bi", "ipa": "b i", "t": "bi"}, {"f": "biga", "ipa": "b i g ɐ", "t": "biga"}], "18": [{"f": "gizaki", "ipa": "g i z ɐ k i", "t": "gizaki"}, {"f": "lagun", "ipa": "l ɐ g u n", "t": "lagun"}], "19": [{"f": "arrain", "ipa": "ɐ r r ɐ i n", "t": "arrain"}, {"f": "arranca", "ipa": "ɐ r r ɐ n ts ɐ", "t": "arranca"}], "21": [{"f": "zakur", "ipa": "z ɐ k u r", "t": "zakur"}, {"f": "Cakur", "ipa": "tʃ ɐ k u r", "t": "Cakur"}], "22": [{"f": "zorri", "ipa": "z o r r i", "t": "zorri"}], "23": [{"f": "zuhaic", "ipa": "z u h ɐ i ts", "t": "zuhaic"}, {"f": "arbola", "ipa": "ɐ r b o l ɐ", "t": "arbola"}], "25": [{"f": "hosto", "ipa": "h o s t o", "t": "hosto"}, {"f": "orri", "ipa": "o r r i", "t": "orri"}], "28": [{"f": "azal", "ipa": "ɐ z ɐ l", "t": "azal"}, {"f": "minc", "ipa": "m i n ts", "t": "minc"}], "30": [{"f": "odol", "ipa": "o d o l", "t": "odol"}], "31": [{"f": "hezur", "ipa": "h e z u r", "t": "hezur"}], "34": [{"f": "adar", "ipa": "ɐ d ɐ r", "t": "adar"}, {"f": "turutu", "ipa": "t u r u t u", "t": "turutu"}], "39": [{"f": "belarri", "ipa": "b e l ɐ r r i", "t": "belarri"}], "40": [{"f": "begi", "ipa": "b e g i", "t": "begi"}, {"f": "be", "ipa": "b e", "t": "be"}], "41": [{"f": "sudur", "ipa": "s u d u r", "t": "sudur"}, {"f": "mutur", "ipa": "m u t u r", "t": "mutur"}], "43": [{"f": "horc", "ipa": "h o r ts", "t": "horc"}, {"f": "hagin", "ipa": "h ɐ g i n", "t": "hagin"}], "44": [{"f": "mihi", "ipa": "m i h i", "t": "mihi"}, {"f": "hizkunca", "ipa": "h i z k u n ts ɐ", "t": "hizkunca"}], "47": [{"f": "belaun", "ipa": "b e l ɐ u n", "t": "belaun"}], "48": [{"f": "esku", "ipa": "e s k u", "t": "esku"}, {"f": "bosteko", "ipa": "b o s t e k o", "t": "bosteko"}], "51": [{"f": "diti", "ipa": "d i t i", "t": "diti"}, {"f": "bular", "ipa": "b u l ɐ r", "t": "bular"}], "53": [{"f": "gibel", "ipa": "g i b e l", "t": "gibel"}], "54": [{"f": "edan", "ipa": "e d ɐ n", "t": "edan"}], "57": [{"f": "ikusi", "ipa": "i k u s i", "t": "ikusi"}], "58": [{"f": "encun", "ipa": "e n ts u n", "t": "encun"}, {"f": "adi", "ipa": "ɐ d i", "t": "adi"}], "61": [{"f": "hil", "ipa": "h i l", "t": "hil"}, {"f": "azkenarnas", "ipa": "ɐ z k e n ɐ r n ɐ s", "t": "azkenarnas"}], "66": [{"f": "etorri", "ipa": "e t o r r i", "t": "etorri"}], "72": [{"f": "eguzki", "ipa": "e g u z k i", "t": "eguzki"}, {"f": "eki", "ipa": "e k i", "t": "eki"}], "74": [{"f": "izar", "ipa": "i z ɐ r", "t": "izar"}, {"f": "astro", "ipa": "ɐ s t r o", "t": "astro"}], "75": [{"f": "ur", "ipa": "u r", "t": "ur"}], "77": [{"f": "harri", "ipa": "h ɐ r r i", "t": "harri"}, {"f": "haic", "ipa": "h ɐ i ts", "t": "haic"}], "82": [{"f": "su", "ipa": "s u", "t": "su"}, {"f": "sute", "ipa": "s u t e", "t": "sute"}], "85": [{"f": "basabide", "ipa": "b ɐ s ɐ b i d e", "t": "basabide"}, {"f": "bideSka", "ipa": "b i d e ʃ k ɐ", "t": "bideSka"}], "86": [{"f": "mendi", "ipa": "m e n d i", "t": "mendi"}], "92": [{"f": "gau", "ipa": "g ɐ u", "t": "gau"}, {"f": "arrac", "ipa": "ɐ r r ɐ ts", "t": "arrac"}], "95": [{"f": "beterik", "ipa": "b e t e r i k", "t": "beterik"}, {"f": "beteta", "ipa": "b e t e t ɐ", "t": "beteta"}], "96": [{"f": "berri", "ipa": "b e r r i", "t": "berri"}], "100": [{"f": "izen", "ipa": "i z e n", "t": "izen"}]}}, "ldnd": [[0.0, 0.2215, 0.6026, 0.7165, 0.9747, 0.9838, 0.937], [0.2215, 0.0, 0.6382, 0.7048, 0.9949, 0.9813, 0.9222], [0.6026, 0.6382, 0.0, 0.6538, 1.0216, 0.9842, 0.9829], [0.7165, 0.7048, 0.6538, 0.0, 0.9638, 0.987, 0.9988], [0.9747, 0.9949, 1.0216, 0.9638, 0.0, 0.6629, 0.9952], [0.9838, 0.9813, 0.9842, 0.987, 0.6629, 0.0, 0.9592], [0.937, 0.9222, 0.9829, 0.9988, 0.9952, 0.9592, 0.0]], "pmi_ldnd": [[0.0, 0.2144, 0.482, 0.5488, 0.9633, 0.9777, 0.9014], [0.2144, 0.0, 0.5514, 0.5639, 0.9741, 0.9658, 0.877], [0.482, 0.5514, 0.0, 0.5521, 1.0129, 0.9605, 0.9635], [0.5488, 0.5639, 0.5521, 0.0, 0.9404, 0.9646, 0.9543], [0.9633, 0.9741, 1.0129, 0.9404, 0.0, 0.5755, 0.9386], [0.9777, 0.9658, 0.9605, 0.9646, 0.5755, 0.0, 0.9249], [0.9014, 0.877, 0.9635, 0.9543, 0.9386, 0.9249, 0.0]], "pmi": {"symbols": "!34578CEGLNSTXZabcdefghijklmnopqrstuvwxyz", "scores": [[7.774, 0.157, 5.928, 1.658, 0.649, 3.552, 1.165, 0.836, 5.694, 2.724, -0.132, 0.692, 2.822, 2.851, 2.918, -1.821, -0.045, 1.213, 0.005, -0.502, 1.451, 0.564, -0.091, -1.588, 1.546, -0.575, -0.476, -0.476, -0.935, -0.939, 0.295, 2.046, 0.006, -0.159, -0.812, -1.262, 1.757, 0.288, 1.579, 0.506, 1.465], [0.157, 3.072, -1.689, -5.958, -6.968, -1.02, -6.451, 1.079, -1.922, -4.892, -7.748, -6.925, -4.795, -4.765, -4.698, 0.201, -7.662, -6.403, -7.611, 0.812, -6.166, -7.053, -4.274, -0.172, -6.07, -8.192, -8.092, -8.092, -3.603, 1.047, -7.321, -5.57, -7.611, -7.776, -8.429, -0.625, -5.86, -7.328, -6.038, -7.11, -6.152], [5.928, -1.689, 4.082, 3.744, -1.197, 1.706, -0.68, -1.01, 3.848, 0.878, -1.978, -1.154, 0.976, 1.005, 1.072, -3.667, -1.891, -0.633, -1.841, -2.348, -0.395, -1.282, -1.937, -3.434, -0.3, -2.421, -2.321, -2.321, 2.418, -2.785, -1.551, 0.2, -1.84, -2.005, 1.274, -3.108, -0.089, -1.558, -0.267, 1.058, -0.381], [1.658, -5.958, 3.744, 4.906, -5.466, -2.564, 0.493, -5.279, -0.421, -0.993, 0.662, -5.424, -3.293, -3.264, 2.892, -7.936, -6.16, -1.857, -1.495, -6.617, -4.664, -5.552, -6.206, -4.659, 0.63, -4.292, -2.659, -1.642, 0.821, -7.054, -5.82, -4.069, -1.715, -6.274, -3.883, -7.377, -4.358, -3.429, -4.536, 1.853, 0.298], [0.649, -6.968, -1.197, -5.466, 3.373, -3.573, -5.96, -3.891, -1.431, -4.401, -1.485, -6.433, -4.303, -0.342, -4.207, -8.946, -2.659, -5.912, -3.406, -7.627, -5.674, -1.258, 0.156, -8.713, -3.181, -0.328, -3.668, -2.519, -2.32, -3.953, -4.432, 2.33, -1.816, -2.202, -1.069, -4.674, -2.97, -0.748, -2.501, -1.909, -5.66], [3.552, -1.02, 1.706, -2.564, -3.573, 5.463, -0.659, -0.988, 1.472, 2.216, -0.64, 0.183, 2.711, -1.371, 2.13, -6.043, -4.267, 2.793, 1.938, -4.724, 0.663, -1.261, -0.6, -2.766, 2.12, -2.399, -0.082, -4.697, -1.723, -5.161, -3.927, -2.176, -0.782, 1.708, 0.96, -5.484, -2.465, -0.889, 1.62, 1.426, 2.595], [1.165, -6.451, -0.68, 0.493, -5.96, -0.659, 4.445, -5.772, -0.914, 0.379, -6.74, 0.65, 3.006, -3.757, 0.242, -8.429, -1.944, 2.683, -0.93, -7.11, -5.157, -3.647, -1.751, -8.196, 1.432, -0.575, -2.973, -7.084, -7.543, -7.547, -3.268, -4.562, -2.671, 0.527, -0.84, -7.87, -4.851, -6.32, -2.631, -1.392, -0.062], [0.836, 1.079, -1.01, -5.279, -3.891, -0.988, -5.772, 3.625, -1.244, -4.214, -4.672, -6.246, -4.116, -4.087, -4.02, 0.248, -6.983, -5.725, -6.933, 1.81, -5.487, -6.374, -4.631, -0.585, -5.392, -7.513, -7.413, -7.413, -3.478, -0.203, -6.643, -4.892, -3.888, -7.097, -4.705, -1.769, -5.181, -6.65, -5.359, -6.432, -5.473], [5.694, -1.922, 3.848, -0.421, -1.431, 1.472, -0.914, -1.244, 8.23, 0.645, -2.211, -1.388, 0.742, 4.485, 0.839, -3.9, -2.125, -0.866, -2.074, -2.582, -0.629, 3.099, 0.227, -3.668, -0.533, 2.363, -2.555, -2.555, -3.014, -3.018, -1.784, 5.165, 0.324, -2.238, -2.892, -3.342, -0.322, -1.791, -0.5, -1.573, -0.615], [2.724, -4.892, 0.878, -0.993, -4.401, 2.216, 0.379, -4.214, 0.645, 6.184, -2.137, 2.209, -2.228, -2.198, 2.132, -6.87, -5.094, 1.039, -2.646, -5.552, -3.598, -4.486, -1.209, -4.24, -0.459, -3.227, 1.574, -5.525, -2.94, -5.988, -4.754, -3.003, -0.429, 1.849, 0.081, -6.312, -3.292, -4.761, 0.243, 0.166, -3.585], [-0.132, -7.748, -1.978, 0.662, -1.485, -0.64, -6.74, -4.672, -2.211, -2.137, 3.265, -7.214, -5.084, -5.054, -1.055, -9.726, -7.95, -6.692, -3.638, -2.576, -6.455, -1.187, -4.065, -2.147, -6.359, -2.807, -2.549, -1.202, 0.93, -4.45, -7.61, -0.718, -2.011, -8.064, -8.718, -2.269, -1.533, -7.617, -1.531, -2.524, -4.043], [0.692, -6.925, -1.154, -5.424, -6.433, 0.183, 0.65, -6.246, -1.388, 2.209, -7.214, 4.404, -0.149, -1.833, 0.347, -8.903, -7.127, 0.53, -2.966, -7.584, -2.197, -6.518, -0.791, -8.67, -0.093, -2.861, -3.046, -7.557, -8.017, -8.021, -6.787, -1.991, -4.678, 2.558, -4.18, -8.344, -5.325, -6.794, 0.204, -6.576, 0.123], [2.822, -4.795, 0.976, -3.293, -4.303, 2.711, 3.006, -4.116, 0.742, -2.228, -5.084, -0.149, 4.717, -2.101, 2.361, -6.773, -4.997, 2.437, 0.405, -5.454, -3.501, 0.487, -1.609, -6.54, 3.042, -0.446, -0.41, -5.427, -5.887, -5.89, -4.656, -2.906, -0.071, 0.454, -0.682, -6.214, -3.195, -4.664, -3.373, 0.753, 2.482], [2.851, -4.765, 1.005, -3.264, -0.342, -1.371, -3.757, -4.087, 4.485, -2.198, -5.054, -1.833, -2.101, 6.129, -2.004, -3.699, -4.968, -3.709, -0.655, -5.425, -3.472, 1.166, 1.098, -4.113, -3.376, 0.496, -1.004, -5.398, -5.857, -5.861, -4.627, 4.317, 0.999, -2.037, -3.337, -3.787, -3.165, -4.634, 3.812, -4.416, -3.458], [2.918, -4.698, 1.072, 2.892, -4.207, 2.13, 0.242, -4.02, 0.839, 2.132, -1.055, 0.347, 2.361, -2.004, 5.855, -6.676, -4.9, -0.598, -0.456, -5.358, -3.404, 0.418, -1.902, -1.191, 3.243, -5.431, -1.399, -5.331, -5.79, -5.794, -4.56, -2.809, -4.85, -1.301, -5.667, -6.117, -0.7, -4.567, -3.276, 0.6, 3.709], [-1.821, 0.201, -3.667, -7.936, -8.946, -6.043, -8.429, 0.248, -3.9, -6.87, -9.726, -8.903, -6.773, -3.699, -6.676, 1.832, -9.64, -8.381, -9.589, -0.824, -8.144, -9.031, -9.686, -2.539, -8.048, -10.17, -10.07, -10.07, -10.529, -0.576, -9.299, -7.548, -9.589, -9.753, -10.406, -3.255, -7.837, -9.306, -4.971, -9.088, -8.13], [-0.045, -7.662, -1.891, -6.16, -2.659, -4.267, -1.944, -6.983, -2.125, -5.094, -7.95, -7.127, -4.997, -4.968, -4.9, -9.64, 3.702, -6.606, -4.769, -8.321, 0.095, -1.423, -1.343, -9.407, -6.272, -3.779, -4.362, -1.596, -8.754, -8.757, 0.305, -5.772, -7.813, -7.978, -8.631, -9.081, 2.076, 0.854, -3.195, -1.639, -3.956], [1.213, -6.403, -0.633, -1.857, -5.912, 2.793, 2.683, -5.725, -0.866, 1.039, -6.692, 0.53, 2.437, -3.709, -0.598, -8.381, -6.606, 4.713, -2.161, -7.063, -1.396, -2.952, -2.037, -8.148, 0.428, -2.741, -4.638, -4.638, -7.495, -7.499, -6.265, -4.514, -2.623, 0.209, -0.298, -7.822, -4.803, -6.272, -4.981, -1.439, 1.813], [0.005, -7.611, -1.841, -1.495, -3.406, 1.938, -0.93, -6.933, -2.074, -2.646, -3.638, -2.966, 0.405, -0.655, -0.456, -9.589, -4.769, -2.161, 3.397, -8.271, -3.273, -1.434, -3.349, -9.356, 0.956, -8.344, 0.779, -8.244, -2.964, -8.707, -3.541, -2.288, 0.818, -2.729, -0.312, -9.031, -2.967, -7.48, -3.145, -1.522, 0.844], [-0.502, 0.812, -2.348, -6.617, -7.627, -4.724, -7.11, 1.81, -2.582, -5.552, -2.576, -7.584, -5.454, -5.425, -5.358, -0.824, -8.321, -7.063, -8.271, 2.801, -6.825, -4.668, -4.256, -0.441, -6.73, -8.851, -8.751, -8.751, -9.211, -0.896, -7.981, -3.832, -8.27, -8.435, -9.088, -2.406, -6.519, -7.988, -6.697, -4.336, -6.811], [1.451, -6.166, -0.395, -4.664, -5.674, 0.663, -5.157, -5.487, -0.629, -3.598, -6.455, -2.197, -3.501, -3.472, -3.404, -8.144, 0.095, -1.396, -3.273, -6.825, 5.163, 0.734, 0.464, -7.911, -4.776, -0.568, -6.798, -3.754, -7.258, -7.261, 1.232, -4.277, -6.317, -1.606, -1.882, -7.585, 2.281, -0.146, 1.568, -3.419, -4.858], [0.564, -7.053, -1.282, -5.552, -1.258, -1.261, -3.647, -6.374, 3.099, -4.486, -1.187, -6.518, 0.487, 1.166, 0.418, -9.031, -1.423, -2.952, -1.434, -4.668, 0.734, 3.612, -2.284, -8.798, -0.026, 0.308, -1.411, -7.686, -8.145, -8.149, -3.481, 0.509, -0.018, -3.106, -8.022, -8.472, -2.409, -1.619, 0.936, -0.549, -0.107], [-0.091, -4.274, -1.937, -6.206, 0.156, -0.6, -1.751, -4.631, 0.227, -1.209, -4.065, -0.791, -1.609, 1.098, -1.902, -9.686, -1.343, -2.037, -3.349, -4.256, 0.464, -2.284, 3.33, -4.254, -2.885, -1.873, -4.229, -4.906, -8.8, -8.804, -0.035, -0.112, -0.921, -0.187, -3.075, -9.127, -1.312, -0.969, 1.008, -0.911, -2.686], [-1.588, -0.172, -3.434, -4.659, -8.713, -2.766, -8.196, -0.585, -3.668, -4.24, -2.147, -8.67, -6.54, -4.113, -1.191, -2.539, -9.407, -8.148, -9.356, -0.441, -7.911, -8.798, -4.254, 2.044, -7.815, -9.937, -9.837, -9.837, -10.296, -2.525, -9.066, -7.316, -4.481, -9.521, -10.174, -1.824, -7.605, -9.074, -7.783, -0.424, -3.634], [1.546, -6.07, -0.3, 0.63, -3.181, 2.12, 1.432, -5.392, -0.533, -0.459, -6.359, -0.093, 3.042, -3.376, 3.243, -8.048, -6.272, 0.428, 0.956, -6.73, -4.776, -0.026, -2.885, -7.815, 4.306, -6.803, 0.133, -2.308, -2.366, -7.166, -5.932, -4.181, -0.306, -0.022, -3.605, -7.49, -1.426, -5.939, -1.604, 1.394, 2.961], [-0.575, -8.192, -2.421, -4.292, -0.328, -2.399, -0.575, -7.513, 2.363, -3.227, -2.807, -2.861, -0.446, 0.496, -5.431, -10.17, -3.779, -2.741, -8.344, -8.851, -0.568, 0.308, -1.873, -9.937, -6.803, 2.983, -3.807, -4.892, -9.284, -9.288, -3.105, 0.97, -3.394, -3.204, -1.888, -9.611, -3.158, -3.186, -0.035, -2.701, -6.884], [-0.476, -8.092, -2.321, -2.659, -3.668, -0.082, -2.973, -7.413, -2.555, 1.574, -2.549, -3.046, -0.41, -1.004, -1.399, -10.07, -4.362, -4.638, 0.779, -8.751, -6.798, -1.411, -4.229, -9.837, 0.133, -3.807, 3.148, -8.724, -1.608, -9.188, -7.954, -1.588, 1.109, -3.21, -3.018, -9.511, -4.094, -3.252, -2.559, -0.834, -1.146], [-0.476, -8.092, -2.321, -1.642, -2.519, -4.697, -7.084, -7.413, -2.555, -5.525, -1.202, -7.557, -5.427, -5.398, -5.331, -10.07, -1.596, -4.638, -8.244, -8.751, -3.754, -7.686, -4.906, -9.837, -2.308, -4.892, -8.724, 3.309, -1.639, -9.188, -1.306, -1.407, -4.81, -8.408, -4.95, -9.511, -4.094, -2.436, -4.272, -4.029, -6.784], [-0.935, -3.603, 2.418, 0.821, -2.32, -1.723, -7.543, -3.478, -3.014, -2.94, 0.93, -8.017, -5.887, -5.857, -5.79, -10.529, -8.754, -7.495, -2.964, -9.211, -7.258, -8.145, -8.8, -10.296, -2.366, -9.284, -1.608, -1.639, 2.72, -9.647, -8.413, -6.662, -2.165, -8.867, -3.478, -9.971, -3.907, -4.026, -7.13, -2.342, -7.244], [-0.939, 1.047, -2.785, -7.054, -3.953, -5.161, -7.547, -0.203, -3.018, -5.988, -4.45, -8.021, -5.89, -5.861, -5.794, -0.576, -8.757, -7.499, -8.707, -0.896, -7.261, -8.149, -8.804, -2.525, -7.166, -9.288, -9.188, -9.188, -9.647, 2.312, -8.417, -6.666, -8.707, -8.871, -9.524, 0.059, -4.557, -4.313, -3.42, -8.206, -7.248], [0.295, -7.321, -1.551, -5.82, -4.432, -3.927, -3.268, -6.643, -1.784, -4.754, -7.61, -6.787, -4.656, -4.627, -4.56, -9.299, 0.305, -6.265, -3.541, -7.981, 1.232, -3.481, -0.035, -9.066, -5.932, -3.105, -7.954, -1.306, -8.413, -8.417, 3.923, -3.034, -7.473, -7.637, -3.675, -8.74, -0.64, -0.879, -2.465, -3.538, -1.619], [2.046, -5.57, 0.2, -4.069, 2.33, -2.176, -4.562, -4.892, 5.165, -3.003, -0.718, -1.991, -2.906, 4.317, -2.809, -7.548, -5.772, -4.514, -2.288, -3.832, -4.277, 0.509, -0.112, -7.316, -4.181, 0.97, -1.588, -1.407, -6.662, -6.666, -3.034, 5.217, -1.107, -5.886, -1.055, -6.99, -3.97, -1.328, 1.25, -5.221, -4.263], [0.006, -7.611, -1.84, -1.715, -1.816, -0.782, -2.671, -3.888, 0.324, -0.429, -2.011, -4.678, -0.071, 0.999, -4.85, -9.589, -7.813, -2.623, 0.818, -8.27, -6.317, -0.018, -0.921, -4.481, -0.306, -3.394, 1.109, -4.81, -2.165, -8.707, -7.473, -1.107, 3.488, -2.846, -2.324, -3.832, -3.613, -4.436, -0.3, -0.709, -0.309], [-0.159, -7.776, -2.005, -6.274, -2.202, 1.708, 0.527, -7.097, -2.238, 1.849, -8.064, 2.558, 0.454, -2.037, -1.301, -9.753, -7.978, 0.209, -2.729, -8.435, -1.606, -3.106, -0.187, -9.521, -0.022, -3.204, -3.21, -8.408, -8.867, -8.871, -7.637, -5.886, -2.846, 3.347, -2.022, -9.195, -6.176, -3.931, -2.243, -1.719, 0.947], [-0.812, -8.429, 1.274, -3.883, -1.069, 0.96, -0.84, -4.705, -2.892, 0.081, -8.718, -4.18, -0.682, -3.337, -5.667, -10.406, -8.631, -0.298, -0.312, -9.088, -1.882, -8.022, -3.075, -10.174, -3.605, -1.888, -3.018, -4.95, -3.478, -9.524, -3.675, -1.055, -2.324, -2.022, 3.034, -9.848, -3.115, -8.298, -3.962, -3.817, -1.979], [-1.262, -0.625, -3.108, -7.377, -4.674, -5.484, -7.87, -1.769, -3.342, -6.312, -2.269, -8.344, -6.214, -3.787, -6.117, -3.255, -9.081, -7.822, -9.031, -2.406, -7.585, -8.472, -9.127, -1.824, -7.49, -9.611, -9.511, -9.511, -9.971, 0.059, -8.74, -6.99, -3.832, -9.195, -9.848, 2.426, -1.447, -0.464, -7.457, -8.53, -7.571], [1.757, -5.86, -0.089, -4.358, -2.97, -2.465, -4.851, -5.181, -0.322, -3.292, -1.533, -5.325, -3.195, -3.165, -0.7, -7.837, 2.076, -4.803, -2.967, -6.519, 2.281, -2.409, -1.312, -7.605, -1.426, -3.158, -4.094, -4.094, -3.907, -4.557, -0.64, -3.97, -3.613, -6.176, -3.115, -1.447, 4.92, 1.806, -0.175, -0.801, -1.118], [0.288, -7.328, -1.558, -3.429, -0.748, -0.889, -6.32, -6.65, -1.791, -4.761, -7.617, -6.794, -4.664, -4.634, -4.567, -9.306, 0.854, -6.272, -7.48, -7.988, -0.146, -1.619, -0.969, -9.074, -5.939, -3.186, -3.252, -2.436, -4.026, -4.313, -0.879, -1.328, -4.436, -3.931, -8.298, -0.464, 1.806, 3.878, -3.509, -1.177, -6.021], [1.579, -6.038, -0.267, -4.536, -2.501, 1.62, -2.631, -5.359, -0.5, 0.243, -1.531, 0.204, -3.373, 3.812, -3.276, -4.971, -3.195, -4.981, -3.145, -6.697, 1.568, 0.936, 1.008, -7.783, -1.604, -0.035, -2.559, -4.272, -7.13, -3.42, -2.465, 1.25, -0.3, -2.243, -3.962, -7.457, -0.175, -3.509, 5.218, -1.757, -4.73], [0.506, -7.11, 1.058, 1.853, -1.909, 1.426, -1.392, -6.432, -1.573, 0.166, -2.524, -6.576, 0.753, -4.416, 0.6, -9.088, -1.639, -1.439, -1.522, -4.336, -3.419, -0.549, -0.911, -0.424, 1.394, -2.701, -0.834, -4.029, -2.342, -8.206, -3.538, -5.221, -0.709, -1.719, -3.817, -8.53, -0.801, -1.177, -1.757, 3.674, 1.012], [1.465, -6.152, -0.381, 0.298, -5.66, 2.595, -0.062, -5.473, -0.615, -3.585, -4.043, 0.123, 2.482, -3.458, 3.709, -8.13, -3.956, 1.813, 0.844, -6.811, -4.858, -0.107, -2.686, -3.634, 2.961, -6.884, -1.146, -6.784, -7.244, -7.248, -1.619, -4.263, -0.309, 0.947, -1.979, -7.571, -1.118, -6.021, -4.73, 1.012, 4.701]], "gap_open": -2.49, "gap_extend": -1.71}, "k": {"ldnd": 0.353, "pmi": 0.463}, "floor": {"ldnd": [0.11, 0.298, 0.573], "pmi": [0.086, 0.228, 0.474]}}
+</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+let MODE = 'pmi';                                       // 'pmi' (PMI-LDND, the pipeline) or 'ldnd'
+const NAME = {pmi: 'PMI-LDND', ldnd: 'LDND'};
+const kcal = () => DATA.k[MODE];
+const MAT = () => MODE === 'pmi' ? DATA.pmi_ldnd : DATA.ldnd;
+const UNREL_MEAN = {pmi: 0.973, ldnd: 0.984};          // results/cross_family.json, 2,483 unrelated lineage pairs
+const CONCEPTS = DATA.concepts;                         // [[id, gloss], ...]
+const GLOSS = Object.fromEntries(CONCEPTS);
+const LABEL = {JAPANESE:'Japanese', JAPANESE_2:'Japanese (2nd list)', NAHA:'Okinawan (Naha)', HATERUMA_YAEYAMA:'Yaeyaman (Hateruma)', ENGLISH:'English', STANDARD_GERMAN:'German', BASQUE:'Basque'};
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = (x, d = 3) => Number.isFinite(x) ? x.toFixed(d) : '—';
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const words = (lang, c) => DATA.forms[lang][c] || [];
+const tok = w => [...w.t];                              // ASJP tokenization: one char = one segment
+
+// --- Levenshtein over token arrays, with an alignment backtrace ---
+function lev(a, b) {
+  const n = a.length, m = b.length, d = Array.from({length: n + 1}, (_, i) => [i, ...Array(m).fill(0)]);
+  for (let j = 1; j <= m; j++) d[0][j] = j;
+  for (let i = 1; i <= n; i++) for (let j = 1; j <= m; j++)
+    d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+  return d;
+}
+const ldn = (a, b) => { const m = Math.max(a.length, b.length); return m ? lev(a, b)[a.length][b.length] / m : 0; };
+function alignment(a, b) {
+  const d = lev(a, b), cols = []; let i = a.length, j = b.length;
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && d[i][j] === d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1)) { cols.push([a[i-1], b[j-1], a[i-1] === b[j-1] ? 'm' : 's']); i--; j--; }
+    else if (i > 0 && d[i][j] === d[i-1][j] + 1) { cols.push([a[i-1], '·', 'g']); i--; }
+    else { cols.push(['·', b[j-1], 'g']); j--; }
+  }
+  return {cols: cols.reverse(), dist: d[a.length][b.length]};
+}
+
+// --- PMI alignment (Gotoh, affine gaps), mirroring src/isodiv/pmi.py ---
+const P = DATA.pmi, PIX = Object.fromEntries([...P.symbols].map((c, i) => [c, i]));
+const pmiScore = (x, y) => (x in PIX && y in PIX) ? P.scores[PIX[x]][PIX[y]] : 0;
+function gotoh(a, b) {
+  const go = P.gap_open, ge = P.gap_extend, n = a.length, m = b.length, NEG = -1e9;
+  const mk = () => Array.from({length: n + 1}, () => new Float64Array(m + 1).fill(NEG));
+  const M = mk(), X = mk(), Y = mk();
+  M[0][0] = 0;
+  for (let i = 1; i <= n; i++) X[i][0] = go + ge * (i - 1);
+  for (let j = 1; j <= m; j++) Y[0][j] = go + ge * (j - 1);
+  for (let i = 1; i <= n; i++) for (let j = 1; j <= m; j++) {
+    M[i][j] = pmiScore(a[i-1], b[j-1]) + Math.max(M[i-1][j-1], X[i-1][j-1], Y[i-1][j-1]);
+    X[i][j] = Math.max(M[i-1][j] + go, X[i-1][j] + ge, Y[i-1][j] + go);
+    Y[i][j] = Math.max(M[i][j-1] + go, X[i][j-1] + go, Y[i][j-1] + ge);
+  }
+  const am = v => v.indexOf(Math.max(...v));
+  let i = n, j = m, st = am([M[n][m], X[n][m], Y[n][m]]);
+  const score = Math.max(M[n][m], X[n][m], Y[n][m]), cols = [];
+  while (i > 0 || j > 0) {
+    if (st === 0) { cols.push([a[i-1], b[j-1], pmiScore(a[i-1], b[j-1]), 'm']); st = am([M[i-1][j-1], X[i-1][j-1], Y[i-1][j-1]]); i--; j--; }
+    else if (st === 1) { const p = am([M[i-1][j] + go, X[i-1][j] + ge, Y[i-1][j] + go]); cols.push([a[i-1], '·', p === 1 ? ge : go, 'g']); st = p; i--; }
+    else { const p = am([M[i][j-1] + go, X[i][j-1] + go, Y[i][j-1] + ge]); cols.push(['·', b[j-1], p === 2 ? ge : go, 'g']); st = p; j--; }
+  }
+  return {score, cols: cols.reverse()};
+}
+const SELF = new Map();
+const selfScore = w => { if (!SELF.has(w)) SELF.set(w, gotoh([...w], [...w]).score); return SELF.get(w); };
+const pmiDist = (a, b) => 1 - 2 * gotoh(a, b).score / (selfScore(a.join('')) + selfScore(b.join('')));
+const wdist = (a, b) => MODE === 'pmi' ? pmiDist(a, b) : ldn(a, b);
+
+// --- LDND / PMI-LDND, mirroring src/isodiv/distance.py ---
+function shared(A, B) { return CONCEPTS.map(c => c[0]).filter(c => words(A, c).length && words(B, c).length); }
+function ldndParts(A, B) {
+  const cs = shared(A, B), n = cs.length, full = [];
+  for (const ca of cs) full.push(cs.map(cb => wdist(tok(words(A, ca)[0]), tok(words(B, cb)[0]))));
+  const same = cs.map(c => Math.min(...words(A, c).flatMap(a => words(B, c).map(b => wdist(tok(a), tok(b))))));
+  let off = 0; for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) if (i !== j) off += full[i][j];
+  const s = same.reduce((x, y) => x + y, 0) / n, dfx = off / (n * (n - 1));
+  return {cs, full, same, s, d: dfx, ldnd: s / dfx};
+}
+
+function fillSelect(sel, opts, val) { sel.innerHTML = opts.map(([v, t]) => `<option value="${v}"${v === val ? ' selected' : ''}>${esc(t)}</option>`).join(''); }
+const LANG_OPTS = DATA.order.map(l => [l, LABEL[l]]);
+
+// §1 concept chips + word list table
+$('conceptChips').innerHTML = CONCEPTS.map(([, g]) => `<span class="chip" lang="en">${esc(g)}</span>`).join('');
+function cell(lang, c) {
+  const ws = words(lang, c);
+  if (!ws.length) return '<td class="miss">—</td>';
+  return `<td><span class="asjp" dir="ltr">${ws.map(w => esc(w.f)).join(' / ')}</span><span class="ipa" lang="und-fonipa" dir="ltr">${ws.map(w => esc(w.ipa.replace(/ /g, ''))).join(' / ')}</span></td>`;
+}
+function drawWordList() {
+  const cols = $('wlCols').value === 'ja' ? ['JAPANESE', 'NAHA', 'HATERUMA_YAEYAMA'] : ['JAPANESE', 'NAHA', 'HATERUMA_YAEYAMA', 'ENGLISH', 'STANDARD_GERMAN', 'BASQUE'];
+  $('wlTable').innerHTML = `<thead><tr><th>concept</th>${cols.map(l => `<th>${esc(LABEL[l])}<br><span style="text-transform:none;font-weight:400">${esc(DATA.langs[l].glottocode)}</span></th>`).join('')}</tr></thead><tbody>` +
+    CONCEPTS.map(([c, g]) => `<tr><td class="gloss" lang="en">${esc(g)}</td>${cols.map(l => cell(l, c)).join('')}</tr>`).join('') + '</tbody>';
+}
+$('wlCols').addEventListener('change', drawWordList); drawWordList();
+
+// §2 word vs word
+fillSelect($('wA'), LANG_OPTS, 'JAPANESE'); fillSelect($('wB'), LANG_OPTS, 'NAHA');
+function drawAlign() {
+  const A = $('wA').value, B = $('wB').value, cs = shared(A, B);
+  const prev = $('wC').value || '75';
+  fillSelect($('wC'), cs.map(c => [c, GLOSS[c]]), cs.includes(prev) ? prev : cs[0]);
+  const c = $('wC').value, wa = words(A, c), wb = words(B, c);
+  let best = null;
+  for (const a of wa) for (const b of wb) { const r = alignment(tok(a), tok(b)); const v = r.dist / Math.max(a.t.length, b.t.length); if (!best || v < best.v) best = {...r, v, a, b}; }
+  $('alignOut').innerHTML = `<div class="align" dir="ltr">${best.cols.map(([x, y, k]) => `<div class="col ${k}"><span>${esc(x)}</span><span>${esc(y)}</span><span class="op">${k === 'm' ? '' : k === 's' ? 'sub' : x === '·' ? 'ins' : 'del'}</span></div>`).join('')}</div>`;
+  const L = Math.max(best.a.t.length, best.b.t.length);
+  $('alignStats').innerHTML = `<div class="stat"><span class="v">${best.dist}</span><span class="l">edits</span></div><div class="stat"><span class="v">${L}</span><span class="l">longer word</span></div><div class="stat"><span class="v ink">${fmt(best.v)}</span><span class="l">LDN = ${best.dist} / ${L}</span></div>`;
+  $('alignNote').textContent = (wa.length > 1 || wb.length > 1) ? `This concept has synonyms (${[...wa, ...wb].map(w => w.t).join(', ')}); the closest pair is shown, which is what LDND uses.` : '';
+}
+['wA', 'wB', 'wC'].forEach(id => $(id).addEventListener('change', drawAlign)); drawAlign();
+
+// §3 heatmap
+fillSelect($('hA'), LANG_OPTS, 'JAPANESE'); fillSelect($('hB'), LANG_OPTS, 'NAHA');
+let HM = null;
+function hexA(hex, a) { const h = hex.replace('#', ''); const n = parseInt(h.length === 3 ? h.replace(/./g, '$&$&') : h, 16); return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; }
+function drawHeat() {
+  HM = ldndParts($('hA').value, $('hB').value);
+  const cv = $('hm'), n = HM.cs.length, px = Math.max(320, Math.round(cv.clientWidth * (window.devicePixelRatio || 1)));
+  cv.width = cv.height = px; const g = cv.getContext('2d'), s = px / n;
+  g.fillStyle = css('--cell0'); g.fillRect(0, 0, px, px);
+  const ink = css('--ink'), ch = css('--chance');
+  for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+    const v = i === j ? HM.same[i] : HM.full[i][j];
+    g.fillStyle = hexA(i === j ? ink : ch, i === j ? 0.12 + 0.88 * (1 - v) : 0.85 * (1 - v) ** 2);
+    g.fillRect(j * s, i * s, Math.ceil(s), Math.ceil(s));
+  }
+  g.strokeStyle = hexA(ink, .5); g.lineWidth = Math.max(1, px / 400);
+  for (let i = 0; i < n; i++) g.strokeRect(i * s + .5, i * s + .5, s - 1, s - 1);
+  $('hmStats').innerHTML = `<div class="stat"><span class="v">${n}</span><span class="l">shared concepts</span></div><div class="stat"><span class="v ink">${fmt(HM.s)}</span><span class="l">${MODE === 'pmi' ? 'PMI' : 'LDN'}<sub>same</sub> (mean of diagonal)</span></div><div class="stat"><span class="v chance">${fmt(HM.d)}</span><span class="l">${MODE === 'pmi' ? 'PMI' : 'LDN'}<sub>diff</sub> (mean off diagonal)</span></div><div class="stat"><span class="v">${fmt(HM.ldnd)}</span><span class="l">${NAME[MODE]} = ${fmt(HM.s)} / ${fmt(HM.d)}</span></div>`;
+  showCell(HM.cs.indexOf('75'), HM.cs.indexOf('75'));
+}
+function showCell(i, j) {
+  if (i < 0 || j < 0) { i = j = 0; }
+  const A = $('hA').value, B = $('hB').value, ca = HM.cs[i], cb = HM.cs[j];
+  const v = i === j ? HM.same[i] : HM.full[i][j];
+  const a = words(A, ca)[0].t, b = words(B, cb)[0].t;
+  $('hmInfo').innerHTML = `<span class="eyebrow" style="color:${i === j ? 'var(--ink)' : 'var(--chance)'}">${i === j ? 'same meaning' : 'different meaning'}</span>
+    <div><b lang="en">${esc(GLOSS[ca])}</b> in ${esc(LABEL[A])}: <span class="asjp" dir="ltr">${esc(a)}</span></div>
+    <div><b lang="en">${esc(GLOSS[cb])}</b> in ${esc(LABEL[B])}: <span class="asjp" dir="ltr">${esc(b)}</span></div>
+    <div>${MODE === 'pmi' ? 'PMI word distance' : 'LDN'} = <span class="asjp">${fmt(v)}</span>${i === j && (words(A, ca).length > 1 || words(B, cb).length > 1) ? ' (closest synonym pair)' : ''}</div>
+    <p class="note">${i === j ? 'Counts toward LDN<sub>same</sub>.' : 'Counts toward LDN<sub>diff</sub>, the chance baseline.'}</p>`;
+}
+function hmPick(e) {
+  const r = $('hm').getBoundingClientRect(), n = HM.cs.length;
+  const j = Math.floor((e.clientX - r.left) / r.width * n), i = Math.floor((e.clientY - r.top) / r.height * n);
+  if (i >= 0 && j >= 0 && i < n && j < n) showCell(i, j);
+}
+$('hm').addEventListener('pointermove', hmPick); $('hm').addEventListener('pointerdown', hmPick);
+['hA', 'hB'].forEach(id => $(id).addEventListener('change', drawHeat));
+
+// §4 number line
+function svgEl(tag, attrs, text) { const e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; return e; }
+function drawScale() {
+  const sv = $('scaleSvg'); sv.innerHTML = '';
+  const x0 = 30, x1 = 830, X = v => x0 + (x1 - x0) * v / 1.1, y = 120;
+  const m = (a, b) => MAT()[DATA.order.indexOf(a)][DATA.order.indexOf(b)];
+  const [f10, f50, f90] = DATA.floor[MODE];
+  sv.append(svgEl('rect', {x: X(f10), y: y - 16, width: X(f90) - X(f10), height: 32, fill: 'var(--ink-soft)'}));
+  sv.append(svgEl('text', {x: X(f10) + 6, y: y - 22, style: 'font:600 11.5px var(--body);fill:var(--ink)'}, 'same language, 10–90%'));
+  sv.append(svgEl('line', {x1: X(f50), x2: X(f50), y1: y - 16, y2: y + 16, stroke: 'var(--ink)', 'stroke-dasharray': '3 3'}));
+  sv.append(svgEl('rect', {x: X(0.911), y: y - 16, width: X(1.1) - X(0.911), height: 32, fill: 'var(--chance-soft)'}));
+  sv.append(svgEl('text', {x: X(0.911) + 4, y: y - 22, style: 'font:600 11.5px var(--body);fill:var(--chance)'}, 'unrelated pairs'));
+  sv.append(svgEl('line', {x1: x0, x2: x1, y1: y, y2: y, stroke: 'var(--fg)', 'stroke-width': 1.3}));
+  for (let t = 0; t <= 1.0001; t += 0.1) {
+    sv.append(svgEl('line', {x1: X(t), x2: X(t), y1: y + 16, y2: y + 22, stroke: 'var(--muted)'}));
+    sv.append(svgEl('text', {x: X(t), y: y + 36, 'text-anchor': 'middle', style: 'font:400 11px var(--mono);fill:var(--muted)'}, t.toFixed(1)));
+  }
+  sv.append(svgEl('text', {x: x1, y: y + 36, 'text-anchor': 'end', style: 'font:600 11px var(--body);fill:var(--muted)'}, NAME[MODE] + ' →'));
+  const pts = [
+    ['Japanese vs 2nd Japanese list', m('JAPANESE', 'JAPANESE_2'), -1, 40],
+    ['Japanese–Naha', m('JAPANESE', 'NAHA'), -1, 40],
+    ['Naha–Hateruma', m('NAHA', 'HATERUMA_YAEYAMA'), 1, 176],
+    ['English–German', m('ENGLISH', 'STANDARD_GERMAN'), -1, 62],
+    ['Japanese–Hateruma', m('JAPANESE', 'HATERUMA_YAEYAMA'), 1, 198],
+    ['Japanese–Basque', m('JAPANESE', 'BASQUE'), 1, 176],
+    ['Japanese–English', m('JAPANESE', 'ENGLISH'), -1, 62],
+    ['Naha–English', m('NAHA', 'ENGLISH'), 1, 198],
+  ];
+  for (const [lab, v, side, ly] of pts) {
+    const cx = X(v), unrel = v > 0.9, col = unrel ? 'var(--chance)' : 'var(--fg)';
+    sv.append(svgEl('line', {x1: cx, x2: cx, y1: side < 0 ? ly + 4 : y, y2: side < 0 ? y : ly - 12, stroke: 'var(--muted)', 'stroke-width': .8}));
+    sv.append(svgEl('circle', {cx, cy: y, r: 5, fill: col}));
+    const anchor = cx > 700 ? 'end' : cx < 120 ? 'start' : 'middle';
+    sv.append(svgEl('text', {x: cx, y: ly, 'text-anchor': anchor, style: `font:400 12px var(--body);fill:var(--fg)`}, `${lab} ${v.toFixed(2)}`));
+  }
+}
+
+// §5 curve
+function drawCurve() {
+  const sv = $('curveSvg'); sv.innerHTML = '';
+  const L = 60, R = 590, T = 20, B = 250, X = v => L + (R - L) * v / 1.1, Y = z => B - (B - T) * (z - 0.5) / 0.5;
+  for (const z of [0.5, 0.6, 0.7, 0.8, 0.9, 1.0]) {
+    sv.append(svgEl('line', {x1: L, x2: R, y1: Y(z), y2: Y(z), stroke: 'var(--rule)'}));
+    sv.append(svgEl('text', {x: L - 8, y: Y(z) + 4, 'text-anchor': 'end', style: 'font:400 11px var(--mono);fill:var(--muted)'}, z.toFixed(1)));
+  }
+  for (let t = 0; t <= 1.0001; t += 0.2) sv.append(svgEl('text', {x: X(t), y: B + 18, 'text-anchor': 'middle', style: 'font:400 11px var(--mono);fill:var(--muted)'}, t.toFixed(1)));
+  sv.append(svgEl('text', {x: R, y: B + 38, 'text-anchor': 'end', style: 'font:600 11px var(--body);fill:var(--muted)'}, NAME[MODE] + ' →'));
+  sv.append(svgEl('text', {x: L, y: T - 6, style: 'font:600 11px var(--body);fill:var(--muted)'}, 'similarity Z'));
+  let d = ''; for (let v = 0; v <= 1.1; v += 0.01) d += `${d ? 'L' : 'M'}${X(v).toFixed(1)},${Y(Math.exp(-kcal() * v)).toFixed(1)}`;
+  sv.append(svgEl('path', {d, fill: 'none', stroke: 'var(--ink)', 'stroke-width': 2.2}));
+  const m = (a, b) => MAT()[DATA.order.indexOf(a)][DATA.order.indexOf(b)];
+  for (const [lab, v, below] of [['same-language median', DATA.floor[MODE][1], false], ['Japanese–Naha', m('JAPANESE', 'NAHA'), false], ['Japanese–English', m('JAPANESE', 'ENGLISH'), true]]) {
+    const z = Math.exp(-kcal() * v), cx = X(v), cy = Y(z);
+    sv.append(svgEl('line', {x1: cx, x2: cx, y1: cy, y2: B, stroke: 'var(--muted)', 'stroke-dasharray': '2 3'}));
+    sv.append(svgEl('circle', {cx, cy, r: 5, fill: v > 0.9 ? 'var(--chance)' : 'var(--ink)'}));
+    // labels sit on the open side of the descending curve: above-right, or below-left
+    sv.append(svgEl('text', {x: below ? cx - 10 : cx + 10, y: below ? cy + 22 : cy - 10, 'text-anchor': below ? 'end' : 'start', style: 'font:400 12px var(--body);fill:var(--fg)'}, `${lab}: ${v.toFixed(2)} → ${z.toFixed(2)}`));
+  }
+}
+
+// §6 D_max, exact by subset enumeration (as in src/isodiv/diversity.py for n ≤ 14)
+function solve(M, b) {
+  const n = M.length, A = M.map((r, i) => [...r, b[i]]);
+  for (let c = 0; c < n; c++) {
+    let p = c; for (let r = c + 1; r < n; r++) if (Math.abs(A[r][c]) > Math.abs(A[p][c])) p = r;
+    if (Math.abs(A[p][c]) < 1e-10) return null;
+    [A[c], A[p]] = [A[p], A[c]];
+    for (let r = 0; r < n; r++) if (r !== c) { const f = A[r][c] / A[c][c]; for (let k = c; k <= n; k++) A[r][k] -= f * A[c][k]; }
+  }
+  return A.map((r, i) => r[n] / r[i]);
+}
+function dmax(Z) {
+  const n = Z.length; let best = {v: 1, w: Array(n).fill(0).map((_, i) => i === 0 ? 1 : 0)};
+  for (let mask = 1; mask < 1 << n; mask++) {
+    const idx = []; for (let i = 0; i < n; i++) if (mask >> i & 1) idx.push(i);
+    const w = solve(idx.map(i => idx.map(j => Z[i][j])), idx.map(() => 1));
+    if (!w || w.some(x => x < -1e-12)) continue;
+    const s = w.reduce((a, b) => a + b, 0);
+    if (s > best.v + 1e-12) { const p = Array(n).fill(0); idx.forEach((i, k) => p[i] = w[k] / s); best = {v: s, w: p}; }
+  }
+  return best;
+}
+const ON = new Set(['JAPANESE', 'NAHA', 'HATERUMA_YAEYAMA']); let copies = 0;
+$('setBox').innerHTML = DATA.order.map(l => `<label for="cb_${l}"><input type="checkbox" id="cb_${l}" value="${l}"${ON.has(l) ? ' checked' : ''}> ${esc(LABEL[l])}</label>`).join('');
+$('setBox').addEventListener('change', e => { e.target.checked ? ON.add(e.target.value) : ON.delete(e.target.value); drawDmax(); });
+$('dupAdd').addEventListener('click', () => { if (copies < 4) copies++; drawDmax(); });
+$('dupRm').addEventListener('click', () => { copies = 0; drawDmax(); });
+$('kSl').addEventListener('input', drawDmax);
+function drawDmax() {
+  const k = +$('kSl').value; $('kOut').textContent = k.toFixed(3) + (Math.abs(k - kcal()) < 0.0005 ? ` (k_cal for ${NAME[MODE]})` : '');
+  const items = DATA.order.filter(l => ON.has(l)).map(l => ({l, name: LABEL[l]}));
+  if (ON.has('JAPANESE')) for (let c = 1; c <= copies; c++) items.push({l: 'JAPANESE', name: `Japanese, copy ${c}`});
+  $('dupN').textContent = ON.has('JAPANESE') ? (copies ? `${copies} cop${copies > 1 ? 'ies' : 'y'} added` : '') : 'Tick Japanese to add copies';
+  if (!items.length) { $('dmStats').innerHTML = '<p class="note">Tick at least one list.</p>'; $('zTable').innerHTML = ''; return; }
+  const ix = items.map(it => DATA.order.indexOf(it.l));
+  const Z = ix.map(i => ix.map(j => Math.exp(-k * MAT()[i][j])));
+  const r = dmax(Z), n = Z.length;
+  let pzp = 0; for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) pzp += Z[i][j] / (n * n);
+  $('dmStats').innerHTML = `<div class="stat"><span class="v">${n}</span><span class="l">lists in the set</span></div><div class="stat"><span class="v ink">${fmt(r.v)}</span><span class="l">D<sub>max</sub></span></div><div class="stat"><span class="v chance">${fmt(1 / pzp)}</span><span class="l">equal-weight diversity</span></div>`;
+  $('zTable').innerHTML = `<thead><tr><th style="text-align:start">Z</th>${items.map(it => `<th>${esc(it.name)}</th>`).join('')}<th>weight</th></tr></thead><tbody>` +
+    items.map((it, i) => `<tr><th style="text-align:start">${esc(it.name)}</th>${Z[i].map(z => `<td class="code">${z.toFixed(2)}</td>`).join('')}<td class="code" style="color:${r.w[i] > 1e-9 ? 'var(--ink)' : 'var(--muted)'};font-weight:600">${r.w[i].toFixed(2)}</td></tr>`).join('') + '</tbody>';
+}
+
+// §3 learned scores and PMI alignment
+function drawPmiBars() {
+  const sv = $('pmiBars'); sv.innerHTML = '';
+  const rows = [['p', 'p'], ['a', 'a'], ['d', 't'], ['d', 'p'], ['h', 'p'], ['t', 'p'], ['k', 'g'], ['s', 'S'], ['l', 'r'], ['i', 'e'], ['a', 'o'], ['a', 'p']];
+  const L = 120, R = 600, x0 = v => L + (R - L) * (v + 13) / 19, top = 30, rh = 24;
+  for (const t of [-10, -5, 0, 5]) {
+    sv.append(svgEl('line', {x1: x0(t), x2: x0(t), y1: top - 6, y2: top + rows.length * rh, stroke: t === 0 ? 'var(--fg)' : 'var(--rule)'}));
+    sv.append(svgEl('text', {x: x0(t), y: top - 12, 'text-anchor': 'middle', style: 'font:400 11px var(--mono);fill:var(--muted)'}, (t > 0 ? '+' : '') + t));
+  }
+  rows.forEach(([a, b], k) => {
+    const v = pmiScore(a, b), y = top + k * rh;
+    sv.append(svgEl('rect', {x: Math.min(x0(0), x0(v)), y: y + 4, width: Math.abs(x0(v) - x0(0)), height: rh - 8, fill: v >= 0 ? 'var(--ink)' : 'var(--chance)'}));
+    sv.append(svgEl('text', {x: L - 12, y: y + rh / 2 + 4, 'text-anchor': 'end', style: 'font:600 13px var(--mono);fill:var(--fg)'}, `${a} : ${b}`));
+    sv.append(svgEl('text', {x: v >= 0 ? x0(v) + 6 : x0(v) - 6, y: y + rh / 2 + 4, 'text-anchor': v >= 0 ? 'start' : 'end', style: 'font:400 11px var(--mono);fill:var(--muted)'}, (v > 0 ? '+' : '') + v.toFixed(2)));
+  });
+  sv.append(svgEl('text', {x: R, y: top + rows.length * rh + 22, 'text-anchor': 'end', style: 'font:600 11px var(--body);fill:var(--muted)'}, 'learned PMI score →'));
+}
+fillSelect($('pA'), LANG_OPTS, 'JAPANESE'); fillSelect($('pB'), LANG_OPTS, 'HATERUMA_YAEYAMA');
+function drawPAlign() {
+  const A = $('pA').value, B = $('pB').value, cs = shared(A, B);
+  const prev = $('pC').value || '30';
+  fillSelect($('pC'), cs.map(c => [c, GLOSS[c]]), cs.includes(prev) ? prev : cs[0]);
+  const c = $('pC').value;
+  let best = null;
+  for (const a of words(A, c)) for (const b of words(B, c)) {
+    const r = gotoh(tok(a), tok(b)), d = 1 - 2 * r.score / (selfScore(a.t) + selfScore(b.t));
+    if (!best || d < best.d) best = {...r, d, a, b};
+  }
+  const mx = Math.max(...Object.values(P.scores).flat());
+  $('pAlignOut').innerHTML = `<div class="align" dir="ltr">${best.cols.map(([x, y, v, k]) => `<div class="col p ${k}" style="--w:${k === 'm' ? Math.max(0, Math.min(1, (v + 2) / (mx + 2))).toFixed(2) : 0}"><span>${esc(x)}</span><span>${esc(y)}</span><span class="op">${(v > 0 ? '+' : '') + v.toFixed(1)}</span></div>`).join('')}</div>`;
+  $('pAlignStats').innerHTML = `<div class="stat"><span class="v">${fmt(best.score, 2)}</span><span class="l">S(a, b)</span></div><div class="stat"><span class="v">${fmt(selfScore(best.a.t), 1)} · ${fmt(selfScore(best.b.t), 1)}</span><span class="l">S(a, a) · S(b, b)</span></div><div class="stat"><span class="v ink">${fmt(best.d)}</span><span class="l">PMI word distance</span></div><div class="stat"><span class="v chance">${fmt(ldn(tok(best.a), tok(best.b)))}</span><span class="l">LDN, for comparison</span></div>`;
+}
+['pA', 'pB', 'pC'].forEach(id => $(id).addEventListener('change', drawPAlign));
+
+function drawTexts() {
+  const k = kcal(), [, f50, f90] = DATA.floor[MODE], zU = Math.exp(-k * UNREL_MEAN[MODE]);
+  document.querySelectorAll('.kcal').forEach(e => e.textContent = k.toFixed(3));
+  document.querySelectorAll('.dl').forEach(e => e.textContent = NAME[MODE]);
+  $('flMed').textContent = f50.toFixed(2); $('fl90').textContent = f90.toFixed(2);
+  $('unrelMean').textContent = UNREL_MEAN[MODE].toFixed(3);
+  $('zUnrel').textContent = zU.toFixed(2); $('zUnrel2').textContent = zU.toFixed(2);
+  $('twoUnrel').textContent = (2 / (1 + zU)).toFixed(2);
+  $('ieVal').textContent = MODE === 'pmi' ? '1.47' : '1.37';
+  const m = (a, b) => MAT()[DATA.order.indexOf(a)][DATA.order.indexOf(b)];
+  $('curveCap').textContent = `The calibration point (same-language median) sits at Z = 0.90. Japanese–Naha is ${Math.exp(-k * m('JAPANESE', 'NAHA')).toFixed(2)}; Japanese–English is ${Math.exp(-k * m('JAPANESE', 'ENGLISH')).toFixed(2)}.`;
+  document.querySelectorAll('.seg').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === MODE)));
+}
+document.querySelectorAll('.seg').forEach(b => b.addEventListener('click', () => {
+  if (b.dataset.mode === MODE) return;
+  MODE = b.dataset.mode; $('kSl').value = kcal();
+  try { localStorage.setItem('distMode', MODE); } catch (e) {}
+  drawAll();
+}));
+try { const saved = localStorage.getItem('distMode'); if (saved in NAME) { MODE = saved; $('kSl').value = kcal(); } } catch (e) {}
+
+function drawAll() { drawTexts(); drawHeat(); drawScale(); drawCurve(); drawDmax(); }
+drawPmiBars(); drawPAlign(); drawAll();
+addEventListener('resize', () => drawHeat());
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', drawHeat);
+new MutationObserver(drawHeat).observe(document.documentElement, {attributes: true, attributeFilter: ['data-theme']});
+</script>
