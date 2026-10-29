@@ -78,6 +78,12 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
 .about code { font-family: var(--font-mono); font-size: 12.5px; }
 .muted { color: var(--muted); }
 .pairpick { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-block-end: 8px; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; padding-block: 12px 0; font-size: 13px; }
+.filterbar .chips { margin: 0; }
+.chip .dot { margin-inline-end: 6px; }
+.chip[aria-pressed="false"] { opacity: .6; }
+.chip[aria-pressed="true"] .muted { color: inherit; opacity: .8; }
+.chip[aria-pressed="false"] .dot { opacity: .5; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--muted); }
 @media (prefers-reduced-motion: no-preference) { .chip, nav.tabs button { transition: background-color .12s, color .12s; } }
 </style>
@@ -97,16 +103,20 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
 </div></nav>
 
 <main class="wrap">
+  <div class="filterbar" role="group" aria-label="Which lineages to show">
+    <span class="chips" id="catchips"></span>
+    <label>Family <select id="famsel"></select></label>
+    <input id="q" type="search" placeholder="Filter by name" aria-label="Filter lineages by name" autocomplete="off">
+    <span class="muted" id="shown"></span>
+  </div>
   <section id="view-diversity" aria-labelledby="tab-diversity">
     <div class="grid">
       <div class="panel">
         <h2>Maximum diversity per lineage</h2>
         <div class="controls">
-          <span class="legend" id="catlegend"></span>
           <label>Sort <select id="sort">
             <option value="d_max">Maximum diversity</option><option value="spread">Spread (LDND)</option>
             <option value="n">Doculects sampled</option><option value="name">Name</option></select></label>
-          <input id="q" type="search" placeholder="Filter lineages" aria-label="Filter lineages" autocomplete="off">
         </div>
         <div class="chart" id="divchart"></div>
         <p class="muted" style="margin:8px 0 0">Dot: D_max at the calibrated scale. Line: how far the score moves when 10 of the 40 concepts are left out (5–95% of 30 resamples), centred on the dot; it does not include the effect of which doculects were sampled. 1.0 means one lineage; lineages with 2 doculects are lower bounds.</p>
@@ -192,7 +202,34 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   ].map(([k, v]) => `<span>${k} <b>${v}</b></span>`).join("");
   $("kcal").textContent = fmt(DATA.k_cal);
   $("noisefloor").textContent = DATA.noise.map(v => fmt(v, 2)).join(" / ");
-  $("catlegend").innerHTML = Object.entries(CAT).map(([k, v]) => `<span><span class="dot ${k}"></span> ${v}</span>`).join(" &nbsp; ");
+
+  /* ---------- shared filter: categories, family, name ---------- */
+  const F = { cats: new Set(["iso", "ctl", "adv"]), family: "", q: "" };
+  try {
+    const saved = JSON.parse(localStorage.getItem("isodivFilter") || "null");
+    if (saved) { F.cats = new Set(saved.cats.filter(c => c in CAT)); F.family = saved.family || ""; }
+  } catch (e) {}
+  const families = [...new Set(L.map(d => d.family).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  if (!families.includes(F.family)) F.family = "";
+  const visible = d => (F.family ? d.family === F.family : F.cats.has(d.cat)) &&
+    (!F.q || d.name.toLowerCase().includes(F.q));
+  function drawFilter() {
+    $("catchips").innerHTML = Object.entries(CAT).filter(([k]) => L.some(d => d.cat === k)).map(([k, v]) =>
+      `<button class="chip" data-cat="${k}" aria-pressed="${F.cats.has(k)}"${F.family ? " disabled" : ""}><span class="dot ${k}"></span>${v} <span class="muted">${L.filter(d => d.cat === k).length}</span></button>`).join("");
+    $("catchips").querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+      const c = b.dataset.cat; F.cats.has(c) ? F.cats.delete(c) : F.cats.add(c); refresh();
+    }));
+    $("famsel").innerHTML = `<option value="">All families (use the categories)</option>` + families.map(f =>
+      `<option value="${esc(f)}"${f === F.family ? " selected" : ""} dir="auto">${esc(f)} (${L.filter(d => d.family === f).length})</option>`).join("");
+    $("shown").textContent = `${L.filter(visible).length} of ${L.length} shown`;
+  }
+  function refresh() {
+    try { localStorage.setItem("isodivFilter", JSON.stringify({ cats: [...F.cats], family: F.family })); } catch (e) {}
+    drawFilter(); show(location.hash.slice(1));
+  }
+  $("famsel").addEventListener("change", e => { F.family = e.target.value; refresh(); });
+  $("q").addEventListener("input", e => { F.q = e.target.value.trim().toLowerCase(); refresh(); });
+  drawFilter();
 
   /* ---------- tabs + hash routing ---------- */
   const views = ["diversity", "profiles", "distances", "about"];
@@ -224,12 +261,12 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   let selected = "Japonic";
   function drawDiversity() {
     const host = $("divchart"), W = Math.max(300, host.clientWidth || 600);
-    const q = $("q").value.trim().toLowerCase(), sort = $("sort").value;
-    let rows = L.filter(d => !q || d.name.toLowerCase().includes(q));
+    const sort = $("sort").value;
+    let rows = L.filter(visible);
     const key = { d_max: d => -d.d_max, spread: d => -d.spread, n: d => -d.n, name: d => d.name };
     rows.sort((a, b) => sort === "name" ? a.name.localeCompare(b.name) : key[sort](a) - key[sort](b));
     const narrow = W < 480, labW = narrow ? 118 : 178, rowH = 22, top = 8, axisH = 24, right = 14;
-    const lo = 1.0, hi = Math.max(1.42, ...L.map(d => d.hi || d.d_max)) + 0.01;
+    const lo = 1.0, hi = Math.max(1.42, ...rows.map(d => d.hi || d.d_max)) + 0.01;
     const x = v => labW + (v - lo) / (hi - lo) * (W - labW - right);
     const H = top + rows.length * rowH + axisH;
     let s = `<svg role="group" aria-label="Maximum diversity per lineage" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`;
@@ -245,7 +282,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
       if (d.lo != null) s += `<line x1="${x(d.lo)}" x2="${x(d.hi)}" y1="${y}" y2="${y}" stroke="${catColor(d.cat)}" stroke-width="2" stroke-linecap="round" opacity=".55"/>`;
       s += `<circle cx="${x(d.d_max)}" cy="${y}" r="4.5" fill="${catColor(d.cat)}"/></g>`;
     });
-    host.innerHTML = s + "</svg>";
+    host.innerHTML = rows.length ? s + "</svg>" : `<p class="muted">No lineages match. Turn on a category or clear the family and name filters.</p>`;
     host.querySelectorAll("g.row").forEach(g => {
       const pick = () => { selected = g.dataset.name; drawDiversity(); drawDetail(); };
       g.addEventListener("click", pick);
@@ -286,13 +323,12 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
       <ul class="reps">${d.reps.map(([id, w]) => `<li><span dir="auto">${esc(id)}</span><span>${w.toFixed(3)}</span></li>`).join("")}</ul>`;
   }
   $("sort").addEventListener("change", drawDiversity);
-  $("q").addEventListener("input", drawDiversity);
 
   /* ---------- Profiles view ---------- */
   const palette = ["#b3245b", "#2a5db0", "#0b7a75", "#b7791f", "#7c3aed", "#d9480f", "#3b8f3b", "#c2417a", "#4b6b8a", "#8a5a2b"];
   let chosen = ["Japonic", "Kartvelian", "Basque", "Quechuan", "Indo-European"].filter(n => byName.has(n));
   function drawChips() {
-    const names = L.map(d => d.name).sort((a, b) => a.localeCompare(b));
+    const names = L.filter(d => visible(d) || chosen.includes(d.name)).map(d => d.name).sort((a, b) => a.localeCompare(b));
     $("pchips").innerHTML = names.map(n => `<button class="chip" aria-pressed="${chosen.includes(n)}" data-n="${esc(n)}" dir="auto">${esc(n)}</button>`).join("");
     $("pchips").querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
       const n = b.dataset.n;
@@ -337,8 +373,8 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
     return "rgb(" + lo.map((v, i) => Math.round(v + (hi[i] - v) * t)).join(",") + ")";
   };
   function order() {
-    const mode = $("horder").value, catRank = { iso: 0, ctl: 1, sub: 2, oth: 3 };
-    const o = L.map(d => d.name);
+    const mode = $("horder").value, catRank = { iso: 0, ctl: 1, sub: 2, oth: 3, adv: 4 };
+    const o = L.filter(d => idx.has(d.name) && visible(d)).map(d => d.name);
     if (mode === "name") return o.sort((a, b) => a.localeCompare(b));
     if (mode === "within") return o.sort((a, b) => byName.get(a).within - byName.get(b).within);
     return o.sort((a, b) => catRank[byName.get(a).cat] - catRank[byName.get(b).cat] || byName.get(b).d_max - byName.get(a).d_max);
@@ -375,7 +411,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   }
   function drawPair() {
     const da = byName.get(A), db = byName.get(B);
-    const opts = sel => L.map(d => d.name).sort((x, y) => x.localeCompare(y)).map(n => `<option ${n === sel ? "selected" : ""}>${esc(n)}</option>`).join("");
+    const opts = sel => DATA.names.slice().sort((x, y) => x.localeCompare(y)).map(n => `<option ${n === sel ? "selected" : ""}>${esc(n)}</option>`).join("");
     let body = "";
     if (A === B) {
       body = `<div class="verdict">Within <b dir="auto">${esc(A)}</b>: mean LDND ${fmt(da.within)} across ${da.n} sampled doculects.</div>`;
