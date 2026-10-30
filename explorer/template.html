@@ -362,6 +362,10 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   }
   $("sort").addEventListener("change", drawDiversity);
   $("dmode").addEventListener("change", drawDiversity);
+  if (!L.some(d => d.rel != null)) {          // no unrelated baseline in this build: hide the relative views
+    $("dmode").closest("label").hidden = true;
+    $("pmeasure").querySelector('option[value="rel"]').remove();
+  }
 
   /* ---------- Profiles view ---------- */
   const palette = ["#b3245b", "#2a5db0", "#0b7a75", "#b7791f", "#7c3aed", "#d9480f", "#3b8f3b", "#c2417a", "#4b6b8a", "#8a5a2b"];
