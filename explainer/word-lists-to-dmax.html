@@ -610,7 +610,7 @@ function drawTexts() {
   $('unrelMean').textContent = UNREL_MEAN[MODE].toFixed(3);
   $('zUnrel').textContent = zU.toFixed(2); $('zUnrel2').textContent = zU.toFixed(2);
   $('twoUnrel').textContent = (2 / (1 + zU)).toFixed(2);
-  $('ieVal').textContent = MODE === 'pmi' ? '1.47' : '1.37';
+  $('ieVal').textContent = MODE === 'pmi' ? '1.51' : '1.39';
   const m = (a, b) => MAT()[DATA.order.indexOf(a)][DATA.order.indexOf(b)];
   $('curveCap').textContent = `The calibration point (same-language median) sits at Z = 0.90. Japanese–Naha is ${Math.exp(-k * m('JAPANESE', 'NAHA')).toFixed(2)}; Japanese–English is ${Math.exp(-k * m('JAPANESE', 'ENGLISH')).toFixed(2)}.`;
   document.querySelectorAll('.seg').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === MODE)));
