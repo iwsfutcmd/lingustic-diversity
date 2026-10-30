@@ -508,7 +508,7 @@ def main() -> None:
     cache.save(cache_path)
     results = [by_name[n] for n in LINEAGES]
     nesting = check_nesting(results, children)
-    print(f"nesting: {nesting['pairs']} parent/child pairs, {len(nesting['violations'])} violations")
+    print(f"nesting: {nesting['pairs']} parent/child pairs, {len(nesting['violations'])} violations", flush=True)
 
     japonic = [x for x in all_docs.values() if rows[x.id]["Family"] == "Japonic"]
     robust = sampling_robustness(japonic, k_cal, metric)

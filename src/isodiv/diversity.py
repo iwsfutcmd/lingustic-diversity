@@ -133,16 +133,36 @@ def _qp(z: np.ndarray, *, restarts: int = 24, seed: int = 0, warm: Sequence[np.n
     return MaxDiversity(float(1.0 / (best @ z @ best)), best, "qp", _kkt(z, best))
 
 
+def _near_optimal(z: np.ndarray, p: np.ndarray, rel_gain: float = 1e-6) -> bool:
+    """Optimality check that tolerates what a non-positive-semidefinite Z produces: equal (Zp)_i on the support, and no
+    point outside it that could lower pᵀZp by more than ``rel_gain`` of itself. Adding weight to a point with
+    (Zp)_j = λ − δ lowers pᵀZp by about δ² / (z_jj − 2(Zp)_j + λ), so the bound is second order in the violation."""
+    zp = z @ p
+    on = p > 1e-9
+    lam = float(p @ zp)
+    if np.ptp(zp[on]) > 1e-8 * max(1.0, lam):
+        return False
+    off = (~on) & (zp < lam)
+    if not off.any():
+        return True
+    delta = lam - zp[off]
+    curv = np.maximum(np.diag(z)[off] - 2.0 * zp[off] + lam, 1e-12)
+    return bool(np.max(delta**2 / curv) <= rel_gain * lam)
+
+
 class _NotConvex(Exception):
     """The working set's Gram matrix is singular or indefinite; Wolfe's method does not apply."""
 
 
-def _wolfe(z: np.ndarray, *, warm: Sequence[np.ndarray] = (), tol: float = 1e-9, batch: int = 1,
-           max_iter: int = 20000) -> MaxDiversity:
+def _wolfe(z: np.ndarray, *, warm: Sequence[np.ndarray] = (), tol: float = 1e-9,
+           max_iter: int = 50000) -> MaxDiversity:
     """Minimise pᵀZp on the simplex by Wolfe's min-norm-point method on the Gram matrix Z (exact when Z is positive
-    semidefinite on the visited supports). Keeps a corral S of points, adds the points that violate optimality
-    ((Zp)_i < pᵀZp), re-solves Z_S y = 1 on S, and steps back to the simplex when a weight would go negative. Starts
+    semidefinite on the visited supports). Keeps a corral S of points, adds the most violating point
+    ((Zp)_i < pᵀZp), re-solves Z_S y = 1 on S, and steps back to the simplex when a weight would go negative. The
+    Cholesky factor of Z_S is extended one point at a time (O(s²)) and rebuilt only when a point leaves. Starts
     from the best of ``warm`` (e.g. a child's optimum). Raises ``_NotConvex`` when a corral system is not usable."""
+    from scipy.linalg import LinAlgError, cho_solve, cholesky, solve_triangular
+
     n = z.shape[0]
     p = np.zeros(n)
     best = None
@@ -157,21 +177,42 @@ def _wolfe(z: np.ndarray, *, warm: Sequence[np.ndarray] = (), tol: float = 1e-9,
         p = best[1]
     else:
         p[int(np.argmin(np.diag(z)))] = 1.0
-    corral = list(np.flatnonzero(p > 1e-12))
+    corral = [int(i) for i in np.flatnonzero(p > 1e-12)]
+    ridge = 1e-12
+
+    def factor(idx):
+        try:
+            return cholesky(z[np.ix_(idx, idx)] + ridge * np.eye(len(idx)), lower=True, check_finite=False)
+        except LinAlgError as e:
+            raise _NotConvex from e
+
+    chol = factor(corral)
+    tabu: list[int] = []                  # near-duplicates of corral points: their "violation" is rounding noise
     for _ in range(max_iter):
         zp = z @ p
         lam = float(p @ zp)
-        viol = np.flatnonzero(zp < lam - tol)
-        if len(viol) == 0:
-            return MaxDiversity(1.0 / lam, p, "wolfe", _kkt(z, p))
-        in_corral = set(corral)
-        corral += [int(i) for i in viol[np.argsort(zp[viol])][:batch] if int(i) not in in_corral]
+        sel = zp.copy()
+        sel[tabu] = np.inf
+        j = int(np.argmin(sel))
+        if sel[j] >= lam - tol:
+            return MaxDiversity(1.0 / lam, p, "wolfe", _near_optimal(z, p))
+        if j not in set(corral):
+            idx = np.array(corral)
+            row = solve_triangular(chol, z[idx, j], lower=True, check_finite=False)
+            d2 = z[j, j] + ridge - float(row @ row)
+            if d2 <= 1e-13:                         # j is (numerically) in the span of the corral
+                tabu.append(j)
+                continue
+            k = len(corral)
+            grown = np.zeros((k + 1, k + 1))
+            grown[:k, :k] = chol
+            grown[k, :k] = row
+            grown[k, k] = np.sqrt(d2)
+            chol = grown
+            corral.append(j)
         while True:                                   # minor cycles
             idx = np.array(corral)
-            try:
-                y = np.linalg.solve(z[np.ix_(idx, idx)], np.ones(len(idx)))
-            except np.linalg.LinAlgError as e:
-                raise _NotConvex from e
+            y = cho_solve((chol, True), np.ones(len(idx)), check_finite=False)
             if not np.isfinite(y).all() or y.sum() <= 0:
                 raise _NotConvex
             y = y / y.sum()
@@ -183,10 +224,12 @@ def _wolfe(z: np.ndarray, *, warm: Sequence[np.ndarray] = (), tol: float = 1e-9,
             neg = y < 0
             theta = float(np.min(cur[neg] / (cur[neg] - y[neg])))
             cur = cur + theta * (y - cur)
+            keep = cur > 1e-12
+            corral = [int(i) for i, kp in zip(idx, keep) if kp]
             p = np.zeros(n)
-            p[idx] = np.clip(cur, 0, None)
-            corral = [int(i) for i, c in zip(idx, cur) if c > 1e-12]
+            p[corral] = cur[keep]
             p = p / p.sum()
+            chol = factor(np.array(corral))           # a point left: rebuild the factor
     raise _NotConvex
 
 
