@@ -104,3 +104,31 @@ def test_warm_start_makes_superset_at_least_subset():
     warm[sub] = child.weights
     parent = md(z, warm=[warm])
     assert parent.value >= child.value - 1e-9
+
+
+def test_wolfe_matches_exact_and_qp():
+    from isodiv.diversity import _wolfe
+    for seed, k in [(0, 1.0), (1, 3.0), (2, 8.0)]:
+        z = similarity_matrix(random_metric(12, seed=seed), k)
+        w = _wolfe(z)
+        assert w.kkt_ok and abs(w.value - _exact(z).value) < 1e-8
+    z = similarity_matrix(random_metric(160, dim=4, seed=9), 2.5)
+    assert abs(_wolfe(z).value - _qp(z).value) < 1e-5
+
+
+def test_wolfe_warm_start_never_below_child():
+    from isodiv.diversity import _wolfe
+    z = similarity_matrix(random_metric(150, dim=4, seed=3), 2.0)
+    sub = np.arange(50)
+    child = max_diversity(z[np.ix_(sub, sub)])
+    warm = np.zeros(150)
+    warm[sub] = child.weights
+    assert _wolfe(z, warm=[warm]).value >= child.value - 1e-9
+
+
+def test_indefinite_matrix_falls_back_to_general_solver():
+    z = similarity_matrix(random_metric(130, dim=2, seed=4), 0.3)
+    z = z - 0.4 * np.eye(130) + 0.4 * np.ones((130, 130)) * 0.0    # not positive semidefinite
+    np.fill_diagonal(z, 1.0)
+    res = max_diversity(z)
+    assert np.isfinite(res.value) and res.weights.min() >= 0 and abs(res.weights.sum() - 1) < 1e-9

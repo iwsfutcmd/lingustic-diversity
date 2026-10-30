@@ -134,3 +134,50 @@ def test_pmi_parallel_equals_serial(monkeypatch):
     parallel = pmi.pmi_ldnd_values(model, pairs, workers=2)
     np.testing.assert_allclose(serial, parallel)
     assert np.all(np.isfinite(serial))
+
+
+def test_compiled_kernel_matches_numpy():
+    from isodiv import pmi
+    if pmi._gotoh_scores is None:
+        pytest.skip("numba not installed")
+    rng = np.random.default_rng(0)
+    model = PMIModel(tuple("abcdefgh"), rng.normal(size=(9, 9)))
+    words = [tuple(rng.choice(list("abcdefgh"), size=int(rng.integers(1, 9)))) for _ in range(300)]
+    a, la = model.encode(words)
+    b, lb = model.encode(words[::-1])
+    fast = pmi._align_encoded(model, a, la, b, lb)
+    kernel, pmi._gotoh_scores = pmi._gotoh_scores, None
+    try:
+        slow = pmi._align_encoded(model, a, la, b, lb)
+    finally:
+        pmi._gotoh_scores = kernel
+    assert np.allclose(fast, slow, atol=1e-9)
+
+
+def test_compiled_ldnd_matches_numpy_path():
+    from isodiv import pmi
+    if pmi._ldnd_kernel is None:
+        pytest.skip("numba not installed")
+    rng = np.random.default_rng(1)
+    syms = list("abcdefgh")
+    model = PMIModel(tuple(syms), rng.normal(size=(9, 9)))
+
+    def doc(i):
+        words = {}
+        for c in range(30):
+            if rng.random() < 0.9:
+                words[f"c{c}"] = tuple(tuple(rng.choice(syms, size=int(rng.integers(1, 7))))
+                                       for _ in range(int(rng.integers(1, 3))))
+        return Doculect(f"d{i}", f"d{i}", "g", "F", "W", words)
+
+    docs = [doc(i) for i in range(12)]
+    pairs = [(docs[i], docs[j]) for i in range(12) for j in range(i + 1, 12)]
+    for kw in ({}, {"min_shared": 10, "concepts": frozenset(f"c{c}" for c in range(0, 30, 2))}, {"min_shared": 29}):
+        fast = pmi.pmi_ldnd_values(model, pairs, **kw)
+        kernel, pmi._ldnd_kernel = pmi._ldnd_kernel, None
+        try:
+            slow = pmi.pmi_ldnd_values(model, pairs, workers=1, **kw)
+        finally:
+            pmi._ldnd_kernel = kernel
+        assert np.array_equal(np.isnan(fast), np.isnan(slow))
+        assert np.allclose(fast[~np.isnan(fast)], slow[~np.isnan(slow)], atol=1e-9)

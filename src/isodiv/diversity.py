@@ -133,6 +133,63 @@ def _qp(z: np.ndarray, *, restarts: int = 24, seed: int = 0, warm: Sequence[np.n
     return MaxDiversity(float(1.0 / (best @ z @ best)), best, "qp", _kkt(z, best))
 
 
+class _NotConvex(Exception):
+    """The working set's Gram matrix is singular or indefinite; Wolfe's method does not apply."""
+
+
+def _wolfe(z: np.ndarray, *, warm: Sequence[np.ndarray] = (), tol: float = 1e-9, batch: int = 1,
+           max_iter: int = 20000) -> MaxDiversity:
+    """Minimise pᵀZp on the simplex by Wolfe's min-norm-point method on the Gram matrix Z (exact when Z is positive
+    semidefinite on the visited supports). Keeps a corral S of points, adds the points that violate optimality
+    ((Zp)_i < pᵀZp), re-solves Z_S y = 1 on S, and steps back to the simplex when a weight would go negative. Starts
+    from the best of ``warm`` (e.g. a child's optimum). Raises ``_NotConvex`` when a corral system is not usable."""
+    n = z.shape[0]
+    p = np.zeros(n)
+    best = None
+    for w in warm:
+        w = np.clip(w, 0, None)
+        if w.sum() > 0:
+            w = w / w.sum()
+            val = w @ z @ w
+            if best is None or val < best[0]:
+                best = (val, w)
+    if best is not None:
+        p = best[1]
+    else:
+        p[int(np.argmin(np.diag(z)))] = 1.0
+    corral = list(np.flatnonzero(p > 1e-12))
+    for _ in range(max_iter):
+        zp = z @ p
+        lam = float(p @ zp)
+        viol = np.flatnonzero(zp < lam - tol)
+        if len(viol) == 0:
+            return MaxDiversity(1.0 / lam, p, "wolfe", _kkt(z, p))
+        in_corral = set(corral)
+        corral += [int(i) for i in viol[np.argsort(zp[viol])][:batch] if int(i) not in in_corral]
+        while True:                                   # minor cycles
+            idx = np.array(corral)
+            try:
+                y = np.linalg.solve(z[np.ix_(idx, idx)], np.ones(len(idx)))
+            except np.linalg.LinAlgError as e:
+                raise _NotConvex from e
+            if not np.isfinite(y).all() or y.sum() <= 0:
+                raise _NotConvex
+            y = y / y.sum()
+            cur = p[idx]
+            if y.min() >= -1e-13:
+                p = np.zeros(n)
+                p[idx] = np.clip(y, 0, None)
+                break
+            neg = y < 0
+            theta = float(np.min(cur[neg] / (cur[neg] - y[neg])))
+            cur = cur + theta * (y - cur)
+            p = np.zeros(n)
+            p[idx] = np.clip(cur, 0, None)
+            corral = [int(i) for i, c in zip(idx, cur) if c > 1e-12]
+            p = p / p.sum()
+    raise _NotConvex
+
+
 def _full_weighting(z: np.ndarray) -> MaxDiversity | None:
     """If Z w = 1 has a nonnegative solution on all points, p = w/Σw satisfies the optimality conditions
     ((Zp)_i = 1/Σw for every i), and D_max = Σw. Returns None when some weight is negative."""
@@ -184,7 +241,15 @@ def max_diversity(z: np.ndarray, *, exact_max_n: int = EXACT_MAX_N, warm: Sequen
     if z.shape[0] <= CG_MIN_N:
         return _qp(z, warm=warm)
     full = _full_weighting(z)         # fine scales: every point is in the optimum, no search needed
-    return full if full is not None else _qp_cg(z, warm=warm)
+    if full is not None:
+        return full
+    try:
+        res = _wolfe(z, warm=warm)
+        if res.kkt_ok:
+            return res
+    except _NotConvex:
+        pass                          # Z not positive semidefinite on the visited supports: use the general solver
+    return _qp_cg(z, warm=warm)
 
 
 def diversity_profile(d: np.ndarray, ks: Sequence[float]) -> dict[str, np.ndarray]:

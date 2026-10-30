@@ -68,6 +68,103 @@ class PMIModel:
         return cls(symbols, s, **kw)
 
 
+try:                                    # optional compiled kernel (pip install isodiv[fast]); numpy fallback below
+    import numba as _numba
+
+    @_numba.njit(cache=True, nogil=True)
+    def _gotoh_scores(s, a, la, b, lb, go, ge, out):
+        """Score-only twin of ``_gotoh``: the same affine-gap recurrence, one word pair at a time."""
+        neg = -1e9
+        m = np.empty((a.shape[1] + 1, b.shape[1] + 1))
+        x = np.empty_like(m)
+        y = np.empty_like(m)
+        for p in range(a.shape[0]):
+            n1, n2 = la[p], lb[p]
+            for i in range(n1 + 1):
+                for j in range(n2 + 1):
+                    m[i, j] = neg
+                    x[i, j] = neg
+                    y[i, j] = neg
+            m[0, 0] = 0.0
+            for i in range(1, n1 + 1):
+                x[i, 0] = go + ge * (i - 1)
+            for j in range(1, n2 + 1):
+                y[0, j] = go + ge * (j - 1)
+            for i in range(1, n1 + 1):
+                ai = a[p, i - 1]
+                for j in range(1, n2 + 1):
+                    m[i, j] = s[ai, b[p, j - 1]] + max(m[i - 1, j - 1], x[i - 1, j - 1], y[i - 1, j - 1])
+                    x[i, j] = max(m[i - 1, j] + go, x[i - 1, j] + ge, y[i - 1, j] + go)
+                    y[i, j] = max(m[i, j - 1] + go, x[i, j - 1] + go, y[i, j - 1] + ge)
+            out[p] = max(m[n1, n2], x[n1, n2], y[n1, n2])
+
+    @_numba.njit(cache=True, nogil=True)
+    def _word_score(s, a, la, u, v, go, ge, m, x, y):
+        neg = -1e9
+        n1, n2 = la[u], la[v]
+        for i in range(n1 + 1):
+            for j in range(n2 + 1):
+                m[i, j] = neg
+                x[i, j] = neg
+                y[i, j] = neg
+        m[0, 0] = 0.0
+        for i in range(1, n1 + 1):
+            x[i, 0] = go + ge * (i - 1)
+        for j in range(1, n2 + 1):
+            y[0, j] = go + ge * (j - 1)
+        for i in range(1, n1 + 1):
+            ai = a[u, i - 1]
+            for j in range(1, n2 + 1):
+                m[i, j] = s[ai, a[v, j - 1]] + max(m[i - 1, j - 1], x[i - 1, j - 1], y[i - 1, j - 1])
+                x[i, j] = max(m[i - 1, j] + go, x[i - 1, j] + ge, y[i - 1, j] + go)
+                y[i, j] = max(m[i, j - 1] + go, x[i, j - 1] + go, y[i, j - 1] + ge)
+        return max(m[n1, n2], x[n1, n2], y[n1, n2])
+
+    @_numba.njit(cache=True, parallel=True)
+    def _ldnd_kernel(s, a, la, selfsc, go, ge, first, syn_lo, syn_hi, syn, pa, pb, min_shared, cmask, out):
+        """PMI-LDND of doculect pairs (pa[p], pb[p]): mean closest-synonym distance over shared concepts divided by
+        the mean first-synonym distance over pairs of different shared concepts. ``first[d, c]`` is -1 where doculect
+        d has no word for concept c; ``syn[syn_lo[d, c]:syn_hi[d, c]]`` are its words for c."""
+        n_c = first.shape[1]
+        width = a.shape[1] + 1
+        for p in _numba.prange(pa.shape[0]):
+            m = np.empty((width, width))
+            x = np.empty((width, width))
+            y = np.empty((width, width))
+            da, db = pa[p], pb[p]
+            sh = np.empty(n_c, np.int64)
+            n = 0
+            for c in range(n_c):
+                if cmask[c] and first[da, c] >= 0 and first[db, c] >= 0:
+                    sh[n] = c
+                    n += 1
+            if n < min_shared or n < 2:
+                out[p] = np.nan
+                continue
+            same = 0.0
+            for k in range(n):
+                c = sh[k]
+                best = 1e18
+                for i in range(syn_lo[da, c], syn_hi[da, c]):
+                    for j in range(syn_lo[db, c], syn_hi[db, c]):
+                        u, v = syn[i], syn[j]
+                        d = 1.0 - 2.0 * _word_score(s, a, la, u, v, go, ge, m, x, y) / (selfsc[u] + selfsc[v])
+                        best = min(best, d)
+                same += best
+            diff = 0.0
+            for k1 in range(n):
+                u = first[da, sh[k1]]
+                for k2 in range(n):
+                    if k1 != k2:
+                        v = first[db, sh[k2]]
+                        diff += 1.0 - 2.0 * _word_score(s, a, la, u, v, go, ge, m, x, y) / (selfsc[u] + selfsc[v])
+            diff /= n * (n - 1)
+            out[p] = (same / n) / diff if diff > 0 else np.nan
+except ImportError:
+    _gotoh_scores = None
+    _ldnd_kernel = None
+
+
 def _gotoh(s: np.ndarray, a: np.ndarray, la: np.ndarray, b: np.ndarray, lb: np.ndarray,
            go: float, ge: float, traceback: bool):
     """Batched global alignment with affine gaps. Returns scores, and aligned index pairs if asked."""
@@ -129,6 +226,12 @@ def align(model: PMIModel, aw: Sequence[Word], bw: Sequence[Word], *, traceback:
 
 def _align_encoded(model: PMIModel, a: np.ndarray, la: np.ndarray, b: np.ndarray, lb: np.ndarray,
                    traceback: bool = False):
+    if _gotoh_scores is not None and not traceback:
+        score = np.empty(len(a))
+        _gotoh_scores(model.scores, np.ascontiguousarray(a, dtype=np.int64), np.ascontiguousarray(la, dtype=np.int64),
+                      np.ascontiguousarray(b, dtype=np.int64), np.ascontiguousarray(lb, dtype=np.int64),
+                      model.gap_open, model.gap_extend, score)
+        return score
     order = np.lexsort((lb, la))              # similar lengths together keeps padding small
     score = np.empty(len(a))
     pa, pb = [], []
@@ -395,7 +498,39 @@ def pmi_tables(model: PMIModel, pairs: Sequence[tuple[Doculect, Doculect]], *,
     return _run(model, pairs, _work_tables, None, workers)
 
 
+def _fast_values(model: PMIModel, pairs: Sequence[tuple[Doculect, Doculect]], min_shared: int,
+                 concepts: frozenset[str] | None) -> np.ndarray:
+    """``pmi_ldnd_values`` in one compiled, multithreaded loop over doculect pairs (needs numba)."""
+    docs = list({d.id: d for p in pairs for d in p}.values())
+    row = {d.id: i for i, d in enumerate(docs)}
+    words = sorted({w for d in docs for ws in d.words.values() for w in ws})
+    wid = {w: i for i, w in enumerate(words)}
+    a, la = model.encode(words)
+    selfsc = _align_encoded(model, a, la, a, la)
+    cid = {c: i for i, c in enumerate(sorted({c for d in docs for c in d.words}))}
+    first = np.full((len(docs), len(cid)), -1, dtype=np.int64)
+    lo, hi = np.zeros_like(first), np.zeros_like(first)
+    flat: list[int] = []
+    for r, d in enumerate(docs):
+        for c, ws in d.words.items():
+            k = cid[c]
+            first[r, k] = wid[ws[0]]
+            lo[r, k] = len(flat)
+            flat.extend(wid[w] for w in ws)
+            hi[r, k] = len(flat)
+    cmask = np.array([concepts is None or c in concepts for c in cid], dtype=np.bool_)
+    pa = np.array([row[x.id] for x, _ in pairs], dtype=np.int64)
+    pb = np.array([row[y.id] for _, y in pairs], dtype=np.int64)
+    out = np.empty(len(pairs))
+    _ldnd_kernel(model.scores, a, la, selfsc, model.gap_open, model.gap_extend, first, lo, hi,
+                 np.array(flat, dtype=np.int64), pa, pb, min_shared, cmask, out)
+    return out
+
+
 def pmi_ldnd_values(model: PMIModel, pairs: Sequence[tuple[Doculect, Doculect]], *, min_shared: int = 20,
                     concepts: frozenset[str] | None = None, workers: int | None = None) -> np.ndarray:
-    """PMI-LDND for many doculect pairs; reduces in the workers, so it scales to millions of pairs."""
+    """PMI-LDND for many doculect pairs; reduces in the workers, so it scales to millions of pairs.
+    With numba installed (``pip install isodiv[fast]``) it runs as one compiled multithreaded loop instead."""
+    if _ldnd_kernel is not None and len(pairs):
+        return _fast_values(model, pairs, min_shared, concepts)
     return np.array(_run(model, pairs, _work_values, (min_shared, concepts), workers), dtype=float)

@@ -12,6 +12,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+fast = ["numba>=0.59"]      # compiled alignment kernel, ~50x faster PMI distances
 
 [build-system]
 requires = ["setuptools>=68"]

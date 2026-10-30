@@ -7,6 +7,13 @@ Usage:
 
 from __future__ import annotations
 
+import os
+
+# One BLAS thread per process: D_max solves are many small matrix products, which multithreaded BLAS slows down
+# (2x on a 660-doculect matrix). Parallelism comes from solving the scales in separate processes instead.
+for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+    os.environ.setdefault(_v, "1")
+
 import argparse
 import csv
 import json
@@ -219,7 +226,7 @@ def drop_nan(docs: list[Doculect], d: np.ndarray, protect: frozenset[str] = froz
     return [x for x, k in zip(docs, keep) if k], d[np.ix_(keep, keep)]
 
 
-def spread(d: np.ndarray, level: float = 1.5) -> float:
+def spread(d: np.ndarray, level: float = 1.5, bracket: tuple[float, float] | None = None) -> float:
     """Clock-free 'diversity radius' in distance units (LDND or PMI-LDND).
 
     k* = the scale at which D_max first reaches `level` effective lineages;
@@ -231,9 +238,17 @@ def spread(d: np.ndarray, level: float = 1.5) -> float:
         return 0.0
     f = lambda logk: max_diversity(similarity_matrix(d, np.exp(logk))).value - level
     lo, hi = np.log(1e-3), np.log(1e4)
-    if f(hi) < 0:
+    if bracket is not None:                         # the profile already brackets the root: skip the blind search
+        lo, hi = np.log(bracket[0]), np.log(bracket[1])
+    elif f(hi) < 0:
         return 0.0
-    return float(np.log(3) / np.exp(brentq(f, lo, hi, xtol=1e-4)))
+    try:
+        root = brentq(f, lo, hi, xtol=1e-4)
+    except ValueError:                              # bracket from the profile did not straddle the root
+        if bracket is None or f(np.log(1e4)) < 0:
+            return 0.0
+        root = brentq(f, np.log(1e-3), np.log(1e4), xtol=1e-4)
+    return float(np.log(3) / np.exp(root))
 
 
 def noise_floor(cldf: Path, metric: Metric, n_pairs: int = 400, seed: int = 0) -> np.ndarray:
@@ -271,6 +286,35 @@ def rarefied_spread(docs: list[Doculect], d: np.ndarray, m: int = RAREFY_M,
     return float(np.mean(vals))
 
 
+def _solve_scale(task):
+    """One scale of the profile; module-level so a process pool can run it."""
+    d, k, warm = task
+    z = similarity_matrix(d, k)
+    r = max_diversity(z, warm=warm)
+    return r, uniform_diversity(z)
+
+
+_POOL = None
+PARALLEL_MIN_N = 30           # smaller lineages solve faster in-process than the pickling costs
+
+
+def _pool():
+    global _POOL
+    if _POOL is None:
+        from concurrent.futures import ProcessPoolExecutor
+        from multiprocessing import get_context
+        _POOL = ProcessPoolExecutor(os.cpu_count() or 1, mp_context=get_context("spawn"))
+    return _POOL
+
+
+def solve_scales(d: np.ndarray, ks, warms: list[list[np.ndarray]]):
+    """D_max (and the equal-weight diversity) at each scale; large lineages use the process pool."""
+    tasks = [(d, k, w) for k, w in zip(ks, warms)]
+    if d.shape[0] >= PARALLEL_MIN_N and (os.cpu_count() or 1) > 1:
+        return list(_pool().map(_solve_scale, tasks))
+    return [_solve_scale(t) for t in tasks]
+
+
 def _embed(child: dict, docs: list[Doculect], weights: np.ndarray) -> np.ndarray | None:
     """A child's optimal distribution on the parent's doculects (None if none of its support survives)."""
     pos = {x.id: i for i, x in enumerate(docs)}
@@ -279,6 +323,15 @@ def _embed(child: dict, docs: list[Doculect], weights: np.ndarray) -> np.ndarray
         if x.id in pos:
             w[pos[x.id]] = p
     return w / w.sum() if w.sum() > 0 else None
+
+
+def _spread_bracket(profile: list[float], level: float = 1.5) -> tuple[float, float] | None:
+    """Neighbouring grid scales between which the profile crosses ``level`` (D_max grows with k)."""
+    above = [i for i, v in enumerate(profile) if v >= level]
+    if not above:
+        return None
+    i = above[0]
+    return (float(KS[i - 1]), float(KS[i])) if i > 0 else (1e-3, float(KS[0]))
 
 
 def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, children: tuple[dict, ...] = (),
@@ -291,24 +344,23 @@ def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, child
     def warm(ws: list[np.ndarray]) -> list[np.ndarray]:
         return [w for c, cw in zip(children, ws) if (w := _embed(c, docs, cw)) is not None]
 
-    maxes, uniforms = [], []
-    for i, k in enumerate(KS):                  # one scale at a time: a Z matrix per scale would not fit for big pools
-        z = similarity_matrix(d, k)
-        maxes.append(max_diversity(z, warm=warm([c["_weights"][i] for c in children])))
-        uniforms.append(uniform_diversity(z))
     k_ref = k_cal
-    m_ref = max_diversity(similarity_matrix(d, k_ref), warm=warm([c["_weights_kcal"] for c in children]))
-    d_k3 = max_diversity(similarity_matrix(d, K_FINE), warm=warm([c["_weights_k3"] for c in children]))
+    scales = [*KS, k_ref, K_FINE]                # the profile, then k_cal and the fine scale
+    warms = [warm([c["_weights"][i] for c in children]) for i in range(len(KS))]
+    warms += [warm([c["_weights_kcal"] for c in children]), warm([c["_weights_k3"] for c in children])]
+    solved = solve_scales(d, scales, warms)
+    maxes, uniforms = [r for r, _ in solved[: len(KS)]], [u for _, u in solved[: len(KS)]]
+    (m_ref, u_ref), (d_k3, _) = solved[len(KS)], solved[len(KS) + 1]
     return {
         "lineage": name,
         "family": max({x.family for x in docs}, key=[x.family for x in docs].count) if docs else "",
         "n_doculects": len(docs),
         "n_glottocodes": len({x.glottocode for x in docs}),
         "max_ldnd": float(d.max()) if len(docs) > 1 else 0.0,
-        "spread": spread(d),
+        "spread": spread(d, bracket=_spread_bracket([m.value for m in maxes])),
         "spread_rarefied_m3": rarefied_spread(docs, d),
         "d_max_kcal": m_ref.value,
-        "uniform_d2_kcal": uniform_diversity(similarity_matrix(d, k_ref)),
+        "uniform_d2_kcal": u_ref,
         "representatives_kcal": sorted(
             ((docs[i].id, round(float(w), 3)) for i, w in enumerate(m_ref.weights) if w > 1e-3),
             key=lambda t: -t[1],
