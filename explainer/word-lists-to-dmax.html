@@ -253,7 +253,7 @@ svg{max-width:100%;height:auto;display:block}
   <p class="prose">Both distances measure <em>how much the basic vocabulary has changed</em>, not time. Nothing in it assumes a rate. Here are real values for pairs from these lists, against the spread for two doculects of the <em>same</em> language across all of ASJP.</p>
   <figure>
     <div class="scroll"><svg id="scaleSvg" viewBox="0 0 860 220" role="img" aria-label="Number line of distances between example pairs, against the same-language noise band and the unrelated range." style="min-width:600px"></svg></div>
-    <figcaption>The shaded band is the 10th–90th percentile of <span class="dl">PMI-LDND</span> between two lists of the same language (same Glottocode) in ASJP. It is wide: two transcriptions of one language can be as far apart as <span id="fl90"></span>. That is the noise floor. Unrelated lineages average <span id="unrelMean"></span> across 2,483 unrelated lineage pairs in this repo. PMI-LDND moves related pairs closer while leaving unrelated ones near 1, which is what makes it more discriminating.</figcaption>
+    <figcaption>The shaded band is the 10th–90th percentile of <span class="dl">PMI-LDND</span> between two lists of the same language (same Glottocode) in ASJP. It is wide: two transcriptions of one language can be as far apart as <span id="fl90"></span>. That is the noise floor. Unrelated lineages average <span id="unrelMean"></span> across the unrelated lineage pairs in this repo (7,544 for PMI-LDND; 2,483 for LDND, from the earlier 72-lineage run). PMI-LDND moves related pairs closer while leaving unrelated ones near 1, which is what makes it more discriminating.</figcaption>
   </figure>
 </section>
 
@@ -306,10 +306,10 @@ svg{max-width:100%;height:auto;display:block}
       <tr><td>genus-like</td><td>Japonic</td><td class="code">1.248</td><td class="code">1.223</td><td>level with Slavic (1.238)</td></tr>
       <tr><td></td><td>Germanic</td><td class="code">1.302</td><td class="code">1.268</td><td></td></tr>
       <tr><td></td><td>Turkic</td><td class="code">1.324</td><td class="code">1.281</td><td>top of the genus band</td></tr>
-      <tr><td>deep</td><td>Indo-European</td><td class="code">1.474</td><td class="code">1.367</td><td>many mutually distant branches</td></tr>
+      <tr><td>deep</td><td>Indo-European</td><td class="code">1.507</td><td class="code">1.386</td><td>many mutually distant branches</td></tr>
     </tbody>
   </table></div>
-  <p class="prose">The two distances rank the 72 lineages almost identically (Spearman 0.995). PMI-LDND has a higher k<sub>cal</sub> (0.463 vs 0.353) because its noise floor is lower, so its numbers are larger overall; compare rankings and gaps, not raw values. The isolate band barely moves, while the deep families pull further away from the genus band.</p>
+  <p class="prose">On the 72 lineages first compared, the two distances rank them almost identically (Spearman 0.995). PMI-LDND has a higher k<sub>cal</sub> (0.463 vs 0.353) because its noise floor is lower, so its numbers are larger overall; compare rankings and gaps, not raw values. The isolate band barely moves, while the deep families pull further away from the genus band.</p>
   <p class="prose note">What this does not measure: time depth, or anything below the noise floor. Lineages inside the isolate band can’t be ranked against each other, because two transcriptions of one language can differ by as much as an isolate’s varieties do.</p>
 </section>
 </main>
@@ -322,7 +322,7 @@ let MODE = 'pmi';                                       // 'pmi' (PMI-LDND, the 
 const NAME = {pmi: 'PMI-LDND', ldnd: 'LDND'};
 const kcal = () => DATA.k[MODE];
 const MAT = () => MODE === 'pmi' ? DATA.pmi_ldnd : DATA.ldnd;
-const UNREL_MEAN = {pmi: 0.973, ldnd: 0.984};          // results/cross_family.json, 2,483 unrelated lineage pairs
+const UNREL_MEAN = {pmi: 0.971, ldnd: 0.984};          // results/cross_family.json: 7,544 unrelated lineage pairs (PMI-LDND); 2,483 (LDND, earlier 72-lineage run)
 const CONCEPTS = DATA.concepts;                         // [[id, gloss], ...]
 const GLOSS = Object.fromEntries(CONCEPTS);
 const LABEL = {JAPANESE:'Japanese', JAPANESE_2:'Japanese (2nd list)', NAHA:'Okinawan (Naha)', HATERUMA_YAEYAMA:'Yaeyaman (Hateruma)', ENGLISH:'English', STANDARD_GERMAN:'German', BASQUE:'Basque'};
