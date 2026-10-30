@@ -20,6 +20,7 @@ import numpy as np
 from scipy.optimize import brentq
 
 from isodiv.asjp import Doculect, load, load_exclusions
+from isodiv.distcache import DistCache
 from isodiv.diversity import max_diversity, similarity_matrix, uniform_diversity
 from isodiv.metric import DISTANCES, Metric, get_metric
 
@@ -94,7 +95,10 @@ for _label, (_by, _key) in SINITIC_GROUPS.items():
     LINEAGES[_label] = (
         (lambda n: lambda r: r["Family"] != "Bookkeeping" and n in r["classification_glottolog"].split(","))(_key)
         if _by == "node" else (lambda g: lambda r: r["Family"] != "Bookkeeping" and r["Glottocode"] == g)(_key))
-MAX_PER_LINEAGE = 80          # each lineage's own top-up cap; a parent also keeps all of its children's samples
+MAX_PER_LINEAGE = 80          # per-lineage cap for --cap 80 (and wold_effect.py); the default is no cap: whole pools
+K_FINE = 3.0                  # fine scale where unrelated lects count as nearly fully distinct
+SAVE_MATRIX_MAX_N = 200       # per-lineage ldnd_*.tsv only up to this size; larger ones stay in the distance cache
+CACHE_DIR = Path("data/cache")
 NEST_TOL = 0.02               # a lineage nests in another when at most this share of its pool lies outside it
 KS = np.geomspace(0.1, 40, 48)
 RAREFY_M = 3          # compare lineages at a fixed number of distinct-Glottocode doculects
@@ -277,19 +281,24 @@ def _embed(child: dict, docs: list[Doculect], weights: np.ndarray) -> np.ndarray
     return w / w.sum() if w.sum() > 0 else None
 
 
-def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, children: tuple[dict, ...] = ()) -> dict:
+def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, children: tuple[dict, ...] = (),
+            cache: DistCache | None = None) -> dict:
     """``children``: results of the lineages nested in this one. Their doculects are kept through ``drop_nan`` and
     their optimal distributions seed the optimizer, so D_max here is never below a child's at any scale."""
-    d = metric.matrix(docs)
+    d = cache.matrix(docs) if cache is not None else metric.matrix(docs)
     docs, d = drop_nan(docs, d, protect=frozenset(x.id for c in children for x in c["_docs"]))
 
     def warm(ws: list[np.ndarray]) -> list[np.ndarray]:
         return [w for c, cw in zip(children, ws) if (w := _embed(c, docs, cw)) is not None]
 
-    zs = [similarity_matrix(d, k) for k in KS]
-    maxes = [max_diversity(z, warm=warm([c["_weights"][i] for c in children])) for i, z in enumerate(zs)]
+    maxes, uniforms = [], []
+    for i, k in enumerate(KS):                  # one scale at a time: a Z matrix per scale would not fit for big pools
+        z = similarity_matrix(d, k)
+        maxes.append(max_diversity(z, warm=warm([c["_weights"][i] for c in children])))
+        uniforms.append(uniform_diversity(z))
     k_ref = k_cal
     m_ref = max_diversity(similarity_matrix(d, k_ref), warm=warm([c["_weights_kcal"] for c in children]))
+    d_k3 = max_diversity(similarity_matrix(d, K_FINE), warm=warm([c["_weights_k3"] for c in children]))
     return {
         "lineage": name,
         "family": max({x.family for x in docs}, key=[x.family for x in docs].count) if docs else "",
@@ -305,12 +314,14 @@ def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, child
             key=lambda t: -t[1],
         ),
         "profile_d_max": [m.value for m in maxes],
-        "profile_uniform": [uniform_diversity(z) for z in zs],
+        "profile_uniform": uniforms,
+        "d_max_k3": d_k3.value,
         "kkt_all_ok": all(m.kkt_ok for m in maxes),
         "_d": d,
         "_docs": docs,
         "_weights": [m.weights for m in maxes],
         "_weights_kcal": m_ref.weights,
+        "_weights_k3": d_k3.weights,
     }
 
 
@@ -405,6 +416,9 @@ def main() -> None:
     ap.add_argument("--wold", type=Path, default=None, help="WOLD CLDF dir (e.g. data/wold/cldf): mask words WOLD marks as loans")
     ap.add_argument("--tokens", choices=["asjp", "segments"], default="asjp")
     ap.add_argument("--distance", choices=DISTANCES, default="pmi")
+    ap.add_argument("--cap", type=int, default=0,
+                    help="doculects per lineage (0: whole pools, so D_max is exact for all documented data; a lineage "
+                         "that contains others also keeps theirs)")
     ap.add_argument("--pmi-model", type=Path, default=Path("results/pmi_model_all.tsv"))
     args = ap.parse_args()
     metric = get_metric(args.distance, args.pmi_model)
@@ -418,7 +432,10 @@ def main() -> None:
     print(f"noise floor {metric.label} quantiles 10/50/90: {np.round(np.quantile(floor, [.1, .5, .9]), 3)}; k_cal={k_cal:.3f}")
 
     pools = {name: frozenset(i for i in all_docs if pred(rows[i])) for name, pred in LINEAGES.items()}
-    samples, children = nested_samples(pools, all_docs, MAX_PER_LINEAGE)
+    cap = args.cap or 10**9
+    samples, children = nested_samples(pools, all_docs, cap)
+    cache_path = CACHE_DIR / f"dist_{args.distance}_{args.tokens}.npy"
+    cache = DistCache.load(cache_path, metric, list(all_docs))
     by_name: dict[str, dict] = {}
 
     def run(name: str) -> None:
@@ -426,14 +443,17 @@ def main() -> None:
             return
         for c in children[name]:
             run(c)                                                    # children first
-        r = analyse(name, samples[name], k_cal, metric, tuple(by_name[c] for c in children[name]))
+        r = analyse(name, samples[name], k_cal, metric, tuple(by_name[c] for c in children[name]), cache)
         by_name[name] = r
+        if r["n_doculects"] > 300:
+            cache.save(cache_path)                                    # keep the slow part if the run dies
         print(f'{name:14s} n={r["n_doculects"]:3d} glotto={r["n_glottocodes"]:3d} '
               f'maxLDND={r["max_ldnd"]:.3f} spread={r["spread"]:.3f} rare3={r["spread_rarefied_m3"]:.3f} '
               f'Dmax@kcal={r["d_max_kcal"]:.3f} naive@kcal={r["uniform_d2_kcal"]:.3f} kkt={r["kkt_all_ok"]}', flush=True)
 
     for name in sorted(LINEAGES, key=lambda n: len(samples[n])):
         run(name)
+    cache.save(cache_path)
     results = [by_name[n] for n in LINEAGES]
     nesting = check_nesting(results, children)
     print(f"nesting: {nesting['pairs']} parent/child pairs, {len(nesting['violations'])} violations")
@@ -451,7 +471,7 @@ def main() -> None:
                     "k_cal": k_cal,
                     "noise_floor_quantiles_10_50_90": np.quantile(floor, [.1, .5, .9]).tolist(),
                     "excluded": load_exclusions(EXCLUSIONS_FILE),
-                    "max_per_lineage": MAX_PER_LINEAGE, "nesting": nesting,
+                    "max_per_lineage": args.cap or None, "nesting": nesting,
                     "children": {n: c for n, c in children.items() if c},
                     "lineages": summary, "japonic_sampling": robust},
                    ensure_ascii=False, indent=2), encoding="utf-8")
@@ -467,9 +487,14 @@ def main() -> None:
             w.writerow([r["lineage"], r["n_doculects"], r["n_glottocodes"], f'{r["max_ldnd"]:.3f}',
                         f'{r["spread"]:.3f}', f'{r["spread_rarefied_m3"]:.3f}',
                         f'{r["d_max_kcal"]:.3f}', f'{r["uniform_d2_kcal"]:.3f}'])
+    (args.out / "samples.json").write_text(
+        json.dumps({r["lineage"]: [x.id for x in r["_docs"]] for r in results}, ensure_ascii=False), encoding="utf-8")
     for r in results:
-        np.savetxt(args.out / f'ldnd_{r["lineage"]}.tsv', r["_d"], delimiter="\t", fmt="%.4f",
-                   header="\t".join(x.id for x in r["_docs"]), encoding="utf-8")
+        if r["n_doculects"] <= SAVE_MATRIX_MAX_N:
+            np.savetxt(args.out / f'ldnd_{r["lineage"]}.tsv', r["_d"], delimiter="\t", fmt="%.4f",
+                       header="\t".join(x.id for x in r["_docs"]), encoding="utf-8")
+        else:
+            (args.out / f'ldnd_{r["lineage"]}.tsv').unlink(missing_ok=True)       # stale file from a capped run
 
 
 if __name__ == "__main__":

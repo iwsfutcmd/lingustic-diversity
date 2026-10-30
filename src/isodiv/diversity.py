@@ -133,6 +133,16 @@ def _qp(z: np.ndarray, *, restarts: int = 24, seed: int = 0, warm: Sequence[np.n
     return MaxDiversity(float(1.0 / (best @ z @ best)), best, "qp", _kkt(z, best))
 
 
+def _full_weighting(z: np.ndarray) -> MaxDiversity | None:
+    """If Z w = 1 has a nonnegative solution on all points, p = w/Σw satisfies the optimality conditions
+    ((Zp)_i = 1/Σw for every i), and D_max = Σw. Returns None when some weight is negative."""
+    w = _weighting(z)
+    if w is None or w.sum() <= 0:
+        return None
+    p = np.clip(w, 0, None) / np.clip(w, 0, None).sum()
+    return MaxDiversity(float(1.0 / (p @ z @ p)), p, "weighting", _kkt(z, p)) if _kkt(z, p) else None
+
+
 def _qp_cg(z: np.ndarray, *, warm: Sequence[np.ndarray] = (), seed: int = 0, batch: int = 25,
            max_rounds: int = 40) -> MaxDiversity:
     """Same optimum as ``_qp`` for large collections. The optimal distribution has a small support, so solve on a
@@ -160,7 +170,7 @@ def _qp_cg(z: np.ndarray, *, warm: Sequence[np.ndarray] = (), seed: int = 0, bat
         return MaxDiversity(float(1.0 / (p @ z @ p)), p, "qp-cg", False)
     # converged: re-solve the final working set with the full multi-start and re-check against all points
     idx = np.array(sorted(work | set(np.flatnonzero(p > 1e-9).tolist())))
-    sub = _qp(z[np.ix_(idx, idx)], restarts=24, seed=seed, warm=[p[idx] / p[idx].sum()])
+    sub = _qp(z[np.ix_(idx, idx)], restarts=24 if len(idx) <= 120 else 6, seed=seed, warm=[p[idx] / p[idx].sum()])
     p = np.zeros(n)
     p[idx] = sub.weights
     return MaxDiversity(float(1.0 / (p @ z @ p)), p, "qp-cg", _kkt(z, p))
@@ -171,7 +181,10 @@ def max_diversity(z: np.ndarray, *, exact_max_n: int = EXACT_MAX_N, warm: Sequen
     starts from, so the answer is never below pᵀZp⁻¹ for any of them."""
     if z.shape[0] <= exact_max_n:
         return _exact(z)
-    return _qp_cg(z, warm=warm) if z.shape[0] > CG_MIN_N else _qp(z, warm=warm)
+    if z.shape[0] <= CG_MIN_N:
+        return _qp(z, warm=warm)
+    full = _full_weighting(z)         # fine scales: every point is in the optimum, no search needed
+    return full if full is not None else _qp_cg(z, warm=warm)
 
 
 def diversity_profile(d: np.ndarray, ks: Sequence[float]) -> dict[str, np.ndarray]:

@@ -173,13 +173,8 @@ def main() -> None:
               f"[{sb['d_max']['q05']:.3f}, {sb['d_max']['q95']:.3f}], k=3 {sb['d_max_k3']['median']:.2f} "
               f"[{sb['d_max_k3']['q05']:.2f}, {sb['d_max_k3']['q95']:.2f}]", flush=True)
 
-    # real lineages at the fine scale, from the distance matrices run_analysis.py saved
-    result["real_k3"] = {}
-    for n in lin:
-        path = args.out / f"ldnd_{n}.tsv"
-        if path.exists():
-            d = np.atleast_2d(np.loadtxt(path, delimiter="\t"))
-            result["real_k3"][n] = max_diversity(similarity_matrix(d, K_FINE)).value
+    # real lineages at the fine scale (computed by run_analysis.py)
+    result["real_k3"] = {n: l["d_max_k3"] for n, l in lin.items() if "d_max_k3" in l}
 
     args.out.mkdir(exist_ok=True)
     (args.out / "adversarial.json").write_text(json.dumps(result, indent=1, ensure_ascii=False), encoding="utf-8")
