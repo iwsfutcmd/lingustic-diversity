@@ -107,7 +107,8 @@ def main() -> None:
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     jk = next(r for r in union_rows if {r["a"], r["b"]} == {"Japonic", "Kartvelian"})
-    unrelated = [r["mean_between"] for r in union_rows if not r["related_by_construction"]]
+    unrelated = [r["mean_between"] for r in union_rows
+                 if not r["related_by_construction"] and np.isfinite(r["mean_between"])]   # lineages with < 20 concepts have no distances
     print("Japonic vs Kartvelian:", {k: (round(v, 3) if isinstance(v, float) else v) for k, v in jk.items()})
     print(f"mean between-lineage {metric.label} over {len(unrelated)} unrelated pairs: "
           f"{np.mean(unrelated):.3f} (min {np.min(unrelated):.3f}, max {np.max(unrelated):.3f})")
