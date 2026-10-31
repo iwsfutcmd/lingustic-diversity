@@ -1,0 +1,31 @@
+set,n,d_max,d_max_q05,d_max_q95,d_max_k3
+random unrelated (n=5),5,1.406,1.393,1.417,4.096
+random unrelated (n=10),10,1.484,1.481,1.492,6.716
+random unrelated (n=25),25,1.535,1.529,1.539,10.848
+random unrelated (n=40),40,1.550,1.547,1.553,12.860
+random unrelated (n=60),60,1.559,1.557,1.560,14.333
+random unrelated (n=80),80,1.563,1.561,1.564,15.188
+Altaic,74,1.448,,,8.310
+random 3-family union,,1.487,1.435,1.533,9.242
+random 3-shallow-family union,,1.467,1.451,1.482,8.172
+Macro-Altaic,62,1.492,,,9.643
+random 5-family union,,1.518,1.487,1.534,11.143
+random 5-shallow-family union,,1.507,1.500,1.516,10.357
+Ural-Altaic,74,1.499,,,10.585
+random 4-family union,,1.510,1.482,1.534,10.601
+random 4-shallow-family union,,1.498,1.485,1.505,9.666
+Dene-Yeniseian,42,1.466,,,8.708
+random 2-family union,,1.435,1.287,1.506,6.894
+random 2-shallow-family union,,1.419,1.405,1.442,6.650
+Khoisan,32,1.452,,,7.588
+random 3-family union,,1.487,1.435,1.533,9.242
+random 3-shallow-family union,,1.467,1.451,1.482,8.172
+Paleo-Siberian,42,1.480,,,8.220
+random 5-family union,,1.518,1.487,1.534,11.143
+random 5-shallow-family union,,1.507,1.500,1.516,10.357
+Elamo-Dravidian,37,1.413,,,6.618
+random 2-family union,,1.435,1.287,1.506,6.894
+random 2-shallow-family union,,1.419,1.405,1.442,6.650
+Niger-Congo,60,1.527,,,12.244
+random 9-family union,,1.536,1.532,1.543,12.402
+random 9-shallow-family union,,1.535,1.530,1.538,12.429

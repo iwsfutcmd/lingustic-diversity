@@ -1,0 +1,25 @@
+  <section id="view-compare" aria-labelledby="tab-compare" hidden>
+    <div class="panel">
+      <h2>Distance between two varieties</h2>
+      <p class="muted" style="margin:0 0 12px;max-inline-size:78ch">Pick each variety by ISO 639-1 or ISO 639-3 code, Glottocode or name. The distance is computed here, in your browser, from the ASJP v21 40-item word lists, with the same PMI-LDND as the rest of this page. A code can match several word lists (several transcriptions of one language, or the members of a macrolanguage such as <code>zh</code>), so every pair of lists is scored and the median is reported.</p>
+      <div class="cmp-pick">
+        <div class="cmp-side">
+          <label for="cmp-a">First variety</label>
+          <input id="cmp-a" type="text" dir="auto" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="jpn · ja · nucl1643 · Okinawan">
+          <div class="cmp-match" id="cmp-match-a" aria-live="polite"></div>
+        </div>
+        <button type="button" class="chip" id="cmp-swap" aria-label="Swap the two varieties" title="Swap">⇄</button>
+        <div class="cmp-side">
+          <label for="cmp-b">Second variety</label>
+          <input id="cmp-b" type="text" dir="auto" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="eng · en · stan1293 · German">
+          <div class="cmp-match" id="cmp-match-b" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="controls">
+        <label for="cmp-kind">Distance <select id="cmp-kind"><option value="pmi">PMI-LDND (learned sound correspondences)</option><option value="ldnd">LDND (plain Levenshtein)</option></select></label>
+        <button type="button" class="chip" id="cmp-go" aria-pressed="true">Compare</button>
+        <span class="muted" id="cmp-status" role="status"></span>
+      </div>
+      <div id="cmp-out"></div>
+    </div>
+  </section>

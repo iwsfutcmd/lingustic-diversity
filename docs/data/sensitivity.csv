@@ -1,0 +1,37 @@
+scenario,lineage,n,n_removed,d_max,d_max_without,delta,d_max_k3,d_max_k3_without,resampling_width
+contact,Mandarin,186,1,1.322,1.314,-0.008,5.04,4.89,0.023
+contact,Sinitic,482,1,1.416,1.416,-0.000,8.19,8.16,0.017
+contact,Sino-Tibetan,882,1,1.528,1.528,+0.000,13.93,13.93,0.015
+long_extinct,Canaanite,4,2,1.180,1.047,-0.132,2.27,1.30,0.030
+long_extinct,North Ethiopic,9,4,1.185,1.164,-0.021,2.55,2.21,0.023
+long_extinct,Germanic,61,8,1.302,1.286,-0.016,4.62,4.37,0.018
+long_extinct,Northwest Semitic,23,4,1.284,1.277,-0.008,4.01,3.78,0.023
+long_extinct,Sinitic,482,2,1.416,1.411,-0.006,8.19,8.04,0.017
+long_extinct,Semitic,110,16,1.436,1.430,-0.006,8.40,8.16,0.015
+long_extinct,Ethiosemitic,25,4,1.343,1.338,-0.005,5.24,5.11,0.020
+long_extinct,Aramaic,20,3,1.229,1.224,-0.004,3.30,3.20,0.035
+long_extinct,Romance,64,2,1.307,1.304,-0.003,4.92,4.84,0.026
+long_extinct,Iranian,135,2,1.404,1.401,-0.003,7.36,7.24,0.035
+long_extinct,West Semitic,107,13,1.433,1.430,-0.002,8.25,8.16,0.015
+long_extinct,South Semitic,33,4,1.386,1.385,-0.001,6.41,6.34,0.021
+long_extinct,Indo-Aryan,167,2,1.396,1.395,-0.001,7.10,7.05,0.044
+long_extinct,Slavic,34,1,1.238,1.237,-0.001,3.51,3.48,0.029
+long_extinct,Tungusic,29,1,1.308,1.307,-0.000,4.47,4.44,0.029
+long_extinct,Central Semitic,67,8,1.346,1.346,-0.000,5.57,5.51,0.020
+long_extinct,Arabic,45,4,1.272,1.272,-0.000,4.07,4.04,0.032
+long_extinct,Afro-Asiatic,419,16,1.547,1.547,-0.000,15.19,15.18,0.009
+long_extinct,Indo-European,517,15,1.507,1.507,-0.000,12.26,12.24,0.019
+long_extinct,Austronesian,1446,3,1.549,1.549,+0.000,15.55,15.55,0.012
+long_extinct,Sino-Tibetan,882,2,1.528,1.528,+0.000,13.93,13.93,0.015
+long_extinct,Sumerian,1,1,1.000,,,1.00,,0.000
+long_extinct,Elamite,1,1,1.000,,,1.00,,0.000
+long_extinct,Etruscan,1,1,1.000,,,1.00,,0.000
+long_extinct,Balto-Slavic,39,1,1.335,1.335,+0.000,4.85,4.84,0.026
+long_extinct,Polynesian,51,1,1.249,1.249,+0.000,3.68,3.68,0.029
+long_extinct,East Semitic,3,3,1.095,,,1.62,,0.033
+long_extinct,Ancient South Arabian,1,1,1.000,,,1.00,,0.000
+long_extinct,Uto-Aztecan,75,1,1.440,1.440,+0.000,8.43,8.43,0.020
+long_extinct,Austroasiatic,190,1,1.494,1.494,+0.000,11.46,11.46,0.020
+long_extinct,Eastern Malayo-Polynesian,707,1,1.544,1.544,+0.000,15.06,15.06,0.011
+long_extinct,Malayo-Polynesian,1382,3,1.547,1.547,+0.000,15.41,15.41,0.012
+long_extinct,Oceanic,659,1,1.542,1.542,+0.000,14.91,14.91,0.012

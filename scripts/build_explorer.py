@@ -19,7 +19,8 @@ from run_analysis import CORE_LINEAGES, EXCLUSIONS_FILE, ISOLATE_CANDIDATES, NOD
 from isodiv.asjp import load_exclusions
 from isodiv.baseline import relative, unrelated_baseline
 
-TEMPLATE = Path(__file__).resolve().parent.parent / "explorer" / "template.html"
+EXPLORER = Path(__file__).resolve().parent.parent / "explorer"
+TEMPLATE = EXPLORER / "template.html"
 # "LDND" in the template is replaced by the distance actually used (summary.json "distance_label").
 METHOD = {
     "LDND": "LDND on ASJP 40-item lists (Wichmann et al. 2010): Levenshtein distance normalized by word length, "
@@ -210,6 +211,10 @@ def main() -> None:
     label = summary.get("distance_label", "LDND")
     html = (TEMPLATE.read_text(encoding="utf-8").replace("LDND", label)
             .replace("<!--__METHOD__-->", METHOD[label]).replace("/*__DATA__*/", blob))
+    # inserted after the label substitution above, so the distance names inside them are not rewritten
+    html = (html.replace("<!--__COMPARE_HTML__-->", (EXPLORER / "compare.html").read_text(encoding="utf-8"))
+            .replace("/*__COMPARE_JS__*/", (EXPLORER / "compare.js").read_text(encoding="utf-8"))
+            .replace("/*__DISTANCE_JS__*/", (EXPLORER / "distance.js").read_text(encoding="utf-8")))
     args.out.write_text(html, encoding="utf-8")
     print(f"{args.out}: {len(html) / 1024:.0f} KB, {len(lineages)} lineages, {len(pairs)} pairs")
 

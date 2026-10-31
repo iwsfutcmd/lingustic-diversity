@@ -1,5 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>From Word Lists to D_max</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Charis+SIL&display=swap">
 <style>
@@ -22,7 +26,7 @@
 :root[data-theme="dark"]{
   --bg:#11151d; --surface:#181e29; --fg:#e4e8f0; --muted:#97a1b4; --rule:#2c3445;
   --ink:#7d9cff; --ink-soft:#22305a; --chance:#e27aae; --chance-soft:#4a2238; --ok:#5fcf95; --cell0:#181e29; color-scheme:dark}
-body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px}
 main{max-width:860px;margin-inline:auto;display:flex;flex-direction:column;gap:56px}
 .prose{max-width:68ch}
@@ -99,9 +103,11 @@ svg{max-width:100%;height:auto;display:block}
 .bands td:first-child{color:var(--muted)}
 @media (prefers-reduced-motion:no-preference){.stat .v{transition:color .2s}}
 </style>
+</head>
+<body>
 <main>
 <header class="prose" style="display:flex;flex-direction:column;gap:14px">
-  <span class="eyebrow">isodiv · how the numbers are made</span>
+  <span class="eyebrow"><a href="./" style="color:inherit">isodiv</a> · how the numbers are made</span>
   <h1>From word lists to D<sub>max</sub></h1>
   <p class="lede">Every number in the results table comes from one kind of raw material: short lists of basic words, written in a coarse phonetic alphabet. This page follows real ASJP lists from Japanese, Okinawan (Naha), Yaeyaman (Hateruma), English, German and Basque through each step. Every figure below is computed live in your browser from the actual ASJP v21 forms.</p>
   <p class="lede">The pipeline now measures distance with <strong>PMI-LDND</strong>, which aligns words using sound correspondences learned from the data (§3). Switch to the original LDND to compare any step.</p>
@@ -629,3 +635,5 @@ addEventListener('resize', () => drawHeat());
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', drawHeat);
 new MutationObserver(drawHeat).observe(document.documentElement, {attributes: true, attributeFilter: ['data-theme']});
 </script>
+</body>
+</html>

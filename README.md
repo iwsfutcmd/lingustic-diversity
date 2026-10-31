@@ -248,6 +248,28 @@ Ethiosemitic, North/South/Outer South Ethiopic, Modern and Ancient South Arabian
 Hurrian or Urartian list. Two lineages count as related, and are left out of the unrelated-pair
 statistics, whenever their doculects share a top-level Family.
 
+## Website and distance tool
+
+`docs/` is a static site (landing page, [explorer](docs/explorer.html), explainer, data downloads) built by
+`python scripts/build_site.py` after the pipeline and `build_explorer.py`. Serve it with GitHub Pages: Settings → Pages →
+Deploy from a branch → `main`, folder `/docs` (the site lives at https://iwsfutcmd.github.io/lingustic-diversity/). It
+replaces republishing the artifacts.
+
+The explorer's **Compare varieties** tab (`explorer.html#compare`) gives the distance between any two ASJP word lists.
+Pick each variety by ISO 639-1 or -3 code, Glottocode, doculect ID or part of a name. It is computed in the browser from
+`docs/data/wordlists.json` (all 11,535 lists, the PMI model and the code tables), using the pipeline's own distance:
+`explorer/distance.js` is a port of `pmi.py` and `distance.py`, and `tests/test_site_js.py` checks it against the Python
+values on real pairs (agreement to 2e-6). A code can match several lists (`ja` finds 7 Japanese lists; `zh`, a
+macrolanguage, finds 534 Chinese lists), so every pair is scored and the tab reports the median, the range, a gauge against
+the same-language noise floor and the unrelated-lineage range, a pair table, and the word-by-word comparison of any pair.
+Both PMI-LDND and plain LDND are available, and `?a=ja&b=ryu&d=pmi#compare` links straight to a comparison.
+
+`python scripts/distance.py jpn eng` does the same on the command line (`--pairs` lists every pair, `--distance ldnd`).
+Code resolution is `src/isodiv/codes.py`: ISO 639-1 maps to 639-3 through `config/iso639_1.tsv`, and a macrolanguage that
+ASJP does not use itself (`zho`, `ara`, `msa`) stands for its member codes (`config/iso639_macro.tsv`, from the ISO 639-3
+registry). Examples: Japanese ↔ English 0.974 (unrelated), Japanese ↔ Central Okinawan 0.485 (32 list pairs; at the
+edge of the same-language band), Japanese against itself 0.293.
+
 ## Explorer and cross-family check
 
 - `scripts/cross_family.py` compares lineages with each other: mean distance within and between the 128 lineages
@@ -344,6 +366,7 @@ PYTHONPATH=scripts python scripts/adversarial.py    # → results/adversarial.{c
 PYTHONPATH=scripts python scripts/single_lists.py   # → results/single_lists.json
 PYTHONPATH=scripts python scripts/sensitivity.py    # → results/sensitivity.{csv,json}: D_max without long-extinct / contact doculects (~1 min)
 PYTHONPATH=scripts python scripts/rarefaction.py    # → results/rarefaction.{csv,json}: D_max at equal numbers of languages (~12 min)
+python scripts/build_site.py         # → docs/ (site, data/wordlists.json, downloads); commit docs/ to publish
 python scripts/build_explorer.py     # → results/explorer.html, results/relative.csv
 python scripts/pmi_eval.py           # → results/pmi_model.tsv, pmi_eval.json, pmi_eval_pairs.csv (--train geo|geo-no-dup to compare)
 ```

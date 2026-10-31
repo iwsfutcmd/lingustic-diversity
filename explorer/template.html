@@ -1,5 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Isodiv Explorer</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Literata:opsz,wght@7..72,500;7..72,700&display=swap">
@@ -30,10 +34,13 @@
   --hm-lo: #13212b; --hm-hi: #e9f6f4; --sel: rgba(63,193,185,.18); color-scheme: dark;
 }
 * { box-sizing: border-box; }
+body { margin: 0; }
 body { background: var(--bg); color: var(--ink); font: 14px/1.5 var(--font-body); }
 .wrap { max-inline-size: 1180px; margin-inline: auto; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
 header.top { padding-block: 22px 14px; }
 h1 { font: 700 28px/1.15 var(--font-display); margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.sitelinks { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
+.sitelinks a { color: var(--accent); }
 .lede { margin: 6px 0 0; color: var(--muted); max-inline-size: 70ch; }
 .facts { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-block-start: 12px; font-size: 12.5px; color: var(--muted); }
 .facts b { color: var(--ink); font: 500 13px var(--font-mono); font-variant-numeric: tabular-nums; }
@@ -87,25 +94,55 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
 .chip .x { margin-inline-start: 6px; opacity: .7; }
 .chip[aria-pressed="false"] .dot { opacity: .5; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--muted); }
+input[type="text"] { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 8px; min-inline-size: 0; inline-size: 100%; }
+.cmp-pick { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 12px; align-items: start; margin-block-end: 12px; }
+@media (max-width: 720px) { .cmp-pick { grid-template-columns: minmax(0, 1fr); } }
+#cmp-swap { align-self: end; justify-self: center; font-size: 16px; padding: 4px 12px; }
+.cmp-side { display: flex; flex-direction: column; gap: 6px; min-inline-size: 0; }
+.cmp-side label { font-size: 12px; color: var(--muted); }
+.cmp-match { font-size: 12.5px; color: var(--muted); }
+.cmp-match details { margin-block-start: 4px; }
+.cmp-match summary { cursor: pointer; }
+.cmp-warn { color: var(--c-iso); }
+.cmp-list { max-block-size: 240px; overflow: auto; border: 1px solid var(--rule); border-radius: 4px; padding: 6px 8px; margin-block-start: 6px; background: var(--surface); }
+.cmp-grp { padding-block: 2px; } .cmp-grp > label { color: var(--ink); font-weight: 500; }
+.cmp-docs { display: flex; flex-wrap: wrap; gap: 0 14px; padding-inline-start: 22px; }
+.cmp-docs label { color: var(--muted); white-space: nowrap; }
+.cmp-head { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: end; margin-block: 16px 8px; }
+.cmp-big { font: 600 44px/1 var(--font-mono); color: var(--accent); font-variant-numeric: tabular-nums; }
+.cmp-sub { font-size: 15px; min-inline-size: 0; }
+table.cmp { border-collapse: collapse; inline-size: 100%; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+table.cmp th, table.cmp td { padding: 4px 10px; text-align: start; border-block-end: 1px solid var(--grid); }
+table.cmp th { font-weight: 600; color: var(--muted); } table.cmp .n { text-align: end; }
+table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-selected="true"], table.cmp tbody tr[tabindex]:hover { background: var(--sel); }
+.cmp-bar { display: inline-block; block-size: 8px; background: var(--accent); border-radius: 2px; opacity: .75; min-inline-size: 1px; }
+.asjp { font-family: var(--font-mono); }
+#cmp-kind { max-inline-size: 100%; }
+.controls label { min-inline-size: 0; max-inline-size: 100%; }
+#cmp-out.busy { opacity: .45; transition: opacity .15s; }
+#cmp-go[disabled] { opacity: .45; cursor: not-allowed; }
 @media (prefers-reduced-motion: no-preference) { .chip, nav.tabs button { transition: background-color .12s, color .12s; } }
 </style>
-
+</head>
+<body>
 <div class="wrap">
   <header class="top">
     <h1>Isodiv Explorer</h1>
     <p class="lede">How internally diverse is each language lineage, measured as amount of lexical change (no clock, no counting of languages), and how far apart are different lineages? Data: ASJP v21 40-item word lists.</p>
     <div class="facts" id="facts"></div>
+    <p class="sitelinks"><a href="./">isodiv home</a> · <a href="explainer.html">How the numbers are made</a> · <a href="https://github.com/iwsfutcmd/lingustic-diversity">Source and data</a></p>
   </header>
 </div>
 <nav class="tabs" aria-label="Views"><div class="wrap" role="tablist">
   <button role="tab" id="tab-diversity" aria-selected="true" data-view="diversity">Diversity</button>
   <button role="tab" id="tab-profiles" aria-selected="false" data-view="profiles">Scale profiles</button>
   <button role="tab" id="tab-distances" aria-selected="false" data-view="distances">Between lineages</button>
+  <button role="tab" id="tab-compare" aria-selected="false" data-view="compare">Compare varieties</button>
   <button role="tab" id="tab-about" aria-selected="false" data-view="about">Method</button>
 </div></nav>
 
 <main class="wrap">
-  <div class="filterbar" role="group" aria-label="Which lineages to show">
+  <div class="filterbar" id="filterbar" role="group" aria-label="Which lineages to show">
     <span class="seg" role="group" aria-label="How to choose lineages">
       <button class="chip" id="mode-cat" aria-pressed="true">By category</button>
       <button class="chip" id="mode-pick" aria-pressed="false">Hand-picked</button>
@@ -163,6 +200,8 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
     </div>
   </section>
 
+<!--__COMPARE_HTML__-->
+
   <section id="view-about" aria-labelledby="tab-about" hidden class="about">
     <div class="panel">
       <h2>What is measured</h2>
@@ -189,6 +228,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
 <div id="tip" role="tooltip"></div>
 
 <script type="application/json" id="data">/*__DATA__*/</script>
+<script>/*__DISTANCE_JS__*/</script>
 <script>
 (function () {
   "use strict";
@@ -265,13 +305,15 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   drawFilter();
 
   /* ---------- tabs + hash routing ---------- */
-  const views = ["diversity", "profiles", "distances", "about"];
+  const views = ["diversity", "profiles", "distances", "compare", "about"];
   function show(v) {
     if (!views.includes(v)) v = "diversity";
     views.forEach(n => {
       $("view-" + n).hidden = n !== v;
       $("tab-" + n).setAttribute("aria-selected", String(n === v));
     });
+    $("filterbar").hidden = v === "compare";
+    if (v === "compare") initCompare();
     if (v === "profiles") drawProfiles();
     if (v === "distances") drawHeat();
     if (v === "diversity") drawDiversity();
@@ -491,6 +533,8 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   $("horder").addEventListener("change", drawHeat);
   $("hscale").addEventListener("change", drawHeat);
 
+/*__COMPARE_JS__*/
+
   /* ---------- boot ---------- */
   matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", () => show(location.hash.slice(1)));
   new MutationObserver(() => show(location.hash.slice(1))).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
@@ -498,3 +542,5 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   show(location.hash.slice(1));
 })();
 </script>
+</body>
+</html>

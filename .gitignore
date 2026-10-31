@@ -3,3 +3,4 @@ __pycache__/
 *.egg-info/
 .pytest_cache/
 results/_wold_loans/
+!docs/data/
