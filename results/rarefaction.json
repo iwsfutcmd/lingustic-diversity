@@ -1,0 +1,1488 @@
+{
+ "k_cal": 0.4629244842847879,
+ "distance": "pmi",
+ "draws": 100,
+ "sizes": [
+  3,
+  5,
+  10,
+  20,
+  40
+ ],
+ "rows": [
+  {
+   "lineage": "Austronesian",
+   "languages": 1025,
+   "m": 3,
+   "k": "k_cal",
+   "mean": 1.267602445679885,
+   "q05": 1.2209813804392635,
+   "q95": 1.2993148149006275,
+   "draws": 100
+  },
+  {
+   "lineage": "Austronesian",
+   "languages": 1025,
+   "m": 3,
+   "k": "k3",
+   "mean": 2.5482309562987364,
+   "q05": 2.3299761569973603,
+   "q95": 2.658932759994972,
+   "draws": 100
+  },
+  {
+   "lineage": "Austronesian",
+   "languages": 1025,
+   "m": 5,
+   "k": "k_cal",
+   "mean": 1.3397968504335198,
+   "q05": 1.302329804407286,
+   "q95": 1.3730658408957006,
+   "draws": 100
+  },
+  {
+   "lineage": "Austronesian",
+   "languages": 1025,
+   "m": 5,
+   "k": "k3",
+   "mean": 3.6871807171655133,
+   "q05": 3.4291533910580996,
+   "q95": 3.915051909474613,
+   "draws": 100
+  },
+  {
+   "lineage": "Austronesian",
+   "languages": 1025,
+   "m": 10,
+   "k": "k_cal",
+   "mean": 1.4092449185788158,
+   "q05": 1.3798435226635133,
+   "q95": 1.4362374554077892,
+   "draws": 100
+  },
+  {
+   "lineage": "Austronesian",
+   "languages": 1025,
+   "m": 10,
+   "k": "k3",
+   "mean": 5.637873459562538,
+   "q05": 5.191463398499721,
+   "q95": 6.040580707108234,
+   "draws": 100
+  },
+  {
+   "lineage": "Austronesian",
+   "languages": 1025,
+   "m": 20,
+   "k": "k_cal",
+   "mean": 1.4514877970092934,
+   "q05": 1.434032531570463,
+   "q95": 1.4675319759190566,
+   "draws": 100
+  },
+  {
+   "lineage": "Austronesian",
+   "languages": 1025,
+   "m": 20,
+   "k": "k3",
+   "mean": 7.633049841048373,
+   "q05": 7.195349869415991,
+   "q95": 8.074848403789934,
+   "draws": 100
+  },
+  {
+   "lineage": "Austronesian",
+   "languages": 1025,
+   "m": 40,
+   "k": "k_cal",
+   "mean": 1.4807301746131778,
+   "q05": 1.4696526026297145,
+   "q95": 1.4925679430806482,
+   "draws": 100
+  },
+  {
+   "lineage": "Austronesian",
+   "languages": 1025,
+   "m": 40,
+   "k": "k3",
+   "mean": 9.510509223390704,
+   "q05": 9.024156099961838,
+   "q95": 9.943988853153998,
+   "draws": 100
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "languages": 1000,
+   "m": 3,
+   "k": "k_cal",
+   "mean": 1.265220451809225,
+   "q05": 1.226122148832035,
+   "q95": 1.2962708612578524,
+   "draws": 100
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "languages": 1000,
+   "m": 3,
+   "k": "k3",
+   "mean": 2.538141840094366,
+   "q05": 2.368864286575067,
+   "q95": 2.647748552828316,
+   "draws": 100
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "languages": 1000,
+   "m": 5,
+   "k": "k_cal",
+   "mean": 1.3399102740167814,
+   "q05": 1.2925618370633882,
+   "q95": 1.3701028797022607,
+   "draws": 100
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "languages": 1000,
+   "m": 5,
+   "k": "k3",
+   "mean": 3.693474452211084,
+   "q05": 3.3718889187468584,
+   "q95": 3.8908100184802503,
+   "draws": 100
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "languages": 1000,
+   "m": 10,
+   "k": "k_cal",
+   "mean": 1.4079301748359874,
+   "q05": 1.376239362512596,
+   "q95": 1.4358152066817005,
+   "draws": 100
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "languages": 1000,
+   "m": 10,
+   "k": "k3",
+   "mean": 5.600690188837138,
+   "q05": 5.130920564546401,
+   "q95": 6.005263697519449,
+   "draws": 100
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "languages": 1000,
+   "m": 20,
+   "k": "k_cal",
+   "mean": 1.4511362136289034,
+   "q05": 1.4284890823261,
+   "q95": 1.470087883023809,
+   "draws": 100
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "languages": 1000,
+   "m": 20,
+   "k": "k3",
+   "mean": 7.648191540575372,
+   "q05": 7.095717886221606,
+   "q95": 8.130419921661215,
+   "draws": 100
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "languages": 1000,
+   "m": 40,
+   "k": "k_cal",
+   "mean": 1.481174038238976,
+   "q05": 1.4674778481652275,
+   "q95": 1.4943710876768799,
+   "draws": 100
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "languages": 1000,
+   "m": 40,
+   "k": "k3",
+   "mean": 9.544578384907645,
+   "q05": 9.076852541126451,
+   "q95": 10.052223797683947,
+   "draws": 100
+  },
+  {
+   "lineage": "Oceanic",
+   "languages": 455,
+   "m": 3,
+   "k": "k_cal",
+   "mean": 1.2747380432134379,
+   "q05": 1.2389074921563847,
+   "q95": 1.3042252314303653,
+   "draws": 100
+  },
+  {
+   "lineage": "Oceanic",
+   "languages": 455,
+   "m": 3,
+   "k": "k3",
+   "mean": 2.5763182302702656,
+   "q05": 2.446857161149101,
+   "q95": 2.6688911813438687,
+   "draws": 100
+  },
+  {
+   "lineage": "Oceanic",
+   "languages": 455,
+   "m": 5,
+   "k": "k_cal",
+   "mean": 1.3524018433432428,
+   "q05": 1.3124329775669625,
+   "q95": 1.3786099424428633,
+   "draws": 100
+  },
+  {
+   "lineage": "Oceanic",
+   "languages": 455,
+   "m": 5,
+   "k": "k3",
+   "mean": 3.7715666705253903,
+   "q05": 3.468179925575709,
+   "q95": 3.955581564617899,
+   "draws": 100
+  },
+  {
+   "lineage": "Oceanic",
+   "languages": 455,
+   "m": 10,
+   "k": "k_cal",
+   "mean": 1.4197836475300512,
+   "q05": 1.3930616238329636,
+   "q95": 1.4429074264029473,
+   "draws": 100
+  },
+  {
+   "lineage": "Oceanic",
+   "languages": 455,
+   "m": 10,
+   "k": "k3",
+   "mean": 5.792814558570318,
+   "q05": 5.372698549970368,
+   "q95": 6.159538888393101,
+   "draws": 100
+  },
+  {
+   "lineage": "Oceanic",
+   "languages": 455,
+   "m": 20,
+   "k": "k_cal",
+   "mean": 1.4619183070078803,
+   "q05": 1.440259853477948,
+   "q95": 1.4777612885882974,
+   "draws": 100
+  },
+  {
+   "lineage": "Oceanic",
+   "languages": 455,
+   "m": 20,
+   "k": "k3",
+   "mean": 7.957507221787441,
+   "q05": 7.35918063029891,
+   "q95": 8.386492834915522,
+   "draws": 100
+  },
+  {
+   "lineage": "Oceanic",
+   "languages": 455,
+   "m": 40,
+   "k": "k_cal",
+   "mean": 1.4931905304183328,
+   "q05": 1.4824556021271136,
+   "q95": 1.5023144592653093,
+   "draws": 100
+  },
+  {
+   "lineage": "Oceanic",
+   "languages": 455,
+   "m": 40,
+   "k": "k3",
+   "mean": 10.07179926417621,
+   "q05": 9.583913648849439,
+   "q95": 10.522176379527606,
+   "draws": 100
+  },
+  {
+   "lineage": "Formosan",
+   "languages": 20,
+   "m": 3,
+   "k": "k_cal",
+   "mean": 1.245481294192405,
+   "q05": 1.2000306741366369,
+   "q95": 1.2801242987279482,
+   "draws": 100
+  },
+  {
+   "lineage": "Formosan",
+   "languages": 20,
+   "m": 3,
+   "k": "k3",
+   "mean": 2.4551820036807364,
+   "q05": 2.1245787292134093,
+   "q95": 2.5962945134754003,
+   "draws": 100
+  },
+  {
+   "lineage": "Formosan",
+   "languages": 20,
+   "m": 5,
+   "k": "k_cal",
+   "mean": 1.3132654928218326,
+   "q05": 1.2801857496606446,
+   "q95": 1.3451295711226838,
+   "draws": 100
+  },
+  {
+   "lineage": "Formosan",
+   "languages": 20,
+   "m": 5,
+   "k": "k3",
+   "mean": 3.494443843136749,
+   "q05": 3.149854567707364,
+   "q95": 3.743159350601337,
+   "draws": 100
+  },
+  {
+   "lineage": "Formosan",
+   "languages": 20,
+   "m": 10,
+   "k": "k_cal",
+   "mean": 1.3785583069807463,
+   "q05": 1.3565040407090159,
+   "q95": 1.400331932133496,
+   "draws": 100
+  },
+  {
+   "lineage": "Formosan",
+   "languages": 20,
+   "m": 10,
+   "k": "k3",
+   "mean": 5.162024714488435,
+   "q05": 4.796499783191359,
+   "q95": 5.5311099920479,
+   "draws": 100
+  },
+  {
+   "lineage": "Formosan",
+   "languages": 20,
+   "m": 20,
+   "k": "k_cal",
+   "mean": 1.419274225981099,
+   "q05": 1.4099100905462258,
+   "q95": 1.4258575245036305,
+   "draws": 100
+  },
+  {
+   "lineage": "Formosan",
+   "languages": 20,
+   "m": 20,
+   "k": "k3",
+   "mean": 6.811465677048563,
+   "q05": 6.679590155674199,
+   "q95": 6.935175191609059,
+   "draws": 100
+  },
+  {
+   "lineage": "Polynesian",
+   "languages": 37,
+   "m": 3,
+   "k": "k_cal",
+   "mean": 1.1183910074031196,
+   "q05": 1.0754981084432342,
+   "q95": 1.16210509373186,
+   "draws": 100
+  },
+  {
+   "lineage": "Polynesian",
+   "languages": 37,
+   "m": 3,
+   "k": "k3",
+   "mean": 1.790081154215481,
+   "q05": 1.4919762814787285,
+   "q95": 2.0867277411734575,
+   "draws": 100
+  },
+  {
+   "lineage": "Polynesian",
+   "languages": 37,
+   "m": 5,
+   "k": "k_cal",
+   "mean": 1.1487826509198276,
+   "q05": 1.1132765332625811,
+   "q95": 1.1858599905786893,
+   "draws": 100
+  },
+  {
+   "lineage": "Polynesian",
+   "languages": 37,
+   "m": 5,
+   "k": "k3",
+   "mean": 2.1350379184389006,
+   "q05": 1.8322148975423778,
+   "q95": 2.491215578472373,
+   "draws": 100
+  },
+  {
+   "lineage": "Polynesian",
+   "languages": 37,
+   "m": 10,
+   "k": "k_cal",
+   "mean": 1.1877879636641495,
+   "q05": 1.1610392369803773,
+   "q95": 1.2177829279819283,
+   "draws": 100
+  },
+  {
+   "lineage": "Polynesian",
+   "languages": 37,
+   "m": 10,
+   "k": "k3",
+   "mean": 2.632000918934284,
+   "q05": 2.35228524432345,
+   "q95": 2.955671919787537,
+   "draws": 100
+  },
+  {
+   "lineage": "Polynesian",
+   "languages": 37,
+   "m": 20,
+   "k": "k_cal",
+   "mean": 1.2207901836205763,
+   "q05": 1.200756424105954,
+   "q95": 1.2361209208765387,
+   "draws": 100
+  },
+  {
+   "lineage": "Polynesian",
+   "languages": 37,
+   "m": 20,
+   "k": "k3",
+   "mean": 3.1404488046797483,
+   "q05": 2.904605819823727,
+   "q95": 3.375183305275796,
+   "draws": 100
+  },
+  {
+   "lineage": "Indo-European",
+   "languages": 306,
+   "m": 3,
+   "k": "k_cal",
+   "mean": 1.2657335690106992,
+   "q05": 1.2189640003792168,
+   "q95": 1.2997492232408818,
+   "draws": 100
+  },
+  {
+   "lineage": "Indo-European",
+   "languages": 306,
+   "m": 3,
+   "k": "k3",
+   "mean": 2.5222624019834448,
+   "q05": 2.1992018507200086,
+   "q95": 2.6599971130635662,
+   "draws": 100
+  },
+  {
+   "lineage": "Indo-European",
+   "languages": 306,
+   "m": 5,
+   "k": "k_cal",
+   "mean": 1.3398704048188466,
+   "q05": 1.2924069351892191,
+   "q95": 1.3713026817011895,
+   "draws": 100
+  },
+  {
+   "lineage": "Indo-European",
+   "languages": 306,
+   "m": 5,
+   "k": "k3",
+   "mean": 3.636122867868376,
+   "q05": 3.1490878297511666,
+   "q95": 3.8984952722928177,
+   "draws": 100
+  },
+  {
+   "lineage": "Indo-European",
+   "languages": 306,
+   "m": 10,
+   "k": "k_cal",
+   "mean": 1.4019187771272013,
+   "q05": 1.3778161767940222,
+   "q95": 1.4250768235487496,
+   "draws": 100
+  },
+  {
+   "lineage": "Indo-European",
+   "languages": 306,
+   "m": 10,
+   "k": "k3",
+   "mean": 5.429809086001611,
+   "q05": 4.936165086693648,
+   "q95": 5.840722662617142,
+   "draws": 100
+  },
+  {
+   "lineage": "Indo-European",
+   "languages": 306,
+   "m": 20,
+   "k": "k_cal",
+   "mean": 1.4400119276024816,
+   "q05": 1.4181397671277574,
+   "q95": 1.4551309384288944,
+   "draws": 100
+  },
+  {
+   "lineage": "Indo-European",
+   "languages": 306,
+   "m": 20,
+   "k": "k3",
+   "mean": 7.279811884441229,
+   "q05": 6.617161354016078,
+   "q95": 7.723969603856506,
+   "draws": 100
+  },
+  {
+   "lineage": "Indo-European",
+   "languages": 306,
+   "m": 40,
+   "k": "k_cal",
+   "mean": 1.4645692740945473,
+   "q05": 1.4508869085027873,
+   "q95": 1.4749975181071444,
+   "draws": 100
+  },
+  {
+   "lineage": "Indo-European",
+   "languages": 306,
+   "m": 40,
+   "k": "k3",
+   "mean": 8.876099339616164,
+   "q05": 8.410209659951578,
+   "q95": 9.257853006484583,
+   "draws": 100
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "languages": 138,
+   "m": 3,
+   "k": "k_cal",
+   "mean": 1.283057672383684,
+   "q05": 1.2491036435689684,
+   "q95": 1.3125208790389005,
+   "draws": 100
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "languages": 138,
+   "m": 3,
+   "k": "k3",
+   "mean": 2.5949954102615127,
+   "q05": 2.4956267347262804,
+   "q95": 2.6915022087956197,
+   "draws": 100
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "languages": 138,
+   "m": 5,
+   "k": "k_cal",
+   "mean": 1.3636291143754615,
+   "q05": 1.3337215372856803,
+   "q95": 1.3913117285075183,
+   "draws": 100
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "languages": 138,
+   "m": 5,
+   "k": "k3",
+   "mean": 3.8423936380117043,
+   "q05": 3.592387158107658,
+   "q95": 4.00918379394596,
+   "draws": 100
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "languages": 138,
+   "m": 10,
+   "k": "k_cal",
+   "mean": 1.4293516700234858,
+   "q05": 1.4073211202443,
+   "q95": 1.4514343633733844,
+   "draws": 100
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "languages": 138,
+   "m": 10,
+   "k": "k3",
+   "mean": 5.913930631358619,
+   "q05": 5.440482956462029,
+   "q95": 6.238532707901865,
+   "draws": 100
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "languages": 138,
+   "m": 20,
+   "k": "k_cal",
+   "mean": 1.471804813499684,
+   "q05": 1.4553755905877042,
+   "q95": 1.4865944103823494,
+   "draws": 100
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "languages": 138,
+   "m": 20,
+   "k": "k3",
+   "mean": 8.181387174671938,
+   "q05": 7.733476583183936,
+   "q95": 8.561560548037638,
+   "draws": 100
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "languages": 138,
+   "m": 40,
+   "k": "k_cal",
+   "mean": 1.4996442491041322,
+   "q05": 1.4910320692082424,
+   "q95": 1.5068353637482568,
+   "draws": 100
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "languages": 138,
+   "m": 40,
+   "k": "k3",
+   "mean": 10.279275765975877,
+   "q05": 9.93429061343844,
+   "q95": 10.622979286519017,
+   "draws": 100
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "languages": 1007,
+   "m": 3,
+   "k": "k_cal",
+   "mean": 1.2952341329159909,
+   "q05": 1.2509406299707464,
+   "q95": 1.3218279354611464,
+   "draws": 100
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "languages": 1007,
+   "m": 3,
+   "k": "k3",
+   "mean": 2.6356321393230906,
+   "q05": 2.4707913227785427,
+   "q95": 2.7137447981403855,
+   "draws": 100
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "languages": 1007,
+   "m": 5,
+   "k": "k_cal",
+   "mean": 1.3757544920130842,
+   "q05": 1.3462939174410689,
+   "q95": 1.3971889900010765,
+   "draws": 100
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "languages": 1007,
+   "m": 5,
+   "k": "k3",
+   "mean": 3.916047768610881,
+   "q05": 3.7369521698495,
+   "q95": 4.051676612568288,
+   "draws": 100
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "languages": 1007,
+   "m": 10,
+   "k": "k_cal",
+   "mean": 1.4485229676488272,
+   "q05": 1.4272846884739372,
+   "q95": 1.4668101975568997,
+   "draws": 100
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "languages": 1007,
+   "m": 10,
+   "k": "k3",
+   "mean": 6.1938196462522255,
+   "q05": 5.840316580720437,
+   "q95": 6.494594531850236,
+   "draws": 100
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "languages": 1007,
+   "m": 20,
+   "k": "k_cal",
+   "mean": 1.4894198909583571,
+   "q05": 1.4773778422389954,
+   "q95": 1.499196093781642,
+   "draws": 100
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "languages": 1007,
+   "m": 20,
+   "k": "k3",
+   "mean": 8.75808235112226,
+   "q05": 8.39456540481857,
+   "q95": 9.098151553337585,
+   "draws": 100
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "languages": 1007,
+   "m": 40,
+   "k": "k_cal",
+   "mean": 1.5146977642085941,
+   "q05": 1.5075054088458224,
+   "q95": 1.5203733279619076,
+   "draws": 100
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "languages": 1007,
+   "m": 40,
+   "k": "k3",
+   "mean": 11.089667802215414,
+   "q05": 10.734291780234928,
+   "q95": 11.409810483310984,
+   "draws": 100
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "languages": 273,
+   "m": 3,
+   "k": "k_cal",
+   "mean": 1.2792854892309062,
+   "q05": 1.245510061479057,
+   "q95": 1.3077861372596065,
+   "draws": 100
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "languages": 273,
+   "m": 3,
+   "k": "k3",
+   "mean": 2.5927551166128113,
+   "q05": 2.4861282793051767,
+   "q95": 2.6779303292828884,
+   "draws": 100
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "languages": 273,
+   "m": 5,
+   "k": "k_cal",
+   "mean": 1.351686322108819,
+   "q05": 1.3253283030034924,
+   "q95": 1.3819386767225845,
+   "draws": 100
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "languages": 273,
+   "m": 5,
+   "k": "k3",
+   "mean": 3.768177130983432,
+   "q05": 3.5233466016803536,
+   "q95": 3.9715385086165624,
+   "draws": 100
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "languages": 273,
+   "m": 10,
+   "k": "k_cal",
+   "mean": 1.4183044888239178,
+   "q05": 1.395415105322494,
+   "q95": 1.4344418352812196,
+   "draws": 100
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "languages": 273,
+   "m": 10,
+   "k": "k3",
+   "mean": 5.794696597945153,
+   "q05": 5.390685837541932,
+   "q95": 6.080904266995966,
+   "draws": 100
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "languages": 273,
+   "m": 20,
+   "k": "k_cal",
+   "mean": 1.455354601308983,
+   "q05": 1.4387788169124092,
+   "q95": 1.4684181559132736,
+   "draws": 100
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "languages": 273,
+   "m": 20,
+   "k": "k3",
+   "mean": 7.866630845440908,
+   "q05": 7.354146547733116,
+   "q95": 8.285602996242988,
+   "draws": 100
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "languages": 273,
+   "m": 40,
+   "k": "k_cal",
+   "mean": 1.4819848617303775,
+   "q05": 1.4721378131973222,
+   "q95": 1.491219387893743,
+   "draws": 100
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "languages": 273,
+   "m": 40,
+   "k": "k3",
+   "mean": 9.811446430961285,
+   "q05": 9.401178256021955,
+   "q95": 10.233417749625312,
+   "draws": 100
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "languages": 272,
+   "m": 3,
+   "k": "k_cal",
+   "mean": 1.2985200880678096,
+   "q05": 1.2686820682698436,
+   "q95": 1.3164614359911047,
+   "draws": 100
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "languages": 272,
+   "m": 3,
+   "k": "k3",
+   "mean": 2.647251925168595,
+   "q05": 2.53609273653915,
+   "q95": 2.7013169194751434,
+   "draws": 100
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "languages": 272,
+   "m": 5,
+   "k": "k_cal",
+   "mean": 1.3789396811325552,
+   "q05": 1.353533376534569,
+   "q95": 1.395015709946282,
+   "draws": 100
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "languages": 272,
+   "m": 5,
+   "k": "k3",
+   "mean": 3.922600774001274,
+   "q05": 3.710559189048352,
+   "q95": 4.0379374076910475,
+   "draws": 100
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "languages": 272,
+   "m": 10,
+   "k": "k_cal",
+   "mean": 1.4491110146968507,
+   "q05": 1.4343989802029569,
+   "q95": 1.464974726375116,
+   "draws": 100
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "languages": 272,
+   "m": 10,
+   "k": "k3",
+   "mean": 6.173634899561221,
+   "q05": 5.7474983020575,
+   "q95": 6.444275859167089,
+   "draws": 100
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "languages": 272,
+   "m": 20,
+   "k": "k_cal",
+   "mean": 1.4900975654831392,
+   "q05": 1.4784530983114643,
+   "q95": 1.4989284738950654,
+   "draws": 100
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "languages": 272,
+   "m": 20,
+   "k": "k3",
+   "mean": 8.750045159782214,
+   "q05": 8.444632464709292,
+   "q95": 9.063695837313302,
+   "draws": 100
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "languages": 272,
+   "m": 40,
+   "k": "k_cal",
+   "mean": 1.5127246167038209,
+   "q05": 1.5065940567535867,
+   "q95": 1.5184156199044523,
+   "draws": 100
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "languages": 272,
+   "m": 40,
+   "k": "k3",
+   "mean": 11.032300930335923,
+   "q05": 10.738211837882728,
+   "q95": 11.308975173660466,
+   "draws": 100
+  }
+ ],
+ "comparisons": [
+  {
+   "a": "Austronesian",
+   "b": "Indo-European",
+   "m": 3,
+   "k": "k_cal",
+   "p_a_greater": 0.5137,
+   "mean_diff": 0.0018688766691856706
+  },
+  {
+   "a": "Austronesian",
+   "b": "Indo-European",
+   "m": 3,
+   "k": "k3",
+   "p_a_greater": 0.5284,
+   "mean_diff": 0.02596855431529166
+  },
+  {
+   "a": "Austronesian",
+   "b": "Indo-European",
+   "m": 5,
+   "k": "k_cal",
+   "p_a_greater": 0.4755,
+   "mean_diff": -7.355438532674619e-05
+  },
+  {
+   "a": "Austronesian",
+   "b": "Indo-European",
+   "m": 5,
+   "k": "k3",
+   "p_a_greater": 0.5344,
+   "mean_diff": 0.05105784929713719
+  },
+  {
+   "a": "Austronesian",
+   "b": "Indo-European",
+   "m": 10,
+   "k": "k_cal",
+   "p_a_greater": 0.6222,
+   "mean_diff": 0.007326141451614587
+  },
+  {
+   "a": "Austronesian",
+   "b": "Indo-European",
+   "m": 10,
+   "k": "k3",
+   "p_a_greater": 0.7025,
+   "mean_diff": 0.20806437356092733
+  },
+  {
+   "a": "Austronesian",
+   "b": "Indo-European",
+   "m": 20,
+   "k": "k_cal",
+   "p_a_greater": 0.7621,
+   "mean_diff": 0.011475869406811778
+  },
+  {
+   "a": "Austronesian",
+   "b": "Indo-European",
+   "m": 20,
+   "k": "k3",
+   "p_a_greater": 0.7752,
+   "mean_diff": 0.35323795660714374
+  },
+  {
+   "a": "Austronesian",
+   "b": "Indo-European",
+   "m": 40,
+   "k": "k_cal",
+   "p_a_greater": 0.9442,
+   "mean_diff": 0.016160900518630505
+  },
+  {
+   "a": "Austronesian",
+   "b": "Indo-European",
+   "m": 40,
+   "k": "k3",
+   "p_a_greater": 0.9516,
+   "mean_diff": 0.6344098837745396
+  },
+  {
+   "a": "Oceanic",
+   "b": "Indo-European",
+   "m": 3,
+   "k": "k_cal",
+   "p_a_greater": 0.5892,
+   "mean_diff": 0.009004474202738644
+  },
+  {
+   "a": "Oceanic",
+   "b": "Indo-European",
+   "m": 3,
+   "k": "k3",
+   "p_a_greater": 0.606,
+   "mean_diff": 0.05405582828682087
+  },
+  {
+   "a": "Oceanic",
+   "b": "Indo-European",
+   "m": 5,
+   "k": "k_cal",
+   "p_a_greater": 0.6624,
+   "mean_diff": 0.012531438524396199
+  },
+  {
+   "a": "Oceanic",
+   "b": "Indo-European",
+   "m": 5,
+   "k": "k3",
+   "p_a_greater": 0.6926,
+   "mean_diff": 0.13544380265701417
+  },
+  {
+   "a": "Oceanic",
+   "b": "Indo-European",
+   "m": 10,
+   "k": "k_cal",
+   "p_a_greater": 0.8059,
+   "mean_diff": 0.017864870402849897
+  },
+  {
+   "a": "Oceanic",
+   "b": "Indo-European",
+   "m": 10,
+   "k": "k3",
+   "p_a_greater": 0.85,
+   "mean_diff": 0.3630054725687071
+  },
+  {
+   "a": "Oceanic",
+   "b": "Indo-European",
+   "m": 20,
+   "k": "k_cal",
+   "p_a_greater": 0.9259,
+   "mean_diff": 0.021906379405398635
+  },
+  {
+   "a": "Oceanic",
+   "b": "Indo-European",
+   "m": 20,
+   "k": "k3",
+   "p_a_greater": 0.9381,
+   "mean_diff": 0.6776953373462122
+  },
+  {
+   "a": "Oceanic",
+   "b": "Indo-European",
+   "m": 40,
+   "k": "k_cal",
+   "p_a_greater": 0.9984,
+   "mean_diff": 0.028621256323785538
+  },
+  {
+   "a": "Oceanic",
+   "b": "Indo-European",
+   "m": 40,
+   "k": "k3",
+   "p_a_greater": 0.9985,
+   "mean_diff": 1.1956999245600457
+  },
+  {
+   "a": "Formosan",
+   "b": "Indo-European",
+   "m": 3,
+   "k": "k_cal",
+   "p_a_greater": 0.2806,
+   "mean_diff": -0.02025227481829428
+  },
+  {
+   "a": "Formosan",
+   "b": "Indo-European",
+   "m": 3,
+   "k": "k3",
+   "p_a_greater": 0.324,
+   "mean_diff": -0.0670803983027084
+  },
+  {
+   "a": "Formosan",
+   "b": "Indo-European",
+   "m": 5,
+   "k": "k_cal",
+   "p_a_greater": 0.1855,
+   "mean_diff": -0.02660491199701398
+  },
+  {
+   "a": "Formosan",
+   "b": "Indo-European",
+   "m": 5,
+   "k": "k3",
+   "p_a_greater": 0.2679,
+   "mean_diff": -0.1416790247316273
+  },
+  {
+   "a": "Formosan",
+   "b": "Indo-European",
+   "m": 10,
+   "k": "k_cal",
+   "p_a_greater": 0.1307,
+   "mean_diff": -0.023360470146454926
+  },
+  {
+   "a": "Formosan",
+   "b": "Indo-European",
+   "m": 10,
+   "k": "k3",
+   "p_a_greater": 0.2179,
+   "mean_diff": -0.2677843715131756
+  },
+  {
+   "a": "Formosan",
+   "b": "Indo-European",
+   "m": 20,
+   "k": "k_cal",
+   "p_a_greater": 0.0681,
+   "mean_diff": -0.020737701621382554
+  },
+  {
+   "a": "Formosan",
+   "b": "Indo-European",
+   "m": 20,
+   "k": "k3",
+   "p_a_greater": 0.1267,
+   "mean_diff": -0.4683462073926661
+  },
+  {
+   "a": "Formosan",
+   "b": "Oceanic",
+   "m": 3,
+   "k": "k_cal",
+   "p_a_greater": 0.1875,
+   "mean_diff": -0.029256749021032924
+  },
+  {
+   "a": "Formosan",
+   "b": "Oceanic",
+   "m": 3,
+   "k": "k3",
+   "p_a_greater": 0.1891,
+   "mean_diff": -0.12113622658952927
+  },
+  {
+   "a": "Formosan",
+   "b": "Oceanic",
+   "m": 5,
+   "k": "k_cal",
+   "p_a_greater": 0.0832,
+   "mean_diff": -0.03913635052141018
+  },
+  {
+   "a": "Formosan",
+   "b": "Oceanic",
+   "m": 5,
+   "k": "k3",
+   "p_a_greater": 0.0987,
+   "mean_diff": -0.27712282738864147
+  },
+  {
+   "a": "Formosan",
+   "b": "Oceanic",
+   "m": 10,
+   "k": "k_cal",
+   "p_a_greater": 0.0238,
+   "mean_diff": -0.04122534054930482
+  },
+  {
+   "a": "Formosan",
+   "b": "Oceanic",
+   "m": 10,
+   "k": "k3",
+   "p_a_greater": 0.0251,
+   "mean_diff": -0.6307898440818827
+  },
+  {
+   "a": "Formosan",
+   "b": "Oceanic",
+   "m": 20,
+   "k": "k_cal",
+   "p_a_greater": 0.0,
+   "mean_diff": -0.04264408102678119
+  },
+  {
+   "a": "Formosan",
+   "b": "Oceanic",
+   "m": 20,
+   "k": "k3",
+   "p_a_greater": 0.0,
+   "mean_diff": -1.1460415447388783
+  },
+  {
+   "a": "Formosan",
+   "b": "Malayo-Polynesian",
+   "m": 3,
+   "k": "k_cal",
+   "p_a_greater": 0.2876,
+   "mean_diff": -0.01973915761681999
+  },
+  {
+   "a": "Formosan",
+   "b": "Malayo-Polynesian",
+   "m": 3,
+   "k": "k3",
+   "p_a_greater": 0.3038,
+   "mean_diff": -0.0829598364136297
+  },
+  {
+   "a": "Formosan",
+   "b": "Malayo-Polynesian",
+   "m": 5,
+   "k": "k_cal",
+   "p_a_greater": 0.184,
+   "mean_diff": -0.02664478119494884
+  },
+  {
+   "a": "Formosan",
+   "b": "Malayo-Polynesian",
+   "m": 5,
+   "k": "k3",
+   "p_a_greater": 0.1825,
+   "mean_diff": -0.199030609074335
+  },
+  {
+   "a": "Formosan",
+   "b": "Malayo-Polynesian",
+   "m": 10,
+   "k": "k_cal",
+   "p_a_greater": 0.1037,
+   "mean_diff": -0.02937186785524104
+  },
+  {
+   "a": "Formosan",
+   "b": "Malayo-Polynesian",
+   "m": 10,
+   "k": "k3",
+   "p_a_greater": 0.1065,
+   "mean_diff": -0.43866547434870284
+  },
+  {
+   "a": "Formosan",
+   "b": "Malayo-Polynesian",
+   "m": 20,
+   "k": "k_cal",
+   "p_a_greater": 0.0198,
+   "mean_diff": -0.031861987647804346
+  },
+  {
+   "a": "Formosan",
+   "b": "Malayo-Polynesian",
+   "m": 20,
+   "k": "k3",
+   "p_a_greater": 0.0055,
+   "mean_diff": -0.8367258635268087
+  },
+  {
+   "a": "Oceanic",
+   "b": "Malayo-Polynesian",
+   "m": 3,
+   "k": "k_cal",
+   "p_a_greater": 0.6294,
+   "mean_diff": 0.009517591404212933
+  },
+  {
+   "a": "Oceanic",
+   "b": "Malayo-Polynesian",
+   "m": 3,
+   "k": "k3",
+   "p_a_greater": 0.6402,
+   "mean_diff": 0.03817639017589958
+  },
+  {
+   "a": "Oceanic",
+   "b": "Malayo-Polynesian",
+   "m": 5,
+   "k": "k_cal",
+   "p_a_greater": 0.6667,
+   "mean_diff": 0.012491569326461338
+  },
+  {
+   "a": "Oceanic",
+   "b": "Malayo-Polynesian",
+   "m": 5,
+   "k": "k3",
+   "p_a_greater": 0.6647,
+   "mean_diff": 0.07809221831430646
+  },
+  {
+   "a": "Oceanic",
+   "b": "Malayo-Polynesian",
+   "m": 10,
+   "k": "k_cal",
+   "p_a_greater": 0.6999,
+   "mean_diff": 0.011853472694063782
+  },
+  {
+   "a": "Oceanic",
+   "b": "Malayo-Polynesian",
+   "m": 10,
+   "k": "k3",
+   "p_a_greater": 0.7052,
+   "mean_diff": 0.1921243697331798
+  },
+  {
+   "a": "Oceanic",
+   "b": "Malayo-Polynesian",
+   "m": 20,
+   "k": "k_cal",
+   "p_a_greater": 0.7386,
+   "mean_diff": 0.010782093378976843
+  },
+  {
+   "a": "Oceanic",
+   "b": "Malayo-Polynesian",
+   "m": 20,
+   "k": "k3",
+   "p_a_greater": 0.751,
+   "mean_diff": 0.30931568121206965
+  },
+  {
+   "a": "Oceanic",
+   "b": "Malayo-Polynesian",
+   "m": 40,
+   "k": "k_cal",
+   "p_a_greater": 0.8611,
+   "mean_diff": 0.012016492179356852
+  },
+  {
+   "a": "Oceanic",
+   "b": "Malayo-Polynesian",
+   "m": 40,
+   "k": "k3",
+   "p_a_greater": 0.8876,
+   "mean_diff": 0.5272208792685653
+  },
+  {
+   "a": "Pama-Nyungan",
+   "b": "Indo-European",
+   "m": 3,
+   "k": "k_cal",
+   "p_a_greater": 0.6909,
+   "mean_diff": 0.017324103372984734
+  },
+  {
+   "a": "Pama-Nyungan",
+   "b": "Indo-European",
+   "m": 3,
+   "k": "k3",
+   "p_a_greater": 0.6918,
+   "mean_diff": 0.07273300827806795
+  },
+  {
+   "a": "Pama-Nyungan",
+   "b": "Indo-European",
+   "m": 5,
+   "k": "k_cal",
+   "p_a_greater": 0.7865,
+   "mean_diff": 0.023758709556614965
+  },
+  {
+   "a": "Pama-Nyungan",
+   "b": "Indo-European",
+   "m": 5,
+   "k": "k3",
+   "p_a_greater": 0.7974,
+   "mean_diff": 0.20627077014332817
+  },
+  {
+   "a": "Pama-Nyungan",
+   "b": "Indo-European",
+   "m": 10,
+   "k": "k_cal",
+   "p_a_greater": 0.9092,
+   "mean_diff": 0.02743289289628459
+  },
+  {
+   "a": "Pama-Nyungan",
+   "b": "Indo-European",
+   "m": 10,
+   "k": "k3",
+   "p_a_greater": 0.9133,
+   "mean_diff": 0.48412154535700846
+  },
+  {
+   "a": "Pama-Nyungan",
+   "b": "Indo-European",
+   "m": 20,
+   "k": "k_cal",
+   "p_a_greater": 0.9903,
+   "mean_diff": 0.031792885897202305
+  },
+  {
+   "a": "Pama-Nyungan",
+   "b": "Indo-European",
+   "m": 20,
+   "k": "k3",
+   "p_a_greater": 0.9866,
+   "mean_diff": 0.901575290230709
+  },
+  {
+   "a": "Pama-Nyungan",
+   "b": "Indo-European",
+   "m": 40,
+   "k": "k_cal",
+   "p_a_greater": 1.0,
+   "mean_diff": 0.0350749750095849
+  },
+  {
+   "a": "Pama-Nyungan",
+   "b": "Indo-European",
+   "m": 40,
+   "k": "k3",
+   "p_a_greater": 0.9999,
+   "mean_diff": 1.4031764263597122
+  }
+ ]
+}

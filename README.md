@@ -98,15 +98,24 @@ South Arabian consist only of long-extinct lists and have nothing left. Wutun, t
 scenario: Mandarin goes 1.322 → 1.314 without it, and Sinitic and Sino-Tibetan do not move (0.000), so it is kept.
 Both versions are in `results/sensitivity.csv` and in the explorer's detail panel (a "Sensitivity" block).
 
-**Change, not time: Austronesian.** Austronesian (1.549, 1,446 doculects) outscores Indo-European (1.507, 517),
-though it is younger. Size is not the whole reason: in the earlier rarefaction, at equal numbers of distinct
-languages (3, 5, 10, 20, 40) Austronesian stayed above Indo-European (ad hoc analysis on the 80-doculect samples;
-a script and a rerun on whole pools are still to do). Composition and rate matter. Oceanic alone (about 3,500
-years; 659 doculects) scores 1.542, and its nest is monotone: Polynesian 1.249 ≤ Oceanic 1.542 ≤ Eastern
-Malayo-Polynesian 1.544 ≤ Malayo-Polynesian 1.547 ≤ Austronesian 1.549. Formosan, where Austronesian's deepest splits
-are, scores *lowest* (1.452; at 10 languages 1.376 vs Malayo-Polynesian 1.418 and Oceanic 1.438 in the earlier
-rarefaction): its languages kept more of the Proto-Austronesian basic vocabulary. D_max measures how much basic vocabulary has changed, so a young, fast lineage
-can outscore an old, slow one. It is a measure of lexical diversity, not of age.
+**Change, not time: Austronesian** (`scripts/rarefaction.py`: 100 draws of m distinct languages, one random doculect
+each, from each lineage's whole pool). Austronesian (1.549, 1,446 doculects) outscores Indo-European (1.507, 517),
+though it is younger, but part of that is size. At equal numbers of languages the two start level and separate:
+m = 3 and 5 are a coin flip (P(Austronesian > Indo-European) 0.51 and 0.48), then 0.62 at 10, 0.76 at 20 and 0.94 at
+40 (D_max 1.481 vs 1.465 at 40). So Austronesian is not simply ahead at every size, as the earlier ad hoc run on the
+80-doculect samples suggested; it pulls ahead as more languages are sampled. Composition and rate matter: Oceanic
+(about 3,500 years) is above Indo-European at every size (P 0.59 at 3, 0.81 at 10, 1.00 at 40; 1.493 vs 1.465 at 40)
+and above Malayo-Polynesian as a whole (P 0.63 to 0.86). Formosan, where Austronesian's deepest splits are, is
+*lowest* of the Austronesian groups and below Indo-European (m = 10: 1.379, against Malayo-Polynesian 1.408, Oceanic 1.420
+and Indo-European 1.402; P(Formosan > Oceanic) 0.02): its languages kept more of the Proto-Austronesian basic
+vocabulary. The nest is monotone on the whole pools: Polynesian 1.249 ≤ Oceanic 1.542 ≤ Eastern Malayo-Polynesian
+1.544 ≤ Malayo-Polynesian 1.547 ≤ Austronesian 1.549.
+
+Austronesian is not the most diverse family at equal size either. At 40 languages Atlantic-Congo (1.515) and Afro-Asiatic
+(1.513) are above Pama-Nyungan (1.500), Sino-Tibetan (1.482), Austronesian (1.481) and Indo-European (1.465), and the
+order repeats at k = 3 (11.1, 11.0, 10.3, 9.8, 9.5, 8.9). D_max measures how much basic vocabulary has changed, so a young,
+fast lineage can outscore an old, slow one. It is a measure of lexical diversity, not of age. The table is in
+`results/rarefaction.csv`.
 
 **Semitic.** Semitic 1.436; West Semitic 1.433; South Semitic 1.386 (higher than Central Semitic 1.346, with
 Ethiosemitic 1.343 the deepest part); Northwest Semitic 1.284, Arabic 1.272, Aramaic 1.229, Modern South Arabian
@@ -334,6 +343,7 @@ PYTHONPATH=scripts python scripts/audit.py          # → results/audit.{csv,jso
 PYTHONPATH=scripts python scripts/adversarial.py    # → results/adversarial.{csv,json}  (~4 min)
 PYTHONPATH=scripts python scripts/single_lists.py   # → results/single_lists.json
 PYTHONPATH=scripts python scripts/sensitivity.py    # → results/sensitivity.{csv,json}: D_max without long-extinct / contact doculects (~1 min)
+PYTHONPATH=scripts python scripts/rarefaction.py    # → results/rarefaction.{csv,json}: D_max at equal numbers of languages (~12 min)
 python scripts/build_explorer.py     # → results/explorer.html, results/relative.csv
 python scripts/pmi_eval.py           # → results/pmi_model.tsv, pmi_eval.json, pmi_eval_pairs.csv (--train geo|geo-no-dup to compare)
 ```
@@ -347,8 +357,6 @@ tuples of opaque segment tokens, so any script or segmentation works.
   (Koreanic ↔ Burushaski) needs a correction.
 - Use longer, expert-cognate-coded lists from Lexibank (Japonic, Koreanic, Ainu datasets) to get
   better resolution inside the isolate band.
-- Redo the Austronesian rarefaction (equal numbers of distinct languages) as a script on whole pools; the numbers
-  quoted above are from an ad hoc run on the 80-doculect samples.
 - Report the D_max(k) curve and the share of the unrelated maximum as the headline, not one D_max at k_cal. Both are
   in the explorer; the tables above still quote k_cal.
 - For a paper: compare with Holman et al. 2011 family ages, add a doculect-level bootstrap and a simulation on
