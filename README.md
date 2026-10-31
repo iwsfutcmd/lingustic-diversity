@@ -85,13 +85,18 @@ Yue 1.294, Gan 1.290, Hakka 1.283, Hui 1.267, Xiang 1.260, Jin 1.242 (Romance 1.
 and Sinitic as a whole 1.416 (482 doculects). Each group's dialect lists are about as lexically diverse as a whole Western European genus. This is not a
 short-word or transcription artifact: Sinitic words average 3.67 segments (Germanic 3.80), and the 33 same-language
 pairs inside Sinitic have median PMI-LDND 0.19, below the ASJP-wide 0.228. Wutun, heavily restructured by Tibetan and
-Mongolic contact, was Mandarin's top-weighted list in the earlier 79-doculect sample (1.282 → 1.262 without it; not
-yet redone on the 186-doculect pool, where Mandarin is 1.322).
+Mongolic contact, is in Mandarin's pool; without it Mandarin is 1.314 rather than 1.322 (see below).
 
-**Ancient lists** (measured on the earlier 80-doculect samples; not yet redone on whole pools). Leaving out long-extinct doculects lowers Sinitic 1.389 → 1.375 (Old Chinese −0.009, Middle Chinese
-−0.002) and Germanic 1.302 → 1.286 (eight lists incl. Proto-Germanic and Gothic), each about one concept-resampling
-interval; every other lineage moves by 0.004 or less. Old Chinese gets Sinitic's largest D_max weight because it is the
-most isolated point (nearest neighbour 0.59, Middle Chinese). Only lineages with a written past get this boost.
+**Ancient lists and contact** (`scripts/sensitivity.py`, whole pools; the main results keep every doculect). Leaving out the
+doculects ASJP flags `long_extinct` (286 of them, mostly lineages with a written past) lowers Germanic 1.302 → 1.286
+(8 lists incl. Proto-Germanic and Gothic), Sinitic 1.416 → 1.411 (Old and Middle Chinese), Semitic 1.436 → 1.430,
+Northwest Semitic 1.284 → 1.277, North Ethiopic 1.185 → 1.164 and Canaanite 1.180 → 1.047 (2 of its 4 lists). That is
+about one concept-resampling interval (0.02) for Germanic and less for the rest. Large families do not move:
+Indo-European stays 1.507 with 15 long-extinct lists removed, Afro-Asiatic 1.547 with 16. The effect is biggest where
+a lineage has few lists and the old ones are far from the rest. Sumerian, Elamite, Etruscan, East Semitic and Ancient
+South Arabian consist only of long-extinct lists and have nothing left. Wutun, the contact language, is the other
+scenario: Mandarin goes 1.322 → 1.314 without it, and Sinitic and Sino-Tibetan do not move (0.000), so it is kept.
+Both versions are in `results/sensitivity.csv` and in the explorer's detail panel (a "Sensitivity" block).
 
 **Change, not time: Austronesian.** Austronesian (1.549, 1,446 doculects) outscores Indo-European (1.507, 517),
 though it is younger. Size is not the whole reason: in the earlier rarefaction, at equal numbers of distinct
@@ -328,6 +333,7 @@ PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{
 PYTHONPATH=scripts python scripts/audit.py          # → results/audit.{csv,json}  (~3 min, reads data/cache/)
 PYTHONPATH=scripts python scripts/adversarial.py    # → results/adversarial.{csv,json}  (~4 min)
 PYTHONPATH=scripts python scripts/single_lists.py   # → results/single_lists.json
+PYTHONPATH=scripts python scripts/sensitivity.py    # → results/sensitivity.{csv,json}: D_max without long-extinct / contact doculects (~1 min)
 python scripts/build_explorer.py     # → results/explorer.html, results/relative.csv
 python scripts/pmi_eval.py           # → results/pmi_model.tsv, pmi_eval.json, pmi_eval_pairs.csv (--train geo|geo-no-dup to compare)
 ```
@@ -341,9 +347,8 @@ tuples of opaque segment tokens, so any script or segmentation works.
   (Koreanic ↔ Burushaski) needs a correction.
 - Use longer, expert-cognate-coded lists from Lexibank (Japonic, Koreanic, Ainu datasets) to get
   better resolution inside the isolate band.
-- Redo on whole pools the analyses still quoted from the 80-doculect samples: the Wutun effect on Mandarin, the
-  long-extinct doculects (Old Chinese, Proto-Germanic; add an option to exclude them and report both), and the
-  Austronesian rarefaction (save it as a script).
+- Redo the Austronesian rarefaction (equal numbers of distinct languages) as a script on whole pools; the numbers
+  quoted above are from an ad hoc run on the 80-doculect samples.
 - Report the D_max(k) curve and the share of the unrelated maximum as the headline, not one D_max at k_cal. Both are
   in the explorer; the tables above still quote k_cal.
 - For a paper: compare with Holman et al. 2011 family ages, add a doculect-level bootstrap and a simulation on

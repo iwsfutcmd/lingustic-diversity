@@ -177,6 +177,14 @@ def main() -> None:
             })
             profiles_all[name] = {"d_max": x["profile_d_max"], "uniform": x["profile_uniform"]}
 
+    sens_path = r / "sensitivity.json"
+    if sens_path.exists():                      # D_max without contested doculects (scripts/sensitivity.py)
+        by_name = {d["name"]: d for d in lineages}
+        for row in json.loads(sens_path.read_text(encoding="utf-8"))["rows"]:
+            if row["lineage"] in by_name:
+                by_name[row["lineage"]].setdefault("sens", []).append({
+                    k: row[k] for k in ("scenario", "n_removed", "d_max_without", "delta", "d_max_k3_without")})
+
     if adv_path.exists() and "ks" in adv:
         add_relative(lineages, profiles_all, adv, r / "relative.csv")
 

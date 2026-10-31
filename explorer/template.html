@@ -291,6 +291,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
   const tipHide = () => { tip.style.display = "none"; };
 
   /* ---------- Diversity view ---------- */
+  const SENS = { long_extinct: "Without long-extinct doculects", contact: "Without contact-restructured doculects" };
   let selected = "Japonic";
   function drawDiversity() {
     const host = $("divchart"), W = Math.max(300, host.clientWidth || 600);
@@ -350,6 +351,7 @@ dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; text-align: end; font: 5
         <dt>Spread (LDND units)</dt><dd>${fmt(d.spread)}</dd>
         <dt>Spread at 3 Glottocodes</dt><dd>${fmt(d.rare3)}</dd>
       </dl>
+      ${(d.sens || []).length ? `<h3>Sensitivity</h3><dl class="kv">${d.sens.map(x => `<dt>${SENS[x.scenario] || esc(x.scenario)} (${x.n_removed} removed)</dt><dd>${x.d_max_without == null ? "none left" : fmt(x.d_max_without) + " (" + (x.delta > 0 ? "+" : "") + fmt(x.delta) + ")"}</dd>`).join("")}</dl>` : ""}
       <h3>Sample</h3>
       <dl class="kv">
         <dt>Doculects</dt><dd>${d.n}</dd><dt>Glottocodes</dt><dd>${d.glotto ?? "–"}</dd>
