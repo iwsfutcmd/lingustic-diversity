@@ -88,3 +88,12 @@ def test_drop_nan_keeps_a_long_list_whose_clashes_are_with_short_lists():
     ids = {x.id for x in kept}
     assert "LONG" in ids and not np.isnan(rest).any()
     assert len(ids & {"S1", "S2"}) <= 1
+
+
+def test_drop_nan_never_empties_a_lineage():
+    """Two short lists that cannot be compared (Ancient South Arabian): the longer one stays."""
+    docs = [Doculect("A", "A", "g", "F", "W", {f"c{i}": (("a",),) for i in range(19)}),
+            Doculect("B", "B", "g", "F", "W", {f"c{i}": (("a",),) for i in range(18)})]
+    d = np.array([[0, np.nan], [np.nan, 0]])
+    kept, rest = drop_nan(docs, d)
+    assert [x.id for x in kept] == ["A"] and rest.shape == (1, 1)

@@ -1,7 +1,8 @@
 """Rank doculects by how much they move their lineage's score, to shortlist lists worth reviewing.
 
 Reads results/samples.json, summary.json and the distance cache data/cache/ (so run run_analysis.py first), and flags a doculect when
-it is far from the rest of its lineage, thinly covered, or removing it changes D_max noticeably.
+it is far from the rest of its lineage, thinly covered, removing it changes D_max noticeably, or (from
+results/contact.json, written by widest.py) it is closer to a list of another family than to any list of its own.
 Nothing is excluded automatically: review a flagged list, then add its ID and reason to
 config/exclusions.tsv and rerun the analysis.
 
@@ -51,6 +52,9 @@ def main() -> None:
     docs = load(args.cldf, keep=lambda r: any(p(r) for p in LINEAGES.values()))
     langs = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
 
+    contact_path = args.out / "contact.json"
+    contact = {c["id"]: c for c in json.loads(contact_path.read_text(encoding="utf-8"))["checked"] if c["flagged"]} \
+        if contact_path.exists() else {}
     cache = DistCache.load(CACHE_DIR / f'dist_{distance}_{summary.get("tokenization", "asjp")}.npy', metric, list(docs))
     rows = []
     for lineage in LINEAGES:
@@ -68,7 +72,7 @@ def main() -> None:
             rest = np.delete(mean, i)
             zs = (mean[i] - rest.mean()) / (rest.std() or 1.0)
             n_conc = sum(c in concepts for c in docs[doc_id].words) if doc_id in docs else 0
-            flagged = zs >= Z_FLAG or n_conc < MIN_CONCEPTS or full.weights[i] >= 0.05
+            flagged = zs >= Z_FLAG or n_conc < MIN_CONCEPTS or full.weights[i] >= 0.05 or doc_id in contact
             loo = None
             if flagged and full.weights[i] <= 1e-9:
                 loo = 0.0                 # a doculect with no weight in the optimum can be removed without changing it
@@ -81,7 +85,9 @@ def main() -> None:
                 "lineage": lineage, "id": doc_id, "language": langs[doc_id]["Glottolog_Name"],
                 "n_concepts": n_conc, "mean_ldnd": float(mean[i]), "z": float(zs),
                 "weight": float(full.weights[i]), "loo_delta_dmax": loo,
-                "review": bool(loo is not None and loo >= LOO_FLAG) or n_conc < MIN_CONCEPTS,
+                "review": bool(loo is not None and loo >= LOO_FLAG) or n_conc < MIN_CONCEPTS or doc_id in contact,
+                "contact": {k: contact[doc_id][k] for k in ("nearest_in", "nearest_in_id", "nearest_out", "nearest_out_id",
+                                                            "nearest_out_family")} if doc_id in contact else None,
             })
         print(f"{lineage:26s} n={n:3d} D_max={full.value:.3f}", flush=True)
 
@@ -92,14 +98,18 @@ def main() -> None:
     args.out.mkdir(parents=True, exist_ok=True)
     with (args.out / "audit.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh)
-        w.writerow(["lineage", "id", "language", "n_concepts", "mean_ldnd", "z", "weight", "loo_delta_dmax", "review"])
+        w.writerow(["lineage", "id", "language", "n_concepts", "mean_ldnd", "z", "weight", "loo_delta_dmax", "review",
+                    "closer_to_other_family"])
         for r in rows:
             if r["loo_delta_dmax"] is not None or r["review"]:
                 w.writerow([r["lineage"], r["id"], r["language"], r["n_concepts"], f'{r["mean_ldnd"]:.3f}',
                             f'{r["z"]:.2f}', f'{r["weight"]:.3f}',
-                            "" if r["loo_delta_dmax"] is None else f'{r["loo_delta_dmax"]:.3f}', r["review"]])
+                            "" if r["loo_delta_dmax"] is None else f'{r["loo_delta_dmax"]:.3f}', r["review"],
+                            "" if not r["contact"] else f'{r["contact"]["nearest_out_id"]} ({r["contact"]["nearest_out_family"]}) '
+                            f'{r["contact"]["nearest_out"]:.3f} < {r["contact"]["nearest_in"]:.3f}'])
     (args.out / "audit.json").write_text(json.dumps({
-        "thresholds": {"z": Z_FLAG, "loo_delta_dmax": LOO_FLAG, "min_concepts": MIN_CONCEPTS},
+        "thresholds": {"z": Z_FLAG, "loo_delta_dmax": LOO_FLAG, "min_concepts": MIN_CONCEPTS,
+                   "contact": "nearest list of another family closer than the nearest list of its own (widest.py)"},
         "excluded": exclusions,
         "flagged": [r for r in rows if r["review"]],
     }, ensure_ascii=False, indent=2), encoding="utf-8")

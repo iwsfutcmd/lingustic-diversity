@@ -178,6 +178,14 @@ def main() -> None:
             })
             profiles_all[name] = {"d_max": x["profile_d_max"], "uniform": x["profile_uniform"]}
 
+    wide_path = r / "widest.json"
+    if wide_path.exists():                      # robust widest pair on the distance scale (scripts/widest.py)
+        by_name = {d["name"]: d for d in lineages}
+        for w in json.loads(wide_path.read_text(encoding="utf-8"))["lineages"]:
+            if w["lineage"] in by_name and w["widest"] is not None:
+                by_name[w["lineage"]].update({"widest": w["widest"], "widest_pair": w["pair"], "raw_widest": w["raw_widest"],
+                                              "raw_pair": w["raw_pair"], "wide_flagged": w["flagged"]})
+
     sens_path = r / "sensitivity.json"
     if sens_path.exists():                      # D_max without contested doculects (scripts/sensitivity.py)
         by_name = {d["name"]: d for d in lineages}
@@ -202,8 +210,8 @@ def main() -> None:
         "unrelated": {"mean": float(np.mean(unrel)), "min": float(np.min(unrel)), "max": float(np.max(unrel))},
         "audit": {
             "excluded_by_lineage": excluded_by_lineage(load_exclusions(EXCLUSIONS_FILE), r),
-            "flagged": [{k: clean(f[k]) for k in ("lineage", "id", "mean_ldnd", "n_concepts", "loo_delta_dmax")}
-                        for f in audit["flagged"]],
+            "flagged": [{**{k: clean(f[k]) for k in ("lineage", "id", "mean_ldnd", "n_concepts", "loo_delta_dmax")},
+                         "contact": f.get("contact")} for f in audit["flagged"]],
         },
         "ks": profiles["ks"], "profiles": profiles_all,
     }

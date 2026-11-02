@@ -224,6 +224,8 @@ def drop_nan(docs: list[Doculect], d: np.ndarray, protect: frozenset[str] = froz
     prot = np.array([x.id in protect for x in docs])
     nan = np.isnan(d)
     keep = ~((lens < min_shared) & ~prot & nan.any(axis=1))
+    if len(docs) and not keep.any():
+        keep[int(np.argmax(lens))] = True                           # a lineage keeps at least its longest list
     while nan[np.ix_(keep, keep)].any():
         idx = np.flatnonzero(keep)
         cnt = nan[np.ix_(idx, idx)].sum(axis=1)

@@ -39,6 +39,7 @@ body { background: var(--bg); color: var(--ink); font: 14px/1.5 var(--font-body)
 .wrap { max-inline-size: 1180px; margin-inline: auto; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
 header.top { padding-block: 22px 14px; }
 h1 { font: 700 28px/1.15 var(--font-display); margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+dl.kv dd.pairnote { grid-column: 1 / -1; font: 12px var(--font-body); color: var(--muted); text-align: end; margin-block-start: -4px; }
 .sitelinks { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
 .sitelinks a { color: var(--accent); }
 .lede { margin: 6px 0 0; color: var(--muted); max-inline-size: 70ch; }
@@ -158,13 +159,13 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
       <div class="panel">
         <h2>Maximum diversity per lineage</h2>
         <div class="controls">
-          <label>Show <select id="dmode"><option value="d_max">D_max</option><option value="rel">Share of the unrelated maximum</option></select></label>
+          <label>Show <select id="dmode"><option value="d_max">D_max</option><option value="rel">Share of the unrelated maximum</option><option value="wide">Widest pair (distance)</option></select></label>
           <label>Sort <select id="sort">
             <option value="d_max">Maximum diversity</option><option value="spread">Spread (LDND)</option>
             <option value="n">Doculects</option><option value="name">Name</option></select></label>
         </div>
         <div class="chart" id="divchart"></div>
-        <p class="muted" style="margin:8px 0 0">Dot: D_max at the calibrated scale. Line: how far the score moves when 10 of the 40 concepts are left out (5–95% of 30 resamples), centred on the dot; it does not include the effect of which doculects were sampled. 1.0 means one lineage; lineages with 2 doculects are lower bounds. <b>Share of the unrelated maximum</b> rescales each lineage against a set of the same size whose members are all from different families: (D_max − 1) / (D_unrelated − 1). 0 is one lineage and 1 is as diverse as unrelated lects can be, which no real family reaches because its members are related. It removes the effect of sample size, so large and small lineages compare fairly. Deep families sit close to 1 at this scale and separate better in <i>Scale profiles</i>.</p>
+        <p class="muted" style="margin:8px 0 0">Dot: D_max at the calibrated scale. Line: how far the score moves when 10 of the 40 concepts are left out (5–95% of 30 resamples), centred on the dot; it does not include the effect of which doculects were sampled. 1.0 means one lineage; lineages with 2 doculects are lower bounds. <b>Share of the unrelated maximum</b> rescales each lineage against a set of the same size whose members are all from different families: (D_max − 1) / (D_unrelated − 1). 0 is one lineage and 1 is as diverse as unrelated lects can be, which no real family reaches because its members are related. It removes the effect of sample size, so large and small lineages compare fairly. Deep families sit close to 1 at this scale and separate better in <i>Scale profiles</i>. <b>Widest pair</b> is on the distance scale instead: the largest distance between two lists of the lineage, with each list replaced by its near-identical relatives so that one noisy pair cannot set it, and lists that are closer to another family than to their own left out. It uses no subgrouping. It means the most divergent pair, not the earliest split: an old list such as Hittite or Akkadian has had less time to change than two modern lists, and above about 0.95 every deep family reaches the unrelated level.</p>
       </div>
       <aside class="panel" id="detail" aria-live="polite"></aside>
     </div>
@@ -218,6 +219,7 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
         <li>D_max is stable against duplicates, not against sampling more distinct varieties. Lineages with few doculects are lower bounds.</li>
         <li>Contact shortens distances. The 40-item list resists borrowing but is not immune.</li>
         <li>Doculects listed in <code>config/exclusions.tsv</code> are left out of every number here, each with its reason. <code>scripts/audit.py</code> flags candidates (far from the rest of the lineage, fewer than 30 of 40 concepts, or removing it lowers D_max by 0.015 or more) but never excludes automatically. A deep branch such as Chuvash is flagged and kept; a list distorted by contact or a transcription problem is excluded.</li>
+        <li>Widest pair. The largest single distance in a big lineage is mostly the noise tail: with thousands of pairs of 40-item lists, two ordinary lists land above the unrelated level by chance. Each list is therefore represented by itself and up to four nearest lists inside the same-language noise band, pairs are compared by the median over these neighbourhoods, and the widest such pair is reported. A list with no close relative counts in full (an old branch with one list), unless the nearest list of another family is closer than the nearest of its own: that flags contact or a mixed or mislabelled list (Aynu, Mogogodo). Only lineage membership is used, no internal classification. <code>scripts/widest.py</code>.</li>
         <li>Doculects: every ASJP doculect of a lineage is used (up to 2,000 for Atlantic-Congo), after dropping those with too little overlap with the others. A lineage that contains others (Oceanic inside Austronesian) therefore contains all of their doculects, and since D_max cannot fall when doculects are added, a family never scores below one of its subfamilies. Earlier versions capped each lineage at 80 doculects separately, and Oceanic could outscore Austronesian. The concept resampling uses at most 40 doculects, so its range is shown as a width around the estimate, and between-lineage comparisons use 25.</li>
         <li>Size and scale. At k_cal an unrelated pair is still about 0.64 similar, so D_max cannot exceed about 1.56 however many unrelated lects are added, and the deepest families end up within a few hundredths of it. Related lects are closer than unrelated ones, so a real family scores below an unrelated assortment of the same size. The share-of-unrelated-maximum view divides by that assortment's score for the lineage's own number of doculects (measured up to 80 lects, extended beyond that with n / (1 + (n − 1)·z̄)). The deepest families stay between 0.9 and 1 on it, so <i>Scale profiles</i> shows the whole curve, where larger k separates deep families from unrelated ones.</li>
       </ul>
@@ -338,14 +340,15 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
   function drawDiversity() {
     const host = $("divchart"), W = Math.max(300, host.clientWidth || 600);
     const sort = $("sort").value;
-    let rows = L.filter(visible);
+    let rows = L.filter(visible).filter(d => $("dmode").value !== "wide" || d.widest != null);
     if (rows.length && !rows.some(d => d.name === selected)) selected = rows[0].name;
-    const rel = $("dmode").value === "rel" && L.every(d => d.rel != null);
-    const val = d => rel ? d.rel : d.d_max, vlo = d => rel ? d.rel_lo : d.lo, vhi = d => rel ? d.rel_hi : d.hi;
+    const mode = $("dmode").value, rel = mode === "rel" && L.every(d => d.rel != null), wide = mode === "wide";
+    const val = d => wide ? d.widest : rel ? d.rel : d.d_max;
+    const vlo = d => wide ? null : rel ? d.rel_lo : d.lo, vhi = d => wide ? null : rel ? d.rel_hi : d.hi;
     const key = { d_max: d => -val(d), spread: d => -d.spread, n: d => -d.n, name: d => d.name };
     rows.sort((a, b) => sort === "name" ? a.name.localeCompare(b.name) : key[sort](a) - key[sort](b));
     const narrow = W < 480, labW = narrow ? 118 : 178, rowH = 22, top = 8, axisH = 24, right = 14;
-    const lo = rel ? 0 : 1.0, hi = rel ? Math.max(1.0, ...rows.map(d => vhi(d) || val(d))) + 0.02
+    const lo = rel || wide ? 0 : 1.0, hi = wide ? Math.max(1.0, ...rows.map(val)) + 0.02 : rel ? Math.max(1.0, ...rows.map(d => vhi(d) || val(d))) + 0.02
       : Math.max(1.42, ...rows.map(d => d.hi || d.d_max)) + 0.01;
     const x = v => labW + (v - lo) / (hi - lo) * (W - labW - right);
     const H = top + rows.length * rowH + axisH;
@@ -356,7 +359,7 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
     }
     rows.forEach((d, i) => {
       const y = top + i * rowH + rowH / 2;
-      s += `<g class="row" tabindex="0" role="button" data-name="${esc(d.name)}" aria-pressed="${d.name === selected}" aria-label="${esc(d.name)}, ${rel ? "share of unrelated maximum" : "D_max"} ${fmt(val(d))}">
+      s += `<g class="row" tabindex="0" role="button" data-name="${esc(d.name)}" aria-pressed="${d.name === selected}" aria-label="${esc(d.name)}, ${wide ? "widest pair" : rel ? "share of unrelated maximum" : "D_max"} ${fmt(val(d))}">
         <rect class="hit" x="0" y="${y - rowH / 2}" width="${W}" height="${rowH}"/>
         <text class="lab" x="${labW - 8}" y="${y + 4}" text-anchor="end" dir="auto">${esc(d.name.length > (narrow ? 17 : 27) ? d.name.slice(0, narrow ? 16 : 26) + "…" : d.name)}</text>`;
       if (vlo(d) != null) s += `<line x1="${x(vlo(d))}" x2="${x(vhi(d))}" y1="${y}" y2="${y}" stroke="${catColor(d.cat)}" stroke-width="2" stroke-linecap="round" opacity=".55"/>`;
@@ -375,7 +378,7 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
     if (!ex.length && !fl.length) return "";
     return `<h3>Data review</h3>` +
       ex.map(e => `<p style="margin:0 0 6px"><b dir="auto">${esc(e.id)}</b> <span class="muted">excluded</span><br><span class="muted">${esc(e.reason)}</span></p>`).join("") +
-      fl.map(f => `<p style="margin:0 0 6px"><b dir="auto">${esc(f.id)}</b> <span class="muted">flagged: mean LDND ${fmt(f.mean_ldnd, 2)}, ${f.n_concepts}/40 concepts, removing it lowers D_max by ${fmt(f.loo_delta_dmax)}</span></p>`).join("");
+      fl.map(f => `<p style="margin:0 0 6px"><b dir="auto">${esc(f.id)}</b> <span class="muted">${f.contact ? `closer to ${esc(f.contact.nearest_out_id)} (${esc(f.contact.nearest_out_family)}, ${fmt(f.contact.nearest_out)}) than to any list of its own family (${fmt(f.contact.nearest_in)}); ` : ""}flagged: mean LDND ${fmt(f.mean_ldnd, 2)}, ${f.n_concepts}/40 concepts, removing it lowers D_max by ${fmt(f.loo_delta_dmax)}</span></p>`).join("");
   }
   function drawDetail() {
     const d = byName.get(selected); if (!d) return;
@@ -386,6 +389,7 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
       <h3>Diversity</h3>
       <dl class="kv">
         <dt>D_max at k_cal</dt><dd>${fmt(d.d_max)}</dd>
+        ${d.widest != null ? `<dt>Widest pair (robust)</dt><dd>${fmt(d.widest)}</dd><dd class="pairnote" dir="auto">${esc(d.widest_pair.join(" ↔ "))}</dd><dt>Largest single pair</dt><dd>${fmt(d.raw_widest)}</dd>` : ""}
         ${d.rel != null ? `<dt>Share of the unrelated maximum</dt><dd>${fmt(d.rel)}</dd><dt>D_max of ${d.n} unrelated lects</dt><dd>${fmt(d.d_rand)}</dd>` : ""}
         ${d.lo != null ? `<dt>${esc(d.range_label || "Concept-resample range")}</dt><dd>${fmt(d.lo)}–${fmt(d.hi)}</dd>` : ""}
         ${d.d_max_k3 != null ? `<dt>D_max at k = 3</dt><dd>${fmt(d.d_max_k3, 2)}</dd>` : ""}

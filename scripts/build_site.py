@@ -168,12 +168,12 @@ footer { border-block-start: 1px solid var(--rule); padding-block: 22px 40px; co
   <section aria-labelledby="glance-h">
     <h2 id="glance-h">Results at a glance</h2>
     <div class="scroll"><table>
-      <thead><tr><th>Lineage</th><th class="n">Doculects</th><th class="n">D<sub>max</sub></th><th class="n">Share of unrelated maximum</th><th class="n">D<sub>max</sub> at k = 3</th></tr></thead>
+      <thead><tr><th>Lineage</th><th class="n">Doculects</th><th class="n">D<sub>max</sub></th><th class="n">Share of unrelated maximum</th><th class="n">D<sub>max</sub> at k = 3</th><th class="n">Widest pair</th></tr></thead>
       <tbody>
 __ROWS__
       </tbody>
     </table></div>
-    <p class="note" style="margin-block-start:10px">Sorted by D<sub>max</sub>, which is at the calibrated scale and uses every ASJP doculect of the lineage. The share of the unrelated maximum compares a lineage with a set of the same size whose members all come from different families (0 is one lineage, 1 is as diverse as unrelated lects can be). Lineages with two or three doculects are lower bounds. All __NLIN__ entries are in the <a href="explorer.html">explorer</a>.</p>
+    <p class="note" style="margin-block-start:10px">Sorted by D<sub>max</sub>, which is at the calibrated scale and uses every ASJP doculect of the lineage. The share of the unrelated maximum compares a lineage with a set of the same size whose members all come from different families (0 is one lineage, 1 is as diverse as unrelated lects can be). Lineages with two or three doculects are lower bounds. The widest pair is on the distance scale (0 identical, about 0.97 unrelated): the most divergent pair of lists, with noise and lists closer to another family than to their own taken out, and no subgrouping used. All __NLIN__ entries are in the <a href="explorer.html">explorer</a>.</p>
   </section>
 
   <section aria-labelledby="find-h">
@@ -213,14 +213,19 @@ def landing(results: Path, data: dict) -> str:
     summary = json.loads((results / "summary.json").read_text(encoding="utf-8"))
     lin = {l["lineage"]: l for l in summary["lineages"]}
     rel = {r["lineage"]: r for r in csv.DictReader((results / "relative.csv").open(encoding="utf-8"))}
+    wide_path = results / "widest.json"
+    wide = {w["lineage"]: w for w in json.loads(wide_path.read_text(encoding="utf-8"))["lineages"]} if wide_path.exists() else {}
     rows = []
     for name in sorted(GLANCE, key=lambda n: lin[n]["d_max_kcal"]):
         l, r = lin[name], rel.get(name)
         share = float(r["relative"]) if r else None
         bar = f'<span class="bar" style="inline-size:{share * 64:.0f}px"></span>' if share is not None else ""
+        w = wide.get(name, {}).get("widest")
+        wtxt = "" if w is None else f"{w:.3f}"
         rows.append(f'        <tr><td dir="auto">{html.escape(name)}</td><td class="n">{l["n_doculects"]}</td>'
                     f'<td class="n">{l["d_max_kcal"]:.3f}</td><td class="n">{"" if share is None else f"{share:.2f}"}{bar}</td>'
-                    f'<td class="n">{l.get("d_max_k3", float("nan")):.1f}</td></tr>')
+                    f'<td class="n">{l.get("d_max_k3", float("nan")):.1f}</td>'
+                    f'<td class="n">{wtxt}</td></tr>')
     files = []
     for name, what in DOWNLOADS:
         if (results / name).exists():
