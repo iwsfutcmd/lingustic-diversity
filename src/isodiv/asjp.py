@@ -59,6 +59,23 @@ def _read_csv(path: Path) -> Iterable[dict[str, str]]:
         yield from csv.DictReader(fh)
 
 
+SUPPLEMENTS = Path(__file__).resolve().parent.parent.parent / "config" / "supplements.tsv"
+
+
+def load_supplements(path: Path | None = SUPPLEMENTS) -> dict[str, dict[str, list[str]]]:
+    """{doculect ID: {concept ID: [ASJPcode forms]}} from config/supplements.tsv (``#`` lines ignored).
+
+    Set the environment variable ISODIV_NO_SUPPLEMENTS=1 (or pass path=None) to use ASJP as it is."""
+    import os
+    if path is None or os.environ.get("ISODIV_NO_SUPPLEMENTS") or not Path(path).exists():
+        return {}
+    out: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
+    with Path(path).open(encoding="utf-8", newline="") as fh:
+        for r in csv.DictReader((ln for ln in fh if not ln.startswith("#")), delimiter="\t"):
+            out[r["doculect"].strip()][r["concept"].strip()].append(r["asjpcode"].strip())
+    return out
+
+
 def load_exclusions(path: Path | None) -> dict[str, str]:
     """{doculect ID: reason} from a TSV with columns ``id`` and ``reason`` (``#`` lines ignored)."""
     if path is None or not Path(path).exists():
@@ -84,8 +101,12 @@ def load(
     drop_loans: bool = True,
     exclude: Iterable[str] = (),
     mask: Mapping[str, Iterable[str]] | None = None,
+    supplements: Path | None = SUPPLEMENTS,
 ) -> dict[str, Doculect]:
-    """Return {doculect ID: Doculect} for languages where ``keep(row)`` is true."""
+    """Return {doculect ID: Doculect} for languages where ``keep(row)`` is true.
+
+    ``supplements`` (config/supplements.tsv) fills concepts a list lacks, never replacing an ASJP form; it holds
+    ASJPcode, so it applies to the "asjp" tokenization only."""
     cldf_dir = Path(cldf_dir)
     concepts = core_concepts(cldf_dir) if concepts is None else concepts
     langs = {r["ID"]: r for r in _read_csv(cldf_dir / "languages.csv") if keep(r) and r["ID"] not in set(exclude)}
@@ -101,6 +122,15 @@ def load(
         tok = tokenize(r, tokenization)
         if tok:
             words[r["Language_ID"]][r["Parameter_ID"]].append(tok)
+    if tokenization == "asjp":
+        for lid, by_concept in load_supplements(supplements).items():
+            if lid in langs:
+                for c, codes in by_concept.items():
+                    if c in concepts and not words[lid].get(c):
+                        for code in codes:
+                            tok = tokenize({"Form": code}, "asjp")
+                            if tok:
+                                words[lid][c].append(tok)
 
     return {
         lid: Doculect(

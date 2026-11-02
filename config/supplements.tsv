@@ -1,0 +1,10 @@
+# Concepts added to ASJP word lists that lack them. Never replaces an ASJP form. Off with --no-supplements.
+# ASJPcode follows the doculect's own ASJP conventions (Hittite: h for ḫ, s for š, w for u̯, length unmarked).
+# HITTITE "sun" is left out: IE-CoR gives ištanu-, the Sun-god's name from Hattic, normally written dUTU.
+doculect	concept	asjpcode	source_form	source	note
+HITTITE	21	kuwan	kuu̯an- / kun-	IE-CoR (Heggarty et al. 2023), form 80-31-1	Indirectly attested in the form of (LÚ)kuu̯an- 'hound-man'. We have included *kuu̯an- / kun- as the best currently-known potential candidate based on parallel vocabulary (cf. Melchert 1989, EDHIL s.v.), while at the same time we acknowledge that due to the fragmentary attestation of Hittite a more suitable target lexeme may also have existed.
+HITTITE	41	titita	titita-	IE-CoR (Heggarty et al. 2023), form 80-112-1	Native script form ti-it-ti-te-et is abl.-instr., cf. Tischler TEG T p.393.
+HITTITE	43	kaka	kaka-	IE-CoR (Heggarty et al. 2023), form 80-180-1	Cf. HW² K 8-12 s.v. gaga-, UZU qaqa- 'Zahn' for attestations and discussion.
+HITTITE	53	lesi	leši- / lišši-	IE-CoR (Heggarty et al. 2023), form 80-96-1	Cf. CHD L-N 72 for attestations and discussion.
+HITTITE	77	peru	peru- / perun-	IE-CoR (Heggarty et al. 2023), form 80-161-1	nom.-acc.sg.n. pé-e-ru; nom.sg.c. pé-e-ru-na-aš. Cf. CHD P 314-315 for attestations. We have included this term as the best currently-known potential candidate, while acknowledging that due to the fragmentary attestation of Hittite a more suitable target lexeme may have existed, but is unattested.
+HITTITE	95	suu	šūu- / šūuau̯-	IE-CoR (Heggarty et al. 2023), form 80-62-1	Cf. CHD P 657-660 s.v. šūu-, šū- 'full' for attestations and discussion.

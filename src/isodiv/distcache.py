@@ -8,6 +8,7 @@ is stored as NaN (computed, undefined); a pair not yet computed is stored as -1.
 
 from __future__ import annotations
 
+import hashlib
 import json
 from collections.abc import Sequence
 from pathlib import Path
@@ -28,10 +29,22 @@ class DistCache:
         n = len(self.ids)
         self.d = np.full((n, n), UNSET, dtype=np.float32)
         np.fill_diagonal(self.d, 0.0)
+        self.fp: dict[str, str] = {}          # fingerprint of each list's words, so a changed list is recomputed
+
+    @staticmethod
+    def fingerprint(doc: Doculect) -> str:
+        return hashlib.sha1(repr(sorted(doc.words.items())).encode("utf-8")).hexdigest()[:16]
 
     def matrix(self, docs: Sequence[Doculect]) -> np.ndarray:
         """Distance matrix of ``docs`` (float64), computing the pairs not seen before."""
         idx = np.array([self.pos[x.id] for x in docs], dtype=int)
+        for x, i in zip(docs, idx):
+            fp = self.fingerprint(x)
+            if self.fp.get(x.id, fp) != fp:            # the list changed since these distances were computed
+                self.d[i, :] = UNSET
+                self.d[:, i] = UNSET
+                self.d[i, i] = 0.0
+            self.fp[x.id] = fp
         sub = self.d[np.ix_(idx, idx)]
         ii, jj = np.nonzero(np.triu(sub == UNSET, 1))
         if len(ii):
@@ -43,7 +56,8 @@ class DistCache:
     def save(self, path: Path) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         np.save(path, self.d)
-        path.with_suffix(".json").write_text(json.dumps({"distance": self.metric.name, "ids": self.ids}), encoding="utf-8")
+        path.with_suffix(".json").write_text(json.dumps({"distance": self.metric.name, "ids": self.ids, "fingerprints": self.fp}),
+                                             encoding="utf-8")
 
     @classmethod
     def load(cls, path: Path, metric: Metric, ids: Sequence[str]) -> "DistCache":
@@ -61,4 +75,10 @@ class DistCache:
         if common:
             new, src = (np.array(x) for x in zip(*common))
             cache.d[np.ix_(new, new)] = old[np.ix_(src, src)]
+        fps = info.get("fingerprints")
+        if fps is None:                                 # a cache saved before fingerprints: trust nothing it holds
+            cache.d[:] = UNSET
+            np.fill_diagonal(cache.d, 0.0)
+        else:
+            cache.fp = {i: f for i, f in fps.items() if i in cache.pos}
         return cache

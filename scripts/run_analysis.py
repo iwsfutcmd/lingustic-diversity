@@ -478,11 +478,15 @@ def main() -> None:
     ap.add_argument("--wold", type=Path, default=None, help="WOLD CLDF dir (e.g. data/wold/cldf): mask words WOLD marks as loans")
     ap.add_argument("--tokens", choices=["asjp", "segments"], default="asjp")
     ap.add_argument("--distance", choices=DISTANCES, default="pmi")
+    ap.add_argument("--no-supplements", action="store_true",
+                    help="use ASJP's lists as they are, without config/supplements.tsv (e.g. Hittite's added concepts)")
     ap.add_argument("--cap", type=int, default=0,
                     help="doculects per lineage (0: whole pools, so D_max is exact for all documented data; a lineage "
                          "that contains others also keeps theirs)")
     ap.add_argument("--pmi-model", type=Path, default=Path("results/pmi_model_all.tsv"))
     args = ap.parse_args()
+    if args.no_supplements:
+        os.environ["ISODIV_NO_SUPPLEMENTS"] = "1"           # also seen by the worker processes
     metric = get_metric(args.distance, args.pmi_model)
     args.out.mkdir(parents=True, exist_ok=True)
 
@@ -535,6 +539,7 @@ def main() -> None:
                     "noise_floor_quantiles_10_50_90": np.quantile(floor, [.1, .5, .9]).tolist(),
                     "excluded": load_exclusions(EXCLUSIONS_FILE),
                     "max_per_lineage": args.cap or None, "nesting": nesting,
+                    "supplements": not args.no_supplements,
                     "children": {n: c for n, c in children.items() if c},
                     "lineages": summary, "japonic_sampling": robust},
                    ensure_ascii=False, indent=2), encoding="utf-8")

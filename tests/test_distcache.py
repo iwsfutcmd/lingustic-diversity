@@ -51,3 +51,30 @@ def test_save_and_reload(tmp_path):
     assert again.d[again.pos["a"], again.pos["c"]] == -1.0
     other = DistCache.load(tmp_path / "x.npy", Metric("pmi", model=None), ["a", "b"])
     assert other.d[0, 1] == -1.0
+
+
+def test_a_changed_list_is_recomputed(tmp_path):
+    a, b, c, s = make()
+    m = Metric("ldnd")
+    cache = DistCache(m, ["a", "b", "c", "s"])
+    before = cache.matrix([a, b, c])
+    cache.save(tmp_path / "x.npy")
+    again = DistCache.load(tmp_path / "x.npy", m, ["a", "b", "c", "s"])
+    assert np.allclose(again.matrix([a, b, c]), before)                 # unchanged lists come back as they were
+    b2 = doc("b", {f"c{k}": "mon" for k in range(25)})                   # b's words changed
+    d = again.matrix([a, b2, c])
+    assert np.allclose(d, m.matrix([a, b2, c]), atol=1e-6, equal_nan=True) and not np.allclose(d, before, equal_nan=True)
+
+
+def test_legacy_cache_without_fingerprints_is_not_trusted(tmp_path):
+    import json
+    a, b, c, s = make()
+    m = Metric("ldnd")
+    cache = DistCache(m, ["a", "b"])
+    cache.matrix([a, b])
+    cache.save(tmp_path / "x.npy")
+    meta = tmp_path / "x.json"
+    info = json.loads(meta.read_text())
+    del info["fingerprints"]
+    meta.write_text(json.dumps(info))
+    assert DistCache.load(tmp_path / "x.npy", m, ["a", "b"]).d[0, 1] == -1.0
