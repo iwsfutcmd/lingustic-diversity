@@ -13,9 +13,137 @@
   },
   "max_per_lineage": null,
   "nesting": {
-    "pairs": 33,
-    "violations": []
+    "pairs": 58,
+    "violations": [],
+    "not_subset": [
+      {
+        "parent": "Indo-European",
+        "child": "Romance",
+        "child_only": 2
+      },
+      {
+        "parent": "Indo-European",
+        "child": "Iranian",
+        "child_only": 1
+      },
+      {
+        "parent": "Indo-European",
+        "child": "Indo-Aryan",
+        "child_only": 5
+      },
+      {
+        "parent": "Tai-Kadai",
+        "child": "Kam-Tai",
+        "child_only": 2
+      },
+      {
+        "parent": "Sino-Tibetan",
+        "child": "Lolo-Burmese",
+        "child_only": 2
+      },
+      {
+        "parent": "Sino-Tibetan",
+        "child": "Bodic",
+        "child_only": 3
+      },
+      {
+        "parent": "Sino-Tibetan",
+        "child": "Sinitic",
+        "child_only": 10
+      },
+      {
+        "parent": "Afro-Asiatic",
+        "child": "Semitic",
+        "child_only": 9
+      },
+      {
+        "parent": "Afro-Asiatic",
+        "child": "Chadic",
+        "child_only": 1
+      },
+      {
+        "parent": "Arabic",
+        "child": "Egyptic Arabic",
+        "child_only": 1
+      },
+      {
+        "parent": "Sinitic",
+        "child": "Hui",
+        "child_only": 7
+      },
+      {
+        "parent": "Sinitic",
+        "child": "Gan",
+        "child_only": 1
+      },
+      {
+        "parent": "Sinitic",
+        "child": "Jin",
+        "child_only": 1
+      },
+      {
+        "parent": "Sinitic",
+        "child": "Xiang",
+        "child_only": 10
+      },
+      {
+        "parent": "Sinitic",
+        "child": "Pinghua",
+        "child_only": 4
+      },
+      {
+        "parent": "Sinitic",
+        "child": "Min",
+        "child_only": 11
+      },
+      {
+        "parent": "Sinitic",
+        "child": "Hakka",
+        "child_only": 1
+      },
+      {
+        "parent": "Sinitic",
+        "child": "Wu",
+        "child_only": 1
+      },
+      {
+        "parent": "Sinitic",
+        "child": "Mandarin",
+        "child_only": 2
+      },
+      {
+        "parent": "Malayo-Polynesian",
+        "child": "Malayic",
+        "child_only": 2
+      },
+      {
+        "parent": "Malayo-Polynesian",
+        "child": "Greater Central Philippine",
+        "child_only": 4
+      },
+      {
+        "parent": "Malayo-Polynesian",
+        "child": "Eastern Malayo-Polynesian",
+        "child_only": 7
+      },
+      {
+        "parent": "Central Semitic",
+        "child": "Ancient South Arabian",
+        "child_only": 1
+      },
+      {
+        "parent": "South Semitic",
+        "child": "Ancient South Arabian",
+        "child_only": 1
+      },
+      {
+        "parent": "South Semitic",
+        "child": "Modern South Arabian",
+        "child_only": 1
+      }
+    ]
   },
+  "supplements": true,
   "children": {
     "Turkic": [
       "Kipchak",
@@ -603,10 +731,10 @@
       "n_doculects": 61,
       "n_glottocodes": 45,
       "max_ldnd": 0.787632167339325,
-      "spread": 1.528153214036062,
-      "spread_rarefied_m3": 0.7383167160979156,
-      "d_max_kcal": 1.3021229582451952,
-      "uniform_d2_kcal": 1.2446909393065029,
+      "spread": 1.5281532140360634,
+      "spread_rarefied_m3": 0.729433170622365,
+      "d_max_kcal": 1.3021229582451954,
+      "uniform_d2_kcal": 1.2448889407109984,
       "representatives_kcal": [
         [
           "PROTO_GERMANIC",
@@ -1119,41 +1247,53 @@
     {
       "lineage": "Indo-European",
       "family": "Indo-European",
-      "n_doculects": 517,
-      "n_glottocodes": 306,
-      "max_ldnd": 1.0334092378616333,
-      "spread": 2.400112022631854,
-      "spread_rarefied_m3": 1.288165171244895,
-      "d_max_kcal": 1.506857681630399,
-      "uniform_d2_kcal": 1.4475313173903332,
+      "n_doculects": 527,
+      "n_glottocodes": 314,
+      "max_ldnd": 1.0396939516067505,
+      "spread": 2.411462254693958,
+      "spread_rarefied_m3": 1.300067869920057,
+      "d_max_kcal": 1.5097552122570839,
+      "uniform_d2_kcal": 1.4481817722748571,
       "representatives_kcal": [
         [
           "ROMEYKA",
-          0.046
+          0.044
         ],
         [
-          "TOCHARIAN_B",
-          0.037
+          "SARAMACCAN_2",
+          0.044
         ],
         [
-          "ALBANIAN_GHEG",
-          0.035
+          "HITTITE",
+          0.038
         ],
         [
           "LATVIAN_2",
-          0.035
-        ],
-        [
-          "GAELIC_SCOTTISH",
-          0.033
+          0.036
         ],
         [
           "EASTERN_ARMENIAN",
           0.032
         ],
         [
+          "ALBANIAN_GHEG",
+          0.031
+        ],
+        [
+          "TOCHARIAN_B",
+          0.031
+        ],
+        [
+          "GAELIC_SCOTTISH",
+          0.03
+        ],
+        [
           "JADGALI",
           0.028
+        ],
+        [
+          "ANGOLAR",
+          0.027
         ],
         [
           "MANX",
@@ -1161,11 +1301,15 @@
         ],
         [
           "PRASUNI",
-          0.026
+          0.023
         ],
         [
           "ZAMBOANGUENO",
-          0.024
+          0.023
+        ],
+        [
+          "KHAH",
+          0.022
         ],
         [
           "VEDDA",
@@ -1176,47 +1320,27 @@
           0.021
         ],
         [
-          "KHAH",
+          "LASGERDI",
           0.021
-        ],
-        [
-          "SEYCHELLES_CREOLE",
-          0.021
-        ],
-        [
-          "JAMAICAN_CREOLE",
-          0.02
         ],
         [
           "IRISH",
-          0.019
+          0.018
         ],
         [
           "RELI",
-          0.019
+          0.018
+        ],
+        [
+          "SEYCHELLES_CREOLE",
+          0.018
         ],
         [
           "TIRAH_AFRIDI_PASHTO",
-          0.019
+          0.018
         ],
         [
           "DANISH_2",
-          0.018
-        ],
-        [
-          "LASGERDI",
-          0.018
-        ],
-        [
-          "ALBANIAN_ARBERESHE",
-          0.017
-        ],
-        [
-          "GUADELOUPE_CREOLE",
-          0.017
-        ],
-        [
-          "LOWER_SORBIAN_2",
           0.017
         ],
         [
@@ -1228,15 +1352,11 @@
           0.017
         ],
         [
-          "LURISTANI_MIXED",
+          "ALBANIAN_ARBERESHE",
           0.016
         ],
         [
-          "SOUTHERN_KURDISH_QORVEH",
-          0.016
-        ],
-        [
-          "TAJIK_XINJIANG_DABUDA",
+          "DIR_PASHTO",
           0.016
         ],
         [
@@ -1244,107 +1364,103 @@
           0.016
         ],
         [
-          "SANTOMENSE",
-          0.015
+          "GUADELOUPE_CREOLE",
+          0.014
+        ],
+        [
+          "LURISTANI_MIXED",
+          0.014
         ],
         [
           "OSSETIC_IRON",
           0.014
         ],
         [
-          "LITHUANIAN_2",
+          "LOWER_SORBIAN_2",
           0.013
         ],
         [
-          "SARIKOLI",
-          0.013
+          "JAMAICAN_CREOLE",
+          0.012
         ],
         [
-          "TOCHARIAN_A",
-          0.013
+          "SOUTHERN_KURDISH_QORVEH",
+          0.012
         ],
         [
           "KHISLAVICHI",
-          0.012
-        ],
-        [
-          "WELSH_2",
-          0.012
-        ],
-        [
-          "DIR_PASHTO",
           0.011
         ],
         [
-          "MALDIVIAN",
+          "OSSETIAN",
+          0.011
+        ],
+        [
+          "SARIKOLI",
+          0.011
+        ],
+        [
+          "TAJIK_XINJIANG_DABUDA",
+          0.011
+        ],
+        [
+          "TOCHARIAN_A",
+          0.011
+        ],
+        [
+          "WELSH_2",
           0.011
         ],
         [
           "BRETON_2",
-          0.009
+          0.01
         ],
         [
-          "ENGLISH_2",
-          0.009
-        ],
-        [
-          "OSSETIAN",
-          0.009
+          "LITHUANIAN_2",
+          0.01
         ],
         [
           "UKRAINIAN_2",
-          0.009
+          0.01
         ],
         [
-          "AUKAN",
+          "CENTRAL_GOJAL_WAKHI",
+          0.008
+        ],
+        [
+          "GARAM_CHISHMA_KHOWAR",
           0.008
         ],
         [
           "LATVIAN",
-          0.008
-        ],
-        [
-          "BRETON",
-          0.007
-        ],
-        [
-          "MODERN_GREEK",
-          0.007
-        ],
-        [
-          "ORMURI",
-          0.007
-        ],
-        [
-          "POLISH_2",
-          0.007
-        ],
-        [
-          "SARDINIAN",
-          0.007
-        ],
-        [
-          "SATERFRIESISCH",
-          0.007
-        ],
-        [
-          "SINHALA",
-          0.007
-        ],
-        [
-          "SOUTHERN_TALYSH",
-          0.007
-        ],
-        [
-          "YIDGHA",
           0.007
         ],
         [
           "OLD_PRUSSIAN",
+          0.007
+        ],
+        [
+          "ASHKUN",
           0.006
         ],
         [
-          "PAPIA_KRISTANG",
+          "HAWRAMI",
+          0.006
+        ],
+        [
+          "MALDIVIAN",
+          0.006
+        ],
+        [
+          "ORMURI",
+          0.006
+        ],
+        [
+          "POLISH_2",
+          0.006
+        ],
+        [
+          "SATERFRIESISCH",
           0.006
         ],
         [
@@ -1352,43 +1468,43 @@
           0.006
         ],
         [
-          "STANDARD_ALBANIAN",
+          "SINHALA",
           0.006
+        ],
+        [
+          "YASIN_WAKHI",
+          0.006
+        ],
+        [
+          "YIDGHA",
+          0.006
+        ],
+        [
+          "BRETON",
+          0.005
         ],
         [
           "DANUWAR",
           0.005
         ],
         [
-          "GARAM_CHISHMA_KHOWAR",
+          "ENGLISH_2",
           0.005
         ],
         [
-          "HAWRAMI",
+          "STANDARD_ALBANIAN",
           0.005
         ],
         [
-          "KRIO",
-          0.005
-        ],
-        [
-          "YASIN_WAKHI",
-          0.005
-        ],
-        [
-          "ZEEUWS",
-          0.005
-        ],
-        [
-          "ASHKUN",
+          "KUMZARI",
           0.004
         ],
         [
-          "KESU_KHOWAR",
+          "MODERN_GREEK",
           0.004
         ],
         [
-          "MARATHI",
+          "SARDINIAN",
           0.004
         ],
         [
@@ -1396,11 +1512,7 @@
           0.004
         ],
         [
-          "GJESTAL_NORWEGIAN",
-          0.003
-        ],
-        [
-          "GREEK_ANCIENT",
+          "HAWAI_CREOLE_ENGLISH",
           0.003
         ],
         [
@@ -1408,43 +1520,43 @@
           0.003
         ],
         [
+          "KASHUBIAN",
+          0.003
+        ],
+        [
+          "MARATHI",
+          0.003
+        ],
+        [
           "MUNJANI",
           0.003
         ],
         [
-          "ARMENIAN",
+          "PAPIA_KRISTANG",
+          0.003
+        ],
+        [
+          "SANGISARI",
           0.002
         ],
         [
-          "BELARUSIAN_2",
+          "ZEEUWS",
           0.002
         ],
         [
-          "CENTRAL_GOJAL_WAKHI",
-          0.002
-        ],
-        [
-          "OGHI_PASHTO",
-          0.002
-        ],
-        [
-          "OSSETIC_DIGOR",
-          0.002
-        ],
-        [
-          "KUMZARI",
+          "ANGLOROMANI",
           0.001
         ],
         [
-          "NATANZI",
+          "KESU_KHOWAR",
           0.001
         ],
         [
-          "ZAKHA_KHEL_AFRIDI_PASHTO",
+          "PARGAM_NISAR_KHOWAR",
           0.001
         ]
       ],
-      "d_max_k3": 12.26496714872794,
+      "d_max_k3": 12.379960496702019,
       "kkt_all_ok": true
     },
     {
@@ -2298,62 +2410,62 @@
       "family": "Quechuan",
       "n_doculects": 61,
       "n_glottocodes": 34,
-      "max_ldnd": 0.3501909077167511,
-      "spread": 0.6990279145048334,
-      "spread_rarefied_m3": 0.3429213590790433,
-      "d_max_kcal": 1.1301231708643154,
-      "uniform_d2_kcal": 1.096095760777049,
+      "max_ldnd": 0.36326053738594055,
+      "spread": 0.7100279762103834,
+      "spread_rarefied_m3": 0.34667220207725935,
+      "d_max_kcal": 1.132121883603843,
+      "uniform_d2_kcal": 1.0959460023899519,
       "representatives_kcal": [
         [
           "QUECHUA_HUANCA_HUAYCHA",
-          0.175
-        ],
-        [
-          "INKAWASI",
-          0.128
-        ],
-        [
-          "PUNO_CITY",
-          0.128
-        ],
-        [
-          "QUECHUA_HUANUCO_PANAO",
-          0.118
+          0.165
         ],
         [
           "QUECHUA_NORTH_JUNIN_TARMA",
-          0.111
+          0.123
         ],
         [
-          "INGA_PUTUMAYO",
-          0.075
+          "PUNO_CITY",
+          0.122
+        ],
+        [
+          "QUECHUA_AREQUIPA_UNION",
+          0.114
+        ],
+        [
+          "INKAWASI",
+          0.102
+        ],
+        [
+          "QUECHUA_HUANUCO_PANAO",
+          0.09
         ],
         [
           "QUECHUA_PASTAZA",
-          0.074
+          0.083
+        ],
+        [
+          "INGA_PUTUMAYO",
+          0.077
         ],
         [
           "QUECHUA_SAN_MARTIN",
-          0.07
+          0.057
         ],
         [
           "QUECHUA_IMBABURA",
-          0.048
-        ],
-        [
-          "POCONA",
-          0.037
-        ],
-        [
-          "CHIMBORAZO_QUICHUA",
-          0.024
+          0.051
         ],
         [
           "QUICHUA_TUNGURAHUA_SALASACA",
-          0.012
+          0.01
+        ],
+        [
+          "POCONA",
+          0.006
         ]
       ],
-      "d_max_k3": 2.1130869068984923,
+      "d_max_k3": 2.1377669601705493,
       "kkt_all_ok": true
     },
     {
@@ -3326,42 +3438,42 @@
       "n_doculects": 214,
       "n_glottocodes": 67,
       "max_ldnd": 1.0393637418746948,
-      "spread": 2.2555361434498495,
-      "spread_rarefied_m3": 1.0232186055463919,
-      "d_max_kcal": 1.4704902935922903,
-      "uniform_d2_kcal": 1.3487809374318591,
+      "spread": 2.267648580899204,
+      "spread_rarefied_m3": 1.0648037229763356,
+      "d_max_kcal": 1.4735195321167036,
+      "uniform_d2_kcal": 1.3520164344045151,
       "representatives_kcal": [
         [
+          "CUN_HAINAN_DONGFANG_SIGENG",
+          0.081
+        ],
+        [
           "MULAO_KADAI",
-          0.068
+          0.066
         ],
         [
           "HONGFENG_GELAO",
           0.057
         ],
         [
-          "CUN",
-          0.052
+          "LI_HAINAN_BAOTING_JIAMAO",
+          0.05
         ],
         [
           "DONG_GUIZHOU_ZHANGLU",
-          0.052
-        ],
-        [
-          "LI_HAINAN_BAOTING_JIAMAO",
-          0.051
+          0.049
         ],
         [
           "CA_HA_GELAO",
-          0.042
+          0.041
         ],
         [
           "NA_KHE_GELAO",
-          0.042
+          0.041
         ],
         [
           "WHITE_LACHI",
-          0.042
+          0.04
         ],
         [
           "GELAO_QIAOSHANG",
@@ -3369,123 +3481,119 @@
         ],
         [
           "YERONG",
-          0.037
+          0.036
         ],
         [
           "MULAO",
-          0.031
+          0.032
         ],
         [
           "JINCHANG_WHITE_LACHI",
-          0.029
+          0.028
         ],
         [
           "LAKKJA",
-          0.029
+          0.028
         ],
         [
-          "XIANGZHOU_YUNJIANG",
+          "ONG_BE",
+          0.027
+        ],
+        [
+          "LACHI",
           0.026
         ],
         [
-          "ECUN_BAHA_BUYANG",
+          "TAI_DAENG",
           0.025
         ],
         [
           "BUYANG_YUNNAN_DIXU_YANGLIAN",
-          0.024
+          0.023
         ],
         [
-          "LACHI",
-          0.024
-        ],
-        [
-          "TAI_DAENG",
-          0.024
+          "ECUN_BAHA_BUYANG",
+          0.023
         ],
         [
           "JUDU_GELAO",
           0.023
         ],
         [
-          "ONG_BE",
-          0.022
+          "PUBIAO_YUNNAN_MALIPO_PUFENG",
+          0.023
         ],
         [
-          "PUBIAO_YUNNAN_MALIPO_PUFENG",
-          0.021
+          "XIANGZHOU_YUNJIANG",
+          0.023
         ],
         [
           "YONG",
           0.02
         ],
         [
-          "LI_HAINAN_WUZHISHAN_TONGSHI",
-          0.019
-        ],
-        [
-          "TA_MIT_LAHA",
-          0.019
-        ],
-        [
           "BUYANG_LANGJIA",
           0.017
         ],
         [
-          "GELAO_GUIZHOU_ANSHUN_WANZI",
+          "DAI_YUNNAN_DEHONG_MANGSHI",
+          0.017
+        ],
+        [
+          "RENLI_SUI",
           0.016
+        ],
+        [
+          "GELAO_GUIZHOU_ANSHUN_WANZI",
+          0.015
         ],
         [
           "JIAOLI_SUI",
-          0.016
+          0.015
         ],
         [
-          "DAI_YUNNAN_DEHONG_MANGSHI",
-          0.014
+          "TA_MIT_LAHA",
+          0.015
         ],
         [
-          "CHADONG_GUANGXI_CHADONG",
-          0.013
-        ],
-        [
-          "ZHENFENG_GELAO",
+          "LI_HAINAN_WUZHISHAN_TONGSHI",
           0.013
         ],
         [
           "BUYANG_YUNNAN_FUNING_LANGJIA",
-          0.012
+          0.011
         ],
         [
-          "RENLI_SUI",
-          0.012
+          "CHADONG_GUANGXI_CHADONG",
+          0.011
         ],
         [
           "LI_TONGSHI",
           0.01
         ],
         [
-          "SHAN_3",
-          0.01
-        ],
-        [
-          "WUSE_GUANGXI_RONGSHUI_SIMO",
-          0.008
+          "ZHENFENG_GELAO",
+          0.009
         ],
         [
           "MASHAN_YONGZHOU",
-          0.006
+          0.008
+        ],
+        [
+          "SHAN_3",
+          0.008
         ],
         [
           "TANGNIAN_SUI",
-          0.006
+          0.005
         ],
         [
-          "LINCHENG_LINGAO",
+          "WUXUAN_TONGLING",
           0.005
         ],
         [
           "LU",
-          0.005
+          0.004
         ],
         [
           "NIUPO_GELAO",
@@ -3496,7 +3604,11 @@
           0.004
         ],
         [
-          "WUXUAN_TONGLING",
+          "WUSE_GUANGXI_RONGSHUI_SIMO",
+          0.004
+        ],
+        [
+          "YANG",
           0.004
         ],
         [
@@ -3504,51 +3616,51 @@
           0.003
         ],
         [
-          "YANG",
-          0.001
+          "DAHUA_LIUSHUI",
+          0.002
         ]
       ],
-      "d_max_k3": 9.734303618510882,
+      "d_max_k3": 9.79620333978805,
       "kkt_all_ok": true
     },
     {
       "lineage": "Austroasiatic",
       "family": "Austroasiatic",
       "n_doculects": 190,
-      "n_glottocodes": 116,
-      "max_ldnd": 1.0144708156585693,
-      "spread": 2.349029764996066,
-      "spread_rarefied_m3": 1.3244069838307693,
-      "d_max_kcal": 1.4938709759586608,
-      "uniform_d2_kcal": 1.4540440218589024,
+      "n_glottocodes": 117,
+      "max_ldnd": 1.0209380388259888,
+      "spread": 2.3528553608011196,
+      "spread_rarefied_m3": 1.287660457108977,
+      "d_max_kcal": 1.494839287861322,
+      "uniform_d2_kcal": 1.4544275129492827,
       "representatives_kcal": [
         [
           "DANAW",
-          0.047
+          0.048
         ],
         [
           "BUGAN_2",
-          0.045
+          0.044
         ],
         [
-          "SORA",
+          "GATA",
           0.038
         ],
         [
           "CHAURA",
-          0.037
+          0.036
         ],
         [
           "SAOCH",
           0.035
         ],
         [
-          "MON_NONG_DUU",
-          0.03
+          "SORA",
+          0.035
         ],
         [
-          "PALIU",
-          0.029
+          "MON_NONG_DUU",
+          0.031
         ],
         [
           "TAI_LOI",
@@ -3556,26 +3668,18 @@
         ],
         [
           "KENSIW",
-          0.028
-        ],
-        [
-          "SINGUR_WAR_JAINTIA",
-          0.028
-        ],
-        [
-          "VIETNAMESE_3",
-          0.028
-        ],
-        [
-          "THAVUNG_SO",
           0.027
         ],
         [
-          "MENDRIK",
+          "PALIU",
+          0.027
+        ],
+        [
+          "THAVUNG_SO",
           0.026
         ],
         [
-          "KHMER_2",
+          "SINGUR_WAR_JAINTIA",
           0.025
         ],
         [
@@ -3583,7 +3687,15 @@
           0.025
         ],
         [
-          "JUANG",
+          "VIETNAMESE_3",
+          0.025
+        ],
+        [
+          "MENDRIK",
+          0.024
+        ],
+        [
+          "TEMIAR",
           0.024
         ],
         [
@@ -3591,16 +3703,16 @@
           0.023
         ],
         [
+          "KHMER_2",
+          0.023
+        ],
+        [
+          "JUANG",
+          0.022
+        ],
+        [
           "KOTUA",
-          0.023
-        ],
-        [
-          "TEMIAR",
-          0.023
-        ],
-        [
-          "KODA",
-          0.02
+          0.022
         ],
         [
           "KHANG",
@@ -3611,11 +3723,15 @@
           0.019
         ],
         [
+          "KODA",
+          0.019
+        ],
+        [
           "BIT",
           0.018
         ],
         [
-          "BLANG_YUNNAN_MENGHAI_BANZHANG",
+          "BUGAN",
           0.018
         ],
         [
@@ -3623,44 +3739,44 @@
           0.018
         ],
         [
-          "BUGAN",
+          "BLANG_YUNNAN_MENGHAI_BANZHANG",
+          0.017
+        ],
+        [
+          "SURIN",
           0.017
         ],
         [
           "JURAY",
-          0.017
-        ],
-        [
-          "BODO_GADABA",
-          0.016
-        ],
-        [
-          "KSINMUL",
-          0.016
-        ],
-        [
-          "SURIN",
           0.016
         ],
         [
           "HU",
-          0.015
+          0.014
+        ],
+        [
+          "KSINMUL",
+          0.014
         ],
         [
           "MINTIL",
           0.014
         ],
         [
+          "BUXING_YUNNAN_MENGLA_MOHAN",
+          0.013
+        ],
+        [
           "MALIENG",
+          0.013
+        ],
+        [
+          "MANG_YUNNAN_HONGHE_JINPING",
           0.012
         ],
         [
           "PALAUNG_UnnamedInSource",
           0.012
-        ],
-        [
-          "BUXING_YUNNAN_MENGLA_MOHAN",
-          0.011
         ],
         [
           "DABOLCHORA_WAR_JAINTIA",
@@ -3671,23 +3787,23 @@
           0.011
         ],
         [
-          "MLABRI",
-          0.011
-        ],
-        [
           "SEMNAM",
           0.011
         ],
         [
-          "MANG",
+          "MLABRI",
           0.01
         ],
         [
-          "MANG_YUNNAN_HONGHE_JINPING",
-          0.01
+          "MANG",
+          0.009
         ],
         [
           "PEAR_B",
+          0.009
+        ],
+        [
+          "SHILLONG_WAR_JAINTIA",
           0.009
         ],
         [
@@ -3699,27 +3815,27 @@
           0.008
         ],
         [
-          "SHILLONG_WAR_JAINTIA",
-          0.008
-        ],
-        [
           "MENGGONG_WA",
           0.007
+        ],
+        [
+          "PLANG",
+          0.007
+        ],
+        [
+          "BODO_GADABA",
+          0.006
         ],
         [
           "CHONG_H",
           0.006
         ],
         [
+          "LAMPANGLAMET",
+          0.005
+        ],
+        [
           "MON_2",
-          0.006
-        ],
-        [
-          "PLANG",
-          0.006
-        ],
-        [
-          "NANCAWRI",
           0.005
         ],
         [
@@ -3727,19 +3843,19 @@
           0.005
         ],
         [
-          "MAH_MERI",
+          "LYNGNGAM",
           0.004
         ],
         [
-          "PRAI_2",
+          "MAGURCHORA_WAR_JAINTIA",
           0.004
         ],
         [
-          "RUMAI",
+          "NANCAWRI",
           0.004
         ],
         [
-          "SHELLA_WAR_JAINTIA",
+          "RUC",
           0.004
         ],
         [
@@ -3747,11 +3863,7 @@
           0.003
         ],
         [
-          "LYNGNGAM",
-          0.003
-        ],
-        [
-          "RUC",
+          "RUMAI",
           0.003
         ],
         [
@@ -3759,11 +3871,7 @@
           0.002
         ],
         [
-          "LAMPANGLAMET",
-          0.002
-        ],
-        [
-          "MAGURCHORA_WAR_JAINTIA",
+          "MAH_MERI",
           0.002
         ],
         [
@@ -3771,35 +3879,27 @@
           0.002
         ],
         [
-          "SAVARA",
+          "SHELLA_WAR_JAINTIA",
           0.002
         ],
         [
           "KASONG",
           0.001
-        ],
-        [
-          "KATU_EASTERN",
-          0.001
-        ],
-        [
-          "KEMIE",
-          0.001
         ]
       ],
-      "d_max_k3": 11.462570742053117,
+      "d_max_k3": 11.500752124713728,
       "kkt_all_ok": true
     },
     {
       "lineage": "Pama-Nyungan",
       "family": "Pama-Nyungan",
-      "n_doculects": 194,
-      "n_glottocodes": 138,
+      "n_doculects": 193,
+      "n_glottocodes": 137,
       "max_ldnd": 1.0854332447052002,
-      "spread": 2.5016779585089157,
-      "spread_rarefied_m3": 1.3798845786322953,
-      "d_max_kcal": 1.533040692223704,
-      "uniform_d2_kcal": 1.4912083975589985,
+      "spread": 2.5006598968940867,
+      "spread_rarefied_m3": 1.3662009287366264,
+      "d_max_kcal": 1.5327754360954213,
+      "uniform_d2_kcal": 1.4909746897246003,
       "representatives_kcal": [
         [
           "MBABARAM",
@@ -3807,11 +3907,11 @@
         ],
         [
           "ANGUTHIMRI",
-          0.038
+          0.037
         ],
         [
           "LAMALAMA_COASTAL",
-          0.036
+          0.037
         ],
         [
           "OLKOLA",
@@ -3819,18 +3919,18 @@
         ],
         [
           "PARIMANKUTINMA",
-          0.032
-        ],
-        [
-          "WAGAYA_WEST",
           0.031
         ],
         [
-          "KAYTETYE_2",
+          "MARTUTHUNIRA",
           0.029
         ],
         [
-          "MARTUTHUNIRA",
+          "WAGAYA_WEST",
+          0.029
+        ],
+        [
+          "KAYTETYE_2",
           0.028
         ],
         [
@@ -3843,22 +3943,14 @@
         ],
         [
           "KUUKU_YAU",
+          0.025
+        ],
+        [
+          "YANANGO",
           0.024
         ],
         [
           "AGHU_THARRNGGALA",
-          0.023
-        ],
-        [
-          "YANANGO",
-          0.023
-        ],
-        [
-          "GOBABINGO",
-          0.022
-        ],
-        [
-          "KUKU_UWANH",
           0.022
         ],
         [
@@ -3870,7 +3962,23 @@
           0.022
         ],
         [
+          "GOBABINGO",
+          0.021
+        ],
+        [
+          "KUKU_UWANH",
+          0.021
+        ],
+        [
           "LOWER_ARANDA",
+          0.021
+        ],
+        [
+          "YANDJIBARA",
+          0.021
+        ],
+        [
+          "YARALDI",
           0.021
         ],
         [
@@ -3878,31 +3986,19 @@
           0.02
         ],
         [
-          "YANDJIBARA",
-          0.02
-        ],
-        [
-          "PALLANGANMIDDANG",
-          0.019
-        ],
-        [
-          "YARALDI",
-          0.019
-        ],
-        [
-          "NYUNGA_SOUTH_WESTERN",
-          0.018
-        ],
-        [
           "SYDNEY",
           0.018
         ],
         [
-          "WARLUWARA",
-          0.018
+          "ANMATYERRE",
+          0.017
         ],
         [
-          "ANMATYERRE",
+          "NYUNGA_SOUTH_WESTERN",
+          0.017
+        ],
+        [
+          "WARLUWARA",
           0.017
         ],
         [
@@ -3926,19 +4022,27 @@
           0.014
         ],
         [
+          "BUNGANDITJ",
+          0.013
+        ],
+        [
           "MANGGALILI",
           0.013
         ],
         [
-          "NYANGUMARTA_2",
+          "YINDJIBARNDI_2",
           0.013
         ],
         [
-          "BUNGANDITJ",
+          "KALA_LAGGAW_YA",
           0.012
         ],
         [
-          "KALA_LAGGAW_YA",
+          "NYANGUMARTA_2",
+          0.012
+        ],
+        [
+          "WANGGANGURU",
           0.012
         ],
         [
@@ -3946,20 +4050,12 @@
           0.012
         ],
         [
-          "YINDJIBARNDI_2",
-          0.012
+          "ALYAWARRA",
+          0.011
         ],
         [
           "NYININY",
           0.011
-        ],
-        [
-          "WANGGANGURU",
-          0.011
-        ],
-        [
-          "ALYAWARRA",
-          0.01
         ],
         [
           "ARRERNTE_EASTERN",
@@ -3967,6 +4063,10 @@
         ],
         [
           "DARLING",
+          0.01
+        ],
+        [
+          "KAURNA",
           0.01
         ],
         [
@@ -3978,7 +4078,11 @@
           0.01
         ],
         [
-          "ARRARNTA_WESTERN",
+          "WEMBA_WEMBA",
+          0.01
+        ],
+        [
+          "WAGAYA",
           0.009
         ],
         [
@@ -3990,35 +4094,27 @@
           0.009
         ],
         [
-          "KAURNA",
-          0.008
-        ],
-        [
-          "WAGAYA",
-          0.008
-        ],
-        [
-          "WEMBA_WEMBA",
-          0.008
-        ],
-        [
           "ALYAWARRA_4",
-          0.007
+          0.008
+        ],
+        [
+          "ARRARNTA_WESTERN",
+          0.008
+        ],
+        [
+          "DIYARI_2",
+          0.008
+        ],
+        [
+          "WARLUWARA_2",
+          0.008
         ],
         [
           "ANMATYERRE_2",
           0.007
         ],
         [
-          "DIYARI_2",
-          0.007
-        ],
-        [
           "KURRAMA",
-          0.007
-        ],
-        [
-          "LENINGITIJ",
           0.007
         ],
         [
@@ -4030,83 +4126,87 @@
           0.007
         ],
         [
-          "WARLUWARA_2",
+          "LENINGITIJ",
           0.006
+        ],
+        [
+          "DYANGADI",
+          0.005
         ],
         [
           "KALKUTUNG",
           0.005
         ],
         [
-          "DYANGADI",
+          "NGARDI",
           0.004
         ],
         [
-          "BAYALI",
-          0.003
-        ],
-        [
-          "NGARDI",
-          0.003
+          "YANYUWA_2",
+          0.004
         ],
         [
           "NGAWUN",
           0.003
         ],
         [
-          "KAYTETYE",
-          0.002
+          "NYUNGA_NORTHERN",
+          0.003
         ],
         [
           "KAYTETYE_3",
           0.002
         ],
         [
-          "NYUNGA_NORTHERN",
-          0.002
-        ],
-        [
-          "THARRGARI",
-          0.002
-        ],
-        [
-          "WARGAMAY",
-          0.002
-        ],
-        [
-          "YANYUWA_2",
+          "WOIWURRUNG",
           0.002
         ],
         [
           "AYABADHU",
           0.001
+        ],
+        [
+          "BAYALI",
+          0.001
+        ],
+        [
+          "KAYTETYE",
+          0.001
+        ],
+        [
+          "THARRGARI",
+          0.001
+        ],
+        [
+          "WARGAMAY",
+          0.001
         ]
       ],
-      "d_max_k3": 13.53431726154585,
+      "d_max_k3": 13.509952322963231,
       "kkt_all_ok": true
     },
     {
       "lineage": "Austronesian",
       "family": "Austronesian",
-      "n_doculects": 1446,
-      "n_glottocodes": 1025,
+      "n_doculects": 1467,
+      "n_glottocodes": 1029,
       "max_ldnd": 1.0980007648468018,
-      "spread": 2.561692127321022,
-      "spread_rarefied_m3": 1.2917962919592743,
-      "d_max_kcal": 1.548883061438242,
-      "uniform_d2_kcal": 1.464758840513025,
+      "spread": 2.561903079331125,
+      "spread_rarefied_m3": 1.2985423742100097,
+      "d_max_kcal": 1.5489390856198522,
+      "uniform_d2_kcal": 1.4626686928042858,
       "representatives_kcal": [
         [
           "BANJAR_SARI_ENGGANO",
-          0.025
-        ],
-        [
-          "ARHO",
           0.024
         ],
         [
           "YAUR",
           0.024
+        ],
+        [
+          "ARHO",
+          0.023
         ],
         [
           "REEF_ISLANDS",
@@ -4169,11 +4269,11 @@
           0.014
         ],
         [
-          "TANDIA",
-          0.014
+          "ANUKI",
+          0.013
         ],
         [
-          "ANUKI",
+          "TANDIA",
           0.013
         ],
         [
@@ -4197,6 +4297,10 @@
           0.012
         ],
         [
+          "MALAKONI_ENGGANO",
+          0.012
+        ],
+        [
           "MAPIA",
           0.012
         ],
@@ -4217,19 +4321,11 @@
           0.011
         ],
         [
-          "MALAKONI_ENGGANO",
-          0.011
-        ],
-        [
           "SUKURUM",
           0.011
         ],
         [
           "TOWANGARA",
-          0.011
-        ],
-        [
-          "TUMLEO_2",
           0.011
         ],
         [
@@ -4245,7 +4341,11 @@
           0.01
         ],
         [
-          "SERA_2",
+          "NANGGU_2",
+          0.01
+        ],
+        [
+          "TUMLEO_2",
           0.01
         ],
         [
@@ -4253,11 +4353,11 @@
           0.009
         ],
         [
-          "MBANYO",
+          "MALOL",
           0.009
         ],
         [
-          "NANGGU_2",
+          "MBANYO",
           0.009
         ],
         [
@@ -4273,10 +4373,6 @@
           0.008
         ],
         [
-          "LELEGHIA_MARINGE_CHEKE_HOLO",
-          0.008
-        ],
-        [
           "MANTAURAN",
           0.008
         ],
@@ -4289,10 +4385,6 @@
           0.008
         ],
         [
-          "RIRIO",
-          0.008
-        ],
-        [
           "TANIMBILI",
           0.008
         ],
@@ -4301,8 +4393,8 @@
           0.008
         ],
         [
-          "BONGGO",
-          0.007
+          "UNUBAHE",
+          0.008
         ],
         [
           "GHAYAVI_2",
@@ -4317,11 +4409,15 @@
           0.007
         ],
         [
-          "NEKU",
+          "LELEGHIA_MARINGE_CHEKE_HOLO",
           0.007
         ],
         [
-          "NENGAYA",
+          "MUSOM_2",
+          0.007
+        ],
+        [
+          "NEKU",
           0.007
         ],
         [
@@ -4333,11 +4429,15 @@
           0.007
         ],
         [
-          "TONA_RUKAI",
+          "RIRIO",
           0.007
         ],
         [
-          "UNUBAHE",
+          "SERA_2",
+          0.007
+        ],
+        [
+          "TONA_RUKAI",
           0.007
         ],
         [
@@ -4346,6 +4446,10 @@
         ],
         [
           "AMBAI",
+          0.006
+        ],
+        [
+          "BONGGO",
           0.006
         ],
         [
@@ -4373,15 +4477,15 @@
           0.006
         ],
         [
-          "MUSOM_2",
-          0.006
-        ],
-        [
           "NAURUAN",
           0.006
         ],
         [
           "NEMBAO",
+          0.006
+        ],
+        [
+          "NENGAYA",
           0.006
         ],
         [
@@ -4425,11 +4529,11 @@
           0.005
         ],
         [
-          "PENAN_EASTERN",
+          "PIJE",
           0.005
         ],
         [
-          "PIJE",
+          "PWAPWA",
           0.005
         ],
         [
@@ -4450,6 +4554,10 @@
         ],
         [
           "AVASO_BABATANA",
+          0.004
+        ],
+        [
+          "DUWET",
           0.004
         ],
         [
@@ -4481,7 +4589,7 @@
           0.004
         ],
         [
-          "PWAPWA",
+          "PENAN_EASTERN",
           0.004
         ],
         [
@@ -4497,10 +4605,6 @@
           0.003
         ],
         [
-          "DUWET",
-          0.003
-        ],
-        [
           "HAIGWAI",
           0.003
         ],
@@ -4510,6 +4614,10 @@
         ],
         [
           "MANGA",
+          0.003
+        ],
+        [
+          "MODANG",
           0.003
         ],
         [
@@ -4526,6 +4634,10 @@
         ],
         [
           "TANEMA",
+          0.003
+        ],
+        [
+          "TODANGA",
           0.003
         ],
         [
@@ -4561,14 +4673,6 @@
           0.002
         ],
         [
-          "MINDIRI",
-          0.002
-        ],
-        [
-          "MODANG",
-          0.002
-        ],
-        [
           "NENGONE",
           0.002
         ],
@@ -4585,7 +4689,7 @@
           0.002
         ],
         [
-          "TODANGA",
+          "RIBUN",
           0.002
         ],
         [
@@ -4593,11 +4697,7 @@
           0.001
         ],
         [
-          "POM",
-          0.001
-        ],
-        [
-          "RIBUN",
+          "MINDIRI",
           0.001
         ],
         [
@@ -4605,35 +4705,35 @@
           0.001
         ]
       ],
-      "d_max_k3": 15.551884067487268,
+      "d_max_k3": 15.556335467088246,
       "kkt_all_ok": true
     },
     {
       "lineage": "Sino-Tibetan",
       "family": "Sino-Tibetan",
-      "n_doculects": 882,
-      "n_glottocodes": 273,
+      "n_doculects": 887,
+      "n_glottocodes": 274,
       "max_ldnd": 1.0995334386825562,
-      "spread": 2.480492791148917,
-      "spread_rarefied_m3": 1.3315975265108047,
-      "d_max_kcal": 1.5275895707807774,
-      "uniform_d2_kcal": 1.4420108087340129,
+      "spread": 2.481279973032508,
+      "spread_rarefied_m3": 1.3197623421772071,
+      "d_max_kcal": 1.5277931837301848,
+      "uniform_d2_kcal": 1.4422389627084038,
       "representatives_kcal": [
         [
           "HAKKA_GANZHOU_DAYU",
-          0.034
+          0.032
         ],
         [
           "KORO_INDIA_2",
           0.029
         ],
         [
-          "SULUNG",
+          "MIJI",
           0.027
         ],
         [
-          "MIJI",
-          0.026
+          "SULUNG",
+          0.027
         ],
         [
           "DEURI",
@@ -4648,15 +4748,19 @@
           0.023
         ],
         [
-          "RIANG",
-          0.023
-        ],
-        [
           "KAREN_GEBA",
           0.022
         ],
         [
-          "GESHITSA",
+          "RIANG",
+          0.022
+        ],
+        [
+          "TARAON",
+          0.022
+        ],
+        [
+          "MIN_NANPING_WANGTAI",
           0.021
         ],
         [
@@ -4668,11 +4772,7 @@
           0.021
         ],
         [
-          "BAIMA_SICHUAN_PINGWU",
-          0.02
-        ],
-        [
-          "TARAON",
+          "GESHITSA",
           0.02
         ],
         [
@@ -4680,11 +4780,15 @@
           0.019
         ],
         [
+          "BAIMA_SICHUAN_PINGWU",
+          0.019
+        ],
+        [
           "TIBETAN_ALKE_QINGHAI_ALIKE",
           0.019
         ],
         [
-          "HAKKA_XIANGGANG",
+          "MANDARIN_PINGLIANG_SHUILUO",
           0.018
         ],
         [
@@ -4692,7 +4796,15 @@
           0.018
         ],
         [
+          "HAKKA_XIANGGANG",
+          0.017
+        ],
+        [
           "KAREN_YINBAW",
+          0.017
+        ],
+        [
+          "KHWOPA_NEWAR",
           0.017
         ],
         [
@@ -4704,11 +4816,7 @@
           0.017
         ],
         [
-          "KHWOPA_NEWAR",
-          0.016
-        ],
-        [
-          "MANDARIN_PINGLIANG_SHUILUO",
+          "NAGA_SUMI",
           0.016
         ],
         [
@@ -4716,51 +4824,43 @@
           0.015
         ],
         [
-          "NAGA_SUMI",
-          0.015
-        ],
-        [
           "POUMAI",
           0.015
         ],
         [
-          "JIN_SHUOZHOU_PINGLU",
+          "NAGA_MAO",
           0.014
+        ],
+        [
+          "GYALRONG_SICHUAN_ZHUOKEJI",
+          0.013
         ],
         [
           "LAVRUNG_SICHUAN_YELONG",
-          0.014
+          0.013
         ],
         [
           "NAGA_SOUTHERN_RENGMA",
-          0.014
-        ],
-        [
-          "MANDARIN",
           0.013
         ],
         [
-          "NAGA_MAO",
-          0.013
-        ],
-        [
-          "PUTIAN_CHINESE",
-          0.013
-        ],
-        [
-          "TUHUA_SHAOGUAN_GUITOU",
-          0.013
+          "CHIRU",
+          0.012
         ],
         [
           "GONG",
           0.012
         ],
         [
-          "GYALRONG_SICHUAN_ZHUOKEJI",
+          "JIN_LVLIANG_LIULIN",
           0.012
         ],
         [
-          "NUNG_CHINA",
+          "MANDARIN",
+          0.012
+        ],
+        [
+          "PUTIAN_CHINESE",
           0.012
         ],
         [
@@ -4768,19 +4868,19 @@
           0.012
         ],
         [
-          "CHIRU",
-          0.011
+          "TUHUA_SHAOGUAN_GUITOU",
+          0.012
         ],
         [
-          "JIN_LVLIANG_LIULIN",
-          0.011
+          "WAMBULE",
+          0.012
         ],
         [
           "NAGA_POCHURI",
           0.011
         ],
         [
-          "WAMBULE",
+          "NUNG_CHINA",
           0.011
         ],
         [
@@ -4804,7 +4904,7 @@
           0.009
         ],
         [
-          "KHALING",
+          "JIN_GAOPING",
           0.009
         ],
         [
@@ -4812,19 +4912,27 @@
           0.009
         ],
         [
-          "NORTHERN_TUJIA",
+          "PATTANI",
           0.009
         ],
         [
-          "PATTANI",
-          0.009
+          "BAHING",
+          0.008
         ],
         [
           "BUGUN",
           0.008
         ],
         [
-          "GAN_SHAOWU",
+          "JIN_JINZHONG_MAFANG",
+          0.008
+        ],
+        [
+          "KHALING",
+          0.008
+        ],
+        [
+          "NORTHERN_TUJIA",
           0.008
         ],
         [
@@ -4836,15 +4944,11 @@
           0.008
         ],
         [
-          "BAHING",
-          0.007
-        ],
-        [
           "HEDIAN_BAI",
           0.007
         ],
         [
-          "JIN_GAOPING",
+          "KHUMI",
           0.007
         ],
         [
@@ -4860,27 +4964,15 @@
           0.007
         ],
         [
-          "KHUMI",
-          0.006
-        ],
-        [
-          "MANDARIN_LINYI_TANCHENG",
-          0.006
-        ],
-        [
           "PRINMI_YUNNAN_TUOQIE",
           0.006
         ],
         [
-          "XIANG_GUILIN_JIESHOU",
-          0.006
-        ],
-        [
-          "CHINBON",
+          "DARMIYA",
           0.005
         ],
         [
-          "DARMIYA",
+          "LOBA_XIZANG_LONGZI_QVLIN",
           0.005
         ],
         [
@@ -4892,23 +4984,23 @@
           0.005
         ],
         [
-          "TOTO",
-          0.005
-        ],
-        [
           "ACHANG",
           0.004
         ],
         [
-          "JIN_JINZHONG_MAFANG",
+          "GAN_SHAOWU",
           0.004
         ],
         [
-          "KATSO",
+          "JINDING_BAI",
           0.004
         ],
         [
-          "LOBA_XIZANG_LONGZI_QVLIN",
+          "NAGA_LOTHA",
+          0.004
+        ],
+        [
+          "TOTO",
           0.004
         ],
         [
@@ -4916,7 +5008,15 @@
           0.004
         ],
         [
-          "DUHUMBI",
+          "XIANG_GUILIN_JIESHOU",
+          0.004
+        ],
+        [
+          "XIANG_GUILIN_QUANZHOU",
+          0.004
+        ],
+        [
+          "CHINBON",
           0.003
         ],
         [
@@ -4924,11 +5024,19 @@
           0.003
         ],
         [
-          "JINDING_BAI",
+          "GARO",
           0.003
         ],
         [
-          "NAGA_LOTHA",
+          "KATSO",
+          0.003
+        ],
+        [
+          "MANDARIN_LINYI_TANCHENG",
+          0.003
+        ],
+        [
+          "MARING_INDIA",
           0.003
         ],
         [
@@ -4940,11 +5048,7 @@
           0.002
         ],
         [
-          "ENQI_BAI",
-          0.002
-        ],
-        [
-          "GARO",
+          "DUHUMBI",
           0.002
         ],
         [
@@ -4956,18 +5060,6 @@
           0.002
         ],
         [
-          "MARING_INDIA",
-          0.002
-        ],
-        [
-          "MIN_LEIZHOU",
-          0.002
-        ],
-        [
-          "MIN_PUTIAN_XIANYOU",
-          0.002
-        ],
-        [
           "NAGA_MARAM",
           0.002
         ],
@@ -4976,59 +5068,63 @@
           0.002
         ],
         [
-          "SHERDUKPEN",
-          0.002
-        ],
-        [
-          "TILUNG",
-          0.002
-        ],
-        [
           "YI_YUNNAN_SHILIN_WEIZE",
           0.002
         ],
         [
-          "IDU_MISHMI",
+          "DONGWANG_TIBETAN",
           0.001
         ],
         [
-          "KACHARI",
+          "KAREN_PWO_NORTHERN",
           0.001
         ],
         [
-          "TUHUA_SHAOGUAN_XIANGYANG",
+          "MANDARIN_HANDAN_DAMING",
+          0.001
+        ],
+        [
+          "SHERDUKPEN",
+          0.001
+        ],
+        [
+          "TILUNG",
           0.001
         ]
       ],
-      "d_max_k3": 13.926085448569218,
+      "d_max_k3": 13.937529988241339,
       "kkt_all_ok": true
     },
     {
       "lineage": "Afro-Asiatic",
       "family": "Afro-Asiatic",
-      "n_doculects": 419,
-      "n_glottocodes": 272,
+      "n_doculects": 426,
+      "n_glottocodes": 277,
       "max_ldnd": 1.0666072368621826,
-      "spread": 2.5538648658112386,
-      "spread_rarefied_m3": 1.4437395072079002,
-      "d_max_kcal": 1.546803807681074,
-      "uniform_d2_kcal": 1.5179736467491702,
+      "spread": 2.5536182866074935,
+      "spread_rarefied_m3": 1.4114713447132092,
+      "d_max_kcal": 1.546738681602947,
+      "uniform_d2_kcal": 1.5173456638002218,
       "representatives_kcal": [
         [
-          "BADE_3",
+          "KWADZA",
           0.025
         ],
         [
-          "KWADZA",
+          "BADE_3",
           0.024
+        ],
+        [
+          "BACAMA",
+          0.022
         ],
         [
           "AASAX",
           0.021
         ],
         [
-          "BACAMA",
-          0.021
+          "GOBEZE",
+          0.02
         ],
         [
           "ALAABA",
@@ -5043,23 +5139,15 @@
           0.019
         ],
         [
-          "GOBEZE",
-          0.019
+          "MESMES",
+          0.018
         ],
         [
           "MOGOGODO",
-          0.019
-        ],
-        [
-          "ZENAGA",
           0.018
         ],
         [
           "DERA",
-          0.017
-        ],
-        [
-          "MESMES",
           0.017
         ],
         [
@@ -5071,6 +5159,10 @@
           0.017
         ],
         [
+          "ZENAGA",
+          0.017
+        ],
+        [
           "CINENI",
           0.016
         ],
@@ -5079,24 +5171,24 @@
           0.016
         ],
         [
-          "AFAR_2",
-          0.015
-        ],
-        [
-          "BUDUMA_2",
-          0.015
-        ],
-        [
-          "DUGWOR_2",
-          0.015
-        ],
-        [
           "GARRE",
+          0.016
+        ],
+        [
+          "HUBA",
+          0.016
+        ],
+        [
+          "BURUNGE",
           0.015
         ],
         [
           "MIYA",
           0.015
+        ],
+        [
+          "AFAR_2",
+          0.014
         ],
         [
           "ARBORE_2",
@@ -5107,19 +5199,15 @@
           0.014
         ],
         [
-          "BURUNGE",
-          0.014
-        ],
-        [
           "DAASANACH_2",
           0.014
         ],
         [
-          "GAFAT",
+          "DUGWOR_2",
           0.014
         ],
         [
-          "HUBA",
+          "GAFAT",
           0.014
         ],
         [
@@ -5131,35 +5219,35 @@
           0.014
         ],
         [
-          "IRAQW_2",
+          "BEJA",
           0.013
         ],
         [
-          "BEJA",
-          0.012
+          "SHUWA_CHADIAN_ARABIC_2",
+          0.013
+        ],
+        [
+          "TSUVAN",
+          0.013
         ],
         [
           "GOEMAI",
           0.012
         ],
         [
-          "MALTESE",
+          "IRAQW_2",
           0.012
         ],
         [
-          "TSUVAN",
+          "TAMAJEQ_TAYART_AIR",
           0.012
-        ],
-        [
-          "ARABIC_KHUZESTANI",
-          0.011
         ],
         [
           "BOGHOM_2",
           0.011
         ],
         [
-          "DAHALO_2",
+          "KEMANT_2",
           0.011
         ],
         [
@@ -5171,12 +5259,12 @@
           0.011
         ],
         [
-          "TAMAJEQ_TAYART_AIR",
+          "TUMAK",
           0.011
         ],
         [
-          "TUMAK",
-          0.011
+          "DAHALO_2",
+          0.01
         ],
         [
           "GEJI",
@@ -5187,11 +5275,7 @@
           0.01
         ],
         [
-          "KEMANT_2",
-          0.01
-        ],
-        [
-          "TSAMAI",
+          "PERO",
           0.01
         ],
         [
@@ -5199,11 +5283,11 @@
           0.01
         ],
         [
-          "AWNGI_2",
+          "ARABIC_KHUZESTANI",
           0.009
         ],
         [
-          "BUWAL",
+          "AWNGI_2",
           0.009
         ],
         [
@@ -5219,19 +5303,19 @@
           0.009
         ],
         [
+          "MALTESE",
+          0.009
+        ],
+        [
+          "MBEDAM",
+          0.009
+        ],
+        [
           "MONTOL",
           0.009
         ],
         [
-          "PERO",
-          0.009
-        ],
-        [
-          "RON_MANGAR",
-          0.009
-        ],
-        [
-          "SAYA",
+          "TSAMAI",
           0.009
         ],
         [
@@ -5243,7 +5327,15 @@
           0.008
         ],
         [
+          "BUWAL",
+          0.008
+        ],
+        [
           "DAHALO",
+          0.008
+        ],
+        [
+          "GAWWADA",
           0.008
         ],
         [
@@ -5251,12 +5343,16 @@
           0.008
         ],
         [
-          "MBEDAM",
+          "RON_MANGAR",
           0.008
         ],
         [
-          "GAWWADA",
-          0.007
+          "SAYA",
+          0.008
+        ],
+        [
+          "WALANI_SILTE",
+          0.008
         ],
         [
           "GAWWADA_2",
@@ -5264,10 +5360,6 @@
         ],
         [
           "GUDU",
-          0.007
-        ],
-        [
-          "MASMEDJE",
           0.007
         ],
         [
@@ -5279,19 +5371,23 @@
           0.007
         ],
         [
-          "WALANI_SILTE",
-          0.007
-        ],
-        [
-          "BIBLICAL_HEBREW",
+          "DAHALO_3",
           0.006
         ],
         [
-          "GAANDA",
+          "GVOKO",
           0.006
         ],
         [
           "JIDDU",
+          0.006
+        ],
+        [
+          "MASMEDJE",
+          0.006
+        ],
+        [
+          "MUNDAT",
           0.006
         ],
         [
@@ -5303,31 +5399,19 @@
           0.006
         ],
         [
+          "BIBLICAL_HEBREW",
+          0.005
+        ],
+        [
           "CHAOUI",
           0.005
         ],
         [
-          "DAHALO_3",
-          0.005
-        ],
-        [
-          "GVOKO",
-          0.005
-        ],
-        [
-          "MUNDAT",
-          0.005
-        ],
-        [
-          "SOUKHNE_SYRIAN_ARABIC",
+          "GAANDA",
           0.005
         ],
         [
           "AYT_SEGHROUCHEN",
-          0.004
-        ],
-        [
-          "BAZZA",
           0.004
         ],
         [
@@ -5339,11 +5423,15 @@
           0.004
         ],
         [
-          "CIBAK",
+          "GAANDA_GABIN",
           0.004
         ],
         [
-          "GAANDA_GABIN",
+          "GIDAR",
+          0.004
+        ],
+        [
+          "NDAM",
           0.004
         ],
         [
@@ -5367,11 +5455,19 @@
           0.003
         ],
         [
-          "BENI_SNOUS_WESTERN_ALGERIAN_BERBER",
+          "BAZZA",
+          0.003
+        ],
+        [
+          "CIBAK",
           0.003
         ],
         [
           "DUHWA",
+          0.003
+        ],
+        [
+          "GURUNTUM_MBAARU",
           0.003
         ],
         [
@@ -5383,14 +5479,6 @@
           0.003
         ],
         [
-          "MANGAS",
-          0.003
-        ],
-        [
-          "NDAM",
-          0.003
-        ],
-        [
           "NIMBIA",
           0.003
         ],
@@ -5399,15 +5487,31 @@
           0.003
         ],
         [
-          "WERIZE",
+          "SOUKHNE_SYRIAN_ARABIC",
           0.003
         ],
         [
-          "ARGOBBA",
+          "TAMASHEQ",
+          0.003
+        ],
+        [
+          "WUZLAM",
+          0.003
+        ],
+        [
+          "XAMTANGA",
+          0.003
+        ],
+        [
+          "BENI_SNOUS_WESTERN_ALGERIAN_BERBER",
           0.002
         ],
         [
-          "GAVA",
+          "GEJI_2",
+          0.002
+        ],
+        [
+          "MANGAS",
           0.002
         ],
         [
@@ -5423,51 +5527,43 @@
           0.002
         ],
         [
-          "TAMASHEQ",
+          "SOMALI_2",
           0.002
         ],
         [
-          "WUZLAM",
+          "WERIZE",
           0.002
         ],
         [
-          "XAMTANGA",
-          0.002
-        ],
-        [
-          "GARAKU",
+          "ARGOBBA",
           0.001
         ],
         [
-          "GEJI_2",
+          "BODE_DOEI",
           0.001
         ],
         [
-          "HARARI",
+          "BUSSA_2",
           0.001
         ],
         [
-          "HYA",
-          0.001
-        ],
-        [
-          "URMI_NEO_ARAMAIC",
+          "GAVA",
           0.001
         ]
       ],
-      "d_max_k3": 15.19390919635199,
+      "d_max_k3": 15.196554737381508,
       "kkt_all_ok": true
     },
     {
       "lineage": "Atlantic-Congo",
       "family": "Atlantic-Congo",
       "n_doculects": 2042,
-      "n_glottocodes": 1007,
+      "n_glottocodes": 1005,
       "max_ldnd": 1.110214352607727,
-      "spread": 2.6137120896137263,
-      "spread_rarefied_m3": 1.4115068774188062,
-      "d_max_kcal": 1.5627323769748818,
-      "uniform_d2_kcal": 1.5099595678392947,
+      "spread": 2.614141550135272,
+      "spread_rarefied_m3": 1.4193299773664392,
+      "d_max_kcal": 1.5628477653625759,
+      "uniform_d2_kcal": 1.5100301840249968,
       "representatives_kcal": [
         [
           "KISSI",
@@ -5486,14 +5582,6 @@
           0.015
         ],
         [
-          "BUY_KASANGA",
-          0.014
-        ],
-        [
-          "JOOLA_KEERAK_2",
-          0.014
-        ],
-        [
           "MBATO",
           0.014
         ],
@@ -5510,7 +5598,11 @@
           0.013
         ],
         [
-          "EAST_LIMBA",
+          "BUY_KASANGA",
+          0.013
+        ],
+        [
+          "JOOLA_KEERAK_2",
           0.013
         ],
         [
@@ -5526,11 +5618,19 @@
           0.013
         ],
         [
+          "EAST_LIMBA",
+          0.012
+        ],
+        [
           "OLOMA_2",
           0.012
         ],
         [
-          "BIJOGO_KAJOKO",
+          "BAYNUNK_SONKODOU",
+          0.011
+        ],
+        [
+          "DONGO_KO_MBA",
           0.011
         ],
         [
@@ -5538,7 +5638,11 @@
           0.01
         ],
         [
-          "DONGO_KO_MBA",
+          "ASU_NIGERIA",
+          0.01
+        ],
+        [
+          "BIJOGO_KAJOKO",
           0.01
         ],
         [
@@ -5548,10 +5652,6 @@
         [
           "MA",
           0.01
-        ],
-        [
-          "ASU_NIGERIA",
-          0.009
         ],
         [
           "GIRYAMA_4",
@@ -5586,27 +5686,15 @@
           0.009
         ],
         [
-          "OGBRONUAGUM",
-          0.009
-        ],
-        [
           "PULAR_FUUTA_JALON",
           0.009
         ],
         [
+          "TEMNE_3",
+          0.009
+        ],
+        [
           "ABURE_3",
-          0.008
-        ],
-        [
-          "ADIOUKROU_2",
-          0.008
-        ],
-        [
-          "BAGA_KOBA_3",
-          0.008
-        ],
-        [
-          "BAI_2",
           0.008
         ],
         [
@@ -5634,7 +5722,7 @@
           0.008
         ],
         [
-          "PAJADE",
+          "OGBRONUAGUM",
           0.008
         ],
         [
@@ -5650,15 +5738,11 @@
           0.008
         ],
         [
-          "TEMNE_3",
-          0.008
-        ],
-        [
           "ABRON_2",
           0.007
         ],
         [
-          "ABUA",
+          "ADIOUKROU_2",
           0.007
         ],
         [
@@ -5666,15 +5750,23 @@
           0.007
         ],
         [
+          "BAGA_KOBA_3",
+          0.007
+        ],
+        [
           "BAGA_MBOTENI_3",
           0.007
         ],
         [
-          "BAYNUNK_GUNYAAMOLO_4",
+          "BAI_2",
           0.007
         ],
         [
           "BAYOT_8",
+          0.007
+        ],
+        [
+          "DOKO_UYANGA",
           0.007
         ],
         [
@@ -5686,7 +5778,15 @@
           0.007
         ],
         [
+          "HUNGWORO",
+          0.007
+        ],
+        [
           "JAAD_BADIARANKE",
+          0.007
+        ],
+        [
+          "JOOLA_FOGNY_4",
           0.007
         ],
         [
@@ -5698,11 +5798,11 @@
           0.007
         ],
         [
-          "SAFEN_5",
+          "PAJADE",
           0.007
         ],
         [
-          "SEGEMUK",
+          "SAFEN_5",
           0.007
         ],
         [
@@ -5710,7 +5810,19 @@
           0.007
         ],
         [
+          "TIKAR_AKUEN",
+          0.007
+        ],
+        [
+          "ABUA",
+          0.006
+        ],
+        [
           "ANUFO",
+          0.006
+        ],
+        [
+          "AYERE",
           0.006
         ],
         [
@@ -5719,18 +5831,6 @@
         ],
         [
           "BODO",
-          0.006
-        ],
-        [
-          "DOKO_UYANGA",
-          0.006
-        ],
-        [
-          "HUNGWORO",
-          0.006
-        ],
-        [
-          "JENJO",
           0.006
         ],
         [
@@ -5746,27 +5846,19 @@
           0.006
         ],
         [
+          "SEGEMUK",
+          0.006
+        ],
+        [
+          "SENUFO_SICITE",
+          0.006
+        ],
+        [
           "TANDA_2",
           0.006
         ],
         [
-          "TIKAR_AKUEN",
-          0.006
-        ],
-        [
-          "ZAAMBO",
-          0.006
-        ],
-        [
-          "ZANDE",
-          0.006
-        ],
-        [
           "AVIKAM_2",
-          0.005
-        ],
-        [
-          "AYERE",
           0.005
         ],
         [
@@ -5790,11 +5882,11 @@
           0.005
         ],
         [
-          "GBUGYAR",
+          "IKWERE",
           0.005
         ],
         [
-          "IKWERE",
+          "JENJO",
           0.005
         ],
         [
@@ -5818,10 +5910,6 @@
           0.005
         ],
         [
-          "MBUNDU",
-          0.005
-        ],
-        [
           "MUNGONG",
           0.005
         ],
@@ -5834,23 +5922,23 @@
           0.005
         ],
         [
-          "SALKA",
+          "ZAAMBO",
           0.005
         ],
         [
-          "SENUFO_SICITE",
+          "ZANDE",
           0.005
         ],
         [
-          "SHIWA_4",
-          0.005
-        ],
-        [
-          "THA",
-          0.005
+          "BAYNUNK_GUNYAAMOLO_4",
+          0.004
         ],
         [
           "BENA_2",
+          0.004
+        ],
+        [
+          "BON_GULA",
           0.004
         ],
         [
@@ -5858,11 +5946,11 @@
           0.004
         ],
         [
-          "GOUNDO",
+          "GBUGYAR",
           0.004
         ],
         [
-          "JOOLA_BANJAL_6",
+          "GOUNDO",
           0.004
         ],
         [
@@ -5894,6 +5982,10 @@
           0.004
         ],
         [
+          "MBUNDU",
+          0.004
+        ],
+        [
           "MUNDANG_3",
           0.004
         ],
@@ -5906,11 +5998,19 @@
           0.004
         ],
         [
-          "PULAR_FUUTA_JALON_3",
+          "SALKA",
+          0.004
+        ],
+        [
+          "SHIWA_4",
           0.004
         ],
         [
           "TEM",
+          0.004
+        ],
+        [
+          "THA",
           0.004
         ],
         [
@@ -5930,11 +6030,11 @@
           0.003
         ],
         [
-          "BON_GULA",
+          "BUA",
           0.003
         ],
         [
-          "BUA",
+          "C84_LELE_LUHILEEL_4",
           0.003
         ],
         [
@@ -5946,15 +6046,19 @@
           0.003
         ],
         [
+          "EDO_3",
+          0.003
+        ],
+        [
           "EOTILE_BETI",
           0.003
         ],
         [
-          "JOOLA_BLISS_2",
+          "JOOLA_BANJAL_6",
           0.003
         ],
         [
-          "JOOLA_FOGNY_6",
+          "JOOLA_BLISS_2",
           0.003
         ],
         [
@@ -5998,11 +6102,15 @@
           0.003
         ],
         [
-          "NUPE_TAKO_2",
+          "NYOLE",
           0.003
         ],
         [
-          "NYOLE",
+          "PHWO",
+          0.003
+        ],
+        [
+          "PULAR_FUUTA_JALON_3",
           0.003
         ],
         [
@@ -6022,10 +6130,6 @@
           0.003
         ],
         [
-          "AGOI",
-          0.002
-        ],
-        [
           "AGWAGWUNE_4",
           0.002
         ],
@@ -6038,6 +6142,10 @@
           0.002
         ],
         [
+          "ANAANG_2",
+          0.002
+        ],
+        [
           "ANIMERE",
           0.002
         ],
@@ -6046,7 +6154,15 @@
           0.002
         ],
         [
+          "BAKA_4",
+          0.002
+        ],
+        [
           "BESME",
+          0.002
+        ],
+        [
+          "BIJOGO_KAJOKO_3",
           0.002
         ],
         [
@@ -6054,23 +6170,7 @@
           0.002
         ],
         [
-          "C84_LELE_LUHILEEL_4",
-          0.002
-        ],
-        [
           "CINDA_5",
-          0.002
-        ],
-        [
-          "DONGO",
-          0.002
-        ],
-        [
-          "EDO_3",
-          0.002
-        ],
-        [
-          "GBI",
           0.002
         ],
         [
@@ -6090,11 +6190,19 @@
           0.002
         ],
         [
+          "JOOLA_FOGNY_6",
+          0.002
+        ],
+        [
           "JOOLA_KARON_3",
           0.002
         ],
         [
           "KAKANDA_2",
+          0.002
+        ],
+        [
+          "LANGBASI",
           0.002
         ],
         [
@@ -6106,19 +6214,11 @@
           0.002
         ],
         [
-          "MUNDANG",
-          0.002
-        ],
-        [
-          "NGBAKA_GILIMA",
-          0.002
-        ],
-        [
           "NLE_MBO",
           0.002
         ],
         [
-          "PHWO",
+          "NUPE_TAKO_2",
           0.002
         ],
         [
@@ -6126,7 +6226,7 @@
           0.002
         ],
         [
-          "TSONGA",
+          "TSHWA",
           0.002
         ],
         [
@@ -6138,31 +6238,23 @@
           0.002
         ],
         [
-          "BAKA_4",
+          "WUDU",
+          0.002
+        ],
+        [
+          "AGOI",
           0.001
         ],
         [
-          "BIJOGO_KAJOKO_3",
+          "DONGO",
           0.001
         ],
         [
-          "JOOLA_BANJAL_5",
+          "GBI",
           0.001
         ],
         [
-          "JOOLA_MLOMP_3",
-          0.001
-        ],
-        [
-          "JUKUN_TAKUM",
-          0.001
-        ],
-        [
-          "KROBU",
-          0.001
-        ],
-        [
-          "LANGBASI",
+          "JOOLA_MLOMP",
           0.001
         ],
         [
@@ -6170,15 +6262,11 @@
           0.001
         ],
         [
-          "NDE_2",
+          "MUNDANG",
           0.001
         ],
         [
-          "NOTRE",
-          0.001
-        ],
-        [
-          "OTANK",
+          "NDUMU_3",
           0.001
         ],
         [
@@ -6186,35 +6274,27 @@
           0.001
         ],
         [
-          "TEE",
-          0.001
-        ],
-        [
-          "VAGALA",
+          "TSONGA",
           0.001
         ]
       ],
-      "d_max_k3": 16.918202061687552,
+      "d_max_k3": 16.92769938784634,
       "kkt_all_ok": false
     },
     {
       "lineage": "Nuclear Trans New Guinea",
       "family": "Nuclear Trans New Guinea",
       "n_doculects": 307,
-      "n_glottocodes": 257,
+      "n_glottocodes": 256,
       "max_ldnd": 1.10355806350708,
-      "spread": 2.591249610662697,
-      "spread_rarefied_m3": 1.4819851703167872,
-      "d_max_kcal": 1.5566866331517673,
-      "uniform_d2_kcal": 1.540744889493234,
+      "spread": 2.591874691495145,
+      "spread_rarefied_m3": 1.4912390664569106,
+      "d_max_kcal": 1.556851482387022,
+      "uniform_d2_kcal": 1.5407770251461885,
       "representatives_kcal": [
         [
           "ASMATH_NORTH",
           0.026
-        ],
-        [
-          "AUYANA",
-          0.025
         ],
         [
           "ABAGA",
@@ -6229,11 +6309,15 @@
           0.021
         ],
         [
-          "PAY",
-          0.019
+          "AUYANA",
+          0.02
         ],
         [
-          "SAM",
+          "PAY",
+          0.02
+        ],
+        [
+          "PAYNAMAR",
           0.019
         ],
         [
@@ -6241,7 +6325,15 @@
           0.019
         ],
         [
-          "PAYNAMAR",
+          "USARUFA",
+          0.019
+        ],
+        [
+          "INIAI_2",
+          0.018
+        ],
+        [
+          "SAM",
           0.018
         ],
         [
@@ -6249,23 +6341,27 @@
           0.017
         ],
         [
-          "HUA_2",
+          "GAHUKU_ASARO",
           0.017
         ],
         [
-          "INIAI_2",
-          0.017
+          "HUA_2",
+          0.016
+        ],
+        [
+          "AUYE",
+          0.015
         ],
         [
           "DOM",
-          0.016
-        ],
-        [
-          "GAHUKU_ASARO",
-          0.016
+          0.015
         ],
         [
           "KOMYANDARET",
+          0.015
+        ],
+        [
+          "SEMPAN_2",
           0.015
         ],
         [
@@ -6273,19 +6369,19 @@
           0.014
         ],
         [
-          "SEMPAN_2",
+          "YEKORA",
           0.014
         ],
         [
-          "YEKORA",
-          0.014
+          "EIPOMEK_2",
+          0.013
         ],
         [
           "LANI",
           0.013
         ],
         [
-          "PAMOSU",
+          "MAIBI",
           0.013
         ],
         [
@@ -6297,11 +6393,11 @@
           0.012
         ],
         [
-          "KOBON",
+          "KAMORO_2",
           0.012
         ],
         [
-          "MAIBI",
+          "KOBON",
           0.012
         ],
         [
@@ -6309,31 +6405,27 @@
           0.012
         ],
         [
-          "NGGEM",
+          "PAMOSU",
+          0.012
+        ],
+        [
+          "MOERE",
           0.011
         ],
         [
-          "WOLANI_UPPER_MBIJANDOGA",
-          0.011
+          "ATEMPLE",
+          0.01
         ],
         [
           "AWYU_CENTRAL_TAIM",
           0.01
         ],
         [
-          "EIPOMEK_2",
+          "JILIM",
           0.01
         ],
         [
-          "GANGLAU",
-          0.01
-        ],
-        [
-          "KAMORO_2",
-          0.01
-        ],
-        [
-          "MOERE",
+          "NGGEM",
           0.01
         ],
         [
@@ -6345,19 +6437,7 @@
           0.009
         ],
         [
-          "ATEMPLE",
-          0.009
-        ],
-        [
-          "AUYE",
-          0.009
-        ],
-        [
-          "AWYU_CENTRAL_NOHON",
-          0.009
-        ],
-        [
-          "JILIM",
+          "GANGLAU",
           0.009
         ],
         [
@@ -6369,15 +6449,7 @@
           0.009
         ],
         [
-          "NUK",
-          0.009
-        ],
-        [
           "ONO",
-          0.009
-        ],
-        [
-          "PILA",
           0.009
         ],
         [
@@ -6389,6 +6461,10 @@
           0.009
         ],
         [
+          "AWYU_CENTRAL_NOHON",
+          0.008
+        ],
+        [
           "BURUMAKOK",
           0.008
         ],
@@ -6397,11 +6473,11 @@
           0.008
         ],
         [
-          "LEMBENA",
+          "GARUH",
           0.008
         ],
         [
-          "MATEPI",
+          "LEMBENA",
           0.008
         ],
         [
@@ -6413,11 +6489,15 @@
           0.008
         ],
         [
-          "TANDA_PNG",
+          "NUK",
           0.008
         ],
         [
-          "TANGKO",
+          "PILA",
+          0.008
+        ],
+        [
+          "TANDA_PNG",
           0.008
         ],
         [
@@ -6425,23 +6505,11 @@
           0.008
         ],
         [
-          "UNA_2",
-          0.008
-        ],
-        [
-          "URIGINA",
+          "WANO_2",
           0.008
         ],
         [
           "ABASAKUR",
-          0.007
-        ],
-        [
-          "AGHU",
-          0.007
-        ],
-        [
-          "AWYU_ASUE_2",
           0.007
         ],
         [
@@ -6453,7 +6521,7 @@
           0.007
         ],
         [
-          "GARUH",
+          "IKUNDUN",
           0.007
         ],
         [
@@ -6465,7 +6533,7 @@
           0.007
         ],
         [
-          "OSUM",
+          "MATEPI",
           0.007
         ],
         [
@@ -6473,7 +6541,11 @@
           0.007
         ],
         [
-          "WANO_2",
+          "TANGKO",
+          0.007
+        ],
+        [
+          "URIGINA",
           0.007
         ],
         [
@@ -6481,19 +6553,15 @@
           0.007
         ],
         [
-          "ZIA",
-          0.007
-        ],
-        [
           "ARAWUM",
           0.006
         ],
         [
-          "GIMI",
+          "AWYU_ASUE_2",
           0.006
         ],
         [
-          "IKUNDUN",
+          "GIMI",
           0.006
         ],
         [
@@ -6513,19 +6581,23 @@
           0.006
         ],
         [
+          "OSUM",
+          0.006
+        ],
+        [
           "TAUYA_2",
           0.006
         ],
         [
-          "TOKANO",
+          "ZIA",
           0.006
         ],
         [
-          "YARIBA",
-          0.006
+          "AGHU",
+          0.005
         ],
         [
-          "BENABENA",
+          "AWYU_CENTRAL_KETAH",
           0.005
         ],
         [
@@ -6533,7 +6605,7 @@
           0.005
         ],
         [
-          "DIMIR",
+          "KINIAGEIMA",
           0.005
         ],
         [
@@ -6541,11 +6613,11 @@
           0.005
         ],
         [
-          "MAIANA",
+          "KUMAN",
           0.005
         ],
         [
-          "MALE_PAPUANG",
+          "NII",
           0.005
         ],
         [
@@ -6553,7 +6625,19 @@
           0.005
         ],
         [
+          "SUENA",
+          0.005
+        ],
+        [
+          "TOKANO",
+          0.005
+        ],
+        [
           "URI_PAPUA_NEW_GUINEA",
+          0.005
+        ],
+        [
+          "YARIBA",
           0.005
         ],
         [
@@ -6561,19 +6645,11 @@
           0.004
         ],
         [
-          "AWYU_CENTRAL_KETAH",
+          "BENABENA",
           0.004
         ],
         [
-          "HULI_2",
-          0.004
-        ],
-        [
-          "ISABI",
-          0.004
-        ],
-        [
-          "KINIAGEIMA",
+          "DIMIR",
           0.004
         ],
         [
@@ -6581,7 +6657,11 @@
           0.004
         ],
         [
-          "KUMAN",
+          "MAIANA",
+          0.004
+        ],
+        [
+          "MALE_PAPUANG",
           0.004
         ],
         [
@@ -6597,19 +6677,11 @@
           0.004
         ],
         [
-          "N_TAIRORA",
+          "NUKNA",
           0.004
         ],
         [
           "PULABU",
-          0.004
-        ],
-        [
-          "SUENA",
-          0.004
-        ],
-        [
-          "WADAGINAM",
           0.004
         ],
         [
@@ -6629,7 +6701,7 @@
           0.003
         ],
         [
-          "GIRAWA",
+          "ISABI",
           0.003
         ],
         [
@@ -6637,7 +6709,7 @@
           0.003
         ],
         [
-          "NII",
+          "KETENGBAN_BIME",
           0.003
         ],
         [
@@ -6645,11 +6717,15 @@
           0.003
         ],
         [
-          "NUKNA",
+          "N_TAIRORA",
           0.003
         ],
         [
-          "YABEN",
+          "WADAGINAM",
+          0.003
+        ],
+        [
+          "WAMBON",
           0.003
         ],
         [
@@ -6657,15 +6733,23 @@
           0.002
         ],
         [
+          "GIRAWA",
+          0.002
+        ],
+        [
+          "HULI_2",
+          0.002
+        ],
+        [
           "SETAMAN_2",
           0.002
         ],
         [
-          "SILOPI",
+          "SIANE",
           0.002
         ],
         [
-          "WAMBON",
+          "YABEN",
           0.002
         ],
         [
@@ -6681,46 +6765,38 @@
           0.001
         ],
         [
-          "GUMALU",
+          "KANDAWO",
           0.001
         ],
         [
-          "KETENGBAN_BIME",
-          0.001
-        ],
-        [
-          "KOROMU",
-          0.001
-        ],
-        [
-          "NAKAME",
+          "REMPI",
           0.001
         ]
       ],
-      "d_max_k3": 15.94895639675658,
+      "d_max_k3": 15.95318080963798,
       "kkt_all_ok": true
     },
     {
       "lineage": "Otomanguean",
       "family": "Otomanguean",
       "n_doculects": 109,
-      "n_glottocodes": 90,
+      "n_glottocodes": 91,
       "max_ldnd": 1.0804284811019897,
-      "spread": 2.5101535199874383,
-      "spread_rarefied_m3": 1.4107400326280082,
-      "d_max_kcal": 1.5351616674448691,
-      "uniform_d2_kcal": 1.5133497685092707,
+      "spread": 2.5070876757758893,
+      "spread_rarefied_m3": 1.4179609656707601,
+      "d_max_kcal": 1.5343638523387415,
+      "uniform_d2_kcal": 1.512588767410178,
       "representatives_kcal": [
         [
           "CHIAPANEC_3",
-          0.044
+          0.043
         ],
         [
           "MATLATZINCA_SAN_FRANCISCO_OXTOTILPAN_2",
-          0.04
+          0.041
         ],
         [
-          "NORTHERN_PAME_2",
+          "MANGUE",
           0.035
         ],
         [
@@ -6728,24 +6804,20 @@
           0.035
         ],
         [
-          "CHICHIMECO",
-          0.034
-        ],
-        [
-          "MANGUE",
+          "CHOCHO_OCOTLAN",
           0.034
         ],
         [
           "TRIQUI_CHICAHUAXTLA",
+          0.034
+        ],
+        [
+          "CHICHIMECO",
           0.033
         ],
         [
-          "CHOCHO_OCOTLAN",
-          0.031
-        ],
-        [
           "TLACOAPA_MEPHAA",
-          0.031
+          0.032
         ],
         [
           "AZOYU_TLAPANEC",
@@ -6757,26 +6829,34 @@
         ],
         [
           "TEXMELUCAN_ZAPOTEC",
-          0.029
+          0.028
+        ],
+        [
+          "TAMASOPO_PAME",
+          0.025
         ],
         [
           "TEZOATLAN_MIXTEC",
-          0.026
+          0.025
         ],
         [
           "ZAPOTEC_YALALAG",
-          0.023
+          0.024
         ],
         [
           "CHINANTEC_PALANTLA",
-          0.022
+          0.023
         ],
         [
           "CHINANTEC_QUIOTEPEC",
+          0.023
+        ],
+        [
+          "PAME_DE_JILIAPAN_1958",
           0.022
         ],
         [
-          "OCOTEPEC_MIXTEC",
+          "POPOLOCA_DE_SAN_VICENTE_COYOTEPEC",
           0.021
         ],
         [
@@ -6784,27 +6864,23 @@
           0.021
         ],
         [
+          "XOCHISTLAHUACA_AMUZGO",
+          0.021
+        ],
+        [
           "CHICHICAPAM_ZAPOTEC",
           0.02
         ],
         [
-          "XOCHISTLAHUACA_AMUZGO",
+          "OCUILTECO",
           0.02
         ],
         [
+          "OCOTEPEC_MIXTEC",
+          0.019
+        ],
+        [
           "CHINANTEC_LALANA",
-          0.019
-        ],
-        [
-          "POPOLOCA_DE_SAN_VICENTE_COYOTEPEC",
-          0.019
-        ],
-        [
-          "OCUILTECO",
-          0.018
-        ],
-        [
-          "OTOMI_DE_SAN_ANDRES_CUEXCONTITLAN",
           0.018
         ],
         [
@@ -6812,19 +6888,11 @@
           0.018
         ],
         [
-          "PAME_DE_JILIAPAN_1958",
-          0.017
-        ],
-        [
           "SAN_LORENZO_CUAUNECUILTITLA",
           0.016
         ],
         [
-          "TAMASOPO_PAME",
-          0.016
-        ],
-        [
-          "MIXTEC_NORTHERN_TLAXIACO",
+          "OTOMI_DE_SAN_ANDRES_CUEXCONTITLAN",
           0.015
         ],
         [
@@ -6832,11 +6900,11 @@
           0.014
         ],
         [
-          "POPOLOCA_SAN_JUAN_ATZINGO",
+          "MIXTEC_NORTHERN_TLAXIACO",
           0.014
         ],
         [
-          "AMATLAN_ZAPOTEC",
+          "ATATLAHUCA_MIXTEC",
           0.013
         ],
         [
@@ -6844,23 +6912,39 @@
           0.013
         ],
         [
-          "OTOMI_TEMOAYA",
+          "PAME_DE_JILIAPAN_1767",
           0.013
         ],
         [
+          "POPOLOCA_SAN_JUAN_ATZINGO",
+          0.013
+        ],
+        [
+          "AMATLAN_ZAPOTEC",
+          0.012
+        ],
+        [
           "CHINANTEC_OZUMACIN",
-          0.011
+          0.012
         ],
         [
-          "HUAUTLA_DE_JIMENEZ",
-          0.011
-        ],
-        [
-          "PAME_DE_JILIAPAN_1767",
-          0.011
+          "OTOMI_TOLUCA",
+          0.012
         ],
         [
           "SAN_PEDRO_AMUZGOS_AMUZGO",
+          0.012
+        ],
+        [
+          "TILAPA_OTOMI",
+          0.012
+        ],
+        [
+          "MIXTEC_ALCOZAUCA",
+          0.011
+        ],
+        [
+          "PAME_DE_PALUCA_1958",
           0.011
         ],
         [
@@ -6872,11 +6956,11 @@
           0.01
         ],
         [
-          "TILAPA_OTOMI",
+          "OTOMI_TEMOAYA",
           0.01
         ],
         [
-          "CHINANTEC_COMALTEPEC",
+          "CHINANTEC_OJITLAN",
           0.009
         ],
         [
@@ -6884,19 +6968,11 @@
           0.009
         ],
         [
-          "MIXTEC_ALCOZAUCA",
-          0.009
-        ],
-        [
-          "PAME_DE_PALUCA_1958",
+          "HUAUTLA_DE_JIMENEZ",
           0.009
         ],
         [
           "ZAPOTEC_SAN_LUCAS_QUIAVINI",
-          0.009
-        ],
-        [
-          "CHINANTEC_OJITLAN",
           0.008
         ],
         [
@@ -6904,7 +6980,7 @@
           0.007
         ],
         [
-          "MAZATEC_CHIQUIHUITLAN",
+          "CHINANTEC_COMALTEPEC",
           0.007
         ],
         [
@@ -6912,36 +6988,28 @@
           0.007
         ],
         [
+          "SAN_JERONIMO_TECOATL",
+          0.007
+        ],
+        [
           "CHATINO_TATALTEPEC",
           0.006
         ],
         [
-          "IXCATEC",
+          "MAZATEC_CHIQUIHUITLAN",
           0.006
-        ],
-        [
-          "OTOMI_TOLUCA",
-          0.006
-        ],
-        [
-          "MIXTEC_CHAYUCO",
-          0.005
-        ],
-        [
-          "SAN_JERONIMO_TECOATL",
-          0.005
         ],
         [
           "TILQUIAPAN_ZAPOTEC",
+          0.006
+        ],
+        [
+          "IXCATEC",
           0.005
         ],
         [
           "OTOMI_DE_EL_BAILE",
-          0.004
-        ],
-        [
-          "SAN_PEDRO_IXCATLAN",
-          0.003
+          0.005
         ],
         [
           "SANTA_MARIA_QUIEGOLANI_ZAPOTEC",
@@ -6950,9 +7018,17 @@
         [
           "SAN_BARTOLOME_AYAUTLA",
           0.002
+        ],
+        [
+          "SAN_PEDRO_IXCATLAN",
+          0.002
+        ],
+        [
+          "MIXTEC_CHAYUCO",
+          0.001
         ]
       ],
-      "d_max_k3": 12.922822659236859,
+      "d_max_k3": 12.871256180422282,
       "kkt_all_ok": true
     },
     {
@@ -7108,59 +7184,59 @@
       "lineage": "Nubian",
       "family": "Nubian",
       "n_doculects": 11,
-      "n_glottocodes": 9,
+      "n_glottocodes": 10,
       "max_ldnd": 0.944654643535614,
-      "spread": 1.8356781432512663,
-      "spread_rarefied_m3": 1.2188912470579454,
-      "d_max_kcal": 1.3726747261184276,
-      "uniform_d2_kcal": 1.3466713711050176,
+      "spread": 1.849764042062174,
+      "spread_rarefied_m3": 1.210413784284339,
+      "d_max_kcal": 1.375615183879825,
+      "uniform_d2_kcal": 1.3577538578524275,
       "representatives_kcal": [
         [
           "MEIDOB_NUBIAN",
-          0.19
+          0.181
         ],
         [
           "NOBIIN",
-          0.167
+          0.149
         ],
         [
           "BIRKED",
-          0.132
+          0.133
         ],
         [
           "KARKO",
-          0.111
+          0.107
+        ],
+        [
+          "DILLING",
+          0.092
         ],
         [
           "WALI_SUDAN",
-          0.098
-        ],
-        [
-          "KADARU",
-          0.072
-        ],
-        [
-          "UNCUNWEE",
-          0.071
+          0.082
         ],
         [
           "DONGOLESE_NUBIAN",
-          0.062
+          0.077
         ],
         [
-          "KENZI",
-          0.045
+          "UNCUNWEE",
+          0.072
+        ],
+        [
+          "OLD_NUBIAN",
+          0.051
         ],
         [
           "KUNUZ_NUBIAN",
-          0.034
+          0.048
         ],
         [
           "NUBIAN_OF_DONGOLA",
-          0.019
+          0.006
         ]
       ],
-      "d_max_k3": 4.888399436763537,
+      "d_max_k3": 5.061883936779929,
       "kkt_all_ok": true
     },
     {
@@ -7770,12 +7846,12 @@
       "lineage": "Mande",
       "family": "Mande",
       "n_doculects": 128,
-      "n_glottocodes": 62,
+      "n_glottocodes": 63,
       "max_ldnd": 1.0244264602661133,
-      "spread": 2.2181501140307867,
-      "spread_rarefied_m3": 1.1707261002986336,
+      "spread": 2.218150114030789,
+      "spread_rarefied_m3": 1.1771515546509328,
       "d_max_kcal": 1.4612599241829263,
-      "uniform_d2_kcal": 1.3932480695692127,
+      "uniform_d2_kcal": 1.3925204829754898,
       "representatives_kcal": [
         [
           "SONINKE_4",
@@ -7974,7 +8050,7 @@
           0.001
         ]
       ],
-      "d_max_k3": 9.476371632339259,
+      "d_max_k3": 9.476534535333357,
       "kkt_all_ok": true
     },
     {
@@ -8287,139 +8363,131 @@
     {
       "lineage": "Arabic",
       "family": "Afro-Asiatic",
-      "n_doculects": 45,
-      "n_glottocodes": 29,
-      "max_ldnd": 0.6803463697433472,
-      "spread": 1.3916602065027266,
-      "spread_rarefied_m3": 0.6559421514771555,
-      "d_max_kcal": 1.2722583112156791,
-      "uniform_d2_kcal": 1.2188898177215122,
+      "n_doculects": 47,
+      "n_glottocodes": 31,
+      "max_ldnd": 0.6965094804763794,
+      "spread": 1.4057268993315493,
+      "spread_rarefied_m3": 0.7090306047788639,
+      "d_max_kcal": 1.2752472084612523,
+      "uniform_d2_kcal": 1.2217261584051327,
       "representatives_kcal": [
         [
           "KIBERA_KENYA",
-          0.167
+          0.159
         ],
         [
           "SOUKHNE_SYRIAN_ARABIC",
-          0.137
+          0.142
         ],
         [
           "MALTESE",
-          0.114
+          0.115
         ],
         [
           "NORTH_MESOPOTAMIAN_ARABIC",
-          0.111
+          0.101
+        ],
+        [
+          "JUDEO_TUNISIAN_ARABIC",
+          0.097
         ],
         [
           "HIJAZI_ARABIC",
-          0.071
-        ],
-        [
-          "MALTESE_ARABIC",
-          0.067
+          0.073
         ],
         [
           "ARABIC_KHUZESTANI",
-          0.065
+          0.059
+        ],
+        [
+          "MALTESE_ARABIC",
+          0.058
         ],
         [
           "MOROCCAN_ARABIC_2",
-          0.06
-        ],
-        [
-          "JUDEO_TRIPOLITANIAN_ARABIC",
-          0.04
-        ],
-        [
-          "ZANZIBAR_ARABIC",
-          0.036
+          0.042
         ],
         [
           "NAJDI_ARABIC",
-          0.028
-        ],
-        [
-          "ARABIC_SUDANESE_SPOKEN",
-          0.023
+          0.031
         ],
         [
           "TRIPOLI_JEWISH_ARABIC",
+          0.031
+        ],
+        [
+          "ZANZIBAR_ARABIC",
           0.021
         ],
         [
-          "ARABIC_QURANIC",
-          0.016
-        ],
-        [
-          "MOROCCAN_ARABIC",
+          "ARABIC_SUDANESE_SPOKEN",
           0.015
         ],
         [
-          "STANDARD_ARABIC",
+          "ARABIC_QURANIC",
           0.012
         ],
         [
           "TUNISIAN_ARABIC_MAGHRIB",
-          0.008
+          0.011
+        ],
+        [
+          "STANDARD_ARABIC",
+          0.01
+        ],
+        [
+          "MOROCCAN_ARABIC",
+          0.009
         ],
         [
           "ARABIC_NORTH_LEVANTINE_SPOKEN",
-          0.005
+          0.008
         ],
         [
           "CLASSICAL_ARABIC",
-          0.004
+          0.006
         ]
       ],
-      "d_max_k3": 4.066550162661235,
+      "d_max_k3": 4.137952715309117,
       "kkt_all_ok": true
     },
     {
       "lineage": "Chadic",
       "family": "Afro-Asiatic",
       "n_doculects": 206,
-      "n_glottocodes": 144,
+      "n_glottocodes": 146,
       "max_ldnd": 1.0522083044052124,
-      "spread": 2.4650475007603836,
-      "spread_rarefied_m3": 1.3850953048735164,
-      "d_max_kcal": 1.523573848198216,
-      "uniform_d2_kcal": 1.4953220154812872,
+      "spread": 2.4626154493730676,
+      "spread_rarefied_m3": 1.388843238941193,
+      "d_max_kcal": 1.5229473811200525,
+      "uniform_d2_kcal": 1.4950237588190862,
       "representatives_kcal": [
         [
           "BALDEMU",
-          0.04
+          0.041
         ],
         [
           "BADE_2",
-          0.038
+          0.037
         ],
         [
           "BACAMA",
           0.034
         ],
         [
-          "BUDUMA_2",
-          0.03
-        ],
-        [
           "DERA",
-          0.028
+          0.027
         ],
         [
           "BADE_3",
-          0.026
-        ],
-        [
-          "MASANA",
-          0.024
-        ],
-        [
-          "DUGWOR_2",
-          0.023
+          0.025
         ],
         [
           "KABALAY",
+          0.025
+        ],
+        [
+          "MASANA",
           0.023
         ],
         [
@@ -8432,11 +8500,15 @@
         ],
         [
           "CINENI",
+          0.022
+        ],
+        [
+          "DUGWOR_2",
           0.021
         ],
         [
           "SHA",
-          0.02
+          0.021
         ],
         [
           "GUDU",
@@ -8447,6 +8519,10 @@
           0.019
         ],
         [
+          "MABIRE",
+          0.018
+        ],
+        [
           "MONTOL",
           0.018
         ],
@@ -8455,8 +8531,8 @@
           0.018
         ],
         [
-          "MABIRE",
-          0.017
+          "PERO",
+          0.018
         ],
         [
           "MASMEDJE",
@@ -8467,7 +8543,15 @@
           0.017
         ],
         [
+          "TUMAK",
+          0.017
+        ],
+        [
           "BURA",
+          0.016
+        ],
+        [
+          "MIYA",
           0.016
         ],
         [
@@ -8475,23 +8559,27 @@
           0.016
         ],
         [
-          "PERO",
+          "TEMKI",
           0.016
         ],
         [
-          "TUMAK",
-          0.016
+          "HUBA",
+          0.015
         ],
         [
           "JIMI",
           0.015
         ],
         [
-          "TEMKI",
-          0.015
+          "GOEMAI",
+          0.014
         ],
         [
-          "GARAKU",
+          "HAUSA_5",
+          0.014
+        ],
+        [
+          "SABA",
           0.014
         ],
         [
@@ -8507,51 +8595,39 @@
           0.014
         ],
         [
-          "BOGHOM_2",
-          0.013
-        ],
-        [
-          "GOEMAI",
-          0.013
-        ],
-        [
-          "HAUSA_5",
-          0.013
-        ],
-        [
-          "HUBA",
-          0.013
-        ],
-        [
-          "SABA",
-          0.013
-        ],
-        [
-          "TANGALE",
-          0.013
-        ],
-        [
-          "GAANDA",
-          0.012
-        ],
-        [
           "NZANYI",
-          0.012
+          0.013
         ],
         [
           "UBI",
+          0.013
+        ],
+        [
+          "GARAKU",
           0.012
+        ],
+        [
+          "GVOKO",
+          0.012
+        ],
+        [
+          "TANGALE",
+          0.012
+        ],
+        [
+          "BOGHOM_2",
+          0.011
         ],
         [
           "DUHWA",
           0.011
         ],
         [
-          "GVOKO",
+          "GAANDA",
           0.011
         ],
         [
-          "MIYA",
+          "NIMBIA",
           0.011
         ],
         [
@@ -8563,23 +8639,15 @@
           0.01
         ],
         [
-          "NIMBIA",
+          "GEJI",
           0.01
         ],
         [
-          "ZARI",
-          0.01
+          "BODE_DOEI",
+          0.009
         ],
         [
           "CIBAK",
-          0.009
-        ],
-        [
-          "GAVA",
-          0.009
-        ],
-        [
-          "GEJI",
           0.009
         ],
         [
@@ -8591,19 +8659,27 @@
           0.009
         ],
         [
-          "MANGAS",
+          "ZARI",
           0.009
         ],
         [
-          "MIYA_2",
-          0.009
-        ],
-        [
-          "BODE_DOEI",
+          "GAVA",
           0.008
         ],
         [
           "GEJI_2",
+          0.008
+        ],
+        [
+          "GURUNTUM_MBAARU",
+          0.008
+        ],
+        [
+          "HWANA",
+          0.008
+        ],
+        [
+          "MANGAS",
           0.008
         ],
         [
@@ -8615,47 +8691,47 @@
           0.007
         ],
         [
-          "BOGA",
+          "MBURKU",
           0.007
+        ],
+        [
+          "BOGA",
+          0.006
+        ],
+        [
+          "BUDUMA",
+          0.006
         ],
         [
           "BUWAL",
-          0.007
+          0.006
         ],
         [
-          "HWANA",
-          0.007
-        ],
-        [
-          "KOENOEM_2",
-          0.007
-        ],
-        [
-          "LELE_CHAD",
-          0.007
+          "GIDAR",
+          0.006
         ],
         [
           "GUDE",
           0.006
         ],
         [
-          "MBURKU",
+          "KOENOEM_2",
           0.006
         ],
         [
-          "GLAVDA",
-          0.005
+          "LELE_CHAD",
+          0.006
         ],
         [
           "MASANA_POGO",
-          0.005
+          0.006
+        ],
+        [
+          "WUZLAM",
+          0.006
         ],
         [
           "SAYANCI",
-          0.005
-        ],
-        [
-          "ZUL",
           0.005
         ],
         [
@@ -8663,16 +8739,28 @@
           0.004
         ],
         [
+          "GLAVDA",
+          0.004
+        ],
+        [
           "WARJI",
           0.004
         ],
         [
-          "WUZLAM",
+          "ZUL",
           0.004
         ],
         [
           "MOFU_GUDUR",
           0.003
+        ],
+        [
+          "MUNDAT",
+          0.003
+        ],
+        [
+          "BOGHOM",
+          0.002
         ],
         [
           "HAUSA_2",
@@ -8683,15 +8771,15 @@
           0.002
         ],
         [
-          "MUNDAT",
-          0.002
+          "KARIYA",
+          0.001
         ],
         [
-          "BOGHOM",
+          "KERA",
           0.001
         ]
       ],
-      "d_max_k3": 13.355581301073789,
+      "d_max_k3": 13.346314457770411,
       "kkt_all_ok": true
     },
     {
@@ -8967,13 +9055,13 @@
     {
       "lineage": "Sinitic",
       "family": "Sino-Tibetan",
-      "n_doculects": 482,
+      "n_doculects": 491,
       "n_glottocodes": 19,
       "max_ldnd": 0.9310448169708252,
-      "spread": 2.0340504366569925,
-      "spread_rarefied_m3": 1.103624340901575,
-      "d_max_kcal": 1.416441305547124,
-      "uniform_d2_kcal": 1.304785408633842,
+      "spread": 2.0457696789479294,
+      "spread_rarefied_m3": 1.0668259582453774,
+      "d_max_kcal": 1.419185724957153,
+      "uniform_d2_kcal": 1.3079386584788033,
       "representatives_kcal": [
         [
           "OLD_CHINESE",
@@ -8981,233 +9069,261 @@
         ],
         [
           "TUHUA_SHAOGUAN_GUITOU",
-          0.064
+          0.062
         ],
         [
           "HAINAN_MINNAN_CHINESE",
-          0.052
+          0.05
         ],
         [
           "HAKKA_GANZHOU_DAYU",
-          0.052
-        ],
-        [
-          "PUTIAN_CHINESE",
-          0.052
-        ],
-        [
-          "MIN_HAIKOU",
           0.047
         ],
         [
-          "MANDARIN",
-          0.044
+          "XIANG_GUILIN_JIESHOU",
+          0.04
         ],
         [
           "MANDARIN_PINGLIANG_SHUILUO",
+          0.038
+        ],
+        [
+          "PUTIAN_CHINESE",
+          0.038
+        ],
+        [
+          "MIN_QUANZHOU",
           0.037
         ],
         [
-          "JIN_JINZHONG_MAFANG",
+          "MIN_HAIKOU",
           0.036
         ],
         [
-          "GAN_SHAOWU",
-          0.032
+          "JIN_JINZHONG_MAFANG",
+          0.035
         ],
         [
-          "WU_LISHUI_QINGYUAN",
-          0.032
+          "MANDARIN",
+          0.035
         ],
         [
           "GAN_YICHUN_YIFENG",
-          0.031
+          0.032
         ],
         [
-          "MIN_NINGDE_GUTIAN",
-          0.029
-        ],
-        [
-          "WUTUN",
-          0.029
-        ],
-        [
-          "JIN_SHUOZHOU_PINGLU",
+          "GAN_SHAOWU",
           0.027
         ],
         [
-          "HAKKA_XIANGGANG",
-          0.026
-        ],
-        [
-          "JIN_LVLIANG_LIULIN",
-          0.026
-        ],
-        [
-          "WU_LISHUI_SUICHANG",
-          0.025
-        ],
-        [
           "WU_SHANGHAI_CHONGMING",
+          0.026
+        ],
+        [
+          "WUTUN",
           0.025
         ],
         [
-          "YUE_SHUNDE_DALIANG",
+          "WU_LISHUI_QINGYUAN",
+          0.025
+        ],
+        [
+          "JIN_SHUOZHOU_PINGLU",
           0.023
         ],
         [
-          "PINGHUA_YONGZHOU_NINGYUAN",
+          "WU_LISHUI_SUICHANG",
+          0.023
+        ],
+        [
+          "MIN_NANPING_WANGTAI",
           0.022
         ],
         [
           "HAKKA_JIEYANG_JIEXI",
-          0.02
+          0.021
         ],
         [
-          "WU_JINHUA_TANGXI",
-          0.02
+          "HAKKA_XIANGGANG",
+          0.021
         ],
         [
-          "HUI_HUANGSHAN_LIUKOU",
-          0.018
+          "JIN_LVLIANG_LIULIN",
+          0.019
         ],
         [
-          "MANDARIN_HEZE_DINGTAO",
-          0.018
+          "PINGHUA_YONGZHOU_NINGYUAN",
+          0.019
         ],
         [
           "WU_RUIAN",
+          0.019
+        ],
+        [
+          "YUE_SHUNDE_DALIANG",
+          0.018
+        ],
+        [
+          "MIN_NINGDE_GUTIAN",
           0.016
         ],
         [
-          "MIDDLE_CHINESE",
+          "WU_JINHUA_TANGXI",
+          0.015
+        ],
+        [
+          "MANDARIN_HEZE_DINGTAO",
           0.014
         ],
         [
-          "HUI_HANGZHOU_FENKOU",
-          0.013
-        ],
-        [
           "PINGHUA_YONGZHOU_SHOUYAN",
-          0.013
+          0.012
         ],
         [
           "YUE_WUZHOU_CANGWU_1",
+          0.012
+        ],
+        [
+          "HUI_HUANGSHAN_LIUKOU",
+          0.011
+        ],
+        [
+          "MIDDLE_CHINESE",
+          0.011
+        ],
+        [
+          "SUZHOU_WU",
           0.01
         ],
         [
-          "MANDARIN_LINYI_TANCHENG",
+          "MIN_PUTIAN_XIANYOU",
           0.009
         ],
         [
-          "PINGHUA_NANNING_BINYANG",
-          0.009
+          "HUI_HANGZHOU_FENKOU",
+          0.008
         ],
         [
           "MANDARIN_GUILIN_LONGSHENG",
           0.008
         ],
         [
-          "SUZHOU_WU",
+          "MIN_NANPING_SHIBEI",
+          0.008
+        ],
+        [
+          "MIN_SHANTOU_CHENGHAI",
+          0.008
+        ],
+        [
+          "JIN_TAIYUAN_YANGQU",
+          0.007
+        ],
+        [
+          "MANDARIN_LINYI_TANCHENG",
+          0.007
+        ],
+        [
+          "PINGHUA_NANNING_BINYANG",
           0.007
         ],
         [
           "TUHUA_SHAOGUAN_XIANGYANG",
-          0.007
-        ],
-        [
-          "YONGAN_CHINESE",
-          0.007
+          0.006
         ],
         [
           "GAN_JIAN_YONGXIN",
-          0.005
+          0.003
         ],
         [
-          "JIN_TAIYUAN_YANGQU",
-          0.004
+          "YUE_HUAZHOU_CHANGQI",
+          0.001
         ]
       ],
-      "d_max_k3": 8.189725994943416,
+      "d_max_k3": 8.34780267250016,
       "kkt_all_ok": true
     },
     {
       "lineage": "Min",
       "family": "Sino-Tibetan",
-      "n_doculects": 34,
+      "n_doculects": 32,
       "n_glottocodes": 5,
       "max_ldnd": 0.8298949003219604,
-      "spread": 1.666568696076502,
-      "spread_rarefied_m3": 1.0053320787542999,
-      "d_max_kcal": 1.3328379116318712,
-      "uniform_d2_kcal": 1.2722783042185872,
+      "spread": 1.69336144319279,
+      "spread_rarefied_m3": 1.0319788620733186,
+      "d_max_kcal": 1.3384622877272216,
+      "uniform_d2_kcal": 1.2846618815762643,
       "representatives_kcal": [
         [
-          "MIN_NINGDE_GUTIAN",
-          0.124
-        ],
-        [
           "HAINAN_MINNAN_CHINESE",
-          0.117
-        ],
-        [
-          "PUTIAN_CHINESE",
-          0.108
-        ],
-        [
-          "YONGAN_CHINESE",
-          0.107
+          0.114
         ],
         [
           "MIN_FUZHOU_QINJIANG",
-          0.105
+          0.106
         ],
         [
-          "MIN_NANPING",
-          0.087
+          "MIN_NINGDE_GUTIAN",
+          0.104
         ],
         [
-          "MIN_HAIKOU",
-          0.081
+          "YONGAN_CHINESE",
+          0.098
         ],
         [
           "MIN_SANMING_TAINING",
+          0.078
+        ],
+        [
+          "PUTIAN_CHINESE",
+          0.075
+        ],
+        [
+          "MIN_NANPING",
+          0.074
+        ],
+        [
+          "MIN_NANPING_SHIBEI",
           0.071
         ],
         [
+          "MIN_QUANZHOU",
+          0.067
+        ],
+        [
+          "MIN_HAIKOU",
+          0.06
+        ],
+        [
           "MIN_WENZHOU_DONGTOU",
-          0.056
+          0.043
+        ],
+        [
+          "MIN_PUTIAN_DONGHAI",
+          0.033
         ],
         [
           "MIN_LONGYAN_SHIZHONG",
-          0.04
+          0.027
+        ],
+        [
+          "MIN_SHANTOU_CHENGHAI",
+          0.023
         ],
         [
           "MIN_JIANOU",
-          0.034
-        ],
-        [
-          "MIN_NINGDE_ZHANGWAN",
-          0.022
+          0.012
         ],
         [
           "MIN_SHISHI",
-          0.018
+          0.009
         ],
         [
-          "MIN_NANPING_YANGTOU",
-          0.017
-        ],
-        [
-          "AMOY_MINNAN_CHINESE",
-          0.007
-        ],
-        [
-          "MIN_NINGDE_PINGXI",
-          0.004
+          "MIN_ZHANGPING",
+          0.006
         ]
       ],
-      "d_max_k3": 5.044958460299215,
+      "d_max_k3": 5.234717182087177,
       "kkt_all_ok": true
     },
     {
@@ -9720,38 +9836,46 @@
       "n_doculects": 135,
       "n_glottocodes": 50,
       "max_ldnd": 0.9236503839492798,
-      "spread": 1.9788423393365473,
-      "spread_rarefied_m3": 1.0513986124052268,
-      "d_max_kcal": 1.4036243670863187,
-      "uniform_d2_kcal": 1.340855445719887,
+      "spread": 1.9850514722253367,
+      "spread_rarefied_m3": 1.0589453074166602,
+      "d_max_kcal": 1.4050908645235198,
+      "uniform_d2_kcal": 1.3425855772811772,
       "representatives_kcal": [
         [
           "SARIKOLI",
-          0.067
+          0.066
         ],
         [
           "OSSETIAN",
-          0.064
+          0.065
         ],
         [
-          "SOUTHERN_KURDISH_QORVEH",
-          0.054
-        ],
-        [
-          "OSSETIC_DIGOR",
-          0.053
+          "GURANI",
+          0.055
         ],
         [
           "ORMURI",
-          0.052
-        ],
-        [
-          "AVESTAN",
           0.05
         ],
         [
+          "OSSETIC_DIGOR",
+          0.05
+        ],
+        [
+          "SOUTHERN_KURDISH_QORVEH",
+          0.049
+        ],
+        [
+          "AVESTAN",
+          0.046
+        ],
+        [
           "LURISTANI_MIXED",
-          0.044
+          0.041
+        ],
+        [
+          "KUMZARI",
+          0.04
         ],
         [
           "YIDGHA",
@@ -9759,134 +9883,126 @@
         ],
         [
           "CENTRAL_GOJAL_WAKHI",
-          0.036
-        ],
-        [
-          "TAJIK_XINJIANG_DABUDA",
-          0.036
-        ],
-        [
-          "KUMZARI",
           0.035
         ],
         [
           "OSSETIC_IRON",
-          0.035
+          0.033
+        ],
+        [
+          "TAJIK_XINJIANG_DABUDA",
+          0.031
         ],
         [
           "JUDEO_TAT",
-          0.032
+          0.029
         ],
         [
           "MUNJANI",
-          0.03
-        ],
-        [
-          "NORTHERN_PASHTO",
-          0.028
-        ],
-        [
-          "TIRAH_AFRIDI_PASHTO",
-          0.028
+          0.029
         ],
         [
           "SHAHMIRZADI",
+          0.029
+        ],
+        [
+          "TIRAH_AFRIDI_PASHTO",
           0.027
         ],
         [
-          "NORTHERN_KURDISH",
+          "NORTHERN_PASHTO",
           0.024
         ],
         [
-          "ZAZAKI",
+          "SHIMSAL_WAKHI",
           0.024
         ],
         [
-          "HANGU_PASHTO",
+          "BALOCHI_EASTERN",
           0.023
         ],
         [
           "AVESTAN_2",
-          0.022
+          0.021
         ],
         [
-          "BALOCHI_EASTERN",
-          0.022
+          "HANGU_PASHTO",
+          0.021
         ],
         [
-          "SHIMSAL_WAKHI",
-          0.022
-        ],
-        [
-          "HAWRAMI",
-          0.019
-        ],
-        [
-          "WANA_PASHTO",
-          0.018
+          "NORTHERN_KURDISH",
+          0.021
         ],
         [
           "YASIN_WAKHI",
-          0.016
+          0.021
         ],
         [
-          "KUMZARI_3",
-          0.014
+          "WANA_PASHTO",
+          0.019
+        ],
+        [
+          "ZAZAKI",
+          0.018
+        ],
+        [
+          "MOHMAND_PASHTO",
+          0.012
+        ],
+        [
+          "ZAKHA_KHEL_AFRIDI_PASHTO",
+          0.011
         ],
         [
           "NORTHERN_PASHTO_2",
-          0.013
+          0.01
         ],
         [
           "BAR_PASHTO",
           0.009
         ],
         [
-          "MOHMAND_PASHTO",
+          "BEHDINI",
           0.009
         ],
         [
-          "SOUTHWESTERN_FARS",
-          0.008
-        ],
-        [
-          "ZAKHA_KHEL_AFRIDI_PASHTO",
-          0.008
-        ],
-        [
-          "BEHDINI",
-          0.007
-        ],
-        [
           "SANGISARI",
+          0.009
+        ],
+        [
+          "KUMZARI_3",
           0.007
-        ],
-        [
-          "KURDISH_CENTRAL",
-          0.006
-        ],
-        [
-          "KUMZARI_2",
-          0.005
-        ],
-        [
-          "BALOCHI_WESTERN",
-          0.004
         ],
         [
           "LASGERDI",
-          0.004
-        ],
-        [
-          "YAGHNOBI",
-          0.004
+          0.007
         ],
         [
           "OGHI_PASHTO",
+          0.005
+        ],
+        [
+          "YAGHNOBI",
+          0.005
+        ],
+        [
+          "KUMZARI_2",
+          0.004
+        ],
+        [
+          "SOUTHWESTERN_FARS",
+          0.004
+        ],
+        [
+          "KURDISH_CENTRAL",
           0.003
+        ],
+        [
+          "BALOCHI_WESTERN",
+          0.001
         ]
       ],
-      "d_max_k3": 7.361566284400708,
+      "d_max_k3": 7.399530563402576,
       "kkt_all_ok": true
     },
     {
@@ -10024,7 +10140,7 @@
       "spread": 2.535181727780461,
       "spread_rarefied_m3": 1.3496003457190093,
       "d_max_kcal": 1.5418943444471451,
-      "uniform_d2_kcal": 1.4788667779909082,
+      "uniform_d2_kcal": 1.478815968270106,
       "representatives_kcal": [
         [
           "REEF_ISLANDS",
@@ -10475,7 +10591,7 @@
           0.001
         ]
       ],
-      "d_max_k3": 14.91185555306057,
+      "d_max_k3": 14.910943814263353,
       "kkt_all_ok": true
     },
     {
@@ -11637,70 +11753,62 @@
       "family": "Sino-Tibetan",
       "n_doculects": 23,
       "n_glottocodes": 1,
-      "max_ldnd": 0.702640175819397,
-      "spread": 1.328344987657746,
+      "max_ldnd": 0.7773593068122864,
+      "spread": 1.421313119260979,
       "spread_rarefied_m3": NaN,
-      "d_max_kcal": 1.2597494083529652,
-      "uniform_d2_kcal": 1.2142203455846248,
+      "d_max_kcal": 1.2802844613789357,
+      "uniform_d2_kcal": 1.223688179601735,
       "representatives_kcal": [
         [
-          "XIANG_YONGZHOU_SHOUYAN",
-          0.222
+          "XIANG_GUILIN_JIESHOU",
+          0.203
         ],
         [
-          "XIANG_YONGZHOU_HUAQIAO",
-          0.137
+          "XIANG_YONGZHOU_SHOUYAN",
+          0.203
         ],
         [
           "XIANG",
-          0.116
+          0.117
+        ],
+        [
+          "XIANG_YONGZHOU_HUAQIAO",
+          0.102
         ],
         [
           "XIANG_HUAIHUA_XUPU",
-          0.108
+          0.095
         ],
         [
           "XIANG_XIANGXIANG",
-          0.09
-        ],
-        [
-          "XIANG_HUAIHUA_HUITONG",
-          0.067
+          0.084
         ],
         [
           "XIANG_LOUDI_SHUANGFENG",
-          0.066
+          0.065
         ],
         [
-          "XIANG_LOUDI_2",
-          0.059
-        ],
-        [
-          "XIANG_ZHANGJIAJIE_CILI",
+          "XIANG_HUAIHUA_HUITONG",
           0.04
         ],
         [
-          "XIANG_YIYANG_NANXIAN",
-          0.032
-        ],
-        [
           "XIANG_HUAIHUA_HUXI",
-          0.031
+          0.028
         ],
         [
-          "XIANG_SHAOYANG_CHENGBU",
+          "XIANG_LOUDI_2",
           0.027
         ],
         [
-          "XIANG_SHAOYANG",
-          0.004
+          "XIANG_SHAOYANG_CHENGBU",
+          0.024
         ],
         [
-          "XIANG_QIYANG",
-          0.001
+          "XIANG_YIYANG_NANXIAN",
+          0.012
         ]
       ],
-      "d_max_k3": 3.713986344917097,
+      "d_max_k3": 3.947581420755425,
       "kkt_all_ok": true
     },
     {
@@ -11951,20 +12059,16 @@
     {
       "lineage": "Malayo-Polynesian",
       "family": "Austronesian",
-      "n_doculects": 1382,
-      "n_glottocodes": 1000,
+      "n_doculects": 1414,
+      "n_glottocodes": 1011,
       "max_ldnd": 1.0980007648468018,
-      "spread": 2.5552208523845508,
-      "spread_rarefied_m3": 1.2838558099156299,
-      "d_max_kcal": 1.547171263485588,
-      "uniform_d2_kcal": 1.4631248260612444,
+      "spread": 2.555537306138975,
+      "spread_rarefied_m3": 1.3210232815280327,
+      "d_max_kcal": 1.5472551463610202,
+      "uniform_d2_kcal": 1.460609839044381,
       "representatives_kcal": [
         [
           "REEF_ISLANDS",
-          0.026
-        ],
-        [
-          "YAUR",
           0.026
         ],
         [
@@ -11973,6 +12077,10 @@
         ],
         [
           "BANJAR_SARI_ENGGANO",
+          0.025
+        ],
+        [
+          "YAUR",
           0.025
         ],
         [
@@ -11996,7 +12104,7 @@
           0.017
         ],
         [
-          "MADAK",
+          "SISHEE_2",
           0.016
         ],
         [
@@ -12004,36 +12112,24 @@
           0.016
         ],
         [
+          "MADAK",
+          0.015
+        ],
+        [
+          "NIMOA",
+          0.015
+        ],
+        [
           "TOBATI",
-          0.016
+          0.015
         ],
         [
           "ARAGURE",
-          0.015
-        ],
-        [
-          "SISHEE_2",
-          0.015
+          0.014
         ],
         [
           "KELA",
           0.014
-        ],
-        [
-          "MAPIA",
-          0.014
-        ],
-        [
-          "NIMOA",
-          0.014
-        ],
-        [
-          "SEGAI",
-          0.014
-        ],
-        [
-          "AJIE",
-          0.013
         ],
         [
           "ANUKI",
@@ -12052,15 +12148,23 @@
           0.013
         ],
         [
-          "MALAGASY_SAKALAVA_2",
+          "MAPIA",
           0.013
+        ],
+        [
+          "SEGAI",
+          0.013
+        ],
+        [
+          "AJIE",
+          0.012
         ],
         [
           "ASUMBOA",
           0.012
         ],
         [
-          "SERA_2",
+          "MALAGASY_SAKALAVA_2",
           0.012
         ],
         [
@@ -12068,7 +12172,7 @@
           0.012
         ],
         [
-          "TUMLEO_2",
+          "WAREMBORI",
           0.012
         ],
         [
@@ -12077,6 +12181,10 @@
         ],
         [
           "MALAKONI_ENGGANO",
+          0.011
+        ],
+        [
+          "MALOL",
           0.011
         ],
         [
@@ -12092,7 +12200,11 @@
           0.011
         ],
         [
-          "WAREMBORI",
+          "TOWANGARA",
+          0.011
+        ],
+        [
+          "TUMLEO_2",
           0.011
         ],
         [
@@ -12120,19 +12232,19 @@
           0.01
         ],
         [
-          "TOWANGARA",
-          0.01
-        ],
-        [
-          "ZABANA",
-          0.01
-        ],
-        [
           "IO",
           0.009
         ],
         [
           "RIRIO",
+          0.009
+        ],
+        [
+          "SERA_2",
+          0.009
+        ],
+        [
+          "ZABANA",
           0.009
         ],
         [
@@ -12156,7 +12268,7 @@
           0.008
         ],
         [
-          "PAICI",
+          "MOKILESE",
           0.008
         ],
         [
@@ -12172,19 +12284,11 @@
           0.008
         ],
         [
-          "BONGGO",
-          0.007
-        ],
-        [
           "DUNGUNTUNG",
           0.007
         ],
         [
           "LENAKEL_LENAUKAS",
-          0.007
-        ],
-        [
-          "MOKILESE",
           0.007
         ],
         [
@@ -12200,15 +12304,15 @@
           0.007
         ],
         [
-          "NEMBAO",
-          0.007
-        ],
-        [
           "NENGAYA",
           0.007
         ],
         [
           "NOEPE",
+          0.007
+        ],
+        [
+          "PAICI",
           0.007
         ],
         [
@@ -12228,6 +12332,14 @@
           0.006
         ],
         [
+          "BONGGO",
+          0.006
+        ],
+        [
+          "BUASI",
+          0.006
+        ],
+        [
           "IMROING",
           0.006
         ],
@@ -12244,11 +12356,7 @@
           0.006
         ],
         [
-          "MALAGASY_SAKALAVA_MAJUNGA",
-          0.006
-        ],
-        [
-          "WAMPUR",
+          "NEMBAO",
           0.006
         ],
         [
@@ -12256,7 +12364,7 @@
           0.006
         ],
         [
-          "BUASI",
+          "ANEITYUM_2",
           0.005
         ],
         [
@@ -12280,7 +12388,7 @@
           0.005
         ],
         [
-          "MALEU_2",
+          "MALAGASY_SAKALAVA_MAJUNGA",
           0.005
         ],
         [
@@ -12296,12 +12404,8 @@
           0.005
         ],
         [
-          "TULU",
+          "WAMPUR",
           0.005
-        ],
-        [
-          "ANEITYUM_2",
-          0.004
         ],
         [
           "DUWET",
@@ -12309,6 +12413,10 @@
         ],
         [
           "LOREDIAKARKAR",
+          0.004
+        ],
+        [
+          "MALEU_2",
           0.004
         ],
         [
@@ -12336,6 +12444,10 @@
           0.004
         ],
         [
+          "TULU",
+          0.004
+        ],
+        [
           "WAGAU",
           0.004
         ],
@@ -12346,6 +12458,10 @@
         [
           "YAMAP",
           0.004
+        ],
+        [
+          "AMBELAU",
+          0.003
         ],
         [
           "ARSHA",
@@ -12368,10 +12484,6 @@
           0.003
         ],
         [
-          "ORMU",
-          0.003
-        ],
-        [
           "RIBUN",
           0.003
         ],
@@ -12380,7 +12492,7 @@
           0.003
         ],
         [
-          "AMBELAU",
+          "BATAK_SIMALUNGEN",
           0.002
         ],
         [
@@ -12404,15 +12516,11 @@
           0.002
         ],
         [
-          "MINDIRI",
-          0.002
-        ],
-        [
           "NOOLE",
           0.002
         ],
         [
-          "PIU",
+          "ORMU",
           0.002
         ],
         [
@@ -12424,12 +12532,8 @@
           0.002
         ],
         [
-          "AUHELAWA_1",
-          0.001
-        ],
-        [
-          "HALIA_2",
-          0.001
+          "WEDAU",
+          0.002
         ],
         [
           "HULA",
@@ -12444,115 +12548,123 @@
           0.001
         ],
         [
+          "MINDIRI",
+          0.001
+        ],
+        [
           "NENGONE",
           0.001
         ],
         [
-          "WEDAU",
+          "PIU",
+          0.001
+        ],
+        [
+          "XARAGURE_2",
           0.001
         ]
       ],
-      "d_max_k3": 15.40710048256719,
+      "d_max_k3": 15.414216497782036,
       "kkt_all_ok": true
     },
     {
       "lineage": "Formosan",
       "family": "Austronesian",
       "n_doculects": 57,
-      "n_glottocodes": 20,
-      "max_ldnd": 0.9913426637649536,
-      "spread": 2.1804514161802517,
-      "spread_rarefied_m3": 1.190450878018302,
-      "d_max_kcal": 1.4521804905462903,
-      "uniform_d2_kcal": 1.4191062675016621,
+      "n_glottocodes": 19,
+      "max_ldnd": 1.0072002410888672,
+      "spread": 2.183351394801553,
+      "spread_rarefied_m3": 1.2244458169551293,
+      "d_max_kcal": 1.4528893203450068,
+      "uniform_d2_kcal": 1.4200657917427204,
       "representatives_kcal": [
         [
           "ATAYAL_TAIWAN_YILAN",
-          0.096
+          0.095
         ],
         [
           "CIULI_ATAYAL",
-          0.072
+          0.071
         ],
         [
           "FAVORLANG",
-          0.06
+          0.059
         ],
         [
           "MANTAURAN",
-          0.054
+          0.055
         ],
         [
           "HECUO_TAROKO",
-          0.053
+          0.054
         ],
         [
           "SKIKUN_ATAYAL",
-          0.051
+          0.054
         ],
         [
           "KAVALAN_2",
-          0.049
+          0.046
         ],
         [
           "PAIWAN_TAIWAN_TAINAN",
-          0.049
+          0.046
+        ],
+        [
+          "TSOU_TAIWAN_JIAYI_TEFUYE",
+          0.043
+        ],
+        [
+          "AMIS_NATAORAN",
+          0.042
         ],
         [
           "KANAKANABU",
           0.042
         ],
         [
-          "TSOU_TAIWAN_JIAYI_TEFUYE",
-          0.042
-        ],
-        [
-          "TSOU",
-          0.035
-        ],
-        [
           "DUHTU_TSOU",
-          0.034
+          0.037
         ],
         [
           "MANTAURAN_RUKAI",
           0.033
         ],
         [
-          "AMIS_SAKIZAYA",
+          "SAISIYAT",
           0.032
         ],
         [
           "TAAI_SAISIYAT",
-          0.032
+          0.031
+        ],
+        [
+          "TSOU",
+          0.031
         ],
         [
           "MAGA_RUKAI",
           0.03
         ],
         [
-          "SAISIYAT",
-          0.029
-        ],
-        [
-          "LOWER_PINLANG_PUYUMA",
-          0.028
-        ],
-        [
           "RUKAI",
           0.028
         ],
         [
+          "LOWER_PINLANG_PUYUMA",
+          0.026
+        ],
+        [
           "RUKAI_TAIWAN_TAIDONG",
-          0.027
+          0.024
         ],
         [
           "SAAROA",
-          0.023
+          0.022
         ],
         [
           "TONA_RUKAI",
-          0.023
+          0.021
         ],
         [
           "PARAN_TAROKO",
@@ -12563,12 +12675,12 @@
           0.017
         ],
         [
-          "TAKITUDUH_BUNUN",
-          0.012
+          "AMIS_SAKIZAYA",
+          0.013
         ],
         [
-          "FATAAN_AMIS",
-          0.011
+          "TAKITUDUH_BUNUN",
+          0.013
         ],
         [
           "PILAM_PUYUMA",
@@ -12576,14 +12688,14 @@
         ],
         [
           "AURAN_KULON_PAZEH",
-          0.007
+          0.006
         ],
         [
           "TODA_TAROKO",
-          0.003
+          0.001
         ]
       ],
-      "d_max_k3": 8.49254309918045,
+      "d_max_k3": 8.516498520786248,
       "kkt_all_ok": true
     },
     {
@@ -12595,7 +12707,7 @@
       "spread": 2.54183358512318,
       "spread_rarefied_m3": 1.3536300174593232,
       "d_max_kcal": 1.543643302643558,
-      "uniform_d2_kcal": 1.4818922338086173,
+      "uniform_d2_kcal": 1.48184713917014,
       "representatives_kcal": [
         [
           "YAUR",
@@ -13062,7 +13174,7 @@
           0.001
         ]
       ],
-      "d_max_k3": 15.06278500293957,
+      "d_max_k3": 15.06211963495914,
       "kkt_all_ok": true
     },
     {
@@ -13539,242 +13651,262 @@
     {
       "lineage": "Central Semitic",
       "family": "Afro-Asiatic",
-      "n_doculects": 67,
-      "n_glottocodes": 43,
-      "max_ldnd": 0.8597108125686646,
-      "spread": 1.7261941703718768,
-      "spread_rarefied_m3": 0.9295720367805547,
-      "d_max_kcal": 1.3457592251737225,
-      "uniform_d2_kcal": 1.2925562633438152,
+      "n_doculects": 74,
+      "n_glottocodes": 49,
+      "max_ldnd": 0.877622127532959,
+      "spread": 1.8008865496498965,
+      "spread_rarefied_m3": 0.9373644356021362,
+      "d_max_kcal": 1.3627345943451987,
+      "uniform_d2_kcal": 1.3021355526044538,
       "representatives_kcal": [
         [
+          "BIBLICAL_HEBREW",
+          0.137
+        ],
+        [
           "SOUKHNE_SYRIAN_ARABIC",
-          0.097
+          0.086
+        ],
+        [
+          "WESTERN_NEO_ARAMAIC",
+          0.083
         ],
         [
           "KIBERA_KENYA",
-          0.091
+          0.079
         ],
         [
-          "HEBREW",
-          0.088
-        ],
-        [
-          "ARBEL_NEO_ARAMAIC",
-          0.078
+          "TUROYO",
+          0.065
         ],
         [
           "MALTESE",
-          0.077
+          0.064
         ],
         [
-          "MODERN_HEBREW",
-          0.072
-        ],
-        [
-          "MOROCCAN_ARABIC_2",
-          0.059
+          "ARBEL_NEO_ARAMAIC",
+          0.055
         ],
         [
           "HULAULA",
-          0.058
-        ],
-        [
-          "NORTH_MESOPOTAMIAN_ARABIC",
-          0.056
-        ],
-        [
-          "CHRISTIAN_URMI",
           0.054
         ],
         [
-          "HERTEVIN",
-          0.046
+          "MODERN_HEBREW",
+          0.049
         ],
         [
-          "HIJAZI_ARABIC",
+          "NORTH_MESOPOTAMIAN_ARABIC",
           0.043
+        ],
+        [
+          "MOROCCAN_ARABIC_2",
+          0.041
         ],
         [
           "ARABIC_KHUZESTANI",
           0.037
         ],
         [
-          "NEO_MANDAIC_KHORRAMSHAHR",
+          "HIJAZI_ARABIC",
           0.035
         ],
         [
-          "BOHTAN",
+          "CHRISTIAN_URMI",
+          0.033
+        ],
+        [
+          "HERTEVIN",
+          0.033
+        ],
+        [
+          "HEBREW",
+          0.03
+        ],
+        [
+          "JUDEO_TUNISIAN_ARABIC",
           0.022
         ],
         [
-          "UGARITIC",
-          0.02
-        ],
-        [
-          "SYRIAC",
-          0.019
-        ],
-        [
           "TUNISIAN_ARABIC_MAGHRIB",
-          0.014
+          0.017
         ],
         [
-          "CLASSICAL_MANDAEAN",
-          0.012
-        ],
-        [
-          "AMEDYA_ARAMAIC",
+          "BOHTAN",
           0.011
         ],
         [
-          "ARABIC_SUDANESE_SPOKEN",
-          0.008
+          "NEO_MANDAIC_KHORRAMSHAHR",
+          0.011
         ],
         [
-          "MALTESE_ARABIC",
-          0.003
+          "CLASSICAL_MANDAEAN",
+          0.007
+        ],
+        [
+          "AMEDYA_ARAMAIC",
+          0.004
+        ],
+        [
+          "SYRIAC",
+          0.002
+        ],
+        [
+          "URMI_NEO_ARAMAIC",
+          0.001
         ]
       ],
-      "d_max_k3": 5.568381079479397,
+      "d_max_k3": 5.970936011968506,
       "kkt_all_ok": true
     },
     {
       "lineage": "Northwest Semitic",
       "family": "Afro-Asiatic",
-      "n_doculects": 23,
-      "n_glottocodes": 15,
-      "max_ldnd": 0.8433356881141663,
-      "spread": 1.4407066897055578,
-      "spread_rarefied_m3": 0.7823363268254839,
-      "d_max_kcal": 1.284459382591636,
-      "uniform_d2_kcal": 1.2441222797948386,
+      "n_doculects": 27,
+      "n_glottocodes": 19,
+      "max_ldnd": 0.8643801212310791,
+      "spread": 1.5978011939949974,
+      "spread_rarefied_m3": 0.8972154845370405,
+      "d_max_kcal": 1.3182513752467737,
+      "uniform_d2_kcal": 1.2644543479517152,
       "representatives_kcal": [
         [
-          "HEBREW",
-          0.147
+          "BIBLICAL_HEBREW",
+          0.171
+        ],
+        [
+          "WESTERN_NEO_ARAMAIC",
+          0.145
+        ],
+        [
+          "TUROYO",
+          0.1
         ],
         [
           "ARBEL_NEO_ARAMAIC",
-          0.125
-        ],
-        [
-          "UGARITIC",
-          0.123
+          0.085
         ],
         [
           "MODERN_HEBREW",
-          0.111
+          0.077
         ],
         [
-          "CHRISTIAN_URMI",
-          0.095
-        ],
-        [
-          "NEO_MANDAIC_KHORRAMSHAHR",
-          0.088
-        ],
-        [
-          "CLASSICAL_MANDAEAN",
+          "UGARITIC",
           0.071
         ],
         [
-          "HERTEVIN",
-          0.066
+          "CHRISTIAN_URMI",
+          0.06
         ],
         [
-          "SYRIAC",
-          0.059
+          "HEBREW",
+          0.06
+        ],
+        [
+          "CLASSICAL_MANDAEAN",
+          0.054
+        ],
+        [
+          "HERTEVIN",
+          0.04
         ],
         [
           "HULAULA",
-          0.045
+          0.04
+        ],
+        [
+          "NEO_MANDAIC_KHORRAMSHAHR",
+          0.039
         ],
         [
           "AMEDYA_ARAMAIC",
-          0.037
+          0.025
         ],
         [
-          "BOHTAN",
-          0.016
+          "SYRIAC",
+          0.022
         ],
         [
-          "LISHAN_DIDAN",
+          "URMI_NEO_ARAMAIC",
           0.01
-        ],
-        [
-          "KOY_SANJAQ_SURAT",
-          0.006
-        ],
-        [
-          "SYRIAC_2",
-          0.002
         ]
       ],
-      "d_max_k3": 4.006945945768222,
+      "d_max_k3": 4.622352216057613,
       "kkt_all_ok": true
     },
     {
       "lineage": "Aramaic",
       "family": "Afro-Asiatic",
-      "n_doculects": 20,
-      "n_glottocodes": 13,
-      "max_ldnd": 0.6578609347343445,
-      "spread": 1.1834416222146624,
-      "spread_rarefied_m3": 0.715148218857595,
-      "d_max_kcal": 1.228679420455379,
-      "uniform_d2_kcal": 1.2092529139072516,
+      "n_doculects": 23,
+      "n_glottocodes": 16,
+      "max_ldnd": 0.7013739943504333,
+      "spread": 1.3328224913232087,
+      "spread_rarefied_m3": 0.7561822536149461,
+      "d_max_kcal": 1.2603490249429905,
+      "uniform_d2_kcal": 1.226097374915192,
       "representatives_kcal": [
         [
-          "NEO_MANDAIC_KHORRAMSHAHR",
-          0.138
+          "WESTERN_NEO_ARAMAIC",
+          0.21
         ],
         [
           "ARBEL_NEO_ARAMAIC",
-          0.133
+          0.114
+        ],
+        [
+          "TUROYO",
+          0.111
         ],
         [
           "CHRISTIAN_URMI",
-          0.125
+          0.101
         ],
         [
           "CLASSICAL_MANDAEAN",
-          0.104
+          0.091
+        ],
+        [
+          "NEO_MANDAIC_KHORRAMSHAHR",
+          0.073
         ],
         [
           "SYRIAC_2",
-          0.095
-        ],
-        [
-          "HERTEVIN",
-          0.089
-        ],
-        [
-          "CLASSICAL_MANDAIC",
-          0.084
-        ],
-        [
-          "SYRIAC",
-          0.058
-        ],
-        [
-          "AMEDYA_ARAMAIC",
-          0.051
+          0.062
         ],
         [
           "HULAULA",
-          0.049
+          0.047
+        ],
+        [
+          "CLASSICAL_MANDAIC",
+          0.046
+        ],
+        [
+          "AMEDYA_ARAMAIC",
+          0.042
+        ],
+        [
+          "HERTEVIN",
+          0.041
+        ],
+        [
+          "SYRIAC",
+          0.021
+        ],
+        [
+          "MLAHSO",
+          0.017
         ],
         [
           "KOY_SANJAQ_SURAT",
-          0.049
+          0.014
         ],
         [
           "BOHTAN",
-          0.026
+          0.01
         ]
       ],
-      "d_max_k3": 3.2961867347351124,
+      "d_max_k3": 3.7540036047746064,
       "kkt_all_ok": true
     },
     {
@@ -13783,18 +13915,18 @@
       "n_doculects": 10,
       "n_glottocodes": 7,
       "max_ldnd": 0.49657440185546875,
-      "spread": 0.8264620242146757,
-      "spread_rarefied_m3": 0.5001364838246278,
-      "d_max_kcal": 1.1589020315370884,
-      "uniform_d2_kcal": 1.1430487749040468,
+      "spread": 0.8369233635328444,
+      "spread_rarefied_m3": 0.5081820470507594,
+      "d_max_kcal": 1.1601476155844823,
+      "uniform_d2_kcal": 1.148116088376632,
       "representatives_kcal": [
         [
           "CHRISTIAN_URMI",
-          0.281
+          0.254
         ],
         [
           "ARBEL_NEO_ARAMAIC",
-          0.188
+          0.185
         ],
         [
           "AMEDYA_ARAMAIC",
@@ -13802,22 +13934,26 @@
         ],
         [
           "HULAULA",
-          0.151
+          0.14
         ],
         [
           "URMI_NEO_ARAMAIC",
-          0.121
+          0.1
+        ],
+        [
+          "JILU",
+          0.084
         ],
         [
           "ARAMAIC",
-          0.077
+          0.044
         ],
         [
           "KOY_SANJAQ_SURAT",
-          0.011
+          0.023
         ]
       ],
-      "d_max_k3": 2.3207806017494623,
+      "d_max_k3": 2.3575611173227307,
       "kkt_all_ok": true
     },
     {
@@ -14301,7 +14437,7 @@
       "uniform_d2_kcal": 1.0,
       "representatives_kcal": [
         [
-          "SABEAN",
+          "FAIFI",
           1.0
         ]
       ],
@@ -14355,39 +14491,43 @@
       "lineage": "Egyptic Arabic",
       "family": "Afro-Asiatic",
       "n_doculects": 8,
-      "n_glottocodes": 6,
+      "n_glottocodes": 7,
       "max_ldnd": 0.6251571774482727,
-      "spread": 1.0791462941022716,
-      "spread_rarefied_m3": 0.6427544666265055,
-      "d_max_kcal": 1.2110684886755685,
-      "uniform_d2_kcal": 1.1903092436222396,
+      "spread": 1.0624783924366044,
+      "spread_rarefied_m3": 0.6668534421223296,
+      "d_max_kcal": 1.2081925654151169,
+      "uniform_d2_kcal": 1.1855617063550408,
       "representatives_kcal": [
         [
           "SHUWA_CHADIAN_ARABIC_2",
-          0.247
+          0.271
         ],
         [
           "KIBERA_KENYA",
-          0.246
-        ],
-        [
-          "SHUWA_CHADIAN_ARABIC",
-          0.186
+          0.266
         ],
         [
           "ARABIC_SUDANESE_SPOKEN",
+          0.177
+        ],
+        [
+          "EASTERN_EGYPTIAN_BEDAWI_ARABIC",
           0.172
         ],
         [
           "CAIRO_ARABIC",
-          0.144
+          0.092
+        ],
+        [
+          "QIFT_ARABIC",
+          0.019
         ],
         [
           "NIGERIAN_ARABIC",
           0.004
         ]
       ],
-      "d_max_k3": 2.8145358478779716,
+      "d_max_k3": 2.766884636876674,
       "kkt_all_ok": true
     },
     {
@@ -14395,54 +14535,50 @@
       "family": "Afro-Asiatic",
       "n_doculects": 11,
       "n_glottocodes": 8,
-      "max_ldnd": 0.6230843663215637,
-      "spread": 1.133734978267058,
-      "spread_rarefied_m3": 0.6915475578587167,
-      "d_max_kcal": 1.219970117141728,
-      "uniform_d2_kcal": 1.2005784050907105,
+      "max_ldnd": 0.635833203792572,
+      "spread": 1.094956838481323,
+      "spread_rarefied_m3": 0.6559116676476106,
+      "d_max_kcal": 1.212164417473535,
+      "uniform_d2_kcal": 1.1928562088774783,
       "representatives_kcal": [
         [
-          "HASSANIYA",
-          0.225
+          "JUDEO_TUNISIAN_ARABIC",
+          0.212
         ],
         [
           "MALTESE",
-          0.186
+          0.194
         ],
         [
           "ARABIC_LIBYAN_SPOKEN",
-          0.12
+          0.144
         ],
         [
           "MALTESE_ARABIC",
-          0.1
-        ],
-        [
-          "MOROCCAN_ARABIC_2",
-          0.091
-        ],
-        [
-          "JUDEO_TRIPOLITANIAN_ARABIC",
-          0.089
-        ],
-        [
-          "MOROCCAN_ARABIC",
-          0.069
+          0.116
         ],
         [
           "TUNISIAN_ARABIC_MAGHRIB",
-          0.058
-        ],
-        [
-          "JUDEO_MOROCCAN_ARABIC",
-          0.033
+          0.109
         ],
         [
           "TRIPOLI_JEWISH_ARABIC",
-          0.029
+          0.086
+        ],
+        [
+          "MOROCCAN_ARABIC",
+          0.062
+        ],
+        [
+          "MOROCCAN_ARABIC_2",
+          0.062
+        ],
+        [
+          "JUDEO_MOROCCAN_ARABIC",
+          0.015
         ]
       ],
-      "d_max_k3": 3.0453549455663604,
+      "d_max_k3": 2.944355596101651,
       "kkt_all_ok": true
     },
     {
