@@ -212,17 +212,23 @@ def nested_samples(pools: dict[str, frozenset[str]], docs: dict[str, Doculect], 
     return samples, children
 
 
-def drop_nan(docs: list[Doculect], d: np.ndarray, protect: frozenset[str] = frozenset()
+def drop_nan(docs: list[Doculect], d: np.ndarray, protect: frozenset[str] = frozenset(), min_shared: int = 20
              ) -> tuple[list[Doculect], np.ndarray]:
-    """Drop doculects until no pair is NaN (too few shared concepts), most-affected first. Ids in ``protect`` go
-    last, so a parent keeps every doculect that survived in one of its children."""
-    keep = np.ones(len(docs), dtype=bool)
+    """Drop doculects until no pair is NaN (fewer than ``min_shared`` shared concepts).
+
+    First the lists that are too short to share ``min_shared`` concepts with anything (they could never have a
+    distance), then repeatedly the list with the most undefined pairs, the shorter list on a tie. Ids in ``protect``
+    (lists kept by a nested lineage) lose only remaining ties and are not exempt: protecting them outright made a parent drop a long list such as Hittite,
+    whose only undefined pairs were with short lists that went later anyway."""
+    lens = np.array([len(x.words) for x in docs])
     prot = np.array([x.id in protect for x in docs])
-    while np.isnan(d[np.ix_(keep, keep)]).any():
-        sub = d[np.ix_(keep, keep)]
+    nan = np.isnan(d)
+    keep = ~((lens < min_shared) & ~prot & nan.any(axis=1))
+    while nan[np.ix_(keep, keep)].any():
         idx = np.flatnonzero(keep)
-        score = np.isnan(sub).sum(axis=1) * np.where(prot[idx], 1e-3, 1.0)   # clean doculects score 0
-        keep[idx[score.argmax()]] = False
+        cnt = nan[np.ix_(idx, idx)].sum(axis=1)
+        # most undefined pairs first; among those the shorter list, then the unprotected one
+        keep[idx[np.lexsort((prot[idx], lens[idx], -cnt))[0]]] = False
     return [x for x, k in zip(docs, keep) if k], d[np.ix_(keep, keep)]
 
 
@@ -378,20 +384,22 @@ def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, child
 
 
 def check_nesting(results: list[dict], children: dict[str, list[str]], tol: float = 1e-6) -> dict:
-    """D_max of a parent must be at least that of every child at every scale (holds when the child's doculects are a
-    subset of the parent's). Lists the pairs where it is not."""
+    """D_max of a parent should be at least that of every child at every scale. This is guaranteed when the child's
+    doculects are a subset of the parent's; a parent can also have to drop a short list a child kept (it lacks 20
+    shared concepts with a list from another branch), so every pair is checked and non-subsets are listed."""
     res = {r["lineage"]: r for r in results}
-    pairs, bad = 0, []
+    pairs, bad, not_subset = 0, [], []
     for parent, kids in children.items():
         for child in kids:
-            if not {x.id for x in res[child]["_docs"]} <= {x.id for x in res[parent]["_docs"]}:
-                continue
             pairs += 1
+            extra = sorted({x.id for x in res[child]["_docs"]} - {x.id for x in res[parent]["_docs"]})
+            if extra:
+                not_subset.append({"parent": parent, "child": child, "child_only": len(extra)})
             gap = min([res[parent]["d_max_kcal"] - res[child]["d_max_kcal"],
                        *(a - b for a, b in zip(res[parent]["profile_d_max"], res[child]["profile_d_max"]))])
             if gap < -tol:
-                bad.append({"parent": parent, "child": child, "worst_gap": float(gap)})
-    return {"pairs": pairs, "violations": bad}
+                bad.append({"parent": parent, "child": child, "worst_gap": float(gap), "subset": not extra})
+    return {"pairs": pairs, "violations": bad, "not_subset": not_subset}
 
 
 def sampling_robustness(docs: list[Doculect], k_cal: float, metric: Metric) -> list[dict]:
@@ -508,7 +516,8 @@ def main() -> None:
     cache.save(cache_path)
     results = [by_name[n] for n in LINEAGES]
     nesting = check_nesting(results, children)
-    print(f"nesting: {nesting['pairs']} parent/child pairs, {len(nesting['violations'])} violations", flush=True)
+    print(f"nesting: {nesting['pairs']} parent/child pairs, {len(nesting['not_subset'])} not subsets, "
+          f"{len(nesting['violations'])} with parent below child", flush=True)
 
     japonic = [x for x in all_docs.values() if rows[x.id]["Family"] == "Japonic"]
     robust = sampling_robustness(japonic, k_cal, metric)

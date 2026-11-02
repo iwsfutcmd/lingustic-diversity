@@ -71,3 +71,20 @@ def test_drop_nan_keeps_protected_doculects():
     assert [x.id for x in kept] == ["a", "c", "d"]
     kept, _ = drop_nan(docs, d, protect=frozenset("ab"))
     assert len(kept) == 3 and {"c", "d"} <= {x.id for x in kept}
+
+
+def test_drop_nan_keeps_a_long_list_whose_clashes_are_with_short_lists():
+    """Hittite's case: a 30-concept list undefined only against short lists that clash with others anyway."""
+    words = lambda n: {f"c{i}": (("a",),) for i in range(n)}
+    docs = [Doculect("LONG", "LONG", "g0", "F", "W", words(30)),
+            Doculect("S1", "S1", "g1", "F", "W", words(22)), Doculect("S2", "S2", "g2", "F", "W", words(22)),
+            *(Doculect(f"F{i}", f"F{i}", f"g{3 + i}", "F", "W", words(40)) for i in range(4))]
+    d = np.full((7, 7), 0.5)
+    np.fill_diagonal(d, 0)
+    for s in (1, 2):                                   # the short lists clash with LONG and with each other
+        d[0, s] = d[s, 0] = np.nan
+    d[1, 2] = d[2, 1] = np.nan
+    kept, rest = drop_nan(docs, d, protect=frozenset({"S1", "S2"}))     # even when a child kept them
+    ids = {x.id for x in kept}
+    assert "LONG" in ids and not np.isnan(rest).any()
+    assert len(ids & {"S1", "S2"}) <= 1
