@@ -4,3 +4,6 @@ __pycache__/
 .pytest_cache/
 results/_wold_loans/
 !docs/data/
+
+# pipeline runner state (local: large inputs are fingerprinted by modification time)
+results/.pipeline_state.json
