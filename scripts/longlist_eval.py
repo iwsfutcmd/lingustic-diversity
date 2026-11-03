@@ -3,8 +3,9 @@
 NorthEuraLex (Lexibank, CC-BY-4.0; ~1,000 concepts for 107 languages of northern Eurasia) is converted from IPA
 segments to ASJPcode (isodiv.ipa_asjp), one form per concept (the first). Each pair of languages gets the permutation
 tests of isodiv.regularity (plain PMI similarity, over-represented recurrent correspondences G, leave-one-out
-recurrence) at several list lengths: the ASJP-40 concepts, then 100, 200, 400 and all shared concepts (a fixed random
-concept order, so shorter lists are subsets of longer ones).
+recurrence) on several concept lists: the ASJP-40 concepts; borrowing-resistant lists from UraLex's concept flags
+(Leipzig–Jakarta, Swadesh-207, and both together = "stable"); and 100, 200, 400 and all shared concepts in a fixed
+random order (shorter lists are subsets of longer ones; these include culture vocabulary, which is often borrowed).
 
 Pairs: Saami × Samoyed (the case ASJP-40 cannot resolve), other cross-subfamily pairs within one family, and
 unrelated pairs split by distance (< 1500 km, where contact can create real correspondences, and farther).
@@ -31,7 +32,7 @@ from isodiv.ipa_asjp import convert
 from isodiv.metric import get_metric
 from isodiv.regularity import Regularity
 
-LENGTHS = ("asjp40", 100, 200, 400, "all")
+LENGTHS = ("asjp40", "lj", "swadesh207", "stable", 100, 200, 400, "all")
 STATS = ("sim", "g", "rec")
 SAAMI = ("sma", "smj", "sme", "smn", "sms", "sjd")
 SAMOYED = ("enf", "yrk", "nio", "sel")
@@ -53,6 +54,7 @@ def main() -> None:
     ap.add_argument("--nel", type=Path, default=Path("data/lexibank/northeuralex/cldf"))
     ap.add_argument("--cldf", type=Path, default=Path("data/asjp/cldf"))
     ap.add_argument("--out", type=Path, default=Path("results"))
+    ap.add_argument("--uralex", type=Path, default=Path("data/lexibank/uralex/cldf"))
     ap.add_argument("--perms", type=int, default=499)
     ap.add_argument("--per-group", type=int, default=40)
     args = ap.parse_args()
@@ -62,6 +64,11 @@ def main() -> None:
     params = {r["ID"]: r.get("Concepticon_ID", "") for r in read(args.nel / "parameters.csv")}
     asjp_params = {r["ID"]: r["Concepticon_ID"] for r in read(args.cldf / "parameters.csv")}
     c40 = {asjp_params[c] for c in core_concepts(args.cldf)}
+    ura = list(read(args.uralex / "parameters.csv"))
+    named = {"lj": {p["Concepticon_ID"] for p in ura if p["Leipzig_Jakarta"] == "yes"},
+             "swadesh207": {p["Concepticon_ID"] for p in ura if p["Swadesh207"] == "yes"}}
+    named["stable"] = named["lj"] | named["swadesh207"]
+    named["asjp40"] = c40
     words: dict[str, dict[str, str]] = defaultdict(dict)
     for r in read(args.nel / "forms.csv"):
         if r["Parameter_ID"] in words[r["Language_ID"]] or not r.get("Segments"):
@@ -91,8 +98,8 @@ def main() -> None:
         for a, b in pairs:
             shared = sorted(words[a].keys() & words[b].keys(), key=rank.get)
             for L in LENGTHS:
-                if L == "asjp40":
-                    cs = [c for c in shared if params[c] in c40]
+                if L in named:
+                    cs = [c for c in shared if params[c] in named[L]]
                 elif L == "all":
                     cs = shared
                 else:

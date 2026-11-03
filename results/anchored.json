@@ -1,0 +1,799 @@
+{
+ "anchors": {
+  "same_language_median": 0.22759763035780417,
+  "detection_limit_d50": 0.9383052280235985,
+  "logistic_slope": 111.9232322507534
+ },
+ "random_unrelated": {
+  "5": {
+   "median": 4.946121359255805,
+   "q05": 4.621770548970625,
+   "q95": 5.0
+  },
+  "10": {
+   "median": 9.606258938325087,
+   "q05": 9.119182927494675,
+   "q95": 9.82396663848322
+  },
+  "25": {
+   "median": 22.531466825528184,
+   "q05": 21.477296028517888,
+   "q95": 23.428766851247826
+  },
+  "40": {
+   "median": 34.738387611142144,
+   "q05": 33.016507243617056,
+   "q95": 36.42656197226996
+  }
+ },
+ "lineages": [
+  {
+   "lineage": "Basque",
+   "n": 2,
+   "d_max_anchored": 1.0,
+   "d_max_kcal": 1.0318220332235046
+  },
+  {
+   "lineage": "Ainu",
+   "n": 23,
+   "d_max_anchored": 1.2960062636464968,
+   "d_max_kcal": 1.159198961132067
+  },
+  {
+   "lineage": "Japonic",
+   "n": 33,
+   "d_max_anchored": 1.692192061613815,
+   "d_max_kcal": 1.2477554817869054
+  },
+  {
+   "lineage": "Koreanic",
+   "n": 3,
+   "d_max_anchored": 1.1724355704636582,
+   "d_max_kcal": 1.1152192671451853
+  },
+  {
+   "lineage": "Burushaski",
+   "n": 10,
+   "d_max_anchored": 1.148289946038242,
+   "d_max_kcal": 1.1159906472647594
+  },
+  {
+   "lineage": "Nivkh",
+   "n": 7,
+   "d_max_anchored": 1.2106846733637453,
+   "d_max_kcal": 1.139493327993891
+  },
+  {
+   "lineage": "Haida",
+   "n": 2,
+   "d_max_anchored": 1.066225859734685,
+   "d_max_kcal": 1.0729854758242543
+  },
+  {
+   "lineage": "Yeniseian",
+   "n": 9,
+   "d_max_anchored": 1.9133734473242145,
+   "d_max_kcal": 1.2635741508495806
+  },
+  {
+   "lineage": "Kartvelian",
+   "n": 6,
+   "d_max_anchored": 2.1285335364823745,
+   "d_max_kcal": 1.2705487612810045
+  },
+  {
+   "lineage": "Romance",
+   "n": 64,
+   "d_max_anchored": 2.146418991223215,
+   "d_max_kcal": 1.3071175251645215
+  },
+  {
+   "lineage": "Germanic",
+   "n": 61,
+   "d_max_anchored": 2.170309259970763,
+   "d_max_kcal": 1.3021229582451954
+  },
+  {
+   "lineage": "Slavic",
+   "n": 34,
+   "d_max_anchored": 1.6097857362954484,
+   "d_max_kcal": 1.2378526644506505
+  },
+  {
+   "lineage": "Turkic",
+   "n": 71,
+   "d_max_anchored": 2.4456294762867565,
+   "d_max_kcal": 1.3244524346026987
+  },
+  {
+   "lineage": "Mongolic",
+   "n": 29,
+   "d_max_anchored": 2.050905924172297,
+   "d_max_kcal": 1.2943080505736149
+  },
+  {
+   "lineage": "Uralic",
+   "n": 64,
+   "d_max_anchored": 6.659256657236038,
+   "d_max_kcal": 1.455756119988765
+  },
+  {
+   "lineage": "Indo-European",
+   "n": 527,
+   "d_max_anchored": 15.316772638530285,
+   "d_max_kcal": 1.5097552122570839
+  },
+  {
+   "lineage": "Chukotko-Kamchatkan",
+   "n": 7,
+   "d_max_anchored": 1.977575863963589,
+   "d_max_kcal": 1.2669690450759008
+  },
+  {
+   "lineage": "Yukaghir",
+   "n": 4,
+   "d_max_anchored": 1.4599030449251855,
+   "d_max_kcal": 1.1801380273875854
+  },
+  {
+   "lineage": "Eskimo-Aleut",
+   "n": 16,
+   "d_max_anchored": 3.5785100187156393,
+   "d_max_kcal": 1.3795393246212506
+  },
+  {
+   "lineage": "Tungusic",
+   "n": 29,
+   "d_max_anchored": 2.264254305897887,
+   "d_max_kcal": 1.3078587884216866
+  },
+  {
+   "lineage": "Abkhaz-Adyge",
+   "n": 7,
+   "d_max_anchored": 2.643470085552102,
+   "d_max_kcal": 1.3200781502389898
+  },
+  {
+   "lineage": "Nakh-Daghestanian",
+   "n": 61,
+   "d_max_anchored": 5.902501466159712,
+   "d_max_kcal": 1.4447727178555092
+  },
+  {
+   "lineage": "Dravidian",
+   "n": 79,
+   "d_max_anchored": 4.560871332225139,
+   "d_max_kcal": 1.416602384369581
+  },
+  {
+   "lineage": "Great Andamanese",
+   "n": 10,
+   "d_max_anchored": 2.7866159364830736,
+   "d_max_kcal": 1.3367805235736143
+  },
+  {
+   "lineage": "Khoe-Kwadi",
+   "n": 15,
+   "d_max_anchored": 2.517247668974227,
+   "d_max_kcal": 1.3249365637415293
+  },
+  {
+   "lineage": "Tuu",
+   "n": 10,
+   "d_max_anchored": 2.168599947285954,
+   "d_max_kcal": 1.2864380781323173
+  },
+  {
+   "lineage": "Kxa",
+   "n": 7,
+   "d_max_anchored": 2.127664154042286,
+   "d_max_kcal": 1.280520828720755
+  },
+  {
+   "lineage": "Kuliak",
+   "n": 6,
+   "d_max_anchored": 1.7878091737786588,
+   "d_max_kcal": 1.238171508576625
+  },
+  {
+   "lineage": "Tarascan",
+   "n": 4,
+   "d_max_anchored": 1.0508494922474059,
+   "d_max_kcal": 1.0753044616519714
+  },
+  {
+   "lineage": "Araucanian",
+   "n": 4,
+   "d_max_anchored": 1.062973540094149,
+   "d_max_kcal": 1.0769320140346679
+  },
+  {
+   "lineage": "Quechuan",
+   "n": 61,
+   "d_max_anchored": 1.1222182786547619,
+   "d_max_kcal": 1.132121883603843
+  },
+  {
+   "lineage": "Mayan",
+   "n": 107,
+   "d_max_anchored": 3.0746342174187897,
+   "d_max_kcal": 1.3705458618135147
+  },
+  {
+   "lineage": "Algic",
+   "n": 36,
+   "d_max_anchored": 8.24790025808267,
+   "d_max_kcal": 1.4675035777799466
+  },
+  {
+   "lineage": "Salishan",
+   "n": 30,
+   "d_max_anchored": 5.67395922585608,
+   "d_max_kcal": 1.4407613557915364
+  },
+  {
+   "lineage": "Iroquoian",
+   "n": 10,
+   "d_max_anchored": 3.265077944333532,
+   "d_max_kcal": 1.3507664841734048
+  },
+  {
+   "lineage": "Siouan",
+   "n": 18,
+   "d_max_anchored": 4.106613067618659,
+   "d_max_kcal": 1.3972390990189374
+  },
+  {
+   "lineage": "Athabaskan-Eyak-Tlingit",
+   "n": 45,
+   "d_max_anchored": 5.63601264656111,
+   "d_max_kcal": 1.4375949845682012
+  },
+  {
+   "lineage": "Uto-Aztecan",
+   "n": 75,
+   "d_max_anchored": 5.514269941336679,
+   "d_max_kcal": 1.4402056549523692
+  },
+  {
+   "lineage": "Hmong-Mien",
+   "n": 110,
+   "d_max_anchored": 6.005898433246341,
+   "d_max_kcal": 1.4504342135769677
+  },
+  {
+   "lineage": "Tai-Kadai",
+   "n": 214,
+   "d_max_anchored": 8.13945753261546,
+   "d_max_kcal": 1.4735195321167036
+  },
+  {
+   "lineage": "Austroasiatic",
+   "n": 190,
+   "d_max_anchored": 11.637708458275984,
+   "d_max_kcal": 1.494839287861322
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "n": 193,
+   "d_max_anchored": 23.236469713331974,
+   "d_max_kcal": 1.5327754360954213
+  },
+  {
+   "lineage": "Austronesian",
+   "n": 1467,
+   "d_max_anchored": 45.935528751324235,
+   "d_max_kcal": 1.5489390856198522
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "n": 887,
+   "d_max_anchored": 22.277622056221748,
+   "d_max_kcal": 1.5277931837301848
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "n": 426,
+   "d_max_anchored": 36.06845200565226,
+   "d_max_kcal": 1.546738681602947
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "n": 2042,
+   "d_max_anchored": 75.49421671426319,
+   "d_max_kcal": 1.5628477653625759
+  },
+  {
+   "lineage": "Nuclear Trans New Guinea",
+   "n": 307,
+   "d_max_anchored": 49.15575568265746,
+   "d_max_kcal": 1.556851482387022
+  },
+  {
+   "lineage": "Otomanguean",
+   "n": 109,
+   "d_max_anchored": 18.40301953511442,
+   "d_max_kcal": 1.5343638523387415
+  },
+  {
+   "lineage": "Sumerian",
+   "n": 1,
+   "d_max_anchored": 1.0,
+   "d_max_kcal": 1.0
+  },
+  {
+   "lineage": "Elamite",
+   "n": 1,
+   "d_max_anchored": 1.0,
+   "d_max_kcal": 1.0
+  },
+  {
+   "lineage": "Etruscan",
+   "n": 1,
+   "d_max_anchored": 1.0,
+   "d_max_kcal": 1.0
+  },
+  {
+   "lineage": "Kusunda",
+   "n": 2,
+   "d_max_anchored": 1.0594726848277007,
+   "d_max_kcal": 1.0710288296339157
+  },
+  {
+   "lineage": "Nihali",
+   "n": 3,
+   "d_max_anchored": 1.0459687985893658,
+   "d_max_kcal": 1.067210464946754
+  },
+  {
+   "lineage": "Hruso",
+   "n": 1,
+   "d_max_anchored": 1.0,
+   "d_max_kcal": 1.0
+  },
+  {
+   "lineage": "Jarawa-Onge",
+   "n": 2,
+   "d_max_anchored": 1.1644234494976793,
+   "d_max_kcal": 1.0988140418591266
+  },
+  {
+   "lineage": "Nubian",
+   "n": 11,
+   "d_max_anchored": 3.5862611365020776,
+   "d_max_kcal": 1.375615183879825
+  },
+  {
+   "lineage": "Songhay",
+   "n": 13,
+   "d_max_anchored": 1.5448310691048524,
+   "d_max_kcal": 1.2061059566177599
+  },
+  {
+   "lineage": "Saharan",
+   "n": 10,
+   "d_max_anchored": 2.5923628450024268,
+   "d_max_kcal": 1.317022425998727
+  },
+  {
+   "lineage": "Dogon",
+   "n": 50,
+   "d_max_anchored": 3.5946710275696576,
+   "d_max_kcal": 1.3904398443247419
+  },
+  {
+   "lineage": "Kru",
+   "n": 26,
+   "d_max_anchored": 2.637129864631651,
+   "d_max_kcal": 1.3435861889437943
+  },
+  {
+   "lineage": "Ijoid",
+   "n": 36,
+   "d_max_anchored": 2.0199595304053544,
+   "d_max_kcal": 1.2747724840111259
+  },
+  {
+   "lineage": "Mixe-Zoque",
+   "n": 23,
+   "d_max_anchored": 2.040135289701338,
+   "d_max_kcal": 1.2806752723995822
+  },
+  {
+   "lineage": "Totonacan",
+   "n": 10,
+   "d_max_anchored": 1.3661243304617385,
+   "d_max_kcal": 1.1807232766631177
+  },
+  {
+   "lineage": "Cochimi-Yuman",
+   "n": 13,
+   "d_max_anchored": 2.562574240245193,
+   "d_max_kcal": 1.31930359799625
+  },
+  {
+   "lineage": "Miwok-Costanoan",
+   "n": 9,
+   "d_max_anchored": 2.6288115165231183,
+   "d_max_kcal": 1.3231060755931099
+  },
+  {
+   "lineage": "Mande",
+   "n": 128,
+   "d_max_anchored": 6.954545626258531,
+   "d_max_kcal": 1.4612599241829263
+  },
+  {
+   "lineage": "Heibanic",
+   "n": 11,
+   "d_max_anchored": 2.720887987376101,
+   "d_max_kcal": 1.3375040169302068
+  },
+  {
+   "lineage": "Narrow Talodi",
+   "n": 9,
+   "d_max_anchored": 1.909265812211024,
+   "d_max_kcal": 1.2706010029715094
+  },
+  {
+   "lineage": "Katla-Tima",
+   "n": 3,
+   "d_max_anchored": 1.5333566137951884,
+   "d_max_kcal": 1.1722527870964592
+  },
+  {
+   "lineage": "Rashad",
+   "n": 2,
+   "d_max_anchored": 1.3517299029943404,
+   "d_max_kcal": 1.1374146095978785
+  },
+  {
+   "lineage": "Semitic",
+   "n": 110,
+   "d_max_anchored": 5.323140924508843,
+   "d_max_kcal": 1.4358409577362372
+  },
+  {
+   "lineage": "Arabic",
+   "n": 47,
+   "d_max_anchored": 1.907682392642262,
+   "d_max_kcal": 1.2752472084612523
+  },
+  {
+   "lineage": "Chadic",
+   "n": 206,
+   "d_max_anchored": 20.156352011840312,
+   "d_max_kcal": 1.5229473811200525
+  },
+  {
+   "lineage": "Cushitic",
+   "n": 80,
+   "d_max_anchored": 11.976519201703367,
+   "d_max_kcal": 1.4980072499236585
+  },
+  {
+   "lineage": "Berber",
+   "n": 37,
+   "d_max_anchored": 2.5271155520134863,
+   "d_max_kcal": 1.3312231212697152
+  },
+  {
+   "lineage": "Sinitic",
+   "n": 491,
+   "d_max_anchored": 4.345246588259796,
+   "d_max_kcal": 1.419185724957153
+  },
+  {
+   "lineage": "Min",
+   "n": 32,
+   "d_max_anchored": 2.5740449412750177,
+   "d_max_kcal": 1.3384622877272216
+  },
+  {
+   "lineage": "Lolo-Burmese",
+   "n": 57,
+   "d_max_anchored": 4.087717547021635,
+   "d_max_kcal": 1.4093022473117278
+  },
+  {
+   "lineage": "Bodic",
+   "n": 83,
+   "d_max_anchored": 4.707951811045372,
+   "d_max_kcal": 1.4221134053326145
+  },
+  {
+   "lineage": "Kuki-Chin",
+   "n": 53,
+   "d_max_anchored": 2.397920261430112,
+   "d_max_kcal": 1.328967009902905
+  },
+  {
+   "lineage": "Indo-Aryan",
+   "n": 167,
+   "d_max_anchored": 3.7001585948809415,
+   "d_max_kcal": 1.395845507440072
+  },
+  {
+   "lineage": "Iranian",
+   "n": 135,
+   "d_max_anchored": 3.938728730565059,
+   "d_max_kcal": 1.4050908645235198
+  },
+  {
+   "lineage": "Celtic",
+   "n": 9,
+   "d_max_anchored": 2.3206635483202023,
+   "d_max_kcal": 1.306166797666799
+  },
+  {
+   "lineage": "Balto-Slavic",
+   "n": 39,
+   "d_max_anchored": 2.593870143920513,
+   "d_max_kcal": 1.334931030033033
+  },
+  {
+   "lineage": "Oceanic",
+   "n": 659,
+   "d_max_anchored": 35.308829569880615,
+   "d_max_kcal": 1.5418943444471451
+  },
+  {
+   "lineage": "Polynesian",
+   "n": 51,
+   "d_max_anchored": 1.6745254552347988,
+   "d_max_kcal": 1.2485345702324018
+  },
+  {
+   "lineage": "Finnic",
+   "n": 17,
+   "d_max_anchored": 1.5290205268145147,
+   "d_max_kcal": 1.2205705908735431
+  },
+  {
+   "lineage": "Saami",
+   "n": 15,
+   "d_max_anchored": 2.054007586579501,
+   "d_max_kcal": 1.2886055661460265
+  },
+  {
+   "lineage": "Samoyedic",
+   "n": 10,
+   "d_max_anchored": 2.7081093354300307,
+   "d_max_kcal": 1.3337586329868154
+  },
+  {
+   "lineage": "Oghuz",
+   "n": 34,
+   "d_max_anchored": 1.3767449861784764,
+   "d_max_kcal": 1.1891606129648824
+  },
+  {
+   "lineage": "Kipchak",
+   "n": 18,
+   "d_max_anchored": 1.667146508830601,
+   "d_max_kcal": 1.2344950090534808
+  },
+  {
+   "lineage": "South Dravidian",
+   "n": 64,
+   "d_max_anchored": 3.260367103575681,
+   "d_max_kcal": 1.375887098490379
+  },
+  {
+   "lineage": "Quichean-Mamean",
+   "n": 79,
+   "d_max_anchored": 2.0062075882395805,
+   "d_max_kcal": 1.2918591105420598
+  },
+  {
+   "lineage": "Kam-Tai",
+   "n": 179,
+   "d_max_anchored": 3.322932001535169,
+   "d_max_kcal": 1.3810907079612762
+  },
+  {
+   "lineage": "Mandarin",
+   "n": 186,
+   "d_max_anchored": 2.4079031176814865,
+   "d_max_kcal": 1.322356257915369
+  },
+  {
+   "lineage": "Jin",
+   "n": 23,
+   "d_max_anchored": 1.6591490668818236,
+   "d_max_kcal": 1.2419610922848412
+  },
+  {
+   "lineage": "Wu",
+   "n": 51,
+   "d_max_anchored": 2.1277905410542446,
+   "d_max_kcal": 1.3035108687089139
+  },
+  {
+   "lineage": "Hui",
+   "n": 20,
+   "d_max_anchored": 1.792855272294412,
+   "d_max_kcal": 1.2670158759279313
+  },
+  {
+   "lineage": "Gan",
+   "n": 22,
+   "d_max_anchored": 2.088623143115307,
+   "d_max_kcal": 1.2902517014718033
+  },
+  {
+   "lineage": "Xiang",
+   "n": 23,
+   "d_max_anchored": 2.013524908980177,
+   "d_max_kcal": 1.2802844613789357
+  },
+  {
+   "lineage": "Hakka",
+   "n": 46,
+   "d_max_anchored": 1.977429077764259,
+   "d_max_kcal": 1.2831505200970361
+  },
+  {
+   "lineage": "Yue",
+   "n": 91,
+   "d_max_anchored": 2.0227896611909375,
+   "d_max_kcal": 1.2941781496938138
+  },
+  {
+   "lineage": "Pinghua",
+   "n": 29,
+   "d_max_anchored": 2.3096128631062802,
+   "d_max_kcal": 1.3164555106755758
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "n": 1414,
+   "d_max_anchored": 43.04319190885398,
+   "d_max_kcal": 1.5472551463610202
+  },
+  {
+   "lineage": "Formosan",
+   "n": 57,
+   "d_max_anchored": 6.476917338540181,
+   "d_max_kcal": 1.4528893203450068
+  },
+  {
+   "lineage": "Eastern Malayo-Polynesian",
+   "n": 707,
+   "d_max_anchored": 37.96184375930004,
+   "d_max_kcal": 1.543643302643558
+  },
+  {
+   "lineage": "Greater Central Philippine",
+   "n": 86,
+   "d_max_anchored": 2.936082649905203,
+   "d_max_kcal": 1.358601462177975
+  },
+  {
+   "lineage": "Malayic",
+   "n": 53,
+   "d_max_anchored": 1.6489374115498505,
+   "d_max_kcal": 1.2406711193479614
+  },
+  {
+   "lineage": "Celebic",
+   "n": 80,
+   "d_max_anchored": 2.774450367707814,
+   "d_max_kcal": 1.3519638207255096
+  },
+  {
+   "lineage": "East Semitic",
+   "n": 3,
+   "d_max_anchored": 1.1112886011578933,
+   "d_max_kcal": 1.0946749964339126
+  },
+  {
+   "lineage": "West Semitic",
+   "n": 107,
+   "d_max_anchored": 5.150304620816208,
+   "d_max_kcal": 1.4325751589224949
+  },
+  {
+   "lineage": "Central Semitic",
+   "n": 74,
+   "d_max_anchored": 2.990109991842658,
+   "d_max_kcal": 1.3627345943451987
+  },
+  {
+   "lineage": "Northwest Semitic",
+   "n": 27,
+   "d_max_anchored": 2.3779466334067507,
+   "d_max_kcal": 1.3182513752467737
+  },
+  {
+   "lineage": "Aramaic",
+   "n": 23,
+   "d_max_anchored": 1.804013444408004,
+   "d_max_kcal": 1.2603490249429905
+  },
+  {
+   "lineage": "North-Eastern Neo-Aramaic",
+   "n": 10,
+   "d_max_anchored": 1.2697953594619413,
+   "d_max_kcal": 1.1601476155844823
+  },
+  {
+   "lineage": "Canaanite",
+   "n": 4,
+   "d_max_anchored": 1.4440073372001012,
+   "d_max_kcal": 1.1795025588723127
+  },
+  {
+   "lineage": "South Semitic",
+   "n": 33,
+   "d_max_anchored": 3.532742686513435,
+   "d_max_kcal": 1.3863901056701144
+  },
+  {
+   "lineage": "Ethiosemitic",
+   "n": 25,
+   "d_max_anchored": 2.6918098718018184,
+   "d_max_kcal": 1.3427076099942519
+  },
+  {
+   "lineage": "North Ethiopic",
+   "n": 9,
+   "d_max_anchored": 1.409464539648781,
+   "d_max_kcal": 1.1849439887188502
+  },
+  {
+   "lineage": "South Ethiopic",
+   "n": 16,
+   "d_max_anchored": 2.355639090125672,
+   "d_max_kcal": 1.3157660385975831
+  },
+  {
+   "lineage": "Outer South Ethiopic",
+   "n": 8,
+   "d_max_anchored": 2.0314924659667537,
+   "d_max_kcal": 1.2755324416076874
+  },
+  {
+   "lineage": "Modern South Arabian",
+   "n": 9,
+   "d_max_anchored": 1.627049898138311,
+   "d_max_kcal": 1.2381661853080985
+  },
+  {
+   "lineage": "Ancient South Arabian",
+   "n": 1,
+   "d_max_anchored": 1.0,
+   "d_max_kcal": 1.0
+  },
+  {
+   "lineage": "Peninsular Arabic",
+   "n": 10,
+   "d_max_anchored": 1.4193009564234957,
+   "d_max_kcal": 1.1975284868471114
+  },
+  {
+   "lineage": "Egyptic Arabic",
+   "n": 8,
+   "d_max_anchored": 1.5427374392407807,
+   "d_max_kcal": 1.2081925654151169
+  },
+  {
+   "lineage": "North African Arabic",
+   "n": 11,
+   "d_max_anchored": 1.5179260615405508,
+   "d_max_kcal": 1.212164417473535
+  },
+  {
+   "lineage": "Eastern Arabic",
+   "n": 8,
+   "d_max_anchored": 1.4368127163975073,
+   "d_max_kcal": 1.1956049998235967
+  },
+  {
+   "lineage": "Levantine Arabic",
+   "n": 7,
+   "d_max_anchored": 1.1637795146051482,
+   "d_max_kcal": 1.1356567328834448
+  }
+ ]
+}
