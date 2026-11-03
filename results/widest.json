@@ -1,0 +1,2554 @@
+{
+ "band": 0.473796954281597,
+ "k": 4,
+ "distance": "pmi",
+ "lineages": [
+  {
+   "lineage": "Basque",
+   "n": 2,
+   "raw_widest": 0.13752904534339905,
+   "raw_pair": [
+    "BASQUE",
+    "BASQUE_2"
+   ],
+   "widest": 0.13752904534339905,
+   "pair": [
+    "BASQUE",
+    "BASQUE_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Ainu",
+   "n": 23,
+   "raw_widest": 0.49057772755622864,
+   "raw_pair": [
+    "AINU_SARU",
+    "KURIL_AINU"
+   ],
+   "widest": 0.3476537764072418,
+   "pair": [
+    "AINU_SARU",
+    "SAKHALIN_AINU"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Japonic",
+   "n": 33,
+   "raw_widest": 0.6387689113616943,
+   "raw_pair": [
+    "JAPANESE_3",
+    "SHURI"
+   ],
+   "widest": 0.5529509782791138,
+   "pair": [
+    "AZA_IRABU_MIYAKO",
+    "JAPANESE_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Koreanic",
+   "n": 3,
+   "raw_widest": 0.4366517961025238,
+   "raw_pair": [
+    "JEJUEO",
+    "KOREAN"
+   ],
+   "widest": 0.40306946635246277,
+   "pair": [
+    "JEJUEO",
+    "KOREAN"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Burushaski",
+   "n": 10,
+   "raw_widest": 0.4111589193344116,
+   "raw_pair": [
+    "BURUSHASKI_2",
+    "HOPER_NAGAR_BURUSHASKI"
+   ],
+   "widest": 0.27468231320381165,
+   "pair": [
+    "BURUSHASKI",
+    "BURUSHASKI_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Nivkh",
+   "n": 7,
+   "raw_widest": 0.47495386004447937,
+   "raw_pair": [
+    "GILYAK",
+    "GILYAK_EAST_SAKHALIN"
+   ],
+   "widest": 0.31281720101833344,
+   "pair": [
+    "GILYAK",
+    "GILYAK_EAST_SAKHALIN"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Haida",
+   "n": 2,
+   "raw_widest": 0.31588515639305115,
+   "raw_pair": [
+    "HAIDA",
+    "HAIDA_2"
+   ],
+   "widest": 0.31588515639305115,
+   "pair": [
+    "HAIDA",
+    "HAIDA_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Yeniseian",
+   "n": 9,
+   "raw_widest": 0.7639692425727844,
+   "raw_pair": [
+    "ASSAN",
+    "KET_2"
+   ],
+   "widest": 0.6989107429981232,
+   "pair": [
+    "ASSAN",
+    "EIGHTEENTH_CENTURY_KET"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Kartvelian",
+   "n": 6,
+   "raw_widest": 0.8153457641601562,
+   "raw_pair": [
+    "LAZ_ARHAVI",
+    "SVAN"
+   ],
+   "widest": 0.811138391494751,
+   "pair": [
+    "GEORGIAN",
+    "SVAN"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Romance",
+   "n": 64,
+   "raw_widest": 0.7557730078697205,
+   "raw_pair": [
+    "FRENCH_2",
+    "VLACH"
+   ],
+   "widest": 0.701959639787674,
+   "pair": [
+    "FRENCH",
+    "LATIN_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Germanic",
+   "n": 61,
+   "raw_widest": 0.787632167339325,
+   "raw_pair": [
+    "DANISH_2",
+    "PROTO_GERMANIC"
+   ],
+   "widest": 0.6660566329956055,
+   "pair": [
+    "DANISH",
+    "PROTO_GERMANIC"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Slavic",
+   "n": 34,
+   "raw_widest": 0.6337494850158691,
+   "raw_pair": [
+    "BULGARIAN_2",
+    "POLABIAN"
+   ],
+   "widest": 0.49251052737236023,
+   "pair": [
+    "BELARUSIAN",
+    "BULGARIAN_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Turkic",
+   "n": 71,
+   "raw_widest": 0.837346076965332,
+   "raw_pair": [
+    "CHUVASH",
+    "IRAN_TURKIC"
+   ],
+   "widest": 0.8088638186454773,
+   "pair": [
+    "CHUVASH",
+    "TOFA"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Mongolic",
+   "n": 29,
+   "raw_widest": 0.7411693930625916,
+   "raw_pair": [
+    "BURIAT_MONGOLIA",
+    "SANTA_MONGOLIAN"
+   ],
+   "widest": 0.6806020736694336,
+   "pair": [
+    "BURIAT_MONGOLIA",
+    "SANTA_MONGOLIAN"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Uralic",
+   "n": 64,
+   "raw_widest": 1.0045303106307983,
+   "raw_pair": [
+    "NENETS",
+    "SAAMI_PITE"
+   ],
+   "widest": 0.995811402797699,
+   "pair": [
+    "FOREST_ENETS_2",
+    "SAAMI_UME"
+   ],
+   "lone": 3,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Indo-European",
+   "n": 527,
+   "raw_widest": 1.0396939516067505,
+   "raw_pair": [
+    "LASGERDI",
+    "SARAMACCAN_2"
+   ],
+   "widest": 1.0001120567321777,
+   "pair": [
+    "BERNESE_GERMAN",
+    "SANGISARI"
+   ],
+   "lone": 23,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Chukotko-Kamchatkan",
+   "n": 7,
+   "raw_widest": 0.8490868210792542,
+   "raw_pair": [
+    "CHUKCHEE",
+    "ITELMEN"
+   ],
+   "widest": 0.8381978273391724,
+   "pair": [
+    "CHUKCHEE_2",
+    "ITELMEN"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Yukaghir",
+   "n": 4,
+   "raw_widest": 0.6753761172294617,
+   "raw_pair": [
+    "KOLYMA_YUKAGIR",
+    "NORTHERN_YUKAGHIR"
+   ],
+   "widest": 0.6605006456375122,
+   "pair": [
+    "KOLYMA_YUKAGIR",
+    "NORTHERN_YUKAGHIR"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Eskimo-Aleut",
+   "n": 16,
+   "raw_widest": 1.013364553451538,
+   "raw_pair": [
+    "ALEUT_2",
+    "YUPIK_CENTRAL_SIBERIAN_CHAPLINO"
+   ],
+   "widest": 1.0022456645965576,
+   "pair": [
+    "ALEUT_2",
+    "CENTRAL_SIBERIAN_YUPIK"
+   ],
+   "lone": 6,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Tungusic",
+   "n": 29,
+   "raw_widest": 0.8052948117256165,
+   "raw_pair": [
+    "EWEN",
+    "MANCHU_4"
+   ],
+   "widest": 0.7487039864063263,
+   "pair": [
+    "AIHUI_MANCHU",
+    "EVEN"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Abkhaz-Adyge",
+   "n": 7,
+   "raw_widest": 0.9140500426292419,
+   "raw_pair": [
+    "ABKHAZ_2",
+    "ADYGHE_2"
+   ],
+   "widest": 0.9115003943443298,
+   "pair": [
+    "ABKHAZ_2",
+    "ADYGHE"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Nakh-Daghestanian",
+   "n": 61,
+   "raw_widest": 0.9419583082199097,
+   "raw_pair": [
+    "LAK_2",
+    "NORTHERN_TABASSARAN"
+   ],
+   "widest": 0.9170731008052826,
+   "pair": [
+    "LAK",
+    "NORTHERN_TABASSARAN"
+   ],
+   "lone": 4,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Dravidian",
+   "n": 79,
+   "raw_widest": 0.9651837348937988,
+   "raw_pair": [
+    "BRAHUI_2",
+    "TODA"
+   ],
+   "widest": 0.9245348572731018,
+   "pair": [
+    "BRAHUI",
+    "TODA"
+   ],
+   "lone": 4,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Great Andamanese",
+   "n": 10,
+   "raw_widest": 0.9280024170875549,
+   "raw_pair": [
+    "AKA_BEA",
+    "AKA_KORA"
+   ],
+   "widest": 0.9035346508026123,
+   "pair": [
+    "AKAR_BALE",
+    "AKA_KORA"
+   ],
+   "lone": 3,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Khoe-Kwadi",
+   "n": 15,
+   "raw_widest": 0.8424634337425232,
+   "raw_pair": [
+    "MASARWA_TATI",
+    "XIRI"
+   ],
+   "widest": 0.8093504309654236,
+   "pair": [
+    "KWADI",
+    "MASARWA_TATI"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Tuu",
+   "n": 10,
+   "raw_widest": 0.8517058491706848,
+   "raw_pair": [
+    "NU",
+    "XOON_MASARWA"
+   ],
+   "widest": 0.8411165773868561,
+   "pair": [
+    "MASARWA_KAKIA",
+    "NU"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Kxa",
+   "n": 7,
+   "raw_widest": 0.8930003643035889,
+   "raw_pair": [
+    "HOAN_HUC",
+    "KUNG_EKOKA"
+   ],
+   "widest": 0.8406204283237457,
+   "pair": [
+    "HOAN",
+    "KUNG"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Kuliak",
+   "n": 6,
+   "raw_widest": 0.8231825232505798,
+   "raw_pair": [
+    "IK_4",
+    "TEPES"
+   ],
+   "widest": 0.7431671023368835,
+   "pair": [
+    "IK",
+    "NYANGI"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Tarascan",
+   "n": 4,
+   "raw_widest": 0.29637840390205383,
+   "raw_pair": [
+    "PUREPECHA",
+    "TARASCAN"
+   ],
+   "widest": 0.17562461644411087,
+   "pair": [
+    "PUREPECHA",
+    "PURHEPECHA"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Araucanian",
+   "n": 4,
+   "raw_widest": 0.31180626153945923,
+   "raw_pair": [
+    "MAPUDUNGUN_2",
+    "RANQUELCHE"
+   ],
+   "widest": 0.187855526804924,
+   "pair": [
+    "MAPUDUNGUN",
+    "MAPUDUNGUN_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Quechuan",
+   "n": 61,
+   "raw_widest": 0.36326053738594055,
+   "raw_pair": [
+    "QUECHUA_AREQUIPA_UNION",
+    "QUECHUA_NORTH_JUNIN_TARMA"
+   ],
+   "widest": 0.3037402331829071,
+   "pair": [
+    "QUECHUA_NORTH_JUNIN_CAJAS",
+    "QUICHUA_COTOPAXI_COMPANIA_GRANDE"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Mayan",
+   "n": 107,
+   "raw_widest": 0.9007115364074707,
+   "raw_pair": [
+    "HUASTEC",
+    "MAM_TODOS_SANTOS_CUCHUMATAN_1"
+   ],
+   "widest": 0.8571256399154663,
+   "pair": [
+    "CHICOMUCELTEC",
+    "MAM_TODOS_SANTOS_CUCHUMATAN_1"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Algic",
+   "n": 36,
+   "raw_widest": 0.9837464094161987,
+   "raw_pair": [
+    "CHIPPEWA",
+    "WIYOT"
+   ],
+   "widest": 0.9773485064506531,
+   "pair": [
+    "CHEYENNE",
+    "KASKASKIA_ILLINOIS"
+   ],
+   "lone": 22,
+   "flagged": [
+    "MICHIF",
+    "WIYOT",
+    "YUROK"
+   ],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Salishan",
+   "n": 30,
+   "raw_widest": 0.9868547916412354,
+   "raw_pair": [
+    "COMOX",
+    "SPOKANE"
+   ],
+   "widest": 0.9748302400112152,
+   "pair": [
+    "COMOX",
+    "KALISPEL_PEND_DOREILLE"
+   ],
+   "lone": 13,
+   "flagged": [
+    "BELLA_COOLA"
+   ],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Iroquoian",
+   "n": 10,
+   "raw_widest": 0.9700958132743835,
+   "raw_pair": [
+    "CAYUGA",
+    "CHEROKEE"
+   ],
+   "widest": 0.8815294206142426,
+   "pair": [
+    "NOTTOWAY",
+    "WENDAT_HURON"
+   ],
+   "lone": 3,
+   "flagged": [
+    "CHEROKEE"
+   ],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Siouan",
+   "n": 18,
+   "raw_widest": 0.9936460256576538,
+   "raw_pair": [
+    "CATAWBA",
+    "OMAHA_PONCA"
+   ],
+   "widest": 0.8736996650695801,
+   "pair": [
+    "CROW",
+    "OFO"
+   ],
+   "lone": 7,
+   "flagged": [
+    "CATAWBA"
+   ],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Athabaskan-Eyak-Tlingit",
+   "n": 45,
+   "raw_widest": 1.0170611143112183,
+   "raw_pair": [
+    "ILIAMNA_TANAINA",
+    "TLINGIT"
+   ],
+   "widest": 0.9841812252998352,
+   "pair": [
+    "EYAK",
+    "UPPER_TANANA"
+   ],
+   "lone": 18,
+   "flagged": [
+    "TLINGIT"
+   ],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Uto-Aztecan",
+   "n": 75,
+   "raw_widest": 0.9824756383895874,
+   "raw_pair": [
+    "NAHUATL_EASTERN_DURANGO",
+    "SHOSHONI"
+   ],
+   "widest": 0.9377169013023376,
+   "pair": [
+    "TETELCINGO_NAHUATL",
+    "UTE_1"
+   ],
+   "lone": 9,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Hmong-Mien",
+   "n": 110,
+   "raw_widest": 0.9922042489051819,
+   "raw_pair": [
+    "MIAN_GUANGXI_JINXIU",
+    "MIAO_GUIZHOU_ZIYUN_TUANPO"
+   ],
+   "widest": 0.9747188091278076,
+   "pair": [
+    "MIAN_GUANGDONG_LIANNAN_DAPING",
+    "MIAO_CHUANQIANDIAN_XIAOHAIZI"
+   ],
+   "lone": 12,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Tai-Kadai",
+   "n": 214,
+   "raw_widest": 1.0393637418746948,
+   "raw_pair": [
+    "DONG_GUIZHOU_ZHANGLU",
+    "LACHI"
+   ],
+   "widest": 1.001455307006836,
+   "pair": [
+    "HONGFENG_GELAO",
+    "YANG"
+   ],
+   "lone": 8,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Austroasiatic",
+   "n": 190,
+   "raw_widest": 1.0209380388259888,
+   "raw_pair": [
+    "GATA",
+    "LAMPANGLAMET"
+   ],
+   "widest": 1.0141205787658691,
+   "pair": [
+    "KENSIW",
+    "U"
+   ],
+   "lone": 25,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Pama-Nyungan",
+   "n": 193,
+   "raw_widest": 1.0854332447052002,
+   "raw_pair": [
+    "LOWER_ARANDA",
+    "NGAWUN"
+   ],
+   "widest": 1.0660291910171509,
+   "pair": [
+    "ALYAWARRA_4",
+    "UMBUYKAMU"
+   ],
+   "lone": 61,
+   "flagged": [
+    "AGHU_THARRNGGALA",
+    "KALA_LAGGAW_YA",
+    "KARADJERI",
+    "MBABARAM"
+   ],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Austronesian",
+   "n": 1467,
+   "raw_widest": 1.0980007648468018,
+   "raw_pair": [
+    "KEDANG",
+    "XARAGURE_2"
+   ],
+   "widest": 1.0820057392120361,
+   "pair": [
+    "ARAGURE",
+    "KEDANG"
+   ],
+   "lone": 210,
+   "flagged": [
+    "YAUR"
+   ],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Sino-Tibetan",
+   "n": 887,
+   "raw_widest": 1.0995334386825562,
+   "raw_pair": [
+    "HUI_HUANGSHAN_LIUKOU",
+    "SUNWAR_2"
+   ],
+   "widest": 1.0630117654800415,
+   "pair": [
+    "KHWOPA_NEWAR",
+    "PUTIAN_CHINESE"
+   ],
+   "lone": 94,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Afro-Asiatic",
+   "n": 426,
+   "raw_widest": 1.0666072368621826,
+   "raw_pair": [
+    "IRAQW_2",
+    "SHA"
+   ],
+   "widest": 1.0648850202560425,
+   "pair": [
+    "BOGA",
+    "GOBEZE"
+   ],
+   "lone": 82,
+   "flagged": [
+    "BALDEMU",
+    "MOGOGODO"
+   ],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Atlantic-Congo",
+   "n": 2042,
+   "raw_widest": 1.110214352607727,
+   "raw_pair": [
+    "BAYNUNK_GUNYAAMOLO_4",
+    "YORUBA_12"
+   ],
+   "widest": 1.0865716934204102,
+   "pair": [
+    "CE",
+    "KULANGO_BOUNA"
+   ],
+   "lone": 268,
+   "flagged": [
+    "AIZI"
+   ],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Nuclear Trans New Guinea",
+   "n": 307,
+   "raw_widest": 1.10355806350708,
+   "raw_pair": [
+    "MOMOLILI",
+    "PILA"
+   ],
+   "widest": 1.0872220993041992,
+   "pair": [
+    "KAMORO_2",
+    "USARUFA"
+   ],
+   "lone": 121,
+   "flagged": [
+    "KOVAI_2",
+    "WASEMBO"
+   ],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Otomanguean",
+   "n": 109,
+   "raw_widest": 1.0804284811019897,
+   "raw_pair": [
+    "OTOMI_DE_EL_BAILE",
+    "TRIQUI_CHICAHUAXTLA"
+   ],
+   "widest": 1.0537217855453491,
+   "pair": [
+    "SILACAYOAPAN_MIXTEC",
+    "TEXMELUCAN_ZAPOTEC"
+   ],
+   "lone": 25,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Sumerian",
+   "n": 1,
+   "raw_widest": null,
+   "raw_pair": [],
+   "widest": null,
+   "pair": [],
+   "lone": 0,
+   "flagged": []
+  },
+  {
+   "lineage": "Elamite",
+   "n": 1,
+   "raw_widest": null,
+   "raw_pair": [],
+   "widest": null,
+   "pair": [],
+   "lone": 0,
+   "flagged": []
+  },
+  {
+   "lineage": "Etruscan",
+   "n": 1,
+   "raw_widest": null,
+   "raw_pair": [],
+   "widest": null,
+   "pair": [],
+   "lone": 0,
+   "flagged": []
+  },
+  {
+   "lineage": "Kusunda",
+   "n": 2,
+   "raw_widest": 0.30738767981529236,
+   "raw_pair": [
+    "KUSUNDA",
+    "KUSUNDA_2"
+   ],
+   "widest": 0.30738767981529236,
+   "pair": [
+    "KUSUNDA",
+    "KUSUNDA_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Nihali",
+   "n": 3,
+   "raw_widest": 0.29006674885749817,
+   "raw_pair": [
+    "NAHALI",
+    "NIHALI"
+   ],
+   "widest": 0.27253952622413635,
+   "pair": [
+    "NAHALI",
+    "NIHALI"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Hruso",
+   "n": 1,
+   "raw_widest": null,
+   "raw_pair": [],
+   "widest": null,
+   "pair": [],
+   "lone": 0,
+   "flagged": []
+  },
+  {
+   "lineage": "Jarawa-Onge",
+   "n": 2,
+   "raw_widest": 0.428309828042984,
+   "raw_pair": [
+    "JARAWA",
+    "ONGE"
+   ],
+   "widest": 0.428309828042984,
+   "pair": [
+    "JARAWA",
+    "ONGE"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Nubian",
+   "n": 11,
+   "raw_widest": 0.944654643535614,
+   "raw_pair": [
+    "MEIDOB_NUBIAN",
+    "NOBIIN"
+   ],
+   "widest": 0.901573896408081,
+   "pair": [
+    "MEIDOB_NUBIAN",
+    "UNCUNWEE"
+   ],
+   "lone": 6,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Songhay",
+   "n": 13,
+   "raw_widest": 0.6767256855964661,
+   "raw_pair": [
+    "DENDI_2",
+    "KORANDJE"
+   ],
+   "widest": 0.5621835589408875,
+   "pair": [
+    "DENDI",
+    "KORANDJE"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Saharan",
+   "n": 10,
+   "raw_widest": 0.889342725276947,
+   "raw_pair": [
+    "BERIA",
+    "KANURI"
+   ],
+   "widest": 0.8812520503997803,
+   "pair": [
+    "BERTI",
+    "KANEMBU_3"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Dogon",
+   "n": 50,
+   "raw_widest": 0.9334204792976379,
+   "raw_pair": [
+    "BUNOGE",
+    "TOMO_KAN"
+   ],
+   "widest": 0.9092398285865784,
+   "pair": [
+    "BUNOGE",
+    "JAMSAY_2"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Kru",
+   "n": 26,
+   "raw_widest": 0.8604506254196167,
+   "raw_pair": [
+    "BETE_GUIBEROUA",
+    "KRUMEN_PYE"
+   ],
+   "widest": 0.7994420230388641,
+   "pair": [
+    "NEYO",
+    "SOUTHERN_GREBO_2"
+   ],
+   "lone": 1,
+   "flagged": [
+    "AIZI_TIAGBAMRIN"
+   ],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Ijoid",
+   "n": 36,
+   "raw_widest": 0.8336557745933533,
+   "raw_pair": [
+    "DEFAKA",
+    "IZON_3"
+   ],
+   "widest": 0.806164026260376,
+   "pair": [
+    "DEFAKA",
+    "IBANI_2"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Mixe-Zoque",
+   "n": 23,
+   "raw_widest": 0.8163278698921204,
+   "raw_pair": [
+    "AYAPANECO",
+    "AYUTLA_MIXE"
+   ],
+   "widest": 0.7197638750076294,
+   "pair": [
+    "TAPACHULTEC",
+    "TEXISTEPEC_ZOQUE"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Totonacan",
+   "n": 10,
+   "raw_widest": 0.566866397857666,
+   "raw_pair": [
+    "TEPEHUA_TLACHICHILCO",
+    "TOTONAC_HIGHLAND"
+   ],
+   "widest": 0.4983988404273987,
+   "pair": [
+    "PAPANTLA_TOTONAC",
+    "TEPEHUA_TLACHICHILCO"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Cochimi-Yuman",
+   "n": 13,
+   "raw_widest": 0.8708824515342712,
+   "raw_pair": [
+    "COCHIMI",
+    "HAVASUPAI"
+   ],
+   "widest": 0.8285755813121796,
+   "pair": [
+    "COCHIMI",
+    "HAVASUPAI"
+   ],
+   "lone": 3,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Miwok-Costanoan",
+   "n": 9,
+   "raw_widest": 0.8985066413879395,
+   "raw_pair": [
+    "PLAINS_MIWOK",
+    "RUMSEN"
+   ],
+   "widest": 0.8466405272483826,
+   "pair": [
+    "MIWOK_BODEGA",
+    "MUTSUN"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Mande",
+   "n": 128,
+   "raw_widest": 1.0244264602661133,
+   "raw_pair": [
+    "BANDI",
+    "ILLO_BUSA"
+   ],
+   "widest": 0.993971198797226,
+   "pair": [
+    "LOMA",
+    "SOUTHERN_SAMO"
+   ],
+   "lone": 5,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Heibanic",
+   "n": 11,
+   "raw_widest": 0.8424360156059265,
+   "raw_pair": [
+    "KO1",
+    "TIRO"
+   ],
+   "widest": 0.8424360156059265,
+   "pair": [
+    "KO1",
+    "TIRO"
+   ],
+   "lone": 5,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Narrow Talodi",
+   "n": 9,
+   "raw_widest": 0.7659280300140381,
+   "raw_pair": [
+    "NGILE",
+    "TOCHO_2"
+   ],
+   "widest": 0.6946125626564026,
+   "pair": [
+    "LUMUN_2",
+    "NDING"
+   ],
+   "lone": 3,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Katla-Tima",
+   "n": 3,
+   "raw_widest": 0.7220169901847839,
+   "raw_pair": [
+    "KATLA",
+    "TIMA"
+   ],
+   "widest": 0.6982121467590332,
+   "pair": [
+    "KATLA",
+    "TIMA"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Rashad",
+   "n": 2,
+   "raw_widest": 0.597460150718689,
+   "raw_pair": [
+    "ORIG",
+    "TEGALI"
+   ],
+   "widest": 0.597460150718689,
+   "pair": [
+    "ORIG",
+    "TEGALI"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Semitic",
+   "n": 110,
+   "raw_widest": 0.9698970913887024,
+   "raw_pair": [
+    "INNEMOR",
+    "TUROYO"
+   ],
+   "widest": 0.9350796937942505,
+   "pair": [
+    "ARABIC_KHUZESTANI",
+    "MESMES"
+   ],
+   "lone": 3,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Arabic",
+   "n": 47,
+   "raw_widest": 0.6965094804763794,
+   "raw_pair": [
+    "JUDEO_TUNISIAN_ARABIC",
+    "SOUKHNE_SYRIAN_ARABIC"
+   ],
+   "widest": 0.5645595192909241,
+   "pair": [
+    "KIBERA_KENYA",
+    "MALTESE"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Chadic",
+   "n": 206,
+   "raw_widest": 1.0522083044052124,
+   "raw_pair": [
+    "GVOKO",
+    "NDAM"
+   ],
+   "widest": 1.0522083044052124,
+   "pair": [
+    "GVOKO",
+    "NDAM"
+   ],
+   "lone": 70,
+   "flagged": [
+    "BALDEMU"
+   ],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Cushitic",
+   "n": 80,
+   "raw_widest": 1.0397913455963135,
+   "raw_pair": [
+    "BOON",
+    "KWADZA"
+   ],
+   "widest": 1.0397913455963135,
+   "pair": [
+    "BOON",
+    "KWADZA"
+   ],
+   "lone": 9,
+   "flagged": [
+    "MOGOGODO"
+   ],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Berber",
+   "n": 37,
+   "raw_widest": 0.847256600856781,
+   "raw_pair": [
+    "CHAOUI",
+    "TAMASHEQ_2"
+   ],
+   "widest": 0.8085149526596069,
+   "pair": [
+    "TAMASHEQ_2",
+    "ZENAGA"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Sinitic",
+   "n": 491,
+   "raw_widest": 0.9310448169708252,
+   "raw_pair": [
+    "JIN_LVLIANG_LIULIN",
+    "OLD_CHINESE"
+   ],
+   "widest": 0.8994883894920349,
+   "pair": [
+    "HUI_HANGZHOU_FENKOU",
+    "OLD_CHINESE"
+   ],
+   "lone": 11,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Min",
+   "n": 32,
+   "raw_widest": 0.8298949003219604,
+   "raw_pair": [
+    "MIN_FUZHOU_QINJIANG",
+    "MIN_HAIKOU"
+   ],
+   "widest": 0.8010396957397461,
+   "pair": [
+    "HAINAN_MINNAN_CHINESE",
+    "MIN_FUZHOU_QINJIANG"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Lolo-Burmese",
+   "n": 57,
+   "raw_widest": 0.9600488543510437,
+   "raw_pair": [
+    "BISU_YUNNAN_MENGZHE",
+    "YANGON_BURMESE"
+   ],
+   "widest": 0.9206101298332214,
+   "pair": [
+    "GONG",
+    "SANGKONG_YUNNAN_XIAOJIE"
+   ],
+   "lone": 12,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Bodic",
+   "n": 83,
+   "raw_widest": 0.9936900734901428,
+   "raw_pair": [
+    "BAIMA_SICHUAN_PINGWU",
+    "RANG_PAS"
+   ],
+   "widest": 0.9421198666095734,
+   "pair": [
+    "BAIMA_SICHUAN_PINGWU",
+    "RANG_PAS"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Kuki-Chin",
+   "n": 53,
+   "raw_widest": 0.7799030542373657,
+   "raw_pair": [
+    "HRANGKHOL",
+    "KHUMI_MANGLUNG"
+   ],
+   "widest": 0.6958003044128418,
+   "pair": [
+    "ANAL_2",
+    "WAKUNG"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Indo-Aryan",
+   "n": 167,
+   "raw_widest": 0.9099883437156677,
+   "raw_pair": [
+    "NEPALI",
+    "PARGAM_NISAR_KHOWAR"
+   ],
+   "widest": 0.8777371048927307,
+   "pair": [
+    "JADGALI",
+    "MALDIVIAN"
+   ],
+   "lone": 8,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Iranian",
+   "n": 135,
+   "raw_widest": 0.9236503839492798,
+   "raw_pair": [
+    "BALOCHI_EASTERN",
+    "SHIMSAL_WAKHI"
+   ],
+   "widest": 0.8900142908096313,
+   "pair": [
+    "CENTRAL_GOJAL_WAKHI",
+    "PARACHINAR_PASHTO"
+   ],
+   "lone": 5,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Celtic",
+   "n": 9,
+   "raw_widest": 0.8862679600715637,
+   "raw_pair": [
+    "BRETON",
+    "GAELIC_SCOTTISH"
+   ],
+   "widest": 0.8580490946769714,
+   "pair": [
+    "BRETON",
+    "MANX"
+   ],
+   "lone": 4,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Balto-Slavic",
+   "n": 39,
+   "raw_widest": 0.8624650835990906,
+   "raw_pair": [
+    "LATVIAN",
+    "POLISH_2"
+   ],
+   "widest": 0.8324446976184845,
+   "pair": [
+    "LITHUANIAN",
+    "LOWER_SORBIAN_2"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Oceanic",
+   "n": 659,
+   "raw_widest": 1.0799435377120972,
+   "raw_pair": [
+    "BLABLANGA",
+    "NOOLI"
+   ],
+   "widest": 1.0580598711967468,
+   "pair": [
+    "ARHO",
+    "MANGA"
+   ],
+   "lone": 143,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Polynesian",
+   "n": 51,
+   "raw_widest": 0.6234080791473389,
+   "raw_pair": [
+    "NUKUORO",
+    "TAHITIAN"
+   ],
+   "widest": 0.4519050717353821,
+   "pair": [
+    "NIUAFOOU",
+    "RURUTUAN"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Finnic",
+   "n": 17,
+   "raw_widest": 0.6034687757492065,
+   "raw_pair": [
+    "ESTONIAN_VORO",
+    "INGRIAN"
+   ],
+   "widest": 0.4301183819770813,
+   "pair": [
+    "INGRIAN",
+    "LIVONIAN"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Saami",
+   "n": 15,
+   "raw_widest": 0.7574455738067627,
+   "raw_pair": [
+    "AKKALA_SAMI",
+    "SAAMI_UME"
+   ],
+   "widest": 0.7367271780967712,
+   "pair": [
+    "AKKALA_SAMI",
+    "SAAMI_UME"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Samoyedic",
+   "n": 10,
+   "raw_widest": 0.8580761551856995,
+   "raw_pair": [
+    "KARAGASSISCH",
+    "NORTHERN_SELKUP"
+   ],
+   "widest": 0.8120315670967102,
+   "pair": [
+    "FOREST_ENETS_2",
+    "KARAGASSISCH"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Oghuz",
+   "n": 34,
+   "raw_widest": 0.5122222900390625,
+   "raw_pair": [
+    "SALAR_2",
+    "TURKISH"
+   ],
+   "widest": 0.3517770767211914,
+   "pair": [
+    "TURKISH_3",
+    "TURKMEN"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Kipchak",
+   "n": 18,
+   "raw_widest": 0.67265784740448,
+   "raw_pair": [
+    "KRIMCHAK",
+    "SIBERIAN_TATAR"
+   ],
+   "widest": 0.5964862108230591,
+   "pair": [
+    "KARAIM",
+    "SIBERIAN_TATAR"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "South Dravidian",
+   "n": 64,
+   "raw_widest": 0.8932163119316101,
+   "raw_pair": [
+    "TELUGU_4",
+    "TODA"
+   ],
+   "widest": 0.8641830682754517,
+   "pair": [
+    "TELUGU",
+    "TODA"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Quichean-Mamean",
+   "n": 79,
+   "raw_widest": 0.7688089609146118,
+   "raw_pair": [
+    "KEKCHI",
+    "MAM_TACANA_3"
+   ],
+   "widest": 0.7068988680839539,
+   "pair": [
+    "EASTERN_KEKCHI_CAHABON",
+    "MAM_TACANA_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Kam-Tai",
+   "n": 179,
+   "raw_widest": 0.9565377235412598,
+   "raw_pair": [
+    "JIAOLI_SUI",
+    "SHAN_3"
+   ],
+   "widest": 0.8805370926856995,
+   "pair": [
+    "DAHUA_YANTAN",
+    "PANDONG_SUI"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Mandarin",
+   "n": 186,
+   "raw_widest": 0.7869946956634521,
+   "raw_pair": [
+    "MANDARIN_GUILIN_LONGSHENG",
+    "MANDARIN_HEZE_DINGTAO"
+   ],
+   "widest": 0.7625263333320618,
+   "pair": [
+    "MANDARIN_GUILIN_LONGSHENG",
+    "WUTUN"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Jin",
+   "n": 23,
+   "raw_widest": 0.6541666984558105,
+   "raw_pair": [
+    "JIN_CHANGZHI_TUNLIU",
+    "JIN_LVLIANG_LIULIN"
+   ],
+   "widest": 0.6156449913978577,
+   "pair": [
+    "JIN_HEBI_HEBIJI",
+    "JIN_LVLIANG_LIULIN"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Wu",
+   "n": 51,
+   "raw_widest": 0.7289231419563293,
+   "raw_pair": [
+    "WU_JINHUA_TANGXI",
+    "WU_LISHUI_QINGYUAN"
+   ],
+   "widest": 0.6623818278312683,
+   "pair": [
+    "WU_LISHUI_QINGYUAN",
+    "WU_RUIAN"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Hui",
+   "n": 20,
+   "raw_widest": 0.6840936541557312,
+   "raw_pair": [
+    "HUI_JIANDE",
+    "HUI_SHANGRAO_QIUKOU"
+   ],
+   "widest": 0.6269529461860657,
+   "pair": [
+    "HUI_HANGZHOU_FENKOU",
+    "HUI_HUANGSHAN_HONGCUN"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Gan",
+   "n": 22,
+   "raw_widest": 0.7814624309539795,
+   "raw_pair": [
+    "GAN_SHAOWU",
+    "GAN_XIANNING"
+   ],
+   "widest": 0.7736329436302185,
+   "pair": [
+    "GAN_LEIYANG",
+    "GAN_SHAOWU"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Xiang",
+   "n": 23,
+   "raw_widest": 0.7773593068122864,
+   "raw_pair": [
+    "XIANG_GUILIN_JIESHOU",
+    "XIANG_YONGZHOU_SHOUYAN"
+   ],
+   "widest": 0.7100248634815216,
+   "pair": [
+    "XIANG_GUILIN_JIESHOU",
+    "XIANG_YONGZHOU_SHOUYAN"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Hakka",
+   "n": 46,
+   "raw_widest": 0.7630777359008789,
+   "raw_pair": [
+    "HAKKA_GANZHOU_DAYU",
+    "HAKKA_YULIN_XIANDI"
+   ],
+   "widest": 0.7244657278060913,
+   "pair": [
+    "HAKKA_GANZHOU_DAYU",
+    "HAKKA_YULIN_MUMIAN"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Yue",
+   "n": 91,
+   "raw_widest": 0.7816384434700012,
+   "raw_pair": [
+    "YUE_GUILIN_XINGAN",
+    "YUE_MAOMING"
+   ],
+   "widest": 0.7556131482124329,
+   "pair": [
+    "YUE_GUANGZHOU_SHIQIAO",
+    "YUE_GUILIN_XINGAN"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Pinghua",
+   "n": 29,
+   "raw_widest": 0.7850320935249329,
+   "raw_pair": [
+    "PINGHUA_NANNING_BINYANG",
+    "PINGHUA_YONGZHOU_NINGYUAN"
+   ],
+   "widest": 0.7585576772689819,
+   "pair": [
+    "PINGHUA_NANNING_3",
+    "TUHUA_SHAOGUAN_GUITOU"
+   ],
+   "lone": 3,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "n": 1414,
+   "raw_widest": 1.0980007648468018,
+   "raw_pair": [
+    "KEDANG",
+    "XARAGURE_2"
+   ],
+   "widest": 1.0820057392120361,
+   "pair": [
+    "ARAGURE",
+    "KEDANG"
+   ],
+   "lone": 205,
+   "flagged": [
+    "YAUR"
+   ],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Formosan",
+   "n": 57,
+   "raw_widest": 1.0072002410888672,
+   "raw_pair": [
+    "AMIS_NATAORAN",
+    "SKIKUN_ATAYAL"
+   ],
+   "widest": 0.9701932072639465,
+   "pair": [
+    "HECUO_TAROKO",
+    "MANTAURAN"
+   ],
+   "lone": 6,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Eastern Malayo-Polynesian",
+   "n": 707,
+   "raw_widest": 1.0799435377120972,
+   "raw_pair": [
+    "BLABLANGA",
+    "NOOLI"
+   ],
+   "widest": 1.0580598711967468,
+   "pair": [
+    "ARHO",
+    "MANGA"
+   ],
+   "lone": 156,
+   "flagged": [
+    "YAUR"
+   ],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "Greater Central Philippine",
+   "n": 86,
+   "raw_widest": 0.8700676560401917,
+   "raw_pair": [
+    "GORONTALO",
+    "UMIRAY_DUMAGET_AGTA"
+   ],
+   "widest": 0.8700676560401917,
+   "pair": [
+    "GORONTALO",
+    "UMIRAY_DUMAGET_AGTA"
+   ],
+   "lone": 3,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    true
+   ]
+  },
+  {
+   "lineage": "Malayic",
+   "n": 53,
+   "raw_widest": 0.631452739238739,
+   "raw_pair": [
+    "HAJI",
+    "SALAKO_BADAMEA"
+   ],
+   "widest": 0.4137722849845886,
+   "pair": [
+    "AMBON_MALEIS",
+    "KERINCI"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Celebic",
+   "n": 80,
+   "raw_widest": 0.8790956139564514,
+   "raw_pair": [
+    "BAHONSUAI",
+    "SOBOYO"
+   ],
+   "widest": 0.8098033368587494,
+   "pair": [
+    "KADAI",
+    "WARU"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "East Semitic",
+   "n": 3,
+   "raw_widest": 0.3699434697628021,
+   "raw_pair": [
+    "AKKADIAN",
+    "AKKADIAN_3"
+   ],
+   "widest": 0.3622342050075531,
+   "pair": [
+    "AKKADIAN",
+    "AKKADIAN_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "West Semitic",
+   "n": 107,
+   "raw_widest": 0.9698970913887024,
+   "raw_pair": [
+    "INNEMOR",
+    "TUROYO"
+   ],
+   "widest": 0.9350796937942505,
+   "pair": [
+    "ARABIC_KHUZESTANI",
+    "MESMES"
+   ],
+   "lone": 3,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Central Semitic",
+   "n": 74,
+   "raw_widest": 0.877622127532959,
+   "raw_pair": [
+    "BIBLICAL_HEBREW",
+    "SOUKHNE_SYRIAN_ARABIC"
+   ],
+   "widest": 0.8095909059047699,
+   "pair": [
+    "ARBEL_NEO_ARAMAIC",
+    "BIBLICAL_HEBREW"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Northwest Semitic",
+   "n": 27,
+   "raw_widest": 0.8643801212310791,
+   "raw_pair": [
+    "BIBLICAL_HEBREW",
+    "HERTEVIN"
+   ],
+   "widest": 0.8095909059047699,
+   "pair": [
+    "ARBEL_NEO_ARAMAIC",
+    "BIBLICAL_HEBREW"
+   ],
+   "lone": 2,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Aramaic",
+   "n": 23,
+   "raw_widest": 0.7013739943504333,
+   "raw_pair": [
+    "CHRISTIAN_URMI",
+    "WESTERN_NEO_ARAMAIC"
+   ],
+   "widest": 0.6736153364181519,
+   "pair": [
+    "ARBEL_NEO_ARAMAIC",
+    "WESTERN_NEO_ARAMAIC"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "North-Eastern Neo-Aramaic",
+   "n": 10,
+   "raw_widest": 0.49657440185546875,
+   "raw_pair": [
+    "ARBEL_NEO_ARAMAIC",
+    "CHRISTIAN_URMI"
+   ],
+   "widest": 0.35859720408916473,
+   "pair": [
+    "ARBEL_NEO_ARAMAIC",
+    "CHRISTIAN_URMI"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Canaanite",
+   "n": 4,
+   "raw_widest": 0.6223248243331909,
+   "raw_pair": [
+    "BIBLICAL_HEBREW",
+    "UGARITIC"
+   ],
+   "widest": 0.5662282705307007,
+   "pair": [
+    "BIBLICAL_HEBREW",
+    "UGARITIC"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    true
+   ]
+  },
+  {
+   "lineage": "South Semitic",
+   "n": 33,
+   "raw_widest": 0.9415443539619446,
+   "raw_pair": [
+    "HARARI_2",
+    "MEHRI_2"
+   ],
+   "widest": 0.9013490378856659,
+   "pair": [
+    "HARARI",
+    "HARSUSI"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Ethiosemitic",
+   "n": 25,
+   "raw_widest": 0.8842858672142029,
+   "raw_pair": [
+    "ETHIOPIC",
+    "MESMES"
+   ],
+   "widest": 0.82278111577034,
+   "pair": [
+    "GAFAT",
+    "MESMES"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "North Ethiopic",
+   "n": 9,
+   "raw_widest": 0.6012564897537231,
+   "raw_pair": [
+    "TIGRE",
+    "TIGRINYA_2"
+   ],
+   "widest": 0.4229782819747925,
+   "pair": [
+    "TIGRE",
+    "TIGRIGNA"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "South Ethiopic",
+   "n": 16,
+   "raw_widest": 0.8280683159828186,
+   "raw_pair": [
+    "GAFAT",
+    "MESMES_2"
+   ],
+   "widest": 0.82278111577034,
+   "pair": [
+    "GAFAT",
+    "MESMES"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Outer South Ethiopic",
+   "n": 8,
+   "raw_widest": 0.8280683159828186,
+   "raw_pair": [
+    "GAFAT",
+    "MESMES_2"
+   ],
+   "widest": 0.82278111577034,
+   "pair": [
+    "GAFAT",
+    "MESMES"
+   ],
+   "lone": 1,
+   "flagged": [],
+   "pair_lone": [
+    true,
+    false
+   ]
+  },
+  {
+   "lineage": "Modern South Arabian",
+   "n": 9,
+   "raw_widest": 0.625757098197937,
+   "raw_pair": [
+    "MEHRI_2",
+    "SAURI"
+   ],
+   "widest": 0.5928913354873657,
+   "pair": [
+    "HARSUSI",
+    "SOQOTRI"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Ancient South Arabian",
+   "n": 1,
+   "raw_widest": null,
+   "raw_pair": [],
+   "widest": null,
+   "pair": [],
+   "lone": 0,
+   "flagged": []
+  },
+  {
+   "lineage": "Peninsular Arabic",
+   "n": 10,
+   "raw_widest": 0.542543351650238,
+   "raw_pair": [
+    "ARABIC_KHUZESTANI",
+    "HIJAZI_ARABIC"
+   ],
+   "widest": 0.37930330634117126,
+   "pair": [
+    "ADENI_ARABIC",
+    "HIJAZI_ARABIC"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Egyptic Arabic",
+   "n": 8,
+   "raw_widest": 0.6251571774482727,
+   "raw_pair": [
+    "KIBERA_KENYA",
+    "SHUWA_CHADIAN_ARABIC_2"
+   ],
+   "widest": 0.49699580669403076,
+   "pair": [
+    "KIBERA_KENYA",
+    "SHUWA_CHADIAN_ARABIC_2"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "North African Arabic",
+   "n": 11,
+   "raw_widest": 0.635833203792572,
+   "raw_pair": [
+    "JUDEO_TUNISIAN_ARABIC",
+    "MALTESE"
+   ],
+   "widest": 0.5628998577594757,
+   "pair": [
+    "JUDEO_TRIPOLITANIAN_ARABIC",
+    "MALTESE"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Eastern Arabic",
+   "n": 8,
+   "raw_widest": 0.6094499230384827,
+   "raw_pair": [
+    "NORTH_MESOPOTAMIAN_ARABIC",
+    "SOUKHNE_SYRIAN_ARABIC"
+   ],
+   "widest": 0.5148194432258606,
+   "pair": [
+    "NORTH_MESOPOTAMIAN_ARABIC",
+    "SOUKHNE_SYRIAN_ARABIC"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  },
+  {
+   "lineage": "Levantine Arabic",
+   "n": 7,
+   "raw_widest": 0.39842405915260315,
+   "raw_pair": [
+    "ARABIC_NORTH_LEVANTINE_SPOKEN",
+    "DAMASCUS_ARABIC"
+   ],
+   "widest": 0.34342004358768463,
+   "pair": [
+    "SAN_ANDRES_ARABIC_3",
+    "SYRIAN_ARABIC"
+   ],
+   "lone": 0,
+   "flagged": [],
+   "pair_lone": [
+    false,
+    false
+   ]
+  }
+ ]
+}

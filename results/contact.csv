@@ -1,0 +1,1077 @@
+id,family,nearest_in,nearest_in_id,nearest_out,nearest_out_id,nearest_out_family,flagged
+AIZI,Atlantic-Congo,0.737,TIV_1,0.051,AIZI_TIAGBAMRIN,Kru,True
+AIZI_TIAGBAMRIN,Kru,0.694,KLAO,0.051,AIZI,Atlantic-Congo,True
+BALDEMU,Afro-Asiatic,0.851,FALI_MUCHELLA,0.210,KUNDU,Atlantic-Congo,True
+MICHIF,Algic,0.758,EASTERN_SWAMPY_CREE,0.587,ST_LUCIAN_CREOLE_FRENCH,Indo-European,True
+KARADJERI,Pama-Nyungan,0.725,WARLPIRI_2,0.627,YAWURU,Nyulnyulan,True
+MOGOGODO,Afro-Asiatic,0.872,BEDJA_BEDAWI,0.812,MANGBETU_2,Central Sudanic,True
+TLINGIT,Athabaskan-Eyak-Tlingit,0.882,BABINE,0.834,BHILI,Indo-European,True
+CATAWBA,Siouan,0.856,BILOXI,0.813,PAPORA_2,Austronesian,True
+CHEROKEE,Iroquoian,0.895,MOHAWK,0.855,YOM,Atlantic-Congo,True
+KOVAI_2,Nuclear Trans New Guinea,0.798,MAPE_2,0.759,PAPORA_2,Austronesian,True
+KALA_LAGGAW_YA,Pama-Nyungan,0.836,WIK_MUNGKAN,0.802,KOYRA_CHIINI,Songhay,True
+AGHU_THARRNGGALA,Pama-Nyungan,0.827,YUGAMBEH,0.798,GOLA_3,Atlantic-Congo,True
+WIYOT,Algic,0.836,MENOMINEE,0.810,PAPORA_2,Austronesian,True
+BELLA_COOLA,Salishan,0.836,SECHELT,0.815,PAPORA_2,Austronesian,True
+YUROK,Algic,0.850,WIYOT,0.829,PAPORA_2,Austronesian,True
+MBABARAM,Pama-Nyungan,0.805,GUGU_BUJUN,0.793,URIMO,Nuclear Torricelli,True
+WASEMBO,Nuclear Trans New Guinea,0.824,SUMAU,0.818,WUNAMBAL,Worrorran,True
+YAUR,Austronesian,0.858,PAPORA_2,0.858,MUDUGA,Dravidian,True
+CEFO,Atlantic-Congo,0.737,MOBA,0.739,GODIE_2,Kru,False
+PULABU,Nuclear Trans New Guinea,0.804,SILEIBI,0.806,KANGO,Atlantic-Congo,False
+MBRE,Atlantic-Congo,0.815,YOM,0.821,SEEKU_3,Mande,False
+COPTIC,Afro-Asiatic,0.792,SAHARAN_ARABIC,0.798,LONG_WAT,Austronesian,False
+KWADZA,Afro-Asiatic,0.802,AASAX,0.809,DOOHWAAYAAYO,Atlantic-Congo,False
+NORTHERN_TUJIA,Sino-Tibetan,0.786,DUNGAN,0.799,PAPORA_2,Austronesian,False
+HITTITE,Indo-European,0.793,MERWARI,0.809,PAPORA_2,Austronesian,False
+EYAK,Athabaskan-Eyak-Tlingit,0.802,ROGUE_RIVER,0.820,JANGKANG,Austronesian,False
+TANIMBILI,Austronesian,0.799,ASUMBOA,0.822,URIMO,Nuclear Torricelli,False
+SVAN,Kartvelian,0.781,LAZ,0.805,MERWARI,Indo-European,False
+PAYNAMAR,Nuclear Trans New Guinea,0.809,ANGAUA,0.835,MORAWA_2,Mailuan,False
+PARIMANKUTINMA,Pama-Nyungan,0.804,KUNJEN,0.829,BHILALI,Indo-European,False
+YERETUAR,Austronesian,0.790,BIAK,0.818,MEYMAI,Indo-European,False
+MOKILKO,Afro-Asiatic,0.791,ORMA_2,0.819,LONG_WAT,Austronesian,False
+MONI_4,Nuclear Trans New Guinea,0.756,KAPAUKU,0.785,GONJA,Atlantic-Congo,False
+INNER_MBUGU_BUMBULI,Atlantic-Congo,0.762,NORMAL_MBUGU,0.797,IRAQW,Afro-Asiatic,False
+NAGA_SUMI,Sino-Tibetan,0.741,NAGA_POCHURI,0.777,PAPORA_2,Austronesian,False
+YORTA_YORTA,Pama-Nyungan,0.711,DARRKINYUNG,0.748,WUNAMBAL,Worrorran,False
+MEIDOB_NUBIAN,Nubian,0.805,KUNUZ_NUBIAN,0.842,FRAFRA_2,Atlantic-Congo,False
+AASAX,Afro-Asiatic,0.783,BURUNGE,0.821,INNER_MBUGU_BUMBULI,Atlantic-Congo,False
+MULAO_KADAI,Tai-Kadai,0.778,ZHENFENG_GELAO,0.817,PAPORA_2,Austronesian,False
+BLACKFOOT,Algic,0.790,NANTICOKE,0.830,PAPORA_2,Austronesian,False
+DAY,Atlantic-Congo,0.780,FRAFRA_2,0.821,PAPORA_2,Austronesian,False
+VIEMO,Atlantic-Congo,0.763,YOM,0.805,SEME_2,Siamou,False
+NENGONE,Austronesian,0.769,LONG_WAT,0.811,NISHING,Sino-Tibetan,False
+GUHU_SAMANE,Nuclear Trans New Guinea,0.776,KORAFE_YEGHA,0.818,YANDRUWANDHA,Pama-Nyungan,False
+GRAND_COULI,Austronesian,0.780,XARACUU,0.825,SIHAN,Nuclear Trans New Guinea,False
+NOTTOWAY,Iroquoian,0.819,TUSCARORA,0.864,URIMO,Nuclear Torricelli,False
+TANDIA,Austronesian,0.789,PAPORA_2,0.836,DOOHWAAYAAYO,Atlantic-Congo,False
+NA_KHE_GELAO,Tai-Kadai,0.746,HONGFENG_GELAO,0.795,JANGKANG,Austronesian,False
+ASUMBOA,Austronesian,0.772,NEMBAO,0.821,MAYA_SAMO,Mande,False
+DEHU,Austronesian,0.787,NENGONE,0.837,BAMBARA_3,Mande,False
+ANII,Atlantic-Congo,0.745,ADELE,0.795,BAMBARA_3,Mande,False
+PANA,Atlantic-Congo,0.736,LYELE_3,0.787,JUR_BELI_WULU,Central Sudanic,False
+SUDEST,Austronesian,0.771,WAIMAA,0.822,NGWE,Atlantic-Congo,False
+NEMBAO,Austronesian,0.772,ASUMBOA,0.825,MERWARI,Indo-European,False
+CHEYENNE,Algic,0.822,ARAPAHO,0.874,BULI_2,Atlantic-Congo,False
+KERA,Afro-Asiatic,0.737,NANCERE,0.791,PAPORA_2,Austronesian,False
+AKPOSO,Atlantic-Congo,0.749,ADANGBE,0.804,NGARINYIN,Worrorran,False
+MOYOBE,Atlantic-Congo,0.739,FRAFRA_2,0.796,WOBE,Kru,False
+ABAGA,Nuclear Trans New Guinea,0.807,YATE,0.864,YANA,Yana,False
+OUMA,Austronesian,0.555,MAGORI,0.613,LAUA_2,Mailuan,False
+ISABI,Nuclear Trans New Guinea,0.773,FORE,0.832,CAYUBABA,Cayubaba,False
+BIRKED,Nubian,0.759,DONGOLESE_NUBIAN,0.817,YOM,Atlantic-Congo,False
+EGA,Atlantic-Congo,0.778,LOGBA,0.836,YANDA_DOM_2,Dogon,False
+KWA_NIGERIA,Atlantic-Congo,0.776,AWAK_2,0.835,MERWARI,Indo-European,False
+LAMASONG,Austronesian,0.709,TANGA,0.769,MERWARI,Indo-European,False
+IAAI,Austronesian,0.761,LEHALURUP,0.825,KABUI_RONGMEI,Sino-Tibetan,False
+TILLAMOOK,Salishan,0.788,TWANA,0.855,NGWE,Atlantic-Congo,False
+YARALDI,Pama-Nyungan,0.772,MURUWARI,0.839,URIMO,Nuclear Torricelli,False
+BAKUNDU_BALUE,Atlantic-Congo,0.515,OROKO,0.583,BALDEMU,Afro-Asiatic,False
+AMAIMON,Nuclear Trans New Guinea,0.712,YARAWATA,0.782,NARUNGGA,Pama-Nyungan,False
+KPAN,Atlantic-Congo,0.753,NNAM_2,0.823,SEME,Siamou,False
+GURUNTUM_MBAARU,Afro-Asiatic,0.714,SOOR,0.785,PAPORA_2,Austronesian,False
+DIMIR,Nuclear Trans New Guinea,0.775,PARAWEN,0.846,URIMO,Nuclear Torricelli,False
+KOROWAI,Nuclear Trans New Guinea,0.724,AGHU,0.796,AEKYOM,Kamula-Elevala,False
+IRESIM,Austronesian,0.749,PAPORA_2,0.823,MERWARI,Indo-European,False
+GADE,Atlantic-Congo,0.753,FRAFRA_2,0.827,VAI_3,Mande,False
+NGONDI,Atlantic-Congo,0.639,MBESA,0.713,BALDEMU,Afro-Asiatic,False
+KWADI,Khoe-Kwadi,0.743,KHOEKHOEGOWAB,0.818,DOOHWAAYAAYO,Atlantic-Congo,False
+LARU_NIGERIA,Atlantic-Congo,0.736,LOPA,0.811,NISHING,Sino-Tibetan,False
+GWAHATIKE,Nuclear Trans New Guinea,0.729,MAPE_2,0.806,BAMBARA_3,Mande,False
+TIGON_MBEMBE,Atlantic-Congo,0.707,JUKUN_TAKUM_2,0.785,VAI_3,Mande,False
+KHEZHA,Sino-Tibetan,0.689,NAGA_MAO,0.767,KOTAFON_GBE,Atlantic-Congo,False
+MAMBAI,Atlantic-Congo,0.737,KARANG,0.816,BARELI_RATHWI,Indo-European,False
+KOROMFE,Atlantic-Congo,0.696,FRAFRA_2,0.777,BAMBARA_3,Mande,False
+WAREMBORI,Austronesian,0.719,BIAK,0.801,KPELLE_LIBERIA,Mande,False
+MICMAC,Algic,0.762,NANTICOKE,0.846,NOBIIN,Nubian,False
+NAURUAN,Austronesian,0.757,PAPORA_2,0.840,SEREER_2,Atlantic-Congo,False
+ABIDJI_2,Atlantic-Congo,0.713,ABBEY,0.797,PAPORA_2,Austronesian,False
+CHICHIMECO,Otomanguean,0.757,CENTRAL_PAME,0.841,TOMMO_SO_6,Dogon,False
+LEINONG,Sino-Tibetan,0.742,CHANG_2,0.827,PAPORA_2,Austronesian,False
+RESHE,Atlantic-Congo,0.735,FRAFRA_2,0.823,DUUNGOMA,Mande,False
+SAWUJ,Nuclear Trans New Guinea,0.735,KOROWAI,0.824,BAYONO,Bayono-Awbono,False
+KORO_INDIA_2,Sino-Tibetan,0.741,NISHING,0.831,MERWARI,Indo-European,False
+LAMOGAI,Austronesian,0.750,MOUK_1,0.841,LENCA_HONDURAS,Lencan,False
+DYARIM,,0.571,SAYA,0.661,LURI_2,Afro-Asiatic,False
+TUWULI,Atlantic-Congo,0.724,IKPOSO,0.816,BANKAN_TEY,Dogon,False
+IGEDE,Atlantic-Congo,0.715,YALA_2,0.807,BASSA_3,Kru,False
+MISIMA_PANAEATI,Austronesian,0.692,BWANABWANA,0.785,SOUTHERN_BOBO_MADARE_2,Mande,False
+HAYU,Sino-Tibetan,0.691,HMAR,0.784,PAPORA_2,Austronesian,False
+AKE,Atlantic-Congo,0.736,ETULO,0.830,DAZAGA,Saharan,False
+NIZAA,Atlantic-Congo,0.687,MAMBILA,0.783,KRUMEN_TEPO,Kru,False
+YASA,Atlantic-Congo,0.545,BENGA,0.641,BALDEMU,Afro-Asiatic,False
+HONGFENG_GELAO,Tai-Kadai,0.746,NA_KHE_GELAO,0.842,NGWE,Atlantic-Congo,False
+ALLADIAN_2,Atlantic-Congo,0.706,AVIKAM_2,0.802,DOGON,Dogon,False
+DUMPU,Nuclear Trans New Guinea,0.734,ARAWUM,0.830,PAPORA_2,Austronesian,False
+BUGUN,Sino-Tibetan,0.723,DUHUMBI,0.820,PAPORA_2,Austronesian,False
+OSUM,Nuclear Trans New Guinea,0.703,ANAMUXRA,0.802,URIMO,Nuclear Torricelli,False
+POWHATAN_UnnamedInSource,Algic,0.743,NANTICOKE,0.842,BHILALI,Indo-European,False
+BOON,Afro-Asiatic,0.760,BURJI,0.859,JANGKANG,Austronesian,False
+NAGA_POCHURI,Sino-Tibetan,0.722,NAGA_SANGTAM,0.822,MERWARI,Indo-European,False
+YANGULAM,Nuclear Trans New Guinea,0.714,SIROI,0.815,JAKUN,Austronesian,False
+BAGO_KUSUNTU,Atlantic-Congo,0.715,CHALA,0.816,FORE,Nuclear Trans New Guinea,False
+NAGA_LOTHA,Sino-Tibetan,0.701,GHALE_NORTHERN,0.803,PAPORA_2,Austronesian,False
+KELA,Austronesian,0.738,NUMBAMI,0.842,DOOHWAAYAAYO,Atlantic-Congo,False
+NIMOA,Austronesian,0.767,MISIMA_PANAEATI,0.871,GODWARI,Indo-European,False
+NAGA_MAO,Sino-Tibetan,0.679,POUMAI,0.784,NGWE,Atlantic-Congo,False
+NDAM,Afro-Asiatic,0.673,TUMAK,0.778,SINASINA_3,Nuclear Trans New Guinea,False
+ITEN,Atlantic-Congo,0.739,HOROM,0.844,DOGUL_DOM,Dogon,False
+LOPA,Atlantic-Congo,0.736,LARU_NIGERIA,0.842,PAPORA_2,Austronesian,False
+LUFU,Atlantic-Congo,0.654,YUKUBEN,0.759,GODIE_2,Kru,False
+YANGKAM,Atlantic-Congo,0.702,TAPSHIN,0.809,GODIE_2,Kru,False
+ANEITYUM_2,Austronesian,0.759,TAPE,0.867,DOOHWAAYAAYO,Atlantic-Congo,False
+AKUNNU,Atlantic-Congo,0.718,IYINNO,0.828,BAMBARA_2,Mande,False
+GONG,Sino-Tibetan,0.743,BUMTHANGKHA,0.854,AMIO_GELIMI,Austronesian,False
+SOLOS,Austronesian,0.713,TAIOF,0.823,BHILALI,Indo-European,False
+THANGMI,Sino-Tibetan,0.702,NAR_PHU,0.813,WIK_MUNGKAN,Pama-Nyungan,False
+SAMBA_DAGA,Atlantic-Congo,0.683,EKAJUK_2,0.794,MAYA_SAMO,Mande,False
+KAZUKURU,Austronesian,0.734,ROVIANA,0.846,WARLPIRI_2,Pama-Nyungan,False
+WARNANG,Heibanic,0.732,KO1,0.844,YANDA_DOM_2,Dogon,False
+MAISIN,Austronesian,0.693,NAGE,0.806,EN,Tai-Kadai,False
+LALA_NIGERIA,Atlantic-Congo,0.718,MBOI,0.833,PAPORA_2,Austronesian,False
+JOWULU,Mande,0.647,SOUTHERN_BOBO_MADARE_2,0.762,MOBA,Atlantic-Congo,False
+FORAK,Nuclear Trans New Guinea,0.715,DEGENAN,0.830,DOMU_3,Mailuan,False
+JINA,Afro-Asiatic,0.676,MUSGU_D_PLUS_RD,0.791,MEYMAI,Indo-European,False
+CARA,Atlantic-Congo,0.708,GANANG,0.824,LURI_2,Afro-Asiatic,False
+RUKUL,Atlantic-Congo,0.708,FYEM,0.824,LURI_2,Afro-Asiatic,False
+BERTI,Saharan,0.670,BERIA,0.787,BIAK,Austronesian,False
+KALKUTUNG,Pama-Nyungan,0.699,YALARNNGA,0.816,YUE_QINGYUAN_FOGANG_1,Sino-Tibetan,False
+GIRAWA,Nuclear Trans New Guinea,0.715,MUNIT,0.831,PAPORA_2,Austronesian,False
+PE,Atlantic-Congo,0.691,TAROK,0.808,ANGAS_NGAS,Afro-Asiatic,False
+YALARNNGA,Pama-Nyungan,0.660,MAYI_YAPI,0.778,WUNAMBAL,Worrorran,False
+LABU,Austronesian,0.721,BUKAUA,0.839,CHIRU,Sino-Tibetan,False
+ETULO,Atlantic-Congo,0.701,EBIRA_2,0.821,SEME,Siamou,False
+DEURI,Sino-Tibetan,0.691,KACHARI,0.811,DJENNE_CHIINI,Songhay,False
+UMBUYKAMU,Pama-Nyungan,0.739,LAMALAMA_INLAND,0.859,GIDOLE_2,Afro-Asiatic,False
+NAMUZI,Sino-Tibetan,0.670,NAXI,0.791,PAPORA_2,Austronesian,False
+ABBEY,Atlantic-Congo,0.713,ABIDJI_2,0.834,PAPORA_2,Austronesian,False
+MADAK,Austronesian,0.725,LAMASONG,0.846,GHOMARA,Afro-Asiatic,False
+KORAK,Nuclear Trans New Guinea,0.689,WASKIA_2,0.810,MIN_NINGDE_ZHANGWAN,Sino-Tibetan,False
+MURATAYAK,Nuclear Trans New Guinea,0.713,ASARO7O_2,0.834,ENGGIPILOE_2,Damal,False
+SIO,Austronesian,0.683,MALALAMAI,0.804,KILUBA,Atlantic-Congo,False
+ATEMPLE,Nuclear Trans New Guinea,0.728,ANGAUA,0.850,JANGKANG,Austronesian,False
+ABASAKUR,Nuclear Trans New Guinea,0.705,KOGUMAN,0.827,A51_BAFIA_ZAKAAN,Atlantic-Congo,False
+MESAKA,Atlantic-Congo,0.682,ESIMBI,0.805,LONG_WAT,Austronesian,False
+BAROK,Austronesian,0.722,LAMASONG,0.845,CITAK,Nuclear Trans New Guinea,False
+PALAUAN,Austronesian,0.704,MEDEBUR,0.827,KPELLE_LIBERIA,Mande,False
+PASSAMAQUODDY_MALISEET_UnnamedInSource,Algic,0.693,ABNAKI_EASTERN,0.818,PAPORA_2,Austronesian,False
+UDI,Nakh-Daghestanian,0.731,AGUL,0.857,PAPORA_2,Austronesian,False
+HOPI,Uto-Aztecan,0.708,MAYO_LOS_CAPOMOS,0.835,FRAFRA_2,Atlantic-Congo,False
+KO1,Heibanic,0.693,EBANG,0.820,PAPORA_2,Austronesian,False
+BEKWARRA,Atlantic-Congo,0.673,BOKI,0.802,BISENI,Ijoid,False
+KROBU,Atlantic-Congo,0.638,BAULE,0.767,PAPORA_2,Austronesian,False
+KOLOM,Nuclear Trans New Guinea,0.681,SIROI,0.809,PAPORA_2,Austronesian,False
+PRASUNI,Indo-European,0.693,SHEKHANI,0.822,LEMBATA_WEST,Austronesian,False
+ANGAUA,Nuclear Trans New Guinea,0.728,ATEMPLE,0.857,DEWAS_RAI,Indo-European,False
+KETUM,Nuclear Trans New Guinea,0.722,WAMBON,0.851,BAYONO,Bayono-Awbono,False
+UBYKH,Abkhaz-Adyge,0.720,ABAZA,0.850,NGWE,Atlantic-Congo,False
+EGGON,Atlantic-Congo,0.699,KAGOMA,0.829,BAMBARA_3,Mande,False
+KHINALUG,Nakh-Daghestanian,0.696,BUDUKH,0.826,LAA_LAA_BWAMU,Atlantic-Congo,False
+TAPSHIN,Atlantic-Congo,0.702,YANGKAM,0.832,ANGAS_NGAS,Afro-Asiatic,False
+WAGARABAI,Nuclear Trans New Guinea,0.736,MIAN,0.868,MUDUGA,Dravidian,False
+KAIWA,Austronesian,0.720,BUGAWAC,0.852,MAYA_SAMO,Mande,False
+MAPIA,Austronesian,0.722,EASTERN_MARSHALLESE,0.856,KUKATJA,Pama-Nyungan,False
+MBU,Atlantic-Congo,0.702,MISSONG,0.835,AIZI_TIAGBAMRIN,Kru,False
+BUA,Atlantic-Congo,0.705,LUA_NIELLIM,0.839,PAPORA_2,Austronesian,False
+SAKAO,Austronesian,0.705,TUR,0.839,MANDINKA_4,Mande,False
+KAREN_MOBWA,Sino-Tibetan,0.673,KAREN_SGAW,0.807,PAPORA_2,Austronesian,False
+KIRIBATI,Austronesian,0.667,SONSOROLESE,0.802,FORE,Nuclear Trans New Guinea,False
+CICIPU,Atlantic-Congo,0.645,TSUVADI,0.780,JUR_BELI_WULU,Central Sudanic,False
+KOGUMAN,Nuclear Trans New Guinea,0.705,ABASAKUR,0.841,MPUR,Mpur,False
+SUNGLIK_LIHIR,Austronesian,0.684,PATPATAR,0.821,PEAR,Austroasiatic,False
+TUMAK,Afro-Asiatic,0.673,NDAM,0.810,PAPORA_2,Austronesian,False
+WAROPEN,Austronesian,0.684,BIAK,0.821,B78_IWUM_WUUMBU_SUD_TEKE,Atlantic-Congo,False
+MODELE,Atlantic-Congo,0.662,ISU_A,0.799,PAPORA_2,Austronesian,False
+URA,Austronesian,0.705,SIE,0.842,KAMBA,Nuclear Trans New Guinea,False
+SARWA,Afro-Asiatic,0.676,SOMRAI,0.813,NGWE,Atlantic-Congo,False
+COCHIMI,Cochimi-Yuman,0.665,KILIWA,0.803,MIN_NANPING_YANGTOU,Sino-Tibetan,False
+MUDBURRA,Pama-Nyungan,0.491,NGARINMAN,0.629,DJINGILI_2,Mirndi,False
+POUMAI,Sino-Tibetan,0.679,NAGA_MAO,0.817,CEN,Atlantic-Congo,False
+JIMI,Afro-Asiatic,0.652,TALA,0.791,BHILALI,Indo-European,False
+BUDIBUD,Austronesian,0.698,MUYUW,0.837,BHILI,Indo-European,False
+OKO_OSANYE_ENI,Atlantic-Congo,0.701,EBIRA_2,0.843,GRESI,Nimboranic,False
+TIBA,Atlantic-Congo,0.659,DONG,0.802,MAUKAKAN,Mande,False
+AMO,Atlantic-Congo,0.636,KAHUGU,0.780,TOMO_KAN,Dogon,False
+DYAN,Atlantic-Congo,0.667,LOBI,0.812,BANKAN_TEY,Dogon,False
+KUSAIE,Austronesian,0.643,EASTERN_MARSHALLESE,0.788,RAUTE,Sino-Tibetan,False
+AJIE,Austronesian,0.711,OROWE,0.856,DAZAGA,Saharan,False
+PHWO,Atlantic-Congo,0.651,SISAALA_BURKINA_FASO,0.797,BAKWE_2,Kru,False
+KULU,Atlantic-Congo,0.671,HAM,0.817,PAPORA_2,Austronesian,False
+EMERUM,Nuclear Trans New Guinea,0.663,SILEIBI,0.809,WUNAMBAL,Worrorran,False
+BACAMA,Afro-Asiatic,0.674,BACAMA_MULYEN,0.821,MERWARI,Indo-European,False
+MOR,Austronesian,0.709,BIAK,0.857,ESIMBI_2,Atlantic-Congo,False
+USU,Nuclear Trans New Guinea,0.681,USINO,0.829,WUNAMBAL,Worrorran,False
+TANDA_PNG,Nuclear Trans New Guinea,0.683,DEGENAN,0.831,PAPORA,Austronesian,False
+GATA,Austroasiatic,0.607,REMO,0.756,PAPORA_2,Austronesian,False
+NOMANE,Nuclear Trans New Guinea,0.642,SALT_YUI,0.790,MUDUGA,Dravidian,False
+AMARA,Austronesian,0.705,AVAU,0.854,TIMUCUA,Timucua,False
+TERESSA,Austroasiatic,0.652,NANCAWRI,0.801,INONHAN,Austronesian,False
+YIWOM,Afro-Asiatic,0.680,KOFYAR,0.830,PAPORA_2,Austronesian,False
+TUBATULABAL,Uto-Aztecan,0.703,LUISENO,0.852,PAPORA_2,Austronesian,False
+TUPURI,Atlantic-Congo,0.631,PAM,0.782,PAPORA_2,Austronesian,False
+LOTE,Austronesian,0.705,MAMUSI,0.856,VAI,Mande,False
+MANDAN,Siouan,0.702,WINNEBAGO,0.853,NISHING,Sino-Tibetan,False
+AYU,Atlantic-Congo,0.666,NDUN,0.818,WUNAMBAL,Worrorran,False
+BEMAL,Nuclear Trans New Guinea,0.660,GAL,0.812,TANGKHUL_3,Sino-Tibetan,False
+PHUNOI,Sino-Tibetan,0.624,BISU,0.778,PAPORA_2,Austronesian,False
+MALAS,Nuclear Trans New Guinea,0.649,BUNABUN,0.803,PAPORA_2,Austronesian,False
+DEGENAN,Nuclear Trans New Guinea,0.683,TANDA_PNG,0.838,LONG_WAT,Austronesian,False
+KIS,Austronesian,0.634,MUR_PANO,0.790,MERWARI,Indo-European,False
+SIE,Austronesian,0.688,ETON_VANUATU,0.845,BHILI,Indo-European,False
+KASKASKIA_ILLINOIS,Algic,0.714,MIAMI,0.870,PAPORA_2,Austronesian,False
+WADAGINAM,Nuclear Trans New Guinea,0.676,MORESADA,0.833,BHILI,Indo-European,False
+YANDJIBARA,Pama-Nyungan,0.609,MARGANY_2,0.765,PAPORA_2,Austronesian,False
+SHAWNEE,Algic,0.718,FOX,0.875,KANGO,Atlantic-Congo,False
+LAGWAN,Afro-Asiatic,0.595,MAKARY_KOTOKO,0.752,PAPORA_2,Austronesian,False
+KATLA,Katla-Tima,0.674,TIMA_2,0.831,NISHING,Sino-Tibetan,False
+YAMBETA,Atlantic-Congo,0.649,MMALA,0.807,PAPORA_2,Austronesian,False
+DAMI,Austronesian,0.673,GEDAGED,0.830,WUNAMBAL,Worrorran,False
+KARE,Nuclear Trans New Guinea,0.655,WAMAS,0.813,BHILI,Indo-European,False
+HULI_2,Nuclear Trans New Guinea,0.576,KEWA_EAST,0.734,DUNA_2,Duna,False
+ONO,Nuclear Trans New Guinea,0.648,NOMU,0.806,GANGULU_2,Pama-Nyungan,False
+FAITA,Nuclear Trans New Guinea,0.642,SIRVA,0.801,WATAM,Ramu,False
+MENDRIK,Austroasiatic,0.564,JAHAI,0.723,PAPORA_2,Austronesian,False
+MBARA_2,Afro-Asiatic,0.626,MUNJUK,0.786,PAPORA_2,Austronesian,False
+NYANGA,Atlantic-Congo,0.615,ZANAKI,0.775,BALDEMU,Afro-Asiatic,False
+GABRIELINO,Uto-Aztecan,0.674,SERRANO,0.835,BHILI,Indo-European,False
+THULUNG,Sino-Tibetan,0.650,DUMI,0.811,ARPITAN,Indo-European,False
+KADU,Sino-Tibetan,0.664,CHAK,0.826,NORTHERN_AMAMI_OSHIMA,Japonic,False
+BILUR,Austronesian,0.637,LABEL,0.800,DOOHWAAYAAYO,Atlantic-Congo,False
+NAGA_YIMCHUNGRU,Sino-Tibetan,0.661,NAGA_SANGTAM,0.824,TEMNE_4,Atlantic-Congo,False
+DARLING,Pama-Nyungan,0.657,BADJIRRI,0.820,GANGULIDA,Tangkic,False
+ZAYEIN,Sino-Tibetan,0.658,KAYAH_WESTERN,0.821,NGWE,Atlantic-Congo,False
+PAANCI,Afro-Asiatic,0.629,KARIYA,0.793,MEYMAI,Indo-European,False
+KURAMA,Atlantic-Congo,0.662,JANJI,0.827,WE_SOUTHERN,Kru,False
+CEMUHI,Austronesian,0.635,FA_TIETA,0.800,MEYMAI,Indo-European,False
+KONYAGI,Atlantic-Congo,0.667,TANDA,0.832,MERWARI,Indo-European,False
+KO_WINYE,Atlantic-Congo,0.665,PHWO,0.831,MUDUGA,Dravidian,False
+BIYOM,Nuclear Trans New Guinea,0.663,TAUYA_2,0.829,LUBA,Atlantic-Congo,False
+BERIA,Saharan,0.670,BERTI,0.837,PAPORA_2,Austronesian,False
+ANIMERE,Atlantic-Congo,0.636,AKEBU,0.803,KRUMAN,Kru,False
+KAURNA,Pama-Nyungan,0.651,BANGGARLA,0.818,PAPORA_2,Austronesian,False
+LERE_TAKAYA,Atlantic-Congo,0.660,LERE_GANA,0.827,BHILI,Indo-European,False
+CHAK,Sino-Tibetan,0.651,NOCTE,0.818,PAPORA_2,Austronesian,False
+MLABRI,Austroasiatic,0.636,KHMU_2,0.804,JANGKANG,Austronesian,False
+KALAM_2,Nuclear Trans New Guinea,0.668,KOBON,0.836,PUMPOKOL,Yeniseian,False
+USARUFA,Nuclear Trans New Guinea,0.635,GADSUP_AGARABI,0.804,NTA_2,Atlantic-Congo,False
+DERA,Afro-Asiatic,0.648,MAAKA,0.817,URIMO,Nuclear Torricelli,False
+MBE,Atlantic-Congo,0.667,KENYANG_KITWII,0.837,BILUA,Bilua,False
+KAMAS,Uralic,0.602,MATORISCH,0.772,LURISTANI_RURAL,Indo-European,False
+MANTSI,Sino-Tibetan,0.649,AZHA,0.819,PAPORA_2,Austronesian,False
+HASHA,Atlantic-Congo,0.669,KAGOMA,0.839,BHILI,Indo-European,False
+PAICI,Austronesian,0.666,CEMUHI,0.837,SUNWAR,Sino-Tibetan,False
+NUNGON,Nuclear Trans New Guinea,0.663,DOMUNG,0.835,DEWAS_RAI,Indo-European,False
+SUSU_4,Mande,0.628,VANDUGUKAKAN,0.800,KANGO,Atlantic-Congo,False
+ULINGAN,Nuclear Trans New Guinea,0.664,BEPOUR,0.837,LONG_WAT,Austronesian,False
+WUVULU,Austronesian,0.661,KOO_TALISE,0.834,BOMU,Atlantic-Congo,False
+BON_GULA,Atlantic-Congo,0.642,GULA_IRO,0.817,PAPORA_2,Austronesian,False
+MBULE,Atlantic-Congo,0.645,YANGBEN,0.821,BHILALI,Indo-European,False
+NU,Tuu,0.697,NG_KE,0.874,JANGKANG,Austronesian,False
+AYABADHU,Pama-Nyungan,0.638,WIK_MUNGKAN,0.816,MALAYALAM_2,Dravidian,False
+PAY,Nuclear Trans New Guinea,0.662,MAIANA,0.839,PAPORA,Austronesian,False
+CHAMORRO,Austronesian,0.610,IBANAG,0.789,MERWARI,Indo-European,False
+WAMPANOAG_NATICK,Algic,0.634,MENOMINEE,0.813,PAPORA_2,Austronesian,False
+KEMEZUNG,Atlantic-Congo,0.654,MASHI_NIGERIA,0.834,PAPORA_2,Austronesian,False
+DYANGADI,Pama-Nyungan,0.611,WORIMI,0.791,PAPORA_2,Austronesian,False
+KOBON,Nuclear Trans New Guinea,0.668,KALAM_2,0.848,WIRADHURI,Pama-Nyungan,False
+WIK_MUNGKAN,Pama-Nyungan,0.597,THAYORE,0.777,KOCH_RABHA,Sino-Tibetan,False
+WOIWURRUNG,Pama-Nyungan,0.603,WATHAWURRUNG,0.783,JAKUN,Austronesian,False
+WEST_DAMAR,Austronesian,0.627,LUANG,0.808,DEWAS_RAI,Indo-European,False
+DONG,Atlantic-Congo,0.659,TIBA,0.840,NISHING,Sino-Tibetan,False
+ALEGE_2,Atlantic-Congo,0.629,BOKYI,0.811,SOUTHERN_SAMO,Mande,False
+BUNABUN,Nuclear Trans New Guinea,0.649,MALAS,0.830,LEVUKA,Austronesian,False
+TANGALE,Afro-Asiatic,0.621,PERO,0.802,LAA_LAA_BWAMU,Atlantic-Congo,False
+YIR_YORONT_2,Pama-Nyungan,0.627,THAYORE,0.809,PAPORA_2,Austronesian,False
+UKPET,Atlantic-Congo,0.640,KOROP_3,0.823,PAPORA_2,Austronesian,False
+BADE_2,Afro-Asiatic,0.652,NGIZIM_2,0.835,TAI_NUA_ZHEFANG,Tai-Kadai,False
+WIRANGU,Pama-Nyungan,0.583,NARUNGGA,0.767,PAPORA_2,Austronesian,False
+CAR,Austroasiatic,0.614,NANCAWRI,0.797,LEVUKA,Austronesian,False
+OSATU,Atlantic-Congo,0.596,BALO,0.779,GAGU,Mande,False
+EVANT,Atlantic-Congo,0.626,IYIVE,0.810,PAPORA_2,Austronesian,False
+BONGU,Nuclear Trans New Guinea,0.629,SONGUM,0.813,DAZAGA,Saharan,False
+ENGGANO,Austronesian,0.637,BANJAR_SARI_ENGGANO,0.821,GODWARI,Indo-European,False
+BENGA_2,Atlantic-Congo,0.295,BENGA,0.480,BALDEMU,Afro-Asiatic,False
+NGBINDA,Atlantic-Congo,0.601,BENGE_BATI,0.785,BALDEMU,Afro-Asiatic,False
+BEEZEN,Atlantic-Congo,0.639,YUKUBEN,0.824,BONDUM_DOM_2,Dogon,False
+DOOHWAAYAAYO,Atlantic-Congo,0.563,RIITIME,0.748,MERWARI,Indo-European,False
+TEANU,Austronesian,0.633,TANEMA,0.818,SONDE_KYAANZA,Atlantic-Congo,False
+KAREN_PAO,Sino-Tibetan,0.637,BWE_KAREN,0.823,PAPORA_2,Austronesian,False
+WARGAMAY,Pama-Nyungan,0.578,WULGURU,0.764,PAPORA_2,Austronesian,False
+PIU,Austronesian,0.657,DAMBI,0.843,ENDO,Nilotic,False
+PAPE,Atlantic-Congo,0.632,PEERE,0.819,MERWARI,Indo-European,False
+PHONG_KNIANG,Austroasiatic,0.627,CHRAU_2,0.814,JANGKANG,Austronesian,False
+WATHAWURRUNG,Pama-Nyungan,0.603,WOIWURRUNG,0.790,WUNAMBAL,Worrorran,False
+FORE,Nuclear Trans New Guinea,0.614,GIMI,0.802,KIRIBATI,Austronesian,False
+WAFFA,Nuclear Trans New Guinea,0.640,N_TAIRORA,0.828,CHANTYAL,Sino-Tibetan,False
+EOTILE_BETI,Atlantic-Congo,0.674,ABURE_3,0.863,DOGON,Dogon,False
+URI_PAPUA_NEW_GUINEA,Nuclear Trans New Guinea,0.641,NUMANGGANG,0.830,ALEGE_2,Atlantic-Congo,False
+CE,Atlantic-Congo,0.644,ANIB,0.834,PAPORA_2,Austronesian,False
+ABURE_3,Atlantic-Congo,0.674,EOTILE_BETI,0.865,PAPORA_2,Austronesian,False
+JUANG,Austroasiatic,0.644,KHARIA,0.835,KPELLE_LIBERIA,Mande,False
+NSARI,Atlantic-Congo,0.618,NONI,0.809,GODWARI,Indo-European,False
+TANGKO,Nuclear Trans New Guinea,0.624,KOPKAKA,0.815,LONG_WAT,Austronesian,False
+TANEMA,Austronesian,0.633,TEANU,0.825,NCHUMURU,Atlantic-Congo,False
+MOROP,Nuclear Trans New Guinea,0.623,NAKAI,0.816,PULUWATESE,Austronesian,False
+LEPCHA,Sino-Tibetan,0.605,GHALE_NORTHERN,0.798,PAPORA_2,Austronesian,False
+OLULUMO_IKOM,Atlantic-Congo,0.565,UMON,0.758,BONDUM_DOM,Dogon,False
+TAPACHULTEC,Mixe-Zoque,0.595,CAMOTLAN_MIXE,0.788,PAPORA_2,Austronesian,False
+WARRNAMBOOL,Pama-Nyungan,0.616,BUNGANDITJ,0.810,NISHING,Sino-Tibetan,False
+EL_MOLO,Afro-Asiatic,0.657,ARBORE,0.850,LANDUMA_4,Atlantic-Congo,False
+BASSA_KONTAGORA_2,Atlantic-Congo,0.607,PONGU,0.801,KABA_DEME_SARA,Central Sudanic,False
+BEPOUR,Nuclear Trans New Guinea,0.654,MOERE,0.847,URIMO,Nuclear Torricelli,False
+MEKEO,Austronesian,0.616,KUNI,0.811,VAI_3,Mande,False
+SELE,Atlantic-Congo,0.594,LIKPE,0.789,BANKAN_TEY,Dogon,False
+UBI,Afro-Asiatic,0.624,SABA,0.819,MAILU,Mailuan,False
+SIDEME,Atlantic-Congo,0.616,TEGBO,0.811,BETE_GUIBEROUA,Kru,False
+IDU_MISHMI,Sino-Tibetan,0.624,DENG_DARANG_XIZANG_XIACHAYU,0.820,BUNA_SOUTHERN,Nuclear Torricelli,False
+MIAN,Nuclear Trans New Guinea,0.621,TIFAL,0.817,JANGKANG,Austronesian,False
+MOERE,Nuclear Trans New Guinea,0.654,BEPOUR,0.850,BOOR,Afro-Asiatic,False
+TUBAR,Uto-Aztecan,0.619,MAYO,0.816,BHILALI,Indo-European,False
+SEIMAT,Austronesian,0.634,MOORIORI,0.832,NGWE,Atlantic-Congo,False
+MOGHOL,Mongolic-Khitan,0.510,KANGJIA_QINGHAI_KANGYANG,0.708,GHUMAY,Indo-European,False
+COEUR_DALENE,Salishan,0.673,MONTANA_SALISH,0.872,PAPORA_2,Austronesian,False
+TYAP,Atlantic-Congo,0.606,JJU,0.805,VAI_3,Mande,False
+SHALL,Atlantic-Congo,0.614,KADUNG,0.813,VAI_3,Mande,False
+HUA_2,Nuclear Trans New Guinea,0.650,YAGARIA,0.850,TAINO,Arawakan,False
+BOM,Nuclear Trans New Guinea,0.629,BONGU,0.829,LEVUKA,Austronesian,False
+TOTO,Sino-Tibetan,0.601,DHIMAL,0.802,KOROBORO_SENNI,Songhay,False
+NDANDA_SUD,Atlantic-Congo,0.611,NGWE,0.813,NANGA_DAMA,Dogon,False
+NAGA_SANGTAM,Sino-Tibetan,0.599,NAGA_AO,0.801,NGWE,Atlantic-Congo,False
+GADSUP,Nuclear Trans New Guinea,0.649,GADSUP_AGARABI,0.852,NGWE,Atlantic-Congo,False
+MAKARY_KOTOKO,Afro-Asiatic,0.584,AFADE,0.787,PAPORA_2,Austronesian,False
+KAIRIRU,Austronesian,0.620,KAIEP,0.824,MERWARI,Indo-European,False
+NYOKON,Atlantic-Congo,0.630,MANDI_CAMEROON,0.834,BURUSHASKI,Burushaski,False
+ORMURI,Indo-European,0.614,WANA_PASHTO,0.819,EIGHTEENTH_CENTURY_KET,Yeniseian,False
+BUNGANDITJ,Pama-Nyungan,0.616,WARRNAMBOOL,0.821,RAO_4,Ramu,False
+KONOMALA_2,Austronesian,0.600,SIAR,0.805,KUKATJA,Pama-Nyungan,False
+STODSDE,Sino-Tibetan,0.625,ERGONG_SICHUAN_GANZI_DAOFU,0.830,BHILALI,Indo-European,False
+KWAKUM,Atlantic-Congo,0.593,KAKO,0.799,MAUKAKAN,Mande,False
+YERONG,Tai-Kadai,0.596,EN,0.801,NAGA_KHOIBU,Sino-Tibetan,False
+GIDAR,Afro-Asiatic,0.602,MUSGU_D_PLUS_RD,0.808,BHILI,Indo-European,False
+MUSSAU_EMIRA,Austronesian,0.644,SEPA_PAPUA_NEW_GUINEA,0.850,FINANGAKAN,Mande,False
+BU_NIGERIA,Atlantic-Congo,0.639,ANIB,0.846,JUDEO_MOROCCAN_ARABIC,Afro-Asiatic,False
+DHIMAL,Sino-Tibetan,0.601,TOTO,0.808,ARUAMU,Ramu,False
+LORHON,Atlantic-Congo,0.623,KULANGO_BOUNA,0.830,AIHUI_MANCHU,Tungusic,False
+GULA_IRO,Atlantic-Congo,0.541,BOLGO,0.749,WE_SOUTHERN,Kru,False
+EKPEYE,Atlantic-Congo,0.602,IGBO_ONITSHA,0.810,MERWARI,Indo-European,False
+ZHENFENG_GELAO,Tai-Kadai,0.602,WANZI_GELAO,0.811,LONG_WAT,Austronesian,False
+NIPMUCK,Algic,0.639,MOHEGAN,0.847,KOTT,Yeniseian,False
+MOHEGAN,Algic,0.608,NISHNAABEMWIN,0.817,MUDUGA,Dravidian,False
+SOU_UPAA,Austronesian,0.607,HITU,0.816,BHILI,Indo-European,False
+EFUTU,Atlantic-Congo,0.608,HILL_GUANG,0.818,TOMO_KAN_2,Dogon,False
+FANG,Atlantic-Congo,0.615,KOSHIN,0.824,PAPORA_2,Austronesian,False
+YAYGIR,Pama-Nyungan,0.562,GUMBAYNGGIR,0.773,WUNAMBAL,Worrorran,False
+NHANDA,Pama-Nyungan,0.560,BADIMAYA,0.771,PAPORA_2,Austronesian,False
+WIK_NGATHAN,Pama-Nyungan,0.616,WIK_MUNGKAN,0.827,TEMNE_4,Atlantic-Congo,False
+OFO,Siouan,0.580,TUTELO,0.792,PAPORA_2,Austronesian,False
+JUKUN_TAKUM_2,Atlantic-Congo,0.553,JUKUN_TAKUM,0.765,KUKATJA,Pama-Nyungan,False
+BADJALA,Pama-Nyungan,0.536,GURENG_GURENG,0.749,WUNAMBAL,Worrorran,False
+NGADJUNMAYA,Pama-Nyungan,0.574,PINTUPI,0.787,PAPORA_2,Austronesian,False
+KUTCHIN,Athabaskan-Eyak-Tlingit,0.589,CARRIER,0.803,WUNAMBAL,Worrorran,False
+ORIG,Rashad,0.597,TEGALI,0.811,LONG_WAT,Austronesian,False
+AHLO,Atlantic-Congo,0.625,IKPOSO,0.838,BISA,Mande,False
+AMBELAU,Austronesian,0.608,KAYELI,0.822,BAMBARA_3,Mande,False
+GIMI,Nuclear Trans New Guinea,0.614,FORE,0.828,SOUTH_BARAI,Koiarian,False
+KHANG,Austroasiatic,0.600,BUXING_YUNNAN_MENGLA_MOHAN,0.815,ZHUANG_YUNNAN_GUANGNAN_POMENG,Tai-Kadai,False
+QIANG_LONGXI,Sino-Tibetan,0.589,QIANG_MIANCHI,0.804,NGWE,Atlantic-Congo,False
+TEGALI,Rashad,0.597,ORIG,0.812,ELOYI_3,Atlantic-Congo,False
+ARIGIDI,Atlantic-Congo,0.604,YORUBA_7,0.820,PAPORA_2,Austronesian,False
+YAKA_axk,Atlantic-Congo,0.537,DUMA_3,0.753,BALDEMU,Afro-Asiatic,False
+HAN,Athabaskan-Eyak-Tlingit,0.636,SOUTHERN_TUTCHONE,0.851,PAPORA_2,Austronesian,False
+RON_MANGAR,Afro-Asiatic,0.614,RON_DAFFO_BUTURA,0.829,PAPORA_2,Austronesian,False
+THAVUNG_SO,Austroasiatic,0.605,RUC,0.821,JANGKANG,Austronesian,False
+TILUNG,Sino-Tibetan,0.574,CAMLING,0.790,BHILI,Indo-European,False
+TULU,Austronesian,0.580,NYINDROU,0.796,NGWE,Atlantic-Congo,False
+TAI_LOI,Austroasiatic,0.630,RIANG_WHITE_STRIPED,0.846,LEVUKA,Austronesian,False
+MERAMERA,Austronesian,0.599,NANUMEA,0.816,BHILI,Indo-European,False
+YANGON_BURMESE,Sino-Tibetan,0.637,BURMESE,0.854,JANGKANG,Austronesian,False
+U,Austroasiatic,0.616,PALAUNG_SHWE_2,0.833,KPELLE_LIBERIA,Mande,False
+GAGU,Mande,0.562,YAKOUBA,0.779,OSATU,Atlantic-Congo,False
+KHARIA,Austroasiatic,0.604,JURAY,0.821,JANGKANG,Austronesian,False
+DEFAKA,Ijoid,0.615,NKORO,0.833,KANGO,Atlantic-Congo,False
+MUNG_KOI,Austroasiatic,0.566,VIETNAMESE,0.785,PAPORA_2,Austronesian,False
+SURSURUNGA,Austronesian,0.603,SIAR,0.823,NGWE,Atlantic-Congo,False
+AVAU,Austronesian,0.575,AMIO_GELIMI,0.796,GELAO_WANZI,Tai-Kadai,False
+FOREST_ENETS_2,Uralic,0.601,NENETS,0.822,GODWARI,Indo-European,False
+WOGEO,Austronesian,0.589,MANAM,0.811,BANKAN_TEY,Dogon,False
+QUEYU,Sino-Tibetan,0.515,QUEYU_SICHUAN_YOULAXI,0.738,PAPORA_2,Austronesian,False
+NEHAN,Austronesian,0.621,HAKU,0.844,JAAD_BADIARANKE_4,Atlantic-Congo,False
+MATAL,Afro-Asiatic,0.603,PODOKO,0.826,NGWE,Atlantic-Congo,False
+AMIO_GELIMI,Austronesian,0.560,MANGSENG,0.783,NGWE,Atlantic-Congo,False
+PODOKO,Afro-Asiatic,0.602,GVOKO,0.826,PAPORA_2,Austronesian,False
+LEMIO,Nuclear Trans New Guinea,0.603,ARAWUM,0.827,DAZAGA,Saharan,False
+KAYELI,Austronesian,0.608,AMBELAU,0.832,BHILI,Indo-European,False
+BAHENG_HUNAN_HUXINGSHAN,Hmong-Mien,0.620,GUNDONG_PA_HNG,0.844,MIN_SANMING_TAINING,Sino-Tibetan,False
+KOWIAI,Austronesian,0.589,GESER,0.813,DOMARI,Indo-European,False
+VEDDA,Indo-European,0.641,SINHALA,0.865,JANGKANG,Austronesian,False
+NGARIGU,Pama-Nyungan,0.561,NGUNAWAL,0.785,PAPORA_2,Austronesian,False
+WANDALA,Afro-Asiatic,0.619,GLAVDA,0.844,DARRKINYUNG,Pama-Nyungan,False
+SHIXING,Sino-Tibetan,0.615,NAXI_YUNNAN_LIJIANG_DAYAN,0.840,MANO_MANN_2,Mande,False
+OLD_PRUSSIAN,Indo-European,0.611,LITHUANIAN,0.836,LONG_WAT,Austronesian,False
+SQUAMISH,Salishan,0.601,MUSQUEAM,0.826,PAPORA_2,Austronesian,False
+SAU,Nuclear Trans New Guinea,0.610,POLE_2,0.836,MUDUGA,Dravidian,False
+MIAO_GUIZHOU_TIANZHU_XIUTIAN,Hmong-Mien,0.600,MIAO_GUIZHOU_JINPING_OULI,0.826,LONG_WAT,Austronesian,False
+NYAM,Afro-Asiatic,0.614,KWAAMI,0.840,LONG_WAT,Austronesian,False
+ANUS,Austronesian,0.553,TARPIA,0.780,MAYA_SAMO,Mande,False
+BURMESE,Sino-Tibetan,0.619,PELA,0.846,PAPORA_2,Austronesian,False
+NDEMLI,Atlantic-Congo,0.584,AMBELE_2,0.811,MAYA_SAMO,Mande,False
+WULGURU,Pama-Nyungan,0.528,NYAWAYGI,0.756,GANGULIDA,Tangkic,False
+BEDIK,Atlantic-Congo,0.606,BASARI,0.835,WINTU,Wintuan,False
+AUYANA,Nuclear Trans New Guinea,0.637,AWA,0.866,MONDO,Atlantic-Congo,False
+RORO,Austronesian,0.595,DOURA,0.824,DEWAS_RAI,Indo-European,False
+KUKU_UWANH,Pama-Nyungan,0.601,WIK_MUNGKAN,0.830,URIMO,Nuclear Torricelli,False
+KEDANG,Austronesian,0.561,ILE_APE,0.791,MERWARI,Indo-European,False
+PAASAAL,Atlantic-Congo,0.616,SISAALA_BURKINA_FASO_2,0.846,JANGKANG,Austronesian,False
+BILOXI,Siouan,0.570,TUTELO,0.801,NGWE,Atlantic-Congo,False
+BEGBERE_EJAR,Atlantic-Congo,0.606,ITOO,0.837,PULUWATESE,Austronesian,False
+CENTRAL_MASELA,Austronesian,0.613,SERILI,0.844,KANGO,Atlantic-Congo,False
+NGAMAMBO,Atlantic-Congo,0.578,AMASI,0.809,MANO_MANN_2,Mande,False
+KIM,Atlantic-Congo,0.603,BESME,0.836,NISHING,Sino-Tibetan,False
+TUTELO,Siouan,0.570,BILOXI,0.803,KOTT,Yeniseian,False
+SO,Atlantic-Congo,0.492,DUALA_2,0.725,BALDEMU,Afro-Asiatic,False
+MATBAT,Austronesian,0.595,KAWE,0.828,DEWAS_RAI,Indo-European,False
+NDE_6,Atlantic-Congo,0.563,BENDEGHE_2,0.796,PAPORA_2,Austronesian,False
+MALYANGAPA,Pama-Nyungan,0.580,BADJIRRI,0.814,WUNAMBAL,Worrorran,False
+BALO,Atlantic-Congo,0.553,MENKA,0.787,GAGU,Mande,False
+BOLA,Austronesian,0.586,BULU_PNG,0.821,MEWARI,Indo-European,False
+EMPLAWAS,Austronesian,0.603,EAST_MASELA,0.838,GODWARI,Indo-European,False
+TEOP,Austronesian,0.589,PAPAPANA,0.824,ROLOM,Austroasiatic,False
+URUAVA,Austronesian,0.595,MANDAR,0.831,MBANIATA,Touo,False
+DITAMMARI,Atlantic-Congo,0.561,MBELIME,0.797,YAGARIA,Nuclear Trans New Guinea,False
+BADIMAYA,Pama-Nyungan,0.560,NHANDA,0.796,GARAWA_2,Garrwan,False
+KAYUPULAU,Austronesian,0.597,TOBATI,0.834,KPELLE_LIBERIA,Mande,False
+NANKINA,Nuclear Trans New Guinea,0.543,YOPNO,0.780,BATA_ZUMU,Afro-Asiatic,False
+BU,Atlantic-Congo,0.592,MISSONG,0.829,MAYA_SAMO,Mande,False
+QIANG_YADU,Sino-Tibetan,0.569,MAWO_QIANG,0.807,NGWE,Atlantic-Congo,False
+AKUM,Atlantic-Congo,0.592,YUKUBEN,0.830,MOMUNA_2,Momuna,False
+MALDIVIAN,Indo-European,0.556,SINHALA,0.794,YOM,Atlantic-Congo,False
+KOHUMONO,Atlantic-Congo,0.581,UMON,0.819,DAZAGA,Saharan,False
+MITUKU,Atlantic-Congo,0.521,SONGOLA_KASENGA,0.760,BALDEMU,Afro-Asiatic,False
+MABIRE,Afro-Asiatic,0.588,MOGUM,0.827,PAPORA_2,Austronesian,False
+ATIKAMEKW,Algic,0.586,OJIBWA_SEVERN,0.825,KUKATJA,Pama-Nyungan,False
+LI_HAINAN_BAOTING_JIAMAO,Tai-Kadai,0.603,LI_HAINAN_WUZHISHAN_TONGSHI,0.842,PAPORA_2,Austronesian,False
+BAYNUNK_SONKODOU,Atlantic-Congo,0.596,BAINOUNK_GUJAHER,0.836,DARRKINYUNG,Pama-Nyungan,False
+TAMI,Austronesian,0.611,BIEM,0.851,MOLOKO,Afro-Asiatic,False
+NGARDI,Pama-Nyungan,0.550,JARU_2,0.790,WAANYI,Garrwan,False
+BULU_PNG,Austronesian,0.586,BOLA,0.827,KUKATJA,Pama-Nyungan,False
+COLUMBIA_WENATCHI,Salishan,0.627,OKANAGAN_COLVILLE,0.868,KLIKITAT,Sahaptian,False
+NINGGIRUM_KAWOMA,Nuclear Trans New Guinea,0.557,YONGGOM_2,0.798,JANGKANG,Austronesian,False
+KASHMIRI,Indo-European,0.567,KHAH,0.809,LONG_WAT,Austronesian,False
+NGUNAWAL,Pama-Nyungan,0.519,THURAWAL,0.761,PAPORA_2,Austronesian,False
+IKPESHI,Atlantic-Congo,0.602,OKPAMHERI,0.844,MAYA_SAMO,Mande,False
+TA_MIT_LAHA,Tai-Kadai,0.563,LAHA,0.806,LONG_WAT,Austronesian,False
+KUMAN,Nuclear Trans New Guinea,0.573,SINASINA_3,0.816,KOIARI_2,Koiarian,False
+THAO,Austronesian,0.589,PAPORA_2,0.832,WARLPIRI_2,Pama-Nyungan,False
+OLD_CHINESE,Sino-Tibetan,0.591,MIDDLE_CHINESE,0.834,HAINAN_KIM_MUN,Hmong-Mien,False
+GUMBAYNGGIR,Pama-Nyungan,0.562,YAYGIR,0.806,WUNAMBAL,Worrorran,False
+TOBATI,Austronesian,0.597,KAYUPULAU,0.841,REMPI,Nuclear Trans New Guinea,False
+ORMU,Austronesian,0.607,KAYUPULAU,0.851,YOM,Atlantic-Congo,False
+DJINANG,Pama-Nyungan,0.500,DJINBA,0.744,PAPORA_2,Austronesian,False
+MIGABAC,Nuclear Trans New Guinea,0.582,MOMARE,0.826,KENSWEI_NSEI,Atlantic-Congo,False
+DAO,Nuclear Trans New Guinea,0.594,PASS_VALLEY_YALI,0.839,KONONGO,Atlantic-Congo,False
+BIPI,Austronesian,0.530,SIVISA_TITAN,0.775,NGWE,Atlantic-Congo,False
+YAG_DII,Atlantic-Congo,0.594,PEERE_2,0.840,NGIZIM_2,Afro-Asiatic,False
+RAUTE,Sino-Tibetan,0.521,RAJI,0.767,NORTH_BARAI,Koiarian,False
+NAGA_CHOKRI,Sino-Tibetan,0.532,ANGAMI,0.778,PAPORA_2,Austronesian,False
+SABA,Afro-Asiatic,0.576,TEMKI,0.822,PAPORA_2,Austronesian,False
+ERSU_SICHUAN_ZELAGOU,Sino-Tibetan,0.554,ERSU,0.801,PAPORA_2,Austronesian,False
+KAYAH_LI_EASTERN,Sino-Tibetan,0.559,KAYAH_WESTERN,0.806,NGWE,Atlantic-Congo,False
+FATAKAI_NUAULU_SERAM,Austronesian,0.599,PELAUW_HARUKU,0.846,DOOHWAAYAAYO,Atlantic-Congo,False
+LUISENO,Uto-Aztecan,0.548,CUPENO,0.795,AWABAKAL,Pama-Nyungan,False
+TSO,Atlantic-Congo,0.507,DIJIM_BWILIM_2,0.754,MURIK,Lower Sepik,False
+NAKAME,Nuclear Trans New Guinea,0.586,NUK,0.833,TSO,Atlantic-Congo,False
+THANGAL,Sino-Tibetan,0.565,LIANGMAI,0.813,GODWARI,Indo-European,False
+GUDU,Afro-Asiatic,0.598,BATA_ZUMU,0.846,NGWE,Atlantic-Congo,False
+MADAKA,Atlantic-Congo,0.572,CINDA_REGI_TIYAL,0.820,GANGULU_2,Pama-Nyungan,False
+PINGHUA_YONGZHOU_NINGYUAN,Sino-Tibetan,0.564,PINGHUA_YONGZHOU_SHOUYAN,0.813,PAPORA_2,Austronesian,False
+SIRAYA,Austronesian,0.539,BASAY,0.788,MENDRIK,Austroasiatic,False
+ONANK,Austronesian,0.609,SILISILI,0.858,KUGAMA,Atlantic-Congo,False
+BWE_KAREN,Sino-Tibetan,0.513,KAREN_MANUMANAW,0.762,PAPORA_2,Austronesian,False
+KWAAMI,Afro-Asiatic,0.543,PERO_2,0.793,GODWARI,Indo-European,False
+LAMNSOQ_2,Atlantic-Congo,0.522,LAMNSOQ,0.772,MAYA_SAMO,Mande,False
+ARAWUM,Nuclear Trans New Guinea,0.603,LEMIO,0.853,SEREER,Atlantic-Congo,False
+ZUMBUN,Afro-Asiatic,0.538,SIRI,0.788,DAZAGA,Saharan,False
+KULERE,Afro-Asiatic,0.561,DUHWA,0.811,PAPORA_2,Austronesian,False
+SHERDUKPEN,Sino-Tibetan,0.579,DUHUMBI,0.829,AMIO_GELIMI,Austronesian,False
+SENOUFO_TAGWANA,Atlantic-Congo,0.524,DYIMINI,0.774,NEYO,Kru,False
+GAMO_NINGI,Atlantic-Congo,0.585,IZORA,0.836,PAPORA_2,Austronesian,False
+KANAKANABU,Austronesian,0.596,SAAROA,0.847,CAKA,Atlantic-Congo,False
+SULA,Austronesian,0.567,HUKUMINA,0.817,BURUSHASKI_2,Burushaski,False
+BEBELI,Austronesian,0.596,AVAU,0.846,DEWAS_RAI,Indo-European,False
+BALUAN_PAM,Austronesian,0.586,LOU,0.836,WUNAMBAL,Worrorran,False
+MIAO_GUIZHOU_PINGTANG_XIGUAN,Hmong-Mien,0.592,MIAO_GUIZHOU_JIAOTUOZHAI,0.843,PEAR,Austroasiatic,False
+CHILCOTIN,Athabaskan-Eyak-Tlingit,0.599,CARRIER,0.850,PAPORA_2,Austronesian,False
+WALI_SUDAN,Nubian,0.544,UNCUNWEE,0.795,PAPORA_2,Austronesian,False
+MURUWARI,Pama-Nyungan,0.550,GAMILARAAY,0.801,WUNAMBAL,Worrorran,False
+NORTH_BABAR,Austronesian,0.597,DAI,0.849,MEWARI,Indo-European,False
+HOROM,Atlantic-Congo,0.560,FYEM,0.812,MERWARI,Indo-European,False
+SINHALA,Indo-European,0.556,MALDIVIAN,0.808,PAPORA_2,Austronesian,False
+KHAH,Indo-European,0.567,KASHMIRI,0.820,RAUTE,Sino-Tibetan,False
+THAYORE,Pama-Nyungan,0.597,WIK_MUNGKAN,0.850,PAPORA,Austronesian,False
+OCUILTECO,Otomanguean,0.606,MATLATZINCA_SAN_FRANCISCO_OXTOTILPAN,0.859,PAPORA_2,Austronesian,False
+KWATO,Nuclear Trans New Guinea,0.500,UYAJITAYA,0.753,PAPORA_2,Austronesian,False
+LELA,Atlantic-Congo,0.548,GWAMHI_WURI,0.802,PAPORA_2,Austronesian,False
+SOKORO,Afro-Asiatic,0.549,TEMKI,0.803,GRESI,Nimboranic,False
+LAGHU,Austronesian,0.578,ZABANA,0.832,NISHING,Sino-Tibetan,False
+NGARLA_2,Pama-Nyungan,0.546,NGALOOMA_2,0.801,LEVUKA,Austronesian,False
+AZHA,Sino-Tibetan,0.553,YI_YUNNAN_SHILIN_WEIZE,0.808,BAGA_SITEMU,Atlantic-Congo,False
+NELEMWA,Austronesian,0.521,BELEP,0.776,MEYMAI,Indo-European,False
+HWANA,Afro-Asiatic,0.586,BOGA,0.841,AWABAKAL,Pama-Nyungan,False
+BIMA,Austronesian,0.533,LIO,0.788,DEWAS_RAI,Indo-European,False
+UBIR,Austronesian,0.600,ARE,0.855,BARGAM_2,Nuclear Trans New Guinea,False
+SAAROA,Austronesian,0.596,KANAKANABU,0.852,EWAGE_NOTU,Nuclear Trans New Guinea,False
+AKOLET,Austronesian,0.578,AMBUL,0.834,NGWE,Atlantic-Congo,False
+NAKAI,Nuclear Trans New Guinea,0.593,YONGGOM_2,0.850,PAPORA_2,Austronesian,False
+WORIMI,Pama-Nyungan,0.500,AWABAKAL,0.757,WUNAMBAL,Worrorran,False
+ERSU,Sino-Tibetan,0.554,ERSU_SICHUAN_ZELAGOU,0.812,NGWE,Atlantic-Congo,False
+KOMBAI,Nuclear Trans New Guinea,0.556,WANGGOM,0.814,BAYONO,Bayono-Awbono,False
+NYAWAYGI,Pama-Nyungan,0.528,WULGURU,0.785,WUNAMBAL,Worrorran,False
+GORONTALO,Austronesian,0.601,SUWAWA,0.858,WALING,Sino-Tibetan,False
+WESTERN_KELE_BUBI,Atlantic-Congo,0.486,SOUTHERN_NGOM_2,0.744,BALDEMU,Afro-Asiatic,False
+MBELIME,Atlantic-Congo,0.561,DITAMMARI,0.819,BATWA,Tuu,False
+INIAI_2,Nuclear Trans New Guinea,0.528,BISORIO_2,0.787,NGWE,Atlantic-Congo,False
+IGUTA,Atlantic-Congo,0.576,SHAU,0.834,SAHO,Afro-Asiatic,False
+DUHUMBI,Sino-Tibetan,0.579,SHERDUKPEN,0.837,FRAFRA_2,Atlantic-Congo,False
+TAIOF,Austronesian,0.591,TUNGAK,0.850,BARGAM_2,Nuclear Trans New Guinea,False
+KUSU,Atlantic-Congo,0.557,GENGELE,0.816,PAPORA_2,Austronesian,False
+BAHING,Sino-Tibetan,0.550,SUNWAR,0.809,PAPORA_2,Austronesian,False
+JANJI,Atlantic-Congo,0.545,JERE,0.804,MERWARI,Indo-European,False
+KABALAY,Afro-Asiatic,0.575,NANCERE,0.834,MAYA_SAMO,Mande,False
+MANX,Indo-European,0.550,IRISH,0.809,NISHING,Sino-Tibetan,False
+GUMAWANA,Austronesian,0.582,DUAU,0.842,BANKAN_TEY,Dogon,False
+DARRKINYUNG,Pama-Nyungan,0.479,AWABAKAL,0.739,WUNAMBAL,Worrorran,False
+SAWAI_UnnamedInSource,Austronesian,0.547,BULI,0.807,NGWE,Atlantic-Congo,False
+BUNOGE,Dogon,0.507,NYAMBEENGGE_2,0.767,FULFULDE_MAASINA,Atlantic-Congo,False
+LILIKO,Atlantic-Congo,0.555,PAGIBETE,0.815,PAPORA_2,Austronesian,False
+WARJI,Afro-Asiatic,0.541,KARIYA,0.802,WUNAMBAL,Worrorran,False
+FYER,Afro-Asiatic,0.558,TAMBAS,0.819,CEN,Atlantic-Congo,False
+SUMAU,Nuclear Trans New Guinea,0.534,USINO,0.795,SIRIANO_2,Tucanoan,False
+SHENI,Atlantic-Congo,0.561,ZIRIYA,0.822,MANINKAKAN_EASTERN,Mande,False
+KARKO,Nubian,0.555,KADARU,0.816,BAMBARA_3,Mande,False
+JAH_HUT,Austroasiatic,0.516,LANOH,0.777,JANGKANG,Austronesian,False
+ZIZILIVAKAN,Afro-Asiatic,0.567,FALI_MUCHELLA,0.829,BIRRI_AUSTRALIA,Pama-Nyungan,False
+GAFAT,Afro-Asiatic,0.610,AMHARIC_3,0.873,FULFULDE,Atlantic-Congo,False
+ITOO,Atlantic-Congo,0.560,IDU,0.822,MANDINKA_4,Mande,False
+ARAPAHO,Algic,0.585,GROS_VENTRE,0.848,PAPORA_2,Austronesian,False
+HUKUMINA,Austronesian,0.567,SULA,0.830,MERWARI,Indo-European,False
+TWANA,Salishan,0.609,PUGET_SALISH,0.873,JANGKANG,Austronesian,False
+MIAO_GUIZHOU_JINPING_OULI,Hmong-Mien,0.585,MIAO_GUIZHOU_KAILI_YANGHAO,0.849,WAMOANG,Austronesian,False
+MIAO_HUNAN_LUXI_DONGTOUZHAI,Hmong-Mien,0.587,MIAO_HUBEI_XUANEN_MAOPOYING,0.851,NORTH_FALI,Atlantic-Congo,False
+CINDA_REGI_TIYAL,Atlantic-Congo,0.540,CINDA_1,0.805,BHILI,Indo-European,False
+USINO,Nuclear Trans New Guinea,0.534,SUMAU,0.799,WARUNA,Suki-Gogodala,False
+ICEVE_MACI,Atlantic-Congo,0.569,TIV,0.834,PAPORA_2,Austronesian,False
+MALTO,Dravidian,0.535,KURUKH,0.800,HINDI_2,Indo-European,False
+MUNDABLI,Atlantic-Congo,0.560,KOSHIN,0.826,PAPORA_2,Austronesian,False
+NATENI,Atlantic-Congo,0.501,BIALI,0.767,TENE_KAN_3,Dogon,False
+DAWANG,Austronesian,0.582,WAB,0.849,URIMO,Nuclear Torricelli,False
+FAVORLANG,Austronesian,0.512,PAPORA_2,0.779,MAJHI,Indo-European,False
+MAWO_QIANG,Sino-Tibetan,0.549,QIANG_PUXI,0.817,NGWE,Atlantic-Congo,False
+JIRIW,Austronesian,0.531,MOKERANG,0.799,NGWE,Atlantic-Congo,False
+FYEM,Atlantic-Congo,0.560,HOROM,0.828,YANDA_DOM_2,Dogon,False
+TEMKI,Afro-Asiatic,0.549,SOKORO,0.817,PAPORA_2,Austronesian,False
+NORTHERN_GIZIGA,Afro-Asiatic,0.554,MOLOKO,0.823,BHILI,Indo-European,False
+NOOKSACK,Salishan,0.558,COWICHAN,0.827,BHILALI,Indo-European,False
+IKWERE,Atlantic-Congo,0.565,IGBO_ONITSHA,0.834,PAPORA_2,Austronesian,False
+AHANTE,Atlantic-Congo,0.570,ANYI,0.839,JANGKANG,Austronesian,False
+AWABAKAL,Pama-Nyungan,0.479,DARRKINYUNG,0.748,NUNGGUBUYU,Gunwinyguan,False
+TARPIA,Austronesian,0.553,ANUS,0.823,TORO_SO_3,Dogon,False
+ALEUT,Eskimo-Aleut,0.557,ALEUT_2,0.828,PAPORA_2,Austronesian,False
+NALIK,Austronesian,0.530,LAKURUMAU,0.801,KAKABE,Mande,False
+GREAT_ANDAMANESE,Great Andamanese,0.518,AKA_KORA,0.790,KUKATJA,Pama-Nyungan,False
+CHINANTEC_SAN_FELIPE_USILA,Otomanguean,0.563,CHINANTEC_OJITLAN,0.835,KWANGA_PNG,Sepik,False
+KAYAH_WESTERN,Sino-Tibetan,0.548,KAREN_MANUMANAW,0.819,PAPORA_2,Austronesian,False
+HIDATSA,Siouan,0.516,CROW,0.788,BARELI_RATHWI,Indo-European,False
+SAEP,Nuclear Trans New Guinea,0.478,GANGLAU,0.750,TAGABAWA,Austronesian,False
+AGOI,Atlantic-Congo,0.570,BAKPINKA,0.842,PAPORA_2,Austronesian,False
+BISA,Mande,0.497,KYENGA,0.770,BURU,Atlantic-Congo,False
+MPI,Sino-Tibetan,0.548,JINO,0.820,LYELE,Atlantic-Congo,False
+PAPAPANA,Austronesian,0.589,TEOP,0.862,BOM,Nuclear Trans New Guinea,False
+ISONGO,Atlantic-Congo,0.533,MABALE,0.806,BALDEMU,Afro-Asiatic,False
+SYDNEY,Pama-Nyungan,0.563,DARRKINYUNG,0.836,RASHIDPUR_SANTALI,Austroasiatic,False
+KILIWA,Cochimi-Yuman,0.548,PAIPAI,0.821,YANA,Yana,False
+LABEL,Austronesian,0.542,SIAR,0.816,BAINOUNK_GUJAHER,Atlantic-Congo,False
+BUASI,Austronesian,0.572,MAPOS,0.846,NGWE,Atlantic-Congo,False
+MIAO_SOUTHERN_GUIYANG_TIESHI,Hmong-Mien,0.540,SUYONG_HMONG,0.814,NHAHEUN,Austroasiatic,False
+NGGEM,Nuclear Trans New Guinea,0.552,PASS_VALLEY_YALI,0.826,LEFA,Atlantic-Congo,False
+UPPER_TANANA,Athabaskan-Eyak-Tlingit,0.562,UPPER_TANANA_TETLIN,0.836,PAPORA_2,Austronesian,False
+CUA,Austroasiatic,0.533,JEH_2,0.807,PAPORA_2,Austronesian,False
+MUNIT,Nuclear Trans New Guinea,0.543,SIHAN,0.817,PAPORA_2,Austronesian,False
+TEXMELUCAN_ZAPOTEC,Otomanguean,0.506,XANAGUIA_ZAPOTEC,0.780,BHILI,Indo-European,False
+ABKHAZ_2,Abkhaz-Adyge,0.543,ABKHAZ,0.818,BHILI,Indo-European,False
+BIDIYA,Afro-Asiatic,0.514,MOGUM,0.789,BUNA_SOUTHERN,Nuclear Torricelli,False
+QIANG_MIANCHI,Sino-Tibetan,0.530,QIANG_PUXI,0.806,BABA,Atlantic-Congo,False
+BAMBILI,Atlantic-Congo,0.524,BAFUT,0.799,TORO_SO_3,Dogon,False
+TUSCARORA,Iroquoian,0.539,MOHAWK,0.815,BHILI,Indo-European,False
+IMROING,Austronesian,0.521,TELA_MASBUAR,0.797,DEWAS_RAI,Indo-European,False
+MAMBAE,Austronesian,0.557,KEMAK,0.832,ZHANGLU_DONG,Tai-Kadai,False
+DIMBONG,Atlantic-Congo,0.519,LEFA,0.795,SOUTHERN_SAMO,Mande,False
+MAKAA_2,Atlantic-Congo,0.501,KOL,0.777,BALDEMU,Afro-Asiatic,False
+TORAU,Austronesian,0.564,ALU_MONO,0.841,DOOHWAAYAAYO,Atlantic-Congo,False
+MORESADA,Nuclear Trans New Guinea,0.575,IKUNDUN,0.852,PAPORA_2,Austronesian,False
+BODO_GADABA,Austroasiatic,0.513,REMO,0.791,PAPORA_2,Austronesian,False
+AS,Austronesian,0.570,SALAWATI_MAAYA,0.848,PARUWA,Nuclear Torricelli,False
+WALMAJARRI,Pama-Nyungan,0.521,KUKATJA,0.799,WUNAMBAL,Worrorran,False
+BUDUKU_KULANGO,Atlantic-Congo,0.546,KULANGO_BOUNA,0.823,KAKABE,Mande,False
+TSAKHUR,Nakh-Daghestanian,0.550,RUTUL,0.827,PAPORA_2,Austronesian,False
+KAIKE,Sino-Tibetan,0.544,LOWA,0.822,BUNA_SOUTHERN,Nuclear Torricelli,False
+REMO,Austroasiatic,0.513,BODO_GADABA,0.792,PAPORA_2,Austronesian,False
+YANANGO,Pama-Nyungan,0.526,DHUWAL,0.805,KAMOR,Eastern Daly,False
+TUTSA,Sino-Tibetan,0.543,YOGLI,0.822,LEVUKA,Austronesian,False
+AYERE,Atlantic-Congo,0.564,YORUBA_18,0.843,MERWARI,Indo-European,False
+BURE,Afro-Asiatic,0.510,KIRFI,0.789,MAYA_SAMO,Mande,False
+JERE,Atlantic-Congo,0.545,JANJI,0.824,TOMO_KAN_3,Dogon,False
+ILONGOT_KAKIDUGEN,Austronesian,0.529,PALAWANO_BATAK,0.809,KOHO_SRE,Austroasiatic,False
+GOUNDO,Atlantic-Congo,0.517,BESME,0.796,PERO,Afro-Asiatic,False
+GURENG_GURENG,Pama-Nyungan,0.506,DHARUMBAL,0.786,WUNAMBAL,Worrorran,False
+TIRURAY,Austronesian,0.530,LONG_WAT,0.810,CHAIMA,Cariban,False
+MANGSENG,Austronesian,0.560,AMIO_GELIMI,0.840,NGWE,Atlantic-Congo,False
+BAKPINKA,Atlantic-Congo,0.514,DOKO_UYANGA,0.794,MAYA_SAMO,Mande,False
+BATAK_SIMALUNGEN,Austronesian,0.503,KARO_BATAK,0.783,MERWARI,Indo-European,False
+KOSHIN,Atlantic-Congo,0.560,MUNDABLI,0.841,BASSA_3,Kru,False
+WAJA_2,Atlantic-Congo,0.536,TULA_3,0.817,BAKWE,Kru,False
+KULANGO_BOUNA,Atlantic-Congo,0.546,BUDUKU_KULANGO,0.826,BONDUM_DOM_2,Dogon,False
+BANGOLAN_2,Atlantic-Congo,0.543,NGWE,0.824,MALINKE_WESTERN_MANINKA,Mande,False
+DYAABUGAY,Pama-Nyungan,0.521,YIDINY,0.802,MERWARI,Indo-European,False
+MIGAMA,Afro-Asiatic,0.518,BIDIYA,0.800,LONG_WAT,Austronesian,False
+BONEK,Atlantic-Congo,0.545,MANDI_CAMEROON,0.827,LURI_2,Afro-Asiatic,False
+BUEM_LELEMI,Atlantic-Congo,0.502,LIKPE,0.784,ASSAN,Yeniseian,False
+ARE,Austronesian,0.505,GAPAPAIWA,0.788,DIMA_2,Dagan,False
+LUMUN_2,Narrow Talodi,0.531,ACHERON,0.813,LONG_WAT,Austronesian,False
+MOSUO,Sino-Tibetan,0.532,NAXI_2,0.815,MANO_MANN_2,Mande,False
+BESME,Atlantic-Congo,0.517,GOUNDO,0.799,KPELLE_LIBERIA,Mande,False
+DILLING,Nubian,0.523,UNCUNWEE,0.805,MOBA,Atlantic-Congo,False
+LAMNSOQ,Atlantic-Congo,0.522,LAMNSOQ_2,0.805,DOGON_BONDUM_DOM,Dogon,False
+OKPAMHERI,Atlantic-Congo,0.527,UHAMI,0.810,BHILI,Indo-European,False
+YAMBA,Atlantic-Congo,0.556,NDE_YULANA,0.839,DUMI,Sino-Tibetan,False
+GAELIC_SCOTTISH,Indo-European,0.551,IRISH,0.834,NOON_2,Atlantic-Congo,False
+NAWDM,Atlantic-Congo,0.531,FRAFRA_2,0.815,PAPORA_2,Austronesian,False
+QUEYU_SICHUAN_YOULAXI,Sino-Tibetan,0.515,QUEYU,0.799,KUKATJA,Pama-Nyungan,False
+MANDARIN_GUILIN_LONGSHENG,Sino-Tibetan,0.562,PINGHUA_NANNING_TINGZI,0.846,BUNA_SOUTHERN,Nuclear Torricelli,False
+PAME_DE_JILIAPAN_1767,Otomanguean,0.525,JILIAPAN_PAME_2,0.809,LONG_WAT,Austronesian,False
+HIW,Austronesian,0.516,TOGA,0.800,BAMBARA_3,Mande,False
+VUTE,Atlantic-Congo,0.557,VUTE_MBANJO,0.841,PASHAI_NORTHWEST,Indo-European,False
+YELA_KELA,Atlantic-Congo,0.530,C80_SHUWA,0.815,BALDEMU,Afro-Asiatic,False
+KOL,Atlantic-Congo,0.501,MAKAA_2,0.785,BALDEMU,Afro-Asiatic,False
+WANAMBRE,Nuclear Trans New Guinea,0.540,MAWAK,0.825,YAREBA,Yareban,False
+MENGAKA,Atlantic-Congo,0.540,MUNGAKA_4,0.825,PAPORA_2,Austronesian,False
+POPOLOCA_SAN_JUAN_ATZINGO,Otomanguean,0.543,POPOLOCA_DE_SAN_VICENTE_COYOTEPEC,0.827,DOOHWAAYAAYO,Atlantic-Congo,False
+BEBA,Atlantic-Congo,0.510,BAFUT,0.795,MAUKAKAN,Mande,False
+KAREN_GEBA,Sino-Tibetan,0.556,BWE_KAREN,0.841,NGOMBALE,Atlantic-Congo,False
+KAIEP,Austronesian,0.535,TEREBU,0.821,KUAN,Austroasiatic,False
+WANGGOM,Nuclear Trans New Guinea,0.556,KOMBAI,0.842,BAYONO,Bayono-Awbono,False
+WEST_KARA,Austronesian,0.517,KARA_PNG,0.803,KUKATJA,Pama-Nyungan,False
+MARALANGO,Austronesian,0.544,DANGAL,0.830,MERWARI,Indo-European,False
+MIAMI,Algic,0.553,KICKAPOO,0.840,PAPORA_2,Austronesian,False
+ROGUE_RIVER,Athabaskan-Eyak-Tlingit,0.525,GALICE,0.812,PAPORA_2,Austronesian,False
+TORO,Atlantic-Congo,0.497,TESU,0.785,WUNAMBAL,Worrorran,False
+TODA_2,Dravidian,0.533,TODA,0.820,PAPORA_2,Austronesian,False
+SIMALUR,Austronesian,0.502,SICHULE,0.790,BAHA_BUYANG,Tai-Kadai,False
+MASARWA_TATI,Khoe-Kwadi,0.534,KHWE,0.822,TANGUT,Sino-Tibetan,False
+NGOMBA,Atlantic-Congo,0.516,BAMENYAM,0.804,LOHORUNG,Sino-Tibetan,False
+ARAWE,Austronesian,0.573,AMBUL,0.861,NGWE,Atlantic-Congo,False
+MIAO_EASTERN_XIANGXI_XIAOZHANG,Hmong-Mien,0.503,LAYIPING_HMONG,0.792,WU_TONGXIANG,Sino-Tibetan,False
+NOMAANDE,Atlantic-Congo,0.497,TUNEN,0.786,PAPORA_2,Austronesian,False
+TWUMWU,Atlantic-Congo,0.573,TIKAR_AKUEN,0.862,PAPORA_2,Austronesian,False
+SOUTHERN_TOUSSIAN,Atlantic-Congo,0.505,NORTH_TOUSSIAN,0.793,SEME,Siamou,False
+GAN_SHAOWU,Sino-Tibetan,0.524,HAKKA_QIANNAN_SANDU,0.813,LONG_WAT,Austronesian,False
+KONNI,Atlantic-Congo,0.544,FRAFRA_2,0.834,KAKABE,Mande,False
+CHIPPEWA,Algic,0.585,NISHNAABEMWIN,0.874,ASARO,Nuclear Trans New Guinea,False
+MIN_NANPING_WANGTAI,Sino-Tibetan,0.532,MIN_JIANOU,0.822,LONG_WAT,Austronesian,False
+WAWA,Atlantic-Congo,0.541,VUTE_MBANJO,0.831,YANDA_DOM_2,Dogon,False
+KURI,Austronesian,0.548,IRARUTU,0.838,URIMO,Nuclear Torricelli,False
+YUKUBEN,Atlantic-Congo,0.497,YUKUBEN_2,0.787,GODIE_2,Kru,False
+BOLGO,Atlantic-Congo,0.541,GULA_IRO,0.832,LONG_WAT,Austronesian,False
+BADJIRRI,Pama-Nyungan,0.498,MARGANY_2,0.789,YAWURU,Nyulnyulan,False
+SECHELT,Salishan,0.539,SLIAMMON,0.830,PAPORA_2,Austronesian,False
+POTAWATOMI,Algic,0.559,NISHNAABEMWIN,0.850,MOBA,Atlantic-Congo,False
+BUDUMA,Afro-Asiatic,0.459,BUDUMA_2,0.751,KANURI,Saharan,False
+SOUTHERN_SAMO,Mande,0.468,MAYA_SAMO,0.760,KAKO,Atlantic-Congo,False
+OLOMA_2,Atlantic-Congo,0.560,OKPAMHERI,0.852,NISENAN,Maiduan,False
+TEREBU,Austronesian,0.535,KAIEP,0.828,MERWARI,Indo-European,False
+IRARUTU,Austronesian,0.548,KURI,0.840,MEYMAI,Indo-European,False
+GYEM,Atlantic-Congo,0.562,SHAU,0.855,KOLUM_SO_9,Dogon,False
+AMBEL,Austronesian,0.530,WAUYAI,0.823,NGWE,Atlantic-Congo,False
+YAGHNOBI,Indo-European,0.538,RETOW,0.831,KANGO,Atlantic-Congo,False
+ZARI,Afro-Asiatic,0.535,ZAAR,0.828,BHILI,Indo-European,False
+ACEH,Austronesian,0.512,LONG_WAT,0.805,DIRI,Afro-Asiatic,False
+SIBERIAN_TATAR,Turkic,0.498,KAZAKH,0.791,PAPORA_2,Austronesian,False
+SOUTHERN_NGOM_2,Atlantic-Congo,0.486,WESTERN_KELE_BUBI,0.780,BALDEMU,Afro-Asiatic,False
+BURUNGE,Afro-Asiatic,0.519,GORWAA,0.813,BHILI,Indo-European,False
+GABADI,Austronesian,0.519,DOURA,0.813,BARGU,Atlantic-Congo,False
+NOMAANDE_2,Atlantic-Congo,0.487,MANDI_CAMEROON,0.781,BALDEMU,Afro-Asiatic,False
+KAMBA,Nuclear Trans New Guinea,0.515,GARUH,0.810,PAPORA_2,Austronesian,False
+WAKUNG,Sino-Tibetan,0.512,KHUMI_2,0.806,JARAI,Austronesian,False
+IDU,Atlantic-Congo,0.541,NYANKPA,0.836,MANDINKA_4,Mande,False
+NANCAWRI,Austroasiatic,0.532,CHAURA,0.827,JANGKANG,Austronesian,False
+YUPIK_SIRENIK,Eskimo-Aleut,0.553,ST_LAWRENCE_YUPIK,0.848,JAKUN,Austronesian,False
+YIDINY,Pama-Nyungan,0.521,DYAABUGAY,0.816,MERWARI,Indo-European,False
+DHAISO,Atlantic-Congo,0.500,GIKUYU,0.796,MAYA_SAMO,Mande,False
+SHA,Afro-Asiatic,0.568,RON_MONGUNA,0.864,LEMBATA_WEST,Austronesian,False
+RAWA,Nuclear Trans New Guinea,0.506,IYO,0.802,ONABASULU,Bosavi,False
+REJANG,Austronesian,0.525,BASAP,0.821,MOTUNA,South Bougainville,False
+KAREN_SGAW,Sino-Tibetan,0.521,KAREN_PWO_EASTERN,0.818,PAPORA_2,Austronesian,False
+SELARU,Austronesian,0.490,LETINESE,0.786,ZHANGLU_DONG,Tai-Kadai,False
+ANUKI,Austronesian,0.554,GAPAPAIWA,0.851,DIMA_2,Dagan,False
+HILL_GUANG,Atlantic-Congo,0.511,LARTEH,0.808,BONDUM_DOM_2,Dogon,False
+UNUBAHE,Austronesian,0.568,BUHUTU,0.865,FRAFRA_2,Atlantic-Congo,False
+IYO,Nuclear Trans New Guinea,0.506,RAWA,0.803,GOGODALA_ARI,Suki-Gogodala,False
+SISAALA_WESTERN,Atlantic-Congo,0.507,SISAALA_BURKINA_FASO,0.805,KPELLE_LIBERIA,Mande,False
+YAGARIA,Nuclear Trans New Guinea,0.499,YATE,0.797,DITAMMARI,Atlantic-Congo,False
+LAKURUMAU,Austronesian,0.530,NALIK,0.828,MERWARI,Indo-European,False
+AGHU,Nuclear Trans New Guinea,0.532,SIAGHA,0.830,VENTURENYO,Chumashan,False
+CROW,Siouan,0.516,HIDATSA,0.815,LONG_WAT,Austronesian,False
+MUJI_SOUTHERN,Sino-Tibetan,0.522,PHUZA,0.821,MUDUGA,Dravidian,False
+GUUS_SIGIDI,Afro-Asiatic,0.518,ZAAR,0.817,JANGKANG,Austronesian,False
+ARIN,Yeniseian,0.499,ASSAN,0.798,OBOLO_2,Atlantic-Congo,False
+KAREN_YINTALE,Sino-Tibetan,0.517,KAREN_MANUMANAW,0.816,PAPORA_2,Austronesian,False
+RON_MONGUNA,Afro-Asiatic,0.568,SHA,0.868,DAZAGA,Saharan,False
+DANARU,Nuclear Trans New Guinea,0.511,URIGINA,0.811,ARO_NEW_CALEDONIA,Austronesian,False
+OLLARI_GADBA,Dravidian,0.505,PARJI,0.805,LAZ,Kartvelian,False
+IDOMA,Atlantic-Congo,0.516,YALA,0.816,GODWARI,Indo-European,False
+TUNJUNG,Austronesian,0.540,LONG_WAT,0.840,YUGAMBEH,Pama-Nyungan,False
+NONI,Atlantic-Congo,0.494,NCANE,0.794,MAYA_SAMO,Mande,False
+SERE,Atlantic-Congo,0.510,TAGBU,0.811,BAMBARA_3,Mande,False
+DUGWOR_2,Afro-Asiatic,0.539,MEREY,0.839,PAPORA_2,Austronesian,False
+DANGAL,Austronesian,0.544,MARALANGO,0.846,MAYA_SAMO,Mande,False
+OLD_IRISH,Indo-European,0.505,IRISH,0.806,SEREER,Atlantic-Congo,False
+MAIANA,Nuclear Trans New Guinea,0.493,TANI,0.795,PAPORA_2,Austronesian,False
+MINA_2,Afro-Asiatic,0.474,MBEDAM,0.776,PAPORA_2,Austronesian,False
+KATIATI,Nuclear Trans New Guinea,0.502,SILEIBI,0.805,WUNAMBAL,Worrorran,False
+KUTEP,Atlantic-Congo,0.513,KUTEB,0.816,PAPORA_2,Austronesian,False
+EUDEVE,Uto-Aztecan,0.520,YAQUI,0.822,DITAMMARI,Atlantic-Congo,False
+MONTOL,Afro-Asiatic,0.524,TAL,0.827,BHILI,Indo-European,False
+PANGSENG,Atlantic-Congo,0.519,MUMUYE,0.822,NABA_KUKA,Central Sudanic,False
+WAYAN_FIJIAN,Austronesian,0.548,FIJIAN,0.851,LAHA,Tai-Kadai,False
+YAZGULYAM,Indo-European,0.506,SHUGHNI,0.809,MOGHOL,Mongolic-Khitan,False
+UPPER_KUSKOKWIM,Athabaskan-Eyak-Tlingit,0.510,LOWER_TANANA,0.813,PAPORA_2,Austronesian,False
+EBRIE_2,Atlantic-Congo,0.529,MBATO,0.833,PAPORA_2,Austronesian,False
+NANERGE,Atlantic-Congo,0.497,MAMARA_SENOUFO,0.802,KRUMAN,Kru,False
+PHOLA,Sino-Tibetan,0.538,WUDING_LUQUAN_YI,0.843,LYELE,Atlantic-Congo,False
+DOMPO,Atlantic-Congo,0.490,GENYANGA,0.794,PAPORA_2,Austronesian,False
+TSAMAI_3,Afro-Asiatic,0.490,GAWWADA,0.795,MELO_2,Ta-Ne-Omotic,False
+IKUNDUN,Nuclear Trans New Guinea,0.531,ANAMUXRA,0.836,PAPORA_2,Austronesian,False
+WAJARRI,Pama-Nyungan,0.455,YINGKARTA,0.760,PAPORA_2,Austronesian,False
+BANGANDU,Atlantic-Congo,0.482,YASWA,0.787,KPELLE_LIBERIA,Mande,False
+ANGAMI,Sino-Tibetan,0.532,NAGA_CHOKRI,0.837,LYELE_3,Atlantic-Congo,False
+ASHKUN,Indo-European,0.520,WAIGALI,0.826,LONG_WAT,Austronesian,False
+BOUMAI,Nuclear Trans New Guinea,0.506,SINASINA_3,0.812,BETTA_KURUMBA,Dravidian,False
+BUNAN,Sino-Tibetan,0.460,TOD,0.766,MAXI_GBE,Atlantic-Congo,False
+KUTEB,Atlantic-Congo,0.513,KUTEP,0.819,KPELLE_LIBERIA,Mande,False
+NKAMI,Atlantic-Congo,0.506,DWANG,0.813,TOMO_KAN_2,Dogon,False
+LACHIXIO_ZAPOTEC,Otomanguean,0.531,ISTHMUS_ZAPOTEC,0.837,NGWE,Atlantic-Congo,False
+MO,Austronesian,0.503,SOBEI,0.810,WUNAMBAL,Worrorran,False
+MBUNDU,Atlantic-Congo,0.540,UMBUNDU_2,0.846,NU_EN,Tuu,False
+MIAO_GUIZHOU_ZIYUN_SIDAZHAI,Hmong-Mien,0.526,MIAO_GUIZHOU_PINGBA_KAIZHANG,0.833,PAPORA_2,Austronesian,False
+MEITEI,Sino-Tibetan,0.519,NAGA_KHOIBU,0.827,PEAR,Austroasiatic,False
+DWANG,Atlantic-Congo,0.506,NKAMI,0.814,KPELLE_LIBERIA,Mande,False
+GESHITSA,Sino-Tibetan,0.524,ERGONG_SICHUAN_GANZI_DAOFU,0.832,LEVUKA,Austronesian,False
+ARGUNI,Austronesian,0.528,KAMBRAM,0.836,MOI_2,West Bird's Head,False
+KASKA,Athabaskan-Eyak-Tlingit,0.511,SLAVEY,0.818,PAPORA_2,Austronesian,False
+KAREN_MANUMANAW,Sino-Tibetan,0.513,BWE_KAREN,0.820,PAPORA_2,Austronesian,False
+PUNAN_BATU,Austronesian,0.486,PUNAN_APUT,0.794,YUGAMBEH,Pama-Nyungan,False
+SOBEI,Austronesian,0.503,MO,0.811,MUDUGA,Dravidian,False
+WESTERN_NEO_ARAMAIC,Afro-Asiatic,0.530,ARAMAIC_ANCIENT,0.839,XINCA,Xincan,False
+MBATO,Atlantic-Congo,0.529,EBRIE_2,0.838,PAPORA_2,Austronesian,False
+TIRO,Heibanic,0.520,MORO,0.829,PAPORA_2,Austronesian,False
+KIRMA,Atlantic-Congo,0.488,TURKA_2,0.798,GODIE_2,Kru,False
+N_TAIRORA,Nuclear Trans New Guinea,0.542,TAIRORA_SOUTH,0.852,MOTUNA,South Bougainville,False
+GOLO,Atlantic-Congo,0.513,GOBU,0.823,BAMBARA_3,Mande,False
+MEYOR,Sino-Tibetan,0.496,ZHA_XIZANG_CHAYU_LADING,0.807,GODWARI,Indo-European,False
+YEKHEE,Atlantic-Congo,0.524,EMAI,0.835,NEMBE,Ijoid,False
+MUYUW,Austronesian,0.505,KILIVILA,0.816,MANGBETU_2,Central Sudanic,False
+ATSAM_2,Atlantic-Congo,0.503,PITI_2,0.814,PAPORA_2,Austronesian,False
+DUKE,Austronesian,0.495,LUNGGA,0.806,MBANIATA,Touo,False
+MENOMINEE,Algic,0.539,KICKAPOO,0.851,PAPORA_2,Austronesian,False
+CEQ_WONG,Austroasiatic,0.519,TONGA,0.830,PAPORA_2,Austronesian,False
+TAIRORA_SOUTH,Nuclear Trans New Guinea,0.542,N_TAIRORA,0.853,BHILI,Indo-European,False
+TAWALA,Austronesian,0.542,HAIGWAI,0.854,BAUWAKI,Mailuan,False
+CHINANTEC_OJITLAN,Otomanguean,0.510,CHINANTEC_PALANTLA,0.823,KWOMA,Sepik,False
+TAFOTA_BARUGA,Nuclear Trans New Guinea,0.511,DOGHORO,0.824,MUDUGA,Dravidian,False
+OKANAGAN_COLVILLE,Salishan,0.565,MONTANA_SALISH,0.878,BOOR,Afro-Asiatic,False
+WARNMAN,Pama-Nyungan,0.491,MANTJILTJARA_2,0.804,ORMA_2,Afro-Asiatic,False
+MORO,Heibanic,0.520,TIRO,0.832,PAPORA_2,Austronesian,False
+CHAURA,Austroasiatic,0.532,NANCAWRI,0.845,UMIRAY_DUMAGET_AGTA,Austronesian,False
+KULUNG_NIGERIA,Atlantic-Congo,0.495,MBULA_NIGERIA,0.809,PAPORA_2,Austronesian,False
+SUBTIABA,Otomanguean,0.481,MEPHAA_ACATEPEC,0.794,EASTERN_TEKE_2,Atlantic-Congo,False
+KAPTIAU,Austronesian,0.525,BONGGO,0.838,MAYA_SAMO,Mande,False
+GEME,Atlantic-Congo,0.487,NZAKARA_2,0.800,MERWARI,Indo-European,False
+LAKHER_MARA,Sino-Tibetan,0.481,LUSHAI,0.795,KOTAFON_GBE,Atlantic-Congo,False
+MANTASTA_AHTENA,Athabaskan-Eyak-Tlingit,0.538,AHTNA,0.852,PAPORA_2,Austronesian,False
+ORING,Atlantic-Congo,0.491,UZEKWA,0.805,DEM_2,Dem,False
+SALAWATI,Austronesian,0.510,BUTLEH,0.824,DEWAS_RAI,Indo-European,False
+WESTERN_KARABORO,Atlantic-Congo,0.506,EASTERN_KARABORO,0.821,SEME,Siamou,False
+MANAM,Austronesian,0.524,MBULA_PAPUA_NEW_GUINEA,0.839,KAMPONG_BARU,South Bird's Head,False
+SILACAYOAPAN_MIXTEC,Otomanguean,0.490,MIXTEC_ALCOZAUCA,0.804,FRAFRA_2,Atlantic-Congo,False
+DGHWEDE,Afro-Asiatic,0.493,GAVA,0.808,PAPORA_2,Austronesian,False
+TIKAR_AKUEN,Atlantic-Congo,0.524,TIKAR_2,0.839,PAPORA_2,Austronesian,False
+SANGKONG_YUNNAN_XIAOJIE,Sino-Tibetan,0.481,BISU_YUNNAN_MENGZHE,0.796,PAPORA_2,Austronesian,False
+KARA_PNG,Austronesian,0.496,TIGAK,0.812,NAHUATL_XILOCUAUTLA_HUAUCHINANGO,Uto-Aztecan,False
+GARUH,Nuclear Trans New Guinea,0.500,GAL,0.815,LISU_2,Sino-Tibetan,False
+TIENE_2,Atlantic-Congo,0.483,TEKE_NTYO_1,0.799,PAPORA_2,Austronesian,False
+KILIVILA,Austronesian,0.505,MUYUW,0.821,SAVOSAVO,Savosavo,False
+AULUA,Austronesian,0.516,BURMBAR_LEPAXSIVIR,0.832,LUO_2,Nilotic,False
+LIKPE,Atlantic-Congo,0.502,BUEM_LELEMI,0.819,ASSAN,Yeniseian,False
+RAWANG,Sino-Tibetan,0.480,DERUNG_YUNNAN_MEILIWANG,0.797,PAPORA_2,Austronesian,False
+L22_MBAGANI,Atlantic-Congo,0.475,L221_LWALWA_1,0.792,PAPORA_2,Austronesian,False
+WUZLAM,Afro-Asiatic,0.508,MELOKWO_2,0.825,PAPORA_2,Austronesian,False
+KHALING,Sino-Tibetan,0.493,DUMI_2,0.810,PAPORA_2,Austronesian,False
+MANGA,Austronesian,0.524,MAPOS,0.842,MANGBETU_2,Central Sudanic,False
+CAMLING,Sino-Tibetan,0.487,PUMA,0.805,PAPORA_2,Austronesian,False
+BAFUT,Atlantic-Congo,0.479,MANKON,0.798,NANGA_DAMA,Dogon,False
+NDING,Narrow Talodi,0.519,DAGIK,0.838,MERWARI,Indo-European,False
+IRISH,Indo-European,0.505,OLD_IRISH,0.824,SAHO,Afro-Asiatic,False
+BABINE,Athabaskan-Eyak-Tlingit,0.520,SOUTHERN_CARRIER,0.840,PAPORA_2,Austronesian,False
+MIAO_GUIZHOU_PINGBA_KAIZHANG,Hmong-Mien,0.517,MIAO_GUIZHOU_HUAXI_QINGYAN,0.836,FRAFRA_2,Atlantic-Congo,False
+HUI_HANGZHOU_FENKOU,Sino-Tibetan,0.503,WU_WENZHOU_PINGYANG,0.822,YUNO_GUANGXI_XIAOZHAI,Hmong-Mien,False
+KHWOPA_NEWAR,Sino-Tibetan,0.488,DOLAKHA_NEWAR,0.808,BHILI,Indo-European,False
+DEG_XINAG,Athabaskan-Eyak-Tlingit,0.514,HOLIKACHUK,0.834,CHAUDANGSI,Sino-Tibetan,False
+BALI,Austronesian,0.508,MALAY_BALINESE,0.828,THURAWAL,Pama-Nyungan,False
+AKA_BO,Great Andamanese,0.520,AKA_KEDE,0.839,DIYARI,Pama-Nyungan,False
+TELA_MASBUAR,Austronesian,0.499,EAST_MASELA,0.819,GODWARI,Indo-European,False
+MINAVEHA,Austronesian,0.547,KOLUWAWA,0.867,CAKA,Atlantic-Congo,False
+NAUNA,Austronesian,0.519,SIVISA_TITAN,0.839,NGWE,Atlantic-Congo,False
+MIAO_GUIZHOU_HUAXI_GAOPO,Hmong-Mien,0.507,MIAO_GUIZHOU_HUAXI_QINGYAN,0.828,MANDARIN_LIUZHOU_1,Sino-Tibetan,False
+BANGGARLA,Pama-Nyungan,0.489,ADNYAMATHANHA_2,0.810,FRAFRA_2,Atlantic-Congo,False
+ALEUT_2,Eskimo-Aleut,0.557,ALEUT,0.878,LEMBATA_WEST,Austronesian,False
+WHITE_LACHI,Tai-Kadai,0.513,LACHI,0.834,JANGKANG,Austronesian,False
+MANDI_CAMEROON,Atlantic-Congo,0.487,NOMAANDE_2,0.808,MAUKAKAN,Mande,False
+GREEK_ANCIENT,Indo-European,0.490,GREEK,0.811,LEMBATA_WEST,Austronesian,False
+PITI_2,Atlantic-Congo,0.503,ATSAM_2,0.825,KAKABE,Mande,False
+MUNGONG,Atlantic-Congo,0.482,NCANE,0.804,MAYA_SAMO,Mande,False
+NKONGHO,Atlantic-Congo,0.506,BANEKA,0.828,NISHING,Sino-Tibetan,False
+YUKUBEN_2,Atlantic-Congo,0.497,YUKUBEN,0.819,WORODUGUKAKAN,Mande,False
+MBUKO,Afro-Asiatic,0.503,VAME,0.826,MORAORI,Marori,False
+LARTEH,Atlantic-Congo,0.511,HILL_GUANG,0.834,BONDUM_DOM_2,Dogon,False
+EL_NAYAR_CORA,Uto-Aztecan,0.506,HUICHOL,0.829,TEDAGA,Saharan,False
+KOTUA,Austroasiatic,0.487,SEDANG,0.811,PAPORA_2,Austronesian,False
+TODA,Dravidian,0.533,TODA_2,0.857,INARI_SAAMI,Uralic,False
+GEBE,Austronesian,0.493,MABA,0.817,MERWARI,Indo-European,False
+KANINUWA,Austronesian,0.537,KOLUWAWA,0.862,FRAFRA_2,Atlantic-Congo,False
+MUNDAT,Afro-Asiatic,0.495,DUHWA,0.820,PAPORA_2,Austronesian,False
+NCANE,Atlantic-Congo,0.482,MUNGONG,0.807,MAYA_SAMO,Mande,False
+IAMALELE,Austronesian,0.488,KOLUWAWA,0.813,BUYANG,Tai-Kadai,False
+DOKO_UYANGA,Atlantic-Congo,0.514,BAKPINKA,0.839,URIMO,Nuclear Torricelli,False
+LELE_CHAD,Afro-Asiatic,0.509,NANCERE,0.834,TEDAGA,Saharan,False
+DZODINKA,Atlantic-Congo,0.475,LIMBUM,0.800,NANGA_DAMA,Dogon,False
+MIAO_GUIZHOU_ZIYUN_TUANPO,Hmong-Mien,0.523,MIAO_GUIZHOU_HUAXI_BAITUO,0.849,WESTERN_PANJABI_SHAHPUR,Indo-European,False
+GBAGYI_SHAITA,Atlantic-Congo,0.520,GBAGYI,0.845,LEMBATA_WEST,Austronesian,False
+KEMPEE,Atlantic-Congo,0.484,BOMA_NORD,0.810,KAKABE,Mande,False
+SEKANI,Athabaskan-Eyak-Tlingit,0.499,TAGISH,0.825,NGWE,Atlantic-Congo,False
+BUJAN,Austronesian,0.498,MOKERANG,0.824,MERWARI,Indo-European,False
+TIANG,Austronesian,0.522,KARA_PNG,0.849,GIRIRRA,Afro-Asiatic,False
+AKA_KORA,Great Andamanese,0.518,GREAT_ANDAMANESE,0.845,PAPORA_2,Austronesian,False
+DELAWARE_MUNSEE,Algic,0.495,UNAMI_UnnamedInSource,0.822,PAPORA_2,Austronesian,False
+DJINBA,Pama-Nyungan,0.500,DJINANG,0.827,PAPORA_2,Austronesian,False
+GALAMBU,Afro-Asiatic,0.483,GERA_2,0.810,NALCA_2,Nuclear Trans New Guinea,False
+MBULA_PAPUA_NEW_GUINEA,Austronesian,0.496,MANGAP,0.823,GUNIN_KWINI,Worrorran,False
+JADGALI,Indo-European,0.490,CHURAHI,0.818,LONG_WAT,Austronesian,False
+SUENA,Nuclear Trans New Guinea,0.512,ZIA,0.839,PAPORA_2,Austronesian,False
+MBURKU,Afro-Asiatic,0.485,MIYA_2,0.812,TSO,Atlantic-Congo,False
+BANTAWA,Sino-Tibetan,0.482,WALING,0.809,PAPORA_2,Austronesian,False
+BAMENYAM_2,Atlantic-Congo,0.448,MUNGAKA_5,0.776,PAPORA_2,Austronesian,False
+HUNGWORO,Atlantic-Congo,0.491,SHAMA,0.820,PAPORA_2,Austronesian,False
+UMIRAY_DUMAGET_AGTA,Austronesian,0.479,AYTA_AMBALA,0.808,NISHING,Sino-Tibetan,False
+KIONG,Atlantic-Congo,0.491,KOROP_3,0.820,KOLUM_SO_7,Dogon,False
+WAMBON,Nuclear Trans New Guinea,0.488,KAETI_DUMUT,0.817,BAMBARA_3,Mande,False
+HUICHOL,Uto-Aztecan,0.506,EL_NAYAR_CORA,0.835,LONG_WAT,Austronesian,False
+KICKAPOO,Algic,0.497,FOX,0.827,PAPORA_2,Austronesian,False
+MUSAR,Nuclear Trans New Guinea,0.508,KOWAKI,0.839,URIMO,Nuclear Torricelli,False
+NUK,Nuclear Trans New Guinea,0.506,NEK,0.836,TSO,Atlantic-Congo,False
+DOBEL,Austronesian,0.495,KOLA,0.825,FRAFRA_2,Atlantic-Congo,False
+GANGLAU,Nuclear Trans New Guinea,0.478,SAEP,0.809,TAGABAWA,Austronesian,False
+SICHULE,Austronesian,0.502,SIMALUR,0.833,DEWAS_RAI,Indo-European,False
+OYAOYA,Austronesian,0.479,SUAU,0.810,WAYAMPI,Tupian,False
+CHINANTEC_QUIOTEPEC,Otomanguean,0.484,CHINANTEC_COMALTEPEC,0.815,MUDUGA,Dravidian,False
+NDE_BUKWOK,Atlantic-Congo,0.500,NDE_YULANA,0.831,BALDEMU,Afro-Asiatic,False
+YASWA,Atlantic-Congo,0.482,BANGANDU,0.813,PAPORA_2,Austronesian,False
+KOYUKON,Athabaskan-Eyak-Tlingit,0.526,HOLIKACHUK,0.857,PAPORA_2,Austronesian,False
+QUINAULT,Salishan,0.515,CHEHALIS_UPPER,0.847,BHILI,Indo-European,False
+WUTUN,Sino-Tibetan,0.507,DUNGAN,0.839,BUNA_SOUTHERN,Nuclear Torricelli,False
+SAABAN,Austronesian,0.492,LONG_WAT,0.823,GODWARI,Indo-European,False
+EDO_3,Atlantic-Congo,0.488,EDO,0.820,MAYA_SAMO,Mande,False
+TUKI_2,Atlantic-Congo,0.514,TUKI,0.846,SAHO,Afro-Asiatic,False
+GVOKO,Afro-Asiatic,0.505,DGHWEDE,0.837,NGWE,Atlantic-Congo,False
+MALIENG,Austroasiatic,0.482,RUC,0.815,JANGKANG,Austronesian,False
+MASMEDJE,Afro-Asiatic,0.507,MUBI,0.841,KUJARKE,Kujarge,False
+KWA_CAMEROON,Atlantic-Congo,0.490,NGWE,0.823,TORO_SO_3,Dogon,False
+TUKI,Atlantic-Congo,0.514,TUKI_2,0.848,BALDEMU,Afro-Asiatic,False
+MANGAP,Austronesian,0.496,MBULA_PAPUA_NEW_GUINEA,0.830,RAUTE,Sino-Tibetan,False
+IXCATEC,Otomanguean,0.506,POPOLOCA_DE_SAN_VICENTE_COYOTEPEC,0.840,NGWE,Atlantic-Congo,False
+ZHA_XIZANG_CHAYU_LADING,Sino-Tibetan,0.496,MEYOR,0.830,PAPORA_2,Austronesian,False
+TESU,Atlantic-Congo,0.497,TORO,0.832,MAYA_SAMO,Mande,False
+BOGA,Afro-Asiatic,0.510,GAANDA,0.844,PAPORA_2,Austronesian,False
+RORIA,Austronesian,0.518,NARANGO_NAMBEL,0.853,MANDINKA_4,Mande,False
+KEI,Austronesian,0.486,FORDATA,0.822,PILA,Nuclear Trans New Guinea,False
+YATE,Nuclear Trans New Guinea,0.499,YAGARIA,0.834,JANGKANG,Austronesian,False
+YUE_GUILIN_XINGAN,Sino-Tibetan,0.485,MANDARIN_HEZHOU_FUCHUAN,0.820,YAO_GUANGXI_HUANGLONG,Hmong-Mien,False
+TANI,Nuclear Trans New Guinea,0.493,MAIANA,0.828,ARUAMU,Ramu,False
+ELAT_KEI_BESAR,Austronesian,0.488,YAMDENA,0.823,KPELLE_LIBERIA,Mande,False
+SIRASIRA,Austronesian,0.506,SUKURUM,0.842,BHILI,Indo-European,False
+KAWAIISU,Uto-Aztecan,0.484,CHEMEHUEVI,0.821,LONG_WAT,Austronesian,False
+TOWANGARA,Austronesian,0.480,ZENAG,0.817,NGWE,Atlantic-Congo,False
+ZABANA,Austronesian,0.523,KOKOTA,0.860,BOZO_HAINYAHO,Mande,False
+LEBEI,Austronesian,0.499,LEVEI,0.836,NGWE,Atlantic-Congo,False
+BONGGO,Austronesian,0.525,KAPTIAU,0.862,PAMBIA,Atlantic-Congo,False
+KEMIE,Austroasiatic,0.511,HU,0.850,LONG_WAT,Austronesian,False
+UGARITIC,Afro-Asiatic,0.510,ARAMAIC_ANCIENT,0.848,LOWER_CHINOOK,Chinookan,False
+EASTERN_MARSHALLESE,Austronesian,0.477,MARSHALLESE,0.816,BAMBARA_3,Mande,False
+SHAU,Atlantic-Congo,0.477,IZORA,0.817,MERWARI,Indo-European,False
+HPON,Sino-Tibetan,0.505,PELA,0.845,GODWARI,Indo-European,False
+NKUKOLI,Atlantic-Congo,0.478,LUBILA_2,0.818,TAMASHEQ_2,Afro-Asiatic,False
+LEMOLANG,Austronesian,0.488,TANETE,0.828,NGWE,Atlantic-Congo,False
+TOGA,Austronesian,0.497,KORO,0.837,SANTA_ANA_HUEYTLALPAN_OTOMI,Otomanguean,False
+CHICHICAPAM_ZAPOTEC,Otomanguean,0.515,TILQUIAPAN_ZAPOTEC,0.855,NGWE,Atlantic-Congo,False
+KIRMANJKI,Indo-European,0.474,ZAZAKI,0.815,FRAFRA_2,Atlantic-Congo,False
+CHINANTEC_COMALTEPEC,Otomanguean,0.484,CHINANTEC_QUIOTEPEC,0.825,PUMPOKOL,Yeniseian,False
+YABEN,Nuclear Trans New Guinea,0.500,WANUMA,0.842,PAPORA_2,Austronesian,False
+NOTRE,Atlantic-Congo,0.486,DAGARA,0.828,PINTUPI,Pama-Nyungan,False
+GOLIN,Nuclear Trans New Guinea,0.489,SINASINA_3,0.832,KOTAFON_GBE,Atlantic-Congo,False
+SEREER_3,Atlantic-Congo,0.499,SEREER,0.842,BHILALI,Indo-European,False
+JUKUN_TAKUM,Atlantic-Congo,0.491,KONA_JIBA,0.835,WORODUGUKAKAN,Mande,False
+PUMA,Sino-Tibetan,0.430,WALING,0.774,GODWARI,Indo-European,False
+DUHWA,Afro-Asiatic,0.495,MUNDAT,0.839,KUKATJA,Pama-Nyungan,False
+NZANYI,Afro-Asiatic,0.492,HOLMA,0.837,LAA_LAA_BWAMU,Atlantic-Congo,False
+MARSHALLESE,Austronesian,0.477,EASTERN_MARSHALLESE,0.822,KUKATJA,Pama-Nyungan,False
+MIN_SANMING_TAINING,Sino-Tibetan,0.462,PINGHUA_GUILIN_SITANG,0.807,YOUNUO_BUNU,Hmong-Mien,False
+JINO,Sino-Tibetan,0.478,KADUO,0.823,NGWE,Atlantic-Congo,False
+HOTE,Austronesian,0.487,HOTE_2,0.832,NGWE,Atlantic-Congo,False
+CHIAPANEC,Otomanguean,0.484,CHIAPANEC_3,0.828,JAAD_BADIARANKE_4,Atlantic-Congo,False
+MIDDLE_CHINESE,Sino-Tibetan,0.482,PINGHUA_NANNING_TINGZI,0.827,PAPORA_2,Austronesian,False
+LOWER_TANANA,Athabaskan-Eyak-Tlingit,0.510,UPPER_KUSKOKWIM,0.855,NGWE,Atlantic-Congo,False
+TAMASHEQ_2,Afro-Asiatic,0.398,HAUSA_4,0.744,BAGIRMI_2,Central Sudanic,False
+JOOLA_FOGNY_4,Atlantic-Congo,0.486,JOOLA_FOGNY_8,0.832,BAUZI,Geelvink Bay,False
+SUKURUM,Austronesian,0.506,SIRASIRA,0.853,MERWARI,Indo-European,False
+DIEGUENO,Cochimi-Yuman,0.488,TIPAI,0.836,YANA,Yana,False
+KAKANDA_2,Atlantic-Congo,0.497,KAMI_NIGERIA,0.845,PAPORA_2,Austronesian,False
+JOMANG,Narrow Talodi,0.497,DAGIK,0.845,KUKATJA,Pama-Nyungan,False
+SARCEE,Athabaskan-Eyak-Tlingit,0.485,JICARILLA,0.834,MZIEME,Sino-Tibetan,False
+ZAPOTEC_SOUTHERN_RINCON,Otomanguean,0.475,CHOAPAN_ZAPOTEC,0.825,PAPORA_2,Austronesian,False
+MASANA_POGO,Afro-Asiatic,0.474,MUSEY,0.823,BHILI,Indo-European,False
+MIAO_CHUANQIANDIAN_XIAOHAIZI,Hmong-Mien,0.503,MIAO_GUIZHOU_DANANSHAN,0.853,URIMO,Nuclear Torricelli,False
+GAWAR_BATI,Indo-European,0.474,PASHAI_NORTHWEST,0.825,SAHO,Afro-Asiatic,False
+UMON,Atlantic-Congo,0.479,UBAGHARA,0.830,LURI_2,Afro-Asiatic,False
+FORDATA,Austronesian,0.486,KEI,0.837,MERWARI,Indo-European,False
+EAST_GREENLANDIC,Eskimo-Aleut,0.513,WEST_GREENLANDIC,0.865,PAPORA_2,Austronesian,False
+MINDIRI,Austronesian,0.488,BILBIL,0.839,ENYA,Atlantic-Congo,False
+LEALAO_CHINANTEC,Otomanguean,0.486,CHINANTEC_SOCHIAPAN,0.838,URIMO,Nuclear Torricelli,False
+ARIBWATSA,Austronesian,0.515,MUSOM,0.867,SABERI_2,Greater Kwerba,False
+HUI_HUANGSHAN_HONGCUN,Sino-Tibetan,0.482,HAKKA_GANZHOU_YUDU_2,0.834,PAPORA_2,Austronesian,False
+YONGAN_CHINESE,Sino-Tibetan,0.481,MIN_NANPING_YANGTOU,0.833,SULKA,Sulka,False
+AUYE,Nuclear Trans New Guinea,0.432,WOLANI,0.785,KANASI,Dagan,False
+AMASI,Atlantic-Congo,0.477,NGWO,0.831,MAYA_SAMO,Mande,False
+RUTUL,Nakh-Daghestanian,0.494,AGUL,0.848,PAPORA_2,Austronesian,False
+DOGOSE,Atlantic-Congo,0.446,DORHOSIE,0.801,KOLUM_SO_7,Dogon,False
+MOLIMA,Austronesian,0.483,DOBU,0.838,DEWAS_RAI,Indo-European,False
+PLANG,Austroasiatic,0.483,GUANSHUANG_WA,0.838,JANGKANG,Austronesian,False
+HU,Austroasiatic,0.496,RIANG_WHITE_STRIPED,0.852,KPELLE_LIBERIA,Mande,False
+SISAALA_BURKINA_FASO,Atlantic-Congo,0.482,SISAALA_TUMULUNG_2,0.838,LONG_WAT,Austronesian,False
+LINGARAK,Austronesian,0.498,MALFAXAL,0.855,MERWARI,Indo-European,False
+FOX,Algic,0.497,KICKAPOO,0.854,KANGO,Atlantic-Congo,False
+SEGAI,Austronesian,0.491,MODANG,0.849,LONGAN_CENTRAL_HONGSHUIHE_ZHUANG,Tai-Kadai,False
+PULAR_FUUTA_JALON_3,Atlantic-Congo,0.479,PULAAR_FUTA_TOORO,0.838,MERWARI,Indo-European,False
+YOPNO,Nuclear Trans New Guinea,0.488,DOMUNG,0.848,URIMO,Nuclear Torricelli,False
+DOLAKHA_NEWAR,Sino-Tibetan,0.488,KHWOPA_NEWAR,0.847,PAPORA_2,Austronesian,False
+MOTU,Austronesian,0.484,DOURA,0.844,NGWE,Atlantic-Congo,False
+KUUKU_YAU,Pama-Nyungan,0.486,KANJU,0.846,PAPORA_2,Austronesian,False
+LAREVAT,Austronesian,0.489,MARAGUS,0.849,BARGAM_2,Nuclear Trans New Guinea,False
+LONG_TERAWAN_BERAWAN,Austronesian,0.476,LONG_WAT,0.836,YUGAMBEH,Pama-Nyungan,False
+GAWWADA,Afro-Asiatic,0.490,TSAMAI_3,0.852,GAMO,Ta-Ne-Omotic,False
+LONGTO,Atlantic-Congo,0.476,PEERE,0.837,AVAU,Austronesian,False
+LARU_SUDAN,Heibanic,0.479,ABUL,0.841,ANGAL_2,Nuclear Trans New Guinea,False
+THA,Atlantic-Congo,0.479,LELAU,0.842,BANKAN_TEY,Dogon,False
+MADA_CAMEROON,Afro-Asiatic,0.443,MUYANG,0.806,BHILI,Indo-European,False
+MIXTEC_ALCOZAUCA,Otomanguean,0.469,SAN_MARTIN_PERAS_MIXTEC,0.832,PAPORA_2,Austronesian,False
+ISINAY,Austronesian,0.477,LIMOS_KALINGA,0.841,BATEK_NONG,Austroasiatic,False
+TURKA_2,Atlantic-Congo,0.402,CURAMA_TURKA,0.766,BONGO_2,Central Sudanic,False
+BEAVER,Athabaskan-Eyak-Tlingit,0.492,CHIPEWYAN,0.856,KABUI_RONGMEI,Sino-Tibetan,False
+ZAZAKI,Indo-European,0.474,KIRMANJKI,0.839,MOGHOL,Mongolic-Khitan,False
+KORANDJE,Songhay,0.477,TADAKSAHAK,0.841,PAPORA_2,Austronesian,False
+SAAMI_UME,Uralic,0.501,SAAMI_PITE,0.867,MALAYALAM_2,Dravidian,False
+GOBEZE,Afro-Asiatic,0.483,WERIZE,0.848,PAPORA_2,Austronesian,False
+LUBILA_2,Atlantic-Congo,0.478,NKUKOLI,0.844,PAPORA_2,Austronesian,False
+NENGAYA,Austronesian,0.493,MATO,0.860,TAMASHEQ_2,Afro-Asiatic,False
+YUPIK_PACIFIC_GULF,Eskimo-Aleut,0.485,C_YUPIK,0.853,PAPORA_2,Austronesian,False
+CHINANTEC_PALANTLA,Otomanguean,0.467,CHINANTEC_TEPETOTUTLA,0.836,MUDUGA,Dravidian,False
+JIN_LVLIANG_LIULIN,Sino-Tibetan,0.452,MANDARIN_HUANGHUA_2,0.821,BOZO_SOROGAMA,Mande,False
+MAIBI,Nuclear Trans New Guinea,0.488,YARIBA,0.857,KANGO,Atlantic-Congo,False
+PUNAN_TUBU,Austronesian,0.475,LONG_WAT,0.846,BHILI,Indo-European,False
+APATANI,Sino-Tibetan,0.447,MISING,0.820,PAPORA_2,Austronesian,False
+LILLOOET,Salishan,0.487,THOMPSON,0.861,NGWE,Atlantic-Congo,False
+GAN_LEIYANG,Sino-Tibetan,0.460,MANDARIN_LIPU,0.834,KPELLE_LIBERIA,Mande,False
+BIRGIT,Afro-Asiatic,0.462,MOGUM,0.836,BHILI,Indo-European,False
+SIRAK_PNG,Austronesian,0.485,MUSOM_2,0.860,TEMNE_4,Atlantic-Congo,False
+HAIGWAI,Austronesian,0.482,YAKAIKEKE,0.857,MADI_2,Nuclear Trans New Guinea,False
+LENGOLA_2,Atlantic-Congo,0.441,LENGOLA,0.817,PAPORA_2,Austronesian,False
+MODANG,Austronesian,0.491,SEGAI,0.868,MIAO_GUIZHOU_SHIMENKAN,Hmong-Mien,False
+MALOL,Austronesian,0.479,SISSANO_2,0.857,TAMASHEQ_2,Afro-Asiatic,False
+ZAPOTEC_SAN_LUCAS_QUIAVINI,Otomanguean,0.476,TILQUIAPAN_ZAPOTEC,0.854,TUNGAK,Austronesian,False
+KARIYA,Afro-Asiatic,0.454,MIYA_2,0.833,LONG_WAT,Austronesian,False
+KULUNG,Sino-Tibetan,0.445,NACHERING,0.825,LAIBIN_CENTRAL_HONGSHUIHE_ZHUANG,Tai-Kadai,False
+BUKAUA,Austronesian,0.462,BUGAWAC,0.844,GAZI,Indo-European,False
+SHUSWAP,Salishan,0.506,THOMPSON,0.888,NGWE,Atlantic-Congo,False
+MARI,Austronesian,0.478,YAROS,0.861,MAYA_SAMO,Mande,False
+AMBUL,Austronesian,0.422,AIKLEP,0.806,NGWE,Atlantic-Congo,False
+C_YUPIK,Eskimo-Aleut,0.485,YUPIK_PACIFIC_GULF,0.870,NZADI_4,Atlantic-Congo,False
+SERER_SINE,Atlantic-Congo,0.437,SEREER,0.823,PAPIAMENTO,Indo-European,False
+THOMPSON,Salishan,0.487,LILLOOET,0.874,KWESTEN,Tor-Orya,False
+ULAU,Austronesian,0.480,YAKAMUL_3,0.867,TEMNE_4,Atlantic-Congo,False
+BANGGAI,Austronesian,0.418,MANDAR,0.809,TIDORE,North Halmahera,False
+SAKATA_KIBAI,Atlantic-Congo,0.389,SANY,0.783,WORODUGUKAKAN,Mande,False
+HAKKA_GANZHOU_DAYU,Sino-Tibetan,0.438,GAN_ZHUZHOU_CHALING,0.840,BHILI,Indo-European,False
+WAIGALI,Indo-European,0.392,TREGAMI,0.794,PAPORA,Austronesian,False
+KAPAUKU,Nuclear Trans New Guinea,0.405,WOLANI,0.809,BADJIRRI,Pama-Nyungan,False
+UNCUNWEE,Nubian,0.427,KADARU,0.832,LONG_WAT,Austronesian,False
+BACAMA_MULYEN,Afro-Asiatic,0.423,BATA_ZUMU,0.833,FRAFRA_2,Atlantic-Congo,False
+COATLAN_LOXICHA_ZAPOTEC,Otomanguean,0.414,COATLAN_ZAPOTEC,0.825,DHOFARI_ARABIC,Afro-Asiatic,False
+JAIR_AWYU,Nuclear Trans New Guinea,0.425,AWYU_ASUE,0.840,AEKYOM,Kamula-Elevala,False
+AWYU_ASUE_2,Nuclear Trans New Guinea,0.372,AWYU_ASUE,0.792,MUDUGA,Dravidian,False
+BOMU,Atlantic-Congo,0.365,BWAMU_2,0.790,BONDUM_DOM_2,Dogon,False
+POPOLOCA_DE_SAN_VICENTE_COYOTEPEC,Otomanguean,0.434,SAN_FELIPE_OTLALTEPEC_POPOLOCA,0.859,BHILALI,Indo-European,False
+KAASA,Atlantic-Congo,0.386,DOGOSE_2,0.820,WANTOAT,Nuclear Trans New Guinea,False
+KAM_NIGERIA_2,Atlantic-Congo,0.397,KAM_NIGERIA,0.843,JANGKANG,Austronesian,False
+GUUGU_YIMIDHIR,Pama-Nyungan,0.359,GUGU_BUJUN,0.804,PAPORA_2,Austronesian,False
+POPOLOCA_METZONTLA,Otomanguean,0.395,SAN_FELIPE_OTLALTEPEC_POPOLOCA,0.845,MAYA_SAMO,Mande,False
+CHINANTEC_SOCHIAPAN,Otomanguean,0.366,CHINANTEC_TEPETOTUTLA,0.817,MUDUGA,Dravidian,False
+KANDAS,Austronesian,0.382,RAMOAAINA,0.842,MERWARI,Indo-European,False
+BAYNUNK_GUBHER_2,Atlantic-Congo,0.380,BAYNUNK_GUBHER,0.841,NICARAGUA_CREOLE_ENGLISH,Indo-European,False
+EPIE,Atlantic-Congo,0.374,EPIE_2,0.848,PEAR,Austroasiatic,False
+MOSHANG,Sino-Tibetan,0.335,YOGLI,0.812,KIRIBATI,Austronesian,False
+RONGMEI,Sino-Tibetan,0.312,KABUI_RONGMEI,0.789,TAMASHEQ_2,Afro-Asiatic,False
+TUHUA_CHENZHOU_LIYUAN,Sino-Tibetan,0.348,MANDARIN_HANZHONG_ZHENBA,0.826,YOUNUO_BUNU,Hmong-Mien,False
+TUNEN,Atlantic-Congo,0.319,ALINGA,0.805,PAPORA_2,Austronesian,False
+SEKIYANI,Atlantic-Congo,0.296,SEKI,0.783,BALDEMU,Afro-Asiatic,False
+MELOKWO_2,Afro-Asiatic,0.305,MOLOKO,0.795,PAPORA_2,Austronesian,False
+LERE_GANA,Atlantic-Congo,0.356,LERE_SI,0.850,LAMANG,Afro-Asiatic,False
+GENDE_2,Nuclear Trans New Guinea,0.287,GENDE,0.781,HAMTAI,Angan,False
+PEERE,Atlantic-Congo,0.285,PEERE_2,0.792,MAYA_SAMO,Mande,False
+YALE_KOSAREK,Nuclear Trans New Guinea,0.279,NALCA,0.790,UHUNDUNI,Damal,False
+AVIKAM_2,Atlantic-Congo,0.310,AVIKAM,0.825,PAPORA_2,Austronesian,False
+NGAING_2,Nuclear Trans New Guinea,0.321,NGAING,0.837,AEKYOM,Kamula-Elevala,False
+TAMASOPO_PAME,Otomanguean,0.301,CENTRAL_PAME,0.819,LONG_WAT,Austronesian,False
+NDUN,Atlantic-Congo,0.316,SHAKARA,0.836,VAI_3,Mande,False
+ESIMBI,Atlantic-Congo,0.283,ESIMBI_2,0.803,KPELLE_LIBERIA,Mande,False
+OLKOLA,Pama-Nyungan,0.342,KUNJEN,0.869,PAPORA_2,Austronesian,False
+YUE_GUILIN_LIANGJIANG,Sino-Tibetan,0.269,PINGHUA_GUILIN_LINGUI,0.799,PAPORA_2,Austronesian,False
+DOM,Nuclear Trans New Guinea,0.281,SINASINA_3,0.825,MUDUGA,Dravidian,False
+NORTHERN_TUTCHONE,Athabaskan-Eyak-Tlingit,0.264,SOUTHERN_TUTCHONE,0.812,SEREER,Atlantic-Congo,False
+INAGTA_ALABAT,Austronesian,0.302,MANIDE,0.857,NGWE,Atlantic-Congo,False
+NEK,Nuclear Trans New Guinea,0.258,NEK_GOAMBOT,0.816,TODE,Mande,False
+SOM,Nuclear Trans New Guinea,0.259,SOM_2,0.824,DAGA,Dagan,False
+BROK_SKAD,Indo-European,0.257,BROKSKAT,0.824,LONG_WAT,Austronesian,False
+KOROP_3,Atlantic-Congo,0.248,KOROP_2,0.816,PAPORA_2,Austronesian,False
+D14_ENYA,Atlantic-Congo,0.175,ENYA,0.743,GODIE_2,Kru,False
+BIMOBA_2,Atlantic-Congo,0.232,BIMOBA,0.801,DOGON_TORO_TEGU_PIRINGUA,Dogon,False
+THARRGARI,Pama-Nyungan,0.208,DHARGARI,0.779,PAPORA_2,Austronesian,False
+MIYA,Afro-Asiatic,0.261,MIYA_2,0.835,KANGO,Atlantic-Congo,False
+SILEIBI,Nuclear Trans New Guinea,0.198,SIRVA,0.807,DOMU,Mailuan,False
+NUKNA,Nuclear Trans New Guinea,0.201,NUKNA_HAMELENGAN,0.816,JANGKANG,Austronesian,False
+SEREER_4,Atlantic-Congo,0.216,SEREER,0.836,ARIN,Yeniseian,False
+ADNYAMATHANHA_2,Pama-Nyungan,0.155,ADNYAMATHANHA,0.779,WUNAMBAL,Worrorran,False
+GARO,Sino-Tibetan,0.215,GARO_2,0.845,FRAFRA_2,Atlantic-Congo,False
+KAMORO_2,Nuclear Trans New Guinea,0.118,KAMORO,0.813,KOTAFON_GBE,Atlantic-Congo,False
+ATAYAL_TAIWAN_YILAN,Austronesian,0.118,NIUAFOOU,0.842,NGWE,Atlantic-Congo,False
+SERA_2,Austronesian,0.098,SERA,0.856,TAMASHEQ_2,Afro-Asiatic,False
+GADSUP_AGARABI,Nuclear Trans New Guinea,0.010,AGARABI,0.801,TEMNE_4,Atlantic-Congo,False
+XIANG_YONGZHOU_SHOUYAN,Sino-Tibetan,0.000,PINGHUA_YONGZHOU_SHOUYAN,0.796,LIUXIANG_BUNU,Hmong-Mien,False
+PINGHUA_YONGZHOU_SHOUYAN,Sino-Tibetan,0.000,XIANG_YONGZHOU_SHOUYAN,0.796,LIUXIANG_BUNU,Hmong-Mien,False
