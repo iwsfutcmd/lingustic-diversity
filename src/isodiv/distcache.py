@@ -30,6 +30,7 @@ class DistCache:
         self.d = np.full((n, n), UNSET, dtype=np.float32)
         np.fill_diagonal(self.d, 0.0)
         self.fp: dict[str, str] = {}          # fingerprint of each list's words, so a changed list is recomputed
+        self._verified: dict[str, object] = {}  # id -> the words object already fingerprinted this session
 
     @staticmethod
     def fingerprint(doc: Doculect) -> str:
@@ -43,12 +44,15 @@ class DistCache:
             if x.id in seen:
                 continue
             seen.add(x.id)
+            if self._verified.get(x.id) is x.words:    # same list object as last time: already checked
+                continue
             fp = self.fingerprint(x)
             if self.fp.get(x.id, fp) != fp:            # the list changed since these distances were computed
                 self.d[i, :] = UNSET
                 self.d[:, i] = UNSET
                 self.d[i, i] = 0.0
             self.fp[x.id] = fp
+            self._verified[x.id] = x.words             # a reference, so the identity cannot be reused by another object
         return idx
 
     def values(self, pairs: Sequence[tuple[Doculect, Doculect]]) -> np.ndarray:

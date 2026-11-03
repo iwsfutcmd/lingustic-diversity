@@ -57,6 +57,9 @@ def main() -> None:
     world = {i: x for i, x in load(args.cldf, tokenization=tok).items()
              if rows[i]["Family"] not in NONGEN and i not in excluded and len(x.words) >= 20}
     world_ids = list(world)
+    world_docs = [world[j] for j in world_ids]
+    world_fam = np.array([rows[j]["Family"] for j in world_ids], dtype=object)
+    world_pos = {j: k for k, j in enumerate(world_ids)}
 
     contact: dict[str, dict] = {}
 
@@ -65,16 +68,21 @@ def main() -> None:
         if i in contact:
             return contact[i]
         fam = rows[i]["Family"]
-        mine = set(lineage_ids) | {j for j in world_ids if fam and rows[j]["Family"] == fam}
-        v = cache.values([(docs.get(i) or world[i], world[j]) for j in world_ids])
+        v = cache.values([(docs.get(i) or world[i], x) for x in world_docs])
+        mine = (world_fam == fam) if fam else np.zeros(len(world_ids), bool)
+        mine[[world_pos[j] for j in lineage_ids if j in world_pos]] = True
+        ok = ~np.isnan(v)
+        if i in world_pos:
+            ok[world_pos[i]] = False
         best_in = best_out = (np.inf, "")
-        for j, x in zip(world_ids, v):
-            if j == i or x != x:
-                continue
-            if j in mine:
-                best_in = min(best_in, (float(x), j))
-            else:
-                best_out = min(best_out, (float(x), j))
+        for sel, slot in ((ok & mine, "in"), (ok & ~mine, "out")):
+            if sel.any():
+                m = v[sel].min()                            # ties broken by id, as a min over (distance, id)
+                best = (float(m), min(world_ids[k] for k in np.flatnonzero(sel & (v == m))))
+                if slot == "in":
+                    best_in = best
+                else:
+                    best_out = best
         for j in lineage_ids:                                   # lineage members missing from `world` (blank Family)
             if j != i and j not in world:
                 x = float(cache.matrix([docs[i], docs[j]])[0, 1])
