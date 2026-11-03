@@ -143,9 +143,12 @@ def main() -> None:
                "rho_pmi": rho(cog, d_pmi), "rho_ldnd": rho(cog, d_ldnd),
                "rho_pmi_40": rho(cog40, d_pmi), "rho_ldnd_40": rho(cog40, d_ldnd)}
         report["datasets"][name] = row
+        def f(r):
+            return "  n/a" if r[0] is None else f"{r[0]:.3f}"
         print(f'{name:16s} {n:4d} languages, {len(pairs):6d} pairs | Spearman with cognate distance: '
-              f'PMI-LDND {row["rho_pmi"][0]:.3f}  LDND {row["rho_ldnd"][0]:.3f}  '
-              f'| ASJP-40 concepts only: PMI-LDND {row["rho_pmi_40"][0] or float("nan"):.3f}  LDND {row["rho_ldnd_40"][0] or float("nan"):.3f}', flush=True)
+              f'PMI-LDND {f(row["rho_pmi"])}  LDND {f(row["rho_ldnd"])} ({row["rho_pmi"][1]} usable) '
+              f'| ASJP-40 concepts only: PMI-LDND {f(row["rho_pmi_40"])}  LDND {f(row["rho_ldnd_40"])} '
+              f'({row["rho_pmi_40"][1]} usable)', flush=True)
 
         # lineage level: diversity from cognates vs from PMI-LDND over the same languages
         for lin, gs in lineage_glottos.items():
