@@ -76,7 +76,7 @@ footer { border-block-start: 1px solid var(--rule); padding-block: 22px 40px; co
   <section aria-labelledby="idea-h">
     <h2 id="idea-h">The idea</h2>
     <p><b>Distance in amount of change, not time.</b> Two ASJP 40-item word lists are compared with PMI-LDND: Levenshtein-style alignment scored by learned sound correspondences, divided by the same measure between words of different meanings to cancel chance resemblance. No time depth and no rate of change are assumed.</p>
-    <p><b>Diversity that ignores duplicates.</b> Distances become similarities: 1 at the typical distance between two lists of the same language (0.228), falling to 0 at 0.940, where a permutation test can no longer tell a related pair from an unrelated one half the time. A lineage is scored by the Leinster–Meckes maximum diversity D<sub>max</sub>: the effective number of lineages its word lists cannot tie together. n unrelated languages score about n. Adding another copy of a variety already present cannot change it, so it does not matter how finely a language is split into dialects. Both anchors are measured from the data; there is no fitted constant.</p>
+    <p><b>Diversity that ignores duplicates.</b> Distances become similarities: 1 at the typical distance between two lists of the same language (0.228), falling to 0 at 0.940, where a permutation test detects a related pair only half the time. A lineage is scored by the Leinster–Meckes maximum diversity D<sub>max</sub>: the effective number of lineages its word lists cannot tie together. n unrelated languages score about n. Adding another copy of a variety already present cannot change it, so it does not matter how finely a language is split into dialects. Both anchors are measured from the data; there is no fitted constant.</p>
   </section>
 
   <section aria-labelledby="glance-h">
@@ -85,7 +85,7 @@ footer { border-block-start: 1px solid var(--rule); padding-block: 22px 40px; co
       <thead><tr><th>Lineage</th><th class="n">Doculects</th><th class="n">D<sub>max</sub></th><th class="n">Share of unrelated maximum</th><th class="n">D<sub>max</sub> at k_cal (older scale)</th><th class="n">Widest pair</th></tr></thead>
       <tbody>
         <tr><td dir="auto">Basque</td><td class="n">2</td><td class="n">1.00</td><td class="n">0.00<span class="bar" style="inline-size:0px"></span></td><td class="n">1.032</td><td class="n">0.138</td></tr>
-        <tr><td dir="auto">Koreanic</td><td class="n">3</td><td class="n">1.17</td><td class="n">0.06<span class="bar" style="inline-size:4px"></span></td><td class="n">1.115</td><td class="n">0.403</td></tr>
+        <tr><td dir="auto">Koreanic</td><td class="n">3</td><td class="n">1.17</td><td class="n">0.09<span class="bar" style="inline-size:6px"></span></td><td class="n">1.115</td><td class="n">0.403</td></tr>
         <tr><td dir="auto">Ainu</td><td class="n">23</td><td class="n">1.29</td><td class="n">0.01<span class="bar" style="inline-size:1px"></span></td><td class="n">1.159</td><td class="n">0.348</td></tr>
         <tr><td dir="auto">Japonic</td><td class="n">33</td><td class="n">1.69</td><td class="n">0.02<span class="bar" style="inline-size:2px"></span></td><td class="n">1.248</td><td class="n">0.553</td></tr>
         <tr><td dir="auto">Germanic</td><td class="n">61</td><td class="n">2.16</td><td class="n">0.02<span class="bar" style="inline-size:2px"></span></td><td class="n">1.302</td><td class="n">0.666</td></tr>
@@ -107,10 +107,10 @@ footer { border-block-start: 1px solid var(--rule); padding-block: 22px 40px; co
   <section aria-labelledby="find-h">
     <h2 id="find-h">What it shows</h2>
     <ul class="plain">
-      <li>The bands do not overlap: isolates (Basque, Haida, Koreanic, Ainu) sit near one list, genus-sized families (Japonic, Germanic, Turkic) in the middle, deep families (Uralic, Indo-European) above. Every major Sinitic group scores at genus level.</li>
-      <li>D<sub>max</sub> measures diversity, not relatedness. Ten random unrelated lects score 1.48, and a union of unrelated families scores like Altaic or "Khoisan". Real families score below an unrelated set of the same size.</li>
-      <li>It tracks lexical change, not age. Oceanic outscores Indo-European at every sample size, and Formosan, where Austronesian's deepest splits are, scores lowest of its groups.</li>
-      <li>At the calibrated scale the deepest families all sit near the ceiling of about 1.56, and larger scales (the explorer's scale profiles) separate them.</li>
+      <li>D<sub>max</sub> reads as the number of lineages the word lists cannot tie together. Isolates (Basque, Haida, Koreanic, Ainu) score 1 to 1.3, genus-sized families (Japonic 1.7, Germanic 2.2, Turkic 2.4) about 2, Uralic 6.6, Indo-European 15. Every major Sinitic group scores at genus level.</li>
+      <li>Unrelated sets score what they should: five random unrelated lects 4.9, ten 9.7. Every real family is far below an unrelated set of the same size (40 Indo-European languages 7.4, 40 unrelated lects 35); a large family outscores a small random set only by holding more lineages that 40 words cannot connect.</li>
+      <li>It tracks lexical change, not age. At equal numbers of languages Oceanic outscores Indo-European, and Formosan, where Austronesian's deepest splits are, scores lowest of its groups.</li>
+      <li>Altaic and the areal "Khoisan" grouping both score at the low edge of random unions of shallow families: some cross-family pairs are within reach of the data, but descent and contact give the same signal.</li>
       <li>Single-list isolates (Sumerian, Etruscan, Elamite, Hruso, Kusunda, Nihali) are within chance of every lineage. There is no Elamo-Dravidian signal.</li>
     </ul>
   </section>
