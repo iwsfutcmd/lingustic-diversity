@@ -23,7 +23,6 @@ MBRE,Atlantic-Congo,0.815,YOM,0.821,SEEKU_3,Mande,False
 COPTIC,Afro-Asiatic,0.792,SAHARAN_ARABIC,0.798,LONG_WAT,Austronesian,False
 KWADZA,Afro-Asiatic,0.802,AASAX,0.809,DOOHWAAYAAYO,Atlantic-Congo,False
 NORTHERN_TUJIA,Sino-Tibetan,0.786,DUNGAN,0.799,PAPORA_2,Austronesian,False
-HITTITE,Indo-European,0.793,MERWARI,0.809,PAPORA_2,Austronesian,False
 EYAK,Athabaskan-Eyak-Tlingit,0.802,ROGUE_RIVER,0.820,JANGKANG,Austronesian,False
 TANIMBILI,Austronesian,0.799,ASUMBOA,0.822,URIMO,Nuclear Torricelli,False
 SVAN,Kartvelian,0.781,LAZ,0.805,MERWARI,Indo-European,False
@@ -74,6 +73,7 @@ GURUNTUM_MBAARU,Afro-Asiatic,0.714,SOOR,0.785,PAPORA_2,Austronesian,False
 DIMIR,Nuclear Trans New Guinea,0.775,PARAWEN,0.846,URIMO,Nuclear Torricelli,False
 KOROWAI,Nuclear Trans New Guinea,0.724,AGHU,0.796,AEKYOM,Kamula-Elevala,False
 IRESIM,Austronesian,0.749,PAPORA_2,0.823,MERWARI,Indo-European,False
+HITTITE,Indo-European,0.735,LUWIAN,0.809,PAPORA_2,Austronesian,False
 GADE,Atlantic-Congo,0.753,FRAFRA_2,0.827,VAI_3,Mande,False
 NGONDI,Atlantic-Congo,0.639,MBESA,0.713,BALDEMU,Afro-Asiatic,False
 KWADI,Khoe-Kwadi,0.743,KHOEKHOEGOWAB,0.818,DOOHWAAYAAYO,Atlantic-Congo,False
