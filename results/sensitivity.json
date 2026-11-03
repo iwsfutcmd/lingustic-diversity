@@ -1,4 +1,9 @@
 {
+ "kernel": {
+  "type": "anchored",
+  "same": 0.22759763035780417,
+  "unrelated": 0.9403314895376508
+ },
  "k_cal": 0.4629244842847879,
  "distance": "pmi",
  "rows": [
@@ -10,12 +15,12 @@
    "removed": [
     "WUTUN"
    ],
-   "d_max": 1.322356257915369,
-   "d_max_without": 1.3144288672862994,
-   "delta": -0.007927390629069553,
-   "d_max_k3": 5.037820229348235,
-   "d_max_k3_without": 4.8939136573786515,
-   "resampling_width": 0.023267189061888738
+   "d_max": 2.398303696385707,
+   "d_max_without": 2.2777955561101297,
+   "delta": -0.12050814027557744,
+   "d_max_kcal": 1.322356257915369,
+   "d_max_kcal_without": 1.3144288672862994,
+   "resampling_width": 0.21455741741944268
   },
   {
    "lineage": "Sinitic",
@@ -25,12 +30,12 @@
    "removed": [
     "WUTUN"
    ],
-   "d_max": 1.4191857249571536,
-   "d_max_without": 1.4188118535112706,
-   "delta": -0.0003738714458829673,
-   "d_max_k3": 8.347802672500155,
-   "d_max_k3_without": 8.319718324266608,
-   "resampling_width": 0.021236745333937046
+   "d_max": 4.304311107521678,
+   "d_max_without": 4.302204568082978,
+   "delta": -0.0021065394387003167,
+   "d_max_kcal": 1.4191857249571536,
+   "d_max_kcal_without": 1.4188118535112706,
+   "resampling_width": 0.4696338205083319
   },
   {
    "lineage": "Sino-Tibetan",
@@ -40,12 +45,12 @@
    "removed": [
     "WUTUN"
    ],
-   "d_max": 1.5277931837301848,
-   "d_max_without": 1.5277931837301848,
+   "d_max": 21.661186873219204,
+   "d_max_without": 21.661186873219204,
    "delta": 0.0,
-   "d_max_k3": 13.93752998824134,
-   "d_max_k3_without": 13.936671635330034,
-   "resampling_width": 0.014920565363713889
+   "d_max_kcal": 1.5277931837301848,
+   "d_max_kcal_without": 1.5277931837301848,
+   "resampling_width": 1.6494520557036214
   },
   {
    "lineage": "Canaanite",
@@ -56,247 +61,12 @@
     "BIBLICAL_HEBREW",
     "UGARITIC"
    ],
-   "d_max": 1.1795025588723127,
-   "d_max_without": 1.0473359869821905,
-   "delta": -0.13216657189012215,
-   "d_max_k3": 2.2735432069198724,
-   "d_max_k3_without": 1.2976982499332765,
-   "resampling_width": 0.01954746476240965
-  },
-  {
-   "lineage": "North Ethiopic",
-   "scenario": "long_extinct",
-   "n": 9,
-   "n_removed": 4,
-   "removed": [
-    "ETHIOPIC",
-    "GEEZ",
-    "GEEZ_2",
-    "GEEZ_3"
-   ],
-   "d_max": 1.1849439887188502,
-   "d_max_without": 1.1635493575154325,
-   "delta": -0.02139463120341767,
-   "d_max_k3": 2.5549381650991747,
-   "d_max_k3_without": 2.209983144250487,
-   "resampling_width": 0.022601332256823703
-  },
-  {
-   "lineage": "Northwest Semitic",
-   "scenario": "long_extinct",
-   "n": 27,
-   "n_removed": 5,
-   "removed": [
-    "ARAMAIC_ANCIENT",
-    "BIBLICAL_HEBREW",
-    "CLASSICAL_MANDAEAN",
-    "CLASSICAL_MANDAIC",
-    "UGARITIC"
-   ],
-   "d_max": 1.3182513752467737,
-   "d_max_without": 1.298929790820909,
-   "delta": -0.019321584425864735,
-   "d_max_k3": 4.622352216057613,
-   "d_max_k3_without": 4.1970199624696045,
-   "resampling_width": 0.022980437289186417
-  },
-  {
-   "lineage": "Germanic",
-   "scenario": "long_extinct",
-   "n": 61,
-   "n_removed": 8,
-   "removed": [
-    "GOTHIC",
-    "OLD_ENGLISH",
-    "OLD_FRISIAN",
-    "OLD_HIGH_GERMAN",
-    "OLD_LOW_FRANCONIAN",
-    "OLD_NORSE",
-    "OLD_SAXON",
-    "PROTO_GERMANIC"
-   ],
-   "d_max": 1.3021229582451954,
-   "d_max_without": 1.2859720157832057,
-   "delta": -0.01615094246198967,
-   "d_max_k3": 4.61676759654842,
-   "d_max_k3_without": 4.370697956677323,
-   "resampling_width": 0.017776975051501998
-  },
-  {
-   "lineage": "Central Semitic",
-   "scenario": "long_extinct",
-   "n": 74,
-   "n_removed": 9,
-   "removed": [
-    "ARABIC_QURANIC",
-    "ARAMAIC_ANCIENT",
-    "BIBLICAL_HEBREW",
-    "CLASSICAL_ARABIC",
-    "CLASSICAL_MANDAEAN",
-    "CLASSICAL_MANDAIC",
-    "STANDARD_ARABIC",
-    "STANDARD_ARABIC_2",
-    "UGARITIC"
-   ],
-   "d_max": 1.3627345943451987,
-   "d_max_without": 1.352900033489192,
-   "delta": -0.009834560856006647,
-   "d_max_k3": 5.970936011968506,
-   "d_max_k3_without": 5.753949982306612,
-   "resampling_width": 0.020967937454407837
-  },
-  {
-   "lineage": "Sinitic",
-   "scenario": "long_extinct",
-   "n": 491,
-   "n_removed": 2,
-   "removed": [
-    "MIDDLE_CHINESE",
-    "OLD_CHINESE"
-   ],
-   "d_max": 1.4191857249571536,
-   "d_max_without": 1.4135329761427458,
-   "delta": -0.005652748814407804,
-   "d_max_k3": 8.347802672500155,
-   "d_max_k3_without": 8.207666097645761,
-   "resampling_width": 0.021236745333937046
-  },
-  {
-   "lineage": "Semitic",
-   "scenario": "long_extinct",
-   "n": 110,
-   "n_removed": 16,
-   "removed": [
-    "AKKADIAN",
-    "AKKADIAN_2",
-    "AKKADIAN_3",
-    "ARABIC_QURANIC",
-    "ARAMAIC_ANCIENT",
-    "BIBLICAL_HEBREW",
-    "CLASSICAL_ARABIC",
-    "CLASSICAL_MANDAEAN",
-    "CLASSICAL_MANDAIC",
-    "ETHIOPIC",
-    "GEEZ",
-    "GEEZ_2"
-   ],
-   "d_max": 1.4358409577362372,
-   "d_max_without": 1.4303278313223533,
-   "delta": -0.0055131264138839065,
-   "d_max_k3": 8.397714396534258,
-   "d_max_k3_without": 8.159058360577063,
-   "resampling_width": 0.014775235024896194
-  },
-  {
-   "lineage": "Ethiosemitic",
-   "scenario": "long_extinct",
-   "n": 25,
-   "n_removed": 4,
-   "removed": [
-    "ETHIOPIC",
-    "GEEZ",
-    "GEEZ_2",
-    "GEEZ_3"
-   ],
-   "d_max": 1.3427076099942519,
-   "d_max_without": 1.3377977119087758,
-   "delta": -0.004909898085476039,
-   "d_max_k3": 5.244158011405993,
-   "d_max_k3_without": 5.112199479823375,
-   "resampling_width": 0.01980955899807335
-  },
-  {
-   "lineage": "Romance",
-   "scenario": "long_extinct",
-   "n": 64,
-   "n_removed": 2,
-   "removed": [
-    "LATIN",
-    "LATIN_2"
-   ],
-   "d_max": 1.3071175251645215,
-   "d_max_without": 1.3037682740864962,
-   "delta": -0.003349251078025306,
-   "d_max_k3": 4.919376724470669,
-   "d_max_k3_without": 4.838180370544528,
-   "resampling_width": 0.026237264165920537
-  },
-  {
-   "lineage": "Aramaic",
-   "scenario": "long_extinct",
-   "n": 23,
-   "n_removed": 3,
-   "removed": [
-    "ARAMAIC_ANCIENT",
-    "CLASSICAL_MANDAEAN",
-    "CLASSICAL_MANDAIC"
-   ],
-   "d_max": 1.2603490249429905,
-   "d_max_without": 1.257778268078578,
-   "delta": -0.002570756864412438,
-   "d_max_k3": 3.7540036047746064,
-   "d_max_k3_without": 3.6877474342169907,
-   "resampling_width": 0.034706974305169336
-  },
-  {
-   "lineage": "Iranian",
-   "scenario": "long_extinct",
-   "n": 135,
-   "n_removed": 2,
-   "removed": [
-    "AVESTAN",
-    "AVESTAN_2"
-   ],
-   "d_max": 1.4050908645235198,
-   "d_max_without": 1.4028261065989367,
-   "delta": -0.0022647579245831384,
-   "d_max_k3": 7.399530563402576,
-   "d_max_k3_without": 7.286452979427439,
-   "resampling_width": 0.03492434256047172
-  },
-  {
-   "lineage": "West Semitic",
-   "scenario": "long_extinct",
-   "n": 107,
-   "n_removed": 13,
-   "removed": [
-    "ARABIC_QURANIC",
-    "ARAMAIC_ANCIENT",
-    "BIBLICAL_HEBREW",
-    "CLASSICAL_ARABIC",
-    "CLASSICAL_MANDAEAN",
-    "CLASSICAL_MANDAIC",
-    "ETHIOPIC",
-    "GEEZ",
-    "GEEZ_2",
-    "GEEZ_3",
-    "STANDARD_ARABIC",
-    "STANDARD_ARABIC_2"
-   ],
-   "d_max": 1.4325751589224949,
-   "d_max_without": 1.4303278313223533,
-   "delta": -0.0022473276001415687,
-   "d_max_k3": 8.24759594919927,
-   "d_max_k3_without": 8.159058360577063,
-   "resampling_width": 0.01447507916563473
-  },
-  {
-   "lineage": "South Semitic",
-   "scenario": "long_extinct",
-   "n": 33,
-   "n_removed": 4,
-   "removed": [
-    "ETHIOPIC",
-    "GEEZ",
-    "GEEZ_2",
-    "GEEZ_3"
-   ],
-   "d_max": 1.3863901056701144,
-   "d_max_without": 1.3849301927136437,
-   "delta": -0.0014599129564707436,
-   "d_max_k3": 6.413363116342941,
-   "d_max_k3_without": 6.337466275122037,
-   "resampling_width": 0.020996595811412888
+   "d_max": 1.4421868828505562,
+   "d_max_without": 1.0,
+   "delta": -0.4421868828505562,
+   "d_max_kcal": 1.1795025588723127,
+   "d_max_kcal_without": 1.0473359869821905,
+   "resampling_width": 0.12030015627242996
   },
   {
    "lineage": "Indo-European",
@@ -317,76 +87,144 @@
     "OLD_FRISIAN",
     "OLD_HIGH_GERMAN"
    ],
-   "d_max": 1.5097552122570832,
-   "d_max_without": 1.5086220501839784,
-   "delta": -0.0011331620731047654,
-   "d_max_k3": 12.379960496702022,
-   "d_max_k3_without": 12.292157951503967,
-   "resampling_width": 0.01917886185450124
+   "d_max": 14.971911678675092,
+   "d_max_without": 14.538128572746544,
+   "delta": -0.43378310592854774,
+   "d_max_kcal": 1.5097552122570832,
+   "d_max_kcal_without": 1.5086220501839784,
+   "resampling_width": 1.580813067123528
   },
   {
-   "lineage": "Indo-Aryan",
+   "lineage": "Semitic",
    "scenario": "long_extinct",
-   "n": 167,
+   "n": 110,
+   "n_removed": 16,
+   "removed": [
+    "AKKADIAN",
+    "AKKADIAN_2",
+    "AKKADIAN_3",
+    "ARABIC_QURANIC",
+    "ARAMAIC_ANCIENT",
+    "BIBLICAL_HEBREW",
+    "CLASSICAL_ARABIC",
+    "CLASSICAL_MANDAEAN",
+    "CLASSICAL_MANDAIC",
+    "ETHIOPIC",
+    "GEEZ",
+    "GEEZ_2"
+   ],
+   "d_max": 5.262871927370967,
+   "d_max_without": 4.953620786076291,
+   "delta": -0.3092511412946761,
+   "d_max_kcal": 1.4358409577362372,
+   "d_max_kcal_without": 1.4303278313223533,
+   "resampling_width": 0.550192122073156
+  },
+  {
+   "lineage": "Sinitic",
+   "scenario": "long_extinct",
+   "n": 491,
    "n_removed": 2,
    "removed": [
-    "PALI",
-    "SANSKRIT"
+    "MIDDLE_CHINESE",
+    "OLD_CHINESE"
    ],
-   "d_max": 1.395845507440072,
-   "d_max_without": 1.3952207252620132,
-   "delta": -0.0006247821780587248,
-   "d_max_k3": 7.10294797406294,
-   "d_max_k3_without": 7.05217328575647,
-   "resampling_width": 0.04341539360051483
+   "d_max": 4.304311107521678,
+   "d_max_without": 4.048902518436682,
+   "delta": -0.255408589084996,
+   "d_max_kcal": 1.4191857249571536,
+   "d_max_kcal_without": 1.4135329761427458,
+   "resampling_width": 0.4696338205083319
   },
   {
-   "lineage": "Slavic",
+   "lineage": "Central Semitic",
    "scenario": "long_extinct",
-   "n": 34,
-   "n_removed": 1,
-   "removed": [
-    "OLD_CHURCH_SLAVONIC"
-   ],
-   "d_max": 1.2378526644506505,
-   "d_max_without": 1.2373523323692264,
-   "delta": -0.0005003320814240819,
-   "d_max_k3": 3.5076812631040735,
-   "d_max_k3_without": 3.4785444986677807,
-   "resampling_width": 0.02948365763313543
-  },
-  {
-   "lineage": "Tungusic",
-   "scenario": "long_extinct",
-   "n": 29,
-   "n_removed": 1,
-   "removed": [
-    "JURCHEN"
-   ],
-   "d_max": 1.3078587884216866,
-   "d_max_without": 1.3074229406191697,
-   "delta": -0.00043584780251682,
-   "d_max_k3": 4.469154404453011,
-   "d_max_k3_without": 4.444732604689681,
-   "resampling_width": 0.028512016548464025
-  },
-  {
-   "lineage": "Arabic",
-   "scenario": "long_extinct",
-   "n": 47,
-   "n_removed": 4,
+   "n": 74,
+   "n_removed": 9,
    "removed": [
     "ARABIC_QURANIC",
+    "ARAMAIC_ANCIENT",
+    "BIBLICAL_HEBREW",
     "CLASSICAL_ARABIC",
+    "CLASSICAL_MANDAEAN",
+    "CLASSICAL_MANDAIC",
+    "STANDARD_ARABIC",
+    "STANDARD_ARABIC_2",
+    "UGARITIC"
+   ],
+   "d_max": 2.973287817238935,
+   "d_max_without": 2.767912445056173,
+   "delta": -0.20537537218276203,
+   "d_max_kcal": 1.3627345943451987,
+   "d_max_kcal_without": 1.352900033489192,
+   "resampling_width": 0.38744853611763075
+  },
+  {
+   "lineage": "Northwest Semitic",
+   "scenario": "long_extinct",
+   "n": 27,
+   "n_removed": 5,
+   "removed": [
+    "ARAMAIC_ANCIENT",
+    "BIBLICAL_HEBREW",
+    "CLASSICAL_MANDAEAN",
+    "CLASSICAL_MANDAIC",
+    "UGARITIC"
+   ],
+   "d_max": 2.3686675599008913,
+   "d_max_without": 2.18236215107077,
+   "delta": -0.18630540883012126,
+   "d_max_kcal": 1.3182513752467737,
+   "d_max_kcal_without": 1.298929790820909,
+   "resampling_width": 0.2934535644166707
+  },
+  {
+   "lineage": "Germanic",
+   "scenario": "long_extinct",
+   "n": 61,
+   "n_removed": 8,
+   "removed": [
+    "GOTHIC",
+    "OLD_ENGLISH",
+    "OLD_FRISIAN",
+    "OLD_HIGH_GERMAN",
+    "OLD_LOW_FRANCONIAN",
+    "OLD_NORSE",
+    "OLD_SAXON",
+    "PROTO_GERMANIC"
+   ],
+   "d_max": 2.163112321045112,
+   "d_max_without": 1.9816705069832465,
+   "delta": -0.18144181406186566,
+   "d_max_kcal": 1.3021229582451954,
+   "d_max_kcal_without": 1.2859720157832057,
+   "resampling_width": 0.186280074448411
+  },
+  {
+   "lineage": "West Semitic",
+   "scenario": "long_extinct",
+   "n": 107,
+   "n_removed": 13,
+   "removed": [
+    "ARABIC_QURANIC",
+    "ARAMAIC_ANCIENT",
+    "BIBLICAL_HEBREW",
+    "CLASSICAL_ARABIC",
+    "CLASSICAL_MANDAEAN",
+    "CLASSICAL_MANDAIC",
+    "ETHIOPIC",
+    "GEEZ",
+    "GEEZ_2",
+    "GEEZ_3",
     "STANDARD_ARABIC",
     "STANDARD_ARABIC_2"
    ],
-   "d_max": 1.2752472084612523,
-   "d_max_without": 1.2750943707216744,
-   "delta": -0.00015283773957786018,
-   "d_max_k3": 4.137952715309117,
-   "d_max_k3_without": 4.11556286088453,
-   "resampling_width": 0.027151548302465134
+   "d_max": 5.093969837201587,
+   "d_max_without": 4.953620786076291,
+   "delta": -0.1403490511252956,
+   "d_max_kcal": 1.4325751589224949,
+   "d_max_kcal_without": 1.4303278313223533,
+   "resampling_width": 0.5637098486948071
   },
   {
    "lineage": "Afro-Asiatic",
@@ -407,27 +245,178 @@
     "GEEZ",
     "GEEZ_2"
    ],
-   "d_max": 1.546738681602947,
-   "d_max_without": 1.5467183736305539,
-   "delta": -2.0307972393052154e-05,
-   "d_max_k3": 15.196554737381508,
-   "d_max_k3_without": 15.186133591126413,
-   "resampling_width": 0.009458643770588582
+   "d_max": 35.12770687432703,
+   "d_max_without": 35.05169621390877,
+   "delta": -0.07601066041826243,
+   "d_max_kcal": 1.546738681602947,
+   "d_max_kcal_without": 1.5467183736305539,
+   "resampling_width": 1.8270914795391828
   },
   {
-   "lineage": "Austroasiatic",
+   "lineage": "Ethiosemitic",
    "scenario": "long_extinct",
-   "n": 190,
+   "n": 25,
+   "n_removed": 4,
+   "removed": [
+    "ETHIOPIC",
+    "GEEZ",
+    "GEEZ_2",
+    "GEEZ_3"
+   ],
+   "d_max": 2.6789249966692426,
+   "d_max_without": 2.6172535198299687,
+   "delta": -0.061671476839273875,
+   "d_max_kcal": 1.3427076099942519,
+   "d_max_kcal_without": 1.3377977119087758,
+   "resampling_width": 0.37439289580238455
+  },
+  {
+   "lineage": "Iranian",
+   "scenario": "long_extinct",
+   "n": 135,
+   "n_removed": 2,
+   "removed": [
+    "AVESTAN",
+    "AVESTAN_2"
+   ],
+   "d_max": 3.906094725642113,
+   "d_max_without": 3.8517336175869388,
+   "delta": -0.054361108055174245,
+   "d_max_kcal": 1.4050908645235198,
+   "d_max_kcal_without": 1.4028261065989367,
+   "resampling_width": 0.9551470178982235
+  },
+  {
+   "lineage": "North Ethiopic",
+   "scenario": "long_extinct",
+   "n": 9,
+   "n_removed": 4,
+   "removed": [
+    "ETHIOPIC",
+    "GEEZ",
+    "GEEZ_2",
+    "GEEZ_3"
+   ],
+   "d_max": 1.4078257119539166,
+   "d_max_without": 1.3552535769322593,
+   "delta": -0.05257213502165725,
+   "d_max_kcal": 1.1849439887188502,
+   "d_max_kcal_without": 1.1635493575154325,
+   "resampling_width": 0.10184916117529674
+  },
+  {
+   "lineage": "South Semitic",
+   "scenario": "long_extinct",
+   "n": 33,
+   "n_removed": 4,
+   "removed": [
+    "ETHIOPIC",
+    "GEEZ",
+    "GEEZ_2",
+    "GEEZ_3"
+   ],
+   "d_max": 3.5078014132016446,
+   "d_max_without": 3.4668634212679508,
+   "delta": -0.04093799193369385,
+   "d_max_kcal": 1.3863901056701144,
+   "d_max_kcal_without": 1.3849301927136437,
+   "resampling_width": 0.6399762439439556
+  },
+  {
+   "lineage": "Romance",
+   "scenario": "long_extinct",
+   "n": 64,
+   "n_removed": 2,
+   "removed": [
+    "LATIN",
+    "LATIN_2"
+   ],
+   "d_max": 2.1394461010252463,
+   "d_max_without": 2.100521330207659,
+   "delta": -0.03892477081758727,
+   "d_max_kcal": 1.3071175251645215,
+   "d_max_kcal_without": 1.3037682740864962,
+   "resampling_width": 0.2683280173574525
+  },
+  {
+   "lineage": "Aramaic",
+   "scenario": "long_extinct",
+   "n": 23,
+   "n_removed": 3,
+   "removed": [
+    "ARAMAIC_ANCIENT",
+    "CLASSICAL_MANDAEAN",
+    "CLASSICAL_MANDAIC"
+   ],
+   "d_max": 1.799899299128113,
+   "d_max_without": 1.7763877416546003,
+   "delta": -0.023511557473512745,
+   "d_max_kcal": 1.2603490249429905,
+   "d_max_kcal_without": 1.257778268078578,
+   "resampling_width": 0.2911912898924822
+  },
+  {
+   "lineage": "Indo-Aryan",
+   "scenario": "long_extinct",
+   "n": 167,
+   "n_removed": 2,
+   "removed": [
+    "PALI",
+    "SANSKRIT"
+   ],
+   "d_max": 3.6719710901924785,
+   "d_max_without": 3.6624820684342363,
+   "delta": -0.009489021758242178,
+   "d_max_kcal": 1.395845507440072,
+   "d_max_kcal_without": 1.3952207252620132,
+   "resampling_width": 0.7657470875623975
+  },
+  {
+   "lineage": "Tungusic",
+   "scenario": "long_extinct",
+   "n": 29,
    "n_removed": 1,
    "removed": [
-    "OLD_MON"
+    "JURCHEN"
    ],
-   "d_max": 1.494839287861322,
-   "d_max_without": 1.494839287861322,
-   "delta": 0.0,
-   "d_max_k3": 11.500752124713728,
-   "d_max_k3_without": 11.500752124713726,
-   "resampling_width": 0.020174209413337918
+   "d_max": 2.256145262872932,
+   "d_max_without": 2.2560901567915597,
+   "delta": -5.5106081372269244e-05,
+   "d_max_kcal": 1.3078587884216866,
+   "d_max_kcal_without": 1.3074229406191697,
+   "resampling_width": 0.41678508290941174
+  },
+  {
+   "lineage": "Malayo-Polynesian",
+   "scenario": "long_extinct",
+   "n": 1414,
+   "n_removed": 3,
+   "removed": [
+    "OLD_JAVANESE",
+    "OLD_OR_MIDDLE_JAVANESE",
+    "TAHITIAN_18TH_CENTURY"
+   ],
+   "d_max": 41.577175167478444,
+   "d_max_without": 41.57717516747843,
+   "delta": -1.4210854715202004e-14,
+   "d_max_kcal": 1.54725514636102,
+   "d_max_kcal_without": 1.54725514636102,
+   "resampling_width": 1.6599075986929783
+  },
+  {
+   "lineage": "Eastern Malayo-Polynesian",
+   "scenario": "long_extinct",
+   "n": 707,
+   "n_removed": 1,
+   "removed": [
+    "TAHITIAN_18TH_CENTURY"
+   ],
+   "d_max": 36.708639038353404,
+   "d_max_without": 36.70863903835339,
+   "delta": -1.4210854715202004e-14,
+   "d_max_kcal": 1.5436433026435585,
+   "d_max_kcal_without": 1.543643302643559,
+   "resampling_width": 2.2030049558231237
   },
   {
    "lineage": "Austronesian",
@@ -439,12 +428,45 @@
     "OLD_OR_MIDDLE_JAVANESE",
     "TAHITIAN_18TH_CENTURY"
    ],
-   "d_max": 1.5489390856198517,
-   "d_max_without": 1.5489390856198517,
-   "delta": 0.0,
-   "d_max_k3": 15.556335467088243,
-   "d_max_k3_without": 15.556335467088248,
-   "resampling_width": 0.0118233829519645
+   "d_max": 44.3634715500483,
+   "d_max_without": 44.363471550048295,
+   "delta": -7.105427357601002e-15,
+   "d_max_kcal": 1.5489390856198517,
+   "d_max_kcal_without": 1.5489390856198517,
+   "resampling_width": 1.6812245617160357
+  },
+  {
+   "lineage": "Arabic",
+   "scenario": "long_extinct",
+   "n": 47,
+   "n_removed": 4,
+   "removed": [
+    "ARABIC_QURANIC",
+    "CLASSICAL_ARABIC",
+    "STANDARD_ARABIC",
+    "STANDARD_ARABIC_2"
+   ],
+   "d_max": 1.9027723095860831,
+   "d_max_without": 1.9027723095860827,
+   "delta": -4.440892098500626e-16,
+   "d_max_kcal": 1.2752472084612523,
+   "d_max_kcal_without": 1.2750943707216744,
+   "resampling_width": 0.26009914490557406
+  },
+  {
+   "lineage": "Slavic",
+   "scenario": "long_extinct",
+   "n": 34,
+   "n_removed": 1,
+   "removed": [
+    "OLD_CHURCH_SLAVONIC"
+   ],
+   "d_max": 1.6069998639887029,
+   "d_max_without": 1.6069998639887026,
+   "delta": -2.220446049250313e-16,
+   "d_max_kcal": 1.2378526644506505,
+   "d_max_kcal_without": 1.2373523323692264,
+   "resampling_width": 0.19268672950880616
   },
   {
    "lineage": "Sino-Tibetan",
@@ -455,12 +477,12 @@
     "MIDDLE_CHINESE",
     "OLD_CHINESE"
    ],
-   "d_max": 1.5277931837301848,
-   "d_max_without": 1.5277931837301848,
+   "d_max": 21.661186873219204,
+   "d_max_without": 21.661186873219204,
    "delta": 0.0,
-   "d_max_k3": 13.93752998824134,
-   "d_max_k3_without": 13.93752998824134,
-   "resampling_width": 0.014920565363713889
+   "d_max_kcal": 1.5277931837301848,
+   "d_max_kcal_without": 1.5277931837301848,
+   "resampling_width": 1.6494520557036214
   },
   {
    "lineage": "Sumerian",
@@ -473,8 +495,8 @@
    "d_max": 1.0,
    "d_max_without": null,
    "delta": null,
-   "d_max_k3": 1.0,
-   "d_max_k3_without": null,
+   "d_max_kcal": 1.0,
+   "d_max_kcal_without": null,
    "resampling_width": 0.0
   },
   {
@@ -488,8 +510,8 @@
    "d_max": 1.0,
    "d_max_without": null,
    "delta": null,
-   "d_max_k3": 1.0,
-   "d_max_k3_without": null,
+   "d_max_kcal": 1.0,
+   "d_max_kcal_without": null,
    "resampling_width": 0.0
   },
   {
@@ -503,8 +525,8 @@
    "d_max": 1.0,
    "d_max_without": null,
    "delta": null,
-   "d_max_k3": 1.0,
-   "d_max_k3_without": null,
+   "d_max_kcal": 1.0,
+   "d_max_kcal_without": null,
    "resampling_width": 0.0
   },
   {
@@ -515,12 +537,27 @@
    "removed": [
     "OLD_CHURCH_SLAVONIC"
    ],
-   "d_max": 1.334931030033033,
-   "d_max_without": 1.334931030033033,
+   "d_max": 2.5821696066228155,
+   "d_max_without": 2.5821696066228155,
    "delta": 0.0,
-   "d_max_k3": 4.852242014396467,
-   "d_max_k3_without": 4.83829769398271,
-   "resampling_width": 0.02598648231938916
+   "d_max_kcal": 1.334931030033033,
+   "d_max_kcal_without": 1.334931030033033,
+   "resampling_width": 0.4150415872719426
+  },
+  {
+   "lineage": "Oceanic",
+   "scenario": "long_extinct",
+   "n": 659,
+   "n_removed": 1,
+   "removed": [
+    "TAHITIAN_18TH_CENTURY"
+   ],
+   "d_max": 34.178606363983015,
+   "d_max_without": 34.178606363983015,
+   "delta": 0.0,
+   "d_max_kcal": 1.5418943444471442,
+   "d_max_kcal_without": 1.541894344447145,
+   "resampling_width": 1.8627035020721205
   },
   {
    "lineage": "Polynesian",
@@ -530,29 +567,12 @@
    "removed": [
     "TAHITIAN_18TH_CENTURY"
    ],
-   "d_max": 1.2485345702324018,
-   "d_max_without": 1.2485345702324018,
+   "d_max": 1.6713204689114336,
+   "d_max_without": 1.6713204689114336,
    "delta": 0.0,
-   "d_max_k3": 3.6791826107427106,
-   "d_max_k3_without": 3.6791826107427106,
-   "resampling_width": 0.025651386892084682
-  },
-  {
-   "lineage": "Malayo-Polynesian",
-   "scenario": "long_extinct",
-   "n": 1414,
-   "n_removed": 3,
-   "removed": [
-    "OLD_JAVANESE",
-    "OLD_OR_MIDDLE_JAVANESE",
-    "TAHITIAN_18TH_CENTURY"
-   ],
-   "d_max": 1.54725514636102,
-   "d_max_without": 1.54725514636102,
-   "delta": 0.0,
-   "d_max_k3": 15.414216497782032,
-   "d_max_k3_without": 15.414216497782032,
-   "resampling_width": 0.011625474610733377
+   "d_max_kcal": 1.2485345702324018,
+   "d_max_kcal_without": 1.2485345702324018,
+   "resampling_width": 0.20594734574058893
   },
   {
    "lineage": "East Semitic",
@@ -564,12 +584,12 @@
     "AKKADIAN_2",
     "AKKADIAN_3"
    ],
-   "d_max": 1.0946749964339126,
+   "d_max": 1.110937114969126,
    "d_max_without": null,
    "delta": null,
-   "d_max_k3": 1.616912955914978,
-   "d_max_k3_without": null,
-   "resampling_width": 0.032604877089047246
+   "d_max_kcal": 1.0946749964339126,
+   "d_max_kcal_without": null,
+   "resampling_width": 0.11751448519583185
   },
   {
    "lineage": "Uto-Aztecan",
@@ -579,42 +599,27 @@
    "removed": [
     "CLASSICAL_NAHUATL"
    ],
-   "d_max": 1.4402056549523692,
-   "d_max_without": 1.4402056549523694,
-   "delta": 2.220446049250313e-16,
-   "d_max_k3": 8.428905872426219,
-   "d_max_k3_without": 8.428905872426217,
-   "resampling_width": 0.0196114211386218
+   "d_max": 5.450102060926221,
+   "d_max_without": 5.450102060926222,
+   "delta": 8.881784197001252e-16,
+   "d_max_kcal": 1.4402056549523692,
+   "d_max_kcal_without": 1.4402056549523694,
+   "resampling_width": 0.8201854140044444
   },
   {
-   "lineage": "Eastern Malayo-Polynesian",
+   "lineage": "Austroasiatic",
    "scenario": "long_extinct",
-   "n": 707,
+   "n": 190,
    "n_removed": 1,
    "removed": [
-    "TAHITIAN_18TH_CENTURY"
+    "OLD_MON"
    ],
-   "d_max": 1.5436433026435585,
-   "d_max_without": 1.543643302643559,
-   "delta": 4.440892098500626e-16,
-   "d_max_k3": 15.062119634959128,
-   "d_max_k3_without": 15.062119634959135,
-   "resampling_width": 0.011068645936866961
-  },
-  {
-   "lineage": "Oceanic",
-   "scenario": "long_extinct",
-   "n": 659,
-   "n_removed": 1,
-   "removed": [
-    "TAHITIAN_18TH_CENTURY"
-   ],
-   "d_max": 1.5418943444471442,
-   "d_max_without": 1.541894344447145,
-   "delta": 6.661338147750939e-16,
-   "d_max_k3": 14.910943814263359,
-   "d_max_k3_without": 14.910943814263357,
-   "resampling_width": 0.011561188755391472
+   "d_max": 11.390409657536566,
+   "d_max_without": 11.390409657536573,
+   "delta": 7.105427357601002e-15,
+   "d_max_kcal": 1.494839287861322,
+   "d_max_kcal_without": 1.494839287861322,
+   "resampling_width": 2.3494238342333977
   }
  ]
 }
