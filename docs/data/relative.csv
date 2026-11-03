@@ -1,141 +1,141 @@
 lineage,category,n,d_max,d_unrelated_same_n,relative
-"Random unrelated, n=5",adv,5,1.406,1.406,1.000
-"Random unrelated, n=10",adv,10,1.484,1.484,1.000
-"Random unrelated, n=25",adv,25,1.535,1.535,1.000
-"Random unrelated, n=40",adv,40,1.550,1.550,1.000
-"Random unrelated, n=60",adv,60,1.559,1.559,1.000
-"Random unrelated, n=80",adv,80,1.563,1.563,1.000
-Atlantic-Congo,oth,2042,1.563,1.574,0.981
-Nuclear Trans New Guinea,oth,307,1.557,1.571,0.975
-Austronesian,oth,1467,1.549,1.574,0.957
-Afro-Asiatic,oth,426,1.547,1.572,0.955
-Malayo-Polynesian,sub,1414,1.547,1.574,0.954
-Eastern Malayo-Polynesian,sub,707,1.544,1.573,0.949
-Oceanic,sub,659,1.542,1.573,0.946
-Otomanguean,oth,109,1.534,1.566,0.944
-Niger-Congo (constructed),adv,60,1.527,1.559,0.943
-Pama-Nyungan,oth,193,1.533,1.570,0.935
-Sino-Tibetan,oth,887,1.528,1.573,0.921
-Chadic,sub,206,1.523,1.570,0.917
-Indo-European,ctl,527,1.510,1.573,0.890
-Ural-Altaic (constructed),adv,74,1.499,1.562,0.888
-Cushitic,sub,80,1.498,1.563,0.884
-Macro-Altaic (constructed),adv,62,1.492,1.559,0.879
-Paleo-Siberian (constructed),adv,42,1.480,1.551,0.871
-Austroasiatic,oth,190,1.495,1.570,0.869
-Algic,oth,36,1.468,1.547,0.855
-Dene-Yeniseian (constructed),adv,42,1.465,1.551,0.844
-Khoisan (constructed),adv,32,1.452,1.543,0.833
-Tai-Kadai,oth,214,1.474,1.570,0.831
-Salishan,oth,30,1.441,1.541,0.815
-Uralic,ctl,64,1.456,1.560,0.814
-Mande,oth,128,1.461,1.567,0.813
-Formosan,sub,57,1.453,1.558,0.812
-Altaic (constructed),adv,74,1.448,1.562,0.797
-Nakh-Daghestanian,oth,61,1.445,1.559,0.795
-Hmong-Mien,oth,110,1.450,1.566,0.795
-Athabaskan-Eyak-Tlingit,oth,45,1.438,1.553,0.792
-Rashad,oth,2,1.137,1.175,0.786
-Uto-Aztecan,oth,75,1.440,1.562,0.783
-Semitic,sub,110,1.436,1.566,0.770
-Siouan,oth,18,1.397,1.517,0.768
-Nubian,oth,11,1.376,1.490,0.767
-West Semitic,sub,107,1.433,1.566,0.764
-Elamo-Dravidian (constructed),adv,37,1.413,1.548,0.754
-Bodic,sub,83,1.422,1.564,0.749
-Eskimo-Aleut,oth,16,1.380,1.510,0.744
-Dravidian,oth,79,1.417,1.563,0.740
-Lolo-Burmese,sub,57,1.409,1.558,0.734
-Sinitic,sub,491,1.419,1.573,0.732
-Iroquoian,oth,10,1.351,1.484,0.724
-Abkhaz-Adyge,oth,7,1.320,1.444,0.721
-Iranian,sub,135,1.405,1.568,0.714
-South Semitic,sub,33,1.386,1.544,0.710
-Dogon,oth,50,1.390,1.555,0.704
-Indo-Aryan,sub,167,1.396,1.569,0.696
-Great Andamanese,oth,10,1.337,1.484,0.695
-Heibanic,oth,11,1.338,1.490,0.689
-Samoyedic,sub,10,1.334,1.484,0.689
-Miwok-Costanoan,oth,9,1.323,1.472,0.684
-South Dravidian,sub,64,1.376,1.560,0.671
-Kam-Tai,sub,179,1.381,1.569,0.669
-Mayan,oth,107,1.371,1.566,0.655
-Saharan,oth,10,1.317,1.484,0.655
-Celtic,sub,9,1.306,1.472,0.648
-Central Semitic,sub,74,1.363,1.562,0.645
-Khoe-Kwadi,oth,15,1.325,1.507,0.641
-Kru,oth,26,1.344,1.537,0.640
-Cochimi-Yuman,oth,13,1.319,1.499,0.640
-Ethiosemitic,sub,25,1.343,1.535,0.640
-Greater Central Philippine,sub,86,1.359,1.564,0.636
-Kartvelian,iso,6,1.271,1.427,0.634
-Kxa,oth,7,1.281,1.444,0.632
-Celebic,sub,80,1.352,1.563,0.625
-Min,sub,32,1.338,1.543,0.623
-Katla-Tima,oth,3,1.172,1.277,0.622
-South Ethiopic,sub,16,1.316,1.510,0.619
-Balto-Slavic,sub,39,1.335,1.549,0.610
-Berber,sub,37,1.331,1.548,0.605
-Chukotko-Kamchatkan,oth,7,1.267,1.444,0.601
-Outer South Ethiopic,sub,8,1.276,1.459,0.600
-Tuu,oth,10,1.286,1.484,0.592
-Northwest Semitic,sub,27,1.318,1.538,0.592
-Kuki-Chin,sub,53,1.329,1.556,0.591
-Pinghua,sub,29,1.316,1.540,0.586
-Turkic,ctl,71,1.324,1.561,0.578
-Narrow Talodi,oth,9,1.271,1.472,0.573
-Tungusic,oth,29,1.308,1.540,0.570
-Saami,sub,15,1.289,1.507,0.569
-Mandarin,sub,186,1.322,1.570,0.566
-Jarawa-Onge,oth,2,1.099,1.175,0.565
-Yeniseian,iso,9,1.264,1.472,0.558
-Kuliak,oth,6,1.238,1.427,0.558
-Gan,sub,22,1.290,1.528,0.550
-Romance,ctl,64,1.307,1.560,0.548
-Wu,sub,51,1.304,1.555,0.546
-Mongolic,ctl,29,1.294,1.540,0.545
-Germanic,ctl,61,1.302,1.559,0.540
-Mixe-Zoque,oth,23,1.281,1.531,0.529
-Xiang,sub,23,1.280,1.531,0.528
-Yue,sub,91,1.294,1.565,0.521
-Quichean-Mamean,sub,79,1.292,1.563,0.518
-Yukaghir,oth,4,1.180,1.350,0.515
-Canaanite,sub,4,1.180,1.350,0.513
-Hakka,sub,46,1.283,1.553,0.512
-Hui,sub,20,1.267,1.523,0.511
-Modern South Arabian,sub,9,1.238,1.472,0.504
-Ijoid,oth,36,1.275,1.547,0.503
-Arabic,sub,47,1.275,1.554,0.497
-Aramaic,sub,23,1.260,1.531,0.491
-Jin,sub,23,1.242,1.531,0.456
-Japonic,iso,33,1.248,1.544,0.455
-Kipchak,sub,18,1.234,1.517,0.454
-Egyptic Arabic,sub,8,1.208,1.459,0.454
-Polynesian,sub,51,1.249,1.555,0.447
-Slavic,ctl,34,1.238,1.545,0.436
-Malayic,sub,53,1.241,1.556,0.433
-North African Arabic,sub,11,1.212,1.490,0.433
-Finnic,sub,17,1.221,1.514,0.429
-Eastern Arabic,sub,8,1.196,1.459,0.426
-Haida,iso,2,1.073,1.175,0.417
-Koreanic,iso,3,1.115,1.277,0.416
-Songhay,oth,13,1.206,1.499,0.413
-Peninsular Arabic,sub,10,1.198,1.484,0.408
-Kusunda,iso,2,1.071,1.175,0.406
-North Ethiopic,sub,9,1.185,1.472,0.392
-Totonacan,oth,10,1.181,1.484,0.373
-Oghuz,sub,34,1.189,1.545,0.347
-East Semitic,sub,3,1.095,1.277,0.342
-North-Eastern Neo-Aramaic,sub,10,1.160,1.484,0.331
-Nivkh,iso,7,1.139,1.444,0.314
-Levantine Arabic,sub,7,1.136,1.444,0.306
-Ainu,iso,23,1.159,1.531,0.300
-Nihali,iso,3,1.067,1.277,0.243
-Burushaski,iso,10,1.116,1.484,0.240
-Quechuan,oth,61,1.132,1.559,0.236
-Araucanian,oth,4,1.077,1.350,0.220
-Tarascan,oth,4,1.075,1.350,0.215
-Basque,iso,2,1.032,1.175,0.182
+"Random unrelated, n=5",adv,5,4.924,4.924,1.000
+"Random unrelated, n=10",adv,10,9.740,9.740,1.000
+"Random unrelated, n=25",adv,25,22.824,22.824,1.000
+"Random unrelated, n=40",adv,40,34.745,34.745,1.000
+"Random unrelated, n=60",adv,60,49.598,49.598,1.000
+"Random unrelated, n=80",adv,80,63.190,63.190,1.000
+Atlantic-Congo,oth,2042,72.698,207.012,0.348
+Nuclear Trans New Guinea,oth,307,47.858,135.791,0.348
+Niger-Congo (constructed),adv,60,17.875,49.598,0.347
+Abkhaz-Adyge,oth,7,2.631,7.262,0.260
+Iroquoian,oth,10,3.252,9.740,0.258
+Nubian,oth,11,3.563,11.101,0.254
+Algic,oth,36,8.121,32.073,0.229
+Afro-Asiatic,oth,426,35.129,153.110,0.224
+Otomanguean,oth,109,18.204,78.242,0.223
+Austronesian,oth,1467,44.363,199.746,0.218
+Kartvelian,iso,6,2.122,6.191,0.216
+Rashad,oth,2,1.350,2.690,0.207
+Malayo-Polynesian,sub,1414,41.577,198.817,0.205
+Eastern Malayo-Polynesian,sub,707,36.709,176.144,0.204
+Great Andamanese,oth,10,2.773,9.740,0.203
+Miwok-Costanoan,oth,9,2.617,9.008,0.202
+Pama-Nyungan,oth,193,22.734,109.582,0.200
+Katla-Tima,oth,3,1.531,3.679,0.198
+Samoyedic,sub,10,2.695,9.740,0.194
+Oceanic,sub,659,34.179,173.266,0.193
+Paleo-Siberian (constructed),adv,42,7.615,36.532,0.186
+Saharan,oth,10,2.581,9.740,0.181
+Khoisan (constructed),adv,32,6.090,29.085,0.181
+Siouan,oth,18,4.079,18.133,0.180
+Kxa,oth,7,2.121,7.262,0.179
+Salishan,oth,30,5.612,27.448,0.174
+Cushitic,sub,80,11.787,63.190,0.173
+Dene-Yeniseian (constructed),adv,42,7.031,36.532,0.170
+Heibanic,oth,11,2.708,11.101,0.169
+Eskimo-Aleut,oth,16,3.562,16.451,0.166
+Chadic,sub,206,19.640,113.299,0.166
+Celtic,sub,9,2.312,9.008,0.164
+Chukotko-Kamchatkan,oth,7,1.972,7.262,0.155
+Ural-Altaic (constructed),adv,74,9.965,59.506,0.153
+Kuliak,oth,6,1.784,6.191,0.151
+Outer South Ethiopic,sub,8,2.026,8.189,0.143
+Macro-Altaic (constructed),adv,62,8.188,51.147,0.143
+Yukaghir,oth,4,1.458,4.380,0.136
+Tuu,oth,10,2.161,9.740,0.133
+Canaanite,sub,4,1.442,4.380,0.131
+Cochimi-Yuman,oth,13,2.551,13.486,0.124
+Athabaskan-Eyak-Tlingit,oth,45,5.581,39.060,0.120
+Formosan,sub,57,6.396,47.719,0.115
+Yeniseian,iso,9,1.908,9.008,0.113
+Narrow Talodi,oth,9,1.904,9.008,0.113
+Elamo-Dravidian (constructed),adv,37,4.602,32.768,0.113
+Sino-Tibetan,oth,887,21.661,184.693,0.112
+Uralic,ctl,64,6.572,52.647,0.108
+Khoe-Kwadi,oth,15,2.506,15.530,0.104
+Nakh-Daghestanian,oth,61,5.824,50.379,0.098
+Jarawa-Onge,oth,2,1.164,2.690,0.097
+Austroasiatic,oth,190,11.390,108.690,0.096
+South Semitic,sub,33,3.508,29.866,0.087
+South Ethiopic,sub,16,2.347,16.451,0.087
+Indo-European,ctl,527,14.983,163.414,0.086
+Altaic (constructed),adv,74,5.730,59.506,0.081
+Modern South Arabian,sub,9,1.624,9.008,0.078
+Ethiosemitic,sub,25,2.679,22.824,0.077
+Uto-Aztecan,oth,75,5.450,60.140,0.075
+Egyptic Arabic,sub,8,1.540,8.189,0.075
+Saami,sub,15,2.048,15.530,0.072
+Kru,oth,26,2.625,23.818,0.071
+Mande,oth,128,6.859,86.698,0.068
+Lolo-Burmese,sub,57,4.052,47.719,0.065
+Koreanic,iso,3,1.172,3.679,0.064
+Hmong-Mien,oth,110,5.934,78.712,0.063
+Tai-Kadai,oth,214,8.029,115.472,0.061
+Dogon,oth,50,3.568,42.919,0.061
+Eastern Arabic,sub,8,1.435,8.189,0.061
+Northwest Semitic,sub,27,2.369,24.776,0.058
+Dravidian,oth,79,4.518,62.595,0.057
+Bodic,sub,83,4.664,64.886,0.057
+Min,sub,32,2.563,29.085,0.056
+Semitic,sub,110,5.263,78.712,0.055
+Gan,sub,22,2.082,20.998,0.054
+West Semitic,sub,107,5.094,77.292,0.054
+Pinghua,sub,29,2.301,26.588,0.051
+North Ethiopic,sub,9,1.408,9.008,0.051
+North African Arabic,sub,11,1.516,11.101,0.051
+Mixe-Zoque,oth,23,2.034,21.633,0.050
+Tungusic,oth,29,2.256,26.588,0.049
+Xiang,sub,23,2.008,21.633,0.049
+Berber,sub,37,2.516,32.768,0.048
+Balto-Slavic,sub,39,2.582,34.103,0.048
+Peninsular Arabic,sub,10,1.418,9.740,0.048
+Songhay,oth,13,1.542,13.486,0.043
+South Dravidian,sub,64,3.240,52.647,0.043
+Totonacan,oth,10,1.365,9.740,0.042
+Hui,sub,20,1.789,19.637,0.042
+Mongolic,ctl,29,2.045,26.588,0.041
+East Semitic,sub,3,1.111,3.679,0.041
+Haida,iso,2,1.066,2.690,0.039
+Kipchak,sub,18,1.664,18.133,0.039
+Aramaic,sub,23,1.800,21.633,0.039
+Kusunda,iso,2,1.059,2.690,0.035
+Nivkh,iso,7,1.210,7.262,0.034
+Central Semitic,sub,74,2.973,59.506,0.034
+Ijoid,oth,36,2.014,32.073,0.033
+Iranian,sub,135,3.906,89.579,0.033
+Kuki-Chin,sub,53,2.388,45.054,0.032
+Finnic,sub,17,1.527,17.317,0.032
+Jin,sub,23,1.656,21.633,0.032
+North-Eastern Neo-Aramaic,sub,10,1.269,9.740,0.031
+Greater Central Philippine,sub,86,2.920,66.547,0.029
+Celebic,sub,80,2.761,63.190,0.028
+Mayan,oth,107,3.057,77.292,0.027
+Indo-Aryan,sub,167,3.672,101.378,0.027
+Wu,sub,51,2.121,43.645,0.026
+Levantine Arabic,sub,7,1.163,7.262,0.026
+Turkic,ctl,71,2.436,57.551,0.025
+Hakka,sub,46,1.972,39.865,0.025
+Japonic,iso,33,1.689,29.866,0.024
+Germanic,ctl,61,2.163,50.379,0.024
+Arabic,sub,47,1.903,40.653,0.023
+Romance,ctl,64,2.139,52.647,0.022
+Kam-Tai,sub,179,3.301,105.302,0.022
+Sinitic,sub,491,4.304,160.082,0.021
+Slavic,ctl,34,1.607,30.623,0.020
+Araucanian,oth,4,1.063,4.380,0.019
+Burushaski,iso,10,1.148,9.740,0.017
+Nihali,iso,3,1.046,3.679,0.017
+Polynesian,sub,51,1.671,43.645,0.016
+Quichean-Mamean,sub,79,2.000,62.595,0.016
+Tarascan,oth,4,1.051,4.380,0.015
+Yue,sub,91,2.017,69.242,0.015
+Malayic,sub,53,1.646,45.054,0.015
+Ainu,iso,23,1.295,21.633,0.014
+Oghuz,sub,34,1.375,30.623,0.013
+Mandarin,sub,186,2.398,107.480,0.013
+Quechuan,oth,61,1.122,50.379,0.002
+Basque,iso,2,1.000,2.690,0.000
 Sumerian,iso,1,1.000,1.000,0.000
 Elamite,iso,1,1.000,1.000,0.000
 Etruscan,iso,1,1.000,1.000,0.000
