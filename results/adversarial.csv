@@ -1,31 +1,31 @@
-set,n,d_max,d_max_q05,d_max_q95,d_max_k3
-random unrelated (n=5),5,1.406,1.393,1.417,4.096
-random unrelated (n=10),10,1.484,1.481,1.492,6.716
-random unrelated (n=25),25,1.535,1.529,1.539,10.848
-random unrelated (n=40),40,1.550,1.547,1.553,12.860
-random unrelated (n=60),60,1.559,1.557,1.560,14.333
-random unrelated (n=80),80,1.563,1.561,1.564,15.188
-Altaic,74,1.448,,,8.336
-random 3-family union,,1.487,1.435,1.532,9.242
-random 3-shallow-family union,,1.468,1.451,1.482,8.172
-Macro-Altaic,62,1.492,,,9.643
-random 5-family union,,1.518,1.487,1.534,11.143
-random 5-shallow-family union,,1.507,1.500,1.516,10.357
-Ural-Altaic,74,1.499,,,10.585
-random 4-family union,,1.510,1.482,1.534,10.601
-random 4-shallow-family union,,1.498,1.485,1.505,9.658
-Dene-Yeniseian,42,1.465,,,8.632
-random 2-family union,,1.435,1.287,1.506,6.894
-random 2-shallow-family union,,1.419,1.407,1.443,6.650
-Khoisan,32,1.452,,,7.588
-random 3-family union,,1.487,1.435,1.532,9.242
-random 3-shallow-family union,,1.468,1.451,1.482,8.172
-Paleo-Siberian,42,1.480,,,8.220
-random 5-family union,,1.518,1.487,1.534,11.143
-random 5-shallow-family union,,1.507,1.500,1.516,10.357
-Elamo-Dravidian,37,1.413,,,6.618
-random 2-family union,,1.435,1.287,1.506,6.894
-random 2-shallow-family union,,1.419,1.407,1.443,6.650
-Niger-Congo,60,1.527,,,12.244
-random 9-family union,,1.537,1.530,1.543,12.426
-random 9-shallow-family union,,1.535,1.531,1.539,12.432
+set,n,d_max,d_max_q05,d_max_q95,d_max_kcal
+random unrelated (n=5),5,4.924,4.630,5.000,1.406
+random unrelated (n=10),10,9.740,9.437,9.909,1.484
+random unrelated (n=25),25,22.824,21.180,23.716,1.535
+random unrelated (n=40),40,34.745,33.336,36.235,1.550
+random unrelated (n=60),60,49.598,48.045,51.964,1.559
+random unrelated (n=80),80,63.190,60.873,65.867,1.563
+Altaic,74,5.730,,,1.448
+random 3-family union,,8.009,4.873,18.902,1.487
+random 3-shallow-family union,,6.562,5.790,7.770,1.468
+Macro-Altaic,62,8.188,,,1.492
+random 5-family union,,13.433,8.517,20.275,1.518
+random 5-shallow-family union,,10.582,9.727,12.228,1.507
+Ural-Altaic,74,9.965,,,1.499
+random 4-family union,,11.949,8.176,18.154,1.510
+random 4-shallow-family union,,8.989,8.073,9.942,1.498
+Dene-Yeniseian,42,7.031,,,1.465
+random 2-family union,,4.971,2.184,12.154,1.435
+random 2-shallow-family union,,4.301,4.012,5.331,1.419
+Khoisan,32,6.090,,,1.452
+random 3-family union,,8.009,4.873,18.902,1.487
+random 3-shallow-family union,,6.562,5.790,7.770,1.468
+Paleo-Siberian,42,7.615,,,1.480
+random 5-family union,,13.433,8.517,20.275,1.518
+random 5-shallow-family union,,10.582,9.727,12.228,1.507
+Elamo-Dravidian,37,4.602,,,1.413
+random 2-family union,,4.971,2.184,12.154,1.435
+random 2-shallow-family union,,4.301,4.012,5.331,1.419
+Niger-Congo,60,17.875,,,1.527
+random 9-family union,,19.349,17.186,22.613,1.537
+random 9-shallow-family union,,17.898,16.582,19.372,1.535
