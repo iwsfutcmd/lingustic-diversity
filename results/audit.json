@@ -2,7 +2,8 @@
   "thresholds": {
     "z": 2.0,
     "loo_delta_dmax": 0.015,
-    "min_concepts": 25
+    "min_concepts": 25,
+    "contact": "nearest list of another family closer than the nearest list of its own (widest.py)"
   },
   "excluded": {
     "AYNU": "Mixed Turkic-Iranic lect (classified as Turkic by Glottolog, contested): matches Western Farsi on 9 of 33 shared items vs Uyghur on 2; LDND ~1 to nearly every other Turkic list"
@@ -17,7 +18,8 @@
       "z": 6.236649342227809,
       "weight": 0.3181871831706707,
       "loo_delta_dmax": 0.070492797508386,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Ijoid",
@@ -28,7 +30,8 @@
       "z": 5.819591183095855,
       "weight": 0.29855101548986573,
       "loo_delta_dmax": 0.05845773401990373,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Iroquoian",
@@ -39,7 +42,14 @@
       "z": 3.163724918237357,
       "weight": 0.25829081149142447,
       "loo_delta_dmax": 0.05480832720747286,
-      "review": true
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8953580097098904,
+        "nearest_in_id": "MOHAWK",
+        "nearest_out": 0.85548256568144,
+        "nearest_out_id": "YOM",
+        "nearest_out_family": "Atlantic-Congo"
+      }
     },
     {
       "lineage": "Canaanite",
@@ -50,7 +60,8 @@
       "z": 1.9058738082418056,
       "weight": 0.34419152535706327,
       "loo_delta_dmax": 0.05406498462353104,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Tuu",
@@ -61,7 +72,8 @@
       "z": 6.687435921891622,
       "weight": 0.27770524278575787,
       "loo_delta_dmax": 0.05069995368592339,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Canaanite",
@@ -72,7 +84,8 @@
       "z": 0.9864368591983895,
       "weight": 0.3252156545978774,
       "loo_delta_dmax": 0.04406166728664429,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Outer South Ethiopic",
@@ -83,7 +96,8 @@
       "z": 4.136259711071799,
       "weight": 0.2691752896011814,
       "loo_delta_dmax": 0.043453955069039374,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Araucanian",
@@ -94,7 +108,8 @@
       "z": 9.91199485031443,
       "weight": 0.43864267419097586,
       "loo_delta_dmax": 0.04262586603063934,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Iroquoian",
@@ -105,7 +120,8 @@
       "z": 2.2068098887354686,
       "weight": 0.23140280317191228,
       "loo_delta_dmax": 0.04106570431399015,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Saharan",
@@ -116,7 +132,8 @@
       "z": 2.3957832294370345,
       "weight": 0.22406360464050254,
       "loo_delta_dmax": 0.03269680716249512,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Tarascan",
@@ -127,7 +144,8 @@
       "z": 3.058865673326998,
       "weight": 0.42481202433560955,
       "loo_delta_dmax": 0.03212718668014114,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Siouan",
@@ -138,7 +156,14 @@
       "z": 3.565889406113114,
       "weight": 0.1947796510800113,
       "loo_delta_dmax": 0.03122132287039947,
-      "review": true
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8556074859062536,
+        "nearest_in_id": "BILOXI",
+        "nearest_out": 0.8126865973672426,
+        "nearest_out_id": "PAPORA_2",
+        "nearest_out_family": "Austronesian"
+      }
     },
     {
       "lineage": "Cochimi-Yuman",
@@ -149,7 +174,8 @@
       "z": 3.957541591331168,
       "weight": 0.2203509468112669,
       "loo_delta_dmax": 0.031025105934576747,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Abkhaz-Adyge",
@@ -160,7 +186,20 @@
       "z": 1.8290820227585445,
       "weight": 0.2138505415899206,
       "loo_delta_dmax": 0.029795217086858283,
-      "review": true
+      "review": true,
+      "contact": null
+    },
+    {
+      "lineage": "Egyptic Arabic",
+      "id": "SHUWA_CHADIAN_ARABIC_2",
+      "language": "Chadian Arabic",
+      "n_concepts": 27,
+      "mean_ldnd": 0.5330286536897931,
+      "z": 2.561117433421056,
+      "weight": 0.2708309283446878,
+      "loo_delta_dmax": 0.02959130313423608,
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Saharan",
@@ -171,7 +210,8 @@
       "z": 2.1113760234287247,
       "weight": 0.21563775771585897,
       "loo_delta_dmax": 0.029547481946103682,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Abkhaz-Adyge",
@@ -182,7 +222,8 @@
       "z": 2.367100472538867,
       "weight": 0.2218150830694408,
       "loo_delta_dmax": 0.029265063044911166,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Burushaski",
@@ -193,7 +234,8 @@
       "z": 3.761350802978108,
       "weight": 0.34010631691214277,
       "loo_delta_dmax": 0.02889181236538274,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Songhay",
@@ -204,7 +246,8 @@
       "z": 3.045276501190787,
       "weight": 0.26277996248563634,
       "loo_delta_dmax": 0.02818358473844018,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Eastern Arabic",
@@ -215,18 +258,8 @@
       "z": 3.7746732538527406,
       "weight": 0.2653546446916801,
       "loo_delta_dmax": 0.028081321838489215,
-      "review": true
-    },
-    {
-      "lineage": "Nubian",
-      "id": "MEIDOB_NUBIAN",
-      "language": "Midob",
-      "n_concepts": 38,
-      "mean_ldnd": 0.8677486658096314,
-      "z": 2.1078724826691735,
-      "weight": 0.1900638856159779,
-      "loo_delta_dmax": 0.027140663120752473,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Kipchak",
@@ -237,7 +270,8 @@
       "z": 3.776757401588885,
       "weight": 0.23886321190805884,
       "loo_delta_dmax": 0.026711257120224152,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Khoe-Kwadi",
@@ -248,7 +282,8 @@
       "z": 4.174217995079401,
       "weight": 0.2008211750450414,
       "loo_delta_dmax": 0.02641650465771228,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Kuliak",
@@ -259,7 +294,8 @@
       "z": 0.30031337782509865,
       "weight": 0.26101300225516016,
       "loo_delta_dmax": 0.026193310899638833,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Kxa",
@@ -270,7 +306,8 @@
       "z": 2.4344343777106197,
       "weight": 0.2425263020067349,
       "loo_delta_dmax": 0.026056384972428015,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Great Andamanese",
@@ -281,18 +318,20 @@
       "z": 6.2056998489699335,
       "weight": 0.20896675663064496,
       "loo_delta_dmax": 0.025750798007501352,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
-      "lineage": "Xiang",
-      "id": "XIANG_YONGZHOU_SHOUYAN",
-      "language": "Xiang Chinese",
-      "n_concepts": 31,
-      "mean_ldnd": 0.6416613811796362,
-      "z": 4.627140475906202,
-      "weight": 0.2217369050421443,
-      "loo_delta_dmax": 0.025249897278077915,
-      "review": true
+      "lineage": "Nubian",
+      "id": "MEIDOB_NUBIAN",
+      "language": "Midob",
+      "n_concepts": 38,
+      "mean_ldnd": 0.8647030532360077,
+      "z": 2.410619979726093,
+      "weight": 0.18106361912500693,
+      "loo_delta_dmax": 0.024312789254361755,
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Mixe-Zoque",
@@ -303,40 +342,44 @@
       "z": 2.6304675210114685,
       "weight": 0.21092457887004687,
       "loo_delta_dmax": 0.024148747743318433,
-      "review": true
-    },
-    {
-      "lineage": "Egyptic Arabic",
-      "id": "SHUWA_CHADIAN_ARABIC_2",
-      "language": "Chadian Arabic",
-      "n_concepts": 27,
-      "mean_ldnd": 0.5269520367894854,
-      "z": 2.1048386409496866,
-      "weight": 0.2470319812879569,
-      "loo_delta_dmax": 0.023678283853181048,
-      "review": true
-    },
-    {
-      "lineage": "North African Arabic",
-      "id": "HASSANIYA",
-      "language": "Hassaniyya",
-      "n_concepts": 27,
-      "mean_ldnd": 0.555218118429184,
-      "z": 2.547504221559952,
-      "weight": 0.22505237233016734,
-      "loo_delta_dmax": 0.021379152026914205,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Egyptic Arabic",
       "id": "KIBERA_KENYA",
       "language": "Nubi",
       "n_concepts": 39,
-      "mean_ldnd": 0.5037520187241691,
-      "z": 1.388398702938976,
-      "weight": 0.24628933000428055,
-      "loo_delta_dmax": 0.02077193127522481,
-      "review": true
+      "mean_ldnd": 0.5071307505880084,
+      "z": 1.6560983019367006,
+      "weight": 0.26551835400819723,
+      "loo_delta_dmax": 0.02378548732977004,
+      "review": true,
+      "contact": null
+    },
+    {
+      "lineage": "Xiang",
+      "id": "XIANG_YONGZHOU_SHOUYAN",
+      "language": "Xiang Chinese",
+      "n_concepts": 31,
+      "mean_ldnd": 0.6518936346877705,
+      "z": 3.661499099005841,
+      "weight": 0.20307297012455439,
+      "loo_delta_dmax": 0.021826909918343906,
+      "review": true,
+      "contact": null
+    },
+    {
+      "lineage": "Aramaic",
+      "id": "WESTERN_NEO_ARAMAIC",
+      "language": "Western Neo-Aramaic",
+      "n_concepts": 30,
+      "mean_ldnd": 0.6362367814237421,
+      "z": 4.631749363374346,
+      "weight": 0.20974558418174016,
+      "loo_delta_dmax": 0.021682999272603976,
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Eskimo-Aleut",
@@ -347,7 +390,20 @@
       "z": 3.2638007838788257,
       "weight": 0.17767218030057946,
       "loo_delta_dmax": 0.020691936882404338,
-      "review": true
+      "review": true,
+      "contact": null
+    },
+    {
+      "lineage": "Xiang",
+      "id": "XIANG_GUILIN_JIESHOU",
+      "language": "Xiang Chinese",
+      "n_concepts": 30,
+      "mean_ldnd": 0.5982643609697168,
+      "z": 2.324775954389215,
+      "weight": 0.20294327017499952,
+      "loo_delta_dmax": 0.020535053025970473,
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Miwok-Costanoan",
@@ -358,7 +414,8 @@
       "z": 1.1502991087591714,
       "weight": 0.20945249054147003,
       "loo_delta_dmax": 0.02044156818300924,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Nivkh",
@@ -369,7 +426,8 @@
       "z": 2.529773943974772,
       "weight": 0.2729133726924833,
       "loo_delta_dmax": 0.019689462624426834,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Ainu",
@@ -380,7 +438,8 @@
       "z": 3.5803087653342014,
       "weight": 0.27383072417913407,
       "loo_delta_dmax": 0.019445900662814708,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Yukaghir",
@@ -391,18 +450,8 @@
       "z": 8.947850057897679,
       "weight": 0.28698274001468277,
       "loo_delta_dmax": 0.01920266982295793,
-      "review": true
-    },
-    {
-      "lineage": "North-Eastern Neo-Aramaic",
-      "id": "CHRISTIAN_URMI",
-      "language": "Assyrian Neo-Aramaic",
-      "n_concepts": 40,
-      "mean_ldnd": 0.39922692047225106,
-      "z": 3.453658851075866,
-      "weight": 0.281006861411187,
-      "loo_delta_dmax": 0.018974124096781786,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Heibanic",
@@ -413,7 +462,8 @@
       "z": 1.8794759912109247,
       "weight": 0.17218918407604095,
       "loo_delta_dmax": 0.018956390852401084,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Heibanic",
@@ -424,18 +474,8 @@
       "z": 1.6475116448204934,
       "weight": 0.17246657639369872,
       "loo_delta_dmax": 0.018799822336410976,
-      "review": true
-    },
-    {
-      "lineage": "Nubian",
-      "id": "NOBIIN",
-      "language": "Nobiin",
-      "n_concepts": 32,
-      "mean_ldnd": 0.8018896400928497,
-      "z": 0.9662835589183078,
-      "weight": 0.16671154914238173,
-      "loo_delta_dmax": 0.01872204646980058,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Miwok-Costanoan",
@@ -446,7 +486,8 @@
       "z": 2.598407942572398,
       "weight": 0.19433706380614066,
       "loo_delta_dmax": 0.01826408135658686,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Yeniseian",
@@ -457,7 +498,8 @@
       "z": 1.0042485053082493,
       "weight": 0.1940695206932427,
       "loo_delta_dmax": 0.017812676303176955,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Athabaskan-Eyak-Tlingit",
@@ -468,7 +510,14 @@
       "z": 4.031733079534726,
       "weight": 0.145792116952737,
       "loo_delta_dmax": 0.017627093665141258,
-      "review": true
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8816176109624358,
+        "nearest_in_id": "BABINE",
+        "nearest_out": 0.8335489357780308,
+        "nearest_out_id": "BHILI",
+        "nearest_out_family": "Indo-European"
+      }
     },
     {
       "lineage": "Berber",
@@ -479,7 +528,8 @@
       "z": 3.325464615451001,
       "weight": 0.17300149305810245,
       "loo_delta_dmax": 0.017522478272800734,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Kxa",
@@ -490,7 +540,8 @@
       "z": 0.10074961814445428,
       "weight": 0.19982285472462807,
       "loo_delta_dmax": 0.017249989604626093,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Jin",
@@ -501,7 +552,8 @@
       "z": 2.7035817741132075,
       "weight": 0.19667898065945125,
       "loo_delta_dmax": 0.017052039691210608,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Gan",
@@ -512,7 +564,8 @@
       "z": 3.8747689524345663,
       "weight": 0.18510120077007716,
       "loo_delta_dmax": 0.016916706787454494,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Kuliak",
@@ -523,7 +576,8 @@
       "z": 1.6332203688166178,
       "weight": 0.22986711744748253,
       "loo_delta_dmax": 0.01684287623674008,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Kuliak",
@@ -534,7 +588,8 @@
       "z": 1.6330600682433916,
       "weight": 0.22737371561658293,
       "loo_delta_dmax": 0.01666253842223142,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "South Ethiopic",
@@ -545,7 +600,8 @@
       "z": 2.2632355260954844,
       "weight": 0.17147687867823921,
       "loo_delta_dmax": 0.016230430410256957,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Celtic",
@@ -556,7 +612,8 @@
       "z": 1.73063009436407,
       "weight": 0.1751403126592661,
       "loo_delta_dmax": 0.015979071539950374,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Celtic",
@@ -567,7 +624,8 @@
       "z": 1.7720211544008686,
       "weight": 0.17550194397090035,
       "loo_delta_dmax": 0.015874248816061254,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Saami",
@@ -578,7 +636,8 @@
       "z": 2.442529988209197,
       "weight": 0.1791480869596749,
       "loo_delta_dmax": 0.01571410664762607,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Mandarin",
@@ -589,7 +648,8 @@
       "z": 5.0306662686173045,
       "weight": 0.16492920695889887,
       "loo_delta_dmax": 0.015407801601379667,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Songhay",
@@ -600,7 +660,8 @@
       "z": 2.3838543352326376,
       "weight": 0.21806715862248605,
       "loo_delta_dmax": 0.015364763614226229,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Khoe-Kwadi",
@@ -611,7 +672,20 @@
       "z": 1.9574099470670259,
       "weight": 0.1665588666885896,
       "loo_delta_dmax": 0.015343931802352495,
-      "review": true
+      "review": true,
+      "contact": null
+    },
+    {
+      "lineage": "North-Eastern Neo-Aramaic",
+      "id": "CHRISTIAN_URMI",
+      "language": "Assyrian Neo-Aramaic",
+      "n_concepts": 40,
+      "mean_ldnd": 0.39007242520650226,
+      "z": 2.5130055223158987,
+      "weight": 0.25395189949583036,
+      "loo_delta_dmax": 0.015333345555974542,
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Tarascan",
@@ -622,7 +696,8 @@
       "z": 0.4354144022640171,
       "weight": 0.33822736896301475,
       "loo_delta_dmax": 0.015323929857597784,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Eastern Arabic",
@@ -633,7 +708,8 @@
       "z": 1.2562095720827113,
       "weight": 0.2178912365004813,
       "loo_delta_dmax": 0.015155637356693674,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Samoyedic",
@@ -644,29 +720,116 @@
       "z": 2.6616279513172993,
       "weight": 0.15966938414923681,
       "loo_delta_dmax": 0.015011913554344058,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
-      "lineage": "Egyptic Arabic",
-      "id": "SHUWA_CHADIAN_ARABIC",
-      "language": "Chadian Arabic",
-      "n_concepts": 22,
-      "mean_ldnd": 0.4878450461796352,
-      "z": 1.000366402483435,
-      "weight": 0.1863168516633054,
-      "loo_delta_dmax": 0.012283759186390464,
-      "review": true
+      "lineage": "Kru",
+      "id": "AIZI_TIAGBAMRIN",
+      "language": "Tiagbamrin Aizi",
+      "n_concepts": 29,
+      "mean_ldnd": 0.7519584107398987,
+      "z": 2.824859219826126,
+      "weight": 0.14236254100208556,
+      "loo_delta_dmax": 0.012252149651725164,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.6942385511749011,
+        "nearest_in_id": "KLAO",
+        "nearest_out": 0.05148193962544338,
+        "nearest_out_id": "AIZI",
+        "nearest_out_family": "Atlantic-Congo"
+      }
     },
     {
-      "lineage": "Nubian",
-      "id": "KADARU",
-      "language": "Kadaru",
-      "n_concepts": 22,
-      "mean_ldnd": 0.7574980556964874,
-      "z": 0.35595112621245584,
-      "weight": 0.07211237595456294,
-      "loo_delta_dmax": 0.0024210553074097696,
-      "review": true
+      "lineage": "Salishan",
+      "id": "BELLA_COOLA",
+      "language": "Bella Coola",
+      "n_concepts": 40,
+      "mean_ldnd": 0.8870154845303503,
+      "z": 1.97883667494459,
+      "weight": 0.09908399763657098,
+      "loo_delta_dmax": 0.007548277888098642,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8361027300023601,
+        "nearest_in_id": "SECHELT",
+        "nearest_out": 0.8150192060240128,
+        "nearest_out_id": "PAPORA_2",
+        "nearest_out_family": "Austronesian"
+      }
+    },
+    {
+      "lineage": "Algic",
+      "id": "YUROK",
+      "language": "Yurok",
+      "n_concepts": 40,
+      "mean_ldnd": 0.9235232421330043,
+      "z": 2.197351823033496,
+      "weight": 0.08247216394726208,
+      "loo_delta_dmax": 0.005449726357832141,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8495419284582055,
+        "nearest_in_id": "WIYOT",
+        "nearest_out": 0.8287987554382125,
+        "nearest_out_id": "PAPORA_2",
+        "nearest_out_family": "Austronesian"
+      }
+    },
+    {
+      "lineage": "Algic",
+      "id": "MICHIF",
+      "language": "Heritage Michif",
+      "n_concepts": 37,
+      "mean_ldnd": 0.8703765971320016,
+      "z": 1.28313206042598,
+      "weight": 0.07165549147443469,
+      "loo_delta_dmax": 0.003956720816821191,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.758471178736208,
+        "nearest_in_id": "EASTERN_SWAMPY_CREE",
+        "nearest_out": 0.5871928980715518,
+        "nearest_out_id": "ST_LUCIAN_CREOLE_FRENCH",
+        "nearest_out_family": "Indo-European"
+      }
+    },
+    {
+      "lineage": "Algic",
+      "id": "WIYOT",
+      "language": "Wiyot",
+      "n_concepts": 33,
+      "mean_ldnd": 0.9053153889519828,
+      "z": 1.8711722841188476,
+      "weight": 0.07090121446277894,
+      "loo_delta_dmax": 0.003919235913276697,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8363922628878465,
+        "nearest_in_id": "MENOMINEE",
+        "nearest_out": 0.8102420991639276,
+        "nearest_out_id": "PAPORA_2",
+        "nearest_out_family": "Austronesian"
+      }
+    },
+    {
+      "lineage": "Cushitic",
+      "id": "MOGOGODO",
+      "language": "Yaaku",
+      "n_concepts": 30,
+      "mean_ldnd": 0.9394336229638208,
+      "z": 2.1456004771028288,
+      "weight": 0.057855050733245594,
+      "loo_delta_dmax": 0.002719571998393455,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8716524152877709,
+        "nearest_in_id": "BEDJA_BEDAWI",
+        "nearest_out": 0.8116289017270045,
+        "nearest_out_id": "MANGBETU_2",
+        "nearest_out_family": "Central Sudanic"
+      }
     },
     {
       "lineage": "Dogon",
@@ -677,7 +840,44 @@
       "z": -0.05557336634632374,
       "weight": 0.06897858261504712,
       "loo_delta_dmax": 0.0020085591749241516,
-      "review": true
+      "review": true,
+      "contact": null
+    },
+    {
+      "lineage": "Pama-Nyungan",
+      "id": "MBABARAM",
+      "language": "Mbabaram",
+      "n_concepts": 32,
+      "mean_ldnd": 0.9438376358399788,
+      "z": 1.7428459722919125,
+      "weight": 0.041413852669205796,
+      "loo_delta_dmax": 0.0014535646634206145,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8046482923806438,
+        "nearest_in_id": "GUGU_BUJUN",
+        "nearest_out": 0.7933094360584997,
+        "nearest_out_id": "URIMO",
+        "nearest_out_family": "Nuclear Torricelli"
+      }
+    },
+    {
+      "lineage": "Chadic",
+      "id": "BALDEMU",
+      "language": "Baldamu",
+      "n_concepts": 31,
+      "mean_ldnd": 0.9503135800361633,
+      "z": 3.050345394863773,
+      "weight": 0.04099205436660081,
+      "loo_delta_dmax": 0.0013817274885339348,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8510123008827422,
+        "nearest_in_id": "FALI_MUCHELLA",
+        "nearest_out": 0.20987525422150644,
+        "nearest_out_id": "KUNDU",
+        "nearest_out_family": "Atlantic-Congo"
+      }
     },
     {
       "lineage": "Dogon",
@@ -688,18 +888,152 @@
       "z": 0.8311197207694648,
       "weight": 0.08940696940160285,
       "loo_delta_dmax": 0.0011889970576863806,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
-      "lineage": "Nubian",
-      "id": "KENZI",
-      "language": "Kenuzi",
-      "n_concepts": 22,
-      "mean_ldnd": 0.6326328471302987,
-      "z": -1.3621938329877816,
-      "weight": 0.04471773519307937,
-      "loo_delta_dmax": 0.0004472731888549575,
-      "review": true
+      "lineage": "Eastern Malayo-Polynesian",
+      "id": "YAUR",
+      "language": "Yaur",
+      "n_concepts": 36,
+      "mean_ldnd": 0.9515049659327812,
+      "z": 2.0316462370535384,
+      "weight": 0.02931969324171949,
+      "loo_delta_dmax": 0.0007287727512832465,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.85832147466106,
+        "nearest_in_id": "PAPORA_2",
+        "nearest_out": 0.8578005525374317,
+        "nearest_out_id": "MUDUGA",
+        "nearest_out_family": "Dravidian"
+      }
+    },
+    {
+      "lineage": "Malayo-Polynesian",
+      "id": "YAUR",
+      "language": "Yaur",
+      "n_concepts": 36,
+      "mean_ldnd": 0.9529854850573314,
+      "z": 2.3106083918279046,
+      "weight": 0.025499349695192745,
+      "loo_delta_dmax": 0.0005488647198959029,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.85832147466106,
+        "nearest_in_id": "PAPORA_2",
+        "nearest_out": 0.8578005525374317,
+        "nearest_out_id": "MUDUGA",
+        "nearest_out_family": "Dravidian"
+      }
+    },
+    {
+      "lineage": "Pama-Nyungan",
+      "id": "KARADJERI",
+      "language": "Karadjeri",
+      "n_concepts": 34,
+      "mean_ldnd": 0.9076556954532862,
+      "z": 0.8671540741767265,
+      "weight": 0.02580672589761523,
+      "loo_delta_dmax": 0.0005167210641252584,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.7245613931443363,
+        "nearest_in_id": "WARLPIRI_2",
+        "nearest_out": 0.6266244464800107,
+        "nearest_out_id": "YAWURU",
+        "nearest_out_family": "Nyulnyulan"
+      }
+    },
+    {
+      "lineage": "Austronesian",
+      "id": "YAUR",
+      "language": "Yaur",
+      "n_concepts": 36,
+      "mean_ldnd": 0.9531333282650899,
+      "z": 2.269009085984242,
+      "weight": 0.024130727026642144,
+      "loo_delta_dmax": 0.0004913065577258902,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.85832147466106,
+        "nearest_in_id": "PAPORA_2",
+        "nearest_out": 0.8578005525374317,
+        "nearest_out_id": "MUDUGA",
+        "nearest_out_family": "Dravidian"
+      }
+    },
+    {
+      "lineage": "Pama-Nyungan",
+      "id": "AGHU_THARRNGGALA",
+      "language": "Aghu Tharnggalu",
+      "n_concepts": 32,
+      "mean_ldnd": 0.9324987391009927,
+      "z": 1.4666880108046394,
+      "weight": 0.022414640073593273,
+      "loo_delta_dmax": 0.0004041168961890218,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8271207940891553,
+        "nearest_in_id": "YUGAMBEH",
+        "nearest_out": 0.7980670931629942,
+        "nearest_out_id": "GOLA_3",
+        "nearest_out_family": "Atlantic-Congo"
+      }
+    },
+    {
+      "lineage": "Afro-Asiatic",
+      "id": "BALDEMU",
+      "language": "Baldamu",
+      "n_concepts": 31,
+      "mean_ldnd": 0.953274911291459,
+      "z": 1.8652901689386006,
+      "weight": 0.019285305045593844,
+      "loo_delta_dmax": 0.0003004464180367261,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8510123008827422,
+        "nearest_in_id": "FALI_MUCHELLA",
+        "nearest_out": 0.20987525422150644,
+        "nearest_out_id": "KUNDU",
+        "nearest_out_family": "Atlantic-Congo"
+      }
+    },
+    {
+      "lineage": "Afro-Asiatic",
+      "id": "MOGOGODO",
+      "language": "Yaaku",
+      "n_concepts": 30,
+      "mean_ldnd": 0.9555517536051134,
+      "z": 1.9554501081025248,
+      "weight": 0.018158384852295293,
+      "loo_delta_dmax": 0.00026888454854279153,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8716524152877709,
+        "nearest_in_id": "BEDJA_BEDAWI",
+        "nearest_out": 0.8116289017270045,
+        "nearest_out_id": "MANGBETU_2",
+        "nearest_out_family": "Central Sudanic"
+      }
+    },
+    {
+      "lineage": "Pama-Nyungan",
+      "id": "KALA_LAGGAW_YA",
+      "language": "Kala Lagaw Ya",
+      "n_concepts": 35,
+      "mean_ldnd": 0.9217777820304036,
+      "z": 1.207157337050428,
+      "weight": 0.01168653819172023,
+      "loo_delta_dmax": 0.00010979117680176564,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8359727327758969,
+        "nearest_in_id": "WIK_MUNGKAN",
+        "nearest_out": 0.8024486833836928,
+        "nearest_out_id": "KOYRA_CHIINI",
+        "nearest_out_family": "Songhay"
+      }
     },
     {
       "lineage": "Dogon",
@@ -710,18 +1044,44 @@
       "z": 0.642683023880523,
       "weight": 0.04083592246188483,
       "loo_delta_dmax": 0.00010018626324304059,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
-      "lineage": "Northwest Semitic",
-      "id": "LISHAN_DIDAN",
-      "language": "Lishán Didán",
-      "n_concepts": 23,
-      "mean_ldnd": 0.4514200094748627,
-      "z": -0.6837648642006061,
-      "weight": 0.010127354781532816,
-      "loo_delta_dmax": 1.9471503347023855e-05,
-      "review": true
+      "lineage": "Nuclear Trans New Guinea",
+      "id": "WASEMBO",
+      "language": "Wasembo",
+      "n_concepts": 33,
+      "mean_ldnd": 0.9447339687472075,
+      "z": 0.38994165533555314,
+      "weight": 0.0073452636532121765,
+      "loo_delta_dmax": 4.3426759723574904e-05,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.8237685045871983,
+        "nearest_in_id": "SUMAU",
+        "nearest_out": 0.8179338936210776,
+        "nearest_out_id": "WUNAMBAL",
+        "nearest_out_family": "Worrorran"
+      }
+    },
+    {
+      "lineage": "Nuclear Trans New Guinea",
+      "id": "KOVAI_2",
+      "language": "Kovai",
+      "n_concepts": 31,
+      "mean_ldnd": 0.9493739659490149,
+      "z": 0.7030260622534572,
+      "weight": 0.005990835693339572,
+      "loo_delta_dmax": 2.746636911399314e-05,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.7980277541501473,
+        "nearest_in_id": "MAPE_2",
+        "nearest_out": 0.7592715706554518,
+        "nearest_out_id": "PAPORA_2",
+        "nearest_out_family": "Austronesian"
+      }
     },
     {
       "lineage": "Dogon",
@@ -732,7 +1092,8 @@
       "z": 0.5612192266728628,
       "weight": 0.005145317029424804,
       "loo_delta_dmax": 3.440279697564108e-06,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Dogon",
@@ -743,7 +1104,8 @@
       "z": -1.0106570662689085,
       "weight": 0.002886355065682367,
       "loo_delta_dmax": 2.020275488678891e-06,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Dogon",
@@ -754,7 +1116,8 @@
       "z": -1.0816842931637647,
       "weight": 0.0010358453593224757,
       "loo_delta_dmax": 2.6055431279203844e-07,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Mongolic",
@@ -765,7 +1128,26 @@
       "z": -1.3191766497513342,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
+    },
+    {
+      "lineage": "Atlantic-Congo",
+      "id": "AIZI",
+      "language": "Aproumu Aizi",
+      "n_concepts": 28,
+      "mean_ldnd": 0.9022080178999071,
+      "z": 0.21130547359745347,
+      "weight": 0.0,
+      "loo_delta_dmax": 0.0,
+      "review": true,
+      "contact": {
+        "nearest_in": 0.7365740765053503,
+        "nearest_in_id": "TIV_1",
+        "nearest_out": 0.05148193962544341,
+        "nearest_out_id": "AIZI_TIAGBAMRIN",
+        "nearest_out_family": "Kru"
+      }
     },
     {
       "lineage": "Dogon",
@@ -776,7 +1158,8 @@
       "z": 0.4691776871844446,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Dogon",
@@ -787,7 +1170,8 @@
       "z": -2.4463951279396707,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Dogon",
@@ -798,7 +1182,8 @@
       "z": -1.4056248386431507,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Dogon",
@@ -809,7 +1194,8 @@
       "z": -1.844664553024176,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Dogon",
@@ -820,7 +1206,8 @@
       "z": -0.8721290167147595,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Dogon",
@@ -831,7 +1218,8 @@
       "z": 0.11850433069358769,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Dogon",
@@ -842,7 +1230,8 @@
       "z": -1.1965178820546283,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Indo-Aryan",
@@ -853,7 +1242,8 @@
       "z": -1.362525341227787,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Indo-Aryan",
@@ -864,7 +1254,8 @@
       "z": -0.8472049731643042,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
     },
     {
       "lineage": "Indo-Aryan",
@@ -875,29 +1266,8 @@
       "z": -1.1033088348508049,
       "weight": 0.0,
       "loo_delta_dmax": 0.0,
-      "review": true
-    },
-    {
-      "lineage": "Aramaic",
-      "id": "LISHAN_DIDAN",
-      "language": "Lishán Didán",
-      "n_concepts": 23,
-      "mean_ldnd": 0.39675347467786387,
-      "z": -1.1675567822780597,
-      "weight": 0.0,
-      "loo_delta_dmax": 0.0,
-      "review": true
-    },
-    {
-      "lineage": "North-Eastern Neo-Aramaic",
-      "id": "LISHAN_DIDAN",
-      "language": "Lishán Didán",
-      "n_concepts": 23,
-      "mean_ldnd": 0.28072842044962776,
-      "z": -1.5441191109200236,
-      "weight": 0.0,
-      "loo_delta_dmax": 0.0,
-      "review": true
+      "review": true,
+      "contact": null
     }
   ]
 }
