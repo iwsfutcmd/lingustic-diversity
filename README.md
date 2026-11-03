@@ -51,7 +51,7 @@ not absolute values.
 | | Romance | 1.307 | 1.294–1.320 | 1.271 |
 | | Turkic | 1.324 | 1.313–1.336 | 1.281 |
 | deep | Uralic | 1.456 | 1.447–1.466 | 1.358 |
-| | Indo-European (517) | 1.507 | 1.499–1.518 | 1.386 |
+| | Indo-European (527, with Hittite) | 1.510 | 1.502–1.521 | 1.386 |
 
 Across the 72 lineages first compared, the D_max ranking barely changes (Spearman 0.995 against LDND; LDND has not
 been re-run on the 128 whole-pool lineages). What changes is the spacing. The isolate band hardly moves, while the
@@ -190,8 +190,10 @@ extra points zero weight. The 80-doculect Austronesian sample held only 23 Ocean
 was all Oceanic, and Oceanic is the fast-changing part. Scoring the union of the two samples gave 1.528, above both.
 The first fix (a parent's sample contains its children's) made the result depend on which child was largest, so
 Oceanic went to 1.490 on a sample that was two thirds Polynesian. The cure was to remove the sampling: every lineage
-is now scored on all its doculects, so nesting is exact (33 parent/child pairs, 0 violations at any scale, checked on
-every run and recorded in `summary.json`). Lineages defined by Glottolog node and by ASJP Family disagree on a handful
+is now scored on all its doculects, so nesting is exact (58 parent/child pairs, 0 with the parent below the child at any scale, checked on
+every run and recorded in `summary.json`). 25 of the 58 children are not strict subsets of their parent (1–10 lists
+each): a list that shares fewer than 20 concepts with another list in the parent can be dropped there and still be
+kept in the child, where that clash does not occur. `summary.json` lists them under `nesting.not_subset`. Lineages defined by Glottolog node and by ASJP Family disagree on a handful
 of doculects with a blank Family; near-containment (at most 2% outside) counts as nesting.
 
 **The ceiling.** Related lects are closer than unrelated ones, so a real family scores below an unrelated
@@ -219,6 +221,65 @@ certified optimal. Wolfe's method assumes Z is positive semidefinite; PMI-LDND i
 distance 0 from each other and at different distances from a third), so acceptance uses the objective gain a violating
 point could still give, which is second order, and anything failing it goes to the slower general solver.
 
+## Supplements: filling gaps in key lists
+
+`config/supplements.tsv` fills concepts missing from an ASJP list from an expert-coded source. It never overrides an
+ASJP form, every row carries its source form ID and philological reference, and `run_analysis.py --no-supplements` (or
+`ISODIV_NO_SUPPLEMENTS=1`) switches it off. The distance cache fingerprints each list's words, so a supplemented list
+is recomputed and nothing else is.
+
+Currently: Hittite, 30 → 36 concepts, from IE-CoR (CC-BY-4.0): dog *kuwan-*, nose *titita-*, tooth *kak(k)a-*, liver
+*lissi-*, stone *peru(na)-*, full *šu(w)u-* (CHD, HW², Tischler). Sun is left out: *ištanu-* is the Hattic-derived
+Sun-god's name, not an inherited word. Luwian is the next candidate (IE-CoR covers only 19 of the 40 concepts; it needs
+Melchert 1993 or eDiAna).
+
+## Widest pair (robust, tree-free)
+
+D_max is an effective number of distinct lineages; the widest pair is on the distance scale and answers "how far apart
+are the two most different members?". The raw maximum is fragile, since one bad list sets it. `scripts/widest.py` makes
+it robust without using any subgrouping: each list's neighbourhood is the list plus up to 4 nearest lists within the
+same-language noise band (0.474), and a pair's distance is the median over the two neighbourhoods. A list with no
+neighbours (a lone witness, such as Hittite or Akkadian) still counts, unless the contact check flags it: its nearest
+list in another family is closer than its nearest list in its own. Flagged lists are reported in
+`results/contact.{csv,json}` and the audit, never dropped silently (currently AYNU, MOGOGODO, BALDEMU; BALDEMU is 0.210
+from KUNDU in Atlantic-Congo, which suggests a mislabelled list). Results: `results/widest.{csv,json}`, and "Show:
+widest pair" in the explorer. Examples: Japonic 0.553, Turkic 0.809 (Chuvash–Tofa), Mayan 0.857, Uralic 0.996.
+Old, large families (Indo-European 1.000) reach the unrelated level of about 0.97, so the widest pair saturates where
+D_max does not. The widest pair is the most divergent pair, not the earliest split: ancient lists such as Hittite are
+not in it, because they had less time to diverge.
+
+## Cognate check: does PMI-LDND agree with expert cognate coding?
+
+`scripts/cognate_check.py` compares the pipeline's distances with distances from expert cognate judgements in ten
+Lexibank datasets, matched to ASJP by Glottocode. Cognate distance is the share of comparable concepts with no shared
+cognate set. This check is independent of our method. Only derived statistics are written to `results/cognate_check.*`;
+the datasets live in the git-ignored `data/lexibank/` (Grollemund and Kitchen are CC-BY-NC, the others CC-BY-4.0).
+
+**Language pairs** (Spearman ρ with cognate distance; up to 20,000 pairs per dataset):
+
+| dataset | languages | PMI-LDND | LDND | PMI-LDND, ASJP-40 concepts | LDND, ASJP-40 concepts |
+|---|---|---|---|---|---|
+| IE-CoR (Indo-European) | 97 | 0.555 | 0.548 | 0.693 | 0.654 |
+| ABVD (Austronesian) | 827 | 0.528 | 0.492 | 0.650 | 0.601 |
+| Bowern (Pama-Nyungan) | 108 | 0.447 | 0.440 | 0.468 | 0.450 |
+| Sagart (Sino-Tibetan) | 33 | 0.657 | 0.605 | 0.566 | 0.482 |
+| Kitchen (Semitic) | 20 | 0.822 | 0.773 | 0.773 | 0.723 |
+| Savelyev (Turkic) | 25 | 0.537 | 0.463 | 0.467 | 0.423 |
+| DravLex (Dravidian) | 19 | 0.783 | 0.767 | 0.806 | 0.795 |
+| Grollemund (Bantu) | 312 | 0.661 | 0.647 | 0.675 | 0.650 |
+| Uto-Aztecan | 32 | 0.700 | 0.665 | 0.788 | 0.745 |
+| Lee (Japonic) | 3 | n/a | n/a | n/a | n/a |
+
+PMI-LDND agrees with expert cognates better than plain LDND in every dataset. Agreement is weakest for Pama-Nyungan,
+where borrowing is heavy and the cognate signal shallow.
+
+**Lineages.** For 34 lineages with at least 5 matched languages, `spread` is computed from cognate distance and from
+PMI-LDND on the same languages. The two rank the lineages almost identically: Spearman 0.973 pooled; within datasets,
+IE-CoR 0.929 (7 lineages), ABVD 0.909 (11) and Kitchen 1.000 (6). The order Slavic < Romance < Germanic < Balto-Slavic <
+Iranian < Indo-Aryan < Indo-European is the same under both. PMI-LDND compresses the scale relative to cognates, which
+leaves rankings unaffected. At the level that matters for D_max, ASJP-40 with PMI-LDND reproduces the diversity ranking
+that expert cognate coding gives.
+
 ## Caveats
 
 - **Noise floor.** Same-language ASJP doculect pairs have PMI-LDND 0.086 / 0.228 / 0.474 at the 10th /
@@ -235,8 +296,11 @@ point could still give, which is second order, and anything failing it goes to t
 
 ## Lineages
 
-Each lineage is scored on all its ASJP doculects (minus the exclusions, and minus doculects that share fewer than 20
-concepts with too many others), and `--cap N` restores a per-lineage cap. 128 lineages: 70 top-level (the original 16, 32 more ASJP families, six single- or few-list isolates incl. Sumerian,
+Each lineage is scored on all its ASJP doculects, minus the exclusions and minus lists that leave pairs undefined
+(fewer than 20 shared concepts). The drop rule removes one list at a time: the one with the most undefined pairs, then
+the shorter list, and only then does a lineage's protected list (the one defining a child) count; a lineage always
+keeps its longest list. Ordering by length before protection is what keeps Hittite (36 concepts) in Indo-European:
+protecting the child-defining lists first had forced it out. `--cap N` restores a per-lineage cap. 128 lineages: 70 top-level (the original 16, 32 more ASJP families, six single- or few-list isolates incl. Sumerian,
 Elamite and Etruscan, and 16 small families incl. Mande, Kru, Ijoid, Dogon and the Kordofanian groups), 24 subfamilies selected by node in ASJP's
 Glottolog classification path (`SUBFAMILIES` in `scripts/run_analysis.py`: Semitic, Arabic, Sinitic, Min, Indo-Aryan,
 Iranian, Oceanic, Polynesian, ...), and nine major Sinitic groups (`SINITIC_GROUPS`: Mandarin, Jin, Wu, Hui, Gan,
@@ -360,14 +424,16 @@ pytest                               # property tests: duplicate invariance, mon
 python scripts/pmi_train.py          # → results/pmi_model_all.tsv  (~1 min; skip with --distance ldnd)
 python scripts/run_analysis.py       # → results/summary.{csv,json}, samples.json, profiles.json, ldnd_*.tsv (n ≤ 200), data/cache/  (~1 h, 4 cores, numba)
 python scripts/bootstrap.py          # → results/bootstrap.json  (~5 min)
-PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{csv,json,png}  (~30 min)
+PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{csv,json,png}  (~45 min)
+PYTHONPATH=scripts python scripts/widest.py         # → results/widest.{csv,json}, contact.{csv,json}: robust widest pair (~25 min)
 PYTHONPATH=scripts python scripts/audit.py          # → results/audit.{csv,json}  (~3 min, reads data/cache/)
 PYTHONPATH=scripts python scripts/adversarial.py    # → results/adversarial.{csv,json}  (~4 min)
 PYTHONPATH=scripts python scripts/single_lists.py   # → results/single_lists.json
 PYTHONPATH=scripts python scripts/sensitivity.py    # → results/sensitivity.{csv,json}: D_max without long-extinct / contact doculects (~1 min)
-PYTHONPATH=scripts python scripts/rarefaction.py    # → results/rarefaction.{csv,json}: D_max at equal numbers of languages (~12 min)
-python scripts/build_site.py         # → docs/ (site, data/wordlists.json, downloads); commit docs/ to publish
+PYTHONPATH=scripts python scripts/rarefaction.py    # → results/rarefaction.{csv,json}: D_max at equal numbers of languages (~5 min)
+PYTHONPATH=scripts python scripts/cognate_check.py  # → results/cognate_check.{csv,json}: agreement with expert cognates (needs data/lexibank/, ~15 min)
 python scripts/build_explorer.py     # → results/explorer.html, results/relative.csv
+python scripts/build_site.py         # → docs/ (site, data/wordlists.json, downloads); commit docs/ to publish
 python scripts/pmi_eval.py           # → results/pmi_model.tsv, pmi_eval.json, pmi_eval_pairs.csv (--train geo|geo-no-dup to compare)
 ```
 
@@ -379,7 +445,8 @@ tuples of opaque segment tokens, so any script or segmentation works.
 - Recalibrate `loans.py` thresholds in PMI-LDND units, and check whether PMI's pull on chance resemblances
   (Koreanic ↔ Burushaski) needs a correction.
 - Use longer, expert-cognate-coded lists from Lexibank (Japonic, Koreanic, Ainu datasets) to get
-  better resolution inside the isolate band.
+  better resolution inside the isolate band; the cognate check supports this, since agreement is good.
+- Supplement Luwian (Melchert 1993 / eDiAna) as Hittite was.
 - Report the D_max(k) curve and the share of the unrelated maximum as the headline, not one D_max at k_cal. Both are
   in the explorer; the tables above still quote k_cal.
 - For a paper: compare with Holman et al. 2011 family ages, add a doculect-level bootstrap and a simulation on

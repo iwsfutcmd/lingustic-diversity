@@ -187,8 +187,15 @@ def main() -> None:
             r = spearmanr([x["spread_cognate"] for x in rs], [x["spread_pmi"] for x in rs])[0]
             report["datasets"][name]["rho_lineages"] = (float(r), len(rs))
             print(f'  {name:16s} {len(rs):2d} lineages  Spearman {r:.3f}')
+        else:
+            print(f'  {name:16s} {len(rs):2d} lineages  (too few for a correlation)')
         for x in sorted(rs, key=lambda x: x["spread_cognate"]):
             print(f'     {x["lineage"]:28s} n={x["languages"]:3d}  spread cognate {x["spread_cognate"]:.3f}  PMI-LDND {x["spread_pmi"]:.3f}')
+    rs = report["lineages"]
+    if len(rs) >= 4:      # every dataset's lineages together; each dataset's cognate scale differs a little
+        r = spearmanr([x["spread_cognate"] for x in rs], [x["spread_pmi"] for x in rs])[0]
+        report["pooled_rho_lineages"] = (float(r), len(rs))
+        print(f'  all datasets     {len(rs):2d} lineages  Spearman {r:.3f}')
     args.out.mkdir(exist_ok=True)
     (args.out / "cognate_check.json").write_text(json.dumps(report, indent=1), encoding="utf-8")
     with (args.out / "cognate_check.csv").open("w", encoding="utf-8", newline="") as fh:
