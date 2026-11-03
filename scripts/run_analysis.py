@@ -430,7 +430,7 @@ def check_nesting(results: list[dict], children: dict[str, list[str]], tol: floa
     return {"pairs": pairs, "violations": bad, "not_subset": not_subset}
 
 
-def sampling_robustness(docs: list[Doculect], k_cal: float, metric: Metric) -> list[dict]:
+def sampling_robustness(docs: list[Doculect], k_cal: float, metric: Metric, kernel=None) -> list[dict]:
     """Same lineage, different 'dialect counting' choices."""
     by_glotto: dict[str, Doculect] = {}
     for x in docs:
@@ -449,6 +449,7 @@ def sampling_robustness(docs: list[Doculect], k_cal: float, metric: Metric) -> l
         out.append({
             "sample": label,
             "n": len(sub),
+            **({"d_max": max_diversity(kernel(d)).value} if kernel is not None else {}),
             "d_max_kcal": max_diversity(z).value,
             "uniform_d2_kcal": uniform_diversity(z),
             "spread": spread(d),
@@ -553,7 +554,7 @@ def main() -> None:
           f"{len(nesting['violations'])} with parent below child", flush=True)
 
     japonic = [x for x in all_docs.values() if rows[x.id]["Family"] == "Japonic"]
-    robust = sampling_robustness(japonic, k_cal, metric)
+    robust = sampling_robustness(japonic, k_cal, metric, kernel)
     for r in robust:
         print(r)
 

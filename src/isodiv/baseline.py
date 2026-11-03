@@ -30,6 +30,14 @@ def unrelated_baseline(n: int, sizes: list[int], measured: list[np.ndarray | flo
     """
     xs = np.log([1, *sizes])
     ys = [np.ones_like(np.asarray(measured[0], dtype=float)), *(np.asarray(m, dtype=float) for m in measured)]
+    if n <= 1:
+        return ys[0]
+    if n < sizes[0]:
+        # below the smallest measured set, follow the shape of the equal-similarity ceiling (two lects at similarity
+        # z̄ score exactly 2/(1+z̄)); interpolating in log n from 1 would give two unrelated lects ≈ 2.7 on the
+        # calibrated scale, where they score 2
+        c0 = np.maximum(np.asarray(ceiling(sizes[0], zbar)) - 1.0, 1e-12)
+        return 1.0 + (ys[1] - 1.0) * (np.asarray(ceiling(n, zbar)) - 1.0) / c0
     if n <= sizes[-1]:
         t = np.log(max(n, 1))
         j = min(max(int(np.searchsorted(xs, t, side="right")) - 1, 0), len(xs) - 2)

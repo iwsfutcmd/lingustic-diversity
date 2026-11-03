@@ -21,10 +21,10 @@
    when Z is not positive semidefinite on the visited supports (PMI-LDND is not a metric).
    **Every lineage is scored on all its ASJP doculects** (up to 2,042 for Atlantic-Congo), and a lineage that
    contains others contains all of their doculects, so D_max can never fall from a subfamily to its family
-   (see [Whole pools, nesting and the size ceiling](#whole-pools-nesting-and-the-size-ceiling)).
+   (see [Whole pools, nesting and size](#whole-pools-nesting-and-size)).
 3. **Similarity anchored by evidence, not by a clock or a fitted constant:** Z = 1 at the median distance between
    two doculects of the *same* language (same Glottocode, entries named X / X_2; PMI-LDND 0.228) and falls linearly
-   to Z = 0 at **0.938**, the distance at which a permutation test detects a related pair half the time
+   to Z = 0 at **0.940**, the distance at which a permutation test detects a related pair half the time
    (`scripts/regularity_eval.py`). Pairs farther apart than that are indistinguishable from unrelated ones, so they
    count as fully distinct: **n unrelated lects score about n, and D_max reads as the effective number of lineages a
    lineage's word lists cannot tie together** (see [Calibrated similarity](#calibrated-similarity)). The older
@@ -33,100 +33,101 @@
 
 ## Results (ASJP v21, `asjp` tokenization, PMI-LDND)
 
-D_max at k_cal, on every doculect of each lineage. The interval is the 5–95% range over 30 draws, each keeping
-30 of the 40 concepts (on at most 40 doculects, shown as a width around the estimate). The LDND column is the
-previous pipeline (k_cal 0.353; Indo-European re-run on the whole pool, the rest from the 80-doculect cap, which
-changes nothing for lineages with fewer than 80 doculects). The scales differ, so compare orderings and band gaps,
-not absolute values.
+D_max on the calibrated similarity (effective number of lineages the 40-word lists cannot tie together), on every
+doculect of each lineage. The interval is the 5–95% width of 30 draws, each keeping 30 of the 40 concepts (on at most
+40 doculects), placed around the estimate. The last column is the older exp(−k_cal·d) scale, kept for comparison: it
+gives the same ordering, squeezed under 1.57.
 
-| band | lineage | D_max | interval | LDND D_max |
+| band | lineage (doculects) | D_max | interval | at k_cal |
 |---|---|---|---|---|
-| isolate-like | Basque | 1.032 | 1.026–1.038 | 1.037 |
-| | Haida | 1.073 | 1.062–1.077 | 1.068 |
-| | Koreanic | 1.115 | 1.102–1.128 | 1.110 |
-| | Burushaski | 1.116 | 1.102–1.131 | 1.113 |
-| | Nivkh | 1.139 | 1.129–1.154 | 1.131 |
-| | Ainu | 1.159 | 1.150–1.173 | 1.136 |
-| genus-like | Slavic | 1.238 | 1.224–1.254 | 1.220 |
-| | Japonic | 1.248 | 1.234–1.264 | 1.223 |
-| | Yeniseian | 1.264 | 1.251–1.274 | 1.236 |
-| | Kartvelian | 1.271 | 1.263–1.279 | 1.230 |
-| | Mongolic | 1.294 | 1.287–1.308 | 1.267 |
-| | Germanic | 1.302 | 1.295–1.313 | 1.268 |
-| | Romance | 1.307 | 1.294–1.320 | 1.271 |
-| | Turkic | 1.324 | 1.313–1.336 | 1.281 |
-| deep | Uralic | 1.456 | 1.447–1.466 | 1.358 |
-| | Indo-European (527, with Hittite) | 1.510 | 1.502–1.521 | 1.386 |
+| isolate-like | Basque (2) | 1.00 | 1.00–1.00 | 1.032 |
+| | Haida (2) | 1.07 | 1.03–1.08 | 1.073 |
+| | Burushaski (10) | 1.15 | 1.09–1.19 | 1.116 |
+| | Koreanic (3) | 1.17 | 1.13–1.22 | 1.115 |
+| | Nivkh (7) | 1.21 | 1.15–1.26 | 1.139 |
+| | Ainu (23) | 1.29 | 1.24–1.37 | 1.159 |
+| genus-like | Slavic (34) | 1.61 | 1.52–1.71 | 1.238 |
+| | Japonic (33) | 1.69 | 1.59–1.79 | 1.248 |
+| | Yeniseian (9) | 1.91 | 1.79–2.02 | 1.264 |
+| | Mongolic (29) | 2.04 | 1.97–2.21 | 1.294 |
+| | Kartvelian (6) | 2.12 | 2.03–2.23 | 1.271 |
+| | Romance (64) | 2.14 | 2.02–2.29 | 1.307 |
+| | Germanic (61) | 2.16 | 2.10–2.28 | 1.302 |
+| | Turkic (71) | 2.44 | 2.30–2.60 | 1.324 |
+| deep | Semitic (110) | 5.26 | 4.96–5.51 | 1.436 |
+| | Uralic (64) | 6.57 | 5.98–7.34 | 1.456 |
+| | Indo-European (527, with Hittite) | 14.98 | 14.34–15.92 | 1.510 |
 
-Across the 72 lineages first compared, the D_max ranking barely changes (Spearman 0.995 against LDND; LDND has not
-been re-run on the 128 whole-pool lineages). What changes is the spacing. The isolate band hardly moves, while the
-deep families pull away: Uralic and Indo-European were about 0.08 above Turkic under LDND and are now 0.13 and 0.18
-above it. PMI finds more shared signal between distantly related lists, so a
-family's deep branches count as more distinct from each other relative to its shallow dialect clusters.
+The largest lineages: Atlantic-Congo 72.7 (2,042 doculects), Nuclear Trans New Guinea 47.9, Austronesian 44.4,
+Afro-Asiatic 35.1, Pama-Nyungan 22.7, Sino-Tibetan 21.7, Chadic 19.6, Otomanguean 18.2, Indo-European 15.0.
 
-**Dialect-counting robustness (Japonic, D_max at k_cal):**
+The ordering is almost the same as at k_cal; what changes is the spacing. The isolate and genus bands now read
+directly: Germanic is about two lineages the 40-word lists cannot tie together (Proto-Germanic carries the largest
+weight), Turkic about two and a half (Chuvash carries the largest), and Indo-European about fifteen. A few
+small lineages move up within the genus band (Kartvelian 2.12 with 6 lists, Yeniseian 1.91 with 9): on this scale a
+lineage with two deeply split branches scores about 2 however few lists it has, where k_cal rewarded many partly
+distinct lists.
 
-| sample | n | D_max | equal-weight |
+**Dialect-counting robustness (Japonic):**
+
+| sample | n | D_max | at k_cal |
 |---|---|---|---|
-| all doculects | 33 | 1.248 | 1.212 |
-| one per Glottocode | 10 | 1.217 | 1.191 |
-| all + Tokyo duplicated 3× | 36 | 1.248 (unchanged) | 1.214 |
-| Tokyo + Shuri only | 2 | 1.126 | 1.126 |
+| all doculects | 33 | 1.69 | 1.248 |
+| one per Glottocode | 10 | 1.54 | 1.217 |
+| all + Tokyo duplicated 3× | 36 | 1.69 (unchanged) | 1.248 |
+| Tokyo + Shuri only | 2 | 1.29 | 1.126 |
 
-D_max does not move when Tokyo is duplicated. The last row
-falls because two doculects miss real Ryukyuan breadth (e.g. Yonaguni). That is under-sampling of
-genuinely different varieties, not a counting artifact.
+D_max does not move when Tokyo is duplicated. The last row falls because two doculects miss real Ryukyuan breadth
+(e.g. Yonaguni). That is under-sampling of genuinely different varieties, not a counting artifact. (The kernel column
+of this check is added to `summary.json` → `japonic_sampling` from the next full run.)
 
 **Reading:**
 - The bands do not overlap. Japonic measures as a genus-sized family, level with Slavic,
   so including Ryukyuan is not a counting artifact.
 - Koreanic (with Jeju) stays in the isolate band.
 - Yeniseian scores as genus-sized, so Ket is a "last survivor", not an isolate.
-- Turkic now sits at the top of the genus band rather than at the bottom of the deep band, closer to its usual
-  reading as a shallow family.
+- Turkic sits at the top of the genus band, far below Uralic and Indo-European.
 
-**Sinitic groups.** Every major group scores at genus level: Min 1.333, Mandarin 1.322, Pinghua 1.316, Wu 1.304,
-Yue 1.294, Gan 1.290, Hakka 1.283, Hui 1.267, Xiang 1.260, Jin 1.242 (Romance 1.307, Germanic 1.302, Slavic 1.238),
-and Sinitic as a whole 1.416 (482 doculects). Each group's dialect lists are about as lexically diverse as a whole Western European genus. This is not a
-short-word or transcription artifact: Sinitic words average 3.67 segments (Germanic 3.80), and the 33 same-language
-pairs inside Sinitic have median PMI-LDND 0.19, below the ASJP-wide 0.228. Wutun, heavily restructured by Tibetan and
-Mongolic contact, is in Mandarin's pool; without it Mandarin is 1.314 rather than 1.322 (see below).
+**Sinitic groups.** Every major group scores at genus level: Min 2.56, Mandarin 2.40, Pinghua 2.30, Wu 2.12,
+Gan 2.08, Yue 2.02, Xiang 2.01, Hakka 1.97, Hui 1.79, Jin 1.66 (Germanic 2.16, Romance 2.14, Slavic 1.61), and
+Sinitic as a whole 4.30 (491 doculects). Each group's dialect lists are about as lexically diverse as a whole Western
+European genus. This is not a short-word or transcription artifact: Sinitic words average 3.67 segments (Germanic
+3.80), and the 33 same-language pairs inside Sinitic have median PMI-LDND 0.19, below the ASJP-wide 0.228. Wutun,
+heavily restructured by Tibetan and Mongolic contact, is in Mandarin's pool; without it Mandarin is 2.28 rather than
+2.40 (see below).
 
-**Ancient lists and contact** (`scripts/sensitivity.py`, whole pools; the main results keep every doculect). Leaving out the
-doculects ASJP flags `long_extinct` (286 of them, mostly lineages with a written past) lowers Germanic 1.302 → 1.286
-(8 lists incl. Proto-Germanic and Gothic), Sinitic 1.416 → 1.411 (Old and Middle Chinese), Semitic 1.436 → 1.430,
-Northwest Semitic 1.284 → 1.277, North Ethiopic 1.185 → 1.164 and Canaanite 1.180 → 1.047 (2 of its 4 lists). That is
-about one concept-resampling interval (0.02) for Germanic and less for the rest. Large families do not move:
-Indo-European stays 1.507 with 15 long-extinct lists removed, Afro-Asiatic 1.547 with 16. The effect is biggest where
-a lineage has few lists and the old ones are far from the rest. Sumerian, Elamite, Etruscan, East Semitic and Ancient
-South Arabian consist only of long-extinct lists and have nothing left. Wutun, the contact language, is the other
-scenario: Mandarin goes 1.322 → 1.314 without it, and Sinitic and Sino-Tibetan do not move (0.000), so it is kept.
-Both versions are in `results/sensitivity.csv` and in the explorer's detail panel (a "Sensitivity" block).
+**Ancient lists and contact** (`scripts/sensitivity.py`, whole pools; the main results keep every doculect). Leaving
+out the doculects ASJP flags `long_extinct` (mostly lineages with a written past) lowers Germanic 2.16 → 1.98 (8 lists
+incl. Proto-Germanic and Gothic), Sinitic 4.30 → 4.05 (Old and Middle Chinese), Semitic 5.26 → 4.95, Northwest Semitic
+2.37 → 2.18, North Ethiopic 1.41 → 1.36 and Canaanite 1.44 → 1.00 (2 of its 4 lists). Indo-European goes 14.97 → 14.54
+with 16 long-extinct lists removed (Hittite, Tocharian and others are each nearly a lineage of their own at 40 words);
+Afro-Asiatic 35.13 → 35.05. Sumerian, Elamite, Etruscan, East Semitic and Ancient South Arabian consist only of
+long-extinct lists and have nothing left. Wutun, the contact language, is the other scenario: Mandarin goes 2.40 → 2.28
+without it, Sinitic 4.30 → 4.30 and Sino-Tibetan does not move, so it is kept. Both versions are in
+`results/sensitivity.csv` and in the explorer's detail panel (a "Sensitivity" block).
 
 **Change, not time: Austronesian** (`scripts/rarefaction.py`: 100 draws of m distinct languages, one random doculect
-each, from each lineage's whole pool). Austronesian (1.549, 1,446 doculects) outscores Indo-European (1.507, 517),
-though it is younger, but part of that is size. At equal numbers of languages the two start level and separate:
-m = 3 and 5 are a coin flip (P(Austronesian > Indo-European) 0.51 and 0.48), then 0.62 at 10, 0.76 at 20 and 0.94 at
-40 (D_max 1.481 vs 1.465 at 40). So Austronesian is not simply ahead at every size, as the earlier ad hoc run on the
-80-doculect samples suggested; it pulls ahead as more languages are sampled. Composition and rate matter: Oceanic
-(about 3,500 years) is above Indo-European at every size (P 0.59 at 3, 0.81 at 10, 1.00 at 40; 1.493 vs 1.465 at 40)
-and above Malayo-Polynesian as a whole (P 0.63 to 0.86). Formosan, where Austronesian's deepest splits are, is
-*lowest* of the Austronesian groups and below Indo-European (m = 10: 1.379, against Malayo-Polynesian 1.408, Oceanic 1.420
-and Indo-European 1.402; P(Formosan > Oceanic) 0.02): its languages kept more of the Proto-Austronesian basic
-vocabulary. The nest is monotone on the whole pools: Polynesian 1.249 ≤ Oceanic 1.542 ≤ Eastern Malayo-Polynesian
-1.544 ≤ Malayo-Polynesian 1.547 ≤ Austronesian 1.549.
+each, from each lineage's whole pool). Austronesian (44.4, 1,467 doculects) outscores Indo-European (15.0, 527) on
+the whole pools, though it is younger, but most of that is size. At equal numbers of languages the two are close and
+separate slowly: P(Austronesian > Indo-European) is 0.61 at m = 3, 0.62 at 10, 0.75 at 20 and 0.92 at 40 (D_max 9.7
+vs 7.4 at 40). Composition and rate matter: Oceanic (about 3,500 years) is above Indo-European at every size (P 0.63
+at 3, 0.83 at 10, 1.00 at 40; 11.7 vs 7.4 at 40) and above Malayo-Polynesian as a whole (P 0.61 to 0.90). Formosan,
+where Austronesian's deepest splits are, is *lowest* of the Austronesian groups and below Indo-European (m = 10: 3.7,
+against Malayo-Polynesian 4.7, Oceanic 5.3 and Indo-European 4.4; P(Formosan > Oceanic) 0.02): its languages kept more
+of the Proto-Austronesian basic vocabulary. The nest is monotone on the whole pools: Polynesian 1.67 ≤ Oceanic 34.2 ≤
+Eastern Malayo-Polynesian 36.7 ≤ Malayo-Polynesian 41.6 ≤ Austronesian 44.4.
 
-Austronesian is not the most diverse family at equal size either. At 40 languages Atlantic-Congo (1.515) and Afro-Asiatic
-(1.513) are above Pama-Nyungan (1.500), Sino-Tibetan (1.482), Austronesian (1.481) and Indo-European (1.465), and the
-order repeats at k = 3 (11.1, 11.0, 10.3, 9.8, 9.5, 8.9). D_max measures how much basic vocabulary has changed, so a young,
-fast lineage can outscore an old, slow one. It is a measure of lexical diversity, not of age. The table is in
-`results/rarefaction.csv`.
+Austronesian is not the most diverse family at equal size either. At 40 languages Atlantic-Congo (16.3) and
+Afro-Asiatic (15.4) are above Pama-Nyungan (12.3), Oceanic (11.7), Austronesian (9.7), Sino-Tibetan (9.6) and
+Indo-European (7.4); Pama-Nyungan is above Indo-European at every size (P 0.74 at 3, 1.00 at 40). D_max measures how
+much basic vocabulary has changed, so a young, fast lineage can outscore an old, slow one. It is a measure of lexical
+diversity, not of age. The table is in `results/rarefaction.csv`.
 
-**Semitic.** Semitic 1.436; West Semitic 1.433; South Semitic 1.386 (higher than Central Semitic 1.346, with
-Ethiosemitic 1.343 the deepest part); Northwest Semitic 1.284, Arabic 1.272, Aramaic 1.229, Modern South Arabian
-1.238. East Semitic (three Akkadian lists, 1.095) and Canaanite (4 lists, 1.180) are too thin to compare. Ancient
-South Arabian's two lists have 19 concepts each, below the 20 shared concepts LDND needs, so it has no distances to
-any other list (D_max 1, NaN in between-lineage tables).
+**Semitic.** Semitic 5.26; West Semitic 5.09; South Semitic 3.51 (higher than Central Semitic 2.97, with Ethiosemitic
+2.68 the deepest part); Northwest Semitic 2.37, Arabic 1.90, Aramaic 1.80, Modern South Arabian 1.62. East Semitic
+(three Akkadian lists, 1.11) and Canaanite (4 lists, 1.44) are too thin to compare. Ancient South Arabian's two lists
+have 19 concepts each, below the 20 shared concepts LDND needs, so it has no distances to any other list (D_max 1, NaN
+in between-lineage tables).
 
 **Ancient and single-list isolates** (`scripts/single_lists.py`). A single list has D_max = 1 by definition, so only
 its distance to everything else is informative. For a random list from a known family, the nearest unrelated
@@ -136,84 +137,92 @@ for one of six isolates by chance) and only 14th of 69 to Dravidian (0.925): no 
 
 ## Constructed sets (adversarial check)
 
-`scripts/adversarial.py` scores sets that are *not* families, on the same scale. D_max measures diversity, not
-relatedness, so unrelated lects should score at or above real families:
+`scripts/adversarial.py` scores sets that are *not* families, on the same scale. Lects from different families are
+almost all beyond the detection limit of each other, so n of them should score about n:
 
-| set | D_max at k_cal | at k = 3 |
-|---|---|---|
-| 10 random unrelated lects (one per family, 30 draws) | 1.484 | 6.7 |
-| 25 random unrelated lects | 1.535 | 10.9 |
-| 80 random unrelated lects | 1.563 | 15.2 |
-| Atlantic-Congo (2,042 doculects) | 1.563 | 16.9 |
-| Nuclear Trans New Guinea (307) | 1.557 | 15.9 |
-| Austronesian (1,446) | 1.549 | 15.6 |
-| Indo-European (517) | 1.507 | 12.3 |
-| Uralic (64) | 1.456 | 8.8 |
+| set | D_max | 5–95% | at k_cal |
+|---|---|---|---|
+| 5 random unrelated lects (one per family, 30 draws) | 4.92 | 4.63–5.00 | 1.406 |
+| 10 random unrelated lects | 9.74 | 9.44–9.91 | 1.484 |
+| 25 random unrelated lects | 22.8 | 21.2–23.7 | 1.535 |
+| 40 random unrelated lects | 34.8 | 33.3–36.2 | 1.550 |
+| 80 random unrelated lects | 63.2 | 60.9–65.9 | 1.563 |
+| Atlantic-Congo (2,042 doculects) | 72.7 | | 1.563 |
+| Nuclear Trans New Guinea (307) | 47.9 | | 1.557 |
+| Austronesian (1,467) | 44.4 | | 1.549 |
+| Indo-European (527) | 15.0 | | 1.510 |
+| Uralic (64) | 6.57 | | 1.456 |
 
-The random sets stay below the real families only because they are small: a family with hundreds of documented
-doculects has more points to spread weight over. At the same size an unrelated assortment scores higher, as it must
-(see the relative score below). At k_cal an unrelated pair is still z = e^(−k_cal·0.97) ≈ 0.64 similar, so the scale
-saturates near 1/z ≈ 1.57, so the gaps are small there and clearer at k = 3.
+The random sets fall a little short of n as they grow (a few pairs of families are within the detection limit of
+each other, by chance or contact). Every real family scores far below an unrelated set of the same size: 40 random
+Indo-European languages score 7.4 (rarefaction above), 40 unrelated lects 34.8. A whole family can outscore a small
+random set only by holding more lineages that 40 words cannot tie together, which is what D_max now counts.
 
 Proposed or rejected groupings, as unions of their member lineages (capped at 80 doculects), against random unions of
 as many unrelated families, of any depth and of *shallow* (genus-level) families only:
 
-| grouping | D_max | any-depth unions | shallow unions | at k = 3 | shallow at k = 3 |
-|---|---|---|---|---|---|
-| Altaic (Turkic, Mongolic, Tungusic) | 1.448 | 1.487 (1.435–1.533) | 1.467 (1.451–1.482) | 8.31 | 8.17 (7.66–8.89) |
-| "Khoisan" (Khoe-Kwadi, Tuu, Kxa) | 1.452 | same | same | 7.59 | same |
-| Macro-Altaic (+ Koreanic, Japonic) | 1.492 | 1.518 (1.487–1.534) | 1.507 (1.500–1.516) | 9.64 | 10.36 (9.89–10.86) |
-| Ural-Altaic | 1.499 | 1.510 (1.482–1.534) | 1.498 (1.485–1.505) | 10.58 | 9.67 (8.84–10.17) |
-| Dene-Yeniseian | 1.466 | 1.435 (1.287–1.506) | 1.419 (1.405–1.442) | 8.71 | 6.65 (5.73–7.27) |
-| "Paleo-Siberian" (Chukotko-Kamchatkan, Yukaghir, Nivkh, Yeniseian, Ainu) | 1.480 | as Macro-Altaic | as Macro-Altaic | 8.22 | as Macro-Altaic |
+| grouping | D_max | any-depth unions | shallow unions |
+|---|---|---|---|
+| Altaic (Turkic, Mongolic, Tungusic) | 5.73 | 8.0 (4.9–18.9) | 6.56 (5.79–7.77) |
+| "Khoisan" (Khoe-Kwadi, Tuu, Kxa) | 6.09 | same | same |
+| Ural-Altaic | 9.96 | 11.9 (8.2–18.2) | 8.99 (8.07–9.94) |
+| Macro-Altaic (+ Koreanic, Japonic) | 8.19 | 13.4 (8.5–20.3) | 10.6 (9.7–12.2) |
+| "Paleo-Siberian" (Chukotko-Kamchatkan, Yukaghir, Nivkh, Yeniseian, Ainu) | 7.61 | as Macro-Altaic | as Macro-Altaic |
+| Dene-Yeniseian | 7.03 | 5.0 (2.2–12.2) | 4.30 (4.01–5.33) |
+| Elamo-Dravidian | 4.60 | as Dene-Yeniseian | as Dene-Yeniseian |
+| Niger-Congo (9 branches) | 17.9 | 19.3 (17.2–22.6) | 17.9 (16.6–19.4) |
 
 The constructed sets are unions of their members' samples capped at 80 doculects, as before; the random baselines are
-drawn the same way.
+drawn the same way. The any-depth baseline is wide because it mixes isolates with families like Atlantic-Congo.
 
-Altaic scores below Indo-European and Uralic, but that is what three shallow families give whether or not they are
-related: it sits at the bottom edge of the shallow baseline at k_cal and in its middle at k = 3. The shallow baseline
-does not fit groupings with deep (Uralic, Athabaskan-Eyak-Tlingit) or isolate members, which score above or below it
-for that reason. Basic-vocabulary *distance* is where Altaic stands out: Mongolic ↔ Tungusic (0.868) is the closest
-unrelated pair in the data and Turkic ↔ Mongolic (0.925) is in the closest 1%. But the "Khoisan" pairs, an areal
-(Kalahari Basin) grouping, are as close (Tuu ↔ Kxa 0.857, Khoe-Kwadi ↔ Tuu 0.876), so contact alone produces this
-signal; neither measure separates it from descent. Koreanic ↔ Japonic (1.012) is farther apart than 99% of unrelated
-pairs, and Dene-Yeniseian (0.956) is unremarkable, which is expected for a proposal argued from morphology.
+Altaic (5.73) now falls just below the 5% edge of random unions of three shallow families (5.79), and "Khoisan" (6.09)
+sits low in the same range. On this scale a union of unrelated lineages scores about the sum of its members, so
+falling short means that some cross-family pairs are within the detection limit. Basic-vocabulary *distance* says the
+same: Mongolic ↔ Tungusic (0.868) is the closest unrelated pair in the data and Turkic ↔ Mongolic (0.925) is in the
+closest 1%. But the "Khoisan" pairs, an areal (Kalahari Basin) grouping, are as close (Tuu ↔ Kxa 0.857, Khoe-Kwadi ↔
+Tuu 0.876), so contact alone produces this signal; neither measure separates it from descent. Macro-Altaic and
+"Paleo-Siberian" fall below the shallow baseline mainly because they contain isolate-like members (Koreanic 1.17,
+Nivkh 1.21, Ainu 1.29), which the shallow pool does not; the baseline does not fit groupings with deep (Uralic,
+Athabaskan-Eyak-Tlingit) or isolate members. Koreanic ↔ Japonic (1.012) is farther apart than 99% of unrelated pairs,
+and Dene-Yeniseian (0.956) is unremarkable, which is expected for a proposal argued from morphology.
 
 **Niger-Congo** (Glottolog splits it into Atlantic-Congo, Mande, Kru, Ijoid, Dogon and the Kordofanian groups): the
-nine-branch union scores 1.527, slightly *below* random nine-family unions (1.536, 1.532–1.543), as large unions of
-deep families saturate. Distances to Atlantic-Congo: Mande 0.949, Kru 0.950, Ijoid 0.947, Dogon 0.947, each closer
-than about 90% of unrelated lineage pairs, a weak signal that West African contact could also produce; the
-Kordofanian groups (0.964–0.977) are at chance. Elamo-Dravidian (1.413) is at its baseline (1.419).
+nine-branch union scores 17.9, at the median of random unions of nine shallow families and near the low end of
+any-depth ones (19.3, 17.2–22.6). Distances to Atlantic-Congo: Mande 0.949, Kru 0.950, Ijoid 0.947, Dogon 0.947, each
+closer than about 90% of unrelated lineage pairs, a weak signal that West African contact could also produce; the
+Kordofanian groups (0.964–0.977) are at chance. Elamo-Dravidian (4.60) is at its baseline (5.0).
 
 The explorer shows these sets as a separate "constructed" category.
 
-## Whole pools, nesting and the size ceiling
+## Whole pools, nesting and size
 
 **Parent below child.** The first version capped each lineage at 80 doculects separately. Oceanic then scored 1.522 and
-Austronesian 1.514, which cannot be right: D_max never falls when points are added, because a larger set can give the
-extra points zero weight. The 80-doculect Austronesian sample held only 23 Oceanic lists, while the Oceanic sample
-was all Oceanic, and Oceanic is the fast-changing part. Scoring the union of the two samples gave 1.528, above both.
-The first fix (a parent's sample contains its children's) made the result depend on which child was largest, so
-Oceanic went to 1.490 on a sample that was two thirds Polynesian. The cure was to remove the sampling: every lineage
-is now scored on all its doculects, so nesting is exact (58 parent/child pairs, 0 with the parent below the child at any scale, checked on
-every run and recorded in `summary.json`). 25 of the 58 children are not strict subsets of their parent (1–10 lists
-each): a list that shares fewer than 20 concepts with another list in the parent can be dropped there and still be
-kept in the child, where that clash does not occur. `summary.json` lists them under `nesting.not_subset`. Lineages defined by Glottolog node and by ASJP Family disagree on a handful
-of doculects with a blank Family; near-containment (at most 2% outside) counts as nesting.
+Austronesian 1.514 (at the scale used then), which cannot be right: D_max never falls when points are added, because a
+larger set can give the extra points zero weight. The 80-doculect Austronesian sample held only 23 Oceanic lists,
+while the Oceanic sample was all Oceanic, and Oceanic is the fast-changing part. Scoring the union of the two samples
+gave 1.528, above both. The first fix (a parent's sample contains its children's) made the result depend on which
+child was largest, so Oceanic went to 1.490 on a sample that was two thirds Polynesian. The cure was to remove the
+sampling: every lineage is now scored on all its doculects, so nesting is exact (58 parent/child pairs, 0 with the
+parent below the child at any scale, checked on every run and recorded in `summary.json`). 25 of the 58 children are
+not strict subsets of their parent (1–10 lists each): a list that shares fewer than 20 concepts with another list in
+the parent can be dropped there and still be kept in the child, where that clash does not occur. `summary.json` lists
+them under `nesting.not_subset`. Lineages defined by Glottolog node and by ASJP Family disagree on a handful of
+doculects with a blank Family; near-containment (at most 2% outside) counts as nesting.
 
-**The ceiling.** Related lects are closer than unrelated ones, so a real family scores below an unrelated
-assortment of the same size, and at k_cal both are squeezed under 1/z̄ ≈ 1.56. Whole-pool scores of the deepest
-families are now near that ceiling (Atlantic-Congo 1.563, Nuclear Trans New Guinea 1.557, Austronesian 1.549). Two
-tools undo the compression:
+**Size.** On the calibrated scale there is no ceiling: D_max grows with the number of lineages a family holds that
+the data cannot tie together, so the biggest, deepest families lead. Three views put families of different size on
+an equal footing:
 
+- **Equal-size rarefaction** (above, `results/rarefaction.csv`): the fairest comparison of how much basic vocabulary
+  has changed.
 - **Share of the unrelated maximum**, `(D − 1) / (D_unrelated(n) − 1)`, where D_unrelated(n) is the median D_max of n
-  lects from n random families (measured up to n = 80 by `scripts/adversarial.py`, extended with the ceiling
-  n / (1 + (n − 1)·z̄)). It is in `results/relative.csv` and the explorer. Atlantic-Congo 0.98, Nuclear Trans New
-  Guinea 0.97, Austronesian 0.96, Indo-European 0.89, Uralic 0.81, Sinitic 0.73, Turkic 0.58, Germanic 0.54, Japonic
-  0.46, Basque 0.18. The deepest families all land between 0.9 and 1, so this separates shallow and mid-depth
-  lineages and leaves the deep ones bunched.
-- **The whole D_max(k) curve** (explorer, "Scale profiles", also as a share of the unrelated maximum). At k = 3 the
-  ceiling is gone: Atlantic-Congo 16.9, Nuclear Trans New Guinea 15.9, Austronesian 15.6, Indo-European 12.3.
+  lects from n random families (measured up to n = 80 by `scripts/adversarial.py`, extended beyond with the
+  equal-similarity curve n / (1 + (n − 1)·z̄)). It is in `results/relative.csv` and the explorer: Atlantic-Congo and
+  Nuclear Trans New Guinea 0.35, Afro-Asiatic 0.22, Austronesian 0.22, Pama-Nyungan 0.20, Uralic 0.11, Indo-European
+  0.09, Germanic, Turkic and Japonic 0.02, Basque 0. Its n counts doculects, so a heavily sampled lineage (Sinitic, 491
+  doculects, 0.02) is compared against a very large unrelated set; read it next to rarefaction, not instead of it.
+- **The whole D_max(k) curve** of the older exp(−k·d) similarity (explorer, "Scale profiles", also as a share of the
+  unrelated maximum).
 
 **Speed.** The whole-pool run needs about 3M distance pairs and thousands of D_max solves on matrices up to 2,042
 points. `pip install -e '.[fast]'` adds numba, which compiles the alignment and LDND aggregation into one parallel loop
@@ -238,13 +247,13 @@ reading.
 and 400 random unrelated pairs (half within 1000 km), and tests each with a permutation test: shuffle which concept
 is matched with which, 499 times, and ask whether the real same-meaning similarity beats the shuffles. Detection is
 almost entirely a function of the distance: 100% of related pairs at 0.85–0.90, 88% at 0.90–0.92, 77% at 0.92–0.94,
-37% at 0.94–0.96 and none above. A logistic fit puts the 50% point at **0.938**. Similarity falls linearly from 1 at
+37% at 0.94–0.96 and none above. A logistic fit puts the 50% point at **0.940**. Similarity falls linearly from 1 at
 the same-language median (0.228) to 0 there (`isodiv.kernel`). Both anchors are measured, nothing is fitted to the
 results, and random sets of n unrelated lists score close to n (`results/adversarial.json`).
 
 **Reading it.** D_max is the effective number of lineages that 40-word lists cannot tie together. For shallow
 lineages it measures diversity; for deep ones it also measures how much of the family is beyond the resolution of
-the data, since branches farther apart than 0.938 count as separate lineages. A large deep family can therefore
+the data, since branches farther apart than 0.940 count as separate lineages. A large deep family can therefore
 outscore a few unrelated languages: it holds more lineages the data cannot tie together. The fair "as diverse as
 random?" comparison is at equal size, where every real family is below an unrelated set
 (`results/relative.csv`, the explorer's "Share of the unrelated maximum").
@@ -395,7 +404,9 @@ edge of the same-language band), Japanese against itself 0.293.
 ## Explorer and cross-family check
 
 - `scripts/cross_family.py` compares lineages with each other: mean distance within and between the 128 lineages
-  (see Lineages), on 25 doculects per lineage, and D_max of two lineages together vs. apart.
+  (see Lineages), on 25 doculects per lineage, and D_max of two lineages together vs. apart. On the calibrated scale
+  two unrelated lineages together score the sum of their D_max values (exactly, when every cross pair is beyond the
+  detection limit), so a union that falls short of the sum shows cross-lineage pairs within reach of the data.
   Japonic ↔ Kartvelian: mean PMI-LDND 0.98 vs. 0.43 / 0.60 within. Across 7,544 unrelated lineage pairs the mean is
   0.971 (LDND 0.984 over 2,483 pairs, from the earlier 72-lineage run). The closest are Tuu ↔ Kxa 0.857, Mongolic ↔ Tungusic 0.868, Koreanic ↔ Burushaski 0.872 and
   Khoe-Kwadi ↔ Tuu 0.876 (LDND 0.911–0.929, same pairs). Kalahari Basin and Altaic-area contact fit the others;
@@ -409,8 +420,10 @@ edge of the same-language band), Japanese against itself 0.293.
 doculects by how much removing them lowers their lineage's D_max (also flags thin coverage) and writes
 `results/audit.csv`; it never excludes anything itself. Currently excluded: `AYNU` (Turkic list with heavy
 Persian replacement; under LDND, Turkic D_max 1.304 → 1.281). Review the audit, edit the file, rerun.
-The leave-one-out flag (0.015) is in D_max units, so the wider PMI-LDND scale flags more doculects than LDND did, and
-whole pools flag more again (81 on the whole-pool run, against 32 on capped samples; 13 are in Dogon, 4 in Nubian).
+The leave-one-out flag is half a lineage (D_max falls by at least 0.5 without the doculect). 51 doculects are flagged
+on the current run (by leave-one-out, distance or thin coverage; 13 in Dogon, 5 in Pama-Nyungan). Many are lone
+witnesses of a deep branch rather than bad data: Cherokee, for instance, is 0.92 of a lineage on its own, because
+its nearest Northern Iroquoian list (Mohawk, 0.895) is almost at the detection limit at 40 words.
 A doculect with no weight in the D_max optimum cannot lower it, so only weighted candidates get a leave-one-out solve.
 
 `scripts/loans.py` adds a contact check: for each doculect, how much closer is it to a *neighbouring unrelated

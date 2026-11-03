@@ -26,3 +26,14 @@ def test_baseline_arrays_and_relative():
     assert np.allclose(b, [1.0, 9.0])
     assert np.allclose(relative(np.array([5.0]), 9.0), 0.5)
     assert float(relative(1.0, 1.5)) == 0.0
+
+
+def test_baseline_below_smallest_measured_set_follows_ceiling():
+    # calibrated scale: 5 unrelated lects ≈ 4.92, z̄ ≈ 0.007; two unrelated lects must score about 2, not ≈ 2.7
+    b2 = unrelated_baseline(2, [5, 10], [4.92, 9.74], 0.007)
+    assert abs(b2 - 2.0) < 0.05
+    assert unrelated_baseline(1, [5, 10], [4.92, 9.74], 0.007) == 1.0
+    assert abs(unrelated_baseline(5, [5, 10], [4.92, 9.74], 0.007) - 4.92) < 1e-12
+    # saturated scale: two lects at similarity 0.64 score 2/1.64
+    b2k = unrelated_baseline(2, [5, 10], [5 / (1 + 4 * 0.64), 1.48], 0.64)
+    assert abs(b2k - 2 / 1.64) < 1e-9
