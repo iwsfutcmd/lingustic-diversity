@@ -46,6 +46,18 @@ def similarity_matrix(d: np.ndarray, k: float) -> np.ndarray:
     return (z + z.T) / 2
 
 
+def anchored_similarity(d: np.ndarray, same: float, unrelated: float) -> np.ndarray:
+    """Similarity 1 at the same-language distance ``same``, 0 at ``unrelated`` (and beyond), linear between.
+
+    With ``unrelated`` set where relatedness stops being detectable, D_max of n mutually unrelated lists is n, so
+    D_max reads as an effective number of lineages the data cannot tie together."""
+    if np.isnan(d).any():
+        raise ValueError("distance matrix contains NaN; drop doculects with too little overlap first")
+    z = np.clip((unrelated - d) / (unrelated - same), 0.0, 1.0)
+    np.fill_diagonal(z, 1.0)
+    return (z + z.T) / 2
+
+
 def hill_similarity(z: np.ndarray, p: np.ndarray, q: float = 2.0) -> float:
     """Leinster–Cobbold D_q^Z(p)."""
     support = p > 0
