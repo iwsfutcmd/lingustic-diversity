@@ -12,7 +12,7 @@
    PMI-LDND keeps that construction but aligns words with learned sound-correspondence scores instead of
    a flat cost per changed segment (see [PMI distances](#pmi-distances-learned-sound-correspondences)).
    No time depth, no rate assumption. `--distance ldnd` reproduces the plain-LDND pipeline.
-2. **Diversity that ignores duplicated varieties:** set Z = exp(−k·d) and compute the
+2. **Diversity that ignores duplicated varieties:** turn distances into similarities Z and compute the
    **Leinster–Meckes maximum diversity** D_max(Z). This is the effective number of fully distinct
    lineages. It is a property of Z alone (no abundance weights, no choice of order q), and adding
    an identical doculect cannot change it. Computed exactly by subset enumeration when n ≤ 14, as min pᵀZp on the
@@ -22,9 +22,14 @@
    **Every lineage is scored on all its ASJP doculects** (up to 2,042 for Atlantic-Congo), and a lineage that
    contains others contains all of their doculects, so D_max can never fall from a subfamily to its family
    (see [Whole pools, nesting and the size ceiling](#whole-pools-nesting-and-the-size-ceiling)).
-3. **Choosing k without a clock:** k_cal is set so that two doculects of the *same* language
-   (same Glottocode, entries named X / X_2) are 0.9-similar. The median PMI-LDND between such pairs is
-   0.228, which gives k_cal = 0.463 (LDND: 0.30 and 0.353). The full curve of D_max against k is plotted as well.
+3. **Similarity anchored by evidence, not by a clock or a fitted constant:** Z = 1 at the median distance between
+   two doculects of the *same* language (same Glottocode, entries named X / X_2; PMI-LDND 0.228) and falls linearly
+   to Z = 0 at **0.938**, the distance at which a permutation test detects a related pair half the time
+   (`scripts/regularity_eval.py`). Pairs farther apart than that are indistinguishable from unrelated ones, so they
+   count as fully distinct: **n unrelated lects score about n, and D_max reads as the effective number of lineages a
+   lineage's word lists cannot tie together** (see [Calibrated similarity](#calibrated-similarity)). The older
+   similarity exp(−k·d), with k_cal = 0.463 set so same-language pairs are 0.9 similar, is still reported
+   (`d_max_kcal`) and drawn as the D_max(k) curve in the explorer.
 
 ## Results (ASJP v21, `asjp` tokenization, PMI-LDND)
 
@@ -221,6 +226,54 @@ certified optimal. Wolfe's method assumes Z is positive semidefinite; PMI-LDND i
 distance 0 from each other and at different distances from a third), so acceptance uses the objective gain a violating
 point could still give, which is second order, and anything failing it goes to the slower general solver.
 
+## Calibrated similarity
+
+**Why the change.** With Z = exp(−k_cal·d), two unrelated languages (PMI-LDND ≈ 0.97) were still 0.64 similar. Every
+score was then squeezed under 1/0.64 ≈ 1.57, five unrelated languages scored 1.41, and a 64-list family such as
+Uralic (1.46) outscored them simply by having many partly distinct lists. At equal size random sets still won, but
+barely (10 unrelated languages 1.48 against at most 1.40 for 10 lists of a real family), and the numbers had no plain
+reading.
+
+**The anchors.** `scripts/regularity_eval.py` takes 200 cross-branch pairs from real families with PMI-LDND ≥ 0.85
+and 400 random unrelated pairs (half within 1000 km), and tests each with a permutation test: shuffle which concept
+is matched with which, 499 times, and ask whether the real same-meaning similarity beats the shuffles. Detection is
+almost entirely a function of the distance: 100% of related pairs at 0.85–0.90, 88% at 0.90–0.92, 77% at 0.92–0.94,
+37% at 0.94–0.96 and none above. A logistic fit puts the 50% point at **0.938**. Similarity falls linearly from 1 at
+the same-language median (0.228) to 0 there (`isodiv.kernel`). Both anchors are measured, nothing is fitted to the
+results, and random sets of n unrelated lists score close to n (`results/adversarial.json`).
+
+**Reading it.** D_max is the effective number of lineages that 40-word lists cannot tie together. For shallow
+lineages it measures diversity; for deep ones it also measures how much of the family is beyond the resolution of
+the data, since branches farther apart than 0.938 count as separate lineages. A large deep family can therefore
+outscore a few unrelated languages: it holds more lineages the data cannot tie together. The fair "as diverse as
+random?" comparison is at equal size, where every real family is below an unrelated set
+(`results/relative.csv`, the explorer's "Share of the unrelated maximum").
+
+## Relatedness beyond 40 words: a negative result
+
+Could recurrent sound correspondences, the comparative method's evidence, tie together what 40-word distances cannot?
+`isodiv.regularity` aligns every word of one list with every word of the other and tests, by permuting concepts, (a)
+whether consonant correspondences recur across *other* same-meaning pairs (leave-one-out) and (b) whether particular
+correspondences are over-represented in same-meaning pairs (a Kessler-style statistic), next to (c) plain similarity.
+
+- **On ASJP-40** (`scripts/regularity_eval.py`) the correspondence statistics are at chance (AUC 0.48 and 0.54 against
+  far unrelated pairs) even for English–Latin; plain similarity reaches AUC 0.87. With about 8 cognates per deep pair,
+  a correspondence recurs two or three times at most, which shuffled pairings also produce.
+- **On long lists** (`scripts/longlist_eval.py`: NorthEuraLex, ~1,000 concepts, IPA converted to ASJPcode by
+  `isodiv.ipa_asjp`) the over-representation statistic becomes significant for 62% of Saami–Samoyed pairs, but also
+  for 35% of unrelated neighbours, and those hits are all known contact pairs (Russian–Kildin Saami, Arabic–Persian,
+  Danish–South Saami, Turkish–Kalmyk, Erzya–Tatar, ...). Loans carry regular correspondences too. Restricted to
+  borrowing-resistant concepts (Leipzig–Jakarta, Swadesh-207: 187 concepts) it finds only 4–21% of Saami–Samoyed
+  pairs. Permutation p-values also stop being valid on long lists: sound symbolism and loans give even far unrelated
+  pairs "significant" similarity (55% at 187 concepts, 100% at 1,000).
+- Calibrated against real unrelated pairs instead of shuffles, longer lists do not beat 40: related vs unrelated AUC
+  0.94 at ASJP-40, 0.94 at 187 stable concepts, 0.92 at 1,000.
+
+So automatic correspondence tests on word lists do not separate inheritance from borrowing, and the 40-item list with
+PMI similarity is about as far as this approach reaches. (Correction: an earlier version of this README said Saami
+and Samoyed are beyond 40 words' reach. Most Saami–Samoyed pairs are at 0.87–0.95, around the detection limit and
+mostly detected; the 0.996 quoted came from one pair of lists, Ume Saami and Forest Enets.)
+
 ## Supplements: filling gaps in key lists
 
 `config/supplements.tsv` fills concepts missing from an ASJP list from an expert-coded source. It never overrides an
@@ -230,8 +283,13 @@ is recomputed and nothing else is.
 
 Currently: Hittite, 30 → 36 concepts, from IE-CoR (CC-BY-4.0): dog *kuwan-*, nose *titita-*, tooth *kak(k)a-*, liver
 *lissi-*, stone *peru(na)-*, full *šu(w)u-* (CHD, HW², Tischler). Sun is left out: *ištanu-* is the Hattic-derived
-Sun-god's name, not an inherited word. Luwian is the next candidate (IE-CoR covers only 19 of the 40 concepts; it needs
-Melchert 1993 or eDiAna).
+Sun-god's name, not an inherited word.
+
+**Luwian** (`config/added_languages.tsv`, `config/supplements_luwian.tsv`, CC BY-SA 4.0 from eDiAna; review in
+`config/luwian_review.tsv`). ASJP has no Luwian list, so LUWIAN is an added doculect: 23 concepts, Cuneiform Luwian
+where eDiAna has a syllabically attested lemma with a secure meaning (16), Hieroglyphic Luwian for the gaps (7). It
+is 0.735 from Hittite. With 23 concepts it shares fewer than 20 with 87 of the 527 Indo-European lists, so the drop
+rule leaves it out of Indo-European's D_max; it is in the Compare varieties tool.
 
 ## Widest pair (robust, tree-free)
 
@@ -419,23 +477,36 @@ Every pipeline script takes `--distance pmi|ldnd`. `run_analysis.py` defaults to
 
 ```bash
 git clone --depth 1 https://github.com/lexibank/asjp.git data/asjp
-pip install -e '.[dev,fast]'           # fast: numba kernel for PMI-LDND (optional; ~20x faster distances)
-pytest                               # property tests: duplicate invariance, monotonicity, QP == exact, PMI alignment
-python scripts/pmi_train.py          # → results/pmi_model_all.tsv  (~1 min; skip with --distance ldnd)
-python scripts/run_analysis.py       # → results/summary.{csv,json}, samples.json, profiles.json, ldnd_*.tsv (n ≤ 200), data/cache/  (~1 h, 4 cores, numba)
-python scripts/bootstrap.py          # → results/bootstrap.json  (~5 min)
-PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{csv,json,png}  (~45 min)
-PYTHONPATH=scripts python scripts/widest.py         # → results/widest.{csv,json}, contact.{csv,json}: robust widest pair (~25 min)
-PYTHONPATH=scripts python scripts/audit.py          # → results/audit.{csv,json}  (~3 min, reads data/cache/)
-PYTHONPATH=scripts python scripts/adversarial.py    # → results/adversarial.{csv,json}  (~4 min)
-PYTHONPATH=scripts python scripts/single_lists.py   # → results/single_lists.json
-PYTHONPATH=scripts python scripts/sensitivity.py    # → results/sensitivity.{csv,json}: D_max without long-extinct / contact doculects (~1 min)
-PYTHONPATH=scripts python scripts/rarefaction.py    # → results/rarefaction.{csv,json}: D_max at equal numbers of languages (~5 min)
-PYTHONPATH=scripts python scripts/cognate_check.py  # → results/cognate_check.{csv,json}: agreement with expert cognates (needs data/lexibank/, ~15 min)
-python scripts/build_explorer.py     # → results/explorer.html, results/relative.csv
-python scripts/build_site.py         # → docs/ (site, data/wordlists.json, downloads); commit docs/ to publish
-python scripts/pmi_eval.py           # → results/pmi_model.tsv, pmi_eval.json, pmi_eval_pairs.csv (--train geo|geo-no-dup to compare)
+pip install -e '.[dev,fast]'           # fast: numba kernels (optional; ~20x faster distances)
+pytest
+python scripts/pmi_train.py          # → results/pmi_model_all.tsv  (~1 min)
+python scripts/pipeline.py --commit  # every step below, in order; skips steps whose inputs are unchanged
 ```
+
+`scripts/pipeline.py` hashes each step's inputs (code, config, word lists, upstream results; large data files by size
+and date) and skips a step when nothing it reads has changed since its last successful run
+(`results/.pipeline_state.json`; `--force STEP` or `--force all` reruns). With `--commit` it commits and pushes
+`results/` and `docs/` after each step. One distance cache over every ASJP list (`data/cache/`, ~530 MB, keyed by each
+list's words) is shared by all steps, so a distance is computed once across steps and runs. The steps:
+
+```bash
+python scripts/regularity_eval.py    # → results/regularity_eval.*: permutation tests, detection limit (similarity anchor)
+python scripts/run_analysis.py       # → results/summary.{csv,json}, samples.json, profiles.json, ldnd_*.tsv (n ≤ 200)
+python scripts/bootstrap.py          # → results/bootstrap.json: concept resampling
+PYTHONPATH=scripts python scripts/cross_family.py   # → results/cross_family.{csv,json,png}
+PYTHONPATH=scripts python scripts/widest.py         # → results/widest.{csv,json}, contact.{csv,json}
+PYTHONPATH=scripts python scripts/audit.py          # → results/audit.{csv,json}
+PYTHONPATH=scripts python scripts/adversarial.py    # → results/adversarial.{csv,json}
+PYTHONPATH=scripts python scripts/single_lists.py   # → results/single_lists.json
+PYTHONPATH=scripts python scripts/sensitivity.py    # → results/sensitivity.{csv,json}
+PYTHONPATH=scripts python scripts/rarefaction.py    # → results/rarefaction.{csv,json}
+PYTHONPATH=scripts python scripts/cognate_check.py  # → results/cognate_check.{csv,json} (needs data/lexibank/)
+python scripts/build_explorer.py     # → results/explorer.html, results/relative.csv
+python scripts/build_site.py         # → docs/
+```
+
+Not in the pipeline: `scripts/longlist_eval.py` (needs data/lexibank/northeuralex and uralex),
+`scripts/pmi_eval.py`, `scripts/distance.py jpn eng` (distance between two varieties by code).
 
 `--tokens segments` switches from ASJPcode to NFC-normalized CLDF IPA segments. Words are always
 tuples of opaque segment tokens, so any script or segmentation works.
@@ -444,11 +515,8 @@ tuples of opaque segment tokens, so any script or segmentation works.
 
 - Recalibrate `loans.py` thresholds in PMI-LDND units, and check whether PMI's pull on chance resemblances
   (Koreanic ↔ Burushaski) needs a correction.
-- Use longer, expert-cognate-coded lists from Lexibank (Japonic, Koreanic, Ainu datasets) to get
-  better resolution inside the isolate band; the cognate check supports this, since agreement is good.
-- Supplement Luwian (Melchert 1993 / eDiAna) as Hittite was.
-- Report the D_max(k) curve and the share of the unrelated maximum as the headline, not one D_max at k_cal. Both are
-  in the explorer; the tables above still quote k_cal.
+- Expert cognate sets (Lexibank) as an alternative distance where they exist: they encode correspondences and loan
+  judgements that automatic tests cannot recover (see the negative result above).
 - For a paper: compare with Holman et al. 2011 family ages, add a doculect-level bootstrap and a simulation on
   synthetic trees. LDND has not been re-run on the 128 whole-pool lineages.
 
