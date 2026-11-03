@@ -78,8 +78,7 @@ distinct lists.
 | Tokyo + Shuri only | 2 | 1.29 | 1.126 |
 
 D_max does not move when Tokyo is duplicated. The last row falls because two doculects miss real Ryukyuan breadth
-(e.g. Yonaguni). That is under-sampling of genuinely different varieties, not a counting artifact. (The kernel column
-of this check is added to `summary.json` → `japonic_sampling` from the next full run.)
+(e.g. Yonaguni). That is under-sampling of genuinely different varieties, not a counting artifact.
 
 **Reading:**
 - The bands do not overlap. Japonic measures as a genus-sized family, level with Slavic,
