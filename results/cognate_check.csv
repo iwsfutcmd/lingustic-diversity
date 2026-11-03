@@ -1,0 +1,35 @@
+dataset,lineage,languages,spread_cognate,spread_pmi,mean_cognate,mean_pmi
+iecor,Romance,12,0.870,1.401,0.331,0.555
+iecor,Germanic,17,0.926,1.321,0.319,0.480
+iecor,Slavic,16,0.634,1.174,0.226,0.432
+iecor,Indo-European,97,2.223,2.348,0.785,0.837
+iecor,Indo-Aryan,16,1.649,1.687,0.599,0.615
+iecor,Iranian,16,1.576,1.792,0.556,0.667
+iecor,Balto-Slavic,18,1.109,1.546,0.309,0.508
+abvd,Tai-Kadai,19,1.581,2.023,0.556,0.738
+abvd,Austronesian,110,2.154,2.386,0.683,0.812
+abvd,Oceanic,116,2.110,2.422,0.685,0.826
+abvd,Polynesian,33,0.818,1.247,0.250,0.355
+abvd,Kam-Tai,12,1.137,1.598,0.389,0.583
+abvd,Malayo-Polynesian,110,2.165,2.419,0.693,0.825
+abvd,Formosan,16,1.755,1.997,0.653,0.774
+abvd,Eastern Malayo-Polynesian,111,2.119,2.421,0.695,0.831
+abvd,Greater Central Philippine,43,1.285,1.660,0.423,0.515
+abvd,Malayic,14,0.534,0.986,0.186,0.343
+abvd,Celebic,21,1.021,1.556,0.257,0.515
+bowernpny,Pama-Nyungan,100,2.591,2.451,0.961,0.854
+sagartst,Sino-Tibetan,31,2.139,2.221,0.802,0.833
+sagartst,Lolo-Burmese,7,1.107,1.466,0.446,0.620
+sagartst,Bodic,6,1.567,1.617,0.730,0.747
+kitchensemitic,Afro-Asiatic,20,1.758,1.954,0.641,0.749
+kitchensemitic,Semitic,20,1.758,1.954,0.641,0.749
+kitchensemitic,West Semitic,19,1.741,1.929,0.636,0.743
+kitchensemitic,South Semitic,16,1.604,1.857,0.597,0.731
+kitchensemitic,Ethiosemitic,12,1.131,1.659,0.441,0.671
+kitchensemitic,South Ethiopic,9,0.993,1.551,0.411,0.650
+savelyevturkic,Turkic,22,0.904,1.487,0.265,0.471
+savelyevturkic,Kipchak,9,0.348,0.888,0.130,0.340
+dravlex,Dravidian,19,1.697,1.886,0.573,0.704
+dravlex,South Dravidian,14,1.400,1.683,0.513,0.654
+grollemundbantu,Atlantic-Congo,120,1.973,2.305,0.670,0.794
+utoaztecan,Uto-Aztecan,28,1.805,2.080,0.678,0.793

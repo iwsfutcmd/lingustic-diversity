@@ -1,0 +1,534 @@
+{
+ "datasets": {
+  "iecor": {
+   "languages": 97,
+   "pairs": 4656,
+   "concepts": 170,
+   "rho_pmi": [
+    0.5548633004566448,
+    4656
+   ],
+   "rho_ldnd": [
+    0.5478138906969314,
+    4656
+   ],
+   "rho_pmi_40": [
+    0.6926649334164352,
+    4656
+   ],
+   "rho_ldnd_40": [
+    0.6544561162600637,
+    4656
+   ],
+   "rho_lineages": [
+    0.9285714285714288,
+    7
+   ]
+  },
+  "abvd": {
+   "languages": 827,
+   "pairs": 20000,
+   "concepts": 210,
+   "rho_pmi": [
+    0.5283731699529362,
+    14652
+   ],
+   "rho_ldnd": [
+    0.4924253676321765,
+    14652
+   ],
+   "rho_pmi_40": [
+    0.649932469297444,
+    10749
+   ],
+   "rho_ldnd_40": [
+    0.6012704050571707,
+    10749
+   ],
+   "rho_lineages": [
+    0.9090909090909091,
+    11
+   ]
+  },
+  "bowernpny": {
+   "languages": 108,
+   "pairs": 5778,
+   "concepts": 344,
+   "rho_pmi": [
+    0.44720903254614686,
+    5676
+   ],
+   "rho_ldnd": [
+    0.4401257053370261,
+    5676
+   ],
+   "rho_pmi_40": [
+    0.46831029291052295,
+    5569
+   ],
+   "rho_ldnd_40": [
+    0.45011541637901453,
+    5569
+   ]
+  },
+  "sagartst": {
+   "languages": 33,
+   "pairs": 528,
+   "concepts": 250,
+   "rho_pmi": [
+    0.6566202088401968,
+    528
+   ],
+   "rho_ldnd": [
+    0.6053951151810307,
+    528
+   ],
+   "rho_pmi_40": [
+    0.565974356919001,
+    528
+   ],
+   "rho_ldnd_40": [
+    0.48224993917245484,
+    528
+   ]
+  },
+  "kitchensemitic": {
+   "languages": 20,
+   "pairs": 190,
+   "concepts": 97,
+   "rho_pmi": [
+    0.8216257924043593,
+    190
+   ],
+   "rho_ldnd": [
+    0.7734574735958994,
+    190
+   ],
+   "rho_pmi_40": [
+    0.7733116975365072,
+    190
+   ],
+   "rho_ldnd_40": [
+    0.7227354964867851,
+    190
+   ],
+   "rho_lineages": [
+    1.0,
+    6
+   ]
+  },
+  "savelyevturkic": {
+   "languages": 25,
+   "pairs": 300,
+   "concepts": 254,
+   "rho_pmi": [
+    0.5367516984829347,
+    295
+   ],
+   "rho_ldnd": [
+    0.4634901989478173,
+    295
+   ],
+   "rho_pmi_40": [
+    0.46705168731706165,
+    295
+   ],
+   "rho_ldnd_40": [
+    0.4228929771567408,
+    295
+   ]
+  },
+  "leejaponic": {
+   "languages": 3,
+   "pairs": 3,
+   "concepts": 210,
+   "rho_pmi": [
+    null,
+    3
+   ],
+   "rho_ldnd": [
+    null,
+    3
+   ],
+   "rho_pmi_40": [
+    null,
+    3
+   ],
+   "rho_ldnd_40": [
+    null,
+    3
+   ]
+  },
+  "dravlex": {
+   "languages": 19,
+   "pairs": 171,
+   "concepts": 100,
+   "rho_pmi": [
+    0.783220702274927,
+    171
+   ],
+   "rho_ldnd": [
+    0.7669509298125246,
+    171
+   ],
+   "rho_pmi_40": [
+    0.8059147558467454,
+    170
+   ],
+   "rho_ldnd_40": [
+    0.794932254888361,
+    170
+   ]
+  },
+  "grollemundbantu": {
+   "languages": 312,
+   "pairs": 20000,
+   "concepts": 100,
+   "rho_pmi": [
+    0.6611410909562196,
+    19852
+   ],
+   "rho_ldnd": [
+    0.6467026130718802,
+    19852
+   ],
+   "rho_pmi_40": [
+    0.6754328987107642,
+    19717
+   ],
+   "rho_ldnd_40": [
+    0.6499170891706308,
+    19717
+   ]
+  },
+  "utoaztecan": {
+   "languages": 32,
+   "pairs": 496,
+   "concepts": 121,
+   "rho_pmi": [
+    0.6995855287917269,
+    406
+   ],
+   "rho_ldnd": [
+    0.6645183032131641,
+    406
+   ],
+   "rho_pmi_40": [
+    0.787612665404713,
+    399
+   ],
+   "rho_ldnd_40": [
+    0.7447689898911443,
+    399
+   ]
+  }
+ },
+ "lineages": [
+  {
+   "dataset": "iecor",
+   "lineage": "Romance",
+   "languages": 12,
+   "spread_cognate": 0.8698410378350496,
+   "spread_pmi": 1.4012091622228482,
+   "mean_cognate": 0.33123613081596276,
+   "mean_pmi": 0.5554197426555033
+  },
+  {
+   "dataset": "iecor",
+   "lineage": "Germanic",
+   "languages": 17,
+   "spread_cognate": 0.9263839624144387,
+   "spread_pmi": 1.3208189426974062,
+   "mean_cognate": 0.3193563837030804,
+   "mean_pmi": 0.48003166353344373
+  },
+  {
+   "dataset": "iecor",
+   "lineage": "Slavic",
+   "languages": 16,
+   "spread_cognate": 0.6344363026206166,
+   "spread_pmi": 1.1736746514006542,
+   "mean_cognate": 0.2260926070412861,
+   "mean_pmi": 0.43174401798200546
+  },
+  {
+   "dataset": "iecor",
+   "lineage": "Indo-European",
+   "languages": 97,
+   "spread_cognate": 2.2234635831006258,
+   "spread_pmi": 2.347873044070166,
+   "mean_cognate": 0.7853446134653719,
+   "mean_pmi": 0.8371122339139575
+  },
+  {
+   "dataset": "iecor",
+   "lineage": "Indo-Aryan",
+   "languages": 16,
+   "spread_cognate": 1.6487724442681582,
+   "spread_pmi": 1.687272785452347,
+   "mean_cognate": 0.5990196078431372,
+   "mean_pmi": 0.6153242013707398
+  },
+  {
+   "dataset": "iecor",
+   "lineage": "Iranian",
+   "languages": 16,
+   "spread_cognate": 1.5764911506532064,
+   "spread_pmi": 1.7919457261728062,
+   "mean_cognate": 0.5563256406839119,
+   "mean_pmi": 0.6668945847182911
+  },
+  {
+   "dataset": "iecor",
+   "lineage": "Balto-Slavic",
+   "languages": 18,
+   "spread_cognate": 1.1089442554280706,
+   "spread_pmi": 1.5457725324876257,
+   "mean_cognate": 0.3087033065975764,
+   "mean_pmi": 0.5084642298188762
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Tai-Kadai",
+   "languages": 19,
+   "spread_cognate": 1.580790735174501,
+   "spread_pmi": 2.0232948032101326,
+   "mean_cognate": 0.5556814757691602,
+   "mean_pmi": 0.7380491659109781
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Austronesian",
+   "languages": 110,
+   "spread_cognate": 2.154362913366064,
+   "spread_pmi": 2.3864975894568397,
+   "mean_cognate": 0.6825947021020474,
+   "mean_pmi": 0.8123831955980191
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Oceanic",
+   "languages": 116,
+   "spread_cognate": 2.109604647161179,
+   "spread_pmi": 2.4223361886363404,
+   "mean_cognate": 0.6849426734486551,
+   "mean_pmi": 0.8262188791819053
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Polynesian",
+   "languages": 33,
+   "spread_cognate": 0.8183527458300395,
+   "spread_pmi": 1.2471662256637381,
+   "mean_cognate": 0.2499694325745833,
+   "mean_pmi": 0.35518363780225115
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Kam-Tai",
+   "languages": 12,
+   "spread_cognate": 1.1370032952946145,
+   "spread_pmi": 1.5975681021113346,
+   "mean_cognate": 0.3887546118596904,
+   "mean_pmi": 0.5828932137330979
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Malayo-Polynesian",
+   "languages": 110,
+   "spread_cognate": 2.164552721199816,
+   "spread_pmi": 2.418516616377409,
+   "mean_cognate": 0.6930460114539396,
+   "mean_pmi": 0.8245946478500631
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Formosan",
+   "languages": 16,
+   "spread_cognate": 1.7550605503120673,
+   "spread_pmi": 1.997210740410985,
+   "mean_cognate": 0.6528685949932239,
+   "mean_pmi": 0.7737800133165178
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Eastern Malayo-Polynesian",
+   "languages": 111,
+   "spread_cognate": 2.1190391717262984,
+   "spread_pmi": 2.421324227785548,
+   "mean_cognate": 0.6952015045375527,
+   "mean_pmi": 0.8313254297795644
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Greater Central Philippine",
+   "languages": 43,
+   "spread_cognate": 1.2850427752314353,
+   "spread_pmi": 1.6600198462813271,
+   "mean_cognate": 0.4228538683786758,
+   "mean_pmi": 0.5149135031264812
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Malayic",
+   "languages": 14,
+   "spread_cognate": 0.5336947113428284,
+   "spread_pmi": 0.985652172641876,
+   "mean_cognate": 0.18596457242587527,
+   "mean_pmi": 0.3430109232398125
+  },
+  {
+   "dataset": "abvd",
+   "lineage": "Celebic",
+   "languages": 21,
+   "spread_cognate": 1.0205252562636922,
+   "spread_pmi": 1.5561697559562346,
+   "mean_cognate": 0.2568435814514869,
+   "mean_pmi": 0.5148068910627331
+  },
+  {
+   "dataset": "bowernpny",
+   "lineage": "Pama-Nyungan",
+   "languages": 100,
+   "spread_cognate": 2.5909341513360284,
+   "spread_pmi": 2.4507220959814866,
+   "mean_cognate": 0.9606860785832257,
+   "mean_pmi": 0.8543841808644366
+  },
+  {
+   "dataset": "sagartst",
+   "lineage": "Sino-Tibetan",
+   "languages": 31,
+   "spread_cognate": 2.1390674187890832,
+   "spread_pmi": 2.22084507849514,
+   "mean_cognate": 0.8019949486979449,
+   "mean_pmi": 0.8329685918345009
+  },
+  {
+   "dataset": "sagartst",
+   "lineage": "Lolo-Burmese",
+   "languages": 7,
+   "spread_cognate": 1.1069453586790692,
+   "spread_pmi": 1.465646242440049,
+   "mean_cognate": 0.4459088766415026,
+   "mean_pmi": 0.6202290751618169
+  },
+  {
+   "dataset": "sagartst",
+   "lineage": "Bodic",
+   "languages": 6,
+   "spread_cognate": 1.5670404852121027,
+   "spread_pmi": 1.6167062795380445,
+   "mean_cognate": 0.7303780962633079,
+   "mean_pmi": 0.7471821578800913
+  },
+  {
+   "dataset": "kitchensemitic",
+   "lineage": "Afro-Asiatic",
+   "languages": 20,
+   "spread_cognate": 1.758104977363474,
+   "spread_pmi": 1.9541564026483493,
+   "mean_cognate": 0.6412422189102982,
+   "mean_pmi": 0.7488730840983854
+  },
+  {
+   "dataset": "kitchensemitic",
+   "lineage": "Semitic",
+   "languages": 20,
+   "spread_cognate": 1.758104977363474,
+   "spread_pmi": 1.9541564026483493,
+   "mean_cognate": 0.6412422189102982,
+   "mean_pmi": 0.7488730840983854
+  },
+  {
+   "dataset": "kitchensemitic",
+   "lineage": "West Semitic",
+   "languages": 19,
+   "spread_cognate": 1.7408606984194532,
+   "spread_pmi": 1.9288628549016125,
+   "mean_cognate": 0.6357750520480068,
+   "mean_pmi": 0.7434922146745947
+  },
+  {
+   "dataset": "kitchensemitic",
+   "lineage": "South Semitic",
+   "languages": 16,
+   "spread_cognate": 1.604229108210334,
+   "spread_pmi": 1.8569600885936057,
+   "mean_cognate": 0.5971963188931431,
+   "mean_pmi": 0.7310149613452258
+  },
+  {
+   "dataset": "kitchensemitic",
+   "lineage": "Ethiosemitic",
+   "languages": 12,
+   "spread_cognate": 1.1309875473091182,
+   "spread_pmi": 1.6593200924952562,
+   "mean_cognate": 0.4411903197411436,
+   "mean_pmi": 0.6712711309321578
+  },
+  {
+   "dataset": "kitchensemitic",
+   "lineage": "South Ethiopic",
+   "languages": 9,
+   "spread_cognate": 0.9934385494780856,
+   "spread_pmi": 1.5505126910983202,
+   "mean_cognate": 0.4113629082729446,
+   "mean_pmi": 0.649809983820564
+  },
+  {
+   "dataset": "savelyevturkic",
+   "lineage": "Turkic",
+   "languages": 22,
+   "spread_cognate": 0.9035380439921841,
+   "spread_pmi": 1.4872644997176747,
+   "mean_cognate": 0.26515960468278343,
+   "mean_pmi": 0.4710279256802369
+  },
+  {
+   "dataset": "savelyevturkic",
+   "lineage": "Kipchak",
+   "languages": 9,
+   "spread_cognate": 0.34789014438563637,
+   "spread_pmi": 0.887581351399205,
+   "mean_cognate": 0.1299496377672838,
+   "mean_pmi": 0.3401898944731526
+  },
+  {
+   "dataset": "dravlex",
+   "lineage": "Dravidian",
+   "languages": 19,
+   "spread_cognate": 1.697076345784794,
+   "spread_pmi": 1.886153930892108,
+   "mean_cognate": 0.5725042382531754,
+   "mean_pmi": 0.7035942454671926
+  },
+  {
+   "dataset": "dravlex",
+   "lineage": "South Dravidian",
+   "languages": 14,
+   "spread_cognate": 1.3999175107323745,
+   "spread_pmi": 1.6825403515941026,
+   "mean_cognate": 0.5131764549526934,
+   "mean_pmi": 0.6544042023471455
+  },
+  {
+   "dataset": "grollemundbantu",
+   "lineage": "Atlantic-Congo",
+   "languages": 120,
+   "spread_cognate": 1.9729588465912442,
+   "spread_pmi": 2.3046423361011494,
+   "mean_cognate": 0.6697983485882713,
+   "mean_pmi": 0.7935270027163982
+  },
+  {
+   "dataset": "utoaztecan",
+   "lineage": "Uto-Aztecan",
+   "languages": 28,
+   "spread_cognate": 1.805075915986247,
+   "spread_pmi": 2.0800626724294617,
+   "mean_cognate": 0.6779502086790908,
+   "mean_pmi": 0.793238101811194
+  }
+ ]
+}
