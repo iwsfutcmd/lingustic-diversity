@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 from itertools import combinations
 from pathlib import Path
 
@@ -82,16 +83,35 @@ def main() -> None:
     # Union D_max: if two lineages are truly distinct, D_max(A ∪ B) = D_max(A) + D_max(B). Each lineage's own D_max is
     # solved once. When no list of A is within the detection limit of a list of B, the union's similarity matrix is
     # block-diagonal and its D_max is exactly the sum, so only pairs with some detectable link need a solve.
-    own = {n: _dmax(within_full[n], kernel) for n in names}
-    union_rows, solved = [], 0
+    # each lineage is cleaned of lists with missing distances once, and the same lists are used in its own D_max and
+    # in every union (cleaning a union afresh can keep a different list of one lineage and score it above the sum)
+    kept = {n: _keep(within_full[n]) for n in names}
+    own_res = {n: _own(within_full[n][np.ix_(kept[n], kept[n])], kernel) for n in names}
+    own = {n: v for n, (v, _) in own_res.items()}
+    # pairs with a detectable link: solve in a process pool (one BLAS thread each), each starting from the two
+    # lineages' own optima side by side, so the union is never scored below that combined weighting
+    todo, sums = [], {}
     for a, b in combinations(names, 2):
-        blk = blocks[(a, b)]
-        clean = not (np.isnan(blk).any() or np.isnan(within_full[a]).any() or np.isnan(within_full[b]).any())
-        if clean and len(blk) and (blk >= kernel.unrelated).all():
-            union = own[a] + own[b]
-        else:
-            union = max_diversity(kernel(_clean(np.block([[within_full[a], blk], [blk.T, within_full[b]]])))).value
-            solved += 1
+        ka, kb = kept[a], kept[b]
+        blk = blocks[(a, b)][np.ix_(ka, kb)]
+        clean = not np.isnan(blk).any()
+        if clean and (blk >= kernel.unrelated).all():          # also covers an empty side (nothing left after cleaning)
+            sums[(a, b)] = own[a] + own[b]
+            continue
+        d = np.block([[within_full[a][np.ix_(ka, ka)], blk], [blk.T, within_full[b][np.ix_(kb, kb)]]])
+        wa, wb = own_res[a][1], own_res[b][1]
+        warm = [] if not clean or wa is None or wb is None else [np.concatenate([wa * own[a], wb * own[b]])]
+        todo.append(((a, b), d, kernel, warm))
+    unions = dict(sums)
+    if todo:
+        from concurrent.futures import ProcessPoolExecutor
+        from multiprocessing import get_context
+        with ProcessPoolExecutor(os.cpu_count() or 1, mp_context=get_context("spawn")) as pool:
+            for key, v in zip((t[0] for t in todo), pool.map(_union, todo, chunksize=16)):
+                unions[key] = v
+    solved = len(todo)
+    union_rows = []
+    for a, b in combinations(names, 2):
         union_rows.append({
             "a": a, "b": b,
             "mean_between": stat(between[(a, b)], np.mean),
@@ -99,7 +119,7 @@ def main() -> None:
             "median_between": stat(between[(a, b)], np.median),
             "mean_within_a": stat(within[a], np.mean),
             "mean_within_b": stat(within[b], np.mean),
-            "dmax_union": union, "dmax_a": own[a], "dmax_b": own[b],
+            "dmax_union": unions[(a, b)], "dmax_a": own[a], "dmax_b": own[b],
             "related_by_construction": related(a, b),
         })
     print(f"union D_max: {solved} of {len(union_rows)} lineage pairs needed a solve (the rest are block-diagonal)",
@@ -127,17 +147,36 @@ def main() -> None:
     plot(names, mean_m, within, between, union_rows, args.out / "cross_family.png", metric.label)
 
 
-def _clean(d: np.ndarray) -> np.ndarray:
-    """Drop the doculect with the most missing pairs until no NaN remains."""
+def _keep(d: np.ndarray) -> np.ndarray:
+    """Mask of the doculects left after dropping, one at a time, the one with the most missing pairs until no NaN
+    remains."""
     keep = np.ones(len(d), dtype=bool)
     while keep.any() and np.isnan(d[np.ix_(keep, keep)]).any():
         keep[np.flatnonzero(keep)[np.isnan(d[np.ix_(keep, keep)]).sum(axis=1).argmax()]] = False
+    return keep
+
+
+def _clean(d: np.ndarray) -> np.ndarray:
+    keep = _keep(d)
     return d[np.ix_(keep, keep)]
 
 
-def _dmax(d: np.ndarray, k: float) -> float:
-    d = _clean(d)
-    return max_diversity(similarity(d, k)).value if len(d) else float("nan")
+def _own(d: np.ndarray, k) -> tuple[float, np.ndarray | None]:
+    """A lineage's D_max and its optimal weights (None when lists had to be dropped for missing distances)."""
+    c = _clean(d)
+    if not len(c):
+        return float("nan"), None
+    r = max_diversity(similarity(c, k))
+    return r.value, (r.weights if len(c) == len(d) else None)
+
+
+def _union(task) -> float:
+    _, d, kernel, warm = task
+    c = _clean(d)
+    if not len(c):
+        return float("nan")
+    warm = [w / w.sum() for w in warm if len(w) == len(c) and w.sum() > 0]
+    return max_diversity(kernel(c), warm=warm).value
 
 
 def plot(names, mean_m, within, between, union_rows, out: Path, label: str = "LDND") -> None:
