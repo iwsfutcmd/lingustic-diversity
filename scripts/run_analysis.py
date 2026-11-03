@@ -17,6 +17,7 @@ for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
 import argparse
 import csv
 import json
+import math
 from collections import defaultdict
 from pathlib import Path
 
@@ -300,8 +301,11 @@ def rarefied_spread(docs: list[Doculect], d: np.ndarray, m: int = RAREFY_M,
         return float("nan")
     rng = np.random.default_rng(seed)
     gs = list(by_g)
-    combos = list(combinations(range(len(gs)), m))
-    picks = [combos[i] for i in rng.choice(len(combos), size=min(draws, len(combos)), replace=False)]
+    if math.comb(len(gs), m) <= 20 * draws:       # few combinations: draw without replacement from all of them
+        combos = list(combinations(range(len(gs)), m))
+        picks = [combos[i] for i in rng.choice(len(combos), size=min(draws, len(combos)), replace=False)]
+    else:                                          # never enumerate them (Austronesian: ~190 million)
+        picks = [tuple(rng.choice(len(gs), size=m, replace=False)) for _ in range(draws)]
     vals = []
     for c in picks:
         idx = np.array([rng.choice(by_g[gs[j]]) for j in c])
