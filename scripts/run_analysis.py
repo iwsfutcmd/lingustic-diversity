@@ -106,6 +106,20 @@ MAX_PER_LINEAGE = 80          # per-lineage cap for --cap 80 (and wold_effect.py
 K_FINE = 3.0                  # fine scale where unrelated lects count as nearly fully distinct
 SAVE_MATRIX_MAX_N = 200       # per-lineage ldnd_*.tsv only up to this size; larger ones stay in the distance cache
 CACHE_DIR = Path("data/cache")
+
+
+def open_world_cache(metric: Metric, cldf: Path, tokenization: str = "asjp") -> tuple[DistCache, dict[str, Doculect]]:
+    """The shared distance cache over every ASJP (and added) word list, and those lists.
+
+    Every script that computes distances reads and saves this one cache, so within- and between-lineage pairs are
+    each computed once across runs. Only a cache opened here is ever saved, so it always covers all lists."""
+    world = load(cldf, tokenization=tokenization)
+    path = CACHE_DIR / f"dist_{metric.name}_{tokenization}.npy"
+    return DistCache.load(path, metric, sorted(world)), world
+
+
+def save_world_cache(cache: DistCache, tokenization: str = "asjp") -> None:
+    cache.save(CACHE_DIR / f"dist_{cache.metric.name}_{tokenization}.npy")
 NEST_TOL = 0.02               # a lineage nests in another when at most this share of its pool lies outside it
 KS = np.geomspace(0.1, 40, 48)
 RAREFY_M = 3          # compare lineages at a fixed number of distinct-Glottocode doculects
@@ -500,8 +514,7 @@ def main() -> None:
     pools = {name: frozenset(i for i in all_docs if pred(rows[i])) for name, pred in LINEAGES.items()}
     cap = args.cap or 10**9
     samples, children = nested_samples(pools, all_docs, cap)
-    cache_path = CACHE_DIR / f"dist_{args.distance}_{args.tokens}.npy"
-    cache = DistCache.load(cache_path, metric, list(all_docs))
+    cache, _ = open_world_cache(metric, args.cldf, args.tokens)
     by_name: dict[str, dict] = {}
 
     def run(name: str) -> None:
@@ -512,14 +525,14 @@ def main() -> None:
         r = analyse(name, samples[name], k_cal, metric, tuple(by_name[c] for c in children[name]), cache)
         by_name[name] = r
         if r["n_doculects"] > 300:
-            cache.save(cache_path)                                    # keep the slow part if the run dies
+            save_world_cache(cache, args.tokens)                      # keep the slow part if the run dies
         print(f'{name:14s} n={r["n_doculects"]:3d} glotto={r["n_glottocodes"]:3d} '
               f'maxLDND={r["max_ldnd"]:.3f} spread={r["spread"]:.3f} rare3={r["spread_rarefied_m3"]:.3f} '
               f'Dmax@kcal={r["d_max_kcal"]:.3f} naive@kcal={r["uniform_d2_kcal"]:.3f} kkt={r["kkt_all_ok"]}', flush=True)
 
     for name in sorted(LINEAGES, key=lambda n: len(samples[n])):
         run(name)
-    cache.save(cache_path)
+    save_world_cache(cache, args.tokens)
     results = [by_name[n] for n in LINEAGES]
     nesting = check_nesting(results, children)
     print(f"nesting: {nesting['pairs']} parent/child pairs, {len(nesting['not_subset'])} not subsets, "

@@ -35,16 +35,43 @@ class DistCache:
     def fingerprint(doc: Doculect) -> str:
         return hashlib.sha1(repr(sorted(doc.words.items())).encode("utf-8")).hexdigest()[:16]
 
-    def matrix(self, docs: Sequence[Doculect]) -> np.ndarray:
-        """Distance matrix of ``docs`` (float64), computing the pairs not seen before."""
+    def _check(self, docs: Sequence[Doculect]) -> np.ndarray:
+        """Positions of ``docs``; a list whose words changed since its distances were computed is reset."""
         idx = np.array([self.pos[x.id] for x in docs], dtype=int)
+        seen = set()
         for x, i in zip(docs, idx):
+            if x.id in seen:
+                continue
+            seen.add(x.id)
             fp = self.fingerprint(x)
             if self.fp.get(x.id, fp) != fp:            # the list changed since these distances were computed
                 self.d[i, :] = UNSET
                 self.d[:, i] = UNSET
                 self.d[i, i] = 0.0
             self.fp[x.id] = fp
+        return idx
+
+    def values(self, pairs: Sequence[tuple[Doculect, Doculect]]) -> np.ndarray:
+        """Distances of arbitrary doculect pairs (float64), computing only the ones not seen before."""
+        if not pairs:
+            return np.zeros(0)
+        a = self._check([x for x, _ in pairs]); b = self._check([y for _, y in pairs])
+        v = self.d[a, b]
+        todo = np.flatnonzero(v == UNSET)
+        if len(todo):
+            uniq: dict[tuple[int, int], int] = {}
+            for t in todo:
+                uniq.setdefault((min(a[t], b[t]), max(a[t], b[t])), t)
+            keys = list(uniq)
+            got = self.metric.values([pairs[uniq[k]] for k in keys]).astype(np.float32)
+            for (i, j), x in zip(keys, got):
+                self.d[i, j] = self.d[j, i] = x
+            v = self.d[a, b]
+        return v.astype(np.float64)
+
+    def matrix(self, docs: Sequence[Doculect]) -> np.ndarray:
+        """Distance matrix of ``docs`` (float64), computing the pairs not seen before."""
+        idx = self._check(docs)
         sub = self.d[np.ix_(idx, idx)]
         ii, jj = np.nonzero(np.triu(sub == UNSET, 1))
         if len(ii):

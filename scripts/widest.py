@@ -27,7 +27,7 @@ from pathlib import Path
 
 import numpy as np
 
-from run_analysis import CACHE_DIR, load_all
+from run_analysis import load_all, open_world_cache, save_world_cache
 from isodiv.asjp import load, load_exclusions, read_languages
 from isodiv.distcache import DistCache
 from isodiv.metric import get_metric
@@ -52,7 +52,7 @@ def main() -> None:
     rows = {r["ID"]: r for r in read_languages(args.cldf)}
     metric = get_metric(distance, args.pmi_model)
     docs = load_all(args.cldf, tok)
-    cache = DistCache.load(CACHE_DIR / f"dist_{distance}_{tok}.npy", metric, list(docs))
+    cache, _ = open_world_cache(metric, args.cldf, tok)
     excluded = load_exclusions(Path(__file__).resolve().parent.parent / "config" / "exclusions.tsv")
     world = {i: x for i, x in load(args.cldf, tokenization=tok).items()
              if rows[i]["Family"] not in NONGEN and i not in excluded and len(x.words) >= 20}
@@ -66,7 +66,7 @@ def main() -> None:
             return contact[i]
         fam = rows[i]["Family"]
         mine = set(lineage_ids) | {j for j in world_ids if fam and rows[j]["Family"] == fam}
-        v = metric.values([(docs.get(i) or world[i], world[j]) for j in world_ids])
+        v = cache.values([(docs.get(i) or world[i], world[j]) for j in world_ids])
         best_in = best_out = (np.inf, "")
         for j, x in zip(world_ids, v):
             if j == i or x != x:
@@ -113,6 +113,7 @@ def main() -> None:
               f'{" - ".join(row["pair"])}  lone {row["lone"]}  flagged {",".join(row["flagged"])}', flush=True)
 
     args.out.mkdir(exist_ok=True)
+    save_world_cache(cache, tok)
     (args.out / "widest.json").write_text(json.dumps({"band": band, "k": K, "distance": distance, "lineages": out},
                                                      indent=1, ensure_ascii=False), encoding="utf-8")
     with (args.out / "widest.csv").open("w", encoding="utf-8", newline="") as fh:

@@ -22,7 +22,7 @@ from isodiv.asjp import read_languages
 from isodiv.diversity import max_diversity, similarity_matrix
 from isodiv.metric import DISTANCES, get_metric
 
-from run_analysis import LINEAGES, ISOLATE_CANDIDATES, load_all, stratified
+from run_analysis import LINEAGES, ISOLATE_CANDIDATES, load_all, stratified, open_world_cache, save_world_cache
 
 
 def main() -> None:
@@ -56,7 +56,9 @@ def main() -> None:
     uniq = list({x.id: x for n in names for x in samples[n]}.values())
     pos = {x.id: i for i, x in enumerate(uniq)}
     print(f"{metric.label} over {len(uniq)} doculects ({len(uniq) * (len(uniq) - 1) // 2} pairs)", flush=True)
-    full = metric.matrix(uniq)
+    cache, _ = open_world_cache(metric, args.cldf)
+    full = cache.matrix(uniq)
+    save_world_cache(cache)
     ix = {n: np.array([pos[x.id] for x in samples[n]], dtype=int) for n in names}
     within_full = {n: full[np.ix_(ix[n], ix[n])] for n in names}
     within = {n: d[np.triu_indices(len(d), 1)] for n, d in within_full.items()}

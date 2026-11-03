@@ -78,3 +78,22 @@ def test_legacy_cache_without_fingerprints_is_not_trusted(tmp_path):
     del info["fingerprints"]
     meta.write_text(json.dumps(info))
     assert DistCache.load(tmp_path / "x.npy", m, ["a", "b"]).d[0, 1] == -1.0
+
+
+def test_values_fills_only_missing_pairs_and_agrees_with_matrix(monkeypatch):
+    a, b, c, s = make()
+    m = Metric("ldnd")
+    cache = DistCache(m, ["a", "b", "c", "s"])
+    calls = []
+    orig = Metric.values
+
+    def spy(self, pairs, **kw):
+        calls.append(len(pairs))
+        return orig(self, pairs, **kw)
+    monkeypatch.setattr(Metric, "values", spy)
+    v = cache.values([(a, b), (b, a), (a, c), (a, s)])
+    assert calls == [3]                                  # (a, b) and (b, a) are one pair
+    assert v[0] == v[1] and np.isnan(v[3])               # too little overlap: undefined
+    assert np.allclose(cache.matrix([a, b, c])[[0, 0], [1, 2]], v[[0, 2]])
+    assert calls == [3, 1]                               # matrix only adds (b, c)
+    assert cache.values([(c, b)])[0] == cache.matrix([b, c])[0, 1] and calls == [3, 1]

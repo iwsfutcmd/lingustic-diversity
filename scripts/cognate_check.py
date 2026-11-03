@@ -29,7 +29,7 @@ from pathlib import Path
 import numpy as np
 from scipy.stats import spearmanr
 
-from run_analysis import CACHE_DIR, LINEAGES, spread
+from run_analysis import CACHE_DIR, LINEAGES, spread, open_world_cache, save_world_cache
 from isodiv.asjp import core_concepts, load, load_exclusions, read_languages
 from isodiv.distcache import DistCache
 from isodiv.metric import get_metric
@@ -96,7 +96,7 @@ def main() -> None:
     asjp40 = {r["Concepticon_ID"] for r in read(args.cldf / "parameters.csv") if r["ID"] in core_concepts(args.cldf)}
     pmi = get_metric("pmi", args.pmi_model)
     ldnd = get_metric("ldnd")
-    cache = DistCache.load(CACHE_DIR / "dist_pmi_asjp.npy", pmi, list(asjp))
+    cache, _ = open_world_cache(pmi, args.cldf)
 
     def asjp_distance(metric, pairs: list[tuple[str, str]]) -> np.ndarray:
         """Median over up to 3 ASJP lists per Glottocode, for Glottocode pairs."""
@@ -105,7 +105,7 @@ def main() -> None:
             for a in by_glotto[g][:3]:
                 for b in by_glotto[h][:3]:
                     flat.append((asjp[a], asjp[b])); owner.append(k)
-        v = metric.values(flat)
+        v = cache.values(flat) if metric is pmi else metric.values(flat)
         out = [[] for _ in pairs]
         for k, x in zip(owner, v):
             if x == x:
@@ -196,6 +196,7 @@ def main() -> None:
         r = spearmanr([x["spread_cognate"] for x in rs], [x["spread_pmi"] for x in rs])[0]
         report["pooled_rho_lineages"] = (float(r), len(rs))
         print(f'  all datasets     {len(rs):2d} lineages  Spearman {r:.3f}')
+    save_world_cache(cache)
     args.out.mkdir(exist_ok=True)
     (args.out / "cognate_check.json").write_text(json.dumps(report, indent=1), encoding="utf-8")
     with (args.out / "cognate_check.csv").open("w", encoding="utf-8", newline="") as fh:
