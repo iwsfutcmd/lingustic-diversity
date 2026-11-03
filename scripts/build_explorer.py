@@ -200,7 +200,7 @@ def main() -> None:
     pairs = [{
         "a": p["a"], "b": p["b"], "related": p["related_by_construction"],
         **{k: clean(p[k]) for k in ("mean_between", "min_between", "median_between", "mean_within_a",
-                                    "mean_within_b", "dmax_union", "dmax_a", "dmax_b", "dmax_union_kcal")},
+                                    "mean_within_b", "dmax_union", "dmax_a", "dmax_b")},
     } for p in cross["pairs"]]
     unrel = [p["mean_between"] for p in pairs if not p["related"] and p["mean_between"] is not None]
 
