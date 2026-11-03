@@ -28,7 +28,7 @@ from pathlib import Path
 import numpy as np
 
 from run_analysis import CACHE_DIR, load_all
-from isodiv.asjp import load, load_exclusions
+from isodiv.asjp import load, load_exclusions, read_languages
 from isodiv.distcache import DistCache
 from isodiv.metric import get_metric
 from isodiv.widest import neighbourhoods, robust_distances, widest
@@ -49,7 +49,7 @@ def main() -> None:
     distance, tok = summary.get("distance", "pmi"), summary.get("tokenization", "asjp")
     band = summary["noise_floor_quantiles_10_50_90"][2]
     samples = json.loads((args.out / "samples.json").read_text(encoding="utf-8"))
-    rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
+    rows = {r["ID"]: r for r in read_languages(args.cldf)}
     metric = get_metric(distance, args.pmi_model)
     docs = load_all(args.cldf, tok)
     cache = DistCache.load(CACHE_DIR / f"dist_{distance}_{tok}.npy", metric, list(docs))

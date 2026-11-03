@@ -30,7 +30,7 @@ import numpy as np
 
 from run_analysis import (EXCLUSIONS_FILE, KS, LINEAGES, MAX_PER_LINEAGE, NODE_GROUPS, SINITIC_GROUPS, SUBFAMILIES,
                           drop_nan, load_all, stratified)
-from isodiv.asjp import load, load_exclusions
+from isodiv.asjp import load, load_exclusions, read_languages
 from isodiv.diversity import max_diversity, similarity_matrix, uniform_diversity
 from isodiv.metric import get_metric
 
@@ -101,7 +101,7 @@ def main() -> None:
     summary = json.loads((args.out / "summary.json").read_text(encoding="utf-8"))
     k_cal = summary["k_cal"]
     metric = get_metric(summary.get("distance", "ldnd"), args.pmi_model)
-    rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
+    rows = {r["ID"]: r for r in read_languages(args.cldf)}
     all_docs = load_all(args.cldf)
     rng = np.random.default_rng(7)
     result: dict = {"ks": KS.tolist(), "k_cal": k_cal, "k_fine": K_FINE, "distance": metric.label, "random_unrelated": {},

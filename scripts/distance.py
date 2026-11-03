@@ -20,7 +20,7 @@ import statistics
 from itertools import product
 from pathlib import Path
 
-from isodiv.asjp import load
+from isodiv.asjp import load, read_languages
 from isodiv.codes import resolve
 from isodiv.metric import DISTANCES, get_metric
 
@@ -36,7 +36,7 @@ def main() -> None:
     ap.add_argument("--max-pairs", type=int, default=2500)
     args = ap.parse_args()
 
-    langs = list(csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8")))
+    langs = list(read_languages(args.cldf))
     info = {r["ID"]: r for r in langs}
     docs = load(args.cldf)                        # all doculects, nothing excluded
     sides = []

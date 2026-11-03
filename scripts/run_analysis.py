@@ -26,7 +26,7 @@ from itertools import combinations
 import numpy as np
 from scipy.optimize import brentq
 
-from isodiv.asjp import Doculect, load, load_exclusions
+from isodiv.asjp import Doculect, load, load_exclusions, read_languages
 from isodiv.distcache import DistCache
 from isodiv.diversity import max_diversity, similarity_matrix, uniform_diversity
 from isodiv.metric import DISTANCES, Metric, get_metric
@@ -262,7 +262,7 @@ def spread(d: np.ndarray, level: float = 1.5, bracket: tuple[float, float] | Non
 def noise_floor(cldf: Path, metric: Metric, n_pairs: int = 400, seed: int = 0) -> np.ndarray:
     """Distance between doculects of the *same* language (same Glottocode, names X / X_2):
     differences here are transcription/source/idiolect noise, not lineage diversity."""
-    rows = list(csv.DictReader((cldf / "languages.csv").open(encoding="utf-8")))
+    rows = list(read_languages(cldf))
     groups: dict[tuple[str, str], list[str]] = defaultdict(list)
     for r in rows:
         groups[(re.sub(r"_\d+$", "", r["ID"]), r["Glottocode"])].append(r["ID"])
@@ -491,7 +491,7 @@ def main() -> None:
     args.out.mkdir(parents=True, exist_ok=True)
 
     all_docs = load_all(args.cldf, args.tokens, args.wold)
-    rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
+    rows = {r["ID"]: r for r in read_languages(args.cldf)}
 
     floor = noise_floor(args.cldf, metric)
     k_cal = float(-np.log(0.9) / np.median(floor))

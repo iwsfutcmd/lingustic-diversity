@@ -16,6 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from run_analysis import LINEAGES, MAX_PER_LINEAGE, analyse, load_all, stratified  # noqa: E402
 
+from isodiv.asjp import read_languages
 from isodiv.metric import DISTANCES, get_metric
 from isodiv.wold import loan_table
 
@@ -32,7 +33,7 @@ def main() -> None:
     k_cal = summary["k_cal"]
     metric = get_metric(args.distance or summary.get("distance", "ldnd"), args.pmi_model)
     table = loan_table(args.wold, args.cldf)
-    rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
+    rows = {r["ID"]: r for r in read_languages(args.cldf)}
     plain, masked = load_all(args.cldf), load_all(args.cldf, wold=args.wold)
 
     out = []

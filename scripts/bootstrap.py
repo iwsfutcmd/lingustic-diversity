@@ -24,7 +24,7 @@ from run_analysis import LINEAGES, drop_nan, load_all, stratified  # noqa: E402
 
 from itertools import combinations
 
-from isodiv.asjp import core_concepts
+from isodiv.asjp import core_concepts, read_languages
 from isodiv.diversity import max_diversity, similarity_matrix
 from isodiv.metric import get_metric, matrix_from_tables
 
@@ -48,7 +48,7 @@ def main() -> None:
     distance = args.distance or summary.get("distance", "ldnd")
     metric = get_metric(distance, args.pmi_model)
     concepts = sorted(core_concepts(args.cldf))
-    rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
+    rows = {r["ID"]: r for r in read_languages(args.cldf)}
     all_docs = load_all(args.cldf)
     rng = np.random.default_rng(42)
     draws = [frozenset(rng.choice(concepts, size=args.keep, replace=False)) for _ in range(args.draws)]

@@ -1,0 +1,33 @@
+# Luwian word list for ASJP-40 (doculect LUWIAN, config/added_languages.tsv). ASJP has no Luwian list.
+# Licence: forms and analyses from eDiAna (Hutter, Hackstein, Zinko et al.), https://www.ediana.gwi.uni-muenchen.de/,
+# CC BY-SA 4.0. This file is an adaptation and is likewise under CC BY-SA 4.0 (the rest of config/ is not).
+# Composite, as in IE-CoR: Cuneiform Luwian (CLuw) where eDiAna has a syllabically attested lemma with secure meaning,
+# Hieroglyphic Luwian (HLuw) only to fill the gaps. 23 concepts. Left out (see config/luwian_review.tsv): logogram-only
+# (two, ear, knee), unattested (*new, *tongue in HLuw), meaning debated (liver ikkuwar-, tongue lāli-, nose, sun),
+# no lemma (one, fish, louse, tree, leaf, skin, tooth, night, star).
+# ASJPcode: x for ḫ (ASJP's convention, also in its Palaic list; its Hittite list uses h), s for š, c for z (/ts/),
+# geminates kept as written, length unmarked.
+doculect	concept	asjpcode	source_form	source	note
+LUWIAN	1	ammu	/ammu/, á-mu 'I'	eDiAna lemma 3398 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=3398)	HLuw: á-mu (ÇİNEKÖY §9), 31 forms
+LUWIAN	2	ti	tī 'you'	eDiAna lemma 2992 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=2992)	CLuw: ti-i (KUB 35.133 iv 12')
+LUWIAN	3	anca	ānza- 'we, us'	eDiAna lemma 2684 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=2684)	CLuw: an-za-aš (KUB 35.133 iv 8')
+LUWIAN	18	cita	zita/i- 'man'	eDiAna lemma 423 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=423)	CLuw: zi-ti-in (KUB 35.8 i 5)
+LUWIAN	21	cuwani	/zuwan(i)-/, CANIS 'dog'	eDiAna lemma 255 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=255)	HLuw: zú-wa/i-ni-i-sá (KULULU 1 §11)
+LUWIAN	30	asxar	āšḫar- 'blood'	eDiAna lemma 672 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=672)	CLuw: a-aš-ḫar-ša (KUB 35.109 iii 13')
+LUWIAN	31	xas	ḫāš- 'bone, skeleton'	eDiAna lemma 2646 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=2646)	CLuw: ḫa-a-aš-ša (KUB 35.12 iii 2)
+LUWIAN	34	curni	/zurni(ya)-/ 'horn'	eDiAna lemma 936 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=936)	HLuw: (CORNU)zú+ra/i-ni (ASSUR letter f+g §36)
+LUWIAN	40	tawi	tāwa/ī- 'eye'	eDiAna lemma 233 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=233)	CLuw: da-a-u-i-iš (KUB 35.49 iv 9')
+LUWIAN	48	issari	īš(ša)r(i)- 'hand'	eDiAna lemma 200 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=200)	CLuw: i-iš-ša-ri-iš (KUB 35.49 iv 4')
+LUWIAN	51	titan	tītan- '(female) breast, teat'	eDiAna lemma 2996 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=2996)	CLuw: ti-i-ta-ni (KUB 35.103 iii 6)
+LUWIAN	54	u	ū- 'to drink'	eDiAna lemma 396 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=396)	CLuw: ú-ut-ti-iš (KUB 35.133 ii 25')
+LUWIAN	57	mana	manā-(di) 'to see, experience'	eDiAna lemma 2793 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=2793)	CLuw: ma-na-a-ti (KUB 32.7 10')
+LUWIAN	58	tummanti	tūm(m)anti-(ti) 'to hear'	eDiAna lemma 1645 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=1645)	CLuw: tu-um-ma-an-te-et-ta (KUB 35.43 ii 8)
+LUWIAN	61	wala	/wala-/ 'to die'	eDiAna lemma 1046 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=1046)	HLuw: wa/i-la-, 14 forms
+LUWIAN	66	awi	awī-(di) 'to come'	eDiAna lemma 734 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=734)	CLuw: a-ú-i-ti (KUB 35.54 ii 41')
+LUWIAN	75	war	wār- 'water'	eDiAna lemma 971 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=971)	CLuw: wa-a-ar-ša (KUB 35.54 iii 17)
+LUWIAN	77	assu	/assu-/ 'stone'	eDiAna lemma 1415 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=1415)	HLuw: (SCALPRUM)á-su-sa (TÜNP 1 §2)
+LUWIAN	82	paxur	pāḫur- 'fire'	eDiAna lemma 292 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=292)	CLuw: pa-a-ḫu-u-ur (KUB 35.107 iii 4')
+LUWIAN	85	xaruwa	ḫaruwa- 'path'	eDiAna lemma 3033 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=3033)	CLuw: ḫa-ru-wa-aš (KBo 30.190 iii 8)
+LUWIAN	86	watti	watt(i)- 'mountain'	eDiAna lemma 2844 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=2844)	CLuw: wa-at-ti (KBo 29.25 iii 10')
+LUWIAN	95	su	/su-/ 'full, complete'	eDiAna lemma 817 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=817)	HLuw: (MANUS)su-za (TELL AHMAR 6 §13)
+LUWIAN	100	alaman	/alaman-/ 'name'	eDiAna lemma 1304 (https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=1304)	HLuw: á-lá/í-ma-za (KARATEPE 1 Hu. §74)

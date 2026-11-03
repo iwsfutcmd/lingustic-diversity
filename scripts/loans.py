@@ -41,7 +41,7 @@ from rapidfuzz.distance import Levenshtein
 sys.path.insert(0, str(Path(__file__).parent))
 from run_analysis import EXCLUSIONS_FILE, LINEAGES  # noqa: E402
 
-from isodiv.asjp import core_concepts, load, load_exclusions
+from isodiv.asjp import core_concepts, load, load_exclusions, read_languages
 from isodiv.distance import ldnd
 
 LDN = Levenshtein.normalized_distance
@@ -84,7 +84,7 @@ def main() -> None:
         ap.error("give --lineage NAME, --family NAME or --all")
 
     concepts = sorted(core_concepts(args.cldf))
-    rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
+    rows = {r["ID"]: r for r in read_languages(args.cldf)}
     pool = load(args.cldf, keep=lambda r: r["Family"] != "" and r["Latitude"] != "")
     excluded = set() if args.include_excluded else set(load_exclusions(EXCLUSIONS_FILE))
     coord = {i: (float(rows[i]["Latitude"]), float(rows[i]["Longitude"])) for i in pool}

@@ -32,7 +32,7 @@ import numpy as np
 from scipy.spatial import cKDTree
 from scipy.stats import mannwhitneyu, spearmanr
 
-from isodiv.asjp import load
+from isodiv.asjp import load, read_languages
 from isodiv.distance import ldnd
 from isodiv.pmi import PMIModel, fit, ldn_erc, pmi_erc, pmi_ldnd, word_pairs
 
@@ -150,7 +150,7 @@ def main() -> None:
     tag = "" if args.train == "random" else f"_{args.train}"
     rng = np.random.default_rng(1)
 
-    rows = list(csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8")))
+    rows = list(read_languages(args.cldf))
     classes = sample_classes(rows, args.n)
     classes[CONTACT] = contact_pairs(rows, args.n)
     test_ids = {i for v in classes.values() for p in v for i in p}

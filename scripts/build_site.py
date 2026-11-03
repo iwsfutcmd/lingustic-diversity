@@ -15,7 +15,7 @@ import json
 import shutil
 from pathlib import Path
 
-from isodiv.asjp import core_concepts, load, load_exclusions
+from isodiv.asjp import core_concepts, load, load_exclusions, read_languages
 from isodiv.codes import load_iso1, load_macro
 from isodiv.metric import Metric, load_model
 
@@ -38,7 +38,7 @@ def export_wordlists(cldf: Path, model_path: Path, summary: dict, out: Path, sum
     """docs/data/wordlists.json: all doculects (nothing excluded), packed one field per concept."""
     concepts = sorted(core_concepts(cldf), key=lambda c: (not c.isdigit(), int(c) if c.isdigit() else 0, c))
     docs = load(cldf)
-    langs = {r["ID"]: r for r in csv.DictReader((cldf / "languages.csv").open(encoding="utf-8"))}
+    langs = {r["ID"]: r for r in read_languages(cldf)}
     model = load_model(model_path)
     names = {r["ID"]: r["Name"].lstrip("*") for r in csv.DictReader((cldf / "parameters.csv").open(encoding="utf-8"))}
     from run_analysis import noise_floor            # same-language pairs, as in the pipeline

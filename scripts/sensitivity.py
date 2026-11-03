@@ -26,6 +26,7 @@ from pathlib import Path
 import numpy as np
 
 from run_analysis import CACHE_DIR, K_FINE, load_all
+from isodiv.asjp import read_languages
 from isodiv.diversity import max_diversity, similarity_matrix
 from isodiv.distcache import DistCache
 from isodiv.metric import get_metric
@@ -36,7 +37,7 @@ SENS_FILE = Path(__file__).resolve().parent.parent / "config" / "sensitivity.tsv
 def scenarios(languages: Path) -> dict[str, dict[str, str]]:
     """scenario -> {doculect id: reason}."""
     out: dict[str, dict[str, str]] = {"long_extinct": {}}
-    for r in csv.DictReader(languages.open(encoding="utf-8")):
+    for r in read_languages(languages.parent):
         if r["long_extinct"] == "True":
             out["long_extinct"][r["ID"]] = "ASJP long_extinct"
     for r in csv.DictReader(SENS_FILE.open(encoding="utf-8"), delimiter="\t"):

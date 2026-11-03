@@ -59,21 +59,48 @@ def _read_csv(path: Path) -> Iterable[dict[str, str]]:
         yield from csv.DictReader(fh)
 
 
-SUPPLEMENTS = Path(__file__).resolve().parent.parent.parent / "config" / "supplements.tsv"
+CONFIG = Path(__file__).resolve().parent.parent.parent / "config"
+SUPPLEMENTS = CONFIG / "supplements.tsv"
+ADDED_LANGUAGES = CONFIG / "added_languages.tsv"
+
+
+def _supplements_off() -> bool:
+    import os
+    return bool(os.environ.get("ISODIV_NO_SUPPLEMENTS"))
+
+
+def _supplement_files(path: Path) -> list[Path]:
+    """config/supplements.tsv plus every config/supplements_*.tsv beside it (kept apart where licences differ)."""
+    path = Path(path)
+    return [x for x in [path, *sorted(path.parent.glob(f"{path.stem}_*{path.suffix}"))] if x.exists()]
 
 
 def load_supplements(path: Path | None = SUPPLEMENTS) -> dict[str, dict[str, list[str]]]:
-    """{doculect ID: {concept ID: [ASJPcode forms]}} from config/supplements.tsv (``#`` lines ignored).
+    """{doculect ID: {concept ID: [ASJPcode forms]}} from config/supplements.tsv and supplements_*.tsv (``#`` lines
+    ignored).
 
     Set the environment variable ISODIV_NO_SUPPLEMENTS=1 (or pass path=None) to use ASJP as it is."""
-    import os
-    if path is None or os.environ.get("ISODIV_NO_SUPPLEMENTS") or not Path(path).exists():
+    if path is None or _supplements_off():
         return {}
     out: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
-    with Path(path).open(encoding="utf-8", newline="") as fh:
-        for r in csv.DictReader((ln for ln in fh if not ln.startswith("#")), delimiter="\t"):
-            out[r["doculect"].strip()][r["concept"].strip()].append(r["asjpcode"].strip())
+    for f in _supplement_files(path):
+        with f.open(encoding="utf-8", newline="") as fh:
+            for r in csv.DictReader((ln for ln in fh if not ln.startswith("#")), delimiter="\t"):
+                if r.get("asjpcode", "").strip():
+                    out[r["doculect"].strip()][r["concept"].strip()].append(r["asjpcode"].strip())
     return out
+
+
+def read_languages(cldf_dir: Path, added: Path | None = ADDED_LANGUAGES) -> list[dict[str, str]]:
+    """ASJP's languages.csv rows plus doculects ASJP lacks (config/added_languages.tsv, same columns), whose words
+    come from the supplements. The added rows go with the supplements: ISODIV_NO_SUPPLEMENTS=1 drops both."""
+    rows = list(_read_csv(Path(cldf_dir) / "languages.csv"))
+    if added is not None and Path(added).exists() and not _supplements_off():
+        cols = rows[0].keys() if rows else ()
+        with Path(added).open(encoding="utf-8", newline="") as fh:
+            for r in csv.DictReader((ln for ln in fh if not ln.startswith("#")), delimiter="\t"):
+                rows.append({c: (r.get(c) or "").strip() for c in cols})
+    return rows
 
 
 def load_exclusions(path: Path | None) -> dict[str, str]:
@@ -109,7 +136,7 @@ def load(
     ASJPcode, so it applies to the "asjp" tokenization only."""
     cldf_dir = Path(cldf_dir)
     concepts = core_concepts(cldf_dir) if concepts is None else concepts
-    langs = {r["ID"]: r for r in _read_csv(cldf_dir / "languages.csv") if keep(r) and r["ID"] not in set(exclude)}
+    langs = {r["ID"]: r for r in read_languages(cldf_dir) if keep(r) and r["ID"] not in set(exclude)}
 
     words: dict[str, dict[str, list[Word]]] = defaultdict(lambda: defaultdict(list))
     for r in _read_csv(cldf_dir / "forms.csv"):

@@ -24,7 +24,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).parent))
 from run_analysis import CACHE_DIR, EXCLUSIONS_FILE, LINEAGES  # noqa: E402
 
-from isodiv.asjp import core_concepts, load, load_exclusions
+from isodiv.asjp import core_concepts, load, load_exclusions, read_languages
 from isodiv.distcache import DistCache
 from isodiv.diversity import max_diversity, similarity_matrix
 from isodiv.metric import get_metric
@@ -50,7 +50,7 @@ def main() -> None:
     concepts = core_concepts(args.cldf)
     exclusions = load_exclusions(EXCLUSIONS_FILE)
     docs = load(args.cldf, keep=lambda r: any(p(r) for p in LINEAGES.values()))
-    langs = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
+    langs = {r["ID"]: r for r in read_languages(args.cldf)}
 
     contact_path = args.out / "contact.json"
     contact = {c["id"]: c for c in json.loads(contact_path.read_text(encoding="utf-8"))["checked"] if c["flagged"]} \

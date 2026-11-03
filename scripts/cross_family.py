@@ -18,6 +18,7 @@ from pathlib import Path
 
 import numpy as np
 
+from isodiv.asjp import read_languages
 from isodiv.diversity import max_diversity, similarity_matrix
 from isodiv.metric import DISTANCES, get_metric
 
@@ -38,7 +39,7 @@ def main() -> None:
     distance = args.distance or summary.get("distance", "ldnd")
     metric = get_metric(distance, args.pmi_model)
 
-    rows = {r["ID"]: r for r in csv.DictReader((args.cldf / "languages.csv").open(encoding="utf-8"))}
+    rows = {r["ID"]: r for r in read_languages(args.cldf)}
     all_docs = load_all(args.cldf)
     names = list(LINEAGES)
     samples = {

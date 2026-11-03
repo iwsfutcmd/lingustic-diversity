@@ -30,7 +30,7 @@ import numpy as np
 from scipy.stats import spearmanr
 
 from run_analysis import CACHE_DIR, LINEAGES, spread
-from isodiv.asjp import core_concepts, load, load_exclusions
+from isodiv.asjp import core_concepts, load, load_exclusions, read_languages
 from isodiv.distcache import DistCache
 from isodiv.metric import get_metric
 
@@ -85,7 +85,7 @@ def main() -> None:
     args = ap.parse_args()
     rng = np.random.default_rng(5)
 
-    asjp_rows = {r["ID"]: r for r in read(args.cldf / "languages.csv")}
+    asjp_rows = {r["ID"]: r for r in read_languages(args.cldf)}
     excluded = load_exclusions(Path(__file__).resolve().parent.parent / "config" / "exclusions.tsv")
     asjp = {i: x for i, x in load(args.cldf).items() if i not in excluded and len(x.words) >= 20}
     by_glotto: dict[str, list[str]] = defaultdict(list)

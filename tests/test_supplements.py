@@ -23,3 +23,14 @@ def test_default_supplements_and_switch(monkeypatch):
     assert len(h.words) == 36
     monkeypatch.setenv("ISODIV_NO_SUPPLEMENTS", "1")
     assert len(load(CLDF, keep=lambda r: r["ID"] == "HITTITE")["HITTITE"].words) == 30
+
+
+def test_added_doculect_luwian(monkeypatch):
+    from isodiv.asjp import read_languages
+    rows = {r["ID"]: r for r in read_languages(CLDF)}
+    assert rows["LUWIAN"]["Family"] == "Indo-European" and rows["LUWIAN"]["long_extinct"] == "True"
+    lw = load(CLDF, keep=lambda r: r["ID"] == "LUWIAN")["LUWIAN"]
+    assert len(lw.words) == 23 and lw.words["1"] == (tuple("ammu"),)
+    monkeypatch.setenv("ISODIV_NO_SUPPLEMENTS", "1")                  # the added row goes with the supplements
+    assert "LUWIAN" not in {r["ID"] for r in read_languages(CLDF)}
+    assert load(CLDF, keep=lambda r: r["ID"] == "LUWIAN") == {}

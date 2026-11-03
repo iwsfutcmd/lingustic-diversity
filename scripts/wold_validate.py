@@ -22,6 +22,7 @@ from pathlib import Path
 from scipy.stats import spearmanr
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+from isodiv.asjp import read_languages
 from isodiv.wold import loan_table  # noqa: E402
 
 
@@ -37,7 +38,7 @@ def main() -> None:
     args = ap.parse_args()
 
     table = loan_table(args.wold, args.cldf)
-    asjp = {r["ID"]: r for r in read(args.cldf / "languages.csv")}
+    asjp = {r["ID"]: r for r in read_languages(args.cldf)}
     pick = {t.wold_language: asjp[i] for i, t in table.items() if asjp[i]["Latitude"] and asjp[i]["Family"]}
     rate = {t.wold_language: (len(t.borrowed) / t.n_concepts, t.n_concepts) for t in table.values()}
     wold_langs = {n: {"Name": n} for n in pick}

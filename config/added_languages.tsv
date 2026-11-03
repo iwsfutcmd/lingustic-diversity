@@ -1,0 +1,4 @@
+# Doculects ASJP lacks, with ASJP languages.csv columns. Their words come from config/supplements_*.tsv.
+# Switched off together with the supplements (ISODIV_NO_SUPPLEMENTS=1 / run_analysis --no-supplements).
+ID	Name	Glottocode	Glottolog_Name	ISO639P3code	Macroarea	Latitude	Longitude	Family	classification_wals	classification_ethnologue	classification_glottolog	recently_extinct	long_extinct	year_of_extinction	code_wals	code_iso	transcribers
+LUWIAN	LUWIAN	cune1239	Cuneiform Luwian	xlu	Eurasia	38.4	36.3	Indo-European	IE.ANATOLIAN	Indo-European,Anatolian	Indo-European,Anatolian,Luvo-Lydian,Luvo-Palaic,Luvic	False	True			xlu	isodiv, from eDiAna (composite Cuneiform and Hieroglyphic Luwian)

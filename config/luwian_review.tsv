@@ -1,6 +1,7 @@
 # Cuneiform Luwian (cune1239) candidates for an ASJP-40 list, checked against eDiAna (CC BY-SA 4.0,
 # https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=<id>). ASJP has no Luwian list, so this would be a NEW
-# doculect, not a supplement. Review only: nothing here is read by the pipeline yet.
+# doculect, not a supplement. Review record only: the list used is config/supplements_luwian.tsv (composite,
+# Cuneiform first, Hieroglyphic for the gaps; HLuw rows at the end).
 # ASJPcode: x for ḫ, s for š, c for z (= /ts/), length unmarked, stem form.
 # status: ok = syllabically attested in Cuneiform Luwian, meaning secure in eDiAna; flag = attested but meaning or
 # word-hood debated; no = logogram only, unattested (*), enclitic only, or meaning opaque.
@@ -35,3 +36,15 @@ die	no		*wala-	1046		not attested in CLuw
 ear	no		GEŠTU-	1643		logogram only
 dog	no					no CLuw lemma (IE-CoR's suwani- is Hieroglyphic)
 sun	no					no CLuw lemma (Tiwad- as the Sun-god's name)
+two	no		/t(u)w(a/i)-?/	592	2	HLuw: number sign only
+I	ok-HLuw	ammu	/ammu/, á-mu	3398	á-mu (ÇİNEKÖY §9)	
+dog	ok-HLuw	cuwani	/zuwan(i)-/	255	zú-wa/i-ni-i-sá (KULULU 1 §11)	
+die	ok-HLuw	wala	/wala-/	1046	wa/i-la-, 14 forms	
+name	ok-HLuw	alaman	/alaman-/	1304	á-lá/í-ma-za (KARATEPE 1 Hu. §74)	translates Phoenician šm
+horn	ok-HLuw	curni	/zurni(ya)-/	936	(CORNU)zú+ra/i-ni (ASSUR letter f+g §36)	used instead of CLuw šāwatar
+stone	ok-HLuw	assu	/assu-/	1415	(SCALPRUM)á-su-sa (TÜNP 1 §2)	
+full	ok-HLuw	su	/su-/	817	(MANUS)su-za (TELL AHMAR 6 §13)	one attestation, meaning clear
+sun	no		/tiwad-/	2669	SOL-tà-sa	'sun (?)', one fragmentary attestation
+new	no		*/nawa/i-/	1324		not attested in HLuw
+ear	no		*/tumman(t)-/	1643		not attested in HLuw
+knee	no		GENU-	2599		logogram only
