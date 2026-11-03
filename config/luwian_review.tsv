@@ -1,0 +1,37 @@
+# Cuneiform Luwian (cune1239) candidates for an ASJP-40 list, checked against eDiAna (CC BY-SA 4.0,
+# https://www.ediana.gwi.uni-muenchen.de/dictionary.php?lemma=<id>). ASJP has no Luwian list, so this would be a NEW
+# doculect, not a supplement. Review only: nothing here is read by the pipeline yet.
+# ASJPcode: x for ḫ, s for š, c for z (= /ts/), length unmarked, stem form.
+# status: ok = syllabically attested in Cuneiform Luwian, meaning secure in eDiAna; flag = attested but meaning or
+# word-hood debated; no = logogram only, unattested (*), enclitic only, or meaning opaque.
+concept	status	asjpcode	lemma	ediana_id	attestation	note
+blood	ok	asxar	āšḫar-	672	a-aš-ḫar-ša (KUB 35.109 iii 13')	
+bone	ok	xas	ḫāš-	2646	ḫa-a-aš-ša (KUB 35.12 iii 2)	
+come	ok	awi	awī-(di)	734	a-ú-i-ti, 32 forms	
+drink	ok	u	ū-	396	ú-ut-ti-iš (KUB 35.133 ii 25')	one attestation
+eye	ok	tawa	tāwa/ī-	233	da-a-u-i-iš, 21 forms	
+fire	ok	paxur	pāḫur-	292	pa-a-ḫu-u-ur (KUB 35.107 iii 4')	
+see	ok	mana	manā-(di)	2793	ma-na-a-ti, 14 forms	
+water	ok	war	wār-	971	wa-a-ar-ša (KUB 35.54 iii 17)	
+hear	ok	tumanti	tūm(m)anti-(ti)	1645	tu-um-ma-an-te-et-ta (KUB 35.43 ii 8)	two attestations, corrupt context
+hand	ok	isari	īš(ša)r(i)-	200	i-iš-ša-ri-iš, 29 forms	
+mountain	ok	wati	watt(i)-	2844	wa-at-ti (KBo 29.25 iii 10')	meaning via HLuw MONS = /watt(i)-/
+we	ok	anca	ānza-	2684	an-za-aš (KUB 35.133 iv 8')	
+you	ok	ti	tī	2992	ti-i (KUB 35.133 iv 12')	
+breasts	ok	titan	tītan-	2996	ti-i-ta-ni (KUB 35.103 iii 6)	'(female) breast, teat'
+path	ok	xaruwa	ḫaruwa-	3033	ḫa-ru-wa-aš (KBo 30.190 iii 8)	most forms logographic KASKAL
+person	ok	cita	zita/i-	423	zi-ti-in (KUB 35.8 i 5)	'man'
+liver	flag	ikuwar	ikkuwar/n-	1534	ik-ku-wa-a[r] (KUB 35.72 iii 8')	equation with UZUNÍG.GIG; meaning long disputed
+tongue	flag	lali	lāl(i)-	792	la-a-li-in	EME = lāli- accepted by most, syllabic form's meaning unclear
+horn	flag	sawatar	šāwatar	798	ša-a-ú-wa-tar-ša (KUB 25.37 iii 26')	same as Hitt. šawātar; possibly Hittite in Luwian context
+two	no		2(-an)	592	2-an	numeral logogram only
+I	no		=mu, =mi	3397	mu (dat.)	enclitic only; no independent 'I' lemma yet
+nose	no		manna(ḫ)uwann(i)-	2798		'nose (or other facial feature)'
+full	no		šuwāru-	1041		'heavy or full (?)'
+stone	no		āššu-	1415		'stone (monument)', one attestation
+name	no		lammaur/n-	3235		opaque
+new	no		*nawa/i-	1324		not attested in CLuw
+die	no		*wala-	1046		not attested in CLuw
+ear	no		GEŠTU-	1643		logogram only
+dog	no					no CLuw lemma (IE-CoR's suwani- is Hieroglyphic)
+sun	no					no CLuw lemma (Tiwad- as the Sun-god's name)
