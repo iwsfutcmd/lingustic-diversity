@@ -79,11 +79,19 @@ def main() -> None:
         i, j = names.index(a), names.index(b)
         mean_m[i, j] = mean_m[j, i] = stat(v, np.mean)
 
-    # Union D_max: if two lineages are truly distinct, D_max(A ∪ B) ≈ D_max(A) + D_max(B).
-    union_rows = []
+    # Union D_max: if two lineages are truly distinct, D_max(A ∪ B) = D_max(A) + D_max(B). Each lineage's own D_max is
+    # solved once. When no list of A is within the detection limit of a list of B, the union's similarity matrix is
+    # block-diagonal and its D_max is exactly the sum, so only pairs with some detectable link need a solve.
+    own = {n: _dmax(within_full[n], kernel) for n in names}
+    union_rows, solved = [], 0
     for a, b in combinations(names, 2):
-        d = np.block([[within_full[a], blocks[(a, b)]], [blocks[(a, b)].T, within_full[b]]])
-        d = _clean(d)
+        blk = blocks[(a, b)]
+        clean = not (np.isnan(blk).any() or np.isnan(within_full[a]).any() or np.isnan(within_full[b]).any())
+        if clean and len(blk) and (blk >= kernel.unrelated).all():
+            union = own[a] + own[b]
+        else:
+            union = max_diversity(kernel(_clean(np.block([[within_full[a], blk], [blk.T, within_full[b]]])))).value
+            solved += 1
         union_rows.append({
             "a": a, "b": b,
             "mean_between": stat(between[(a, b)], np.mean),
@@ -91,16 +99,11 @@ def main() -> None:
             "median_between": stat(between[(a, b)], np.median),
             "mean_within_a": stat(within[a], np.mean),
             "mean_within_b": stat(within[b], np.mean),
-            "dmax_union": max_diversity(kernel(d)).value,
-            "dmax_a": _dmax(within_full[a], kernel), "dmax_b": _dmax(within_full[b], kernel),
-            "dmax_union_kcal": max_diversity(similarity_matrix(d, k_cal)).value,
-            # k_cal is coarse: unrelated pairs (distance ≈ 1) are still exp(-k_cal)≈0.7 similar, so also
-            # report a fine scale where a distance ≈ 1 means "fully distinct" and D_max should add up.
-            "dmax_union_k3": max_diversity(similarity_matrix(d, 3.0)).value,
-            "dmax_a_k3": _dmax(within_full[a], 3.0),
-            "dmax_b_k3": _dmax(within_full[b], 3.0),
+            "dmax_union": union, "dmax_a": own[a], "dmax_b": own[b],
             "related_by_construction": related(a, b),
         })
+    print(f"union D_max: {solved} of {len(union_rows)} lineage pairs needed a solve (the rest are block-diagonal)",
+          flush=True)
 
     args.out.mkdir(parents=True, exist_ok=True)
     with (args.out / "cross_family.csv").open("w", encoding="utf-8", newline="") as fh:
