@@ -26,11 +26,12 @@ from run_analysis import CACHE_DIR, EXCLUSIONS_FILE, LINEAGES  # noqa: E402
 
 from isodiv.asjp import core_concepts, load, load_exclusions, read_languages
 from isodiv.distcache import DistCache
+from isodiv.kernel import Kernel, similarity
 from isodiv.diversity import max_diversity, similarity_matrix
 from isodiv.metric import get_metric
 
 Z_FLAG = 2.0          # mean LDND this many SDs above the lineage's other doculects
-LOO_FLAG = 0.015      # D_max drops by at least this when the doculect is removed
+LOO_FLAG = 0.5        # D_max drops by at least half an effective lineage when the doculect is removed
 MIN_CONCEPTS = 25     # of the 40-item list (LDND itself needs 20 shared)
 
 
@@ -43,7 +44,7 @@ def main() -> None:
     args = ap.parse_args()
 
     summary = json.loads((args.out / "summary.json").read_text(encoding="utf-8"))
-    k = summary["k_cal"]
+    k = Kernel.from_summary(summary)
     distance = summary.get("distance", "ldnd")
     samples = json.loads((args.out / "samples.json").read_text(encoding="utf-8"))
     metric = get_metric(distance, args.pmi_model)
@@ -65,7 +66,7 @@ def main() -> None:
         n = len(ids)
         if n < 4:
             continue                      # too few doculects to tell an outlier from the lineage
-        z = similarity_matrix(d, k)
+        z = k(d)
         full = max_diversity(z)
         mean = d.sum(axis=1) / (n - 1)
         for i, doc_id in enumerate(ids):
@@ -79,7 +80,7 @@ def main() -> None:
             elif flagged:                 # a leave-one-out solve is the costly step; only candidates
                 keep = np.arange(n) != i
                 start = np.where(keep, full.weights, 0.0)[keep]
-                loo = full.value - max_diversity(similarity_matrix(d[np.ix_(keep, keep)], k),
+                loo = full.value - max_diversity(k(d[np.ix_(keep, keep)]),
                                                  warm=[start / start.sum()]).value
             rows.append({
                 "lineage": lineage, "id": doc_id, "language": langs[doc_id]["Glottolog_Name"],

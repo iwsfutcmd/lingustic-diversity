@@ -29,6 +29,7 @@ from run_analysis import EXCLUSIONS_FILE  # noqa: E402
 
 from isodiv.asjp import load, load_exclusions, read_languages
 from isodiv.metric import get_metric
+from isodiv.kernel import detection_limit
 from isodiv.regularity import Regularity
 
 STATS = ("sim", "g", "rec")
@@ -124,9 +125,11 @@ def main() -> None:
     summary["related_by_family_sim"] = {f: [len(v), float(np.mean(v))] for f, v in sorted(fam_rate.items())}
 
     args.out.mkdir(exist_ok=True)
-    (args.out / "regularity_eval.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
     with (args.out / "regularity_eval.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(out[0])); w.writeheader(); w.writerows(out)
+    summary["detection_limit_d50"], summary["detection_slope"] = detection_limit(args.out / "regularity_eval.csv")
+    print(f"detection limit (related pairs detected half the time): {summary['detection_limit_d50']:.3f}")
+    (args.out / "regularity_eval.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
     print(json.dumps(summary["groups"], indent=1)); print("AUC vs far unrelated:", summary["auc_vs_far"])
 
 

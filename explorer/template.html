@@ -165,7 +165,7 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
             <option value="n">Doculects</option><option value="name">Name</option></select></label>
         </div>
         <div class="chart" id="divchart"></div>
-        <p class="muted" style="margin:8px 0 0">Dot: D_max at the calibrated scale. Line: how far the score moves when 10 of the 40 concepts are left out (5–95% of 30 resamples), centred on the dot; it does not include the effect of which doculects were sampled. 1.0 means one lineage; lineages with 2 doculects are lower bounds. <b>Share of the unrelated maximum</b> rescales each lineage against a set of the same size whose members are all from different families: (D_max − 1) / (D_unrelated − 1). 0 is one lineage and 1 is as diverse as unrelated lects can be, which no real family reaches because its members are related. It removes the effect of sample size, so large and small lineages compare fairly. Deep families sit close to 1 at this scale and separate better in <i>Scale profiles</i>. <b>Widest pair</b> is on the distance scale instead: the largest distance between two lists of the lineage, with each list replaced by its near-identical relatives so that one noisy pair cannot set it, and lists that are closer to another family than to their own left out. It uses no subgrouping. It means the most divergent pair, not the earliest split: an old list such as Hittite or Akkadian has had less time to change than two modern lists, and above about 0.95 every deep family reaches the unrelated level.</p>
+        <p class="muted" style="margin:8px 0 0">Dot: D_max, the effective number of lineages whose word lists cannot be tied together (log scale). 1 means one lineage; n mutually unrelated lects score about n. Line: how far the score moves when 10 of the 40 concepts are left out (5–95% of 30 resamples), centred on the dot; it does not include the effect of which doculects were sampled. Lineages with 2 doculects are lower bounds. <b>Share of the unrelated maximum</b> rescales each lineage against a set of the same size whose members are all from different families: (D_max − 1) / (D_unrelated − 1). 0 is one lineage and 1 is as diverse as unrelated lects. It removes the effect of sample size, so large and small lineages compare fairly. <b>Widest pair</b> is on the distance scale instead: the largest distance between two lists of the lineage, with each list replaced by its near-identical relatives so that one noisy pair cannot set it, and lists that are closer to another family than to their own left out. It uses no subgrouping. It means the most divergent pair, not the earliest split: an old list such as Hittite or Akkadian has had less time to change than two modern lists, and above about 0.95 every deep family reaches the unrelated level.</p>
       </div>
       <aside class="panel" id="detail" aria-live="polite"></aside>
     </div>
@@ -208,20 +208,20 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
       <h2>What is measured</h2>
       <ol>
         <li><b>Distance, not time.</b> <!--__METHOD__--></li>
-        <li><b>Diversity that ignores duplicates.</b> Z = exp(−k·LDND), then the Leinster–Meckes maximum diversity D_max(Z): the effective number of fully distinct lineages. Adding another doculect that is identical to one already present does not change it.</li>
-        <li><b>Scale without a clock.</b> k is calibrated so two doculects of the same language (same Glottocode) are 0.9 similar. Here k_cal = <code id="kcal"></code>.</li>
+        <li><b>Diversity that ignores duplicates.</b> Similarity Z is 1 at the median distance between two lists of the same language (<span id="ksame"></span>) and falls linearly to 0 at <span id="kunrel"></span>, the distance at which a permutation test detects a related pair half the time (<code>scripts/regularity_eval.py</code>). Then the Leinster–Meckes maximum diversity D_max(Z): the effective number of lineages that the word lists cannot tie together. Adding a doculect identical to one already present does not change it, and n unrelated lects score about n.</li>
+        <li><b>No clock, no fitted scale.</b> Both anchors are measured from the data: the same-language noise and the limit of detectable relatedness. The older similarity exp(−k·LDND) with k calibrated on same-language pairs (k_cal = <code id="kcal"></code>) is kept for comparison and in <i>Scale profiles</i>; it treated unrelated lects as about 0.64 similar, which squeezed every score under 1.57.</li>
       </ol>
       <h2>Reading it</h2>
       <ul>
-        <li>The calibrated scale is coarse. Two unrelated lineages (LDND ≈ 1) are still about 0.7 similar at k_cal, so their combined D_max stays small. The Between lineages view therefore also reports a finer scale (k = 3), where distinct lineages should add up.</li>
+        <li>Resolution. Beyond about <span class="kunrel2"></span> two lists of 40 words cannot be told from unrelated ones, so a deep family whose branches are that far apart counts each branch as a separate lineage. D_max of a deep family is therefore partly a measure of how much of it the data can still tie together. Tests of regular sound correspondences on longer lists (NorthEuraLex, up to 1,000 concepts) do not extend this: they detect loans as readily as inheritance.</li>
         <li>Same-language doculect pairs differ by LDND <span id="noisefloor"></span> (10th / 50th / 90th percentile). Lineages in the lowest band cannot be ranked against each other.</li>
         <li>D_max measures diversity, not relatedness. Purple rows are constructed sets, not families: random sets of lects from unrelated families, and proposed or rejected groupings such as Altaic. Unrelated lects are as diverse as it gets, so a random set scores above a real family with the same number of doculects; the deepest real families get close to the ceiling only when they have hundreds of documented doculects. A low score for a proposed grouping says its members are similar, which shared descent and long contact both produce; it is not evidence for or against the grouping. <code>scripts/adversarial.py</code>.</li>
         <li>D_max is stable against duplicates, not against sampling more distinct varieties. Lineages with few doculects are lower bounds.</li>
         <li>Contact shortens distances. The 40-item list resists borrowing but is not immune.</li>
-        <li>Doculects listed in <code>config/exclusions.tsv</code> are left out of every number here, each with its reason. <code>scripts/audit.py</code> flags candidates (far from the rest of the lineage, fewer than 30 of 40 concepts, or removing it lowers D_max by 0.015 or more) but never excludes automatically. A deep branch such as Chuvash is flagged and kept; a list distorted by contact or a transcription problem is excluded.</li>
+        <li>Doculects listed in <code>config/exclusions.tsv</code> are left out of every number here, each with its reason. <code>scripts/audit.py</code> flags candidates (far from the rest of the lineage, fewer than 30 of 40 concepts, or removing it lowers D_max by half a lineage or more) but never excludes automatically. A deep branch such as Chuvash is flagged and kept; a list distorted by contact or a transcription problem is excluded.</li>
         <li>Widest pair. The largest single distance in a big lineage is mostly the noise tail: with thousands of pairs of 40-item lists, two ordinary lists land above the unrelated level by chance. Each list is therefore represented by itself and up to four nearest lists inside the same-language noise band, pairs are compared by the median over these neighbourhoods, and the widest such pair is reported. A list with no close relative counts in full (an old branch with one list), unless the nearest list of another family is closer than the nearest of its own: that flags contact or a mixed or mislabelled list (Aynu, Mogogodo). Only lineage membership is used, no internal classification. <code>scripts/widest.py</code>.</li>
         <li>Doculects: every ASJP doculect of a lineage is used (up to 2,000 for Atlantic-Congo), after dropping those with too little overlap with the others. A lineage that contains others (Oceanic inside Austronesian) therefore contains all of their doculects, and since D_max cannot fall when doculects are added, a family never scores below one of its subfamilies. Earlier versions capped each lineage at 80 doculects separately, and Oceanic could outscore Austronesian. The concept resampling uses at most 40 doculects, so its range is shown as a width around the estimate, and between-lineage comparisons use 25.</li>
-        <li>Size and scale. At k_cal an unrelated pair is still about 0.64 similar, so D_max cannot exceed about 1.56 however many unrelated lects are added, and the deepest families end up within a few hundredths of it. Related lects are closer than unrelated ones, so a real family scores below an unrelated assortment of the same size. The share-of-unrelated-maximum view divides by that assortment's score for the lineage's own number of doculects (measured up to 80 lects, extended beyond that with n / (1 + (n − 1)·z̄)). The deepest families stay between 0.9 and 1 on it, so <i>Scale profiles</i> shows the whole curve, where larger k separates deep families from unrelated ones.</li>
+        <li>Size. Related lects are closer than unrelated ones, so a real family scores below an unrelated assortment of the same size; across sizes, a large deep family can still outscore a few unrelated lects, because it holds more lineages the data cannot tie together. The share-of-unrelated-maximum view divides by an unrelated assortment's score at the lineage's own number of doculects (measured up to 80 lects, extended beyond that with n / (1 + (n − 1)·z̄)).</li>
       </ul>
       <p class="muted">Wichmann, Holman, Bakker &amp; Brown 2010, <i>Physica A</i> 389. Leinster &amp; Meckes 2016, <i>Entropy</i> 18(3). ASJP Database v21, CC-BY-4.0.</p>
     </div>
@@ -247,11 +247,13 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
 
   /* ---------- header facts ---------- */
   $("facts").innerHTML = [
-    ["lineages", L.length], ["k_cal", fmt(DATA.k_cal)],
+    ["lineages", L.length], ["similarity 1 → 0 between", `${fmt(DATA.kernel.same, 3)} and ${fmt(DATA.kernel.unrelated, 3)}`],
     ["unrelated pairs, mean LDND", fmt(DATA.unrelated.mean) + ` (${fmt(DATA.unrelated.min, 2)}–${fmt(DATA.unrelated.max, 2)})`],
     ["noise floor LDND 10/50/90%", DATA.noise.map(v => fmt(v, 2)).join(" / ")],
   ].map(([k, v]) => `<span>${k} <b>${v}</b></span>`).join("");
   $("kcal").textContent = fmt(DATA.k_cal);
+  $("ksame").textContent = fmt(DATA.kernel.same); $("kunrel").textContent = fmt(DATA.kernel.unrelated);
+  document.querySelectorAll(".kunrel2").forEach(e => { e.textContent = fmt(DATA.kernel.unrelated, 2); });
   $("noisefloor").textContent = DATA.noise.map(v => fmt(v, 2)).join(" / ");
 
   /* ---------- shared filter: by category, or a hand-picked set (e.g. Yue vs Romance) ---------- */
@@ -348,14 +350,18 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
     const key = { d_max: d => -val(d), spread: d => -d.spread, n: d => -d.n, name: d => d.name };
     rows.sort((a, b) => sort === "name" ? a.name.localeCompare(b.name) : key[sort](a) - key[sort](b));
     const narrow = W < 480, labW = narrow ? 118 : 178, rowH = 22, top = 8, axisH = 24, right = 14;
-    const lo = rel || wide ? 0 : 1.0, hi = wide ? Math.max(1.0, ...rows.map(val)) + 0.02 : rel ? Math.max(1.0, ...rows.map(d => vhi(d) || val(d))) + 0.02
-      : Math.max(1.42, ...rows.map(d => d.hi || d.d_max)) + 0.01;
-    const x = v => labW + (v - lo) / (hi - lo) * (W - labW - right);
+    const logD = !rel && !wide;                 // D_max runs from 1 to ~100 effective lineages: log axis
+    const lo = logD ? 1.0 : 0, hi = wide ? Math.max(1.0, ...rows.map(val)) + 0.02 : rel ? Math.max(1.0, ...rows.map(d => vhi(d) || val(d))) + 0.02
+      : Math.max(2, ...rows.map(d => d.hi || d.d_max)) * 1.08;
+    const f = v => logD ? Math.log10(Math.max(v, 1)) : v;
+    const x = v => labW + (f(v) - f(lo)) / (f(hi) - f(lo)) * (W - labW - right);
     const H = top + rows.length * rowH + axisH;
     let s = `<svg role="group" aria-label="Maximum diversity per lineage" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`;
-    for (let t = lo; t <= hi + 1e-9; t += 0.1) {
+    const ticks = logD ? [1, 1.5, 2, 3, 5, 10, 20, 50, 100, 200].filter(t => t <= hi)
+      : Array.from({ length: Math.floor((hi - lo) / 0.1 + 1e-9) + 1 }, (_, i) => lo + i * 0.1);
+    for (const t of ticks) {
       s += `<line x1="${x(t)}" x2="${x(t)}" y1="${top}" y2="${H - axisH}" stroke="var(--grid)"/>`;
-      s += `<text class="num" x="${x(t)}" y="${H - 8}" text-anchor="middle">${t.toFixed(1)}</text>`;
+      s += `<text class="num" x="${x(t)}" y="${H - 8}" text-anchor="middle">${logD ? t : t.toFixed(1)}</text>`;
     }
     rows.forEach((d, i) => {
       const y = top + i * rowH + rowH / 2;
@@ -388,16 +394,16 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
       ${d.note ? `<p class="muted" style="margin:8px 0 0">${esc(d.note)}</p>` : ""}
       <h3>Diversity</h3>
       <dl class="kv">
-        <dt>D_max at k_cal</dt><dd>${fmt(d.d_max)}</dd>
+        <dt>D_max (effective lineages)</dt><dd>${fmt(d.d_max, 2)}</dd>
         ${d.widest != null ? `<dt>Widest pair (robust)</dt><dd>${fmt(d.widest)}</dd><dd class="pairnote" dir="auto">${esc(d.widest_pair.join(" ↔ "))}</dd><dt>Largest single pair</dt><dd>${fmt(d.raw_widest)}</dd>` : ""}
         ${d.rel != null ? `<dt>Share of the unrelated maximum</dt><dd>${fmt(d.rel)}</dd><dt>D_max of ${d.n} unrelated lects</dt><dd>${fmt(d.d_rand)}</dd>` : ""}
-        ${d.lo != null ? `<dt>${esc(d.range_label || "Concept-resample range")}</dt><dd>${fmt(d.lo)}–${fmt(d.hi)}</dd>` : ""}
-        ${d.d_max_k3 != null ? `<dt>D_max at k = 3</dt><dd>${fmt(d.d_max_k3, 2)}</dd>` : ""}
+        ${d.lo != null ? `<dt>${esc(d.range_label || "Concept-resample range")}</dt><dd>${fmt(d.lo, 2)}–${fmt(d.hi, 2)}</dd>` : ""}
+        ${d.d_max_kcal != null ? `<dt>D_max at k_cal (older scale)</dt><dd>${fmt(d.d_max_kcal)}</dd>` : ""}
         <dt>Naive D₂, equal weights</dt><dd>${fmt(d.uniform)}</dd>
         <dt>Spread (LDND units)</dt><dd>${fmt(d.spread)}</dd>
         <dt>Spread at 3 Glottocodes</dt><dd>${fmt(d.rare3)}</dd>
       </dl>
-      ${(d.sens || []).length ? `<h3>Sensitivity</h3><dl class="kv">${d.sens.map(x => `<dt>${SENS[x.scenario] || esc(x.scenario)} (${x.n_removed} removed)</dt><dd>${x.d_max_without == null ? "none left" : fmt(x.d_max_without) + " (" + (x.delta > 0 ? "+" : "") + fmt(x.delta) + ")"}</dd>`).join("")}</dl>` : ""}
+      ${(d.sens || []).length ? `<h3>Sensitivity</h3><dl class="kv">${d.sens.map(x => `<dt>${SENS[x.scenario] || esc(x.scenario)} (${x.n_removed} removed)</dt><dd>${x.d_max_without == null ? "none left" : fmt(x.d_max_without, 2) + " (" + (x.delta > 0 ? "+" : "") + fmt(x.delta, 2) + ")"}</dd>`).join("")}</dl>` : ""}
       <h3>Sample</h3>
       <dl class="kv">
         <dt>Doculects</dt><dd>${d.n}</dd><dt>Glottocodes</dt><dd>${d.glotto ?? "–"}</dd>
@@ -513,7 +519,7 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
     } else {
       const p = pairs.get(pairKey(A, B)), swap = p.a !== A;
       const wa = swap ? p.mean_within_b : p.mean_within_a, wb = swap ? p.mean_within_a : p.mean_within_b;
-      const sum = p.dmax_a_k3 + p.dmax_b_k3, inside = Math.max(wa, wb);
+      const sum = p.dmax_a + p.dmax_b, inside = Math.max(wa, wb);
       const far = p.mean_between > inside;
       body = `<div class="verdict">${p.related ? "These lineages belong to the same family, so a smaller distance is expected." :
         far ? `Farther apart (${fmt(p.mean_between, 2)}) than the spread inside either lineage (${fmt(wa, 2)} and ${fmt(wb, 2)}).` :
@@ -522,12 +528,12 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
         <dl class="kv"><dt>Mean</dt><dd>${fmt(p.mean_between)}</dd><dt>Median</dt><dd>${fmt(p.median_between)}</dd><dt>Closest pair</dt><dd>${fmt(p.min_between)}</dd></dl>
         <h3>Pairwise LDND, within</h3>
         <dl class="kv"><dt dir="auto">${esc(A)}</dt><dd>${fmt(wa)}</dd><dt dir="auto">${esc(B)}</dt><dd>${fmt(wb)}</dd></dl>
-        <h3>Do the two add up? (k = 3)</h3>
-        <dl class="kv"><dt dir="auto">D_max ${esc(A)}</dt><dd>${fmt(swap ? p.dmax_b_k3 : p.dmax_a_k3, 2)}</dd>
-        <dt dir="auto">D_max ${esc(B)}</dt><dd>${fmt(swap ? p.dmax_a_k3 : p.dmax_b_k3, 2)}</dd>
-        <dt>Sum</dt><dd>${fmt(sum, 2)}</dd><dt>D_max of both together</dt><dd>${fmt(p.dmax_union_k3, 2)}</dd>
-        <dt>Together ÷ sum</dt><dd>${fmt(p.dmax_union_k3 / sum, 2)}</dd></dl>
-        <p class="muted" style="margin:6px 0 0">At the calibrated scale the pair together scores ${fmt(p.dmax_union)} because unrelated lineages are still about 0.7 similar there.</p>`;
+        <h3>Do the two add up?</h3>
+        <dl class="kv"><dt dir="auto">D_max ${esc(A)}</dt><dd>${fmt(swap ? p.dmax_b : p.dmax_a, 2)}</dd>
+        <dt dir="auto">D_max ${esc(B)}</dt><dd>${fmt(swap ? p.dmax_a : p.dmax_b, 2)}</dd>
+        <dt>Sum</dt><dd>${fmt(sum, 2)}</dd><dt>D_max of both together</dt><dd>${fmt(p.dmax_union, 2)}</dd>
+        <dt>Together ÷ sum</dt><dd>${fmt(p.dmax_union / sum, 2)}</dd></dl>
+        <p class="muted" style="margin:6px 0 0">Unrelated lineages add up (ratio near 1); related ones overlap. Each lineage here is a sample of 25 doculects, so its D_max is lower than in the Diversity view.</p>`;
     }
     $("pair").innerHTML = `<h2>Compare two lineages</h2>
       <div class="pairpick"><select id="selA" aria-label="First lineage">${opts(A)}</select><span>↔</span><select id="selB" aria-label="Second lineage">${opts(B)}</select></div>${body}`;

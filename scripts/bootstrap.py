@@ -1,4 +1,4 @@
-"""Concept-resampling uncertainty for D_max at the noise-calibrated scale k_cal.
+"""Concept-resampling uncertainty for the headline D_max (the anchored kernel of isodiv.kernel).
 
 Each draw keeps a random 30 of the 40 ASJP concepts (delete-10 jackknife-style),
 recomputes the distance (LDND or PMI-LDND) on those concepts, and recomputes D_max. Word
@@ -25,6 +25,7 @@ from run_analysis import LINEAGES, drop_nan, load_all, stratified  # noqa: E402
 from itertools import combinations
 
 from isodiv.asjp import core_concepts, read_languages
+from isodiv.kernel import Kernel, similarity
 from isodiv.diversity import max_diversity, similarity_matrix
 from isodiv.metric import get_metric, matrix_from_tables
 
@@ -44,7 +45,7 @@ def main() -> None:
     args = ap.parse_args()
 
     summary = json.loads((args.out / "summary.json").read_text(encoding="utf-8"))
-    k_cal = args.k_cal or summary["k_cal"]
+    kernel = Kernel.from_summary(summary)
     distance = args.distance or summary.get("distance", "ldnd")
     metric = get_metric(distance, args.pmi_model)
     concepts = sorted(core_concepts(args.cldf))
@@ -64,13 +65,13 @@ def main() -> None:
         for cs in draws:
             d = matrix_from_tables(tables, len(docs), min_shared=int(args.keep * 0.5), concepts=cs)
             _, d = drop_nan(docs, d)
-            vals.append(max_diversity(similarity_matrix(d, k_cal)).value)
+            vals.append(max_diversity(kernel(d)).value)
         lo, med, hi = np.quantile(vals, [0.05, 0.5, 0.95])
         out[name] = {"median": med, "q05": lo, "q95": hi}
-        print(f"{name:14s} D_max@k_cal median {med:.3f}  [{lo:.3f}, {hi:.3f}]", flush=True)
+        print(f"{name:14s} D_max median {med:.3f}  [{lo:.3f}, {hi:.3f}]", flush=True)
 
     (args.out / "bootstrap.json").write_text(
-        json.dumps({"k_cal": k_cal, "distance": distance, "draws": args.draws, "concepts_kept": args.keep, "lineages": out},
+        json.dumps({"kernel": kernel.to_json(), "distance": distance, "draws": args.draws, "concepts_kept": args.keep, "lineages": out},
                    indent=2, ensure_ascii=False), encoding="utf-8")
 
 

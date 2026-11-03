@@ -53,7 +53,7 @@ def export_wordlists(cldf: Path, model_path: Path, summary: dict, out: Path, sum
     v = len(model.symbols)
     data = {
         "distance": summary.get("distance", "pmi"), "label": summary.get("distance_label", "PMI-LDND"),
-        "k_cal": summary["k_cal"], "noise": summary["noise_floor_quantiles_10_50_90"],
+        "kernel": summary["kernel"], "k_cal": summary["k_cal"], "noise": summary["noise_floor_quantiles_10_50_90"],
         "noise_ldnd": ldnd_floor, "unrelated": unrelated_reference(summary_dir),
         "concepts": concepts, "concept_names": [names[c] for c in concepts],
         "model": {"symbols": list(model.symbols), "scores": [[round(float(x), 4) for x in model.scores[i, :v]] for i in range(v)],
@@ -69,7 +69,7 @@ def export_wordlists(cldf: Path, model_path: Path, summary: dict, out: Path, sum
 
 REPO = "https://github.com/iwsfutcmd/lingustic-diversity"
 DOWNLOADS = [
-    ("summary.csv", "One row per lineage: doculects, distance spread, D_max at k_cal."),
+    ("summary.csv", "One row per lineage: doculects, distance spread, D_max (and D_max at the older k_cal scale)."),
     ("relative.csv", "D_max as a share of what the same number of unrelated lects score."),
     ("sensitivity.csv", "D_max with and without long-extinct and contact-restructured doculects."),
     ("rarefaction.csv", "D_max at equal numbers of distinct languages, for comparing lineages of different size."),
@@ -162,18 +162,18 @@ footer { border-block-start: 1px solid var(--rule); padding-block: 22px 40px; co
   <section aria-labelledby="idea-h">
     <h2 id="idea-h">The idea</h2>
     <p><b>Distance in amount of change, not time.</b> Two ASJP 40-item word lists are compared with PMI-LDND: Levenshtein-style alignment scored by learned sound correspondences, divided by the same measure between words of different meanings to cancel chance resemblance. No time depth and no rate of change are assumed.</p>
-    <p><b>Diversity that ignores duplicates.</b> Distances become similarities, Z = exp(−k·d), and a lineage is scored by the Leinster–Meckes maximum diversity D<sub>max</sub>(Z): the effective number of fully distinct lineages. Adding another copy of a variety already present cannot change it, so it does not matter how finely a language is split into dialects. The scale k is set so two lists of the same language are 0.9 similar (k = __KCAL__).</p>
+    <p><b>Diversity that ignores duplicates.</b> Distances become similarities: 1 at the typical distance between two lists of the same language (__KSAME__), falling to 0 at __KUNREL__, where a permutation test can no longer tell a related pair from an unrelated one half the time. A lineage is scored by the Leinster–Meckes maximum diversity D<sub>max</sub>: the effective number of lineages its word lists cannot tie together. n unrelated languages score about n. Adding another copy of a variety already present cannot change it, so it does not matter how finely a language is split into dialects. Both anchors are measured from the data; there is no fitted constant.</p>
   </section>
 
   <section aria-labelledby="glance-h">
     <h2 id="glance-h">Results at a glance</h2>
     <div class="scroll"><table>
-      <thead><tr><th>Lineage</th><th class="n">Doculects</th><th class="n">D<sub>max</sub></th><th class="n">Share of unrelated maximum</th><th class="n">D<sub>max</sub> at k = 3</th><th class="n">Widest pair</th></tr></thead>
+      <thead><tr><th>Lineage</th><th class="n">Doculects</th><th class="n">D<sub>max</sub></th><th class="n">Share of unrelated maximum</th><th class="n">D<sub>max</sub> at k_cal (older scale)</th><th class="n">Widest pair</th></tr></thead>
       <tbody>
 __ROWS__
       </tbody>
     </table></div>
-    <p class="note" style="margin-block-start:10px">Sorted by D<sub>max</sub>, which is at the calibrated scale and uses every ASJP doculect of the lineage. The share of the unrelated maximum compares a lineage with a set of the same size whose members all come from different families (0 is one lineage, 1 is as diverse as unrelated lects can be). Lineages with two or three doculects are lower bounds. The widest pair is on the distance scale (0 identical, about 0.97 unrelated): the most divergent pair of lists, with noise and lists closer to another family than to their own taken out, and no subgrouping used. All __NLIN__ entries are in the <a href="explorer.html">explorer</a>.</p>
+    <p class="note" style="margin-block-start:10px">Sorted by D<sub>max</sub>, which uses every ASJP doculect of the lineage. The share of the unrelated maximum compares a lineage with a set of the same size whose members all come from different families (0 is one lineage, 1 is as diverse as unrelated lects). The older scale treated unrelated languages as 0.64 similar and squeezed every score under 1.57; it is kept for comparison. Lineages with two or three doculects are lower bounds. The widest pair is on the distance scale (0 identical, about 0.97 unrelated): the most divergent pair of lists, with noise and lists closer to another family than to their own taken out, and no subgrouping used. All __NLIN__ entries are in the <a href="explorer.html">explorer</a>.</p>
   </section>
 
   <section aria-labelledby="find-h">
@@ -216,15 +216,15 @@ def landing(results: Path, data: dict) -> str:
     wide_path = results / "widest.json"
     wide = {w["lineage"]: w for w in json.loads(wide_path.read_text(encoding="utf-8"))["lineages"]} if wide_path.exists() else {}
     rows = []
-    for name in sorted(GLANCE, key=lambda n: lin[n]["d_max_kcal"]):
+    for name in sorted(GLANCE, key=lambda n: lin[n]["d_max"]):
         l, r = lin[name], rel.get(name)
         share = float(r["relative"]) if r else None
         bar = f'<span class="bar" style="inline-size:{share * 64:.0f}px"></span>' if share is not None else ""
         w = wide.get(name, {}).get("widest")
         wtxt = "" if w is None else f"{w:.3f}"
         rows.append(f'        <tr><td dir="auto">{html.escape(name)}</td><td class="n">{l["n_doculects"]}</td>'
-                    f'<td class="n">{l["d_max_kcal"]:.3f}</td><td class="n">{"" if share is None else f"{share:.2f}"}{bar}</td>'
-                    f'<td class="n">{l.get("d_max_k3", float("nan")):.1f}</td>'
+                    f'<td class="n">{l["d_max"]:.2f}</td><td class="n">{"" if share is None else f"{share:.2f}"}{bar}</td>'
+                    f'<td class="n">{l["d_max_kcal"]:.3f}</td>'
                     f'<td class="n">{wtxt}</td></tr>')
     files = []
     for name, what in DOWNLOADS:
@@ -233,7 +233,8 @@ def landing(results: Path, data: dict) -> str:
     import datetime
     return (INDEX.replace("__ROWS__", "\n".join(rows)).replace("__FILES__", "\n".join(files))
             .replace("__NDOC__", f"{len(data['docs']):,}").replace("__NLIN__", str(len(lin) + 14))
-            .replace("__KCAL__", f"{summary['k_cal']:.3f}").replace("__REPO__", REPO)
+            .replace("__KSAME__", f"{summary['kernel']['same']:.3f}").replace("__KUNREL__", f"{summary['kernel']['unrelated']:.3f}")
+            .replace("__REPO__", REPO)
             .replace("__DATE__", datetime.date.today().isoformat()))
 
 

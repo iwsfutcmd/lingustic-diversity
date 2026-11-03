@@ -28,6 +28,7 @@ from scipy.optimize import brentq
 
 from isodiv.asjp import Doculect, load, load_exclusions, read_languages
 from isodiv.distcache import DistCache
+from isodiv.kernel import Kernel, load_detection_limit
 from isodiv.diversity import max_diversity, similarity_matrix, uniform_diversity
 from isodiv.metric import DISTANCES, Metric, get_metric
 
@@ -121,7 +122,7 @@ def open_world_cache(metric: Metric, cldf: Path, tokenization: str = "asjp") -> 
 def save_world_cache(cache: DistCache, tokenization: str = "asjp") -> None:
     cache.save(CACHE_DIR / f"dist_{cache.metric.name}_{tokenization}.npy")
 NEST_TOL = 0.02               # a lineage nests in another when at most this share of its pool lies outside it
-KS = np.geomspace(0.1, 40, 48)
+KS = np.geomspace(0.1, 40, 16)   # the exponential-similarity profile (explorer "Scale profiles"); 16 scales
 RAREFY_M = 3          # compare lineages at a fixed number of distinct-Glottocode doculects
 RAREFY_DRAWS = 40
 
@@ -311,7 +312,7 @@ def rarefied_spread(docs: list[Doculect], d: np.ndarray, m: int = RAREFY_M,
 def _solve_scale(task):
     """One scale of the profile; module-level so a process pool can run it."""
     d, k, warm = task
-    z = similarity_matrix(d, k)
+    z = k(d) if callable(k) else similarity_matrix(d, k)        # a Kernel, or a scale k of exp(−k·d)
     r = max_diversity(z, warm=warm)
     return r, uniform_diversity(z)
 
@@ -357,7 +358,7 @@ def _spread_bracket(profile: list[float], level: float = 1.5) -> tuple[float, fl
 
 
 def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, children: tuple[dict, ...] = (),
-            cache: DistCache | None = None) -> dict:
+            cache: DistCache | None = None, kernel: Kernel | None = None) -> dict:
     """``children``: results of the lineages nested in this one. Their doculects are kept through ``drop_nan`` and
     their optimal distributions seed the optimizer, so D_max here is never below a child's at any scale."""
     d = cache.matrix(docs) if cache is not None else metric.matrix(docs)
@@ -367,12 +368,13 @@ def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, child
         return [w for c, cw in zip(children, ws) if (w := _embed(c, docs, cw)) is not None]
 
     k_ref = k_cal
-    scales = [*KS, k_ref, K_FINE]                # the profile, then k_cal and the fine scale
+    scales = [*KS, k_ref, K_FINE, kernel]        # the profile, k_cal, the fine scale, the headline kernel
     warms = [warm([c["_weights"][i] for c in children]) for i in range(len(KS))]
-    warms += [warm([c["_weights_kcal"] for c in children]), warm([c["_weights_k3"] for c in children])]
+    warms += [warm([c["_weights_kcal"] for c in children]), warm([c["_weights_k3"] for c in children]),
+              warm([c["_weights_anch"] for c in children])]
     solved = solve_scales(d, scales, warms)
     maxes, uniforms = [r for r, _ in solved[: len(KS)]], [u for _, u in solved[: len(KS)]]
-    (m_ref, u_ref), (d_k3, _) = solved[len(KS)], solved[len(KS) + 1]
+    (m_ref, u_ref), (d_k3, _), (m_an, _) = solved[len(KS)], solved[len(KS) + 1], solved[len(KS) + 2]
     return {
         "lineage": name,
         "family": max({x.family for x in docs}, key=[x.family for x in docs].count) if docs else "",
@@ -381,6 +383,11 @@ def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, child
         "max_ldnd": float(d.max()) if len(docs) > 1 else 0.0,
         "spread": spread(d, bracket=_spread_bracket([m.value for m in maxes])),
         "spread_rarefied_m3": rarefied_spread(docs, d),
+        "d_max": m_an.value,
+        "representatives": sorted(
+            ((docs[i].id, round(float(w), 3)) for i, w in enumerate(m_an.weights) if w > 1e-3),
+            key=lambda t: -t[1],
+        ),
         "d_max_kcal": m_ref.value,
         "uniform_d2_kcal": u_ref,
         "representatives_kcal": sorted(
@@ -396,6 +403,7 @@ def analyse(name: str, docs: list[Doculect], k_cal: float, metric: Metric, child
         "_weights": [m.weights for m in maxes],
         "_weights_kcal": m_ref.weights,
         "_weights_k3": d_k3.weights,
+        "_weights_anch": m_an.weights,
     }
 
 
@@ -411,7 +419,7 @@ def check_nesting(results: list[dict], children: dict[str, list[str]], tol: floa
             extra = sorted({x.id for x in res[child]["_docs"]} - {x.id for x in res[parent]["_docs"]})
             if extra:
                 not_subset.append({"parent": parent, "child": child, "child_only": len(extra)})
-            gap = min([res[parent]["d_max_kcal"] - res[child]["d_max_kcal"],
+            gap = min([res[parent]["d_max"] - res[child]["d_max"], res[parent]["d_max_kcal"] - res[child]["d_max_kcal"],
                        *(a - b for a, b in zip(res[parent]["profile_d_max"], res[child]["profile_d_max"]))])
             if gap < -tol:
                 bad.append({"parent": parent, "child": child, "worst_gap": float(gap), "subset": not extra})
@@ -509,7 +517,9 @@ def main() -> None:
 
     floor = noise_floor(args.cldf, metric)
     k_cal = float(-np.log(0.9) / np.median(floor))
-    print(f"noise floor {metric.label} quantiles 10/50/90: {np.round(np.quantile(floor, [.1, .5, .9]), 3)}; k_cal={k_cal:.3f}")
+    kernel = Kernel(float(np.median(floor)), load_detection_limit(args.out))
+    print(f"noise floor {metric.label} quantiles 10/50/90: {np.round(np.quantile(floor, [.1, .5, .9]), 3)}; k_cal={k_cal:.3f}; "
+          f"kernel: similarity 1 at {kernel.same:.3f}, 0 at {kernel.unrelated:.3f}")
 
     pools = {name: frozenset(i for i in all_docs if pred(rows[i])) for name, pred in LINEAGES.items()}
     cap = args.cap or 10**9
@@ -522,13 +532,13 @@ def main() -> None:
             return
         for c in children[name]:
             run(c)                                                    # children first
-        r = analyse(name, samples[name], k_cal, metric, tuple(by_name[c] for c in children[name]), cache)
+        r = analyse(name, samples[name], k_cal, metric, tuple(by_name[c] for c in children[name]), cache, kernel)
         by_name[name] = r
         if r["n_doculects"] > 300:
             save_world_cache(cache, args.tokens)                      # keep the slow part if the run dies
         print(f'{name:14s} n={r["n_doculects"]:3d} glotto={r["n_glottocodes"]:3d} '
               f'maxLDND={r["max_ldnd"]:.3f} spread={r["spread"]:.3f} rare3={r["spread_rarefied_m3"]:.3f} '
-              f'Dmax@kcal={r["d_max_kcal"]:.3f} naive@kcal={r["uniform_d2_kcal"]:.3f} kkt={r["kkt_all_ok"]}', flush=True)
+              f'D_max={r["d_max"]:.2f} Dmax@kcal={r["d_max_kcal"]:.3f} kkt={r["kkt_all_ok"]}', flush=True)
 
     for name in sorted(LINEAGES, key=lambda n: len(samples[n])):
         run(name)
@@ -548,7 +558,7 @@ def main() -> None:
     summary = [{k: v for k, v in r.items() if not k.startswith(("_", "profile"))} for r in results]
     (args.out / "summary.json").write_text(
         json.dumps({"tokenization": args.tokens, "distance": args.distance, "distance_label": metric.label,
-                    "k_cal": k_cal,
+                    "kernel": kernel.to_json(), "k_cal": k_cal,
                     "noise_floor_quantiles_10_50_90": np.quantile(floor, [.1, .5, .9]).tolist(),
                     "excluded": load_exclusions(EXCLUSIONS_FILE),
                     "max_per_lineage": args.cap or None, "nesting": nesting,
@@ -563,11 +573,11 @@ def main() -> None:
     with (args.out / "summary.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(["lineage", "n_doculects", "n_glottocodes", "max_ldnd", "spread",
-                    "spread_rarefied_m3", "d_max_kcal", "uniform_d2_kcal"])
+                    "spread_rarefied_m3", "d_max", "d_max_kcal", "uniform_d2_kcal"])
         for r in sorted(summary, key=lambda r: r["spread"]):
             w.writerow([r["lineage"], r["n_doculects"], r["n_glottocodes"], f'{r["max_ldnd"]:.3f}',
                         f'{r["spread"]:.3f}', f'{r["spread_rarefied_m3"]:.3f}',
-                        f'{r["d_max_kcal"]:.3f}', f'{r["uniform_d2_kcal"]:.3f}'])
+                        f'{r["d_max"]:.3f}', f'{r["d_max_kcal"]:.3f}', f'{r["uniform_d2_kcal"]:.3f}'])
     (args.out / "samples.json").write_text(
         json.dumps({r["lineage"]: [x.id for x in r["_docs"]] for r in results}, ensure_ascii=False), encoding="utf-8")
     for r in results:

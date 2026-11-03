@@ -1,7 +1,7 @@
 """Sensitivity of D_max to contested doculects: report each lineage with and without them.
 
-Two scenarios, each removing doculects from the lineage samples of results/samples.json and re-solving D_max at k_cal
-and at the fine scale k = 3 from the distance cache (so run run_analysis.py first):
+Two scenarios, each removing doculects from the lineage samples of results/samples.json and re-solving the headline
+D_max (and the older k_cal one) from the distance cache (so run run_analysis.py first):
 
 * ``long_extinct``: doculects ASJP flags ``long_extinct`` (Old Chinese, Middle Chinese, Proto-Germanic, Gothic, ...),
   which only lineages with a written past have;
@@ -27,6 +27,7 @@ import numpy as np
 
 from run_analysis import CACHE_DIR, K_FINE, load_all
 from isodiv.asjp import read_languages
+from isodiv.kernel import Kernel, similarity
 from isodiv.diversity import max_diversity, similarity_matrix
 from isodiv.distcache import DistCache
 from isodiv.metric import get_metric
@@ -54,6 +55,7 @@ def main() -> None:
 
     summary = json.loads((args.out / "summary.json").read_text(encoding="utf-8"))
     k_cal, distance = summary["k_cal"], summary.get("distance", "pmi")
+    kernel = Kernel.from_summary(summary)
     samples = json.loads((args.out / "samples.json").read_text(encoding="utf-8"))
     lineages = {l["lineage"]: l for l in summary["lineages"]}
     boot = json.loads((args.out / "bootstrap.json").read_text(encoding="utf-8"))["lineages"]
@@ -72,8 +74,8 @@ def main() -> None:
             pos = {i: j for j, i in enumerate(ids)}
             sub = np.array([pos[i] for i in keep], dtype=int)
             out = {}
-            for label, k in (("kcal", k_cal), ("k3", K_FINE)):
-                z = similarity_matrix(full_d, k)
+            for label, k in (("kernel", kernel), ("kcal", k_cal)):
+                z = similarity(full_d, k)
                 full = max_diversity(z)
                 if not keep:
                     without = None                    # every doculect of the lineage is removed
@@ -89,32 +91,32 @@ def main() -> None:
             b = boot.get(name)
             rows.append({
                 "lineage": name, "scenario": scenario, "n": len(ids), "n_removed": len(gone), "removed": gone[:12],
-                "d_max": out["kcal"][0], "d_max_without": out["kcal"][1],
-                "delta": None if out["kcal"][1] is None else out["kcal"][1] - out["kcal"][0],
-                "d_max_k3": out["k3"][0], "d_max_k3_without": out["k3"][1],
+                "d_max": out["kernel"][0], "d_max_without": out["kernel"][1],
+                "delta": None if out["kernel"][1] is None else out["kernel"][1] - out["kernel"][0],
+                "d_max_kcal": out["kcal"][0], "d_max_kcal_without": out["kcal"][1],
                 "resampling_width": (b["q95"] - b["q05"]) if b else None,
             })
             r = rows[-1]
             if r["d_max_without"] is None:
                 print(f'{scenario:12s} {name:26s} n={r["n"]:4d} removed {r["n_removed"]:3d}  no doculects left', flush=True)
             else:
-                print(f'{scenario:12s} {name:26s} n={r["n"]:4d} removed {r["n_removed"]:3d}  D_max {r["d_max"]:.3f} → '
-                      f'{r["d_max_without"]:.3f} ({r["delta"]:+.3f})  k=3 {r["d_max_k3"]:.2f} → {r["d_max_k3_without"]:.2f}',
+                print(f'{scenario:12s} {name:26s} n={r["n"]:4d} removed {r["n_removed"]:3d}  D_max {r["d_max"]:.2f} → '
+                      f'{r["d_max_without"]:.2f} ({r["delta"]:+.2f})  k_cal {r["d_max_kcal"]:.3f} → {r["d_max_kcal_without"]:.3f}',
                       flush=True)
 
     rows.sort(key=lambda r: (r["scenario"], 0 if r["delta"] is None else r["delta"]))
     args.out.mkdir(exist_ok=True)
-    (args.out / "sensitivity.json").write_text(json.dumps({"k_cal": k_cal, "distance": distance, "rows": rows},
+    (args.out / "sensitivity.json").write_text(json.dumps({"kernel": kernel.to_json(), "k_cal": k_cal, "distance": distance, "rows": rows},
                                                           indent=1, ensure_ascii=False), encoding="utf-8")
     with (args.out / "sensitivity.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh)
-        w.writerow(["scenario", "lineage", "n", "n_removed", "d_max", "d_max_without", "delta", "d_max_k3",
-                    "d_max_k3_without", "resampling_width"])
+        w.writerow(["scenario", "lineage", "n", "n_removed", "d_max", "d_max_without", "delta", "d_max_kcal",
+                    "d_max_kcal_without", "resampling_width"])
         for r in rows:
             gone = r["d_max_without"] is None
             w.writerow([r["scenario"], r["lineage"], r["n"], r["n_removed"], f'{r["d_max"]:.3f}',
                         "" if gone else f'{r["d_max_without"]:.3f}', "" if gone else f'{r["delta"]:+.3f}',
-                        f'{r["d_max_k3"]:.2f}', "" if gone else f'{r["d_max_k3_without"]:.2f}',
+                        f'{r["d_max_kcal"]:.3f}', "" if gone else f'{r["d_max_kcal_without"]:.3f}',
                         "" if r["resampling_width"] is None else f'{r["resampling_width"]:.3f}'])
 
 

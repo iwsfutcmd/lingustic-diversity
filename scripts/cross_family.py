@@ -19,6 +19,7 @@ from pathlib import Path
 import numpy as np
 
 from isodiv.asjp import read_languages
+from isodiv.kernel import Kernel, similarity
 from isodiv.diversity import max_diversity, similarity_matrix
 from isodiv.metric import DISTANCES, get_metric
 
@@ -36,6 +37,7 @@ def main() -> None:
 
     summary = json.loads((args.out / "summary.json").read_text(encoding="utf-8"))
     k_cal = summary["k_cal"]
+    kernel = Kernel.from_summary(summary)
     distance = args.distance or summary.get("distance", "ldnd")
     metric = get_metric(distance, args.pmi_model)
 
@@ -89,7 +91,9 @@ def main() -> None:
             "median_between": stat(between[(a, b)], np.median),
             "mean_within_a": stat(within[a], np.mean),
             "mean_within_b": stat(within[b], np.mean),
-            "dmax_union": max_diversity(similarity_matrix(d, k_cal)).value,
+            "dmax_union": max_diversity(kernel(d)).value,
+            "dmax_a": _dmax(within_full[a], kernel), "dmax_b": _dmax(within_full[b], kernel),
+            "dmax_union_kcal": max_diversity(similarity_matrix(d, k_cal)).value,
             # k_cal is coarse: unrelated pairs (distance ≈ 1) are still exp(-k_cal)≈0.7 similar, so also
             # report a fine scale where a distance ≈ 1 means "fully distinct" and D_max should add up.
             "dmax_union_k3": max_diversity(similarity_matrix(d, 3.0)).value,
@@ -105,7 +109,7 @@ def main() -> None:
         for r in sorted(union_rows, key=lambda r: r["mean_between"]):
             w.writerow({k: (f"{v:.3f}" if isinstance(v, float) else v) for k, v in r.items()})
     (args.out / "cross_family.json").write_text(json.dumps({
-        "cap_per_lineage": args.cap, "k_cal": k_cal, "distance": distance, "lineages": names,
+        "cap_per_lineage": args.cap, "kernel": kernel.to_json(), "k_cal": k_cal, "distance": distance, "lineages": names,
         "mean_ldnd_matrix": np.round(mean_m, 4).tolist(), "pairs": union_rows,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -130,7 +134,7 @@ def _clean(d: np.ndarray) -> np.ndarray:
 
 def _dmax(d: np.ndarray, k: float) -> float:
     d = _clean(d)
-    return max_diversity(similarity_matrix(d, k)).value if len(d) else float("nan")
+    return max_diversity(similarity(d, k)).value if len(d) else float("nan")
 
 
 def plot(names, mean_m, within, between, union_rows, out: Path, label: str = "LDND") -> None:

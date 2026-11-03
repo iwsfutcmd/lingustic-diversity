@@ -11,7 +11,8 @@ land on the same scale:
 * two baselines for each grouping: unions of the same number of randomly chosen unrelated families, of any depth
   and of *shallow* families only (genus-level D_max, 1.24–1.36, like Turkic, Mongolic and Tungusic).
 
-Reported at k_cal and at k = 3 (a fine scale where unrelated lects count as nearly fully distinct).
+Reported for the headline D_max (isodiv.kernel: unrelated lects count as fully distinct, so n unrelated lects score
+about n) and at the older calibrated scale k_cal.
 
 Usage:
     PYTHONPATH=scripts python scripts/adversarial.py [--draws 30]   # → results/adversarial.{json,csv}
@@ -28,9 +29,10 @@ from pathlib import Path
 
 import numpy as np
 
-from run_analysis import (EXCLUSIONS_FILE, KS, LINEAGES, MAX_PER_LINEAGE, NODE_GROUPS, SINITIC_GROUPS, SUBFAMILIES,
+from run_analysis import (open_world_cache, save_world_cache, EXCLUSIONS_FILE, KS, LINEAGES, MAX_PER_LINEAGE, NODE_GROUPS, SINITIC_GROUPS, SUBFAMILIES,
                           drop_nan, load_all, stratified)
 from isodiv.asjp import load, load_exclusions, read_languages
+from isodiv.kernel import Kernel
 from isodiv.diversity import max_diversity, similarity_matrix, uniform_diversity
 from isodiv.metric import get_metric
 
@@ -56,12 +58,13 @@ def mean_offdiag(z: np.ndarray) -> float:
     return float((z.sum() - n) / (n * (n - 1))) if n > 1 else 1.0
 
 
-def score(docs, metric, k_cal, profile: bool = False) -> dict:
-    d = metric.matrix(docs)
+def score(docs, cache, kernel, k_cal, profile: bool = False) -> dict:
+    d = cache.matrix(docs)
     docs, d = drop_nan(docs, d)
-    r = max_diversity(similarity_matrix(d, k_cal))
+    r = max_diversity(kernel(d))
     out = {
-        "n": len(docs), "d_max": r.value, "d_max_k3": max_diversity(similarity_matrix(d, K_FINE)).value,
+        "n": len(docs), "d_max": r.value, "d_max_kcal": max_diversity(similarity_matrix(d, k_cal)).value,
+        "zbar": mean_offdiag(kernel(d)),
         "uniform": uniform_diversity(similarity_matrix(d, k_cal)),
         "zbar_kcal": mean_offdiag(similarity_matrix(d, k_cal)),
         "mean_within": float(d[np.triu_indices(len(d), 1)].mean()) if len(d) > 1 else 0.0,
@@ -100,11 +103,13 @@ def main() -> None:
 
     summary = json.loads((args.out / "summary.json").read_text(encoding="utf-8"))
     k_cal = summary["k_cal"]
+    kernel = Kernel.from_summary(summary)
     metric = get_metric(summary.get("distance", "ldnd"), args.pmi_model)
+    cache, _ = open_world_cache(metric, args.cldf)
     rows = {r["ID"]: r for r in read_languages(args.cldf)}
     all_docs = load_all(args.cldf)
     rng = np.random.default_rng(7)
-    result: dict = {"ks": KS.tolist(), "k_cal": k_cal, "k_fine": K_FINE, "distance": metric.label, "random_unrelated": {},
+    result: dict = {"ks": KS.tolist(), "kernel": kernel.to_json(), "k_cal": k_cal, "distance": metric.label, "random_unrelated": {},
                     "proposals": {}, "matched_baseline": {}}
 
     # 1. random sets of unrelated lects, one doculect per family (well-covered lists only), from all of ASJP
@@ -119,20 +124,21 @@ def main() -> None:
         for t in range(args.draws):
             pick = rng.choice(len(fams), size=n, replace=False)
             docs = [by_fam[fams[i]][rng.integers(len(by_fam[fams[i]]))] for i in pick]
-            draws.append(score(docs, metric, k_cal, profile=(t < N_PROFILE_DRAWS)))
+            draws.append(score(docs, cache, kernel, k_cal, profile=(t < N_PROFILE_DRAWS)))
         med = sorted(draws, key=lambda r: r["d_max"])[len(draws) // 2]
         result["random_unrelated"][n] = {
-            "d_max": summarize([r["d_max"] for r in draws]), "d_max_k3": summarize([r["d_max_k3"] for r in draws]),
+            "d_max": summarize([r["d_max"] for r in draws]), "d_max_kcal": summarize([r["d_max_kcal"] for r in draws]),
             "mean_within": float(np.mean([r["mean_within"] for r in draws])),
             "uniform": float(np.median([r["uniform"] for r in draws])),
             "profile_d_max": np.mean([r["profile_d_max"] for r in draws if "profile_d_max" in r], axis=0).tolist(),
             "profile_uniform": np.mean([r["profile_uniform"] for r in draws if "profile_uniform" in r], axis=0).tolist(),
             "zbar_profile": np.mean([r["profile_zbar"] for r in draws if "profile_zbar" in r], axis=0).tolist(),
             "zbar_kcal": float(np.mean([r["zbar_kcal"] for r in draws])),
+            "zbar": float(np.mean([r["zbar"] for r in draws])),
             "example": med["reps"]}
         s = result["random_unrelated"][n]
         print(f"random unrelated n={n:2d}: D_max {s['d_max']['median']:.3f} [{s['d_max']['q05']:.3f}, {s['d_max']['q95']:.3f}]"
-              f"  k=3 {s['d_max_k3']['median']:.2f}", flush=True)
+              f"  k_cal {s['d_max_kcal']['median']:.3f}", flush=True)
 
     # 2. proposed / rejected groupings, and 3. random unions of as many unrelated top-level families
     lin = {l["lineage"]: l for l in summary["lineages"]}
@@ -144,7 +150,7 @@ def main() -> None:
     result["shallow_pool"] = shallow
     result["shallow_baseline"] = {}
     for name, members in PROPOSALS.items():
-        r = score(union(members, all_docs, rows), metric, k_cal, profile=True)
+        r = score(union(members, all_docs, rows), cache, kernel, k_cal, profile=True)
         r["members"] = members
         result["proposals"][name] = r
         k = len(members)
@@ -153,9 +159,9 @@ def main() -> None:
             for t in range(max(10, args.draws // 2)):
                 fam_pick = rng.choice(sorted(by_family), size=k, replace=False)
                 names = [by_family[f][rng.integers(len(by_family[f]))] for f in fam_pick]
-                b = score(union(names, all_docs, rows, seed=t), metric, k_cal)
-                vals.append(b["d_max"]); vals3.append(b["d_max_k3"])
-            result["matched_baseline"][k] = {"d_max": summarize(vals), "d_max_k3": summarize(vals3)}
+                b = score(union(names, all_docs, rows, seed=t), cache, kernel, k_cal)
+                vals.append(b["d_max"]); vals3.append(b["d_max_kcal"])
+            result["matched_baseline"][k] = {"d_max": summarize(vals), "d_max_kcal": summarize(vals3)}
             vals, vals3 = [], []
             for t in range(max(10, args.draws // 2) * 2):
                 while True:                      # distinct families, and not one of the proposals itself
@@ -163,35 +169,34 @@ def main() -> None:
                     if len({lin[x]["family"] for x in names}) == k and \
                             not any(set(names) <= set(m) for m in PROPOSALS.values()):
                         break
-                b = score(union(names, all_docs, rows, seed=t), metric, k_cal)
-                vals.append(b["d_max"]); vals3.append(b["d_max_k3"])
-            result["shallow_baseline"][k] = {"d_max": summarize(vals), "d_max_k3": summarize(vals3)}
+                b = score(union(names, all_docs, rows, seed=t), cache, kernel, k_cal)
+                vals.append(b["d_max"]); vals3.append(b["d_max_kcal"])
+            result["shallow_baseline"][k] = {"d_max": summarize(vals), "d_max_kcal": summarize(vals3)}
         b = result["matched_baseline"][k]
         sb = result["shallow_baseline"][k]
-        print(f"{name:15s} n={r['n']:2d} D_max {r['d_max']:.3f}  k=3 {r['d_max_k3']:.2f}  | random {k}-family unions "
+        print(f"{name:15s} n={r['n']:2d} D_max {r['d_max']:.3f}  k_cal {r['d_max_kcal']:.3f}  | random {k}-family unions "
               f"{b['d_max']['median']:.3f} [{b['d_max']['q05']:.3f}, {b['d_max']['q95']:.3f}]; shallow {sb['d_max']['median']:.3f} "
-              f"[{sb['d_max']['q05']:.3f}, {sb['d_max']['q95']:.3f}], k=3 {sb['d_max_k3']['median']:.2f} "
-              f"[{sb['d_max_k3']['q05']:.2f}, {sb['d_max_k3']['q95']:.2f}]", flush=True)
+              f"[{sb['d_max']['q05']:.3f}, {sb['d_max']['q95']:.3f}], k_cal {sb['d_max_kcal']['median']:.3f} "
+              f"[{sb['d_max_kcal']['q05']:.3f}, {sb['d_max_kcal']['q95']:.3f}]", flush=True)
 
-    # real lineages at the fine scale (computed by run_analysis.py)
-    result["real_k3"] = {n: l["d_max_k3"] for n, l in lin.items() if "d_max_k3" in l}
+    save_world_cache(cache)
 
     args.out.mkdir(exist_ok=True)
     (args.out / "adversarial.json").write_text(json.dumps(result, indent=1, ensure_ascii=False), encoding="utf-8")
     with (args.out / "adversarial.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh)
-        w.writerow(["set", "n", "d_max", "d_max_q05", "d_max_q95", "d_max_k3"])
+        w.writerow(["set", "n", "d_max", "d_max_q05", "d_max_q95", "d_max_kcal"])
         for n, s in result["random_unrelated"].items():
             w.writerow([f"random unrelated (n={n})", n, *(f"{s['d_max'][q]:.3f}" for q in ("median", "q05", "q95")),
-                        f"{s['d_max_k3']['median']:.3f}"])
+                        f"{s['d_max_kcal']['median']:.3f}"])
         for name, r in result["proposals"].items():
             b = result["matched_baseline"][len(r["members"])]
-            w.writerow([name, r["n"], f"{r['d_max']:.3f}", "", "", f"{r['d_max_k3']:.3f}"])
+            w.writerow([name, r["n"], f"{r['d_max']:.3f}", "", "", f"{r['d_max_kcal']:.3f}"])
             w.writerow([f"random {len(r['members'])}-family union", "", *(f"{b['d_max'][q]:.3f}" for q in ("median", "q05", "q95")),
-                        f"{b['d_max_k3']['median']:.3f}"])
+                        f"{b['d_max_kcal']['median']:.3f}"])
             sb = result["shallow_baseline"][len(r["members"])]
             w.writerow([f"random {len(r['members'])}-shallow-family union", "",
-                        *(f"{sb['d_max'][q]:.3f}" for q in ("median", "q05", "q95")), f"{sb['d_max_k3']['median']:.3f}"])
+                        *(f"{sb['d_max'][q]:.3f}" for q in ("median", "q05", "q95")), f"{sb['d_max_kcal']['median']:.3f}"])
 
 
 if __name__ == "__main__":

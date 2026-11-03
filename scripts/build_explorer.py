@@ -68,19 +68,19 @@ def excluded_by_lineage(excluded: dict[str, str], results: Path) -> dict[str, li
 
 def add_relative(lineages: list[dict], profiles_all: dict, adv: dict, out_csv: Path) -> None:
     """Score each entry against a set of the same size whose members are mutually unrelated (see isodiv.baseline):
-    ``rel`` = (D_max − 1) / (D_unrelated(n) − 1), at k_cal and along the whole D_max(k) profile."""
+    ``rel`` = (D_max − 1) / (D_unrelated(n) − 1), for the headline D_max and along the exp(−k·d) profile."""
     import csv
 
     ru = adv["random_unrelated"]
     sizes = sorted(int(n) for n in ru)
     last = ru[str(sizes[-1])]
-    at_kcal = lambda n: float(unrelated_baseline(n, sizes, [ru[str(s)]["d_max"]["median"] for s in sizes], last["zbar_kcal"]))
+    at_head = lambda n: float(unrelated_baseline(n, sizes, [ru[str(s)]["d_max"]["median"] for s in sizes], last["zbar"]))
     along_k = lambda n: unrelated_baseline(n, sizes, [np.array(ru[str(s)]["profile_d_max"]) for s in sizes],
                                            np.array(last["zbar_profile"]))
     rows = []
     for d in lineages:
         n = d["n"]
-        d["d_rand"] = at_kcal(n)
+        d["d_rand"] = at_head(n)
         d["rel"] = float(relative(d["d_max"], d["d_rand"]))
         d["rel_lo"] = float(relative(d["lo"], d["d_rand"])) if d.get("lo") is not None else None
         d["rel_hi"] = float(relative(d["hi"], d["d_rand"])) if d.get("hi") is not None else None
@@ -139,13 +139,13 @@ def main() -> None:
             "name": n, "cat": category(n), "family": s.get("family", ""),
             "n": s["n_doculects"], "glotto": s["n_glottocodes"], "max_ldnd": s["max_ldnd"],
             "spread": s["spread"], "rare3": clean(s["spread_rarefied_m3"]),
-            "d_max": s["d_max_kcal"], "uniform": s["uniform_d2_kcal"],
+            "d_max": s["d_max"], "d_max_kcal": s["d_max_kcal"], "uniform": s["uniform_d2_kcal"],
             # The bootstrap samples at most 40 doculects (the main run up to 80), so its absolute level sits
             # lower for big lineages. Keep its width (concept-resampling spread) and centre it on the estimate.
-            "lo": s["d_max_kcal"] + (b["q05"] - b["median"]) if b else None,
-            "hi": s["d_max_kcal"] + (b["q95"] - b["median"]) if b else None,
+            "lo": max(1.0, s["d_max"] + (b["q05"] - b["median"])) if b else None,
+            "hi": s["d_max"] + (b["q95"] - b["median"]) if b else None,
             "within": within.get(n),
-            "reps": s["representatives_kcal"][:8],
+            "reps": s["representatives"][:8],
             **({"note": single_note(n)} if s["n_doculects"] == 1 else {}),
         })
 
@@ -159,7 +159,7 @@ def main() -> None:
                 "name": name, "cat": "adv", "family": "", "n": int(n), "glotto": int(n), "max_ldnd": None,
                 "spread": None, "rare3": None, "d_max": x["d_max"]["median"], "uniform": x["uniform"],
                 "lo": x["d_max"]["q05"], "hi": x["d_max"]["q95"], "range_label": "5–95% over random draws",
-                "d_max_k3": x["d_max_k3"]["median"], "within": x["mean_within"], "reps": x["example"],
+                "d_max_kcal": x["d_max_kcal"]["median"], "within": x["mean_within"], "reps": x["example"],
                 "note": f"{n} doculects, each from a different family. Median of the draws; representatives are from one draw.",
             })
             profiles_all[name] = {"d_max": x["profile_d_max"], "uniform": x["profile_uniform"]}
@@ -170,7 +170,7 @@ def main() -> None:
             lineages.append({
                 "name": name, "cat": "adv", "family": "", "n": x["n"], "glotto": None, "max_ldnd": x["max_within"],
                 "spread": None, "rare3": None, "d_max": x["d_max"], "uniform": x["uniform"], "lo": None, "hi": None,
-                "d_max_k3": x["d_max_k3"], "within": x["mean_within"], "reps": x["reps"],
+                "d_max_kcal": x["d_max_kcal"], "within": x["mean_within"], "reps": x["reps"],
                 "note": f"Union of {', '.join(x['members'])}. Random unions of {len(x['members'])} unrelated families "
                         f"score {bl['d_max']['median']:.3f} ({bl['d_max']['q05']:.3f}–{bl['d_max']['q95']:.3f})"
                         + (f"; unions of {len(x['members'])} shallow (genus-level) unrelated families score "
@@ -192,7 +192,7 @@ def main() -> None:
         for row in json.loads(sens_path.read_text(encoding="utf-8"))["rows"]:
             if row["lineage"] in by_name:
                 by_name[row["lineage"]].setdefault("sens", []).append({
-                    k: row[k] for k in ("scenario", "n_removed", "d_max_without", "delta", "d_max_k3_without")})
+                    k: row[k] for k in ("scenario", "n_removed", "d_max_without", "delta", "d_max_kcal_without")})
 
     if adv_path.exists() and "ks" in adv:
         add_relative(lineages, profiles_all, adv, r / "relative.csv")
@@ -200,12 +200,12 @@ def main() -> None:
     pairs = [{
         "a": p["a"], "b": p["b"], "related": p["related_by_construction"],
         **{k: clean(p[k]) for k in ("mean_between", "min_between", "median_between", "mean_within_a",
-                                    "mean_within_b", "dmax_union", "dmax_union_k3", "dmax_a_k3", "dmax_b_k3")},
+                                    "mean_within_b", "dmax_union", "dmax_a", "dmax_b", "dmax_union_kcal")},
     } for p in cross["pairs"]]
     unrel = [p["mean_between"] for p in pairs if not p["related"] and p["mean_between"] is not None]
 
     data = {
-        "k_cal": summary["k_cal"], "noise": summary["noise_floor_quantiles_10_50_90"],
+        "kernel": summary["kernel"], "k_cal": summary["k_cal"], "noise": summary["noise_floor_quantiles_10_50_90"],
         "lineages": lineages, "names": names, "matrix": matrix, "pairs": pairs,
         "unrelated": {"mean": float(np.mean(unrel)), "min": float(np.min(unrel)), "max": float(np.max(unrel))},
         "audit": {

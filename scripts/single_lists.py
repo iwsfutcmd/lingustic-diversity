@@ -10,12 +10,12 @@ Usage:
 
 import csv, json, numpy as np
 from pathlib import Path
-from run_analysis import LINEAGES, NODE_GROUPS, SUBFAMILIES, SINITIC_GROUPS, load_all, stratified
+from run_analysis import LINEAGES, NODE_GROUPS, SUBFAMILIES, SINITIC_GROUPS, load_all, open_world_cache, save_world_cache, stratified
 from isodiv.asjp import read_languages
 from isodiv.metric import get_metric
 cldf = Path("data/asjp/cldf")
 rows = {r["ID"]: r for r in read_languages(cldf)}
-docs = load_all(cldf); m = get_metric("pmi")
+docs = load_all(cldf); m = get_metric("pmi"); cache, _ = open_world_cache(m, cldf)
 top = [n for n in LINEAGES if n not in SUBFAMILIES and n not in SINITIC_GROUPS and n not in NODE_GROUPS]
 samples = {n: stratified([x for x in docs.values() if LINEAGES[n](rows[x.id])], 25) for n in top}
 fam = {n: {x.family for x in samples[n]} for n in top}
@@ -24,7 +24,7 @@ def profile(x):
     for n in top:
         if x.family in fam[n]: continue
         for y in samples[n]: pairs.append((x, y)); owner.append(n)
-    v = m.values(pairs); owner = np.array(owner)
+    v = cache.values(pairs); owner = np.array(owner)
     return {n: (float(np.nanmean(v[owner == n])), float(np.nanmin(v[owner == n])) if np.isfinite(v[owner == n]).any() else np.nan) for n in dict.fromkeys(owner) if np.isfinite(v[owner == n]).any()}
 out = {}
 for iso in ["Sumerian", "Elamite", "Etruscan", "Hruso", "Kusunda", "Nihali"]:
@@ -47,3 +47,4 @@ null = np.array(null)
 print("null nearest-unrelated-lineage mean distance for random lists: median", round(np.median(null), 3), "5-95%", np.round(np.quantile(null, [.05, .95]), 3))
 out["_null_nearest"] = {"median": float(np.median(null)), "q05": float(np.quantile(null, .05)), "q95": float(np.quantile(null, .95))}
 json.dump(out, open("results/single_lists.json", "w"), indent=1)
+save_world_cache(cache)
