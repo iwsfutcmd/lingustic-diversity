@@ -34,9 +34,11 @@ def main() -> None:
     ap.add_argument("--cap", type=int, default=25, help="max doculects per lineage")
     ap.add_argument("--distance", choices=DISTANCES, default=None, help="default: as in results/summary.json")
     ap.add_argument("--pmi-model", type=Path, default=Path("results/pmi_model_all.tsv"))
+    ap.add_argument("--summary", type=Path, default=Path("results/summary.json"))
+    ap.add_argument("--tag", default="", help="write only cross_family_TAG.json (a variant run, e.g. another --cap)")
     args = ap.parse_args()
 
-    summary = json.loads((args.out / "summary.json").read_text(encoding="utf-8"))
+    summary = json.loads(args.summary.read_text(encoding="utf-8"))
     k_cal = summary["k_cal"]
     kernel = Kernel.from_summary(summary)
     distance = args.distance or summary.get("distance", "ldnd")
@@ -66,6 +68,9 @@ def main() -> None:
     within_full = {n: full[np.ix_(ix[n], ix[n])] for n in names}
     within = {n: d[np.triu_indices(len(d), 1)] for n, d in within_full.items()}
     blocks = {(a, b): full[np.ix_(ix[a], ix[b])] for a, b in combinations(names, 2)}
+    # great-circle km between every two sampled doculects (NaN where a list has no coordinates), for the closest
+    # approach of two lineages: neighbours share loans, so relatedness is judged against unrelated neighbours
+    km = _km(np.array([[_coord(rows[x.id], "Latitude"), _coord(rows[x.id], "Longitude")] for x in uniq]))
     between = {k: v.ravel() for k, v in blocks.items()}
 
     def stat(v: np.ndarray, f) -> float:
@@ -88,19 +93,21 @@ def main() -> None:
     kept = {n: _keep(within_full[n]) for n in names}
     own_res = {n: _own(within_full[n][np.ix_(kept[n], kept[n])], kernel) for n in names}
     own = {n: v for n, (v, _) in own_res.items()}
+    # A cross pair with too few shared concepts for a distance is no evidence of a link, so it gets similarity 0
+    # (distance at the detection limit) instead of dropping a list from the union: dropping one would score the
+    # union below the larger lineage alone. The union then lies between max(D_a, D_b) and D_a + D_b.
     # pairs with a detectable link: solve in a process pool (one BLAS thread each), each starting from the two
     # lineages' own optima side by side, so the union is never scored below that combined weighting
     todo, sums = [], {}
     for a, b in combinations(names, 2):
         ka, kb = kept[a], kept[b]
-        blk = blocks[(a, b)][np.ix_(ka, kb)]
-        clean = not np.isnan(blk).any()
-        if clean and (blk >= kernel.unrelated).all():          # also covers an empty side (nothing left after cleaning)
+        blk = np.nan_to_num(blocks[(a, b)][np.ix_(ka, kb)], nan=kernel.unrelated)
+        if (blk >= kernel.unrelated).all():          # also covers an empty side (nothing left after cleaning)
             sums[(a, b)] = own[a] + own[b]
             continue
         d = np.block([[within_full[a][np.ix_(ka, ka)], blk], [blk.T, within_full[b][np.ix_(kb, kb)]]])
         wa, wb = own_res[a][1], own_res[b][1]
-        warm = [] if not clean or wa is None or wb is None else [np.concatenate([wa * own[a], wb * own[b]])]
+        warm = [] if wa is None or wb is None else [np.concatenate([wa * own[a], wb * own[b]])]
         todo.append(((a, b), d, kernel, warm))
     unions = dict(sums)
     if todo:
@@ -121,20 +128,29 @@ def main() -> None:
             "mean_within_b": stat(within[b], np.mean),
             "dmax_union": unions[(a, b)], "dmax_a": own[a], "dmax_b": own[b],
             "related_by_construction": related(a, b),
+            # doculects in both samples (one lineage nested in the other, or overlapping pools)
+            "shared_doculects": len({x.id for x in samples[a]} & {x.id for x in samples[b]}),
+            "n_a": int(kept[a].sum()), "n_b": int(kept[b].sum()),
+            "min_km": stat(km[np.ix_(ix[a], ix[b])].ravel(), np.min),
         })
     print(f"union D_max: {solved} of {len(union_rows)} lineage pairs needed a solve (the rest are block-diagonal)",
           flush=True)
 
     args.out.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "cap_per_lineage": args.cap, "kernel": kernel.to_json(), "k_cal": k_cal, "distance": distance, "lineages": names,
+        "mean_ldnd_matrix": np.round(mean_m, 4).tolist(), "pairs": union_rows,
+    }
+    if args.tag:
+        (args.out / f"cross_family_{args.tag}.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2),
+                                                                encoding="utf-8")
+        return
     with (args.out / "cross_family.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(union_rows[0]))
         w.writeheader()
         for r in sorted(union_rows, key=lambda r: r["mean_between"]):
             w.writerow({k: (f"{v:.3f}" if isinstance(v, float) else v) for k, v in r.items()})
-    (args.out / "cross_family.json").write_text(json.dumps({
-        "cap_per_lineage": args.cap, "kernel": kernel.to_json(), "k_cal": k_cal, "distance": distance, "lineages": names,
-        "mean_ldnd_matrix": np.round(mean_m, 4).tolist(), "pairs": union_rows,
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    (args.out / "cross_family.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
     jk = next(r for r in union_rows if {r["a"], r["b"]} == {"Japonic", "Kartvelian"})
     unrelated = [r["mean_between"] for r in union_rows
@@ -145,6 +161,21 @@ def main() -> None:
     print(f"mean within-lineage {metric.label}:", {k: round(stat(v, np.mean), 3) for k, v in within.items()})
 
     plot(names, mean_m, within, between, union_rows, args.out / "cross_family.png", metric.label)
+
+
+def _coord(row: dict, col: str) -> float:
+    try:
+        return float(row.get(col) or "nan")
+    except ValueError:
+        return float("nan")
+
+
+def _km(latlon: np.ndarray) -> np.ndarray:
+    """Pairwise great-circle distances in km (haversine) between rows of (latitude, longitude) in degrees."""
+    la, lo = np.radians(latlon[:, 0]), np.radians(latlon[:, 1])
+    h = (np.sin((la[:, None] - la[None]) / 2) ** 2
+         + np.cos(la[:, None]) * np.cos(la[None]) * np.sin((lo[:, None] - lo[None]) / 2) ** 2)
+    return 2 * 6371.0 * np.arcsin(np.sqrt(np.clip(h, 0, 1)))
 
 
 def _keep(d: np.ndarray) -> np.ndarray:

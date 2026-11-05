@@ -75,6 +75,7 @@ DOWNLOADS = [
     ("rarefaction.csv", "D_max at equal numbers of distinct languages, for comparing lineages of different size."),
     ("adversarial.csv", "Random unrelated sets and proposed groupings (Altaic, Niger-Congo, …) on the same scale."),
     ("cross_family.csv", "Mean distance and combined D_max for every pair of lineages."),
+    ("relatedness.csv", "Union shortfall for every pair of lineages, against size-matched unrelated neighbours."),
     ("audit.csv", "Doculects ranked by how much they move their lineage's score."),
     ("bootstrap.json", "Concept-resampling intervals."),
     ("summary.json", "Everything run_analysis.py computed, including the nesting check."),

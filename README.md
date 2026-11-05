@@ -282,6 +282,73 @@ PMI similarity is about as far as this approach reaches. (Correction: an earlier
 and Samoyed are beyond 40 words' reach. Most Saami–Samoyed pairs are at 0.87–0.95, around the detection limit and
 mostly detected; the 0.996 quoted came from one pair of lists, Ume Saami and Forest Enets.)
 
+## Relatedness from union shortfall
+
+Two lineages the 40-word lists cannot tie together score the sum of their D_max values together. Every cross pair
+within the detection limit takes something off, so `scripts/relatedness.py` reads relatedness from the shortfall
+
+    s = (D_a + D_b − D_union) / min(D_a, D_b)
+
+which is 0 for no detectable link and 1 when the smaller lineage is absorbed into the larger
+(`results/relatedness.{json,csv,png}`, from the union D_max of `cross_family.py`; a cross pair with too few shared
+concepts for a distance counts as no link, and pairs with no cross distance at all are left out as untestable).
+
+**Calibration.** s is judged against real pairs of different families, not shuffles, because chance resemblance,
+sound symbolism and loans all shorten distances and real unrelated pairs carry all three. Two confounds matter:
+
+- *Size.* A deep, diverse lineage offers more lists for a chance near-miss (Spearman ρ = 0.38 between s and the
+  larger lineage's D_max among unrelated pairs), so each pair is compared with the 250 unrelated pairs nearest in
+  (larger D_max, smaller D_max). Against that null, 3.8% of unrelated far-apart pairs reach p < 0.05.
+- *Contact.* Among unrelated neighbours (closest doculects within 1,500 km) 10.5% reach p < 0.05, and 13% within
+  500 km. The hits are textbook loan cases: Uralic–Iranian and Uralic–Indo-Aryan, Hmong-Mien–Sinitic,
+  Indo-Aryan–Arabic, Yeniseian–Turkic, Koreanic–Mandarin, Saharan–Chadic, and Romance–Algic through Michif
+  (French–Cree). So the headline p (`p_size_near`) compares a pair with the 100 size-matched unrelated *neighbours*.
+  3.6% of unrelated neighbours reach p < 0.05 against it.
+
+Sibling branches of one family (sharing no doculect; nested pairs are left out) are the positive control: AUC 0.98
+against unrelated pairs, and 83% reach `p_size_near` < 0.05. Power falls with depth: siblings whose closest lists
+are 0.80–0.85 apart are detected 76% of the time, 0.85–0.95 only 42%. A non-significant proposal is therefore not
+evidence against it. The cap per lineage barely matters: AUC 0.98 at 10, 25 and 50 doculects, and s moves little
+except for pairs with a very large lineage (Atlantic-Congo), where more lists mean more chance near-misses.
+
+**Proposals** (61 pairs; `p_size_near` floors at 0.01 with 100 neighbours, and about 3 of 61 are expected below
+0.05 by chance):
+
+| proposal | pair | s | p (size-matched neighbours) |
+|---|---|---|---|
+| Altaic | Mongolic – Tungusic | 0.26 | 0.01 |
+| | Turkic – Mongolic | 0.09 | 0.01 |
+| | Turkic – Tungusic | 0.04 | 0.16 |
+| Macro-Altaic | Koreanic, Japonic with each other or Turkic/Mongolic/Tungusic | 0.00–0.03 | 0.31–1 |
+| Khoisan | Khoe-Kwadi – Tuu / Tuu – Kxa / Khoe-Kwadi – Kxa | 0.18 / 0.11 / 0.10 | 0.01 / 0.01 / 0.02 |
+| Great Andamanese – Ongan | | 0.26 | 0.01 |
+| Totozoquean | Mixe-Zoque – Totonacan | 0.21 | 0.01 |
+| Kordofanian | Narrow Talodi, Rashad, Katla-Tima, Heibanic with each other | 0.07–0.22 | 0.01–0.09 |
+| Niger-Congo | Kru with Atlantic-Congo / Mande / Dogon | 0.24 / 0.20 / 0.13 | 0.03 / 0.03 / 0.02 |
+| | Mande, Ijoid, Dogon with Atlantic-Congo | 0.15 / 0.18 / 0.14 | 0.05 / 0.06 / 0.06 |
+| Hruso in Sino-Tibetan | | 0.29 | 0.03 |
+| Dene–Caucasian | Yeniseian – Sino-Tibetan | 0.11 | 0.04 |
+| | Basque – Nakh-Daghestanian / Burushaski – Yeniseian / Basque – Abkhaz-Adyge | 0.15 / 0.03 / 0 | 0.08 / 0.31 / 1 |
+| Nilo-Saharan | Songhay – Saharan | 0.12 | 0.04 |
+| | Nubian – Saharan / Nubian – Songhay / Kuliak – Nubian | 0.07 / 0.02 / 0.01 | 0.10 / 0.51 / 0.79 |
+| Elamo-Dravidian | | 0.16 | 0.07 |
+| Austric, Austro-Tai | four pairs | 0.05–0.10 | 0.07–0.23 |
+| North Caucasian | Abkhaz-Adyge – Nakh-Daghestanian | 0.08 | 0.16 |
+| Dene–Yeniseian | Yeniseian – Athabaskan-Eyak-Tlingit | 0.05 | 0.21 |
+| Uralic–Yukaghir | | 0.08 | 0.17 |
+| Nostratic-type | Uralic – IE, IE – Afro-Asiatic, Uralic – Turkic, IE – Kartvelian, Uralic – Dravidian | 0.03–0.07 | 0.12–0.31 |
+| Uralo-Siberian, Chukotko-Kamchatkan–Amuric | four pairs | 0.00–0.05 | 0.31–0.99 |
+
+**Reading.** A low p says some lists of the two lineages are closer than size-matched unrelated neighbours usually
+are. It does not say why. Mongolic–Tungusic is driven by Buriat–Nanai-type pairs sharing *bi/bi* 'I', *ši/ši*
+'you', *bid/bu* 'we', *mod/mo* 'tree' and *čuluu/jolo* 'stone', the very words argued over as Altaic cognates or
+Mongolic loans; the Khoisan pairs by the Kalahari contact zone (Naro and Gǀui-type Khoe varieties beside Taa);
+Andamanese by four list pairs, mostly pronouns. Intense, long contact beats the neighbour null too. What the test
+does settle is the negative side within its power: Koreanic and Japonic show no link to each other or to the Altaic
+families (s ≤ 0.03), and neither do the Nostratic-type, Uralo-Siberian or Dene–Yeniseian pairs. These are deeper
+than the 40-item lists reach, which is a statement about the data, not against the proposals. False positives
+happen too: Koreanic–Burushaski (no contact, 4,700 km) has s = 0.15, p = 0.02.
+
 ## Supplements: filling gaps in key lists
 
 `config/supplements.tsv` fills concepts missing from an ASJP list from an expert-coded source. It never overrides an
@@ -405,7 +472,8 @@ edge of the same-language band), Japanese against itself 0.293.
 - `scripts/cross_family.py` compares lineages with each other: mean distance within and between the 128 lineages
   (see Lineages), on 25 doculects per lineage, and D_max of two lineages together vs. apart. On the calibrated scale
   two unrelated lineages together score the sum of their D_max values (exactly, when every cross pair is beyond the
-  detection limit), so a union that falls short of the sum shows cross-lineage pairs within reach of the data.
+  detection limit), so a union that falls short of the sum shows cross-lineage pairs within reach of the data
+  (calibrated in "Relatedness from union shortfall"; `--cap N --tag capN` writes a variant run).
   Japonic ↔ Kartvelian: mean PMI-LDND 0.98 vs. 0.43 / 0.60 within. Across 7,544 unrelated lineage pairs the mean is
   0.971 (LDND 0.984 over 2,483 pairs, from the earlier 72-lineage run). The closest are Tuu ↔ Kxa 0.857, Mongolic ↔ Tungusic 0.868, Koreanic ↔ Burushaski 0.872 and
   Khoe-Kwadi ↔ Tuu 0.876 (LDND 0.911–0.929, same pairs). Kalahari Basin and Altaic-area contact fit the others;
@@ -527,13 +595,10 @@ tuples of opaque segment tokens, so any script or segmentation works.
 
 In order:
 
-1. **Relatedness from union shortfall.** Two unrelated lineages score about the sum of their own D_max together; a
-   shortfall means some cross-lineage pairs are within the detection limit. Calibrate the shortfall (as a share of
-   the smaller lineage) against pairs from different families, use sibling branches of one family as the positive
-   control, leave out nested pairs, and check how the cap per lineage (10 / 25 / 50) moves it. Then read the
-   proposals off it: Altaic, Koreanic–Japonic, Dene–Yeniseian, "Khoisan", Uralic–Yukaghir, Austric, and so on.
-   Folded in: recalibrate `loans.py` in PMI-LDND units, and check whether PMI's pull on chance resemblances
-   (Koreanic ↔ Burushaski) needs a correction, since chance resemblance is what would fake a shortfall.
+1. ~~Relatedness from union shortfall~~: done, see "Relatedness from union shortfall". Still open from it:
+   recalibrate `loans.py` in PMI-LDND units and use it to separate loan-driven from inherited links in the hits
+   (Mongolic–Tungusic, Khoisan), and check whether PMI's pull on chance resemblances (Koreanic ↔ Burushaski, s =
+   0.15) needs a correction.
 2. **Pipeline dependencies.** Track which `src/isodiv` modules each step imports, so a change to one module reruns
    only the steps that use it.
 3. **Doculect-level bootstrap.** The intervals resample concepts only; resample doculects within each lineage too.
