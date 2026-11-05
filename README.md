@@ -525,12 +525,27 @@ tuples of opaque segment tokens, so any script or segmentation works.
 
 ## Next steps
 
-- Recalibrate `loans.py` thresholds in PMI-LDND units, and check whether PMI's pull on chance resemblances
-  (Koreanic ↔ Burushaski) needs a correction.
-- Expert cognate sets (Lexibank) as an alternative distance where they exist: they encode correspondences and loan
-  judgements that automatic tests cannot recover (see the negative result above).
-- For a paper: compare with Holman et al. 2011 family ages, add a doculect-level bootstrap and a simulation on
-  synthetic trees. LDND has not been re-run on the 128 whole-pool lineages.
+In order:
+
+1. **Relatedness from union shortfall.** Two unrelated lineages score about the sum of their own D_max together; a
+   shortfall means some cross-lineage pairs are within the detection limit. Calibrate the shortfall (as a share of
+   the smaller lineage) against pairs from different families, use sibling branches of one family as the positive
+   control, leave out nested pairs, and check how the cap per lineage (10 / 25 / 50) moves it. Then read the
+   proposals off it: Altaic, Koreanic–Japonic, Dene–Yeniseian, "Khoisan", Uralic–Yukaghir, Austric, and so on.
+   Folded in: recalibrate `loans.py` in PMI-LDND units, and check whether PMI's pull on chance resemblances
+   (Koreanic ↔ Burushaski) needs a correction, since chance resemblance is what would fake a shortfall.
+2. **Pipeline dependencies.** Track which `src/isodiv` modules each step imports, so a change to one module reruns
+   only the steps that use it.
+3. **Doculect-level bootstrap.** The intervals resample concepts only; resample doculects within each lineage too.
+4. **Holman et al. 2011.** Rank correlation of D_max with their dated family ages, and the cases where they disagree.
+5. **Synthetic trees.** Evolve 40-word lists on known trees with borrowing, uneven sampling and duplicated dialects,
+   and check that D_max recovers the number of lineages and ignores dialect counts.
+6. **LDND on the 128 whole-pool lineages**, which has not been run.
+
+Any time: decide whether Luwian (23 concepts) enters Indo-European's D_max, and fill under-sampled lineages (Basque,
+Haida) from expert sources, as for Hittite. Larger and optional: expert cognate sets (Lexibank) as an alternative
+distance where they exist, since they encode correspondences and loan judgements that automatic tests cannot recover
+(see the negative result above). Speed: profile `run_analysis` and `cognate_check`, now the two longest steps.
 
 ## References
 
