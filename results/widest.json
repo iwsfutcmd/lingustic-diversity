@@ -305,11 +305,11 @@
   },
   {
    "lineage": "Indo-European",
-   "n": 527,
-   "raw_widest": 1.0396939516067505,
+   "n": 490,
+   "raw_widest": 1.0334092378616333,
    "raw_pair": [
-    "LASGERDI",
-    "SARAMACCAN_2"
+    "BERNESE_GERMAN",
+    "LASGERDI"
    ],
    "widest": 1.0001120567321777,
    "pair": [
@@ -645,7 +645,7 @@
   },
   {
    "lineage": "Algic",
-   "n": 36,
+   "n": 35,
    "raw_widest": 0.9837464094161987,
    "raw_pair": [
     "CHIPPEWA",
@@ -656,9 +656,8 @@
     "CHEYENNE",
     "KASKASKIA_ILLINOIS"
    ],
-   "lone": 22,
+   "lone": 21,
    "flagged": [
-    "MICHIF",
     "WIYOT",
     "YUROK"
    ],
@@ -862,7 +861,7 @@
   },
   {
    "lineage": "Austronesian",
-   "n": 1467,
+   "n": 1459,
    "raw_widest": 1.0980007648468018,
    "raw_pair": [
     "KEDANG",
@@ -884,7 +883,7 @@
   },
   {
    "lineage": "Sino-Tibetan",
-   "n": 887,
+   "n": 881,
    "raw_widest": 1.0995334386825562,
    "raw_pair": [
     "HUI_HUANGSHAN_LIUKOU",
@@ -895,7 +894,7 @@
     "KHWOPA_NEWAR",
     "PUTIAN_CHINESE"
    ],
-   "lone": 94,
+   "lone": 93,
    "flagged": [],
    "pair_lone": [
     true,
@@ -904,7 +903,7 @@
   },
   {
    "lineage": "Afro-Asiatic",
-   "n": 426,
+   "n": 422,
    "raw_widest": 1.0666072368621826,
    "raw_pair": [
     "IRAQW_2",
@@ -915,9 +914,8 @@
     "BOGA",
     "GOBEZE"
    ],
-   "lone": 82,
+   "lone": 81,
    "flagged": [
-    "BALDEMU",
     "MOGOGODO"
    ],
    "pair_lone": [
@@ -927,7 +925,7 @@
   },
   {
    "lineage": "Atlantic-Congo",
-   "n": 2042,
+   "n": 2037,
    "raw_widest": 1.110214352607727,
    "raw_pair": [
     "BAYNUNK_GUNYAAMOLO_4",
@@ -938,7 +936,7 @@
     "CE",
     "KULANGO_BOUNA"
    ],
-   "lone": 268,
+   "lone": 267,
    "flagged": [
     "AIZI"
    ],
@@ -1394,7 +1392,7 @@
   },
   {
    "lineage": "Semitic",
-   "n": 110,
+   "n": 108,
    "raw_widest": 0.9698970913887024,
    "raw_pair": [
     "INNEMOR",
@@ -1414,15 +1412,15 @@
   },
   {
    "lineage": "Arabic",
-   "n": 47,
+   "n": 45,
    "raw_widest": 0.6965094804763794,
    "raw_pair": [
     "JUDEO_TUNISIAN_ARABIC",
     "SOUKHNE_SYRIAN_ARABIC"
    ],
-   "widest": 0.5645595192909241,
+   "widest": 0.5507892370223999,
    "pair": [
-    "KIBERA_KENYA",
+    "ARABIC_KHUZESTANI",
     "MALTESE"
    ],
    "lone": 0,
@@ -1434,7 +1432,7 @@
   },
   {
    "lineage": "Chadic",
-   "n": 206,
+   "n": 205,
    "raw_widest": 1.0522083044052124,
    "raw_pair": [
     "GVOKO",
@@ -1445,10 +1443,8 @@
     "GVOKO",
     "NDAM"
    ],
-   "lone": 70,
-   "flagged": [
-    "BALDEMU"
-   ],
+   "lone": 69,
+   "flagged": [],
    "pair_lone": [
     true,
     true
@@ -1478,27 +1474,27 @@
   },
   {
    "lineage": "Berber",
-   "n": 37,
-   "raw_widest": 0.847256600856781,
+   "n": 36,
+   "raw_widest": 0.7729076147079468,
    "raw_pair": [
     "CHAOUI",
-    "TAMASHEQ_2"
-   ],
-   "widest": 0.8085149526596069,
-   "pair": [
-    "TAMASHEQ_2",
     "ZENAGA"
    ],
-   "lone": 1,
+   "widest": 0.7045906782150269,
+   "pair": [
+    "TAZNATIT",
+    "ZENAGA"
+   ],
+   "lone": 0,
    "flagged": [],
    "pair_lone": [
-    true,
+    false,
     false
    ]
   },
   {
    "lineage": "Sinitic",
-   "n": 491,
+   "n": 485,
    "raw_widest": 0.9310448169708252,
    "raw_pair": [
     "JIN_LVLIANG_LIULIN",
@@ -1509,7 +1505,7 @@
     "HUI_HANGZHOU_FENKOU",
     "OLD_CHINESE"
    ],
-   "lone": 11,
+   "lone": 10,
    "flagged": [],
    "pair_lone": [
     true,
@@ -1518,22 +1514,22 @@
   },
   {
    "lineage": "Min",
-   "n": 32,
-   "raw_widest": 0.8298949003219604,
+   "n": 31,
+   "raw_widest": 0.8288410902023315,
    "raw_pair": [
-    "MIN_FUZHOU_QINJIANG",
-    "MIN_HAIKOU"
+    "MIN_NANPING_SHIBEI",
+    "MIN_SHISHI"
    ],
    "widest": 0.8010396957397461,
    "pair": [
     "HAINAN_MINNAN_CHINESE",
-    "MIN_FUZHOU_QINJIANG"
+    "MIN_NANPING"
    ],
-   "lone": 2,
+   "lone": 3,
    "flagged": [],
    "pair_lone": [
     false,
-    false
+    true
    ]
   },
   {
@@ -1598,7 +1594,7 @@
   },
   {
    "lineage": "Indo-Aryan",
-   "n": 167,
+   "n": 165,
    "raw_widest": 0.9099883437156677,
    "raw_pair": [
     "NEPALI",
@@ -1878,22 +1874,22 @@
   },
   {
    "lineage": "Mandarin",
-   "n": 186,
-   "raw_widest": 0.7869946956634521,
+   "n": 182,
+   "raw_widest": 0.7585536241531372,
    "raw_pair": [
-    "MANDARIN_GUILIN_LONGSHENG",
-    "MANDARIN_HEZE_DINGTAO"
+    "MANDARIN",
+    "MANDARIN_NANTONG_2"
    ],
-   "widest": 0.7625263333320618,
+   "widest": 0.5478830337524414,
    "pair": [
-    "MANDARIN_GUILIN_LONGSHENG",
-    "WUTUN"
+    "MANDARIN_GUILIN_1",
+    "MANDARIN_LINYI_TANCHENG"
    ],
-   "lone": 2,
+   "lone": 0,
    "flagged": [],
    "pair_lone": [
-    true,
-    true
+    false,
+    false
    ]
   },
   {
@@ -1978,22 +1974,22 @@
   },
   {
    "lineage": "Xiang",
-   "n": 23,
-   "raw_widest": 0.7773593068122864,
+   "n": 22,
+   "raw_widest": 0.7389034628868103,
    "raw_pair": [
-    "XIANG_GUILIN_JIESHOU",
-    "XIANG_YONGZHOU_SHOUYAN"
+    "XIANG",
+    "XIANG_GUILIN_JIESHOU"
    ],
-   "widest": 0.7100248634815216,
+   "widest": 0.5796683430671692,
    "pair": [
     "XIANG_GUILIN_JIESHOU",
-    "XIANG_YONGZHOU_SHOUYAN"
+    "XIANG_XIANGXIANG"
    ],
-   "lone": 1,
+   "lone": 0,
    "flagged": [],
    "pair_lone": [
     false,
-    true
+    false
    ]
   },
   {
@@ -2058,7 +2054,7 @@
   },
   {
    "lineage": "Malayo-Polynesian",
-   "n": 1414,
+   "n": 1407,
    "raw_widest": 1.0980007648468018,
    "raw_pair": [
     "KEDANG",
@@ -2080,7 +2076,7 @@
   },
   {
    "lineage": "Formosan",
-   "n": 57,
+   "n": 56,
    "raw_widest": 1.0072002410888672,
    "raw_pair": [
     "AMIS_NATAORAN",
@@ -2091,7 +2087,7 @@
     "HECUO_TAROKO",
     "MANTAURAN"
    ],
-   "lone": 6,
+   "lone": 5,
    "flagged": [],
    "pair_lone": [
     false,
@@ -2142,16 +2138,16 @@
   },
   {
    "lineage": "Malayic",
-   "n": 53,
+   "n": 46,
    "raw_widest": 0.631452739238739,
    "raw_pair": [
     "HAJI",
     "SALAKO_BADAMEA"
    ],
-   "widest": 0.4137722849845886,
+   "widest": 0.3966559171676636,
    "pair": [
-    "AMBON_MALEIS",
-    "KERINCI"
+    "KERINCI",
+    "OGAN"
    ],
    "lone": 0,
    "flagged": [],
@@ -2202,7 +2198,7 @@
   },
   {
    "lineage": "West Semitic",
-   "n": 107,
+   "n": 105,
    "raw_widest": 0.9698970913887024,
    "raw_pair": [
     "INNEMOR",
@@ -2222,7 +2218,7 @@
   },
   {
    "lineage": "Central Semitic",
-   "n": 74,
+   "n": 72,
    "raw_widest": 0.877622127532959,
    "raw_pair": [
     "BIBLICAL_HEBREW",
@@ -2472,15 +2468,15 @@
   },
   {
    "lineage": "Egyptic Arabic",
-   "n": 8,
-   "raw_widest": 0.6251571774482727,
+   "n": 6,
+   "raw_widest": 0.5889805555343628,
    "raw_pair": [
-    "KIBERA_KENYA",
+    "ARABIC_SUDANESE_SPOKEN",
     "SHUWA_CHADIAN_ARABIC_2"
    ],
-   "widest": 0.49699580669403076,
+   "widest": 0.41161155700683594,
    "pair": [
-    "KIBERA_KENYA",
+    "ARABIC_SUDANESE_SPOKEN",
     "SHUWA_CHADIAN_ARABIC_2"
    ],
    "lone": 0,

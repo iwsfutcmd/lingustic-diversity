@@ -22,26 +22,6 @@
    "flagged": true
   },
   {
-   "id": "BALDEMU",
-   "family": "Afro-Asiatic",
-   "nearest_in": 0.8510122895240784,
-   "nearest_in_id": "FALI_MUCHELLA",
-   "nearest_out": 0.20987525582313538,
-   "nearest_out_id": "KUNDU",
-   "nearest_out_family": "Atlantic-Congo",
-   "flagged": true
-  },
-  {
-   "id": "MICHIF",
-   "family": "Algic",
-   "nearest_in": 0.7584711909294128,
-   "nearest_in_id": "EASTERN_SWAMPY_CREE",
-   "nearest_out": 0.5871928930282593,
-   "nearest_out_id": "ST_LUCIAN_CREOLE_FRENCH",
-   "nearest_out_family": "Indo-European",
-   "flagged": true
-  },
-  {
    "id": "KARADJERI",
    "family": "Pama-Nyungan",
    "nearest_in": 0.7245613932609558,
@@ -322,16 +302,6 @@
    "flagged": false
   },
   {
-   "id": "INNER_MBUGU_BUMBULI",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.7624287605285645,
-   "nearest_in_id": "NORMAL_MBUGU",
-   "nearest_out": 0.7970544695854187,
-   "nearest_out_id": "IRAQW",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "NAGA_SUMI",
    "family": "Sino-Tibetan",
    "nearest_in": 0.7413601279258728,
@@ -358,16 +328,6 @@
    "nearest_in_id": "KUNUZ_NUBIAN",
    "nearest_out": 0.8421370983123779,
    "nearest_out_id": "FRAFRA_2",
-   "nearest_out_family": "Atlantic-Congo",
-   "flagged": false
-  },
-  {
-   "id": "AASAX",
-   "family": "Afro-Asiatic",
-   "nearest_in": 0.7829692959785461,
-   "nearest_in_id": "BURUNGE",
-   "nearest_out": 0.8211665749549866,
-   "nearest_out_id": "INNER_MBUGU_BUMBULI",
    "nearest_out_family": "Atlantic-Congo",
    "flagged": false
   },
@@ -552,6 +512,16 @@
    "flagged": false
   },
   {
+   "id": "AASAX",
+   "family": "Afro-Asiatic",
+   "nearest_in": 0.7829692959785461,
+   "nearest_in_id": "BURUNGE",
+   "nearest_out": 0.8367104530334473,
+   "nearest_out_id": "GUGU_BUJUN",
+   "nearest_out_family": "Pama-Nyungan",
+   "flagged": false
+  },
+  {
    "id": "AKPOSO",
    "family": "Atlantic-Congo",
    "nearest_in": 0.7487804889678955,
@@ -672,16 +642,6 @@
    "flagged": false
   },
   {
-   "id": "BAKUNDU_BALUE",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.5146547555923462,
-   "nearest_in_id": "OROKO",
-   "nearest_out": 0.5832159519195557,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "AMAIMON",
    "family": "Nuclear Trans New Guinea",
    "nearest_in": 0.7124287486076355,
@@ -759,16 +719,6 @@
    "nearest_out": 0.8266286849975586,
    "nearest_out_id": "VAI_3",
    "nearest_out_family": "Mande",
-   "flagged": false
-  },
-  {
-   "id": "NGONDI",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.6385303735733032,
-   "nearest_in_id": "MBESA",
-   "nearest_out": 0.7128050327301025,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
    "flagged": false
   },
   {
@@ -1009,16 +959,6 @@
    "nearest_out": 0.7825548052787781,
    "nearest_out_id": "KRUMEN_TEPO",
    "nearest_out_family": "Kru",
-   "flagged": false
-  },
-  {
-   "id": "YASA",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.5453507304191589,
-   "nearest_in_id": "BENGA",
-   "nearest_out": 0.6410341858863831,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
    "flagged": false
   },
   {
@@ -2102,6 +2042,16 @@
    "flagged": false
   },
   {
+   "id": "NGONDI",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.6385303735733032,
+   "nearest_in_id": "MBESA",
+   "nearest_out": 0.7884162664413452,
+   "nearest_out_id": "PAPORA_2",
+   "nearest_out_family": "Austronesian",
+   "flagged": false
+  },
+  {
    "id": "TUPURI",
    "family": "Atlantic-Congo",
    "nearest_in": 0.6311970949172974,
@@ -2339,16 +2289,6 @@
    "nearest_out": 0.7864664793014526,
    "nearest_out_id": "PAPORA_2",
    "nearest_out_family": "Austronesian",
-   "flagged": false
-  },
-  {
-   "id": "NYANGA",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.6150428652763367,
-   "nearest_in_id": "ZANAKI",
-   "nearest_out": 0.7752658128738403,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
    "flagged": false
   },
   {
@@ -2922,26 +2862,6 @@
    "flagged": false
   },
   {
-   "id": "BENGA_2",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.29543331265449524,
-   "nearest_in_id": "BENGA",
-   "nearest_out": 0.4797946810722351,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
-   "id": "NGBINDA",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.6007342338562012,
-   "nearest_in_id": "BENGE_BATI",
-   "nearest_out": 0.785149335861206,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "BEEZEN",
    "family": "Atlantic-Congo",
    "nearest_in": 0.6392918825149536,
@@ -3239,6 +3159,16 @@
    "nearest_out": 0.8187516331672668,
    "nearest_out_id": "MAILU",
    "nearest_out_family": "Mailuan",
+   "flagged": false
+  },
+  {
+   "id": "NGBINDA",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.6007342338562012,
+   "nearest_in_id": "BENGE_BATI",
+   "nearest_out": 0.7959057092666626,
+   "nearest_out_id": "KOLUM_SO_2",
+   "nearest_out_family": "Dogon",
    "flagged": false
   },
   {
@@ -3602,6 +3532,16 @@
    "flagged": false
   },
   {
+   "id": "NYANGA",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.6150428652763367,
+   "nearest_in_id": "ZANAKI",
+   "nearest_out": 0.8241889476776123,
+   "nearest_out_id": "AIZI_TIAGBAMRIN",
+   "nearest_out_family": "Kru",
+   "flagged": false
+  },
+  {
    "id": "EFUTU",
    "family": "Atlantic-Congo",
    "nearest_in": 0.6083142757415771,
@@ -3779,16 +3719,6 @@
    "nearest_out": 0.8196757435798645,
    "nearest_out_id": "PAPORA_2",
    "nearest_out_family": "Austronesian",
-   "flagged": false
-  },
-  {
-   "id": "YAKA_axk",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.5372381806373596,
-   "nearest_in_id": "DUMA_3",
-   "nearest_out": 0.7525138258934021,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
    "flagged": false
   },
   {
@@ -4302,16 +4232,6 @@
    "flagged": false
   },
   {
-   "id": "SO",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.4916704595088959,
-   "nearest_in_id": "DUALA_2",
-   "nearest_out": 0.7246082425117493,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "MATBAT",
    "family": "Austronesian",
    "nearest_in": 0.5949037075042725,
@@ -4479,16 +4399,6 @@
    "nearest_out": 0.8194037079811096,
    "nearest_out_id": "DAZAGA",
    "nearest_out_family": "Saharan",
-   "flagged": false
-  },
-  {
-   "id": "MITUKU",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.5209242105484009,
-   "nearest_in_id": "SONGOLA_KASENGA",
-   "nearest_out": 0.7598304152488708,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
    "flagged": false
   },
   {
@@ -4769,6 +4679,16 @@
    "nearest_out": 0.800930380821228,
    "nearest_out_id": "PAPORA_2",
    "nearest_out_family": "Austronesian",
+   "flagged": false
+  },
+  {
+   "id": "MITUKU",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.5209242105484009,
+   "nearest_in_id": "SONGOLA_KASENGA",
+   "nearest_out": 0.7676079273223877,
+   "nearest_out_id": "NANGA_DAMA",
+   "nearest_out_family": "Dogon",
    "flagged": false
   },
   {
@@ -5292,16 +5212,6 @@
    "flagged": false
   },
   {
-   "id": "WESTERN_KELE_BUBI",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.4864661991596222,
-   "nearest_in_id": "SOUTHERN_NGOM_2",
-   "nearest_out": 0.7440611720085144,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "MBELIME",
    "family": "Atlantic-Congo",
    "nearest_in": 0.560782790184021,
@@ -5682,6 +5592,16 @@
    "flagged": false
   },
   {
+   "id": "PINGHUA_YONGZHOU_SHOUYAN",
+   "family": "Sino-Tibetan",
+   "nearest_in": 0.5281546711921692,
+   "nearest_in_id": "HUI_JIANDE",
+   "nearest_out": 0.7957273721694946,
+   "nearest_out_id": "LIUXIANG_BUNU",
+   "nearest_out_family": "Hmong-Mien",
+   "flagged": false
+  },
+  {
    "id": "JIRIW",
    "family": "Austronesian",
    "nearest_in": 0.5311894416809082,
@@ -5882,16 +5802,6 @@
    "flagged": false
   },
   {
-   "id": "ISONGO",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.5330631136894226,
-   "nearest_in_id": "MABALE",
-   "nearest_out": 0.8058984279632568,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "SYDNEY",
    "family": "Pama-Nyungan",
    "nearest_in": 0.5631881356239319,
@@ -6072,13 +5982,13 @@
    "flagged": false
   },
   {
-   "id": "MAKAA_2",
+   "id": "YAKA_axk",
    "family": "Atlantic-Congo",
-   "nearest_in": 0.5006619095802307,
-   "nearest_in_id": "KOL",
-   "nearest_out": 0.7766990661621094,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
+   "nearest_in": 0.5372381806373596,
+   "nearest_in_id": "DUMA_3",
+   "nearest_out": 0.8133608102798462,
+   "nearest_out_id": "PAPORA_2",
+   "nearest_out_family": "Austronesian",
    "flagged": false
   },
   {
@@ -6482,16 +6392,6 @@
    "flagged": false
   },
   {
-   "id": "MANDARIN_GUILIN_LONGSHENG",
-   "family": "Sino-Tibetan",
-   "nearest_in": 0.561957597732544,
-   "nearest_in_id": "PINGHUA_NANNING_TINGZI",
-   "nearest_out": 0.8460052609443665,
-   "nearest_out_id": "BUNA_SOUTHERN",
-   "nearest_out_family": "Nuclear Torricelli",
-   "flagged": false
-  },
-  {
    "id": "PAME_DE_JILIAPAN_1767",
    "family": "Otomanguean",
    "nearest_in": 0.5251294374465942,
@@ -6519,26 +6419,6 @@
    "nearest_out": 0.8411768674850464,
    "nearest_out_id": "PASHAI_NORTHWEST",
    "nearest_out_family": "Indo-European",
-   "flagged": false
-  },
-  {
-   "id": "YELA_KELA",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.5303671360015869,
-   "nearest_in_id": "C80_SHUWA",
-   "nearest_out": 0.8149170279502869,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
-   "id": "KOL",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.5006619095802307,
-   "nearest_in_id": "MAKAA_2",
-   "nearest_out": 0.785213053226471,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
    "flagged": false
   },
   {
@@ -6972,13 +6852,13 @@
    "flagged": false
   },
   {
-   "id": "SOUTHERN_NGOM_2",
+   "id": "ISONGO",
    "family": "Atlantic-Congo",
-   "nearest_in": 0.4864661991596222,
-   "nearest_in_id": "WESTERN_KELE_BUBI",
-   "nearest_out": 0.7801020741462708,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
+   "nearest_in": 0.5330631136894226,
+   "nearest_in_id": "MABALE",
+   "nearest_out": 0.8267227411270142,
+   "nearest_out_id": "KONO_3",
+   "nearest_out_family": "Mande",
    "flagged": false
   },
   {
@@ -6999,16 +6879,6 @@
    "nearest_out": 0.8128369450569153,
    "nearest_out_id": "BARGU",
    "nearest_out_family": "Atlantic-Congo",
-   "flagged": false
-  },
-  {
-   "id": "NOMAANDE_2",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.4868979752063751,
-   "nearest_in_id": "MANDI_CAMEROON",
-   "nearest_out": 0.7811826467514038,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
    "flagged": false
   },
   {
@@ -7149,6 +7019,16 @@
    "nearest_out": 0.807741641998291,
    "nearest_out_id": "BONDUM_DOM_2",
    "nearest_out_family": "Dogon",
+   "flagged": false
+  },
+  {
+   "id": "YASA",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.5453507304191589,
+   "nearest_in_id": "BENGA",
+   "nearest_out": 0.8426159620285034,
+   "nearest_out_id": "BHILI",
+   "nearest_out_family": "Indo-European",
    "flagged": false
   },
   {
@@ -7582,6 +7462,16 @@
    "flagged": false
   },
   {
+   "id": "NOMAANDE_2",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.4868979752063751,
+   "nearest_in_id": "MANDI_CAMEROON",
+   "nearest_out": 0.7927727699279785,
+   "nearest_out_id": "BHILI",
+   "nearest_out_family": "Indo-European",
+   "flagged": false
+  },
+  {
    "id": "KUTEB",
    "family": "Atlantic-Congo",
    "nearest_in": 0.5134164690971375,
@@ -7779,6 +7669,16 @@
    "nearest_out": 0.8229849338531494,
    "nearest_out_id": "BAMBARA_3",
    "nearest_out_family": "Mande",
+   "flagged": false
+  },
+  {
+   "id": "YELA_KELA",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.5303671360015869,
+   "nearest_in_id": "C80_SHUWA",
+   "nearest_out": 0.8405985832214355,
+   "nearest_out_id": "NISHING",
+   "nearest_out_family": "Sino-Tibetan",
    "flagged": false
   },
   {
@@ -8072,6 +7972,16 @@
    "flagged": false
   },
   {
+   "id": "BAKUNDU_BALUE",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.5146547555923462,
+   "nearest_in_id": "OROKO",
+   "nearest_out": 0.8299915194511414,
+   "nearest_out_id": "CINENI",
+   "nearest_out_family": "Afro-Asiatic",
+   "flagged": false
+  },
+  {
    "id": "KARA_PNG",
    "family": "Austronesian",
    "nearest_in": 0.4964674711227417,
@@ -8149,6 +8059,16 @@
    "nearest_out": 0.7918358445167542,
    "nearest_out_id": "PAPORA_2",
    "nearest_out_family": "Austronesian",
+   "flagged": false
+  },
+  {
+   "id": "MAKAA_2",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.5006619095802307,
+   "nearest_in_id": "KOL",
+   "nearest_out": 0.818047285079956,
+   "nearest_out_id": "BISA",
+   "nearest_out_family": "Mande",
    "flagged": false
   },
   {
@@ -8452,6 +8372,16 @@
    "flagged": false
   },
   {
+   "id": "KOL",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.5006619095802307,
+   "nearest_in_id": "MAKAA_2",
+   "nearest_out": 0.8241086006164551,
+   "nearest_out_id": "GODWARI",
+   "nearest_out_family": "Indo-European",
+   "flagged": false
+  },
+  {
    "id": "KOTUA",
    "family": "Austroasiatic",
    "nearest_in": 0.48716408014297485,
@@ -8722,6 +8652,16 @@
    "flagged": false
   },
   {
+   "id": "SO",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.4916704595088959,
+   "nearest_in_id": "DUALA_2",
+   "nearest_out": 0.8202256560325623,
+   "nearest_out_id": "PAPORA_2",
+   "nearest_out_family": "Austronesian",
+   "flagged": false
+  },
+  {
    "id": "UMIRAY_DUMAGET_AGTA",
    "family": "Austronesian",
    "nearest_in": 0.479367733001709,
@@ -8842,16 +8782,6 @@
    "flagged": false
   },
   {
-   "id": "NDE_BUKWOK",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.49961423873901367,
-   "nearest_in_id": "NDE_YULANA",
-   "nearest_out": 0.8308287858963013,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "YASWA",
    "family": "Atlantic-Congo",
    "nearest_in": 0.4821244478225708,
@@ -8879,16 +8809,6 @@
    "nearest_out": 0.846710205078125,
    "nearest_out_id": "BHILI",
    "nearest_out_family": "Indo-European",
-   "flagged": false
-  },
-  {
-   "id": "WUTUN",
-   "family": "Sino-Tibetan",
-   "nearest_in": 0.507206916809082,
-   "nearest_in_id": "DUNGAN",
-   "nearest_out": 0.8388639092445374,
-   "nearest_out_id": "BUNA_SOUTHERN",
-   "nearest_out_family": "Nuclear Torricelli",
    "flagged": false
   },
   {
@@ -8959,16 +8879,6 @@
    "nearest_out": 0.8233858346939087,
    "nearest_out_id": "TORO_SO_3",
    "nearest_out_family": "Dogon",
-   "flagged": false
-  },
-  {
-   "id": "TUKI",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.5144298076629639,
-   "nearest_in_id": "TUKI_2",
-   "nearest_out": 0.8481045365333557,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
    "flagged": false
   },
   {
@@ -9192,16 +9102,6 @@
    "flagged": false
   },
   {
-   "id": "NKUKOLI",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.47840726375579834,
-   "nearest_in_id": "LUBILA_2",
-   "nearest_out": 0.8183110356330872,
-   "nearest_out_id": "TAMASHEQ_2",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "LEMOLANG",
    "family": "Austronesian",
    "nearest_in": 0.4877886474132538,
@@ -9239,6 +9139,16 @@
    "nearest_out": 0.8152968287467957,
    "nearest_out_id": "FRAFRA_2",
    "nearest_out_family": "Atlantic-Congo",
+   "flagged": false
+  },
+  {
+   "id": "TUKI",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.5144298076629639,
+   "nearest_in_id": "TUKI_2",
+   "nearest_out": 0.8556327819824219,
+   "nearest_out_id": "SIRIO",
+   "nearest_out_family": "Yareban",
    "flagged": false
   },
   {
@@ -9289,6 +9199,16 @@
    "nearest_out": 0.8419947028160095,
    "nearest_out_id": "BHILALI",
    "nearest_out_family": "Indo-European",
+   "flagged": false
+  },
+  {
+   "id": "SOUTHERN_NGOM_2",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.4864661991596222,
+   "nearest_in_id": "WESTERN_KELE_BUBI",
+   "nearest_out": 0.829911470413208,
+   "nearest_out_id": "PAPORA_2",
+   "nearest_out_family": "Austronesian",
    "flagged": false
   },
   {
@@ -9402,16 +9322,6 @@
    "flagged": false
   },
   {
-   "id": "TAMASHEQ_2",
-   "family": "Afro-Asiatic",
-   "nearest_in": 0.3984980881214142,
-   "nearest_in_id": "HAUSA_4",
-   "nearest_out": 0.7439432740211487,
-   "nearest_out_id": "BAGIRMI_2",
-   "nearest_out_family": "Central Sudanic",
-   "flagged": false
-  },
-  {
    "id": "JOOLA_FOGNY_4",
    "family": "Atlantic-Congo",
    "nearest_in": 0.48631301522254944,
@@ -9419,6 +9329,16 @@
    "nearest_out": 0.8320119976997375,
    "nearest_out_id": "BAUZI",
    "nearest_out_family": "Geelvink Bay",
+   "flagged": false
+  },
+  {
+   "id": "WESTERN_KELE_BUBI",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.4864661991596222,
+   "nearest_in_id": "SOUTHERN_NGOM_2",
+   "nearest_out": 0.8325404524803162,
+   "nearest_out_id": "MAYA_SAMO",
+   "nearest_out_family": "Mande",
    "flagged": false
   },
   {
@@ -9439,6 +9359,16 @@
    "nearest_out": 0.8355056643486023,
    "nearest_out_id": "YANA",
    "nearest_out_family": "Yana",
+   "flagged": false
+  },
+  {
+   "id": "NKUKOLI",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.47840726375579834,
+   "nearest_in_id": "LUBILA_2",
+   "nearest_out": 0.8263512849807739,
+   "nearest_out_id": "MERWARI",
+   "nearest_out_family": "Indo-European",
    "flagged": false
   },
   {
@@ -9479,6 +9409,16 @@
    "nearest_out": 0.8245165944099426,
    "nearest_out_id": "PAPORA_2",
    "nearest_out_family": "Austronesian",
+   "flagged": false
+  },
+  {
+   "id": "NDE_BUKWOK",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.49961423873901367,
+   "nearest_in_id": "NDE_YULANA",
+   "nearest_out": 0.8489008545875549,
+   "nearest_out_id": "WE_SOUTHERN",
+   "nearest_out_family": "Kru",
    "flagged": false
   },
   {
@@ -9912,16 +9852,6 @@
    "flagged": false
   },
   {
-   "id": "NENGAYA",
-   "family": "Austronesian",
-   "nearest_in": 0.49291273951530457,
-   "nearest_in_id": "MATO",
-   "nearest_out": 0.8597415685653687,
-   "nearest_out_id": "TAMASHEQ_2",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "YUPIK_PACIFIC_GULF",
    "family": "Eskimo-Aleut",
    "nearest_in": 0.4846732020378113,
@@ -9929,6 +9859,16 @@
    "nearest_out": 0.8530693650245667,
    "nearest_out_id": "PAPORA_2",
    "nearest_out_family": "Austronesian",
+   "flagged": false
+  },
+  {
+   "id": "NENGAYA",
+   "family": "Austronesian",
+   "nearest_in": 0.49291273951530457,
+   "nearest_in_id": "MATO",
+   "nearest_out": 0.8617151975631714,
+   "nearest_out_id": "KUKATJA",
+   "nearest_out_family": "Pama-Nyungan",
    "flagged": false
   },
   {
@@ -10052,16 +9992,6 @@
    "flagged": false
   },
   {
-   "id": "MALOL",
-   "family": "Austronesian",
-   "nearest_in": 0.4785800874233246,
-   "nearest_in_id": "SISSANO_2",
-   "nearest_out": 0.8565959334373474,
-   "nearest_out_id": "TAMASHEQ_2",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "ZAPOTEC_SAN_LUCAS_QUIAVINI",
    "family": "Otomanguean",
    "nearest_in": 0.4757477939128876,
@@ -10132,6 +10062,16 @@
    "flagged": false
   },
   {
+   "id": "MALOL",
+   "family": "Austronesian",
+   "nearest_in": 0.4785800874233246,
+   "nearest_in_id": "SISSANO_2",
+   "nearest_out": 0.8631708025932312,
+   "nearest_out_id": "YOM",
+   "nearest_out_family": "Atlantic-Congo",
+   "flagged": false
+  },
+  {
    "id": "C_YUPIK",
    "family": "Eskimo-Aleut",
    "nearest_in": 0.4846732020378113,
@@ -10139,16 +10079,6 @@
    "nearest_out": 0.8699976205825806,
    "nearest_out_id": "NZADI_4",
    "nearest_out_family": "Atlantic-Congo",
-   "flagged": false
-  },
-  {
-   "id": "SERER_SINE",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.4371205270290375,
-   "nearest_in_id": "SEREER",
-   "nearest_out": 0.8229851722717285,
-   "nearest_out_id": "PAPIAMENTO",
-   "nearest_out_family": "Indo-European",
    "flagged": false
   },
   {
@@ -10189,6 +10119,16 @@
    "nearest_out": 0.7829042673110962,
    "nearest_out_id": "WORODUGUKAKAN",
    "nearest_out_family": "Mande",
+   "flagged": false
+  },
+  {
+   "id": "SERER_SINE",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.4371205270290375,
+   "nearest_in_id": "SEREER",
+   "nearest_out": 0.8333600163459778,
+   "nearest_out_id": "DAZAGA",
+   "nearest_out_family": "Saharan",
    "flagged": false
   },
   {
@@ -10356,9 +10296,9 @@
    "family": "Atlantic-Congo",
    "nearest_in": 0.37995457649230957,
    "nearest_in_id": "BAYNUNK_GUBHER",
-   "nearest_out": 0.8408540487289429,
-   "nearest_out_id": "NICARAGUA_CREOLE_ENGLISH",
-   "nearest_out_family": "Indo-European",
+   "nearest_out": 0.8461340069770813,
+   "nearest_out_id": "NANTICOKE",
+   "nearest_out_family": "Algic",
    "flagged": false
   },
   {
@@ -10382,16 +10322,6 @@
    "flagged": false
   },
   {
-   "id": "RONGMEI",
-   "family": "Sino-Tibetan",
-   "nearest_in": 0.3116643726825714,
-   "nearest_in_id": "KABUI_RONGMEI",
-   "nearest_out": 0.7893381118774414,
-   "nearest_out_id": "TAMASHEQ_2",
-   "nearest_out_family": "Afro-Asiatic",
-   "flagged": false
-  },
-  {
    "id": "TUHUA_CHENZHOU_LIYUAN",
    "family": "Sino-Tibetan",
    "nearest_in": 0.348014235496521,
@@ -10409,16 +10339,6 @@
    "nearest_out": 0.8054865598678589,
    "nearest_out_id": "PAPORA_2",
    "nearest_out_family": "Austronesian",
-   "flagged": false
-  },
-  {
-   "id": "SEKIYANI",
-   "family": "Atlantic-Congo",
-   "nearest_in": 0.29570692777633667,
-   "nearest_in_id": "SEKI",
-   "nearest_out": 0.7830569744110107,
-   "nearest_out_id": "BALDEMU",
-   "nearest_out_family": "Afro-Asiatic",
    "flagged": false
   },
   {
@@ -10449,6 +10369,16 @@
    "nearest_out": 0.7808489799499512,
    "nearest_out_id": "HAMTAI",
    "nearest_out_family": "Angan",
+   "flagged": false
+  },
+  {
+   "id": "RONGMEI",
+   "family": "Sino-Tibetan",
+   "nearest_in": 0.3116643726825714,
+   "nearest_in_id": "KABUI_RONGMEI",
+   "nearest_out": 0.8070892095565796,
+   "nearest_out_id": "ROLOM",
+   "nearest_out_family": "Austroasiatic",
    "flagged": false
   },
   {
@@ -10522,6 +10452,26 @@
    "flagged": false
   },
   {
+   "id": "MIN_NANPING",
+   "family": "Sino-Tibetan",
+   "nearest_in": 0.3195207417011261,
+   "nearest_in_id": "MANDARIN_LAIBIN_XIANGZHOU",
+   "nearest_out": 0.8403767943382263,
+   "nearest_out_id": "PAPORA_2",
+   "nearest_out_family": "Austronesian",
+   "flagged": false
+  },
+  {
+   "id": "BENGA_2",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.29543331265449524,
+   "nearest_in_id": "BENGA",
+   "nearest_out": 0.8223807215690613,
+   "nearest_out_id": "PAPORA_2",
+   "nearest_out_family": "Austronesian",
+   "flagged": false
+  },
+  {
    "id": "OLKOLA",
    "family": "Pama-Nyungan",
    "nearest_in": 0.34169745445251465,
@@ -10539,6 +10489,16 @@
    "nearest_out": 0.7992151379585266,
    "nearest_out_id": "PAPORA_2",
    "nearest_out_family": "Austronesian",
+   "flagged": false
+  },
+  {
+   "id": "SEKIYANI",
+   "family": "Atlantic-Congo",
+   "nearest_in": 0.29570692777633667,
+   "nearest_in_id": "SEKI",
+   "nearest_out": 0.8260113000869751,
+   "nearest_out_id": "MANO_MANN_2",
+   "nearest_out_family": "Mande",
    "flagged": false
   },
   {
@@ -10712,23 +10672,13 @@
    "flagged": false
   },
   {
-   "id": "ATAYAL_TAIWAN_YILAN",
-   "family": "Austronesian",
-   "nearest_in": 0.1178363785147667,
-   "nearest_in_id": "NIUAFOOU",
-   "nearest_out": 0.8417240381240845,
-   "nearest_out_id": "NGWE",
-   "nearest_out_family": "Atlantic-Congo",
-   "flagged": false
-  },
-  {
    "id": "SERA_2",
    "family": "Austronesian",
    "nearest_in": 0.09754971414804459,
    "nearest_in_id": "SERA",
-   "nearest_out": 0.8562308549880981,
-   "nearest_out_id": "TAMASHEQ_2",
-   "nearest_out_family": "Afro-Asiatic",
+   "nearest_out": 0.8621501922607422,
+   "nearest_out_id": "VAI_3",
+   "nearest_out_family": "Mande",
    "flagged": false
   },
   {
@@ -10739,26 +10689,6 @@
    "nearest_out": 0.8005061745643616,
    "nearest_out_id": "TEMNE_4",
    "nearest_out_family": "Atlantic-Congo",
-   "flagged": false
-  },
-  {
-   "id": "XIANG_YONGZHOU_SHOUYAN",
-   "family": "Sino-Tibetan",
-   "nearest_in": 0.0,
-   "nearest_in_id": "PINGHUA_YONGZHOU_SHOUYAN",
-   "nearest_out": 0.7957273721694946,
-   "nearest_out_id": "LIUXIANG_BUNU",
-   "nearest_out_family": "Hmong-Mien",
-   "flagged": false
-  },
-  {
-   "id": "PINGHUA_YONGZHOU_SHOUYAN",
-   "family": "Sino-Tibetan",
-   "nearest_in": 0.0,
-   "nearest_in_id": "XIANG_YONGZHOU_SHOUYAN",
-   "nearest_out": 0.7957273721694946,
-   "nearest_out_id": "LIUXIANG_BUNU",
-   "nearest_out_family": "Hmong-Mien",
    "flagged": false
   }
  ]
