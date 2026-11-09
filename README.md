@@ -514,8 +514,16 @@ edge of the same-language band), Japanese against itself 0.293.
 
 `config/exclusions.tsv` (`id<TAB>reason`) lists doculects left out of every script. `scripts/audit.py` ranks
 doculects by how much removing them lowers their lineage's D_max (also flags thin coverage) and writes
-`results/audit.csv`; it never excludes anything itself. Currently excluded: `AYNU` (Turkic list with heavy
-Persian replacement; under LDND, Turkic D_max 1.304 → 1.281). Review the audit, edit the file, rerun.
+`results/audit.csv`; it never excludes anything itself. Review the audit, edit the file, rerun. Currently excluded
+(reasons and evidence in the file):
+
+- mixed languages: `AYNU` (Turkic–Persian), `MICHIF` (French–Cree), `WUTUN`, `DAO_SICHUAN_YAJIANG` (Daohua) and
+  `TANGWANG_GANSU_TANGWANG` (Sinitic with Tibetan or Mongolic), `ANGLOROMANI`, `INNER_MBUGU_BUMBULI` (Ma'a);
+- data errors found by `misplaced.py` and the audit's contact check: `ATAYAL_TAIWAN_YILAN` (a Polynesian list),
+  `TAMASHEQ_2` (largely Hausa), `BALDEMU` (a Bantu list), `MIN_FUZHOU_QINJIANG` (Standard Mandarin),
+  `MANDARIN_GUILIN_LONGSHENG` (likely Pinghua);
+- a duplicate: `XIANG_YONGZHOU_SHOUYAN` is word-for-word `PINGHUA_YONGZHOU_SHOUYAN`, kept under Pinghua, the closer
+  group without it.
 The leave-one-out flag is half a lineage (D_max falls by at least 0.5 without the doculect). 51 doculects are flagged
 on the current run (by leave-one-out, distance or thin coverage; 13 in Dogon, 5 in Pama-Nyungan). Many are lone
 witnesses of a deep branch rather than bad data: Cherokee, for instance, is 0.92 of a lineage on its own, because

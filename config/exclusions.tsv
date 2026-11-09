@@ -1,2 +1,14 @@
 id	reason
 AYNU	Mixed Turkic-Iranic lect (classified as Turkic by Glottolog, contested): matches Western Farsi on 9 of 33 shared items vs Uyghur on 2; LDND ~1 to nearly every other Turkic list
+ATAYAL_TAIWAN_YILAN	Data error: a Polynesian list (au 'I', koe 'you', ika 'fish', mata 'eye', nifo 'tooth'), 0.12 from Niuafo'ou and 0.75 from the rest of Formosan (misplaced.py)
+TAMASHEQ_2	Data error: largely Hausa (kifi 'fish', kunne 'ear', hanci 'nose', hakori 'tooth'), 0.42 from Hausa, closer to Chadic than to Berber (misplaced.py)
+BALDEMU	Data error: a Bantu list (noun-class prefixes: di-to 'ear', di-so 'eye', ma-kia 'blood', e-kobo 'skin'), 0.21 from Oroko (KUNDU); 0.85 from the nearest Chadic list (audit.py contact check)
+MIN_FUZHOU_QINJIANG	Data error: Standard Mandarin, not Eastern Min (wo 'I', nimen, women, xie 'blood', gutou 'bone', yanjing 'eye'); 0.30 from Mandarin lists, 0.53 from Min (misplaced.py)
+MANDARIN_GUILIN_LONGSHENG	Likely mislabel: a local Pinghua/tuhua variety (nga 'I', lhui 'water'); its nearest Sinitic lists are all Pinghua (0.58) and it is 0.70 from the median Mandarin list (misplaced.py)
+XIANG_YONGZHOU_SHOUYAN	Duplicate: word-for-word identical to PINGHUA_YONGZHOU_SHOUYAN (different transcriber); kept under Pinghua, which is closer without the twin (3 nearest 0.538 vs Xiang 0.584)
+MICHIF	Mixed language (French noun phrases, Cree verb phrases); closer to a French creole (0.59) than to Cree (0.76)
+WUTUN	Mixed language: Sinitic restructured by Amdo Tibetan and Mongolic
+DAO_SICHUAN_YAJIANG	Mixed language: Daohua, Chinese-Tibetan mixed language of Yajiang, Sichuan
+TANGWANG_GANSU_TANGWANG	Mixed language: Tangwang, Sinitic lexicon with Dongxiang (Mongolic) grammar
+ANGLOROMANI	Mixed language: Angloromani, Romani lexicon in English grammar
+INNER_MBUGU_BUMBULI	Mixed language: Inner Mbugu (Ma'a), largely Cushitic lexicon in Bantu grammar (Normal Mbugu is kept)
