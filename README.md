@@ -522,6 +522,16 @@ witnesses of a deep branch rather than bad data: Cherokee, for instance, is 0.92
 its nearest Northern Iroquoian list (Mohawk, 0.895) is almost at the detection limit at 40 words.
 A doculect with no weight in the D_max optimum cannot lower it, so only weighted candidates get a leave-one-out solve.
 
+`scripts/misplaced.py` looks one level down: a doculect is flagged when a *sibling* group of the same family
+(Pinghua for a Mandarin list, Chadic for a Berber one) is closer than its own, by the mean distance to the 3
+nearest lists in each (`results/misplaced.{csv,json}`; its own group is the smallest lineage holding it). 50 of the
+3,210 doculects that have a sibling group are flagged. At the top are clear data errors: `ATAYAL_TAIWAN_YILAN` is
+a Polynesian list (*au* 'I', *ika* 'fish', *mata* 'eye'; 0.135 from Niuafo'ou, 0.75 from the rest of Formosan), and
+`TAMASHEQ_2` is largely Hausa (*kifi* 'fish', *kunne* 'ear', *hanci* 'nose'; 0.42 from Hausa).
+`MANDARIN_GUILIN_LONGSHENG` (nearest lists all Pinghua) is a likely mislabel. Most of the rest are real transitional
+varieties: Min Nanping (a Mandarin speech island), Xuancheng Wu and Jin next to Mandarin, the Hakka–Gan border, the
+Yongzhou *tuhua* between Xiang and Pinghua, and Arabic dialects closer to another Arabic group than their own.
+
 `scripts/loans.py` adds a contact check: for each doculect, how much closer is it to a *neighbouring unrelated
 language* (within 2000 km) than its own relatives are (`gap`, in LDND units; this check stays on plain LDND,
 since its thresholds were set in those units)? Real contact cases stand out
