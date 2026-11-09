@@ -522,6 +522,9 @@ doculects by how much removing them lowers their lineage's D_max (also flags thi
 - data errors found by `misplaced.py` and the audit's contact check: `ATAYAL_TAIWAN_YILAN` (a Polynesian list),
   `TAMASHEQ_2` (largely Hausa), `BALDEMU` (a Bantu list), `MIN_FUZHOU_QINJIANG` (Standard Mandarin),
   `MANDARIN_GUILIN_LONGSHENG` (likely Pinghua);
+- creoles and pidgins (73 lists): English-, French-, Iberian-, Dutch-, Arabic-, Malay- and other-lexified creoles,
+  pidgins and creolized vehicular languages (Sango, Kituba, Nagamese). Riverain Sango (the Ngbandi variety), Normal
+  Mbugu and Afrikaans are kept;
 - a duplicate: `XIANG_YONGZHOU_SHOUYAN` is word-for-word `PINGHUA_YONGZHOU_SHOUYAN`, kept under Pinghua, the closer
   group without it.
 The leave-one-out flag is half a lineage (D_max falls by at least 0.5 without the doculect). 51 doculects are flagged
