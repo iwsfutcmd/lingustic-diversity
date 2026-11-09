@@ -7,15 +7,15 @@ iecor,Indo-Aryan,16,1.649,1.687,0.599,0.615
 iecor,Iranian,16,1.576,1.792,0.556,0.667
 iecor,Balto-Slavic,18,1.109,1.546,0.309,0.508
 abvd,Tai-Kadai,19,1.581,2.023,0.556,0.738
-abvd,Austronesian,110,2.154,2.386,0.683,0.812
-abvd,Oceanic,116,2.110,2.422,0.685,0.826
+abvd,Austronesian,110,2.132,2.373,0.680,0.811
+abvd,Oceanic,114,2.115,2.414,0.688,0.830
 abvd,Polynesian,33,0.818,1.247,0.250,0.355
 abvd,Kam-Tai,12,1.137,1.598,0.389,0.583
-abvd,Malayo-Polynesian,110,2.165,2.419,0.693,0.825
+abvd,Malayo-Polynesian,104,2.168,2.411,0.685,0.823
 abvd,Formosan,16,1.755,1.997,0.653,0.774
-abvd,Eastern Malayo-Polynesian,111,2.119,2.421,0.695,0.831
+abvd,Eastern Malayo-Polynesian,110,2.141,2.431,0.694,0.834
 abvd,Greater Central Philippine,43,1.285,1.660,0.423,0.515
-abvd,Malayic,14,0.534,0.986,0.186,0.343
+abvd,Malayic,13,0.531,0.980,0.188,0.346
 abvd,Celebic,21,1.021,1.556,0.257,0.515
 bowernpny,Pama-Nyungan,100,2.591,2.451,0.961,0.854
 sagartst,Sino-Tibetan,31,2.139,2.221,0.802,0.833

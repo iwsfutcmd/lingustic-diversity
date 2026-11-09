@@ -26,27 +26,27 @@
    ]
   },
   "abvd": {
-   "languages": 827,
+   "languages": 826,
    "pairs": 20000,
    "concepts": 210,
    "rho_pmi": [
-    0.5283731061971282,
-    14652
+    0.5310226435568719,
+    14708
    ],
    "rho_ldnd": [
-    0.4924253676321765,
-    14652
+    0.4945184823513396,
+    14708
    ],
    "rho_pmi_40": [
-    0.6499324990345487,
-    10749
+    0.6502813600331858,
+    10883
    ],
    "rho_ldnd_40": [
-    0.6012704050571707,
-    10749
+    0.5983326566159679,
+    10883
    ],
    "rho_lineages": [
-    0.9090909090909091,
+    0.9454545454545454,
     11
    ]
   },
@@ -185,20 +185,20 @@
    "pairs": 20000,
    "concepts": 100,
    "rho_pmi": [
-    0.6611410780657022,
-    19852
+    0.6622231226867275,
+    19858
    ],
    "rho_ldnd": [
-    0.6467026130718802,
-    19852
+    0.6484393858203535,
+    19858
    ],
    "rho_pmi_40": [
-    0.675432874439288,
-    19717
+    0.6757206608681907,
+    19720
    ],
    "rho_ldnd_40": [
-    0.6499170891706308,
-    19717
+    0.6498971449231,
+    19720
    ]
   },
   "utoaztecan": {
@@ -300,19 +300,19 @@
    "dataset": "abvd",
    "lineage": "Austronesian",
    "languages": 110,
-   "spread_cognate": 2.154362913366064,
-   "spread_pmi": 2.3864975886507622,
-   "mean_cognate": 0.6825947021020474,
-   "mean_pmi": 0.8123831954894213
+   "spread_cognate": 2.1324392249780373,
+   "spread_pmi": 2.3728559759348133,
+   "mean_cognate": 0.6804359985607539,
+   "mean_pmi": 0.8111666623729781
   },
   {
    "dataset": "abvd",
    "lineage": "Oceanic",
-   "languages": 116,
-   "spread_cognate": 2.109604647161179,
-   "spread_pmi": 2.4223361894268525,
-   "mean_cognate": 0.6849426734486551,
-   "mean_pmi": 0.8262188794557703
+   "languages": 114,
+   "spread_cognate": 2.1149468805438483,
+   "spread_pmi": 2.4142781772611768,
+   "mean_cognate": 0.6880144570109266,
+   "mean_pmi": 0.8302269828715618
   },
   {
    "dataset": "abvd",
@@ -335,11 +335,11 @@
   {
    "dataset": "abvd",
    "lineage": "Malayo-Polynesian",
-   "languages": 110,
-   "spread_cognate": 2.164552721199816,
-   "spread_pmi": 2.4185166164069622,
-   "mean_cognate": 0.6930460114539396,
-   "mean_pmi": 0.824594647824466
+   "languages": 104,
+   "spread_cognate": 2.168448377939127,
+   "spread_pmi": 2.4109653387592838,
+   "mean_cognate": 0.6852828659524061,
+   "mean_pmi": 0.8233292892768623
   },
   {
    "dataset": "abvd",
@@ -353,11 +353,11 @@
   {
    "dataset": "abvd",
    "lineage": "Eastern Malayo-Polynesian",
-   "languages": 111,
-   "spread_cognate": 2.1190391717262984,
-   "spread_pmi": 2.421324230269381,
-   "mean_cognate": 0.6952015045375527,
-   "mean_pmi": 0.831325429641351
+   "languages": 110,
+   "spread_cognate": 2.1413468538021396,
+   "spread_pmi": 2.431320700155487,
+   "mean_cognate": 0.6938990479728963,
+   "mean_pmi": 0.8344394095471941
   },
   {
    "dataset": "abvd",
@@ -371,11 +371,11 @@
   {
    "dataset": "abvd",
    "lineage": "Malayic",
-   "languages": 14,
-   "spread_cognate": 0.5336947113428284,
-   "spread_pmi": 0.9856521769240166,
-   "mean_cognate": 0.18596457242587527,
-   "mean_pmi": 0.3430109242243426
+   "languages": 13,
+   "spread_cognate": 0.5307749686810053,
+   "spread_pmi": 0.9797713844849584,
+   "mean_cognate": 0.18806037190426209,
+   "mean_pmi": 0.3455528360910905
   },
   {
    "dataset": "abvd",
@@ -532,7 +532,7 @@
   }
  ],
  "pooled_rho_lineages": [
-  0.9727995110024449,
+  0.9749388753056234,
   34
  ]
 }
