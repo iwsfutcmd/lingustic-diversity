@@ -45,6 +45,8 @@ STEPS = [
                      "--cap", "cap50=results/cross_family_cap50.json"],
      ["scripts/relatedness.py", "results/cross_family.json", "results/cross_family_cap10.json",
       "results/cross_family_cap50.json"], ["results/relatedness.json"]),
+    ("family_pmi", ["scripts/family_pmi.py"], CODE + ASJP + PMI + ["scripts/family_pmi.py", "results/summary.json",
+                                                                   "results/samples.json"], ["results/family_pmi.json"]),
     ("widest", ["scripts/widest.py"], CODE + ASJP + PMI + ["scripts/widest.py", "results/summary.json", "results/samples.json"],
      ["results/widest.json", "results/contact.json"]),
     ("audit", ["scripts/audit.py"], CODE + ASJP + PMI + ["scripts/audit.py", "results/summary.json", "results/samples.json",

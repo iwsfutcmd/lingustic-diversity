@@ -349,6 +349,35 @@ families (s ≤ 0.03), and neither do the Nostratic-type, Uralo-Siberian or Dene
 than the 40-item lists reach, which is a statement about the data, not against the proposals. False positives
 happen too: Koreanic–Burushaski (no contact, 4,700 km) has s = 0.15, p = 0.02.
 
+## Family-specific sound correspondences (sensitivity check)
+
+PMI-LDND scores alignments with segment weights learned across all of ASJP, so it discounts correspondences common
+worldwide but still charges for ones regular in one group only. `scripts/family_pmi.py` learns weights inside each
+group (same procedure, `isodiv.pmi.fit`, on the group's own doculect pairs) and recomputes D_max on the same lists
+(`results/family_pmi.{json,csv}`). It assumes the group is one family, so it is for internal diversity only, never
+for testing relatedness, and it reuses the kernel anchors calibrated on the global distances.
+
+Trained and scored on the same word pairs the group's weights look better than they are (German dialects −17%,
+Quechua −5%), so the comparison that counts is held out: weights learned on a random half of the concepts, D_max on
+the other half, mean of 4 halves. Scoring each group with another group's weights is also lower than with the global
+weights, but less so than with its own: part of the drop is a generic leniency of weights learned from close
+relatives.
+
+| group | own weights vs global, held out |
+|---|---|
+| Turkic, Romance, Germanic | −13% to −16% |
+| Arabic, Japonic | −11% |
+| German dialects (12 lists) | −5% to −12% (noisy) |
+| Slavic, Min | −7% |
+| Quechua, Yue, Mandarin, Sinitic | −2% to −4% |
+| Wu | about 0 (−7% to +5%) |
+
+Family correspondences take 10–15% off the European families, Turkic and Arabic, whose varieties share roots
+reshaped by sound change, and almost nothing off the Chinese groups and Quechua. For Chinese the differences are
+mostly different roots (and tone, which ASJPcode drops anyway); for Quechua the roots are shared and the regular
+changes were already cheap. Rankings within the chart groups barely change; the Chinese groups move up relative to
+Romance and Germanic.
+
 ## Supplements: filling gaps in key lists
 
 `config/supplements.tsv` fills concepts missing from an ASJP list from an expert-coded source. It never overrides an
