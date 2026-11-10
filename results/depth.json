@@ -1,7 +1,7 @@
 {
   "calibration": "depth_calibration.json",
-  "horizon_d": 0.9411171561960424,
-  "horizon_depth": 1.5770853505230689,
+  "horizon_d": 0.9408028512338871,
+  "horizon_depth": 1.577049462978614,
   "lineages": [
     {
       "lineage": "Basque",
@@ -519,6 +519,27 @@
       ]
     },
     {
+      "lineage": "Yue",
+      "lists": 89,
+      "depth": 0.2908196862147433,
+      "retention": 0.7476504775522751,
+      "median_d_across_root": 0.5140440464019775,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        86,
+        3
+      ],
+      "lone_branch": "",
+      "depth_2": 0.2908196862147433,
+      "retention_2": 0.7476504775522751,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "YUE_HECHI_YIZHOU",
+        "YUE_WUZHOU_CANGWU_1",
+        "YUE_YULIN"
+      ]
+    },
+    {
       "lineage": "Japonic",
       "lists": 33,
       "depth": 0.29894854588860426,
@@ -697,6 +718,27 @@
       ]
     },
     {
+      "lineage": "Gan",
+      "lists": 21,
+      "depth": 0.34840085148203065,
+      "retention": 0.7058158921544728,
+      "median_d_across_root": 0.5614596605300903,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        18,
+        3
+      ],
+      "lone_branch": "",
+      "depth_2": 0.34840085148203065,
+      "retention_2": 0.7058158921544728,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "GAN_ANQING_SUSONG",
+        "GAN_LEIYANG",
+        "GAN_XIANNING"
+      ]
+    },
+    {
       "lineage": "Germanic",
       "lists": 60,
       "depth": 0.3580173121657029,
@@ -817,25 +859,6 @@
       "smaller_branch": [
         "SOQOTRI",
         "SOQOTRI_2"
-      ]
-    },
-    {
-      "lineage": "Yue",
-      "lists": 90,
-      "depth": 0.4097662803999171,
-      "retention": 0.6638053763346865,
-      "median_d_across_root": 0.5922099947929382,
-      "beyond_horizon": false,
-      "root_split_sizes": [
-        89,
-        1
-      ],
-      "lone_branch": "YUE_GUILIN_LIANGJIANG",
-      "depth_2": 0.2908196862147433,
-      "retention_2": 0.7476504775522751,
-      "beyond_horizon_2": false,
-      "smaller_branch": [
-        "YUE_GUILIN_LIANGJIANG"
       ]
     },
     {
@@ -985,25 +1008,6 @@
         "LUMUN_2",
         "TOCHO",
         "TOCHO_2"
-      ]
-    },
-    {
-      "lineage": "Gan",
-      "lists": 22,
-      "depth": 0.5410433786100445,
-      "retention": 0.5821405424033455,
-      "median_d_across_root": 0.6539579629898071,
-      "beyond_horizon": false,
-      "root_split_sizes": [
-        21,
-        1
-      ],
-      "lone_branch": "GAN_SHAOWU",
-      "depth_2": 0.34840085148203065,
-      "retention_2": 0.7058158921544728,
-      "beyond_horizon_2": false,
-      "smaller_branch": [
-        "GAN_SHAOWU"
       ]
     },
     {
@@ -1321,18 +1325,18 @@
     },
     {
       "lineage": "Sinitic",
-      "lists": 482,
-      "depth": 0.8438601945725428,
-      "retention": 0.4300472491561741,
-      "median_d_across_root": 0.7290955185890198,
+      "lists": 485,
+      "depth": 0.8444475241793633,
+      "retention": 0.42979474383359745,
+      "median_d_across_root": 0.7292412519454956,
       "beyond_horizon": false,
       "root_split_sizes": [
-        461,
+        464,
         21
       ],
       "lone_branch": "",
-      "depth_2": 0.8438601945725428,
-      "retention_2": 0.4300472491561741,
+      "depth_2": 0.8444475241793633,
+      "retention_2": 0.42979474383359745,
       "beyond_horizon_2": false,
       "smaller_branch": [
         "AMOY_MINNAN_CHINESE",
@@ -2232,7 +2236,7 @@
       ]
     },
     {
-      "lineage": "Tai-Kadai",
+      "lineage": "Kra-Dai",
       "lists": 214,
       "depth": 1.4073907638852516,
       "retention": 0.24478114242585433,
@@ -2366,18 +2370,18 @@
     },
     {
       "lineage": "Sino-Tibetan",
-      "lists": 880,
-      "depth": 1.5632230688255022,
-      "retention": 0.20945987847378036,
-      "median_d_across_root": 0.9224512577056885,
+      "lists": 883,
+      "depth": 1.5630318897606332,
+      "retention": 0.20949992664553857,
+      "median_d_across_root": 0.9224107265472412,
       "beyond_horizon": false,
       "root_split_sizes": [
-        505,
+        508,
         375
       ],
       "lone_branch": "",
-      "depth_2": 1.5632230688255022,
-      "retention_2": 0.20945987847378036,
+      "depth_2": 1.5630318897606332,
+      "retention_2": 0.20949992664553857,
       "beyond_horizon_2": false,
       "smaller_branch": [
         "ACHANG",
