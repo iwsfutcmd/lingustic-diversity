@@ -1,0 +1,1698 @@
+{
+  "Abkhaz-Adyge": {
+    "family": "Abkhaz-Adyge",
+    "members": 7,
+    "tau": 1.2952789877786612,
+    "depth": 0.7261785391669876,
+    "beyond_horizon": false,
+    "split": [
+      4,
+      3
+    ],
+    "set_by": []
+  },
+  "Afro-Asiatic": {
+    "family": "Afro-Asiatic",
+    "members": 421,
+    "tau": 1.5593795897314884,
+    "depth": 0.7897335177728907,
+    "beyond_horizon": false,
+    "split": [
+      341,
+      80
+    ],
+    "set_by": []
+  },
+  "Semitic": {
+    "family": "Afro-Asiatic",
+    "members": 99,
+    "tau": 1.2421413571904414,
+    "depth": 0.7112347940374246,
+    "beyond_horizon": false,
+    "split": [
+      83,
+      16
+    ],
+    "set_by": []
+  },
+  "Arabic": {
+    "family": "Afro-Asiatic",
+    "members": 33,
+    "tau": 0.34949302555561346,
+    "depth": 0.2949545608526756,
+    "beyond_horizon": false,
+    "split": [
+      31,
+      2
+    ],
+    "set_by": [
+      "MALTESE",
+      "MALTESE_ARABIC"
+    ]
+  },
+  "Chadic": {
+    "family": "Afro-Asiatic",
+    "members": 203,
+    "tau": 1.4839455452448285,
+    "depth": 0.7732586968879506,
+    "beyond_horizon": false,
+    "split": [
+      124,
+      79
+    ],
+    "set_by": []
+  },
+  "Cushitic": {
+    "family": "Afro-Asiatic",
+    "members": 80,
+    "tau": 1.534713227527903,
+    "depth": 0.7844825132088558,
+    "beyond_horizon": false,
+    "split": [
+      72,
+      8
+    ],
+    "set_by": []
+  },
+  "Berber": {
+    "family": "Afro-Asiatic",
+    "members": 35,
+    "tau": 0.6705924012100881,
+    "depth": 0.48859446922258065,
+    "beyond_horizon": false,
+    "split": [
+      33,
+      2
+    ],
+    "set_by": [
+      "ZENAGA",
+      "ZENAGA_2"
+    ]
+  },
+  "East Semitic": {
+    "family": "Afro-Asiatic",
+    "members": 3,
+    "tau": 0.11237059467733941,
+    "depth": 0.10628700915615708,
+    "beyond_horizon": false,
+    "split": [
+      2,
+      1
+    ],
+    "set_by": [
+      "AKKADIAN_3"
+    ]
+  },
+  "West Semitic": {
+    "family": "Afro-Asiatic",
+    "members": 96,
+    "tau": 1.2421413571904414,
+    "depth": 0.7112347940374246,
+    "beyond_horizon": false,
+    "split": [
+      80,
+      16
+    ],
+    "set_by": []
+  },
+  "Central Semitic": {
+    "family": "Afro-Asiatic",
+    "members": 63,
+    "tau": 0.8465395521002221,
+    "depth": 0.571103458910543,
+    "beyond_horizon": false,
+    "split": [
+      41,
+      22
+    ],
+    "set_by": []
+  },
+  "Northwest Semitic": {
+    "family": "Afro-Asiatic",
+    "members": 26,
+    "tau": 0.8465395521002221,
+    "depth": 0.571103458910543,
+    "beyond_horizon": false,
+    "split": [
+      22,
+      4
+    ],
+    "set_by": []
+  },
+  "Aramaic": {
+    "family": "Afro-Asiatic",
+    "members": 21,
+    "tau": 0.5210886002609442,
+    "depth": 0.40612629511280973,
+    "beyond_horizon": false,
+    "split": [
+      20,
+      1
+    ],
+    "set_by": [
+      "WESTERN_NEO_ARAMAIC"
+    ]
+  },
+  "North-Eastern Neo-Aramaic": {
+    "family": "Afro-Asiatic",
+    "members": 9,
+    "tau": 0.15999715465600167,
+    "depth": 0.14785378638812352,
+    "beyond_horizon": false,
+    "split": [
+      5,
+      4
+    ],
+    "set_by": []
+  },
+  "Canaanite": {
+    "family": "Afro-Asiatic",
+    "members": 4,
+    "tau": 0.3530744290649497,
+    "depth": 0.29747509684033635,
+    "beyond_horizon": false,
+    "split": [
+      3,
+      1
+    ],
+    "set_by": [
+      "UGARITIC"
+    ]
+  },
+  "South Semitic": {
+    "family": "Afro-Asiatic",
+    "members": 33,
+    "tau": 1.2421413571904414,
+    "depth": 0.7112347940374246,
+    "beyond_horizon": false,
+    "split": [
+      17,
+      16
+    ],
+    "set_by": []
+  },
+  "Ethiosemitic": {
+    "family": "Afro-Asiatic",
+    "members": 25,
+    "tau": 1.2421413571904414,
+    "depth": 0.7112347940374246,
+    "beyond_horizon": false,
+    "split": [
+      16,
+      9
+    ],
+    "set_by": []
+  },
+  "North Ethiopic": {
+    "family": "Afro-Asiatic",
+    "members": 9,
+    "tau": 0.2444953291672543,
+    "depth": 0.2169003539157075,
+    "beyond_horizon": false,
+    "split": [
+      7,
+      2
+    ],
+    "set_by": [
+      "TIGRE",
+      "TIGRE_2"
+    ]
+  },
+  "South Ethiopic": {
+    "family": "Afro-Asiatic",
+    "members": 16,
+    "tau": 0.8150529264248848,
+    "depth": 0.5573840993358083,
+    "beyond_horizon": false,
+    "split": [
+      14,
+      2
+    ],
+    "set_by": [
+      "MESMES",
+      "MESMES_2"
+    ]
+  },
+  "Outer South Ethiopic": {
+    "family": "Afro-Asiatic",
+    "members": 8,
+    "tau": 0.8150529264248848,
+    "depth": 0.5573840993358083,
+    "beyond_horizon": false,
+    "split": [
+      6,
+      2
+    ],
+    "set_by": [
+      "MESMES",
+      "MESMES_2"
+    ]
+  },
+  "Modern South Arabian": {
+    "family": "Afro-Asiatic",
+    "members": 8,
+    "tau": 0.39635822249367847,
+    "depth": 0.3272343470234117,
+    "beyond_horizon": false,
+    "split": [
+      6,
+      2
+    ],
+    "set_by": [
+      "SOQOTRI",
+      "SOQOTRI_2"
+    ]
+  },
+  "Peninsular Arabic": {
+    "family": "Afro-Asiatic",
+    "members": 8,
+    "tau": 0.2763358726566337,
+    "depth": 0.24144189095748203,
+    "beyond_horizon": false,
+    "split": [
+      7,
+      1
+    ],
+    "set_by": [
+      "HIJAZI_ARABIC"
+    ]
+  },
+  "Egyptic Arabic": {
+    "family": "Afro-Asiatic",
+    "members": 5,
+    "tau": 0.38787950506205093,
+    "depth": 0.32150590655754807,
+    "beyond_horizon": false,
+    "split": [
+      4,
+      1
+    ],
+    "set_by": [
+      "SHUWA_CHADIAN_ARABIC_2"
+    ]
+  },
+  "North African Arabic": {
+    "family": "Afro-Asiatic",
+    "members": 10,
+    "tau": 0.34949302555561346,
+    "depth": 0.2949545608526756,
+    "beyond_horizon": false,
+    "split": [
+      8,
+      2
+    ],
+    "set_by": [
+      "MALTESE",
+      "MALTESE_ARABIC"
+    ]
+  },
+  "Eastern Arabic": {
+    "family": "Afro-Asiatic",
+    "members": 7,
+    "tau": 0.3138360175423727,
+    "depth": 0.26936116971253876,
+    "beyond_horizon": false,
+    "split": [
+      6,
+      1
+    ],
+    "set_by": [
+      "SOUKHNE_SYRIAN_ARABIC"
+    ]
+  },
+  "Levantine Arabic": {
+    "family": "Afro-Asiatic",
+    "members": 4,
+    "tau": 0.17118338719516657,
+    "depth": 0.15733297504122268,
+    "beyond_horizon": false,
+    "split": [
+      3,
+      1
+    ],
+    "set_by": [
+      "PALESTINIAN_ARABIC"
+    ]
+  },
+  "Ainu": {
+    "family": "Ainu",
+    "members": 23,
+    "tau": 0.18149707075879737,
+    "depth": 0.16597931165233437,
+    "beyond_horizon": false,
+    "split": [
+      22,
+      1
+    ],
+    "set_by": [
+      "KURIL_AINU"
+    ]
+  },
+  "Algic": {
+    "family": "Algic",
+    "members": 35,
+    "tau": 1.503797080596467,
+    "depth": 0.7777154765617648,
+    "beyond_horizon": false,
+    "split": [
+      33,
+      2
+    ],
+    "set_by": [
+      "WIYOT",
+      "YUROK"
+    ]
+  },
+  "Araucanian": {
+    "family": "Araucanian",
+    "members": 4,
+    "tau": 0.058453152029631326,
+    "depth": 0.0567775725790467,
+    "beyond_horizon": false,
+    "split": [
+      3,
+      1
+    ],
+    "set_by": [
+      "RANQUELCHE"
+    ]
+  },
+  "Athabaskan-Eyak-Tlingit": {
+    "family": "Athabaskan-Eyak-Tlingit",
+    "members": 45,
+    "tau": 1.5576762374479154,
+    "depth": 0.7893750546724306,
+    "beyond_horizon": false,
+    "split": [
+      44,
+      1
+    ],
+    "set_by": [
+      "TLINGIT"
+    ]
+  },
+  "Atlantic-Congo": {
+    "family": "Atlantic-Congo",
+    "members": 2036,
+    "tau": 1.566071202282405,
+    "depth": 0.7911358424649109,
+    "beyond_horizon": false,
+    "split": [
+      2033,
+      3
+    ],
+    "set_by": []
+  },
+  "Austroasiatic": {
+    "family": "Austroasiatic",
+    "members": 190,
+    "tau": 1.4420993384346914,
+    "depth": 0.7635691111364866,
+    "beyond_horizon": false,
+    "split": [
+      186,
+      4
+    ],
+    "set_by": []
+  },
+  "Austronesian": {
+    "family": "Austronesian",
+    "members": 1459,
+    "tau": 1.570582776402326,
+    "depth": 0.7920760261437173,
+    "beyond_horizon": false,
+    "split": [
+      1458,
+      1
+    ],
+    "set_by": [
+      "YAUR"
+    ]
+  },
+  "Oceanic": {
+    "family": "Austronesian",
+    "members": 652,
+    "tau": 1.5485670843030772,
+    "depth": 0.7874476747170067,
+    "beyond_horizon": false,
+    "split": [
+      629,
+      23
+    ],
+    "set_by": []
+  },
+  "Polynesian": {
+    "family": "Austronesian",
+    "members": 47,
+    "tau": 0.28236100010878823,
+    "depth": 0.24599855920611724,
+    "beyond_horizon": false,
+    "split": [
+      46,
+      1
+    ],
+    "set_by": [
+      "TUAMOTUAN"
+    ]
+  },
+  "Malayo-Polynesian": {
+    "family": "Austronesian",
+    "members": 1407,
+    "tau": 1.570582776402326,
+    "depth": 0.7920760261437173,
+    "beyond_horizon": false,
+    "split": [
+      1406,
+      1
+    ],
+    "set_by": [
+      "YAUR"
+    ]
+  },
+  "Formosan": {
+    "family": "Austronesian",
+    "members": 55,
+    "tau": 1.4759514678313999,
+    "depth": 0.7714388450312399,
+    "beyond_horizon": false,
+    "split": [
+      39,
+      16
+    ],
+    "set_by": []
+  },
+  "Eastern Malayo-Polynesian": {
+    "family": "Austronesian",
+    "members": 700,
+    "tau": 1.570582776402326,
+    "depth": 0.7920760261437173,
+    "beyond_horizon": false,
+    "split": [
+      699,
+      1
+    ],
+    "set_by": [
+      "YAUR"
+    ]
+  },
+  "Greater Central Philippine": {
+    "family": "Austronesian",
+    "members": 82,
+    "tau": 0.8794419918571882,
+    "depth": 0.5849855714880702,
+    "beyond_horizon": false,
+    "split": [
+      74,
+      8
+    ],
+    "set_by": []
+  },
+  "Malayic": {
+    "family": "Austronesian",
+    "members": 44,
+    "tau": 0.26823588700158973,
+    "depth": 0.23527262942102767,
+    "beyond_horizon": false,
+    "split": [
+      43,
+      1
+    ],
+    "set_by": [
+      "HAJI"
+    ]
+  },
+  "Celebic": {
+    "family": "Austronesian",
+    "members": 80,
+    "tau": 1.1321766548619,
+    "depth": 0.6776691108030681,
+    "beyond_horizon": false,
+    "split": [
+      78,
+      2
+    ],
+    "set_by": [
+      "KADAI",
+      "SOBOYO"
+    ]
+  },
+  "Basque": {
+    "family": "Basque",
+    "members": 2,
+    "tau": 0.0,
+    "depth": 0.0,
+    "beyond_horizon": false,
+    "split": [
+      1,
+      1
+    ],
+    "set_by": [
+      "BASQUE"
+    ]
+  },
+  "Burushaski": {
+    "family": "Burushaski",
+    "members": 10,
+    "tau": 0.1250703650548767,
+    "depth": 0.11756519217370731,
+    "beyond_horizon": false,
+    "split": [
+      9,
+      1
+    ],
+    "set_by": [
+      "BURUSHASKI_2"
+    ]
+  },
+  "Chukotko-Kamchatkan": {
+    "family": "Chukotko-Kamchatkan",
+    "members": 7,
+    "tau": 1.173838671034419,
+    "depth": 0.6908221715553509,
+    "beyond_horizon": false,
+    "split": [
+      4,
+      3
+    ],
+    "set_by": []
+  },
+  "Cochimi-Yuman": {
+    "family": "Cochimi-Yuman",
+    "members": 13,
+    "tau": 1.0444426532313527,
+    "depth": 0.6481121116887254,
+    "beyond_horizon": false,
+    "split": [
+      12,
+      1
+    ],
+    "set_by": [
+      "COCHIMI"
+    ]
+  },
+  "Dogon": {
+    "family": "Dogon",
+    "members": 50,
+    "tau": 1.0771188041151813,
+    "depth": 0.6594246222289494,
+    "beyond_horizon": false,
+    "split": [
+      27,
+      23
+    ],
+    "set_by": []
+  },
+  "Dravidian": {
+    "family": "Dravidian",
+    "members": 79,
+    "tau": 1.2940285294591674,
+    "depth": 0.7258359226740552,
+    "beyond_horizon": false,
+    "split": [
+      77,
+      2
+    ],
+    "set_by": [
+      "BRAHUI",
+      "BRAHUI_2"
+    ]
+  },
+  "South Dravidian": {
+    "family": "Dravidian",
+    "members": 64,
+    "tau": 0.8728763636643234,
+    "depth": 0.5822517763350982,
+    "beyond_horizon": false,
+    "split": [
+      62,
+      2
+    ],
+    "set_by": [
+      "TODA",
+      "TODA_2"
+    ]
+  },
+  "Eskimo-Aleut": {
+    "family": "Eskimo-Aleut",
+    "members": 16,
+    "tau": 1.5690069531716466,
+    "depth": 0.7917481164194748,
+    "beyond_horizon": false,
+    "split": [
+      14,
+      2
+    ],
+    "set_by": [
+      "ALEUT",
+      "ALEUT_2"
+    ]
+  },
+  "Great Andamanese": {
+    "family": "Great Andamanese",
+    "members": 10,
+    "tau": 1.1000743816529244,
+    "depth": 0.6671536748825331,
+    "beyond_horizon": false,
+    "split": [
+      7,
+      3
+    ],
+    "set_by": []
+  },
+  "Haida": {
+    "family": "Haida",
+    "members": 2,
+    "tau": 0.0746567943166519,
+    "depth": 0.07193805218848048,
+    "beyond_horizon": false,
+    "split": [
+      1,
+      1
+    ],
+    "set_by": [
+      "HAIDA"
+    ]
+  },
+  "Heibanic": {
+    "family": "Heibanic",
+    "members": 11,
+    "tau": 1.0373254084384957,
+    "depth": 0.6455987057952106,
+    "beyond_horizon": false,
+    "split": [
+      9,
+      2
+    ],
+    "set_by": [
+      "KO1",
+      "WARNANG"
+    ]
+  },
+  "Hmong-Mien": {
+    "family": "Hmong-Mien",
+    "members": 110,
+    "tau": 1.2930479388525211,
+    "depth": 0.725566948099732,
+    "beyond_horizon": false,
+    "split": [
+      77,
+      33
+    ],
+    "set_by": []
+  },
+  "Ijoid": {
+    "family": "Ijoid",
+    "members": 36,
+    "tau": 0.942596839719218,
+    "depth": 0.6103852465447912,
+    "beyond_horizon": false,
+    "split": [
+      35,
+      1
+    ],
+    "set_by": [
+      "DEFAKA"
+    ]
+  },
+  "Romance": {
+    "family": "Indo-European",
+    "members": 60,
+    "tau": 0.5071616460831732,
+    "depth": 0.3977975810472705,
+    "beyond_horizon": false,
+    "split": [
+      56,
+      4
+    ],
+    "set_by": []
+  },
+  "Germanic": {
+    "family": "Indo-European",
+    "members": 60,
+    "tau": 0.4812384268866493,
+    "depth": 0.38198245186470614,
+    "beyond_horizon": false,
+    "split": [
+      59,
+      1
+    ],
+    "set_by": [
+      "GOTHIC"
+    ]
+  },
+  "Slavic": {
+    "family": "Indo-European",
+    "members": 34,
+    "tau": 0.3424795292149189,
+    "depth": 0.2899923463491294,
+    "beyond_horizon": false,
+    "split": [
+      33,
+      1
+    ],
+    "set_by": [
+      "POLABIAN"
+    ]
+  },
+  "Indo-European": {
+    "family": "Indo-European",
+    "members": 490,
+    "tau": 1.4403879845673961,
+    "depth": 0.7631641478015331,
+    "beyond_horizon": false,
+    "split": [
+      479,
+      11
+    ],
+    "set_by": []
+  },
+  "Indo-Aryan": {
+    "family": "Indo-European",
+    "members": 159,
+    "tau": 1.009954314597935,
+    "depth": 0.6357643805578586,
+    "beyond_horizon": false,
+    "split": [
+      153,
+      6
+    ],
+    "set_by": []
+  },
+  "Iranian": {
+    "family": "Indo-European",
+    "members": 134,
+    "tau": 1.2097397172145532,
+    "depth": 0.7017250948497289,
+    "beyond_horizon": false,
+    "split": [
+      132,
+      2
+    ],
+    "set_by": [
+      "AVESTAN",
+      "AVESTAN_2"
+    ]
+  },
+  "Celtic": {
+    "family": "Indo-European",
+    "members": 9,
+    "tau": 1.1682772970010022,
+    "depth": 0.6890979278705777,
+    "beyond_horizon": false,
+    "split": [
+      5,
+      4
+    ],
+    "set_by": []
+  },
+  "Balto-Slavic": {
+    "family": "Indo-European",
+    "members": 39,
+    "tau": 1.108882602911767,
+    "depth": 0.6700725848849057,
+    "beyond_horizon": false,
+    "split": [
+      34,
+      5
+    ],
+    "set_by": []
+  },
+  "German dialects": {
+    "family": "Indo-European",
+    "members": 10,
+    "tau": 0.21786831292805334,
+    "depth": 0.19576865843587876,
+    "beyond_horizon": false,
+    "split": [
+      8,
+      2
+    ],
+    "set_by": [
+      "EASTERN_FRISIAN",
+      "NORTHERN_LOW_SAXON"
+    ]
+  },
+  "English": {
+    "family": "Indo-European",
+    "members": 3,
+    "tau": 0.03756543880450807,
+    "depth": 0.0368686105081143,
+    "beyond_horizon": false,
+    "split": [
+      2,
+      1
+    ],
+    "set_by": [
+      "ENGLISH_2"
+    ]
+  },
+  "Iroquoian": {
+    "family": "Iroquoian",
+    "members": 10,
+    "tau": 1.52826955447483,
+    "depth": 0.7830893051186433,
+    "beyond_horizon": false,
+    "split": [
+      9,
+      1
+    ],
+    "set_by": [
+      "CHEROKEE"
+    ]
+  },
+  "Japonic": {
+    "family": "Japonic",
+    "members": 33,
+    "tau": 0.29876751079633296,
+    "depth": 0.25826816596576596,
+    "beyond_horizon": false,
+    "split": [
+      27,
+      6
+    ],
+    "set_by": []
+  },
+  "Jarawa-Onge": {
+    "family": "Jarawa-Onge",
+    "members": 2,
+    "tau": 0.19884576003710164,
+    "depth": 0.18032368957290001,
+    "beyond_horizon": false,
+    "split": [
+      1,
+      1
+    ],
+    "set_by": [
+      "JARAWA"
+    ]
+  },
+  "Kartvelian": {
+    "family": "Kartvelian",
+    "members": 6,
+    "tau": 1.1420367310163262,
+    "depth": 0.6808317006068215,
+    "beyond_horizon": false,
+    "split": [
+      5,
+      1
+    ],
+    "set_by": [
+      "SVAN"
+    ]
+  },
+  "Katla-Tima": {
+    "family": "Katla-Tima",
+    "members": 3,
+    "tau": 0.7193950818980437,
+    "depth": 0.5129532097136387,
+    "beyond_horizon": false,
+    "split": [
+      2,
+      1
+    ],
+    "set_by": [
+      "KATLA"
+    ]
+  },
+  "Khoe-Kwadi": {
+    "family": "Khoe-Kwadi",
+    "members": 15,
+    "tau": 1.0787875252489916,
+    "depth": 0.659992473634899,
+    "beyond_horizon": false,
+    "split": [
+      14,
+      1
+    ],
+    "set_by": [
+      "KWADI"
+    ]
+  },
+  "Koreanic": {
+    "family": "Koreanic",
+    "members": 3,
+    "tau": 0.18710300756639553,
+    "depth": 0.17064169819506347,
+    "beyond_horizon": false,
+    "split": [
+      2,
+      1
+    ],
+    "set_by": [
+      "JEJUEO"
+    ]
+  },
+  "Kru": {
+    "family": "Kru",
+    "members": 25,
+    "tau": 0.8955858341238447,
+    "depth": 0.591631707529993,
+    "beyond_horizon": false,
+    "split": [
+      17,
+      8
+    ],
+    "set_by": []
+  },
+  "Kuliak": {
+    "family": "Kuliak",
+    "members": 6,
+    "tau": 0.8761201228319174,
+    "depth": 0.5836046555718973,
+    "beyond_horizon": false,
+    "split": [
+      4,
+      2
+    ],
+    "set_by": [
+      "NYANGI",
+      "TEPES"
+    ]
+  },
+  "Kusunda": {
+    "family": "Kusunda",
+    "members": 2,
+    "tau": 0.07083249577861296,
+    "depth": 0.0683820710053632,
+    "beyond_horizon": false,
+    "split": [
+      1,
+      1
+    ],
+    "set_by": [
+      "KUSUNDA"
+    ]
+  },
+  "Kxa": {
+    "family": "Kxa",
+    "members": 7,
+    "tau": 1.2375084146900313,
+    "depth": 0.70989385759988,
+    "beyond_horizon": false,
+    "split": [
+      5,
+      2
+    ],
+    "set_by": [
+      "HOAN",
+      "HOAN_HUC"
+    ]
+  },
+  "Mande": {
+    "family": "Mande",
+    "members": 128,
+    "tau": 1.3544782136040137,
+    "depth": 0.7419180770384399,
+    "beyond_horizon": false,
+    "split": [
+      117,
+      11
+    ],
+    "set_by": []
+  },
+  "Mayan": {
+    "family": "Mayan",
+    "members": 107,
+    "tau": 1.1491089914175108,
+    "depth": 0.6830809788161814,
+    "beyond_horizon": false,
+    "split": [
+      103,
+      4
+    ],
+    "set_by": []
+  },
+  "Quichean-Mamean": {
+    "family": "Mayan",
+    "members": 79,
+    "tau": 0.4868052908831538,
+    "depth": 0.38541331307357096,
+    "beyond_horizon": false,
+    "split": [
+      54,
+      25
+    ],
+    "set_by": []
+  },
+  "Miwok-Costanoan": {
+    "family": "Miwok-Costanoan",
+    "members": 9,
+    "tau": 1.1990295545442007,
+    "depth": 0.6985133536606545,
+    "beyond_horizon": false,
+    "split": [
+      7,
+      2
+    ],
+    "set_by": [
+      "MUTSUN",
+      "RUMSEN"
+    ]
+  },
+  "Mixe-Zoque": {
+    "family": "Mixe-Zoque",
+    "members": 23,
+    "tau": 0.580008271084606,
+    "depth": 0.440106264382207,
+    "beyond_horizon": false,
+    "split": [
+      22,
+      1
+    ],
+    "set_by": [
+      "TAPACHULTEC"
+    ]
+  },
+  "Mongolic": {
+    "family": "Mongolic-Khitan",
+    "members": 29,
+    "tau": 0.4712397629092963,
+    "depth": 0.3757721062281587,
+    "beyond_horizon": false,
+    "split": [
+      16,
+      13
+    ],
+    "set_by": []
+  },
+  "Nakh-Daghestanian": {
+    "family": "Nakh-Daghestanian",
+    "members": 61,
+    "tau": 1.3612319062479787,
+    "depth": 0.7436552103878326,
+    "beyond_horizon": false,
+    "split": [
+      56,
+      5
+    ],
+    "set_by": []
+  },
+  "Narrow Talodi": {
+    "family": "Narrow Talodi",
+    "members": 9,
+    "tau": 0.5361802066482276,
+    "depth": 0.4150215129197289,
+    "beyond_horizon": false,
+    "split": [
+      5,
+      4
+    ],
+    "set_by": []
+  },
+  "Nihali": {
+    "family": "Nihali",
+    "members": 3,
+    "tau": 0.059093119273970665,
+    "depth": 0.05738101092573911,
+    "beyond_horizon": false,
+    "split": [
+      2,
+      1
+    ],
+    "set_by": [
+      "NIHALI"
+    ]
+  },
+  "Nivkh": {
+    "family": "Nivkh",
+    "members": 7,
+    "tau": 0.14066583273400934,
+    "depth": 0.13122041910696947,
+    "beyond_horizon": false,
+    "split": [
+      6,
+      1
+    ],
+    "set_by": [
+      "GILYAK"
+    ]
+  },
+  "Nubian": {
+    "family": "Nubian",
+    "members": 11,
+    "tau": 1.331174341782332,
+    "depth": 0.7358331431024949,
+    "beyond_horizon": false,
+    "split": [
+      10,
+      1
+    ],
+    "set_by": [
+      "MEIDOB_NUBIAN"
+    ]
+  },
+  "Nuclear Trans New Guinea": {
+    "family": "Nuclear Trans New Guinea",
+    "members": 307,
+    "tau": 1.5745048996940507,
+    "depth": 0.7928899324407015,
+    "beyond_horizon": false,
+    "split": [
+      293,
+      14
+    ],
+    "set_by": []
+  },
+  "Otomanguean": {
+    "family": "Otomanguean",
+    "members": 109,
+    "tau": 1.5809597913514752,
+    "depth": 0.7942225000712656,
+    "beyond_horizon": true,
+    "split": [
+      103,
+      6
+    ],
+    "set_by": []
+  },
+  "Pama-Nyungan": {
+    "family": "Pama-Nyungan",
+    "members": 193,
+    "tau": 1.5575521325948904,
+    "depth": 0.7893489134724561,
+    "beyond_horizon": false,
+    "split": [
+      174,
+      19
+    ],
+    "set_by": []
+  },
+  "Quechuan": {
+    "family": "Quechuan",
+    "members": 61,
+    "tau": 0.04299764173793515,
+    "depth": 0.04208635092421298,
+    "beyond_horizon": false,
+    "split": [
+      46,
+      15
+    ],
+    "set_by": []
+  },
+  "Rashad": {
+    "family": "Rashad",
+    "members": 2,
+    "tau": 0.4202435021275107,
+    "depth": 0.3431131530057908,
+    "beyond_horizon": false,
+    "split": [
+      1,
+      1
+    ],
+    "set_by": [
+      "ORIG"
+    ]
+  },
+  "Saharan": {
+    "family": "Saharan",
+    "members": 10,
+    "tau": 1.2757368458560767,
+    "depth": 0.7207748534908358,
+    "beyond_horizon": false,
+    "split": [
+      8,
+      2
+    ],
+    "set_by": [
+      "BERIA",
+      "BERTI"
+    ]
+  },
+  "Salishan": {
+    "family": "Salishan",
+    "members": 30,
+    "tau": 1.4055125833816038,
+    "depth": 0.7547586823940298,
+    "beyond_horizon": false,
+    "split": [
+      20,
+      10
+    ],
+    "set_by": []
+  },
+  "Sino-Tibetan": {
+    "family": "Sino-Tibetan",
+    "members": 881,
+    "tau": 1.49796291187724,
+    "depth": 0.7764148407732366,
+    "beyond_horizon": false,
+    "split": [
+      507,
+      374
+    ],
+    "set_by": []
+  },
+  "Sinitic": {
+    "family": "Sino-Tibetan",
+    "members": 477,
+    "tau": 0.8364854535111342,
+    "depth": 0.5667695404881099,
+    "beyond_horizon": false,
+    "split": [
+      476,
+      1
+    ],
+    "set_by": [
+      "GAN_SHAOWU"
+    ]
+  },
+  "Min": {
+    "family": "Sino-Tibetan",
+    "members": 18,
+    "tau": 0.8283627926378361,
+    "depth": 0.5632362258538648,
+    "beyond_horizon": false,
+    "split": [
+      16,
+      2
+    ],
+    "set_by": [
+      "MIN_NANPING",
+      "YONGAN_CHINESE"
+    ]
+  },
+  "Lolo-Burmese": {
+    "family": "Sino-Tibetan",
+    "members": 54,
+    "tau": 1.3118098871231565,
+    "depth": 0.7306678458038043,
+    "beyond_horizon": false,
+    "split": [
+      53,
+      1
+    ],
+    "set_by": [
+      "GONG"
+    ]
+  },
+  "Bodic": {
+    "family": "Sino-Tibetan",
+    "members": 80,
+    "tau": 1.2166247826637184,
+    "depth": 0.7037716835601997,
+    "beyond_horizon": false,
+    "split": [
+      77,
+      3
+    ],
+    "set_by": []
+  },
+  "Kuki-Chin": {
+    "family": "Sino-Tibetan",
+    "members": 52,
+    "tau": 0.6110362171124594,
+    "depth": 0.4572118687844521,
+    "beyond_horizon": false,
+    "split": [
+      48,
+      4
+    ],
+    "set_by": []
+  },
+  "Mandarin": {
+    "family": "Sino-Tibetan",
+    "members": 180,
+    "tau": 0.338959922622721,
+    "depth": 0.28748899591069055,
+    "beyond_horizon": false,
+    "split": [
+      177,
+      3
+    ],
+    "set_by": []
+  },
+  "Jin": {
+    "family": "Sino-Tibetan",
+    "members": 22,
+    "tau": 0.3888488748548468,
+    "depth": 0.3221632995563859,
+    "beyond_horizon": false,
+    "split": [
+      17,
+      5
+    ],
+    "set_by": []
+  },
+  "Wu": {
+    "family": "Sino-Tibetan",
+    "members": 48,
+    "tau": 0.5967875547980441,
+    "depth": 0.44942250174973253,
+    "beyond_horizon": false,
+    "split": [
+      47,
+      1
+    ],
+    "set_by": [
+      "WU_XUANCHENG_JINPAI"
+    ]
+  },
+  "Hui": {
+    "family": "Sino-Tibetan",
+    "members": 11,
+    "tau": 0.44284830687694743,
+    "depth": 0.35779538227655205,
+    "beyond_horizon": false,
+    "split": [
+      9,
+      2
+    ],
+    "set_by": [
+      "HUI_HUANGSHAN_DAFU",
+      "HUI_HUANGSHAN_WUCHENG"
+    ]
+  },
+  "Gan": {
+    "family": "Sino-Tibetan",
+    "members": 19,
+    "tau": 0.5581483099582081,
+    "depth": 0.4277322541429057,
+    "beyond_horizon": false,
+    "split": [
+      17,
+      2
+    ],
+    "set_by": [
+      "GAN_ANQING_SUSONG",
+      "GAN_XIANNING"
+    ]
+  },
+  "Xiang": {
+    "family": "Sino-Tibetan",
+    "members": 12,
+    "tau": 0.338959922622721,
+    "depth": 0.28748899591069055,
+    "beyond_horizon": false,
+    "split": [
+      7,
+      5
+    ],
+    "set_by": []
+  },
+  "Hakka": {
+    "family": "Sino-Tibetan",
+    "members": 45,
+    "tau": 0.4951884572588257,
+    "depth": 0.39054395994181734,
+    "beyond_horizon": false,
+    "split": [
+      44,
+      1
+    ],
+    "set_by": [
+      "HAKKA_GANZHOU_DAYU"
+    ]
+  },
+  "Yue": {
+    "family": "Sino-Tibetan",
+    "members": 89,
+    "tau": 0.3002603191584601,
+    "depth": 0.25937460339507223,
+    "beyond_horizon": false,
+    "split": [
+      88,
+      1
+    ],
+    "set_by": [
+      "YUE_WUZHOU_CANGWU_1"
+    ]
+  },
+  "Pinghua": {
+    "family": "Sino-Tibetan",
+    "members": 25,
+    "tau": 0.661500173888221,
+    "depth": 0.48392345108254775,
+    "beyond_horizon": false,
+    "split": [
+      17,
+      8
+    ],
+    "set_by": []
+  },
+  "Chinese without Min": {
+    "family": "Sino-Tibetan",
+    "members": 454,
+    "tau": 0.661500173888221,
+    "depth": 0.48392345108254775,
+    "beyond_horizon": false,
+    "split": [
+      446,
+      8
+    ],
+    "set_by": []
+  },
+  "Siouan": {
+    "family": "Siouan",
+    "members": 18,
+    "tau": 1.5492288218338706,
+    "depth": 0.7875882820402016,
+    "beyond_horizon": false,
+    "split": [
+      17,
+      1
+    ],
+    "set_by": [
+      "CATAWBA"
+    ]
+  },
+  "Songhay": {
+    "family": "Songhay",
+    "members": 13,
+    "tau": 0.35256948125156623,
+    "depth": 0.2971202688493687,
+    "beyond_horizon": false,
+    "split": [
+      12,
+      1
+    ],
+    "set_by": [
+      "KORANDJE"
+    ]
+  },
+  "Kra-Dai": {
+    "family": "Kra-Dai",
+    "members": 214,
+    "tau": 1.4081165572417784,
+    "depth": 0.7553964536443014,
+    "beyond_horizon": false,
+    "split": [
+      197,
+      17
+    ],
+    "set_by": []
+  },
+  "Kam-Tai": {
+    "family": "Kra-Dai",
+    "members": 177,
+    "tau": 0.9612465268740122,
+    "depth": 0.6175841029456066,
+    "beyond_horizon": false,
+    "split": [
+      132,
+      45
+    ],
+    "set_by": []
+  },
+  "Tai": {
+    "family": "Kra-Dai",
+    "members": 128,
+    "tau": 0.5333212156086378,
+    "depth": 0.413346671629515,
+    "beyond_horizon": false,
+    "split": [
+      126,
+      2
+    ],
+    "set_by": [
+      "WUSEHUA",
+      "WUSE_GUANGXI_RONGSHUI_SIMO"
+    ]
+  },
+  "Tarascan": {
+    "family": "Tarascan",
+    "members": 4,
+    "tau": 0.04290739394166421,
+    "depth": 0.04199989742730592,
+    "beyond_horizon": false,
+    "split": [
+      3,
+      1
+    ],
+    "set_by": [
+      "TARASCAN"
+    ]
+  },
+  "Totonacan": {
+    "family": "Totonacan",
+    "members": 10,
+    "tau": 0.28508982269832267,
+    "depth": 0.2480532905965387,
+    "beyond_horizon": false,
+    "split": [
+      7,
+      3
+    ],
+    "set_by": []
+  },
+  "Tungusic": {
+    "family": "Tungusic",
+    "members": 29,
+    "tau": 0.6604093667073925,
+    "depth": 0.48336020393596413,
+    "beyond_horizon": false,
+    "split": [
+      27,
+      2
+    ],
+    "set_by": [
+      "EVEN",
+      "EWEN"
+    ]
+  },
+  "Turkic": {
+    "family": "Turkic",
+    "members": 71,
+    "tau": 0.960082441198382,
+    "depth": 0.6171386788721199,
+    "beyond_horizon": false,
+    "split": [
+      69,
+      2
+    ],
+    "set_by": [
+      "CHUVASH",
+      "CHUVASH_2"
+    ]
+  },
+  "Oghuz": {
+    "family": "Turkic",
+    "members": 34,
+    "tau": 0.17594880502548937,
+    "depth": 0.1613390825376485,
+    "beyond_horizon": false,
+    "split": [
+      33,
+      1
+    ],
+    "set_by": [
+      "IRAN_TURKIC"
+    ]
+  },
+  "Kipchak": {
+    "family": "Turkic",
+    "members": 18,
+    "tau": 0.6147771999960139,
+    "depth": 0.4592386364773926,
+    "beyond_horizon": false,
+    "split": [
+      17,
+      1
+    ],
+    "set_by": [
+      "SIBERIAN_TATAR"
+    ]
+  },
+  "Tuu": {
+    "family": "Tuu",
+    "members": 9,
+    "tau": 0.5362701146762765,
+    "depth": 0.4150741048177009,
+    "beyond_horizon": false,
+    "split": [
+      5,
+      4
+    ],
+    "set_by": []
+  },
+  "Uralic": {
+    "family": "Uralic",
+    "members": 64,
+    "tau": 1.398783970244755,
+    "depth": 0.7531029844137981,
+    "beyond_horizon": false,
+    "split": [
+      54,
+      10
+    ],
+    "set_by": []
+  },
+  "Finnic": {
+    "family": "Uralic",
+    "members": 17,
+    "tau": 0.27786200437981484,
+    "depth": 0.24259866763026106,
+    "beyond_horizon": false,
+    "split": [
+      16,
+      1
+    ],
+    "set_by": [
+      "INGRIAN"
+    ]
+  },
+  "Saami": {
+    "family": "Uralic",
+    "members": 15,
+    "tau": 0.6202099703813714,
+    "depth": 0.46216850294654466,
+    "beyond_horizon": false,
+    "split": [
+      14,
+      1
+    ],
+    "set_by": [
+      "SAAMI_UME"
+    ]
+  },
+  "Samoyedic": {
+    "family": "Uralic",
+    "members": 10,
+    "tau": 0.9702232712179768,
+    "depth": 0.6210015907802844,
+    "beyond_horizon": false,
+    "split": [
+      7,
+      3
+    ],
+    "set_by": []
+  },
+  "Uto-Aztecan": {
+    "family": "Uto-Aztecan",
+    "members": 75,
+    "tau": 1.3649181803106982,
+    "depth": 0.7445984279895179,
+    "beyond_horizon": false,
+    "split": [
+      57,
+      18
+    ],
+    "set_by": []
+  },
+  "Yeniseian": {
+    "family": "Yeniseian",
+    "members": 9,
+    "tau": 0.6608657262618689,
+    "depth": 0.4835959236525572,
+    "beyond_horizon": false,
+    "split": [
+      6,
+      3
+    ],
+    "set_by": []
+  },
+  "Yukaghir": {
+    "family": "Yukaghir",
+    "members": 4,
+    "tau": 0.5636503993409201,
+    "depth": 0.43087227616904555,
+    "beyond_horizon": false,
+    "split": [
+      2,
+      2
+    ],
+    "set_by": [
+      "KOLYMA_YUKAGIR",
+      "SOUTHERN_YUKAGHIR"
+    ]
+  }
+}
