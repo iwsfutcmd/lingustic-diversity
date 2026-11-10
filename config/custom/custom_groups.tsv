@@ -5,3 +5,4 @@
 German dialects	id:STANDARD_GERMAN id:STANDARD_GERMAN_2 id:BAVARIAN_GERMAN id:BAVARIAN_GERMAN_2 id:ALSATIAN id:BERNESE_GERMAN id:SWABIAN id:RIPUARIAN_GERMAN id:SAXON_UPPER id:LOWER_SILESIAN id:EASTERN_FRISIAN id:NORTHERN_LOW_SAXON			High and Low German of Germany, Austria, Switzerland and Alsace (Glottolog classification), no speech islands or diaspora.
 English	id:ENGLISH id:ENGLISH_2 id:PITKERN id:SCOTS id:SCOTS_2			English and Scots; ASJP has no regional English lists, and creoles are excluded.
 Chinese without Min	lineage:Sinitic	lineage:Min node:Min id:OLD_CHINESE id:GAN_SHAOWU	id:MIDDLE_CHINESE	Middle Chinese and its descendants: Sinitic without Min (every list under Glottolog's Min node, and Shaowu, a Min-Gan transitional variety) and without Old Chinese.
+Tai	node:Daic			Tai: Glottolog's Daic node within Kra-Dai (Southwestern Tai, e.g. Thai, Lao, Shan, Ahom; Central Tai; Northern Tai, e.g. Zhuang; and Sek).
