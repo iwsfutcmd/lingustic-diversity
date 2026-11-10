@@ -419,6 +419,18 @@ of their basic vocabulary is still shared; for a family, the same across its dee
   fast-changing or doubtful list (Polabian, Bacama, Yaur, Yue Guilin Xingan); `depth_2` is the deepest split with at
   least two lists on each side.
 
+`scripts/lone_branches.py` checks every one-list root branch three ways (`results/lone_branches.{json,csv}`):
+whether Glottolog also makes it a primary branch; a relative-rate test against an outgroup in range (a real early
+branch is no farther from the outgroup than its sisters, a fast-changing or noisy list is); and the list itself
+(another list of its language that disagrees with it, a sibling group or another family nearer than its own). Of 46
+cases, 15 are real lone branches (Tlingit, Cherokee, Catawba, Svan, Kwadi, Cochimí, Defaka, Jeju, Gong, Ugaritic…).
+Three are bad lists: `BACAMA` (0.67 from the other Bacama list, which sits normally among its Biu-Mandara relatives),
+`NU` (0.70 from the other Nǁng list, which is 0.23 from Kam-ka-ke) and `YUE_GUILIN_XINGAN` (0.60 from every Yue list,
+0.49 from Mandarin). Others are misfiled or transitional (Xiang Guilin Jieshou nearer Guilin Mandarin, Hui Fenkou
+nearer Wu, Mandarin Chenzhou Guiyang nearer Xiang), one is a fast changer (Ume Saami, relative-rate z = 2.9), and
+the rest are inconclusive: Polabian is nested in West Slavic but no faster than its sisters against Baltic (z = 1.6),
+so its depth points at its sparse, philological record more than at change.
+
 Retention across the deepest split (`results/depth.{json,csv}`): Quechua 96% (Central vs Southern Quechua is as
 close as two lists of one language on 40 words), Koreanic 83%, Japonic 74%, Arabic 72%, Slavic 72%,
 Germanic 70%, Wu 69%, Mandarin 69% (75% without its one-list root branch), Romance 62%, Min 56%,

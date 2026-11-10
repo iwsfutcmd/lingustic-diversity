@@ -1,0 +1,47 @@
+lineage,lone_list,language,retention,retention_2,glottolog_primary,branch,members_on_branch,same_language_lists,min_d_same_language,concepts,outgroup,d_outgroup,d_outgroup_sisters,rate_z,nearest_inside,nearest_same_family_outside,nearest_same_family_outside_id,its_lineage,nearest_other_family,nearest_other_family_id,verdict
+Eastern Arabic,SOUKHNE_SYRIAN_ARABIC,Gilit Mesopotamian Arabic,0.730,0.912,False,lang:meso1252,1,1,0.445,39,Arabic,0.540,0.421,5.937,0.445,0.406,QIFT_ARABIC,Egyptic Arabic,0.480,OGADEN_ARABIC,closer to a sibling group (misfiled or transitional)
+Hui,HUI_HANGZHOU_FENKOU,Hui Chinese,0.680,0.722,False,lang:huiz1242,19,19,0.540,28,,nan,nan,nan,0.540,0.503,WU_WENZHOU_PINGYANG,Wu,0.822,YUNO_GUANGXI_XIAOZHAI,closer to a sibling group (misfiled or transitional)
+Xiang,XIANG_GUILIN_JIESHOU,Xiang Chinese,0.653,0.771,False,lang:xian1251,21,21,0.464,30,,nan,nan,nan,0.464,0.325,MANDARIN_GUILIN_GUANGYANG,Mandarin,0.825,SAHO,closer to a sibling group (misfiled or transitional)
+Afro-Asiatic,BACAMA,Bacama,0.206,0.206,False,Chadic,203,1,0.674,35,,nan,nan,nan,0.674,0.727,BATA_ZUMU,(no lineage),0.821,MERWARI,doubtful: disagrees with another list of its language
+Chadic,BACAMA,Bacama,0.206,0.218,False,Biu-Mandara,78,1,0.674,35,,nan,nan,nan,0.674,0.727,BATA_ZUMU,(no lineage),0.821,MERWARI,doubtful: disagrees with another list of its language
+Hakka,HAKKA_GANZHOU_DAYU,Hakka Chinese,0.548,0.729,False,lang:hakk1236,45,45,0.490,28,,nan,nan,nan,0.490,0.438,GAN_ZHUZHOU_CHALING,Gan,0.840,BHILI,doubtful: disagrees with another list of its language
+Jin,JIN_LVLIANG_LIULIN,Jinyu Chinese,0.714,0.805,False,lang:jiny1235,22,22,0.477,29,,nan,nan,nan,0.477,0.452,MANDARIN_HUANGHUA_2,Mandarin,0.821,BOZO_SOROGAMA,doubtful: disagrees with another list of its language
+Tuu,NU,N||ng,0.324,0.535,False,!Ui,3,1,0.697,35,,nan,nan,nan,0.697,nan,,,0.874,JANGKANG,doubtful: disagrees with another list of its language
+Yue,YUE_GUILIN_XINGAN,Yue Chinese,0.479,0.748,False,lang:yuec1235,90,90,0.596,40,Sinitic,0.647,0.655,-0.266,0.596,0.485,MANDARIN_HEZHOU_FUCHUAN,Mandarin,0.820,YAO_GUANGXI_HUANGLONG,doubtful: disagrees with another list of its language
+Saami,SAAMI_UME,Ume Saami,0.525,0.603,False,WesternSaami,7,0,nan,35,Uralic,0.904,0.822,2.887,0.501,0.841,ESTONIAN_3,Finnic,0.867,MALAYALAM_2,fast-changing member
+Ainu,KURIL_AINU,Hokkaido Ainu,0.825,0.926,False,lang:ainu1240,22,22,0.310,31,,nan,nan,nan,0.310,nan,,,0.843,PAPORA_2,"nested, no rate test"
+Araucanian,RANQUELCHE,Mapudungun,0.938,nan,False,lang:mapu1245,3,3,0.236,38,,nan,nan,nan,0.236,nan,,,0.839,TEMNE_4,"nested, no rate test"
+Austronesian,YAUR,Yaur,0.206,0.206,False,Malayo-Polynesian,1401,0,nan,36,,nan,nan,nan,0.858,0.885,TAGABAWA,(no lineage),0.858,MUDUGA,"nested, no rate test"
+Burushaski,BURUSHASKI_2,Burushaski,0.885,1.000,False,lang:buru1296,9,9,0.284,40,,nan,nan,nan,0.284,nan,,,0.817,SULA,"nested, no rate test"
+East Semitic,AKKADIAN_3,Akkadian,0.894,nan,False,lang:akka1240,2,2,0.362,38,Semitic,0.805,0.784,nan,0.362,0.683,CLASSICAL_MANDAIC,Aramaic,0.689,ARAMAIC_ANCIENT,"nested, no rate test"
+Eastern Malayo-Polynesian,YAUR,Yaur,0.206,0.207,False,Malayo-Polynesian,702,0,nan,36,,nan,nan,nan,0.859,0.858,PAPORA_2,Formosan,0.858,MUDUGA,"nested, no rate test"
+Egyptic Arabic,SHUWA_CHADIAN_ARABIC_2,Chadian Arabic,0.727,nan,False,Egypto-SudanicArabic,4,1,0.412,27,,nan,nan,nan,0.412,0.404,SAHARAN_ARABIC,(no lineage),0.530,OGADEN_ARABIC,"nested, no rate test"
+Gan,GAN_SHAOWU,Gan Chinese,0.582,0.706,False,lang:ganc1239,21,21,0.539,28,,nan,nan,nan,0.539,0.524,HAKKA_QIANNAN_SANDU,Hakka,0.813,LONG_WAT,"nested, no rate test"
+Mixe-Zoque,TAPACHULTEC,Tapachultec,0.577,0.695,False,Mixe,14,0,nan,30,,nan,nan,nan,0.595,nan,,,0.788,PAPORA_2,"nested, no rate test"
+Nihali,NIHALI,Nihali,0.943,nan,False,lang:niha1238,2,2,0.273,38,,nan,nan,nan,0.273,nan,,,0.763,PAPORA_2,"nested, no rate test"
+Nivkh,GILYAK,Amur Nivkh,0.883,0.930,False,lang:gily1242,6,6,0.297,28,,nan,nan,nan,0.297,nan,,,0.794,KOSORONG,"nested, no rate test"
+Songhay,KORANDJE,Korandje,0.727,0.770,False,NorthwestSonghay,4,0,nan,39,,nan,nan,nan,0.477,0.577,ZARMA_2,(no lineage),0.841,PAPORA_2,"nested, no rate test"
+Tarascan,TARASCAN,Purepecha,0.953,nan,False,lang:pure1242,3,3,0.182,40,,nan,nan,nan,0.182,nan,,,0.841,PAPORA_2,"nested, no rate test"
+Finnic,INGRIAN,Ingrian,0.763,0.816,False,CoastalFinnic,15,0,nan,33,Uralic,0.844,0.803,2.030,0.409,0.721,MOKSCHA_MORDWINISCH,(no lineage),0.763,MERWARI,"nested, same rate"
+Kipchak,SIBERIAN_TATAR,Siberian Tatar,0.684,0.836,False,NorthwestKipchak,12,0,nan,36,Turkic,0.705,0.438,2.251,0.498,0.547,NORTH_ALTAI,(no lineage),0.791,PAPORA_2,"nested, same rate"
+Levantine Arabic,ARABIC_NORTH_LEVANTINE_SPOKEN,Levantine Arabic,0.903,0.911,False,lang:nort3139,5,5,0.316,40,Arabic,0.455,0.425,1.515,0.316,0.350,KUWAITI_ARABIC,(no lineage),0.440,OGADEN_ARABIC,"nested, same rate"
+Malayo-Polynesian,YAUR,Yaur,0.206,0.206,False,Malayo-Polynesian,1401,0,nan,36,Austronesian,0.962,0.872,1.620,0.859,0.858,PAPORA_2,Formosan,0.858,MUDUGA,"nested, same rate"
+Outer South Ethiopic,GAFAT,Gafat,0.364,0.566,False,N-Group,1,0,nan,31,South Ethiopic,0.666,0.612,0.682,0.612,0.610,AMHARIC_3,(no lineage),0.830,OGADEN_ARABIC,"nested, same rate"
+Polynesian,RAPA,Mangaia-Old Rapa,0.756,0.800,False,Malayo-Polynesian,49,0,nan,38,Oceanic,0.869,0.812,2.371,0.350,0.555,WEST_UVEAN,(no lineage),0.836,MERWARI,"nested, same rate"
+Slavic,POLABIAN,Polabian,0.724,0.793,False,WestSlavic,10,0,nan,36,Balto-Slavic,0.828,0.796,1.608,0.460,0.792,GODWARI,Indo-Aryan,0.852,ALTA_SOUTHERN,"nested, same rate"
+Aramaic,WESTERN_NEO_ARAMAIC,Western Neo-Aramaic,0.599,0.741,True,WesternAramaic,0,0,nan,30,Northwest Semitic,0.764,0.736,0.421,0.558,0.676,UGARITIC,Canaanite,0.530,ARAMAIC_ANCIENT,real lone branch
+Athabaskan-Eyak-Tlingit,TLINGIT,Tlingit,0.207,0.290,True,lang:tlin1245,0,0,nan,40,,nan,nan,nan,0.882,0.893,TAGISH,(no lineage),0.834,BHILI,real lone branch
+Canaanite,UGARITIC,Ugaritic,0.739,nan,True,Ugarito-Phoenician,0,0,nan,36,Northwest Semitic,0.681,0.751,-3.203,0.510,0.519,GEEZ_3,North Ethiopic,0.510,ARAMAIC_ANCIENT,real lone branch
+Cochimi-Yuman,COCHIMI,Cochimi,0.350,0.621,True,Cochimic,0,0,nan,30,,nan,nan,nan,0.665,nan,,,0.803,MIN_NANPING_YANGTOU,real lone branch
+Ijoid,DEFAKA,Defaka,0.394,0.759,True,lang:defa1248,0,0,nan,33,,nan,nan,nan,0.615,nan,,,0.833,KANGO,real lone branch
+Iroquoian,CHEROKEE,Cherokee,0.211,0.729,True,lang:cher1273,0,0,nan,40,,nan,nan,nan,0.895,nan,,,0.855,YOM,real lone branch
+Kartvelian,SVAN,Svan,0.313,0.578,True,lang:svan1243,0,0,nan,39,,nan,nan,nan,0.781,nan,,,0.805,MERWARI,real lone branch
+Katla-Tima,KATLA,Katla,0.487,nan,True,Katla-Julud,0,0,nan,39,,nan,nan,nan,0.674,nan,,,0.831,NISHING,real lone branch
+Khoe-Kwadi,KWADI,Kwadi,0.344,0.511,True,lang:kwad1244,0,0,nan,29,,nan,nan,nan,0.743,nan,,,0.818,DOOHWAAYAAYO,real lone branch
+Koreanic,JEJUEO,Jejueo,0.829,nan,True,lang:jeju1234,0,0,nan,39,,nan,nan,nan,0.403,nan,,,0.801,MIN_GUILIN_XIABA,real lone branch
+Lolo-Burmese,GONG,Ugong,0.285,0.361,True,lang:ugon1239,0,0,nan,40,,nan,nan,nan,0.760,0.743,BUMTHANGKHA,(no lineage),0.827,SORBUNG,real lone branch
+Malayic,HAJI,Haji,0.758,0.802,True,lang:haji1235,0,0,nan,35,,nan,nan,nan,0.329,0.509,REMUN,(no lineage),0.739,OLD_OR_MIDDLE_JAVANESE,real lone branch
+Nubian,MEIDOB_NUBIAN,Midob,0.274,0.277,True,lang:mido1240,0,0,nan,38,,nan,nan,nan,0.805,0.844,KENZI,(no lineage),0.842,FRAFRA_2,real lone branch
+Oghuz,SALAR_2,Salar,0.882,0.900,True,lang:sala1264,0,0,nan,39,Turkic,0.507,0.456,2.210,0.335,0.324,SALAR,(no lineage),0.832,MUTSUN,real lone branch
+Siouan,CATAWBA,Catawba,0.207,0.321,True,Catawban,0,0,nan,36,,nan,nan,nan,0.856,nan,,,0.813,PAPORA_2,real lone branch
+Mandarin,MANDARIN_CHENZHOU_GUIYANG,Mandarin Chinese,0.688,0.745,False,lang:mand1415,180,180,0.442,33,,nan,nan,nan,0.442,0.421,XIANG_MILUO,(no lineage),0.811,SHUANGLONG_MIEN,relatives missing from the sample
