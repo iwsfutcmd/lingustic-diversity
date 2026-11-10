@@ -395,6 +395,43 @@ where eDiAna has a syllabically attested lemma with a secure meaning (16), Hiero
 is 0.735 from Hittite. With 23 concepts it shares fewer than 20 with 87 of the 527 Indo-European lists, so the drop
 rule leaves it out of Indo-European's D_max; it is in the Compare varieties tool.
 
+## Depth: how closely related, in one unit for pairs and families
+
+D_max counts lineages (breadth). **Depth** answers the other question, how far apart: for two varieties, how much
+of their basic vocabulary is still shared; for a family, the same across its deepest split. `scripts/depth.py`:
+
+- **Pairwise.** PMI-LDND is mapped to *retention*, the share of basic vocabulary still cognate, relative to two
+  lists of the same language. The map is fitted on expert cognate coding (the Lexibank datasets of the cognate
+  check): datasets differ in how strictly they draw cognate sets, which scales their shares by a constant, so each
+  gets an offset and one common curve is fitted (`results/depth_calibration.json`). After the offsets the curves of
+  IE-CoR, ABVD, Bantu, Dravidian, Semitic, Sino-Tibetan and Uto-Aztecan agree within about ±0.2 log units (Bowern's
+  Pama-Nyungan differs in shape and is left out of the fit). Depth is τ = −ln retention: additive along a tree if
+  basic-vocabulary replacement is a Poisson process, with no rate and no dates assumed (0.69 = half replaced).
+- **Horizon.** The curve flattens past PMI-LDND ≈ 0.85: at the detection limit (0.941) retention is
+  about 21% (τ ≈ 1.58), and 40 words cannot resolve anything deeper. Pairs and families there are
+  reported as *beyond the horizon*, a lower bound.
+- **Family.** Average-linkage clustering on pairwise depth (no classification); the root splits the family in two,
+  and the family's depth is the median pairwise depth across that split. Dialect counts do not raise it. Lists close
+  to another family (contact check, within the same-language band) are left out, and so are a lineage's own
+  ancestors (Latin for Romance, Sanskrit for Indo-Aryan, Old and Middle Chinese for Sinitic, Classical Arabic for
+  Arabic, Old Aramaic, Proto-Germanic): an ancestor is not a branch. When the root branch is a single list
+  (`lone_branch`) it is often a real lone branch (Tlingit, Kwadi, Svan, Cherokee, Defaka, Cochimí) and sometimes a
+  fast-changing or doubtful list (Polabian, Bacama, Yaur, Yue Guilin Xingan); `depth_2` is the deepest split with at
+  least two lists on each side.
+
+Retention across the deepest split (`results/depth.{json,csv}`): Quechua 96% (Central vs Southern Quechua is as
+close as two lists of one language on 40 words), Koreanic 83%, Japonic 74%, Arabic 72%, Slavic 72%,
+Germanic 70%, Wu 69%, Mandarin 69% (75% without its one-list root branch), Romance 62%, Min 56%,
+Sinitic 43% (Southern Min against the rest), Turkic 38% (Chuvash against the rest), Indo-Aryan 34%, Semitic
+28%, Uralic 25%, Indo-European 23% (Anatolian, Tocharian, Greek and Armenian against the rest).
+Austronesian, Atlantic-Congo, Afro-Asiatic, Pama-Nyungan, Nuclear Trans New Guinea and Otomanguean are beyond the
+horizon.
+
+Caveats: depth measures change, not time, so a fast-changing branch looks old (Polabian, under German contact, is
+Slavic's one-list root branch). The calibration is pooled across families whose cognate curves differ by up to
+±0.2 log units, so small depth differences between families are not significant. Depth rests on a family's most
+divergent members, which makes it more sensitive to a single doubtful list than D_max is.
+
 ## Widest pair (robust, tree-free)
 
 D_max is an effective number of distinct lineages; the widest pair is on the distance scale and answers "how far apart

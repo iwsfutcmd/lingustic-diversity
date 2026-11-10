@@ -1,0 +1,2659 @@
+{
+  "calibration": "depth_calibration.json",
+  "horizon_d": 0.9412470786626413,
+  "horizon_depth": 1.5771001851545803,
+  "lineages": [
+    {
+      "lineage": "Basque",
+      "lists": 2,
+      "depth": 0.0,
+      "retention": 1.0,
+      "median_d_across_root": 0.13752904534339905,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        1,
+        1
+      ],
+      "lone_branch": "BASQUE_2",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BASQUE_2"
+      ]
+    },
+    {
+      "lineage": "Sumerian",
+      "lists": 1,
+      "depth": 0.0,
+      "retention": 1.0,
+      "median_d_across_root": 0.0,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        1,
+        0
+      ],
+      "lone_branch": "",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": []
+    },
+    {
+      "lineage": "Elamite",
+      "lists": 1,
+      "depth": 0.0,
+      "retention": 1.0,
+      "median_d_across_root": 0.0,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        1,
+        0
+      ],
+      "lone_branch": "",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": []
+    },
+    {
+      "lineage": "Etruscan",
+      "lists": 1,
+      "depth": 0.0,
+      "retention": 1.0,
+      "median_d_across_root": 0.0,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        1,
+        0
+      ],
+      "lone_branch": "",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": []
+    },
+    {
+      "lineage": "Hruso",
+      "lists": 1,
+      "depth": 0.0,
+      "retention": 1.0,
+      "median_d_across_root": 0.0,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        1,
+        0
+      ],
+      "lone_branch": "",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": []
+    },
+    {
+      "lineage": "Ancient South Arabian",
+      "lists": 1,
+      "depth": 0.0,
+      "retention": 1.0,
+      "median_d_across_root": 0.0,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        1,
+        0
+      ],
+      "lone_branch": "",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": []
+    },
+    {
+      "lineage": "Quechuan",
+      "lists": 61,
+      "depth": 0.04494713249418507,
+      "retention": 0.956048024371547,
+      "median_d_across_root": 0.2498711794614792,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        46,
+        15
+      ],
+      "lone_branch": "",
+      "depth_2": 0.04494713249418507,
+      "retention_2": 0.956048024371547,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "CHACPAR",
+        "CHETILLA",
+        "HUANUCO",
+        "INKAWASI",
+        "QUECHUA_ANCASH_CHIQUIAN",
+        "QUECHUA_ANCASH_HUAYLAS_HUARAZ"
+      ]
+    },
+    {
+      "lineage": "Tarascan",
+      "lists": 4,
+      "depth": 0.04856811662820593,
+      "retention": 0.952592449710101,
+      "median_d_across_root": 0.2579168975353241,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        3,
+        1
+      ],
+      "lone_branch": "TARASCAN",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "TARASCAN"
+      ]
+    },
+    {
+      "lineage": "Nihali",
+      "lists": 3,
+      "depth": 0.059093119273970665,
+      "retention": 0.9426189890742609,
+      "median_d_across_root": 0.28130313754081726,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        2,
+        1
+      ],
+      "lone_branch": "NIHALI",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "NIHALI"
+      ]
+    },
+    {
+      "lineage": "Araucanian",
+      "lists": 4,
+      "depth": 0.06382186747432118,
+      "retention": 0.9381721036132895,
+      "median_d_across_root": 0.2918102741241455,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        3,
+        1
+      ],
+      "lone_branch": "RANQUELCHE",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "RANQUELCHE"
+      ]
+    },
+    {
+      "lineage": "Kusunda",
+      "lists": 2,
+      "depth": 0.07083249577861296,
+      "retention": 0.9316179289946368,
+      "median_d_across_root": 0.30738767981529236,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        1,
+        1
+      ],
+      "lone_branch": "KUSUNDA_2",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "KUSUNDA_2"
+      ]
+    },
+    {
+      "lineage": "Haida",
+      "lists": 2,
+      "depth": 0.0746567943166519,
+      "retention": 0.9280619478115195,
+      "median_d_across_root": 0.31588515639305115,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        1,
+        1
+      ],
+      "lone_branch": "HAIDA_2",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "HAIDA_2"
+      ]
+    },
+    {
+      "lineage": "Levantine Arabic",
+      "lists": 7,
+      "depth": 0.1015988694651052,
+      "retention": 0.9033918570569826,
+      "median_d_across_root": 0.35199902951717377,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        6,
+        1
+      ],
+      "lone_branch": "ARABIC_NORTH_LEVANTINE_SPOKEN",
+      "depth_2": 0.09356108200712465,
+      "retention_2": 0.9106823894190825,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ARABIC_NORTH_LEVANTINE_SPOKEN"
+      ]
+    },
+    {
+      "lineage": "East Semitic",
+      "lists": 3,
+      "depth": 0.11237059467733941,
+      "retention": 0.8937129908438429,
+      "median_d_across_root": 0.3660888373851776,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        2,
+        1
+      ],
+      "lone_branch": "AKKADIAN_3",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "AKKADIAN_3"
+      ]
+    },
+    {
+      "lineage": "Burushaski",
+      "lists": 10,
+      "depth": 0.12224404482939685,
+      "retention": 0.8849323789766804,
+      "median_d_across_root": 0.37319302558898926,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        9,
+        1
+      ],
+      "lone_branch": "BURUSHASKI_2",
+      "depth_2": 0.0,
+      "retention_2": 1.0,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BURUSHASKI_2"
+      ]
+    },
+    {
+      "lineage": "Nivkh",
+      "lists": 7,
+      "depth": 0.12424031854814338,
+      "retention": 0.8831675738288075,
+      "median_d_across_root": 0.3746293932199478,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        6,
+        1
+      ],
+      "lone_branch": "GILYAK",
+      "depth_2": 0.07242533205383633,
+      "retention_2": 0.9301351953521421,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "GILYAK"
+      ]
+    },
+    {
+      "lineage": "Oghuz",
+      "lists": 34,
+      "depth": 0.1259777205491891,
+      "retention": 0.881634488896836,
+      "median_d_across_root": 0.3758794963359833,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        33,
+        1
+      ],
+      "lone_branch": "SALAR_2",
+      "depth_2": 0.104894586567515,
+      "retention_2": 0.9004194338869169,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "SALAR_2"
+      ]
+    },
+    {
+      "lineage": "North-Eastern Neo-Aramaic",
+      "lists": 10,
+      "depth": 0.14164474045312747,
+      "retention": 0.8679295419777899,
+      "median_d_across_root": 0.387152299284935,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        6,
+        4
+      ],
+      "lone_branch": "",
+      "depth_2": 0.14164474045312747,
+      "retention_2": 0.8679295419777899,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ARBEL_NEO_ARAMAIC",
+        "HULAULA",
+        "KOY_SANJAQ_SURAT",
+        "URMI_NEO_ARAMAIC"
+      ]
+    },
+    {
+      "lineage": "Koreanic",
+      "lists": 3,
+      "depth": 0.18710300756639553,
+      "retention": 0.8293583018049365,
+      "median_d_across_root": 0.4198606312274933,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        2,
+        1
+      ],
+      "lone_branch": "JEJUEO",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "JEJUEO"
+      ]
+    },
+    {
+      "lineage": "Ainu",
+      "lists": 23,
+      "depth": 0.19185315861804297,
+      "retention": 0.8254280665910207,
+      "median_d_across_root": 0.42327848076820374,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        22,
+        1
+      ],
+      "lone_branch": "KURIL_AINU",
+      "depth_2": 0.0770780578217579,
+      "retention_2": 0.925817583481996,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "KURIL_AINU"
+      ]
+    },
+    {
+      "lineage": "Jarawa-Onge",
+      "lists": 2,
+      "depth": 0.19884576003710164,
+      "retention": 0.8196763104271,
+      "median_d_across_root": 0.428309828042984,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        1,
+        1
+      ],
+      "lone_branch": "ONGE",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ONGE"
+      ]
+    },
+    {
+      "lineage": "North Ethiopic",
+      "lists": 9,
+      "depth": 0.23559331864497662,
+      "retention": 0.7901019283271076,
+      "median_d_across_root": 0.4568389654159546,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        7,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.23559331864497662,
+      "retention_2": 0.7901019283271076,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "TIGRE",
+        "TIGRE_2"
+      ]
+    },
+    {
+      "lineage": "Peninsular Arabic",
+      "lists": 10,
+      "depth": 0.23877587429468758,
+      "retention": 0.7875913820668936,
+      "median_d_across_root": 0.4601355493068695,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        8,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.23877587429468758,
+      "retention_2": 0.7875913820668936,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "HIJAZI_ARABIC",
+        "YEMEN_SANAANI_ARABIC"
+      ]
+    },
+    {
+      "lineage": "Finnic",
+      "lists": 17,
+      "depth": 0.2710983139999559,
+      "retention": 0.7625415242123399,
+      "median_d_across_root": 0.4936160743236542,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        16,
+        1
+      ],
+      "lone_branch": "INGRIAN",
+      "depth_2": 0.20366278283086553,
+      "retention_2": 0.8157374054701749,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "INGRIAN"
+      ]
+    },
+    {
+      "lineage": "Totonacan",
+      "lists": 10,
+      "depth": 0.2766865381895509,
+      "retention": 0.758292155492059,
+      "median_d_across_root": 0.49940451979637146,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        7,
+        3
+      ],
+      "lone_branch": "",
+      "depth_2": 0.2766865381895509,
+      "retention_2": 0.758292155492059,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "TEPEHUA_HUEHUETLA",
+        "TEPEHUA_PISA_FLORES",
+        "TEPEHUA_TLACHICHILCO"
+      ]
+    },
+    {
+      "lineage": "Malayic",
+      "lists": 46,
+      "depth": 0.27757238283900126,
+      "retention": 0.7576207238793541,
+      "median_d_across_root": 0.5003221035003662,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        45,
+        1
+      ],
+      "lone_branch": "HAJI",
+      "depth_2": 0.220550703884693,
+      "retention_2": 0.8020769694124171,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "HAJI"
+      ]
+    },
+    {
+      "lineage": "Polynesian",
+      "lists": 51,
+      "depth": 0.2801739562870703,
+      "retention": 0.7556522795568772,
+      "median_d_across_root": 0.5030168890953064,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        50,
+        1
+      ],
+      "lone_branch": "RAPA",
+      "depth_2": 0.22302342582243345,
+      "retention_2": 0.8000961061657057,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "RAPA"
+      ]
+    },
+    {
+      "lineage": "Japonic",
+      "lists": 33,
+      "depth": 0.29894854588860426,
+      "retention": 0.7415975666971357,
+      "median_d_across_root": 0.5224641561508179,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        27,
+        6
+      ],
+      "lone_branch": "",
+      "depth_2": 0.29894854588860426,
+      "retention_2": 0.7415975666971357,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "JAPANESE",
+        "JAPANESE_2",
+        "JAPANESE_3",
+        "JAPANESE_KYOTO",
+        "TAKARAJIMA_JAPANESE",
+        "TOKYO_JAPANESE"
+      ]
+    },
+    {
+      "lineage": "Canaanite",
+      "lists": 4,
+      "depth": 0.3023171090623886,
+      "retention": 0.7391036512582942,
+      "median_d_across_root": 0.5259534120559692,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        3,
+        1
+      ],
+      "lone_branch": "UGARITIC",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "UGARITIC"
+      ]
+    },
+    {
+      "lineage": "Eastern Arabic",
+      "lists": 8,
+      "depth": 0.31539040261514595,
+      "retention": 0.7295040183918954,
+      "median_d_across_root": 0.5394951105117798,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        7,
+        1
+      ],
+      "lone_branch": "SOUKHNE_SYRIAN_ARABIC",
+      "depth_2": 0.09231835243594208,
+      "retention_2": 0.9118148248641341,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "SOUKHNE_SYRIAN_ARABIC"
+      ]
+    },
+    {
+      "lineage": "Egyptic Arabic",
+      "lists": 6,
+      "depth": 0.3185683836018518,
+      "retention": 0.7271893484283837,
+      "median_d_across_root": 0.5427869558334351,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        5,
+        1
+      ],
+      "lone_branch": "SHUWA_CHADIAN_ARABIC_2",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "SHUWA_CHADIAN_ARABIC_2"
+      ]
+    },
+    {
+      "lineage": "Songhay",
+      "lists": 13,
+      "depth": 0.31867196087743793,
+      "retention": 0.7271140320374389,
+      "median_d_across_root": 0.5428942441940308,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        12,
+        1
+      ],
+      "lone_branch": "KORANDJE",
+      "depth_2": 0.260730056084992,
+      "retention_2": 0.7704888803297779,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "KORANDJE"
+      ]
+    },
+    {
+      "lineage": "Slavic",
+      "lists": 34,
+      "depth": 0.32342650308442644,
+      "retention": 0.7236651431238119,
+      "median_d_across_root": 0.5478191375732422,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        33,
+        1
+      ],
+      "lone_branch": "POLABIAN",
+      "depth_2": 0.2320960319348111,
+      "retention_2": 0.7928699788124717,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "POLABIAN"
+      ]
+    },
+    {
+      "lineage": "North African Arabic",
+      "lists": 11,
+      "depth": 0.32610076124245035,
+      "retention": 0.7217324611082819,
+      "median_d_across_root": 0.5495488941669464,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        9,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.32610076124245035,
+      "retention_2": 0.7217324611082819,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "MALTESE",
+        "MALTESE_ARABIC"
+      ]
+    },
+    {
+      "lineage": "Arabic",
+      "lists": 41,
+      "depth": 0.32932464298352704,
+      "retention": 0.719409427609633,
+      "median_d_across_root": 0.5519005358219147,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        39,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.32932464298352704,
+      "retention_2": 0.719409427609633,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "MALTESE",
+        "MALTESE_ARABIC"
+      ]
+    },
+    {
+      "lineage": "Jin",
+      "lists": 23,
+      "depth": 0.3368205138943766,
+      "retention": 0.7140369881202325,
+      "median_d_across_root": 0.5556567311286926,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        22,
+        1
+      ],
+      "lone_branch": "JIN_LVLIANG_LIULIN",
+      "depth_2": 0.21719322054506354,
+      "retention_2": 0.8047744553223265,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "JIN_LVLIANG_LIULIN"
+      ]
+    },
+    {
+      "lineage": "Germanic",
+      "lists": 60,
+      "depth": 0.3580173121657029,
+      "retention": 0.6990609726423721,
+      "median_d_across_root": 0.566278487443924,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        42,
+        18
+      ],
+      "lone_branch": "",
+      "depth_2": 0.3580173121657029,
+      "retention_2": 0.6990609726423721,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "DANISH",
+        "DANISH_2",
+        "ENGLISH",
+        "ENGLISH_2",
+        "FAROESE",
+        "GJESTAL_NORWEGIAN"
+      ]
+    },
+    {
+      "lineage": "Mandarin",
+      "lists": 182,
+      "depth": 0.3745241432981114,
+      "retention": 0.6876164078275203,
+      "median_d_across_root": 0.5745500922203064,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        181,
+        1
+      ],
+      "lone_branch": "MANDARIN_CHENZHOU_GUIYANG",
+      "depth_2": 0.2942703919223605,
+      "retention_2": 0.7450750019418716,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "MANDARIN_CHENZHOU_GUIYANG"
+      ]
+    },
+    {
+      "lineage": "Wu",
+      "lists": 51,
+      "depth": 0.37494795199008846,
+      "retention": 0.6873250517611147,
+      "median_d_across_root": 0.5747624635696411,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        47,
+        4
+      ],
+      "lone_branch": "",
+      "depth_2": 0.37494795199008846,
+      "retention_2": 0.6873250517611147,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "WU_LISHUI",
+        "WU_LISHUI_QINGYUAN",
+        "WU_LISHUI_SUICHANG",
+        "WU_LISHUI_YUYAN"
+      ]
+    },
+    {
+      "lineage": "Kipchak",
+      "lists": 18,
+      "depth": 0.3797120232028489,
+      "retention": 0.684058373789929,
+      "median_d_across_root": 0.5771497488021851,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        17,
+        1
+      ],
+      "lone_branch": "SIBERIAN_TATAR",
+      "depth_2": 0.17948691879268888,
+      "retention_2": 0.8356988828219923,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "SIBERIAN_TATAR"
+      ]
+    },
+    {
+      "lineage": "Hui",
+      "lists": 20,
+      "depth": 0.3851603973639518,
+      "retention": 0.6803415024688568,
+      "median_d_across_root": 0.5798799395561218,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        19,
+        1
+      ],
+      "lone_branch": "HUI_HANGZHOU_FENKOU",
+      "depth_2": 0.3259972749102684,
+      "retention_2": 0.7218071544183003,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "HUI_HANGZHOU_FENKOU"
+      ]
+    },
+    {
+      "lineage": "Modern South Arabian",
+      "lists": 9,
+      "depth": 0.39508296853564057,
+      "retention": 0.6736241473211886,
+      "median_d_across_root": 0.5848521590232849,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        7,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.39508296853564057,
+      "retention_2": 0.6736241473211886,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "SOQOTRI",
+        "SOQOTRI_2"
+      ]
+    },
+    {
+      "lineage": "Rashad",
+      "lists": 2,
+      "depth": 0.4202435021275107,
+      "retention": 0.6568868469942092,
+      "median_d_across_root": 0.597460150718689,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        1,
+        1
+      ],
+      "lone_branch": "TEGALI",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "TEGALI"
+      ]
+    },
+    {
+      "lineage": "Xiang",
+      "lists": 22,
+      "depth": 0.4256746289520049,
+      "retention": 0.6533288818446354,
+      "median_d_across_root": 0.6001816987991333,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        21,
+        1
+      ],
+      "lone_branch": "XIANG_GUILIN_JIESHOU",
+      "depth_2": 0.2599718560419688,
+      "retention_2": 0.771073286552408,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "XIANG_GUILIN_JIESHOU"
+      ]
+    },
+    {
+      "lineage": "Mongolic",
+      "lists": 29,
+      "depth": 0.4512338733874078,
+      "retention": 0.6368418843912846,
+      "median_d_across_root": 0.6129894852638245,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        16,
+        13
+      ],
+      "lone_branch": "",
+      "depth_2": 0.4512338733874078,
+      "retention_2": 0.6368418843912846,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BAOAN_GANSU_DAHEJIA_DADUN",
+        "BAOAN_QINGHAI_BAOAN_XIAZHUANG",
+        "BONAN_TONGREN_NIANDUHU",
+        "DONGXIANG_GANSU_SUONANBA",
+        "EASTERN_BONAN",
+        "KANGJIA_QINGHAI_KANGYANG"
+      ]
+    },
+    {
+      "lineage": "Romance",
+      "lists": 62,
+      "depth": 0.4731108114568606,
+      "retention": 0.6230610250522786,
+      "median_d_across_root": 0.6239520609378815,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        58,
+        4
+      ],
+      "lone_branch": "",
+      "depth_2": 0.4731108114568606,
+      "retention_2": 0.6230610250522786,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ARPITAN",
+        "FRENCH",
+        "FRENCH_2",
+        "FRENCH_CAJUN"
+      ]
+    },
+    {
+      "lineage": "Quichean-Mamean",
+      "lists": 79,
+      "depth": 0.48248093259490143,
+      "retention": 0.6172501346604763,
+      "median_d_across_root": 0.6286474466323853,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        54,
+        25
+      ],
+      "lone_branch": "",
+      "depth_2": 0.48248093259490143,
+      "retention_2": 0.6172501346604763,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "MAM_CABRICAN",
+        "MAM_CAJOLA",
+        "MAM_CONSEPCION_CHIQUIRICHAPA",
+        "MAM_NORTHERN",
+        "MAM_SANTA_BARBARA",
+        "MAM_SANTIAGO_CHIMALTENANGO"
+      ]
+    },
+    {
+      "lineage": "Aramaic",
+      "lists": 22,
+      "depth": 0.5117412175722258,
+      "retention": 0.5994508951331265,
+      "median_d_across_root": 0.6433098316192627,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        21,
+        1
+      ],
+      "lone_branch": "WESTERN_NEO_ARAMAIC",
+      "depth_2": 0.29973533038254263,
+      "retention_2": 0.741014318706241,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "WESTERN_NEO_ARAMAIC"
+      ]
+    },
+    {
+      "lineage": "Narrow Talodi",
+      "lists": 9,
+      "depth": 0.537423554542487,
+      "retention": 0.5842516072860447,
+      "median_d_across_root": 0.6530597805976868,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        5,
+        4
+      ],
+      "lone_branch": "",
+      "depth_2": 0.537423554542487,
+      "retention_2": 0.5842516072860447,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ACHERON",
+        "LUMUN_2",
+        "TOCHO",
+        "TOCHO_2"
+      ]
+    },
+    {
+      "lineage": "Gan",
+      "lists": 22,
+      "depth": 0.5410433786100445,
+      "retention": 0.5821405424033455,
+      "median_d_across_root": 0.6539579629898071,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        21,
+        1
+      ],
+      "lone_branch": "GAN_SHAOWU",
+      "depth_2": 0.34840085148203065,
+      "retention_2": 0.7058158921544728,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "GAN_SHAOWU"
+      ]
+    },
+    {
+      "lineage": "Mixe-Zoque",
+      "lists": 23,
+      "depth": 0.5503263092137136,
+      "retention": 0.5767615770543137,
+      "median_d_across_root": 0.6562613248825073,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        22,
+        1
+      ],
+      "lone_branch": "TAPACHULTEC",
+      "depth_2": 0.36382954565567405,
+      "retention_2": 0.6950096520613839,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "TAPACHULTEC"
+      ]
+    },
+    {
+      "lineage": "Kuki-Chin",
+      "lists": 53,
+      "depth": 0.5528530276060823,
+      "retention": 0.5753061025310323,
+      "median_d_across_root": 0.6568882763385773,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        49,
+        4
+      ],
+      "lone_branch": "",
+      "depth_2": 0.5528530276060823,
+      "retention_2": 0.5753061025310323,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "EAST_KHUMI",
+        "KHUMI",
+        "KHUMI_MANGLUNG",
+        "WAKUNG"
+      ]
+    },
+    {
+      "lineage": "Yukaghir",
+      "lists": 4,
+      "depth": 0.5712603495948962,
+      "retention": 0.564813127916563,
+      "median_d_across_root": 0.6605006456375122,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        2,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.5712603495948962,
+      "retention_2": 0.564813127916563,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "NORTHERN_YUKAGHIR",
+        "YUKAGHIR_TUNDRA"
+      ]
+    },
+    {
+      "lineage": "Min",
+      "lists": 31,
+      "depth": 0.5838009739865765,
+      "retention": 0.5577742468581699,
+      "median_d_across_root": 0.6645673513412476,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        21,
+        10
+      ],
+      "lone_branch": "",
+      "depth_2": 0.5838009739865765,
+      "retention_2": 0.5577742468581699,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "FUZHOU_CHINESE",
+        "MIN_FUAN",
+        "MIN_FUZHOU",
+        "MIN_JIANOU",
+        "MIN_NANPING",
+        "MIN_NANPING_SHIBEI"
+      ]
+    },
+    {
+      "lineage": "Hakka",
+      "lists": 46,
+      "depth": 0.601214756341436,
+      "retention": 0.5481453684371885,
+      "median_d_across_root": 0.6688882112503052,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        45,
+        1
+      ],
+      "lone_branch": "HAKKA_GANZHOU_DAYU",
+      "depth_2": 0.3160872187366516,
+      "retention_2": 0.7289958652963726,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "HAKKA_GANZHOU_DAYU"
+      ]
+    },
+    {
+      "lineage": "Pinghua",
+      "lists": 29,
+      "depth": 0.6109816033021358,
+      "retention": 0.5428177757530852,
+      "median_d_across_root": 0.6713116466999054,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        27,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.6109816033021358,
+      "retention_2": 0.5428177757530852,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "PINGHUA_YONGZHOU_NINGYUAN",
+        "PINGHUA_YONGZHOU_SHOUYAN"
+      ]
+    },
+    {
+      "lineage": "Tungusic",
+      "lists": 29,
+      "depth": 0.6363332233635718,
+      "retention": 0.5292294367101901,
+      "median_d_across_root": 0.6776021122932434,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        27,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.6363332233635718,
+      "retention_2": 0.5292294367101901,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "EVEN",
+        "EWEN"
+      ]
+    },
+    {
+      "lineage": "Saami",
+      "lists": 15,
+      "depth": 0.645102210534197,
+      "retention": 0.5246089188083707,
+      "median_d_across_root": 0.6797779500484467,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        14,
+        1
+      ],
+      "lone_branch": "SAAMI_UME",
+      "depth_2": 0.5062159440792781,
+      "retention_2": 0.6027721923625464,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "SAAMI_UME"
+      ]
+    },
+    {
+      "lineage": "Greater Central Philippine",
+      "lists": 86,
+      "depth": 0.6607530432021625,
+      "retention": 0.5164622696174467,
+      "median_d_across_root": 0.6836613714694977,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        78,
+        8
+      ],
+      "lone_branch": "",
+      "depth_2": 0.6607530432021625,
+      "retention_2": 0.5164622696174467,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BINATAUNA",
+        "BOLANGO",
+        "BUOL",
+        "GORONTALO",
+        "KAIDIPANG",
+        "LOLAK"
+      ]
+    },
+    {
+      "lineage": "Berber",
+      "lists": 36,
+      "depth": 0.6638036740168116,
+      "retention": 0.5148891346501632,
+      "median_d_across_root": 0.6844183206558228,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        34,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.6638036740168116,
+      "retention_2": 0.5148891346501632,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ZENAGA",
+        "ZENAGA_2"
+      ]
+    },
+    {
+      "lineage": "Yeniseian",
+      "lists": 9,
+      "depth": 0.7055308602528705,
+      "retention": 0.4938463412641612,
+      "median_d_across_root": 0.6947720348834991,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        6,
+        3
+      ],
+      "lone_branch": "",
+      "depth_2": 0.7055308602528705,
+      "retention_2": 0.4938463412641612,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ARIN",
+        "ASSAN",
+        "KOTT"
+      ]
+    },
+    {
+      "lineage": "Katla-Tima",
+      "lists": 3,
+      "depth": 0.7193950818980437,
+      "retention": 0.4870467902863613,
+      "median_d_across_root": 0.6982121467590332,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        2,
+        1
+      ],
+      "lone_branch": "KATLA",
+      "depth_2": NaN,
+      "retention_2": NaN,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "KATLA"
+      ]
+    },
+    {
+      "lineage": "Yue",
+      "lists": 91,
+      "depth": 0.7355497689015127,
+      "retention": 0.47924191423643275,
+      "median_d_across_root": 0.7022205889225006,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        90,
+        1
+      ],
+      "lone_branch": "YUE_GUILIN_XINGAN",
+      "depth_2": 0.2908196862147433,
+      "retention_2": 0.7476504775522751,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "YUE_GUILIN_XINGAN"
+      ]
+    },
+    {
+      "lineage": "South Ethiopic",
+      "lists": 16,
+      "depth": 0.8068670771407436,
+      "retention": 0.4462539576961417,
+      "median_d_across_root": 0.7199164628982544,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        14,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.8068670771407436,
+      "retention_2": 0.4462539576961417,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "MESMES",
+        "MESMES_2"
+      ]
+    },
+    {
+      "lineage": "Central Semitic",
+      "lists": 72,
+      "depth": 0.8226356159466812,
+      "retention": 0.43927237419387427,
+      "median_d_across_root": 0.7238290905952454,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        49,
+        23
+      ],
+      "lone_branch": "",
+      "depth_2": 0.8226356159466812,
+      "retention_2": 0.43927237419387427,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "AMEDYA_ARAMAIC",
+        "ARAMAIC",
+        "ARAMAIC_ANCIENT",
+        "ARBEL_NEO_ARAMAIC",
+        "BOHTAN",
+        "CHRISTIAN_BARWAR"
+      ]
+    },
+    {
+      "lineage": "Sinitic",
+      "lists": 483,
+      "depth": 0.8436739065929562,
+      "retention": 0.4301273692518198,
+      "median_d_across_root": 0.7290492951869965,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        462,
+        21
+      ],
+      "lone_branch": "",
+      "depth_2": 0.8436739065929562,
+      "retention_2": 0.4301273692518198,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "AMOY_MINNAN_CHINESE",
+        "CHAOYANG_CHINESE",
+        "DONGSHAN_CHINESE",
+        "FUZHOU_CHINESE",
+        "HAINAN_MINNAN_CHINESE",
+        "MIN_FUZHOU"
+      ]
+    },
+    {
+      "lineage": "South Dravidian",
+      "lists": 64,
+      "depth": 0.8562933257749212,
+      "retention": 0.42473351690012007,
+      "median_d_across_root": 0.7321805357933044,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        62,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.8562933257749212,
+      "retention_2": 0.42473351690012007,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "TODA",
+        "TODA_2"
+      ]
+    },
+    {
+      "lineage": "Northwest Semitic",
+      "lists": 27,
+      "depth": 0.878582664516215,
+      "retention": 0.41537121503349933,
+      "median_d_across_root": 0.7377111613750458,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        23,
+        4
+      ],
+      "lone_branch": "",
+      "depth_2": 0.878582664516215,
+      "retention_2": 0.41537121503349933,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BIBLICAL_HEBREW",
+        "HEBREW",
+        "MODERN_HEBREW",
+        "UGARITIC"
+      ]
+    },
+    {
+      "lineage": "Kuliak",
+      "lists": 6,
+      "depth": 0.9004179534706308,
+      "retention": 0.40639976804614214,
+      "median_d_across_root": 0.7431671023368835,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        4,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.9004179534706308,
+      "retention_2": 0.40639976804614214,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "NYANGI",
+        "TEPES"
+      ]
+    },
+    {
+      "lineage": "Kru",
+      "lists": 25,
+      "depth": 0.9152768323792257,
+      "retention": 0.4004057654659119,
+      "median_d_across_root": 0.7468160390853882,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        17,
+        8
+      ],
+      "lone_branch": "",
+      "depth_2": 0.9152768323792257,
+      "retention_2": 0.4004057654659119,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BETE_DALOA",
+        "BETE_DALOA_2",
+        "BETE_GUIBEROUA",
+        "DIDA_LAKOTA",
+        "DIDA_LAKOTA_3",
+        "DIDA_YOCOBOUE"
+      ]
+    },
+    {
+      "lineage": "Ijoid",
+      "lists": 36,
+      "depth": 0.9308625636409485,
+      "retention": 0.39421352942158433,
+      "median_d_across_root": 0.7506905794143677,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        35,
+        1
+      ],
+      "lone_branch": "DEFAKA",
+      "depth_2": 0.27568556452114007,
+      "retention_2": 0.7590515659842146,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "DEFAKA"
+      ]
+    },
+    {
+      "lineage": "Celebic",
+      "lists": 80,
+      "depth": 0.969354413060429,
+      "retention": 0.37932784817640147,
+      "median_d_across_root": 0.7603431642055511,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        78,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.969354413060429,
+      "retention_2": 0.37932784817640147,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "KADAI",
+        "SOBOYO"
+      ]
+    },
+    {
+      "lineage": "Turkic",
+      "lists": 71,
+      "depth": 0.9700954019890691,
+      "retention": 0.37904687455260616,
+      "median_d_across_root": 0.7605289816856384,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        69,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.9700954019890691,
+      "retention_2": 0.37904687455260616,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "CHUVASH",
+        "CHUVASH_2"
+      ]
+    },
+    {
+      "lineage": "Samoyedic",
+      "lists": 10,
+      "depth": 0.9744108454496593,
+      "retention": 0.3774146436297847,
+      "median_d_across_root": 0.7616111636161804,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        7,
+        3
+      ],
+      "lone_branch": "",
+      "depth_2": 0.9744108454496593,
+      "retention_2": 0.3774146436297847,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "FOREST_ENETS_2",
+        "NENETS",
+        "TUNDRA_NENETS"
+      ]
+    },
+    {
+      "lineage": "Kam-Tai",
+      "lists": 179,
+      "depth": 0.9782038530914361,
+      "retention": 0.3759858184877505,
+      "median_d_across_root": 0.7625623345375061,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        134,
+        45
+      ],
+      "lone_branch": "",
+      "depth_2": 0.9782038530914361,
+      "retention_2": 0.3759858184877505,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ANTANG_SUI",
+        "BANLIANG_SUI",
+        "CHADONG_GUANGXI_CHADONG",
+        "DONGMEN_MULAM",
+        "DONG_GUIZHOU_ZHANGLU",
+        "DUJIANG_SUI"
+      ]
+    },
+    {
+      "lineage": "Heibanic",
+      "lists": 11,
+      "depth": 0.9804045961516699,
+      "retention": 0.3751592801398295,
+      "median_d_across_root": 0.7631142139434814,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        9,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.9804045961516699,
+      "retention_2": 0.3751592801398295,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "KO1",
+        "WARNANG"
+      ]
+    },
+    {
+      "lineage": "Ethiosemitic",
+      "lists": 25,
+      "depth": 0.9963096531360747,
+      "retention": 0.36923955201028275,
+      "median_d_across_root": 0.7671027183532715,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        23,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 0.9963096531360747,
+      "retention_2": 0.36923955201028275,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "MESMES",
+        "MESMES_2"
+      ]
+    },
+    {
+      "lineage": "Outer South Ethiopic",
+      "lists": 8,
+      "depth": 1.0102877823756566,
+      "retention": 0.36411417884894676,
+      "median_d_across_root": 0.7706080079078674,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        7,
+        1
+      ],
+      "lone_branch": "GAFAT",
+      "depth_2": 0.5689489801018282,
+      "retention_2": 0.5661201296498003,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "GAFAT"
+      ]
+    },
+    {
+      "lineage": "Great Andamanese",
+      "lists": 10,
+      "depth": 1.0308985647198743,
+      "retention": 0.35668631079349317,
+      "median_d_across_root": 0.7757765650749207,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        7,
+        3
+      ],
+      "lone_branch": "",
+      "depth_2": 1.0308985647198743,
+      "retention_2": 0.35668631079349317,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "AKAR_BALE",
+        "AKA_BEA",
+        "SOUTH_ANDAMAN"
+      ]
+    },
+    {
+      "lineage": "Cochimi-Yuman",
+      "lists": 13,
+      "depth": 1.0501676044811976,
+      "retention": 0.34987910289108604,
+      "median_d_across_root": 0.7806086540222168,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        12,
+        1
+      ],
+      "lone_branch": "COCHIMI",
+      "depth_2": 0.47564147152594793,
+      "retention_2": 0.6214862628299409,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "COCHIMI"
+      ]
+    },
+    {
+      "lineage": "Indo-Aryan",
+      "lists": 164,
+      "depth": 1.0666399012661476,
+      "retention": 0.3441629984026327,
+      "median_d_across_root": 0.7847394049167633,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        158,
+        6
+      ],
+      "lone_branch": "",
+      "depth_2": 1.0666399012661476,
+      "retention_2": 0.3441629984026327,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "CHATORKHAND_KHOWAR",
+        "GARAM_CHISHMA_KHOWAR",
+        "KESU_KHOWAR",
+        "ODIR_KHOWAR",
+        "PARGAM_NISAR_KHOWAR",
+        "USHU_KHOWAR"
+      ]
+    },
+    {
+      "lineage": "Khoe-Kwadi",
+      "lists": 15,
+      "depth": 1.0669984519634543,
+      "retention": 0.3440396206394815,
+      "median_d_across_root": 0.784829318523407,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        14,
+        1
+      ],
+      "lone_branch": "KWADI",
+      "depth_2": 0.6704451827977412,
+      "retention_2": 0.5114808246299105,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "KWADI"
+      ]
+    },
+    {
+      "lineage": "Dogon",
+      "lists": 50,
+      "depth": 1.0980707857768512,
+      "retention": 0.33351388317680547,
+      "median_d_across_root": 0.7926213145256042,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        27,
+        23
+      ],
+      "lone_branch": "",
+      "depth_2": 1.0980707857768512,
+      "retention_2": 0.33351388317680547,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "AMPARI_PA",
+        "ANA_TINGA",
+        "BEN_TEY_DOGON",
+        "BONDUM_DOM",
+        "BUNOGE",
+        "DOGON_BONDUM_DOM"
+      ]
+    },
+    {
+      "lineage": "Balto-Slavic",
+      "lists": 39,
+      "depth": 1.1118755224186967,
+      "retention": 0.3289414451189338,
+      "median_d_across_root": 0.7960831224918365,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        34,
+        5
+      ],
+      "lone_branch": "",
+      "depth_2": 1.1118755224186967,
+      "retention_2": 0.3289414451189338,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "LATVIAN",
+        "LATVIAN_2",
+        "LITHUANIAN",
+        "LITHUANIAN_2",
+        "OLD_PRUSSIAN"
+      ]
+    },
+    {
+      "lineage": "Tuu",
+      "lists": 10,
+      "depth": 1.1269207470215923,
+      "retention": 0.32402949058054126,
+      "median_d_across_root": 0.7998560070991516,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        9,
+        1
+      ],
+      "lone_branch": "NU",
+      "depth_2": 0.6263871748132245,
+      "retention_2": 0.5345194420982763,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "NU"
+      ]
+    },
+    {
+      "lineage": "Bodic",
+      "lists": 83,
+      "depth": 1.127806843806186,
+      "retention": 0.323742496261974,
+      "median_d_across_root": 0.8000782132148743,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        77,
+        6
+      ],
+      "lone_branch": "",
+      "depth_2": 1.127806843806186,
+      "retention_2": 0.323742496261974,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BAIMA_GANSU_TIELOU",
+        "BAIMA_SICHUAN_JIUZHAIGOU",
+        "BAIMA_SICHUAN_PINGWU",
+        "NORTHERN_BAIMA",
+        "SOUTHERN_BAIMA",
+        "WUJIAO_BAIMA"
+      ]
+    },
+    {
+      "lineage": "Kartvelian",
+      "lists": 6,
+      "depth": 1.1629051184289834,
+      "retention": 0.31257678798790495,
+      "median_d_across_root": 0.8088797926902771,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        5,
+        1
+      ],
+      "lone_branch": "SVAN",
+      "depth_2": 0.5483863748030346,
+      "retention_2": 0.5778815426630757,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "SVAN"
+      ]
+    },
+    {
+      "lineage": "Chukotko-Kamchatkan",
+      "lists": 7,
+      "depth": 1.1705575672026907,
+      "retention": 0.31019393907289217,
+      "median_d_across_root": 0.8107987940311432,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        4,
+        3
+      ],
+      "lone_branch": "",
+      "depth_2": 1.1705575672026907,
+      "retention_2": 0.31019393907289217,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ITELMEN",
+        "N_ITELMEN",
+        "S_ITELMEN"
+      ]
+    },
+    {
+      "lineage": "Miwok-Costanoan",
+      "lists": 9,
+      "depth": 1.1722936323622055,
+      "retention": 0.30965588936238997,
+      "median_d_across_root": 0.8112341463565826,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        7,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 1.1722936323622055,
+      "retention_2": 0.30965588936238997,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "MUTSUN",
+        "RUMSEN"
+      ]
+    },
+    {
+      "lineage": "Mayan",
+      "lists": 107,
+      "depth": 1.1836971370388267,
+      "retention": 0.30614478447894894,
+      "median_d_across_root": 0.8140937983989716,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        103,
+        4
+      ],
+      "lone_branch": "",
+      "depth_2": 1.1836971370388267,
+      "retention_2": 0.30614478447894894,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "CHICOMUCELTEC",
+        "HUASTEC",
+        "HUASTEC_VERACRUZ",
+        "SOUTHEASTERN_HUASTEC"
+      ]
+    },
+    {
+      "lineage": "Iranian",
+      "lists": 135,
+      "depth": 1.2139086877230914,
+      "retention": 0.29703399432486466,
+      "median_d_across_root": 0.8216699361801147,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        130,
+        5
+      ],
+      "lone_branch": "",
+      "depth_2": 1.2139086877230914,
+      "retention_2": 0.29703399432486466,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "DIGOR_OSSETIAN",
+        "IRON_OSSETIAN",
+        "OSSETIAN",
+        "OSSETIC_DIGOR",
+        "OSSETIC_IRON"
+      ]
+    },
+    {
+      "lineage": "South Semitic",
+      "lists": 33,
+      "depth": 1.230779913025602,
+      "retention": 0.2920647037647076,
+      "median_d_across_root": 0.8266004323959351,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        25,
+        8
+      ],
+      "lone_branch": "",
+      "depth_2": 1.230779913025602,
+      "retention_2": 0.2920647037647076,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "HARSUSI",
+        "HOBYOT",
+        "MEHRI",
+        "MEHRI_2",
+        "SAURI",
+        "SHEHRI"
+      ]
+    },
+    {
+      "lineage": "Lolo-Burmese",
+      "lists": 57,
+      "depth": 1.2549648375883722,
+      "retention": 0.28508587235500926,
+      "median_d_across_root": 0.837376594543457,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        56,
+        1
+      ],
+      "lone_branch": "GONG",
+      "depth_2": 1.0176144812450492,
+      "retention_2": 0.36145617300091504,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "GONG"
+      ]
+    },
+    {
+      "lineage": "Kxa",
+      "lists": 7,
+      "depth": 1.2622449688815423,
+      "retention": 0.2830179462944354,
+      "median_d_across_root": 0.8406204283237457,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        5,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 1.2622449688815423,
+      "retention_2": 0.2830179462944354,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "HOAN",
+        "HOAN_HUC"
+      ]
+    },
+    {
+      "lineage": "Celtic",
+      "lists": 9,
+      "depth": 1.2630832424402478,
+      "retention": 0.2827807992443554,
+      "median_d_across_root": 0.8409939408302307,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        5,
+        4
+      ],
+      "lone_branch": "",
+      "depth_2": 1.2630832424402478,
+      "retention_2": 0.2827807992443554,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "GAELIC_SCOTTISH",
+        "IRISH",
+        "MANX",
+        "OLD_IRISH"
+      ]
+    },
+    {
+      "lineage": "Semitic",
+      "lists": 108,
+      "depth": 1.2736220927993789,
+      "retention": 0.27981626355424183,
+      "median_d_across_root": 0.8456897735595703,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        92,
+        16
+      ],
+      "lone_branch": "",
+      "depth_2": 1.2736220927993789,
+      "retention_2": 0.27981626355424183,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "AMHARIC",
+        "AMHARIC_2",
+        "AMHARIC_3",
+        "ARGOBBA",
+        "CHAHA",
+        "GAFAT"
+      ]
+    },
+    {
+      "lineage": "West Semitic",
+      "lists": 105,
+      "depth": 1.275094305302424,
+      "retention": 0.2794046176419618,
+      "median_d_across_root": 0.8463457524776459,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        89,
+        16
+      ],
+      "lone_branch": "",
+      "depth_2": 1.275094305302424,
+      "retention_2": 0.2794046176419618,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "AMHARIC",
+        "AMHARIC_2",
+        "AMHARIC_3",
+        "ARGOBBA",
+        "CHAHA",
+        "GAFAT"
+      ]
+    },
+    {
+      "lineage": "Saharan",
+      "lists": 10,
+      "depth": 1.2897124905650457,
+      "retention": 0.2753499374153204,
+      "median_d_across_root": 0.852859228849411,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        8,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 1.2897124905650457,
+      "retention_2": 0.2753499374153204,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BERIA",
+        "BERTI"
+      ]
+    },
+    {
+      "lineage": "Abkhaz-Adyge",
+      "lists": 7,
+      "depth": 1.2941255831528848,
+      "retention": 0.27413746998074706,
+      "median_d_across_root": 0.8548255860805511,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        4,
+        3
+      ],
+      "lone_branch": "",
+      "depth_2": 1.2941255831528848,
+      "retention_2": 0.27413746998074706,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ADYGHE",
+        "ADYGHE_2",
+        "KABARDIAN"
+      ]
+    },
+    {
+      "lineage": "Hmong-Mien",
+      "lists": 110,
+      "depth": 1.2954287095986088,
+      "retention": 0.2737804668544789,
+      "median_d_across_root": 0.8554062247276306,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        77,
+        33
+      ],
+      "lone_branch": "",
+      "depth_2": 1.2954287095986088,
+      "retention_2": 0.2737804668544789,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "CHANGPING_BIAO_MON",
+        "CHIANGRAI_MIEN",
+        "DAPINGJIANG_MIEN",
+        "DAPING_MIEN",
+        "DONGSHAN_BIAO_MON",
+        "HAINAN_KIM_MUN"
+      ]
+    },
+    {
+      "lineage": "Nubian",
+      "lists": 11,
+      "depth": 1.2962065188393481,
+      "retention": 0.2735676006727989,
+      "median_d_across_root": 0.8557527959346771,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        10,
+        1
+      ],
+      "lone_branch": "MEIDOB_NUBIAN",
+      "depth_2": 1.2850882410614772,
+      "retention_2": 0.2766261727678515,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "MEIDOB_NUBIAN"
+      ]
+    },
+    {
+      "lineage": "Dravidian",
+      "lists": 79,
+      "depth": 1.3010998479349274,
+      "retention": 0.27223221427997824,
+      "median_d_across_root": 0.8579331338405609,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        77,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 1.3010998479349274,
+      "retention_2": 0.27223221427997824,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BRAHUI",
+        "BRAHUI_2"
+      ]
+    },
+    {
+      "lineage": "Formosan",
+      "lists": 56,
+      "depth": 1.3339867516573767,
+      "retention": 0.26342495517538694,
+      "median_d_across_root": 0.8725866675376892,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        45,
+        11
+      ],
+      "lone_branch": "",
+      "depth_2": 1.3339867516573767,
+      "retention_2": 0.26342495517538694,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ATAYAL",
+        "CIULI_ATAYAL",
+        "HECUO_TAROKO",
+        "MAYRINAX_ATAYAL",
+        "PARAN_TAROKO",
+        "SEDIQ"
+      ]
+    },
+    {
+      "lineage": "Nakh-Daghestanian",
+      "lists": 61,
+      "depth": 1.3405552656712327,
+      "retention": 0.26170031502805585,
+      "median_d_across_root": 0.8752442896366119,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        56,
+        5
+      ],
+      "lone_branch": "",
+      "depth_2": 1.3405552656712327,
+      "retention_2": 0.26170031502805585,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "AKKIN_CHECHEN",
+        "BATS",
+        "CHECHEN",
+        "CHECHEN_2",
+        "INGUSH"
+      ]
+    },
+    {
+      "lineage": "Mande",
+      "lists": 128,
+      "depth": 1.3420342325399737,
+      "retention": 0.26131355500571796,
+      "median_d_across_root": 0.8755578398704529,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        117,
+        11
+      ],
+      "lone_branch": "",
+      "depth_2": 1.3420342325399737,
+      "retention_2": 0.26131355500571796,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BANDI",
+        "BANDI_2",
+        "KPELLE",
+        "KPELLE_GUINEA",
+        "KPELLE_GUINEA_2",
+        "KPELLE_LIBERIA"
+      ]
+    },
+    {
+      "lineage": "Uto-Aztecan",
+      "lists": 75,
+      "depth": 1.3551673908594282,
+      "retention": 0.25790412004612145,
+      "median_d_across_root": 0.8783421516418457,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        57,
+        18
+      ],
+      "lone_branch": "",
+      "depth_2": 1.3551673908594282,
+      "retention_2": 0.25790412004612145,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "CAHUILLA",
+        "CHEMEHUEVI",
+        "COMANCHE",
+        "CUPENO",
+        "GABRIELINO",
+        "HOPI"
+      ]
+    },
+    {
+      "lineage": "Uralic",
+      "lists": 64,
+      "depth": 1.3955586072167996,
+      "retention": 0.24769463370451472,
+      "median_d_across_root": 0.8869053423404694,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        54,
+        10
+      ],
+      "lone_branch": "",
+      "depth_2": 1.3955586072167996,
+      "retention_2": 0.24769463370451472,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "FOREST_ENETS_2",
+        "KAMAS",
+        "KARAGASSISCH",
+        "MATORISCH",
+        "NENETS",
+        "NGANASAN"
+      ]
+    },
+    {
+      "lineage": "Salishan",
+      "lists": 30,
+      "depth": 1.4061121133160979,
+      "retention": 0.24509433216038068,
+      "median_d_across_root": 0.8891427516937256,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        20,
+        10
+      ],
+      "lone_branch": "",
+      "depth_2": 1.4061121133160979,
+      "retention_2": 0.24509433216038068,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "COEUR_DALENE",
+        "COLUMBIA_WENATCHI",
+        "KALISPEL_PEND_DOREILLE",
+        "LILLOOET",
+        "MONTANA_SALISH",
+        "OKANAGAN_COLVILLE"
+      ]
+    },
+    {
+      "lineage": "Tai-Kadai",
+      "lists": 214,
+      "depth": 1.4073907638852516,
+      "retention": 0.24478114242585433,
+      "median_d_across_root": 0.8894138336181641,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        197,
+        17
+      ],
+      "lone_branch": "",
+      "depth_2": 1.4073907638852516,
+      "retention_2": 0.24478114242585433,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "CA_HA_GELAO",
+        "GELAO_GUIZHOU_ANSHUN_WANZI",
+        "GELAO_LAOZHAI",
+        "GELAO_QIAOSHANG",
+        "GELAO_WANZI",
+        "GREEN_GELAO"
+      ]
+    },
+    {
+      "lineage": "Indo-European",
+      "lists": 490,
+      "depth": 1.4507020998856566,
+      "retention": 0.2344056541228576,
+      "median_d_across_root": 0.8985961079597473,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        479,
+        11
+      ],
+      "lone_branch": "",
+      "depth_2": 1.4507020998856566,
+      "retention_2": 0.2344056541228576,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ARMENIAN",
+        "ARMENIAN_CLASSICAL",
+        "EASTERN_ARMENIAN",
+        "GREEK",
+        "GREEK_ANCIENT",
+        "HITTITE"
+      ]
+    },
+    {
+      "lineage": "Austroasiatic",
+      "lists": 190,
+      "depth": 1.4616426030184728,
+      "retention": 0.23185511585594898,
+      "median_d_across_root": 0.9009155631065369,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        186,
+        4
+      ],
+      "lone_branch": "",
+      "depth_2": 1.4616426030184728,
+      "retention_2": 0.23185511585594898,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BUGAN",
+        "BUGAN_2",
+        "LAI_GUANGXI_LONGLIN",
+        "PALIU"
+      ]
+    },
+    {
+      "lineage": "Algic",
+      "lists": 35,
+      "depth": 1.5540175157063727,
+      "retention": 0.21139697485374237,
+      "median_d_across_root": 0.9204996228218079,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        33,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 1.5540175157063727,
+      "retention_2": 0.21139697485374237,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "WIYOT",
+        "YUROK"
+      ]
+    },
+    {
+      "lineage": "Iroquoian",
+      "lists": 10,
+      "depth": 1.5576358606547036,
+      "retention": 0.21063344985912383,
+      "median_d_across_root": 0.9212667346000671,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        9,
+        1
+      ],
+      "lone_branch": "CHEROKEE",
+      "depth_2": 0.31554369698301343,
+      "retention_2": 0.7293921981054683,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "CHEROKEE"
+      ]
+    },
+    {
+      "lineage": "Sino-Tibetan",
+      "lists": 881,
+      "depth": 1.5628692469826526,
+      "retention": 0.20953400306666173,
+      "median_d_across_root": 0.9223762452602386,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        506,
+        375
+      ],
+      "lone_branch": "",
+      "depth_2": 1.5628692469826526,
+      "retention_2": 0.20953400306666173,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ACHANG",
+        "ADI_GALO",
+        "AKHA",
+        "ANAL_2",
+        "ANGAMI",
+        "ANONG"
+      ]
+    },
+    {
+      "lineage": "Cushitic",
+      "lists": 80,
+      "depth": 1.5762852230282158,
+      "retention": 0.2067416727015668,
+      "median_d_across_root": 0.9341095983982086,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        72,
+        8
+      ],
+      "lone_branch": "",
+      "depth_2": 1.5762852230282158,
+      "retention_2": 0.2067416727015668,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "AASAX",
+        "ALAGWA",
+        "BURUNGE",
+        "GORWAA",
+        "IRAQW",
+        "IRAQW_2"
+      ]
+    },
+    {
+      "lineage": "Athabaskan-Eyak-Tlingit",
+      "lists": 45,
+      "depth": 1.576694745636849,
+      "retention": 0.2066570246462781,
+      "median_d_across_root": 0.9376962184906006,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        44,
+        1
+      ],
+      "lone_branch": "TLINGIT",
+      "depth_2": 1.2380391761028369,
+      "retention_2": 0.2899522061094515,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "TLINGIT"
+      ]
+    },
+    {
+      "lineage": "Siouan",
+      "lists": 18,
+      "depth": 1.5767512465333708,
+      "retention": 0.20664534866896775,
+      "median_d_across_root": 0.9381910562515259,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        17,
+        1
+      ],
+      "lone_branch": "CATAWBA",
+      "depth_2": 1.1370185186815385,
+      "retention_2": 0.32077397914144734,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "CATAWBA"
+      ]
+    },
+    {
+      "lineage": "Oceanic",
+      "lists": 659,
+      "depth": 1.5767726436447496,
+      "retention": 0.2066409271027309,
+      "median_d_across_root": 0.9383784532546997,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        636,
+        23
+      ],
+      "lone_branch": "",
+      "depth_2": 1.5767726436447496,
+      "retention_2": 0.2066409271027309,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "ASUMBOA",
+        "AYIWO",
+        "IO",
+        "MALO",
+        "MATU",
+        "MBANUA"
+      ]
+    },
+    {
+      "lineage": "Chadic",
+      "lists": 205,
+      "depth": 1.5776345545445913,
+      "retention": 0.20646289776904062,
+      "median_d_across_root": 0.9459271132946014,
+      "beyond_horizon": true,
+      "root_split_sizes": [
+        204,
+        1
+      ],
+      "lone_branch": "BACAMA",
+      "depth_2": 1.525289487461591,
+      "retention_2": 0.21755806741566003,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BACAMA"
+      ]
+    },
+    {
+      "lineage": "Eskimo-Aleut",
+      "lists": 16,
+      "depth": 1.5783674022064607,
+      "retention": 0.20631164734567667,
+      "median_d_across_root": 0.9523454308509827,
+      "beyond_horizon": true,
+      "root_split_sizes": [
+        14,
+        2
+      ],
+      "lone_branch": "",
+      "depth_2": 1.5783674022064607,
+      "retention_2": 0.20631164734567667,
+      "beyond_horizon_2": true,
+      "smaller_branch": [
+        "ALEUT",
+        "ALEUT_2"
+      ]
+    },
+    {
+      "lineage": "Malayo-Polynesian",
+      "lists": 1407,
+      "depth": 1.5785169744123526,
+      "retention": 0.206280791165153,
+      "median_d_across_root": 0.9536553919315338,
+      "beyond_horizon": true,
+      "root_split_sizes": [
+        1406,
+        1
+      ],
+      "lone_branch": "YAUR",
+      "depth_2": 1.5775640509264846,
+      "retention_2": 0.206477454663489,
+      "beyond_horizon_2": true,
+      "smaller_branch": [
+        "YAUR"
+      ]
+    },
+    {
+      "lineage": "Austronesian",
+      "lists": 1459,
+      "depth": 1.5785353634056556,
+      "retention": 0.20627699790394294,
+      "median_d_across_root": 0.9538164436817169,
+      "beyond_horizon": true,
+      "root_split_sizes": [
+        1458,
+        1
+      ],
+      "lone_branch": "YAUR",
+      "depth_2": 1.5776305766146927,
+      "retention_2": 0.20646371906560815,
+      "beyond_horizon_2": true,
+      "smaller_branch": [
+        "YAUR"
+      ]
+    },
+    {
+      "lineage": "Eastern Malayo-Polynesian",
+      "lists": 707,
+      "depth": 1.578562347994274,
+      "retention": 0.20627143167911455,
+      "median_d_across_root": 0.9540527760982513,
+      "beyond_horizon": true,
+      "root_split_sizes": [
+        706,
+        1
+      ],
+      "lone_branch": "YAUR",
+      "depth_2": 1.5767741953436663,
+      "retention_2": 0.20664060645847696,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "YAUR"
+      ]
+    },
+    {
+      "lineage": "Afro-Asiatic",
+      "lists": 422,
+      "depth": 1.5788298901520224,
+      "retention": 0.20621625275687439,
+      "median_d_across_root": 0.9563959240913391,
+      "beyond_horizon": true,
+      "root_split_sizes": [
+        421,
+        1
+      ],
+      "lone_branch": "BACAMA",
+      "depth_2": 1.578778942704255,
+      "retention_2": 0.2062267592162769,
+      "beyond_horizon_2": true,
+      "smaller_branch": [
+        "BACAMA"
+      ]
+    },
+    {
+      "lineage": "Pama-Nyungan",
+      "lists": 193,
+      "depth": 1.5791598405512919,
+      "retention": 0.20614822284580672,
+      "median_d_across_root": 0.9592856466770172,
+      "beyond_horizon": true,
+      "root_split_sizes": [
+        174,
+        19
+      ],
+      "lone_branch": "",
+      "depth_2": 1.5791598405512919,
+      "retention_2": 0.20614822284580672,
+      "beyond_horizon_2": true,
+      "smaller_branch": [
+        "AKARA",
+        "ALYAWARRA",
+        "ALYAWARRA_4",
+        "ALYAWARR_ALYAWARA",
+        "ALYAWARR_MACDONALDDOWNS_ALYAWARA",
+        "ANDEGEREBINHA"
+      ]
+    },
+    {
+      "lineage": "Atlantic-Congo",
+      "lists": 2036,
+      "depth": 1.5797389815463398,
+      "retention": 0.20602886852372684,
+      "median_d_across_root": 0.9643577933311462,
+      "beyond_horizon": true,
+      "root_split_sizes": [
+        2033,
+        3
+      ],
+      "lone_branch": "",
+      "depth_2": 1.5797389815463398,
+      "retention_2": 0.20602886852372684,
+      "beyond_horizon_2": true,
+      "smaller_branch": [
+        "BUDUKU_KULANGO",
+        "KULANGO_BOUNA",
+        "LORHON"
+      ]
+    },
+    {
+      "lineage": "Nuclear Trans New Guinea",
+      "lists": 307,
+      "depth": 1.580154033783788,
+      "retention": 0.20594337352453984,
+      "median_d_across_root": 0.9679928421974182,
+      "beyond_horizon": true,
+      "root_split_sizes": [
+        293,
+        14
+      ],
+      "lone_branch": "",
+      "depth_2": 1.580154033783788,
+      "retention_2": 0.20594337352453984,
+      "beyond_horizon_2": true,
+      "smaller_branch": [
+        "ANGGURUK_YALI",
+        "DANI_UPPER_GRAND_VALLEY",
+        "DAO",
+        "HITIGIMA_DANI",
+        "KINIAGEIMA",
+        "LANI"
+      ]
+    },
+    {
+      "lineage": "Otomanguean",
+      "lists": 109,
+      "depth": 1.5821782454378064,
+      "retention": 0.20552692218281168,
+      "median_d_across_root": 0.9857209920883179,
+      "beyond_horizon": true,
+      "root_split_sizes": [
+        103,
+        6
+      ],
+      "lone_branch": "",
+      "depth_2": 1.5821782454378064,
+      "retention_2": 0.20552692218281168,
+      "beyond_horizon_2": true,
+      "smaller_branch": [
+        "AZOYU_TLAPANEC",
+        "MEPHAA_ACATEPEC",
+        "SUBTIABA",
+        "TEOCUITLAPA_MEPHAA",
+        "TLACOAPA_MEPHAA",
+        "TLAPANEC_MALINALTEPEC"
+      ]
+    }
+  ]
+}
