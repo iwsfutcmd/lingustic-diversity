@@ -99,8 +99,8 @@ out the doculects ASJP flags `long_extinct` (mostly lineages with a written past
 incl. Proto-Germanic and Gothic), Sinitic 4.29 → 4.03 (Old and Middle Chinese), Semitic 5.24 → 4.93, Northwest Semitic
 2.37 → 2.18, North Ethiopic 1.41 → 1.35 and Canaanite 1.44 → 1.00 (2 of its 4 lists). Indo-European goes 14.09 → 13.68
 with 16 long-extinct lists removed (Hittite, Tocharian and others are each nearly a lineage of their own at 40 words);
-Afro-Asiatic 33.53 → 33.44. Sumerian, Elamite, Etruscan, East Semitic and Ancient South Arabian consist only of
-long-extinct lists and have nothing left. Wutun, the contact language, was the other scenario; it is now excluded
+Afro-Asiatic 33.53 → 33.44. Sumerian, Elamite, Etruscan and East Semitic consist only of long-extinct lists and
+have nothing left. Wutun, the contact language, was the other scenario; it is now excluded
 as a mixed language (see [Excluding bad data](#excluding-bad-data)), so that scenario removes nothing. Both versions
 are in `results/sensitivity.csv` and in the explorer's detail panel (a "Sensitivity" block).
 
@@ -176,8 +176,8 @@ drawn the same way. The any-depth baseline is wide because it mixes isolates wit
 Altaic (5.71) now falls below the 5% edge of random unions of three shallow families (5.92), and "Khoisan" (5.52)
 falls further below it. On this scale a union of unrelated lineages scores about the sum of its members, so
 falling short means that some cross-family pairs are within the detection limit. Basic-vocabulary *distance* says the
-same: Mongolic ↔ Tungusic (0.868) is the closest unrelated pair in the data and Turkic ↔ Mongolic (0.925) is in the
-closest 1%. But the "Khoisan" pairs, an areal (Kalahari Basin) grouping, are as close (Tuu ↔ Kxa 0.846, Khoe-Kwadi ↔
+same: Mongolic ↔ Tungusic (0.868) is among the closest unrelated pairs in the data (only Tuu ↔ Kxa, 0.846, and
+Basque ↔ Elamite, 0.851, are closer) and Turkic ↔ Mongolic (0.925) is in the closest 2%. But the "Khoisan" pairs, an areal (Kalahari Basin) grouping, are as close (Tuu ↔ Kxa 0.846, Khoe-Kwadi ↔
 Tuu 0.869), so contact alone produces this signal; neither measure separates it from descent. Macro-Altaic and
 "Paleo-Siberian" fall below the shallow baseline mainly because they contain isolate-like members (Koreanic 1.17,
 Nivkh 1.21, Ainu 1.29), which the shallow pool does not; the baseline does not fit groupings with deep (Uralic,
@@ -497,8 +497,9 @@ where borrowing is heavy and the cognate signal shallow.
 
 **Lineages.** For 34 lineages with at least 5 matched languages, `spread` is computed from cognate distance and from
 PMI-LDND on the same languages. The two rank the lineages almost identically: Spearman 0.975 pooled; within datasets,
-IE-CoR 0.929 (7 lineages), ABVD 0.945 (11) and Kitchen 1.000 (6). The order Slavic < Romance < Germanic < Balto-Slavic <
-Iranian < Indo-Aryan < Indo-European is the same under both. PMI-LDND compresses the scale relative to cognates, which
+IE-CoR 0.929 (7 lineages), ABVD 0.945 (11) and Kitchen 1.000 (6). Under cognates the order is Slavic < Romance < Germanic <
+Balto-Slavic < Iranian < Indo-Aryan < Indo-European; PMI-LDND gives the same order except that it swaps two adjacent
+pairs (Germanic < Romance, Indo-Aryan < Iranian). PMI-LDND compresses the scale relative to cognates, which
 leaves rankings unaffected. At the level that matters for D_max, ASJP-40 with PMI-LDND reproduces the diversity ranking
 that expert cognate coding gives.
 
