@@ -3,7 +3,7 @@
   const CH_INK = "#0b0b0b", CH_INK2 = "#52514e", CH_MUTED = "#8a8984", CH_GRID = "#e6e5e1", CH_SURF = "#fcfcfb";
   const CH_DEFAULT_TITLE = { depth: "How far apart are the most distant varieties?", dmax: "How many languages' worth of basic vocabulary?" };
   const CH_DEFAULT_SUB = {
-    depth: "Share of basic vocabulary still shared across each group's deepest split (100% = as close as two lists of one language).\nLonger bar = deeper split. Calibrated on expert cognate judgements; below about 21%, 40 words can't tell.",
+    depth: "Depth: share of basic vocabulary no longer shared across each group's deepest split (0% = one language).\nCalibrated on expert cognate judgements; above about 79%, 40 words can't tell.",
     dmax: "Effective number of lineages the 40-word basic vocabulary lists can't tie together. Adding more dialects doesn't raise it;\nn unrelated languages score about n.",
   };
   const CH_PRESET = [
@@ -12,7 +12,7 @@
     { name: "Spoilers: random mixes of unrelated languages", items: [["Random unrelated, n=5", "5 random languages"], ["Random unrelated, n=80", "80 random languages"]] },
   ];
   const CH = { inited: false, measure: "depth", sort: "value", title: "", sub: "", groups: [] };
-  const CH_KEY = "isodiv-chart-v1";
+  const CH_KEY = "isodiv-chart-v2";            // v2: depth = 100% − shared
 
   function chSave() { try { localStorage.setItem(CH_KEY, JSON.stringify({ measure: CH.measure, sort: CH.sort, title: CH.title, sub: CH.sub, groups: CH.groups })); } catch (e) { /* storage unavailable */ } }
   function chLoadState() {
@@ -34,10 +34,11 @@
       return { v: d.d_max, txt: d.d_max > 2.9 ? d.d_max.toFixed(1) : d.d_max.toFixed(2) };
     }
     if (d.ret == null) return null;
-    const hz = DATA.depth_cal.horizon_depth, pct = r => Math.round(r * 100) + "%";
-    if (d.ret_beyond) return { t: hz, t2: hz, txt: "≤" + pct(Math.exp(-hz)), beyond: true };
-    const t = d.tau, t2 = d.ret_lone && d.ret2 != null ? -Math.log(d.ret2) : t;
-    return { t, t2, txt: pct(d.ret) + (t2 < t - 1e-9 ? `  (${pct(d.ret2)} without one outlier)` : ""), lone: t2 < t - 1e-9 ? d.ret_lone : null };
+    // depth = share of basic vocabulary no longer shared across the deepest split (100% − retention)
+    const HZ = 1 - Math.exp(-DATA.depth_cal.horizon_depth), pct = r => Math.round(r * 100) + "%";
+    if (d.ret_beyond) return { t: HZ, t2: HZ, txt: "≥" + pct(HZ), beyond: true };
+    const t = 1 - d.ret, t2 = d.ret_lone && d.ret2 != null ? 1 - d.ret2 : t;
+    return { t, t2, txt: pct(t) + (t2 < t - 1e-9 ? `  (${pct(t2)} without one outlier)` : ""), lone: t2 < t - 1e-9 ? d.ret_lone : null };
   }
 
   const xesc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" }[c]));
@@ -66,7 +67,7 @@
     });
     let y = 64 + 26 + subLines.length * 34 + 44;
     const top = y;
-    const depth = CH.measure === "depth", hz = DATA.depth_cal.horizon_depth, tmax = hz * 1.12;
+    const depth = CH.measure === "depth", hz = 1 - Math.exp(-DATA.depth_cal.horizon_depth), tmax = 1;
     const X = depth ? (t => x0 + Math.min(t, tmax) / tmax * (x1 - x0 + 120)) : (v => x0 + Math.min(v, 3.15) / 3.15 * (x1 - x0 + 120));
     const body = [], lone = [];
     groups.forEach((g, k) => {
@@ -100,8 +101,8 @@
     const grid = [];
     if (depth) {
       grid.push(`<rect x="${X(hz)}" y="${top - 34}" width="${X(tmax) - X(hz)}" height="${bottom - top + 34}" fill="${CH_GRID}"/><text x="${(X(hz) + X(tmax)) / 2}" y="${top - 12}" text-anchor="middle" font-size="20" fill="${CH_MUTED}">beyond 40 words</text>`);
-      for (const r of [1, .75, .5, .35, .25]) {
-        const t = -Math.log(r);
+      for (const r of [0, .25, .5, .75, 1]) {
+        const t = r;
         grid.push(`<line x1="${X(t)}" x2="${X(t)}" y1="${top}" y2="${bottom}" stroke="${CH_GRID}" stroke-width="2"/><text x="${X(t)}" y="${bottom + 38}" text-anchor="middle" font-size="24" fill="${CH_MUTED}">${Math.round(r * 100)}%</text>`);
       }
     } else {

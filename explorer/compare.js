@@ -177,8 +177,10 @@
     if (kind !== "pmi") return "";
     const x = cmpRetention(med);
     if (!x) return "";
-    const p = Math.round(x.r * 100) + "%";
-    return `<div><div class="cmp-big num">${x.beyond ? "≤ " + p : "≈ " + p}</div><div class="muted">${x.beyond ? "shared basic vocabulary: beyond what 40 words can resolve" : "shared basic vocabulary (100% = one language)"}</div></div>`;
+    const pct = v => Math.round(v * 100) + "%", depth = 1 - x.r;
+    return `<div><div class="cmp-big num">${x.beyond ? "≥ " + pct(depth) : "≈ " + pct(depth)}</div><div class="muted">${x.beyond
+      ? "depth: beyond what 40 words can resolve"
+      : `depth: basic vocabulary no longer shared (${pct(x.r)} still shared; 0% = one language)`}</div></div>`;
   }
   function cmpVerdict(med, kind) {
     const [q10, q50, q90] = kind === "pmi" ? CMP.data.noise : CMP.data.noise_ldnd, un = CMP.data.unrelated[kind].mean, f = x => fmt(x, 2);
