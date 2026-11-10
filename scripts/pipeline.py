@@ -138,8 +138,18 @@ def main() -> None:
             msg = f"Pipeline step {name}" + (f" ({args.message})" if args.message else "")
             if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode != 0:
                 git("commit", "-q", "-m", msg + ("\n\n" + args.trailer if args.trailer else ""))
-                git("push", "-q", "origin", "main")
+                push()
     print("ALLDONE", flush=True)
+
+
+def push(tries: int = 4) -> None:
+    """Push main; if someone pushed meanwhile, rebase onto it and retry (with back-off) instead of stopping the run."""
+    for k in range(tries):
+        if subprocess.run(["git", "push", "-q", "origin", "main"], cwd=ROOT).returncode == 0:
+            return
+        subprocess.run(["git", "pull", "-q", "--rebase", "origin", "main"], cwd=ROOT)
+        time.sleep(2 ** (k + 1))
+    git("push", "-q", "origin", "main")
 
 
 if __name__ == "__main__":
