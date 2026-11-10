@@ -164,6 +164,31 @@ for _label, (_any, _none) in NODE_GROUPS.items():
                         bool(set(a) & set(p := r["classification_glottolog"].split(","))) and not set(z) & set(p))(_any, _none)
 
 
+OVERRIDES_FILE = Path(__file__).resolve().parent.parent / "config" / "lineage_overrides.tsv"
+
+
+def load_overrides(path: Path = OVERRIDES_FILE) -> tuple[dict[str, set[str]], dict[str, set[str]]]:
+    """(lineage -> IDs to remove, lineage -> IDs to add) from config/lineage_overrides.tsv."""
+    remove: dict[str, set[str]] = {}
+    add: dict[str, set[str]] = {}
+    if path.exists():
+        for ln in path.read_text(encoding="utf-8").splitlines():
+            if not ln.strip() or ln.startswith("#"):
+                continue
+            i, action, lineage = (c.strip() for c in ln.split("\t")[:3])
+            if lineage not in LINEAGES:
+                raise SystemExit(f"{path}: unknown lineage {lineage!r}")
+            {"remove": remove, "add": add}[action].setdefault(lineage, set()).add(i)
+    return remove, add
+
+
+# membership overrides wrap the rules, so every script that calls LINEAGES[name](row) sees them
+_REMOVE, _ADD = load_overrides()
+for _label in set(_REMOVE) | set(_ADD):
+    LINEAGES[_label] = (lambda f, rm, ad: lambda r: (f(r) and r["ID"] not in rm) or r["ID"] in ad)(
+        LINEAGES[_label], frozenset(_REMOVE.get(_label, ())), frozenset(_ADD.get(_label, ())))
+
+
 EXCLUSIONS_FILE = Path(__file__).resolve().parent.parent / "config" / "exclusions.tsv"
 
 

@@ -601,6 +601,11 @@ witnesses of a deep branch rather than bad data: Cherokee, for instance, is 0.92
 its nearest Northern Iroquoian list (Mohawk, 0.895) is almost at the detection limit at 40 words.
 A doculect with no weight in the D_max optimum cannot lower it, so only weighted candidates get a leave-one-out solve.
 
+`config/lineage_overrides.tsv` (`id<TAB>remove|add<TAB>lineage<TAB>reason`) changes membership in one lineage
+only, for lists Glottolog files in a group their vocabulary does not fit. Currently: `GAN_SHAOWU` (Shaowu, a Min–Gan
+transitional variety that many dialectologists classify as Min) is removed from Gan, and so from "Chinese without
+Min", and kept in Sinitic.
+
 `scripts/misplaced.py` looks one level down: a doculect is flagged when a *sibling* group of the same family (Pinghua
 for a Mandarin list, Chadic for a Berber one) is closer than its own, by the mean distance to the 3 nearest lists in
 each (`results/misplaced.{csv,json}`; its own group is the smallest lineage holding it). 50 of the 3,210 doculects

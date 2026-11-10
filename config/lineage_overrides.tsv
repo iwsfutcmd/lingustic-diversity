@@ -1,0 +1,5 @@
+# Per-lineage membership overrides, applied on top of the Glottolog-based rules in scripts/run_analysis.py.
+# id	action	lineage	reason
+# action: remove (take the list out of that lineage only; it stays in every other lineage it belongs to)
+#         add (put the list into that lineage as well)
+GAN_SHAOWU	remove	Gan	Min-Gan transitional variety (Shao-Jiang), classified as Min by many dialectologists; filed under Gan by Glottolog. Its basic vocabulary sets Gan's (and Chinese-without-Min's) deepest split on its own (lone_branches.py). Kept in Sinitic.
