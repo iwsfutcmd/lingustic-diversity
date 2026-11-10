@@ -1,0 +1,384 @@
+{
+  "horizon_d": 0.9411171561960424,
+  "horizon_retention": 0.20657631916568325,
+  "random_unrelated": {
+    "5": {
+      "median_d": {
+        "q05": 0.9680063650012016,
+        "median": 0.9918547868728638,
+        "q95": 1.0144672870635987
+      },
+      "retention_median": 0.2053830306586803,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    },
+    "10": {
+      "median_d": {
+        "q05": 0.9819123983383179,
+        "median": 0.9905172288417816,
+        "q95": 1.001789076626301
+      },
+      "retention_median": 0.20541439902458092,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    },
+    "25": {
+      "median_d": {
+        "q05": 0.9779668420553207,
+        "median": 0.9915895015001297,
+        "q95": 0.999297958612442
+      },
+      "retention_median": 0.20538925086418633,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    },
+    "40": {
+      "median_d": {
+        "q05": 0.9837852895259858,
+        "median": 0.9908230155706406,
+        "q95": 1.0001719653606416
+      },
+      "retention_median": 0.20540722688247268,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    },
+    "60": {
+      "median_d": {
+        "q05": 0.9844986900687218,
+        "median": 0.9909548312425613,
+        "q95": 0.9964372843503952
+      },
+      "retention_median": 0.20540413538674823,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    },
+    "80": {
+      "median_d": {
+        "q05": 0.9836988374590874,
+        "median": 0.9901079684495926,
+        "q95": 0.9990098893642425
+      },
+      "retention_median": 0.20542399850740456,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    }
+  },
+  "proposals": {
+    "Altaic": {
+      "depth": 1.5769303384500148,
+      "retention": 0.20660834347117385,
+      "median_d": 0.9397595524787903,
+      "beyond_horizon": false,
+      "split": [
+        51,
+        23
+      ],
+      "families_a": [
+        "Turkic"
+      ],
+      "families_b": [
+        "Mongolic-Khitan",
+        "Tungusic"
+      ],
+      "members": [
+        "Turkic",
+        "Mongolic",
+        "Tungusic"
+      ],
+      "pct_any": 0.0,
+      "pct_shallow": 0.0
+    },
+    "Macro-Altaic": {
+      "depth": 1.5831833584111445,
+      "retention": 0.20532044818918288,
+      "median_d": 0.994523823261261,
+      "beyond_horizon": true,
+      "split": [
+        46,
+        16
+      ],
+      "families_a": [
+        "Japonic"
+      ],
+      "families_b": [
+        "Koreanic",
+        "Mongolic-Khitan",
+        "Tungusic",
+        "Turkic"
+      ],
+      "members": [
+        "Turkic",
+        "Mongolic",
+        "Tungusic",
+        "Koreanic",
+        "Japonic"
+      ],
+      "pct_any": 0.8666666666666667,
+      "pct_shallow": 0.8666666666666667
+    },
+    "Ural-Altaic": {
+      "depth": 1.5806200879145795,
+      "retention": 0.20584741512724022,
+      "median_d": 0.972074568271637,
+      "beyond_horizon": true,
+      "split": [
+        55,
+        19
+      ],
+      "families_a": [
+        "Uralic"
+      ],
+      "families_b": [
+        "Mongolic-Khitan",
+        "Tungusic",
+        "Turkic"
+      ],
+      "members": [
+        "Uralic",
+        "Turkic",
+        "Mongolic",
+        "Tungusic"
+      ],
+      "pct_any": 0.2,
+      "pct_shallow": 0.26666666666666666
+    },
+    "Dene-Yeniseian": {
+      "depth": 1.5787658961830995,
+      "retention": 0.20622944977560498,
+      "median_d": 0.9558354616165161,
+      "beyond_horizon": true,
+      "split": [
+        33,
+        9
+      ],
+      "families_a": [
+        "Athabaskan-Eyak-Tlingit"
+      ],
+      "families_b": [
+        "Athabaskan-Eyak-Tlingit",
+        "Yeniseian"
+      ],
+      "members": [
+        "Athabaskan-Eyak-Tlingit",
+        "Yeniseian"
+      ],
+      "pct_any": 0.2,
+      "pct_shallow": 0.13333333333333333
+    },
+    "Khoisan": {
+      "depth": 1.5774581508782637,
+      "retention": 0.206499321793739,
+      "median_d": 0.9443821609020233,
+      "beyond_horizon": true,
+      "split": [
+        29,
+        2
+      ],
+      "families_a": [
+        "Kxa"
+      ],
+      "families_b": [
+        "Khoe-Kwadi",
+        "Kxa",
+        "Tuu"
+      ],
+      "members": [
+        "Khoe-Kwadi",
+        "Tuu",
+        "Kxa"
+      ],
+      "pct_any": 0.0,
+      "pct_shallow": 0.0
+    },
+    "Paleo-Siberian": {
+      "depth": 1.5832005870331085,
+      "retention": 0.20531691083127154,
+      "median_d": 0.9946747124195099,
+      "beyond_horizon": true,
+      "split": [
+        26,
+        16
+      ],
+      "families_a": [
+        "Ainu"
+      ],
+      "families_b": [
+        "Chukotko-Kamchatkan",
+        "Nivkh",
+        "Yeniseian",
+        "Yukaghir"
+      ],
+      "members": [
+        "Chukotko-Kamchatkan",
+        "Yukaghir",
+        "Nivkh",
+        "Yeniseian",
+        "Ainu"
+      ],
+      "pct_any": 0.8666666666666667,
+      "pct_shallow": 0.8666666666666667
+    },
+    "Elamo-Dravidian": {
+      "depth": 1.5671707759422069,
+      "retention": 0.20863462222760282,
+      "median_d": 0.9232881963253021,
+      "beyond_horizon": false,
+      "split": [
+        36,
+        1
+      ],
+      "families_a": [
+        "Dravidian"
+      ],
+      "families_b": [
+        "Elamite"
+      ],
+      "members": [
+        "Elamite",
+        "Dravidian"
+      ],
+      "pct_any": 0.0,
+      "pct_shallow": 0.0
+    },
+    "Niger-Congo": {
+      "depth": 1.5804664629161222,
+      "retention": 0.20587904086526138,
+      "median_d": 0.9707291126251221,
+      "beyond_horizon": true,
+      "split": [
+        39,
+        21
+      ],
+      "families_a": [
+        "Heibanic",
+        "Katla-Tima",
+        "Narrow Talodi",
+        "Rashad"
+      ],
+      "families_b": [
+        "Atlantic-Congo",
+        "Dogon",
+        "Ijoid",
+        "Kru",
+        "Mande"
+      ],
+      "members": [
+        "Atlantic-Congo",
+        "Mande",
+        "Kru",
+        "Ijoid",
+        "Dogon",
+        "Heibanic",
+        "Narrow Talodi",
+        "Katla-Tima",
+        "Rashad"
+      ],
+      "pct_any": 0.0,
+      "pct_shallow": 0.06666666666666667
+    }
+  },
+  "baseline_any": {
+    "3": {
+      "median_d": {
+        "q05": 0.9652506321668625,
+        "median": 0.9845106303691864,
+        "q95": 1.0004116892814636
+      },
+      "retention_median": 0.2055553279428594,
+      "share_beyond_horizon": 1.0,
+      "draws": 15
+    },
+    "5": {
+      "median_d": {
+        "q05": 0.9678945243358612,
+        "median": 0.9801667034626007,
+        "q95": 0.9970054894685745
+      },
+      "retention_median": 0.20565730710999033,
+      "share_beyond_horizon": 1.0,
+      "draws": 15
+    },
+    "4": {
+      "median_d": {
+        "q05": 0.9643209755420685,
+        "median": 0.9832779765129089,
+        "q95": 0.9985274821519852
+      },
+      "retention_median": 0.20558426090811172,
+      "share_beyond_horizon": 1.0,
+      "draws": 15
+    },
+    "2": {
+      "median_d": {
+        "q05": 0.9505922496318817,
+        "median": 0.9714657366275787,
+        "q95": 0.999130928516388
+      },
+      "retention_median": 0.20586172547658885,
+      "share_beyond_horizon": 1.0,
+      "draws": 15
+    },
+    "9": {
+      "median_d": {
+        "q05": 0.977117908000946,
+        "median": 0.9842105209827423,
+        "q95": 0.9930160284042359
+      },
+      "retention_median": 0.20556237176309472,
+      "share_beyond_horizon": 1.0,
+      "draws": 15
+    }
+  },
+  "baseline_shallow": {
+    "3": {
+      "median_d": {
+        "q05": 0.9669905826449394,
+        "median": 0.9777330905199051,
+        "q95": 1.0010702893137933
+      },
+      "retention_median": 0.2057144613636403,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    },
+    "5": {
+      "median_d": {
+        "q05": 0.962409894168377,
+        "median": 0.9820680767297745,
+        "q95": 0.99594666659832
+      },
+      "retention_median": 0.2056126645635554,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    },
+    "4": {
+      "median_d": {
+        "q05": 0.964079087972641,
+        "median": 0.9803069233894348,
+        "q95": 0.994371309876442
+      },
+      "retention_median": 0.2056540144937974,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    },
+    "2": {
+      "median_d": {
+        "q05": 0.9462339878082275,
+        "median": 0.9747897088527679,
+        "q95": 0.9981663674116135
+      },
+      "retention_median": 0.20578360906186768,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    },
+    "9": {
+      "median_d": {
+        "q05": 0.9697208434343338,
+        "median": 0.9805206507444382,
+        "q95": 0.9962768614292145
+      },
+      "retention_median": 0.2056489965690344,
+      "share_beyond_horizon": 1.0,
+      "draws": 30
+    }
+  }
+}

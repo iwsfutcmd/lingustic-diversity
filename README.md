@@ -439,6 +439,17 @@ Sinitic 43% (Southern Min against the rest), Turkic 38% (Chuvash against the res
 Austronesian, Atlantic-Congo, Afro-Asiatic, Pama-Nyungan, Nuclear Trans New Guinea and Otomanguean are beyond the
 horizon.
 
+**Constructed sets** (`scripts/depth_random.py`, `results/depth_random.json`; the same draws as the adversarial
+check). Random sets of unrelated lects, one per family, are beyond the horizon at their deepest split in every draw,
+at a median distance of 0.99 across it for 5 lects and 0.99 for 80: depth does not grow with the number of
+languages, where D_max does (about n). For the proposals the deepest split is between member families, and its
+median distance is compared with random unions of as many unrelated families: Altaic (0.940, Turkic against
+Mongolic and Tungusic), "Khoisan" (0.944), Elamo-Dravidian (0.923, one Elamite list) and Niger-Congo
+(0.971, the Kordofanian groups against the rest) are closer across their split than any random union
+(about 0.99), while Macro-Altaic (0.995, Japonic against the rest) and Paleo-Siberian (0.995) are not.
+The baselines are not matched for geography, so contact counts here too (see the relatedness section, which uses
+size-matched neighbours), and all of these are at or beyond the horizon in retention.
+
 Caveats: depth measures change, not time, so a fast-changing branch looks old (Polabian, under German contact, is
 Slavic's one-list root branch). The calibration is pooled across families whose cognate curves differ by up to
 ±0.2 log units, so small depth differences between families are not significant. Depth rests on a family's most
