@@ -1,6 +1,6 @@
 {
-  "horizon_d": 0.9411171561960424,
-  "horizon_retention": 0.20657631916568325,
+  "horizon_d": 0.9408028512338871,
+  "horizon_retention": 0.20658373281554868,
   "random_unrelated": {
     "5": {
       "median_d": {
@@ -24,21 +24,21 @@
     },
     "25": {
       "median_d": {
-        "q05": 0.9779668420553207,
-        "median": 0.9915895015001297,
+        "q05": 0.9792879909276963,
+        "median": 0.9916396141052246,
         "q95": 0.999297958612442
       },
-      "retention_median": 0.20538925086418633,
+      "retention_median": 0.20538807563999814,
       "share_beyond_horizon": 1.0,
       "draws": 30
     },
     "40": {
       "median_d": {
         "q05": 0.9837852895259858,
-        "median": 0.9908230155706406,
+        "median": 0.9905533194541931,
         "q95": 1.0001719653606416
       },
-      "retention_median": 0.20540722688247268,
+      "retention_median": 0.20541355230759473,
       "share_beyond_horizon": 1.0,
       "draws": 30
     },
@@ -54,11 +54,11 @@
     },
     "80": {
       "median_d": {
-        "q05": 0.9836988374590874,
-        "median": 0.9901079684495926,
+        "q05": 0.9845375999808311,
+        "median": 0.9906403422355652,
         "q95": 0.9990098893642425
       },
-      "retention_median": 0.20542399850740456,
+      "retention_median": 0.20541151126027846,
       "share_beyond_horizon": 1.0,
       "draws": 30
     }
@@ -239,6 +239,29 @@
       ],
       "pct_any": 0.0,
       "pct_shallow": 0.0
+    },
+    "Austro-Tai": {
+      "depth": 1.5799190024406247,
+      "retention": 0.20599178236080898,
+      "median_d": 0.9659344255924225,
+      "beyond_horizon": true,
+      "split": [
+        72,
+        1
+      ],
+      "families_a": [
+        "Austronesian",
+        "Tai-Kadai"
+      ],
+      "families_b": [
+        "Austronesian"
+      ],
+      "members": [
+        "Austronesian",
+        "Kra-Dai"
+      ],
+      "pct_any": 0.2,
+      "pct_shallow": 0.26666666666666666
     },
     "Niger-Congo": {
       "depth": 1.5804664629161222,
