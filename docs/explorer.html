@@ -1114,7 +1114,10 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
     const HZ = 1 - Math.exp(-DATA.depth_cal.horizon_depth), pct = r => Math.round(r * 100) + "%";
     if (d.ret_beyond) return { t: HZ, t2: HZ, txt: "≥" + pct(HZ), beyond: true };
     const t = 1 - d.ret, t2 = d.ret_lone && d.ret2 != null ? 1 - d.ret2 : t;
-    return { t, t2, txt: pct(t) + (t2 < t - 1e-9 ? `  (${pct(t2)} without one outlier)` : ""), lone: t2 < t - 1e-9 ? d.ret_lone : null };
+    const has = t2 < t - 1e-9;
+    // sorted without the outlier: lead with that number and give the one with the outlier in brackets
+    const txt = !has ? pct(t) : CH.sort === "value2" ? `${pct(t2)}  (${pct(t)} with one outlier)` : `${pct(t)}  (${pct(t2)} without one outlier)`;
+    return { t, t2, txt, lone: has ? d.ret_lone : null };
   }
 
   const xesc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" }[c]));
@@ -1186,7 +1189,7 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
       grid.push(`<line x1="${X(1)}" x2="${X(1)}" y1="${top - 20}" y2="${bottom}" stroke="${CH_INK2}" stroke-width="3" stroke-dasharray="9 9"/><text x="${X(1) + 12}" y="${top - 8}" font-size="22" fill="${CH_INK2}">1 = one language's worth</text>`);
     }
     const foot = [];
-    if (lone.length) foot.push("Hatched: depth that rests on one outlier word list; the bracketed number leaves it out.", "Outliers: " + lone.join("; ") + ".");
+    if (lone.length) foot.push(`Hatched: depth that rests on one outlier word list; the bracketed number ${CH.sort === "value2" ? "includes" : "leaves"} it${CH.sort === "value2" ? "" : " out"}.`, "Outliers: " + lone.join("; ") + ".");
     foot.push(depth ? "Data: ASJP v21 40-item word lists · PMI-LDND distances mapped to cognate retention (Lexibank expert coding) · iwsfutcmd.github.io/lingustic-diversity"
                     : "Data: ASJP v21 word lists · sound-correspondence-aware distances (PMI-LDND) · Leinster–Meckes maximum diversity · iwsfutcmd.github.io/lingustic-diversity");
     const H = bottom + 70 + foot.length * 30 + 24;
