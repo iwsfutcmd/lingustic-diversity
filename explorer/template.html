@@ -178,7 +178,7 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
         <div class="controls">
           <label>Show <select id="dmode"><option value="d_max">D_max</option><option value="rel">Share of the unrelated maximum</option><option value="wide">Widest pair (distance)</option><option value="depth">Depth: shared vocabulary across the deepest split</option></select></label>
           <label>Sort <select id="sort">
-            <option value="d_max">Maximum diversity</option><option value="spread">Spread (LDND)</option>
+            <option value="d_max">Maximum diversity</option><option value="depth2" hidden>Depth without one outlier</option><option value="spread">Spread (LDND)</option>
             <option value="n">Doculects</option><option value="name">Name</option></select></label>
         </div>
         <div class="chart" id="divchart"></div>
@@ -364,6 +364,11 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
     const sort = $("sort").value;
     const mode = $("dmode").value, depth = mode === "depth";
     $("div-title").textContent = depth ? "Depth per lineage" : "Maximum diversity per lineage";
+    // the sort menu follows the measure: "Depth" and "Depth without one outlier" in depth mode
+    const sortSel = $("sort"), o2 = sortSel.querySelector('option[value="depth2"]');
+    sortSel.querySelector('option[value="d_max"]').textContent = depth ? "Depth" : "Maximum diversity";
+    o2.hidden = !depth; o2.disabled = !depth;
+    if (!depth && sortSel.value === "depth2") sortSel.value = "d_max";
     $("div-legend").hidden = depth;
     if (depth) return drawDepth(host, W, sort);
     let rows = L.filter(visible).filter(d => mode !== "wide" || d.widest != null);
@@ -371,7 +376,7 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
     const rel = mode === "rel" && L.every(d => d.rel != null), wide = mode === "wide";
     const val = d => wide ? d.widest : rel ? d.rel : d.d_max;
     const vlo = d => wide ? null : rel ? d.rel_lo : d.lo, vhi = d => wide ? null : rel ? d.rel_hi : d.hi;
-    const key = { d_max: d => -val(d), spread: d => -d.spread, n: d => -d.n, name: d => d.name };
+    const key = { d_max: d => -val(d), depth2: d => -val(d), spread: d => -d.spread, n: d => -d.n, name: d => d.name };
     rows.sort((a, b) => sort === "name" ? a.name.localeCompare(b.name) : key[sort](a) - key[sort](b));
     const narrow = W < 480, labW = narrow ? 118 : 178, rowH = 22, top = 8, axisH = 24, right = 14;
     const logD = !rel && !wide;                 // D_max runs from 1 to ~100 effective lineages: log axis
@@ -410,7 +415,9 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
     const cal = DATA.depth_cal, hz = cal.horizon_depth;
     let rows = L.filter(visible).filter(d => d.ret != null);
     if (rows.length && !rows.some(d => d.name === selected)) selected = rows[0].name;
-    const key = { d_max: d => -d.tau, spread: d => -d.spread, n: d => -d.n, name: d => d.name };
+    // deepest split with at least two lists per side where the deepest one rests on a single outlier list
+    const tau2 = d => d.ret_lone && d.ret2 != null ? -Math.log(d.ret2) : d.tau;
+    const key = { d_max: d => -d.tau, depth2: d => -tau2(d), spread: d => -d.spread, n: d => -d.n, name: d => d.name };
     rows.sort((a, b) => sort === "name" ? a.name.localeCompare(b.name) : key[sort](a) - key[sort](b));
     const narrow = W < 480, labW = narrow ? 118 : 178, rowH = 22, top = 8, axisH = 24, right = 14, hi = hz * 1.12;
     const x = t => labW + Math.min(t, hi) / hi * (W - labW - right);

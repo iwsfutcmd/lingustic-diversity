@@ -47,7 +47,8 @@
     const W = 1600, padL = 64, right = 48, rowH = 50, headH = 58, gap = 28, barH = 30, fs = 28;
     const groups = CH.groups.map((g, gi) => {
       let rows = g.items.map(it => ({ ...it, d: byName.get(it.name) })).filter(r => r.d).map(r => ({ ...r, val: chValue(r.d) }));
-      if (CH.sort === "value") rows.sort((a, b) => CH.measure === "dmax" ? (b.val?.v ?? -1) - (a.val?.v ?? -1) : (b.val?.t2 ?? -1) - (a.val?.t2 ?? -1));
+      if (CH.sort !== "entry") rows.sort((a, b) => CH.measure === "dmax" ? (b.val?.v ?? -1) - (a.val?.v ?? -1)
+        : CH.sort === "value2" ? (b.val?.t2 ?? -1) - (a.val?.t2 ?? -1) : (b.val?.t ?? -1) - (a.val?.t ?? -1));
       return { ...g, gi, rows };
     }).filter(g => g.rows.length);
     const labels = groups.flatMap(g => g.rows.map(r => r.label || r.name));

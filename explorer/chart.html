@@ -4,7 +4,7 @@
       <p class="muted" style="margin:0 0 12px;max-inline-size:78ch">Build a bar chart of any lineages on this page, in up to three groups, by breadth (D_max: how many lineages' worth) or depth (shared basic vocabulary across the deepest split). Labels can be edited. The chart is drawn at 1600 pixels wide for sharing.</p>
       <div class="chart-ctl">
         <label>Measure <select id="ch-measure"><option value="depth">Depth: shared vocabulary across the deepest split</option><option value="dmax">Breadth: D_max, lineages' worth</option></select></label>
-        <label>Order <select id="ch-sort"><option value="value">By value</option><option value="entry">As entered</option></select></label>
+        <label>Order <select id="ch-sort"><option value="value">By value</option><option value="value2">By value without one outlier (depth)</option><option value="entry">As entered</option></select></label>
         <button type="button" class="chip" id="ch-preset">Load the example chart</button>
         <button type="button" class="chip" id="ch-clear">Clear</button>
       </div>
