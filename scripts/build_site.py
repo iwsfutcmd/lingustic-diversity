@@ -55,6 +55,7 @@ def export_wordlists(cldf: Path, model_path: Path, summary: dict, out: Path, sum
         "distance": summary.get("distance", "pmi"), "label": summary.get("distance_label", "PMI-LDND"),
         "kernel": summary["kernel"], "k_cal": summary["k_cal"], "noise": summary["noise_floor_quantiles_10_50_90"],
         "noise_ldnd": ldnd_floor, "unrelated": unrelated_reference(summary_dir),
+        "depth_cal": depth_calibration(summary_dir),
         "concepts": concepts, "concept_names": [names[c] for c in concepts],
         "model": {"symbols": list(model.symbols), "scores": [[round(float(x), 4) for x in model.scores[i, :v]] for i in range(v)],
                   "go": model.gap_open, "ge": model.gap_extend},
@@ -67,6 +68,15 @@ def export_wordlists(cldf: Path, model_path: Path, summary: dict, out: Path, sum
     return data
 
 
+def depth_calibration(results: Path) -> dict | None:
+    """PMI-LDND → depth curve of scripts/depth.py, for the Compare tab's shared-vocabulary estimate."""
+    p = results / "depth_calibration.json"
+    if not p.exists():
+        return None
+    cal = json.loads(p.read_text(encoding="utf-8"))
+    return {"d": cal["d"], "tau": cal["tau"], "horizon_d": cal["horizon_d"], "horizon_depth": cal["horizon_depth"]}
+
+
 REPO = "https://github.com/iwsfutcmd/lingustic-diversity"
 DOWNLOADS = [
     ("summary.csv", "One row per lineage: doculects, distance spread, D_max (and D_max at the older k_cal scale)."),
@@ -74,6 +84,7 @@ DOWNLOADS = [
     ("sensitivity.csv", "D_max with and without long-extinct and contact-restructured doculects."),
     ("rarefaction.csv", "D_max at equal numbers of distinct languages, for comparing lineages of different size."),
     ("adversarial.csv", "Random unrelated sets and proposed groupings (Altaic, Niger-Congo, …) on the same scale."),
+    ("depth.csv", "Depth: shared basic vocabulary across each lineage's deepest split, and where that split falls."),
     ("cross_family.csv", "Mean distance and combined D_max for every pair of lineages."),
     ("relatedness.csv", "Union shortfall for every pair of lineages, against size-matched unrelated neighbours."),
     ("audit.csv", "Doculects ranked by how much they move their lineage's score."),
@@ -181,6 +192,7 @@ __ROWS__
     <h2 id="find-h">What it shows</h2>
     <ul class="plain">
       <li>D<sub>max</sub> reads as the number of lineages the word lists cannot tie together. Isolates (Basque, Haida, Koreanic, Ainu) score 1 to 1.3, genus-sized families (Japonic 1.7, Germanic 2.2, Turkic 2.4) about 2, Uralic 6.6, Indo-European 15. Every major Sinitic group scores at genus level.</li>
+      <li>Depth asks the other question, how far apart: the share of basic vocabulary still cognate across a lineage's deepest split, calibrated on expert cognate coding. Quechua 96% (its deepest split is as close as two lists of one language), Japonic 74%, Germanic 70%, Romance 62%, Sinitic 43%, Turkic 38%, Indo-European 23%. Austronesian, Atlantic-Congo and Afro-Asiatic are beyond what 40 words can resolve (about 21%). Choose "Depth" under Show in the explorer.</li>
       <li>Unrelated sets score what they should: five random unrelated lects 4.9, ten 9.7. Every real family is far below an unrelated set of the same size (40 Indo-European languages 7.4, 40 unrelated lects 35); a large family outscores a small random set only by holding more lineages that 40 words cannot connect.</li>
       <li>It tracks lexical change, not age. At equal numbers of languages Oceanic outscores Indo-European, and Formosan, where Austronesian's deepest splits are, scores lowest of its groups.</li>
       <li>Altaic and the areal "Khoisan" grouping both score at the low edge of random unions of shallow families: some cross-family pairs are within reach of the data, but descent and contact give the same signal.</li>

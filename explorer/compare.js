@@ -161,6 +161,25 @@
     return s + "</svg>";
   }
 
+  // share of basic vocabulary still cognate (relative to two lists of one language), from the depth calibration of
+  // scripts/depth.py; fitted on PMI-LDND only
+  function cmpRetention(med) {
+    const c = CMP.data.depth_cal;
+    if (!c || !Number.isFinite(med)) return null;
+    if (med >= c.horizon_d) return { beyond: true, r: Math.exp(-c.horizon_depth) };
+    let t = c.tau[0];
+    if (med >= c.d[c.d.length - 1]) t = c.tau[c.tau.length - 1];
+    else for (let i = 1; i < c.d.length; i++) if (med <= c.d[i]) { const w = (med - c.d[i - 1]) / (c.d[i] - c.d[i - 1]); t = c.tau[i - 1] + w * (c.tau[i] - c.tau[i - 1]); break; }
+    if (med <= c.d[0]) t = c.tau[0];
+    return { beyond: false, r: Math.exp(-t), tau: t };
+  }
+  function cmpRetentionHtml(med, kind) {
+    if (kind !== "pmi") return "";
+    const x = cmpRetention(med);
+    if (!x) return "";
+    const p = Math.round(x.r * 100) + "%";
+    return `<div><div class="cmp-big num">${x.beyond ? "≤ " + p : "≈ " + p}</div><div class="muted">${x.beyond ? "shared basic vocabulary: beyond what 40 words can resolve" : "shared basic vocabulary (100% = one language)"}</div></div>`;
+  }
   function cmpVerdict(med, kind) {
     const [q10, q50, q90] = kind === "pmi" ? CMP.data.noise : CMP.data.noise_ldnd, un = CMP.data.unrelated[kind].mean, f = x => fmt(x, 2);
     if (med <= q50) return `At or below the typical distance between two transcriptions of the same language (${f(q50)}). On 40-item lists this cannot be told from one language written down twice.`;
@@ -183,6 +202,7 @@
     host.innerHTML = `
       <div class="cmp-head">
         <div><div class="cmp-big num">${fmt(med)}</div><div class="muted">${L}</div></div>
+        ${cmpRetentionHtml(med, kind)}
         <div class="cmp-sub"><b dir="auto">${esc(sideLabel(a))}</b> ↔ <b dir="auto">${esc(sideLabel(b))}</b><br>
           <span class="muted">${ok.length === 1 ? "one pair of word lists" : `median of ${ok.length} word list pairs · range ${fmt(lo)}–${fmt(hi)}`}${ok.length < res.length ? ` · ${res.length - ok.length} pair${res.length - ok.length === 1 ? "" : "s"} left out (fewer than 20 shared concepts)` : ""}</span></div>
       </div>

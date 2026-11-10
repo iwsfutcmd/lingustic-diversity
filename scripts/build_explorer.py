@@ -186,6 +186,23 @@ def main() -> None:
                 by_name[w["lineage"]].update({"widest": w["widest"], "widest_pair": w["pair"], "raw_widest": w["raw_widest"],
                                               "raw_pair": w["raw_pair"], "wide_flagged": w["flagged"]})
 
+    depth_path = r / "depth.json"
+    depth_cal = None
+    if depth_path.exists():                     # retention across each lineage's deepest split (scripts/depth.py)
+        by_name = {d["name"]: d for d in lineages}
+        dj = json.loads(depth_path.read_text(encoding="utf-8"))
+        for x in dj["lineages"]:
+            if x["lineage"] in by_name and x["lists"] >= 2:
+                by_name[x["lineage"]].update({
+                    "ret": x["retention"], "tau": x["depth"], "ret_beyond": x["beyond_horizon"],
+                    "ret_d": x["median_d_across_root"], "ret_split": x["root_split_sizes"],
+                    "ret_small": x["smaller_branch"],
+                    # a two-list lineage always splits 1 | 1: no "lone branch" to report there
+                    "ret_lone": (x["lone_branch"] or None) if x["lists"] > 2 else None,
+                    "ret2": clean(x["retention_2"]), "ret2_beyond": x["beyond_horizon_2"]})
+        cal = json.loads((r / "depth_calibration.json").read_text(encoding="utf-8"))
+        depth_cal = {"d": cal["d"], "tau": cal["tau"], "horizon_d": cal["horizon_d"], "horizon_depth": cal["horizon_depth"]}
+
     sens_path = r / "sensitivity.json"
     if sens_path.exists():                      # D_max without contested doculects (scripts/sensitivity.py)
         by_name = {d["name"]: d for d in lineages}
@@ -213,7 +230,7 @@ def main() -> None:
             "flagged": [{**{k: clean(f[k]) for k in ("lineage", "id", "mean_ldnd", "n_concepts", "loo_delta_dmax")},
                          "contact": f.get("contact")} for f in audit["flagged"]],
         },
-        "ks": profiles["ks"], "profiles": profiles_all,
+        "ks": profiles["ks"], "profiles": profiles_all, "depth_cal": depth_cal,
     }
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     label = summary.get("distance_label", "LDND")

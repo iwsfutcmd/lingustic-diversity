@@ -312,13 +312,43 @@ svg{max-width:100%;height:auto;display:block}
       <tr><td></td><td>Ainu</td><td class="code">1.29</td><td class="code">1.159</td><td>top of the isolate band</td></tr>
       <tr><td>genus-like</td><td>Japonic</td><td class="code">1.69</td><td class="code">1.248</td><td>level with Slavic (1.61)</td></tr>
       <tr><td></td><td>Germanic</td><td class="code">2.16</td><td class="code">1.302</td><td>about two lineages 40 words cannot tie together</td></tr>
-      <tr><td></td><td>Turkic</td><td class="code">2.44</td><td class="code">1.324</td><td>top of the genus band</td></tr>
-      <tr><td>deep</td><td>Uralic</td><td class="code">6.57</td><td class="code">1.456</td><td>Saami, Samoyed, Ugric… mostly beyond reach of each other</td></tr>
-      <tr><td></td><td>Indo-European</td><td class="code">15.0</td><td class="code">1.510</td><td>many mutually distant branches</td></tr>
+      <tr><td></td><td>Turkic</td><td class="code">2.43</td><td class="code">1.324</td><td>top of the genus band</td></tr>
+      <tr><td>deep</td><td>Uralic</td><td class="code">6.53</td><td class="code">1.456</td><td>Saami, Samoyed, Ugric… mostly beyond reach of each other</td></tr>
+      <tr><td></td><td>Indo-European</td><td class="code">14.1</td><td class="code">1.506</td><td>many mutually distant branches</td></tr>
     </tbody>
   </table></div>
   <p class="prose">The two scales rank lineages almost identically; the calibrated one spaces them out. The older scale treated two unrelated lists as 0.64 similar, so every score was squeezed under about 1.57 and a deep family looked only a little more diverse than a genus. On the calibrated scale ten random unrelated lists score 9.7, and every real family scores far below an unrelated set of the same size.</p>
-  <p class="prose note">What this does not measure: time depth, or anything below the noise floor. Lineages inside the isolate band can’t be ranked against each other, because two transcriptions of one language can differ by as much as an isolate’s varieties do.</p>
+  <p class="prose note">What this does not measure: how far apart (that is depth, §9), time, or anything below the noise floor. Lineages inside the isolate band can’t be ranked against each other, because two transcriptions of one language can differ by as much as an isolate’s varieties do.</p>
+</section>
+
+<section>
+  <div class="step"><span class="n">9</span><h2>How far apart: depth</h2></div>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p>D<sub>max</sub> counts lineages. It does not say how far apart they are: a family of many shallow branches and a family of two very old ones can score alike. <strong>Depth</strong> asks that second question, in one unit for a pair of varieties and for a whole family.</p>
+    <p><strong>For a pair</strong>, the distance is turned into <em>retention</em>: the share of basic vocabulary the two still have as cognates, where 100% means as close as two lists of one language. The conversion is not chosen: it is fitted on expert cognate judgements in ten Lexibank datasets (Indo-European, Austronesian, Bantu, Sino-Tibetan, Semitic, Dravidian, Turkic, Uto-Aztecan…), matched to the same languages' ASJP lists. Teams differ in how strictly they draw cognate sets, which raises or lowers a dataset's shares by a constant factor, so each dataset gets its own level and one common curve is fitted. Depth itself is <span class="code">τ = −ln retention</span>, which adds up along a family tree if basic words are replaced at random; no rate and no dates are assumed.</p>
+  </div>
+  <figure>
+    <div class="scroll"><svg dir="ltr" viewBox="0 0 620 300" role="img" aria-label="Shared basic vocabulary against PMI-LDND: 100% at the same-language median, falling to about 21% at the detection limit 0.94, flat beyond it." style="min-width:520px"><rect x="524.3" y="14" width="79.7" height="246" fill="var(--chance-soft)"/><text x="564.2" y="30" text-anchor="middle" font-size="12" fill="var(--chance)">beyond the</text><text x="564.2" y="44" text-anchor="middle" font-size="12" fill="var(--chance)">horizon</text><line x1="52" x2="604" y1="14.0" y2="14.0" stroke="var(--rule)"/><text x="46" y="18.0" text-anchor="end" font-size="12" fill="var(--muted)">100%</text><line x1="52" x2="604" y1="75.5" y2="75.5" stroke="var(--rule)"/><text x="46" y="79.5" text-anchor="end" font-size="12" fill="var(--muted)">75%</text><line x1="52" x2="604" y1="137.0" y2="137.0" stroke="var(--rule)"/><text x="46" y="141.0" text-anchor="end" font-size="12" fill="var(--muted)">50%</text><line x1="52" x2="604" y1="198.5" y2="198.5" stroke="var(--rule)"/><text x="46" y="202.5" text-anchor="end" font-size="12" fill="var(--muted)">25%</text><text x="52.0" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">0</text><text x="177.5" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">0.25</text><text x="302.9" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">0.5</text><text x="428.4" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">0.75</text><text x="553.8" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">1</text><text x="328.0" y="296" text-anchor="middle" font-size="12" fill="var(--muted)">PMI-LDND between two 40-item lists</text><polyline points="127.3,14.0 227.6,35.2 277.8,64.3 328.0,82.4 378.2,114.5 428.4,162.8 466.0,187.9 491.1,195.5 516.2,209.1 566.4,209.7" fill="none" stroke="var(--ink)" stroke-width="2.5"/><circle cx="127.3" cy="14.0" r="3.5" fill="var(--ink)"/><circle cx="227.6" cy="35.2" r="3.5" fill="var(--ink)"/><circle cx="277.8" cy="64.3" r="3.5" fill="var(--ink)"/><circle cx="328.0" cy="82.4" r="3.5" fill="var(--ink)"/><circle cx="378.2" cy="114.5" r="3.5" fill="var(--ink)"/><circle cx="428.4" cy="162.8" r="3.5" fill="var(--ink)"/><circle cx="466.0" cy="187.9" r="3.5" fill="var(--ink)"/><circle cx="491.1" cy="195.5" r="3.5" fill="var(--ink)"/><circle cx="516.2" cy="209.1" r="3.5" fill="var(--ink)"/><circle cx="566.4" cy="209.7" r="3.5" fill="var(--ink)"/></svg></div>
+    <figcaption>Shared basic vocabulary (relative to two lists of one language) against <span class="dl">PMI-LDND</span>, fitted on expert cognate coding. Past about 0.85 the curve flattens: at the detection limit (0.94) about 21% is still shared, and 40 words cannot tell a pair sharing 21% from one sharing less. Pairs and families there are reported as <em>beyond the horizon</em>.</figcaption>
+  </figure>
+  <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+    <p><strong>For a family</strong>, depth is the retention across its deepest split. The lists are clustered on depth (average linkage, using no classification), the top of the tree splits the family in two, and the family's depth is the median across that split. Extra dialects sit inside one branch, so counting more of them does not deepen the family; sampling a new, deeper branch does. A lineage's own ancestors are left out (Latin for Romance, Old and Middle Chinese for Sinitic, Sanskrit for Indo-Aryan), since an ancestor is not a branch.</p>
+  </div>
+  <div class="scroll"><table class="bands">
+    <thead><tr><th>lineage</th><th>shared across the deepest split</th><th>depth τ</th><th>the split found</th></tr></thead>
+    <tbody>
+      <tr><td>Quechua</td><td class="code">96%</td><td class="code">0.04</td><td>Central (with Inkawasi and Lambayeque) vs the rest</td></tr>
+      <tr><td>Japonic</td><td class="code">74%</td><td class="code">0.30</td><td>Japanese vs Ryukyuan</td></tr>
+      <tr><td>Germanic</td><td class="code">70%</td><td class="code">0.36</td><td>Scandinavian and English vs continental Germanic (English’s Norse loans pull it north)</td></tr>
+      <tr><td>Romance</td><td class="code">62%</td><td class="code">0.47</td><td>French and Arpitan vs the rest</td></tr>
+      <tr><td>Sinitic</td><td class="code">43%</td><td class="code">0.84</td><td>Southern Min vs the rest</td></tr>
+      <tr><td>Turkic</td><td class="code">38%</td><td class="code">0.97</td><td>Chuvash vs the rest</td></tr>
+      <tr><td>Uralic</td><td class="code">25%</td><td class="code">1.40</td><td>Samoyedic vs Finno-Ugric</td></tr>
+      <tr><td>Indo-European</td><td class="code">23%</td><td class="code">1.45</td><td>Anatolian, Tocharian, Greek, Armenian vs the rest</td></tr>
+      <tr><td>Austronesian</td><td class="code">≤ 21%</td><td class="code">≥ 1.58</td><td>beyond what 40 words can resolve</td></tr>
+    </tbody>
+  </table></div>
+  <p class="prose note">Depth measures change, not time: a branch that changed fast looks old (Polabian, under centuries of German contact, is Slavic's deepest single list). It rests on a family's most divergent members, so one doubtful list can set it; the explorer names the list when the deepest branch is a single one and gives the split with at least two lists on each side. Families' cognate curves differ by up to about ±0.2 in τ, so small differences between families are not significant.</p>
 </section>
 </main>
 <script id="data" type="application/json">
@@ -627,7 +657,7 @@ function drawTexts() {
   $('unrelMean').textContent = UNREL_MEAN[MODE].toFixed(3);
   $('zUnrel').textContent = zU.toFixed(2); $('zUnrel2').textContent = zU.toFixed(2);
   $('twoUnrel').textContent = (2 / (1 + zU)).toFixed(2);
-  $('ieVal').textContent = '15';
+  $('ieVal').textContent = '14';
   const pm = (a, b) => PMAT[DATA.order.indexOf(a)][DATA.order.indexOf(b)];
   $('curveCap').textContent = `Solid: the calibrated similarity. Dashed: the older exp(−k·d), under which Japanese–English (unrelated) is still ${zOld(pm('JAPANESE', 'ENGLISH')).toFixed(2)} similar; now it is ${zCal(pm('JAPANESE', 'ENGLISH')).toFixed(2)}.`;
   document.querySelectorAll('.seg').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === MODE)));
