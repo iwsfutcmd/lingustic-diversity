@@ -62,12 +62,14 @@ EXTRA_FAMILIES = [
     "Chukotko-Kamchatkan", "Yukaghir", "Eskimo-Aleut", "Tungusic", "Abkhaz-Adyge",
     "Nakh-Daghestanian", "Dravidian", "Great Andamanese", "Khoe-Kwadi", "Tuu", "Kxa", "Kuliak",
     "Tarascan", "Araucanian", "Quechuan", "Mayan", "Algic", "Salishan", "Iroquoian", "Siouan",
-    "Athabaskan-Eyak-Tlingit", "Uto-Aztecan", "Hmong-Mien", "Tai-Kadai", "Austroasiatic",
+    "Athabaskan-Eyak-Tlingit", "Uto-Aztecan", "Hmong-Mien", "Kra-Dai", "Austroasiatic",
     "Pama-Nyungan", "Austronesian", "Sino-Tibetan", "Afro-Asiatic", "Atlantic-Congo",
     "Nuclear Trans New Guinea", "Otomanguean",
 ]
+# label -> ASJP Family value, where the name used here differs from ASJP's (Kra-Dai is the current name)
+FAMILY_FIELD = {"Kra-Dai": "Tai-Kadai"}
 for _fam in EXTRA_FAMILIES:
-    LINEAGES[_fam] = (lambda f: lambda r: r["Family"] == f)(_fam)
+    LINEAGES[_fam] = (lambda f: lambda r: r["Family"] == f)(FAMILY_FIELD.get(_fam, _fam))
 
 # Isolates with one to three lists, ancient (Sumerian, Elamite, Etruscan) and modern. A single list has no measurable
 # internal diversity (D_max = 1); they are here for the between-lineage distances. Hurro-Urartian has no ASJP list.
