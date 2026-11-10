@@ -230,7 +230,9 @@ def main() -> None:
             for n, x in dr["proposals"].items():
                 row = by_name.get(f"{n} (constructed)")
                 if row is not None:
-                    a, b = x["families_a"], x["families_b"]
+                    rename = {"Tai-Kadai": "Kra-Dai"}            # ASJP's family field still has the old name
+                    a = [rename.get(f, f) for f in x["families_a"]]
+                    b = [rename.get(f, f) for f in x["families_b"]]
                     small = a if len(a) <= len(b) else b
                     row.update({"ret": x["retention"], "tau": x["depth"], "ret_beyond": x["beyond_horizon"],
                                 "ret_d": x["median_d"], "ret_split": x["split"], "ret_small": small, "ret_lone": None,
