@@ -570,7 +570,8 @@ doculects by how much removing them lowers their lineage's D_max (also flags thi
   `TANGWANG_GANSU_TANGWANG` (Sinitic with Tibetan or Mongolic), `ANGLOROMANI`, `INNER_MBUGU_BUMBULI` (Ma'a);
 - data errors found by `misplaced.py` and the audit's contact check: `ATAYAL_TAIWAN_YILAN` (a Polynesian list),
   `TAMASHEQ_2` (largely Hausa), `BALDEMU` (a Bantu list), `MIN_FUZHOU_QINJIANG` (Standard Mandarin),
-  `MANDARIN_GUILIN_LONGSHENG` (likely Pinghua);
+  `MANDARIN_GUILIN_LONGSHENG` (likely Pinghua); and from `lone_branches.py`, `YUE_GUILIN_XINGAN` (misfiled),
+  `BACAMA` and `NU` (each far from the other list of its own language, which sits with its relatives);
 - creoles and pidgins (73 lists): English-, French-, Iberian-, Dutch-, Arabic-, Malay- and other-lexified creoles,
   pidgins and creolized vehicular languages (Sango, Kituba, Nagamese). Riverain Sango (the Ngbandi variety), Normal
   Mbugu and Afrikaans are kept;

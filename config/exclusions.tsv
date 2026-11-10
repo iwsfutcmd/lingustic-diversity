@@ -85,3 +85,6 @@ MOBILIAN_JARGON	Creole/pidgin, outside the lineage pools; excluded so the world-
 MOTU_HIRI	Creole/pidgin, outside the lineage pools; excluded so the world-wide checks (widest, contact) skip it too (Hiri Motu)
 NDYUKA_TRIO_PIDGIN	Creole/pidgin, outside the lineage pools; excluded so the world-wide checks (widest, contact) skip it too (Ndyuka-Trio Pidgin)
 PIDGIN_DELAWARE	Creole/pidgin, outside the lineage pools; excluded so the world-wide checks (widest, contact) skip it too (Pidgin Delaware)
+YUE_GUILIN_XINGAN	Misfiled: 0.60 from every other Yue list (which agree with each other, median 0.38) and 0.49 from Mandarin; no faster than the rest of Sinitic against an outgroup, so not a fast changer (lone_branches.py)
+BACAMA	Doubtful list: 0.67 from the other Bacama list (BACAMA_MULYEN), which sits among its Biu-Mandara relatives (0.60); this one is far from every Chadic list (lone_branches.py)
+NU	Doubtful list: 0.70 from the other N||ng list (NG_KE), which is 0.23 from Kam-ka-ke; this one is far from every Tuu list (lone_branches.py)
