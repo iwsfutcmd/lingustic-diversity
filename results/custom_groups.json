@@ -5,7 +5,7 @@
       "note": "High and Low German of Germany, Austria, Switzerland and Alsace (Glottolog classification), no speech islands or diaspora.",
       "lists": 11,
       "glottocodes": 9,
-      "d_max": 1.3219170804859255,
+      "d_max": 1.3221046432286356,
       "representatives": [
         [
           "BAVARIAN_GERMAN_2",
@@ -49,7 +49,7 @@
       "note": "English and Scots; ASJP has no regional English lists, and creoles are excluded.",
       "lists": 4,
       "glottocodes": 2,
-      "d_max": 1.0547327420030208,
+      "d_max": 1.0547581831585742,
       "representatives": [
         [
           "ENGLISH_2",
@@ -78,74 +78,151 @@
     },
     {
       "name": "Chinese without Min",
-      "note": "Middle Chinese and its descendants: Sinitic without Min (every list under Glottolog's Min node) and without Old Chinese.",
-      "lists": 460,
+      "note": "Middle Chinese and its descendants: Sinitic without Min (every list under Glottolog's Min node, and Shaowu, a Min-Gan transitional variety) and without Old Chinese.",
+      "lists": 461,
       "glottocodes": 11,
-      "d_max": 3.674346140158376,
+      "d_max": 3.663370663016908,
       "representatives": [
         [
           "TUHUA_SHAOGUAN_GUITOU",
-          0.126
+          0.127
         ],
         [
           "HAKKA_JIEYANG_JIEXI",
-          0.07
-        ],
-        [
-          "MIDDLE_CHINESE",
-          0.069
+          0.089
         ],
         [
           "HAKKA_GANZHOU_DAYU",
-          0.065
+          0.077
         ],
         [
-          "GAN_SHAOWU",
-          0.059
-        ],
-        [
-          "XIANG_GUILIN_JIESHOU",
-          0.056
+          "MIDDLE_CHINESE",
+          0.068
         ],
         [
           "MANDARIN",
+          0.058
+        ],
+        [
+          "XIANG_GUILIN_JIESHOU",
           0.055
         ],
         [
           "JIN_JINZHONG_MAFANG",
-          0.051
-        ],
-        [
-          "WU_LISHUI_SUICHANG",
-          0.051
-        ],
-        [
-          "JIN_SHUOZHOU_PINGLU",
-          0.049
+          0.05
         ],
         [
           "MANDARIN_PINGLIANG_SHUILUO",
-          0.047
+          0.048
         ],
         [
           "MANDARIN_HEZE_DINGTAO",
-          0.042
+          0.047
+        ],
+        [
+          "GAN_YICHUN_YIFENG",
+          0.045
+        ],
+        [
+          "WU_LISHUI_SUICHANG",
+          0.041
+        ],
+        [
+          "JIN_SHUOZHOU_PINGLU",
+          0.04
         ]
       ],
-      "depth": 0.8531599403387795,
-      "retention": 0.42606645793464926,
-      "median_d_across_root": 0.7314030528068542,
+      "depth": 0.6323035897625845,
+      "retention": 0.5313663400080786,
+      "median_d_across_root": 0.6766022443771362,
       "beyond_horizon": false,
       "root_split_sizes": [
-        458,
-        1
+        452,
+        8
       ],
       "smaller_branch": [
-        "GAN_SHAOWU"
+        "PINGHUA_YONGZHOU_NINGYUAN",
+        "PINGHUA_YONGZHOU_SHOUYAN",
+        "TUHUA_SHAOGUAN_DACUN",
+        "TUHUA_SHAOGUAN_GUITOU",
+        "TUHUA_SHAOGUAN_SHIBEI",
+        "TUHUA_SHAOGUAN_SHITANG"
       ],
-      "lone_branch": "GAN_SHAOWU",
-      "depth_2": 0.6323319353223411,
-      "retention_2": 0.5313512783452019
+      "lone_branch": "",
+      "depth_2": 0.6323035897625845,
+      "retention_2": 0.5313663400080786
+    },
+    {
+      "name": "Tai",
+      "note": "Tai: Glottolog's Daic node within Kra-Dai (Southwestern Tai, e.g. Thai, Lao, Shan, Ahom; Central Tai; Northern Tai, e.g. Zhuang; and Sek).",
+      "lists": 130,
+      "glottocodes": 39,
+      "d_max": 2.1391342566782656,
+      "representatives": [
+        [
+          "WUSE_GUANGXI_RONGSHUI_SIMO",
+          0.178
+        ],
+        [
+          "LVCHUN_TAI",
+          0.168
+        ],
+        [
+          "WUXUAN_TONGLING",
+          0.134
+        ],
+        [
+          "ZHUANG_GUANGXI_TIANYANG_NAGE",
+          0.092
+        ],
+        [
+          "ZHUANG_GUANGXI_JINGXI_XILAI",
+          0.089
+        ],
+        [
+          "SONGKHLA_THAI",
+          0.071
+        ],
+        [
+          "SAEK",
+          0.068
+        ],
+        [
+          "SHAN_3",
+          0.068
+        ],
+        [
+          "TAI_DAENG",
+          0.048
+        ],
+        [
+          "ZHUANG_GUANGDONG_JIAPING",
+          0.044
+        ],
+        [
+          "TAI_LAING_KETDA",
+          0.022
+        ],
+        [
+          "ZHUANG_YUNNAN_GUANGNAN_POMENG",
+          0.013
+        ]
+      ],
+      "depth": 0.5053181309984354,
+      "retention": 0.603313612132125,
+      "median_d_across_root": 0.640091210603714,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        128,
+        2
+      ],
+      "smaller_branch": [
+        "WUSEHUA",
+        "WUSE_GUANGXI_RONGSHUI_SIMO"
+      ],
+      "lone_branch": "",
+      "depth_2": 0.5053181309984354,
+      "retention_2": 0.603313612132125
     }
   ]
 }
