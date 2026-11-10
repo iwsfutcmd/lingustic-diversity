@@ -2,7 +2,7 @@
  "Sumerian": {
   "id": "SUMERIAN",
   "concepts": 39,
-  "mean_all": 0.9653634522497704,
+  "mean_all": 0.9653163055900362,
   "nearest": [
    [
     "Etruscan",
@@ -38,7 +38,7 @@
  "Elamite": {
   "id": "ELAMITE",
   "concepts": 31,
-  "mean_all": 0.9411517603809554,
+  "mean_all": 0.9410779072794401,
   "nearest": [
    [
     "Basque",
@@ -78,7 +78,7 @@
  "Etruscan": {
   "id": "ETRUSCAN",
   "concepts": 24,
-  "mean_all": 0.9451736684011404,
+  "mean_all": 0.9451986057412085,
   "nearest": [
    [
     "Nivkh",
@@ -114,7 +114,7 @@
  "Hruso": {
   "id": "HRUSO",
   "concepts": 38,
-  "mean_all": 0.9800901359768088,
+  "mean_all": 0.9800718715011568,
   "nearest": [
    [
     "Sino-Tibetan",
@@ -128,7 +128,7 @@
    ],
    [
     "Tuu",
-    0.946,
+    0.944,
     0.902
    ],
    [
@@ -150,7 +150,7 @@
  "Kusunda": {
   "id": "KUSUNDA",
   "concepts": 39,
-  "mean_all": 0.9575470686573488,
+  "mean_all": 0.9575415888596998,
   "nearest": [
    [
     "Elamite",
@@ -186,7 +186,7 @@
  "Nihali": {
   "id": "NAHALI",
   "concepts": 34,
-  "mean_all": 0.9462868863031735,
+  "mean_all": 0.946241430754867,
   "nearest": [
    [
     "Burushaski",
@@ -220,8 +220,8 @@
   ]
  },
  "_null_nearest": {
-  "median": 0.9044535607099533,
-  "q05": 0.8571114071390845,
-  "q95": 0.9323056495189667
+  "median": 0.9066620022058487,
+  "q05": 0.8612371534109116,
+  "q95": 0.9344584559798241
  }
 }
