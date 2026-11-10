@@ -56,6 +56,11 @@ main { padding-block: 18px 40px; }
 section[hidden], [hidden] { display: none !important; }
 .grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 18px; align-items: start; }
 @media (max-width: 860px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+/* the detail panel follows the page below the sticky tab bar; taller than the window, it scrolls on its own */
+@media (min-width: 861px) {
+  #detail { position: sticky; inset-block-start: calc(env(safe-area-inset-top, 0px) + var(--tabs-h, 48px) + 12px);
+            max-block-size: calc(100vh - var(--tabs-h, 48px) - 24px); overflow-y: auto; overscroll-behavior: contain; }
+}
 .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; min-inline-size: 0; }
 .panel h2 { font: 700 16px/1.3 var(--font-display); margin: 0 0 8px; }
 .panel h3 { font: 600 12px/1.3 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 14px 0 6px; }
@@ -326,6 +331,9 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
   });
   $("q").addEventListener("input", e => { F.q = e.target.value.trim().toLowerCase(); refresh(); });
   drawFilter();
+
+  const setTabsH = () => { const nav = document.querySelector("nav.tabs"); if (nav) document.documentElement.style.setProperty("--tabs-h", nav.offsetHeight + "px"); };
+  setTabsH(); addEventListener("resize", setTabsH);
 
   /* ---------- tabs + hash routing ---------- */
   const views = ["diversity", "profiles", "distances", "compare", "chart", "about"];
