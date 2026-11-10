@@ -1264,7 +1264,16 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
         if (e.target.classList.contains("ch-addbtn")) add(fs);
       });
       host.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.classList.contains("ch-add")) { e.preventDefault(); add(e.target.closest("fieldset")); } });
-      $("ch-png").addEventListener("click", () => chToPng().then(b => {
+      $("ch-png").addEventListener("click", () => chToPng().then(async b => {
+        // inside a Claude artifact, saving goes through the viewer's downloads capability (it asks the viewer first);
+        // on an ordinary page, a plain download link
+        let dl = null;
+        try { dl = window.claude && typeof window.claude.use === "function" ? await window.claude.use("downloads") : null; } catch (e) { dl = null; }
+        if (dl) {
+          try { await dl.save({ filename: "isodiv-chart.png", data: b }); $("ch-status").textContent = "Saved."; }
+          catch (e) { $("ch-status").textContent = e && e.code === "declined" ? "Not saved." : "Saving is not available here: use “Copy image” or the image under “Image file” below."; }
+          return;
+        }
         const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "isodiv-chart.png";
         document.body.appendChild(a); a.click(); a.remove();
         $("ch-status").textContent = "If no file appeared, use “Copy image” or the image under “Image file” below.";
