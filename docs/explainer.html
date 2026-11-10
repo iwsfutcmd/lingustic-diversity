@@ -293,7 +293,7 @@ svg{max-width:100%;height:auto;display:block}
     <p class="note">Table: similarity Z between every pair, and the weight each doculect gets in the maximizing distribution. “Equal-weight diversity” is the naive alternative: give every list the same weight (Leinster–Cobbold, q = 2). Add copies and watch it drop while D<sub>max</sub> stays put.</p>
   </div>
   <div class="prose" style="display:flex;flex-direction:column;gap:12px">
-    <p>Reference points: two identical lists give exactly <strong>1</strong>; two unrelated lists give <strong>2</strong>, and n unrelated lists about n. A lineage's D<sub>max</sub> is therefore the effective number of lineages its word lists cannot tie together: Germanic about 2, Uralic about 6.6, Indo-European about <span id="ieVal"></span>. Under the older similarity two unrelated lists gave only <span id="twoUnrel"></span> (2 / (1 + <span id="zUnrel2"></span>)), and Indo-European 1.51.</p>
+    <p>Reference points: two identical lists give exactly <strong>1</strong>; two unrelated lists give <strong>2</strong>, and n unrelated lists about n. A lineage's D<sub>max</sub> is therefore the effective number of lineages its word lists cannot tie together: Germanic about 2, Uralic about 6.5, Indo-European about <span id="ieVal"></span>. Under the older similarity two unrelated lists gave only <span id="twoUnrel"></span> (2 / (1 + <span id="zUnrel2"></span>)), and Indo-European 1.51.</p>
     <p>For a deep family this mixes two things: real diversity, and the limit of what 40 words can resolve. Branches farther apart than the detection limit count as separate lineages even when the family is well established.</p>
   </div>
 </section>
@@ -313,7 +313,7 @@ svg{max-width:100%;height:auto;display:block}
       <tr><td>genus-like</td><td>Japonic</td><td class="code">1.69</td><td class="code">1.248</td><td>level with Slavic (1.61)</td></tr>
       <tr><td></td><td>Germanic</td><td class="code">2.16</td><td class="code">1.302</td><td>about two lineages 40 words cannot tie together</td></tr>
       <tr><td></td><td>Turkic</td><td class="code">2.43</td><td class="code">1.324</td><td>top of the genus band</td></tr>
-      <tr><td>deep</td><td>Uralic</td><td class="code">6.53</td><td class="code">1.456</td><td>Saami, Samoyed, Ugric… mostly beyond reach of each other</td></tr>
+      <tr><td>deep</td><td>Uralic</td><td class="code">6.54</td><td class="code">1.456</td><td>Saami, Samoyed, Ugric… mostly beyond reach of each other</td></tr>
       <tr><td></td><td>Indo-European</td><td class="code">14.1</td><td class="code">1.506</td><td>many mutually distant branches</td></tr>
     </tbody>
   </table></div>
@@ -348,6 +348,7 @@ svg{max-width:100%;height:auto;display:block}
       <tr><td>Austronesian</td><td class="code">≤ 21%</td><td class="code">≥ 1.58</td><td>beyond what 40 words can resolve</td></tr>
     </tbody>
   </table></div>
+  <p class="prose">A check on the scale: random sets of unrelated languages, one per family, are beyond the horizon at their deepest split every time, whether the set holds 5 languages or 80 (median distance across it 0.99 and 0.99). D<sub>max</sub> of the same sets grows with their size, about n for n languages; depth does not, because adding a language to a set can only add a split as deep as the ones already there.</p>
   <p class="prose note">Depth measures change, not time: a branch that changed fast looks old (Polabian, under centuries of German contact, is Slavic's deepest single list). It rests on a family's most divergent members, so one doubtful list can set it; the explorer names the list when the deepest branch is a single one and gives the split with at least two lists on each side. Families' cognate curves differ by up to about ±0.2 in τ, so small differences between families are not significant.</p>
 </section>
 </main>
