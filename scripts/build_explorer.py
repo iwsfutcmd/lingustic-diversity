@@ -273,6 +273,9 @@ def main() -> None:
         },
         "ks": profiles["ks"], "profiles": profiles_all, "depth_cal": depth_cal,
     }
+    for d in lineages:                          # ASJP's family field still says Tai-Kadai; the current name is Kra-Dai
+        if d.get("family") == "Tai-Kadai":
+            d["family"] = "Kra-Dai"
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     label = summary.get("distance_label", "LDND")
     html = (TEMPLATE.read_text(encoding="utf-8").replace("LDND", label)
