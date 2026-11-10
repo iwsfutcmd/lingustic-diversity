@@ -4,7 +4,6 @@ Hui,HUI_HANGZHOU_FENKOU,Hui Chinese,0.680,0.722,False,lang:huiz1242,19,19,0.540,
 Xiang,XIANG_GUILIN_JIESHOU,Xiang Chinese,0.653,0.771,False,lang:xian1251,21,21,0.464,30,,nan,nan,nan,0.464,0.325,MANDARIN_GUILIN_GUANGYANG,Mandarin,0.825,SAHO,closer to a sibling group (misfiled or transitional)
 Hakka,HAKKA_GANZHOU_DAYU,Hakka Chinese,0.548,0.729,False,lang:hakk1236,45,45,0.490,28,,nan,nan,nan,0.490,0.438,GAN_ZHUZHOU_CHALING,Gan,0.840,BHILI,doubtful: disagrees with another list of its language
 Jin,JIN_LVLIANG_LIULIN,Jinyu Chinese,0.714,0.805,False,lang:jiny1235,22,22,0.477,29,,nan,nan,nan,0.477,0.452,MANDARIN_HUANGHUA_2,Mandarin,0.821,BOZO_SOROGAMA,doubtful: disagrees with another list of its language
-Yue,YUE_GUILIN_LIANGJIANG,Yue Chinese,0.664,0.748,False,lang:yuec1235,89,89,0.487,40,Sinitic,0.635,0.655,-0.726,0.487,0.269,PINGHUA_GUILIN_LINGUI,Pinghua,0.799,PAPORA_2,doubtful: disagrees with another list of its language
 Saami,SAAMI_UME,Ume Saami,0.525,0.603,False,WesternSaami,7,0,nan,35,Uralic,0.904,0.822,2.887,0.501,0.841,ESTONIAN_3,Finnic,0.867,MALAYALAM_2,fast-changing member
 Ainu,KURIL_AINU,Hokkaido Ainu,0.825,0.926,False,lang:ainu1240,22,22,0.310,31,,nan,nan,nan,0.310,nan,,,0.843,PAPORA_2,"nested, no rate test"
 Araucanian,RANQUELCHE,Mapudungun,0.938,nan,False,lang:mapu1245,3,3,0.236,38,,nan,nan,nan,0.236,nan,,,0.839,TEMNE_4,"nested, no rate test"
@@ -13,7 +12,6 @@ Burushaski,BURUSHASKI_2,Burushaski,0.885,1.000,False,lang:buru1296,9,9,0.284,40,
 East Semitic,AKKADIAN_3,Akkadian,0.894,nan,False,lang:akka1240,2,2,0.362,38,Semitic,0.805,0.784,nan,0.362,0.683,CLASSICAL_MANDAIC,Aramaic,0.689,ARAMAIC_ANCIENT,"nested, no rate test"
 Eastern Malayo-Polynesian,YAUR,Yaur,0.206,0.207,False,Malayo-Polynesian,702,0,nan,36,,nan,nan,nan,0.859,0.858,PAPORA_2,Formosan,0.858,MUDUGA,"nested, no rate test"
 Egyptic Arabic,SHUWA_CHADIAN_ARABIC_2,Chadian Arabic,0.727,nan,False,Egypto-SudanicArabic,4,1,0.412,27,,nan,nan,nan,0.412,0.404,SAHARAN_ARABIC,(no lineage),0.530,OGADEN_ARABIC,"nested, no rate test"
-Gan,GAN_SHAOWU,Gan Chinese,0.582,0.706,False,lang:ganc1239,21,21,0.539,28,,nan,nan,nan,0.539,0.524,HAKKA_QIANNAN_SANDU,Hakka,0.813,LONG_WAT,"nested, no rate test"
 Mixe-Zoque,TAPACHULTEC,Tapachultec,0.577,0.695,False,Mixe,14,0,nan,30,,nan,nan,nan,0.595,nan,,,0.788,PAPORA_2,"nested, no rate test"
 Nihali,NIHALI,Nihali,0.943,nan,False,lang:niha1238,2,2,0.273,38,,nan,nan,nan,0.273,nan,,,0.763,PAPORA_2,"nested, no rate test"
 Nivkh,GILYAK,Amur Nivkh,0.883,0.930,False,lang:gily1242,6,6,0.297,28,,nan,nan,nan,0.297,nan,,,0.794,KOSORONG,"nested, no rate test"
