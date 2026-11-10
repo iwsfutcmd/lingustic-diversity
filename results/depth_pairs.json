@@ -1,0 +1,1526 @@
+{
+  "Basque": {
+    "lists": 2,
+    "lower_d": 0.10872460507802514,
+    "full_d": 0.13752904534339905,
+    "pair": [
+      "BASQUE",
+      "BASQUE_2"
+    ],
+    "depth": 0.0,
+    "beyond_horizon": false,
+    "pairs_scored": 1
+  },
+  "Haida": {
+    "lists": 2,
+    "lower_d": 0.24375296974672253,
+    "full_d": 0.31588515639305115,
+    "pair": [
+      "HAIDA",
+      "HAIDA_2"
+    ],
+    "depth": 0.04131586317644087,
+    "beyond_horizon": false,
+    "pairs_scored": 1
+  },
+  "Kusunda": {
+    "lists": 2,
+    "lower_d": 0.21784967297399727,
+    "full_d": 0.30738767981529236,
+    "pair": [
+      "KUSUNDA",
+      "KUSUNDA_2"
+    ],
+    "depth": 0.030074310143587635,
+    "beyond_horizon": false,
+    "pairs_scored": 1
+  },
+  "Jarawa-Onge": {
+    "lists": 2,
+    "lower_d": 0.3340322953142422,
+    "full_d": 0.428309828042984,
+    "pair": [
+      "JARAWA",
+      "ONGE"
+    ],
+    "depth": 0.07948679582579876,
+    "beyond_horizon": false,
+    "pairs_scored": 1
+  },
+  "Rashad": {
+    "lists": 2,
+    "lower_d": 0.5252127347675952,
+    "full_d": 0.597460150718689,
+    "pair": [
+      "ORIG",
+      "TEGALI"
+    ],
+    "depth": 0.26036765821085117,
+    "beyond_horizon": false,
+    "pairs_scored": 1
+  },
+  "Koreanic": {
+    "lists": 3,
+    "lower_d": 0.3454240702765393,
+    "full_d": 0.4366517961025238,
+    "pair": [
+      "JEJUEO",
+      "KOREAN"
+    ],
+    "depth": 0.08419408001747675,
+    "beyond_horizon": false,
+    "pairs_scored": 3
+  },
+  "Nihali": {
+    "lists": 3,
+    "lower_d": 0.20527753508823193,
+    "full_d": 0.29006674885749817,
+    "pair": [
+      "NAHALI",
+      "NIHALI"
+    ],
+    "depth": 0.024570814459307866,
+    "beyond_horizon": false,
+    "pairs_scored": 3
+  },
+  "Katla-Tima": {
+    "lists": 3,
+    "lower_d": 0.6505678156203508,
+    "full_d": 0.7220169901847839,
+    "pair": [
+      "KATLA",
+      "TIMA"
+    ],
+    "depth": 0.4098511715100084,
+    "beyond_horizon": false,
+    "pairs_scored": 3
+  },
+  "East Semitic": {
+    "lists": 3,
+    "lower_d": 0.26230290853858096,
+    "full_d": 0.3699434697628021,
+    "pair": [
+      "AKKADIAN",
+      "AKKADIAN_3"
+    ],
+    "depth": 0.04928604553617333,
+    "beyond_horizon": false,
+    "pairs_scored": 3
+  },
+  "Yukaghir": {
+    "lists": 4,
+    "lower_d": 0.5733024188540009,
+    "full_d": 0.6753761172294617,
+    "pair": [
+      "KOLYMA_YUKAGIR",
+      "NORTHERN_YUKAGHIR"
+    ],
+    "depth": 0.31066939076622724,
+    "beyond_horizon": false,
+    "pairs_scored": 6
+  },
+  "Tarascan": {
+    "lists": 4,
+    "lower_d": 0.21560670940459542,
+    "full_d": 0.29637840390205383,
+    "pair": [
+      "PUREPECHA",
+      "TARASCAN"
+    ],
+    "depth": 0.029094726080928113,
+    "beyond_horizon": false,
+    "pairs_scored": 6
+  },
+  "Araucanian": {
+    "lists": 4,
+    "lower_d": 0.23236236952854863,
+    "full_d": 0.31180626153945923,
+    "pair": [
+      "MAPUDUNGUN_2",
+      "RANQUELCHE"
+    ],
+    "depth": 0.03638869245133436,
+    "beyond_horizon": false,
+    "pairs_scored": 6
+  },
+  "Canaanite": {
+    "lists": 4,
+    "lower_d": 0.5482225190850725,
+    "full_d": 0.6223248243331909,
+    "pair": [
+      "BIBLICAL_HEBREW",
+      "UGARITIC"
+    ],
+    "depth": 0.2766166179264551,
+    "beyond_horizon": false,
+    "pairs_scored": 6
+  },
+  "English": {
+    "lists": 4,
+    "lower_d": 0.21433539713125652,
+    "full_d": 0.3016502857208252,
+    "pair": [
+      "ENGLISH_2",
+      "SCOTS_2"
+    ],
+    "depth": 0.028539058372813342,
+    "beyond_horizon": false,
+    "pairs_scored": 6
+  },
+  "Kartvelian": {
+    "lists": 6,
+    "lower_d": 0.7607063755092467,
+    "full_d": 0.8088797926902771,
+    "pair": [
+      "GEORGIAN_2",
+      "SVAN"
+    ],
+    "depth": 0.6212211675198824,
+    "beyond_horizon": false,
+    "pairs_scored": 15
+  },
+  "Kuliak": {
+    "lists": 6,
+    "lower_d": 0.733534984262695,
+    "full_d": 0.8231825232505798,
+    "pair": [
+      "IK_4",
+      "TEPES"
+    ],
+    "depth": 0.5775786392190285,
+    "beyond_horizon": false,
+    "pairs_scored": 15
+  },
+  "Egyptic Arabic": {
+    "lists": 6,
+    "lower_d": 0.4581734480181279,
+    "full_d": 0.5889805555343628,
+    "pair": [
+      "ARABIC_SUDANESE_SPOKEN",
+      "SHUWA_CHADIAN_ARABIC_2"
+    ],
+    "depth": 0.21091532281588898,
+    "beyond_horizon": false,
+    "pairs_scored": 15
+  },
+  "Nivkh": {
+    "lists": 7,
+    "lower_d": 0.3825626599534848,
+    "full_d": 0.47495386004447937,
+    "pair": [
+      "GILYAK",
+      "GILYAK_EAST_SAKHALIN"
+    ],
+    "depth": 0.1265164901235294,
+    "beyond_horizon": false,
+    "pairs_scored": 21
+  },
+  "Chukotko-Kamchatkan": {
+    "lists": 7,
+    "lower_d": 0.8011260121779161,
+    "full_d": 0.8490089178085327,
+    "pair": [
+      "CHUKCHEE_2",
+      "ITELMEN"
+    ],
+    "depth": 0.677607385813506,
+    "beyond_horizon": false,
+    "pairs_scored": 21
+  },
+  "Abkhaz-Adyge": {
+    "lists": 7,
+    "lower_d": 0.8657253383571356,
+    "full_d": 0.9115003943443298,
+    "pair": [
+      "ABKHAZ_2",
+      "ADYGHE"
+    ],
+    "depth": 0.7324872046904526,
+    "beyond_horizon": false,
+    "pairs_scored": 21
+  },
+  "Kxa": {
+    "lists": 7,
+    "lower_d": 0.8074326944297391,
+    "full_d": 0.8930003643035889,
+    "pair": [
+      "HOAN_HUC",
+      "KUNG_EKOKA"
+    ],
+    "depth": 0.6856142327955292,
+    "beyond_horizon": false,
+    "pairs_scored": 21
+  },
+  "Levantine Arabic": {
+    "lists": 7,
+    "lower_d": 0.3151508465152839,
+    "full_d": 0.39842405915260315,
+    "pair": [
+      "ARABIC_NORTH_LEVANTINE_SPOKEN",
+      "DAMASCUS_ARABIC"
+    ],
+    "depth": 0.07163129841637239,
+    "beyond_horizon": false,
+    "pairs_scored": 21
+  },
+  "Outer South Ethiopic": {
+    "lists": 8,
+    "lower_d": 0.7594878911678997,
+    "full_d": 0.8280683159828186,
+    "pair": [
+      "GAFAT",
+      "MESMES_2"
+    ],
+    "depth": 0.6193762100987602,
+    "beyond_horizon": false,
+    "pairs_scored": 28
+  },
+  "Eastern Arabic": {
+    "lists": 8,
+    "lower_d": 0.4887703350852869,
+    "full_d": 0.6094499230384827,
+    "pair": [
+      "NORTH_MESOPOTAMIAN_ARABIC",
+      "SOUKHNE_SYRIAN_ARABIC"
+    ],
+    "depth": 0.23388285337698844,
+    "beyond_horizon": false,
+    "pairs_scored": 28
+  },
+  "Yeniseian": {
+    "lists": 9,
+    "lower_d": 0.6893295819032198,
+    "full_d": 0.7639692425727844,
+    "pair": [
+      "ASSAN",
+      "KET_2"
+    ],
+    "depth": 0.49520197072021943,
+    "beyond_horizon": false,
+    "pairs_scored": 36
+  },
+  "Tuu": {
+    "lists": 9,
+    "lower_d": 0.6390408646407637,
+    "full_d": 0.7279992699623108,
+    "pair": [
+      "AUNI",
+      "XOON"
+    ],
+    "depth": 0.3954204725248216,
+    "beyond_horizon": false,
+    "pairs_scored": 36
+  },
+  "Miwok-Costanoan": {
+    "lists": 9,
+    "lower_d": 0.8346562915678865,
+    "full_d": 0.8985066413879395,
+    "pair": [
+      "PLAINS_MIWOK",
+      "RUMSEN"
+    ],
+    "depth": 0.7131683055408043,
+    "beyond_horizon": false,
+    "pairs_scored": 36
+  },
+  "Narrow Talodi": {
+    "lists": 9,
+    "lower_d": 0.7202900773975272,
+    "full_d": 0.7659280300140381,
+    "pair": [
+      "NGILE",
+      "TOCHO_2"
+    ],
+    "depth": 0.554417473947928,
+    "beyond_horizon": false,
+    "pairs_scored": 36
+  },
+  "Celtic": {
+    "lists": 9,
+    "lower_d": 0.8288152893320783,
+    "full_d": 0.8862679600715637,
+    "pair": [
+      "BRETON",
+      "GAELIC_SCOTTISH"
+    ],
+    "depth": 0.7093834891742505,
+    "beyond_horizon": false,
+    "pairs_scored": 36
+  },
+  "North Ethiopic": {
+    "lists": 9,
+    "lower_d": 0.5136222419687968,
+    "full_d": 0.6012564897537231,
+    "pair": [
+      "TIGRE",
+      "TIGRINYA_2"
+    ],
+    "depth": 0.25204500648889994,
+    "beyond_horizon": false,
+    "pairs_scored": 36
+  },
+  "Modern South Arabian": {
+    "lists": 9,
+    "lower_d": 0.546255862117865,
+    "full_d": 0.6254926323890686,
+    "pair": [
+      "HOBYOT",
+      "SOQOTRI_2"
+    ],
+    "depth": 0.27524187540857414,
+    "beyond_horizon": false,
+    "pairs_scored": 36
+  },
+  "Burushaski": {
+    "lists": 10,
+    "lower_d": 0.30260137710393525,
+    "full_d": 0.4111589193344116,
+    "pair": [
+      "BURUSHASKI_2",
+      "HOPER_NAGAR_BURUSHASKI"
+    ],
+    "depth": 0.06637312785039806,
+    "beyond_horizon": false,
+    "pairs_scored": 45
+  },
+  "Great Andamanese": {
+    "lists": 10,
+    "lower_d": 0.89141809234788,
+    "full_d": 0.9280024170875549,
+    "pair": [
+      "AKA_BEA",
+      "AKA_KORA"
+    ],
+    "depth": 0.7575220584356881,
+    "beyond_horizon": false,
+    "pairs_scored": 45
+  },
+  "Iroquoian": {
+    "lists": 10,
+    "lower_d": 0.9317618148355417,
+    "full_d": 0.9700958132743835,
+    "pair": [
+      "CAYUGA",
+      "CHEROKEE"
+    ],
+    "depth": 0.793202898329308,
+    "beyond_horizon": false,
+    "pairs_scored": 45
+  },
+  "Saharan": {
+    "lists": 10,
+    "lower_d": 0.8421374448170126,
+    "full_d": 0.889342725276947,
+    "pair": [
+      "BERIA",
+      "KANURI"
+    ],
+    "depth": 0.7179439888661578,
+    "beyond_horizon": false,
+    "pairs_scored": 45
+  },
+  "Totonacan": {
+    "lists": 10,
+    "lower_d": 0.4822078035142106,
+    "full_d": 0.5662840604782104,
+    "pair": [
+      "TEPEHUA_TLACHICHILCO",
+      "TOTONAC_FILOMENA_MATA"
+    ],
+    "depth": 0.22901368343076234,
+    "beyond_horizon": false,
+    "pairs_scored": 45
+  },
+  "Samoyedic": {
+    "lists": 10,
+    "lower_d": 0.800194726419122,
+    "full_d": 0.8509193062782288,
+    "pair": [
+      "KARAGASSISCH",
+      "SELKUP"
+    ],
+    "depth": 0.676407886868928,
+    "beyond_horizon": false,
+    "pairs_scored": 45
+  },
+  "North-Eastern Neo-Aramaic": {
+    "lists": 10,
+    "lower_d": 0.39207428486743484,
+    "full_d": 0.49518895149230957,
+    "pair": [
+      "CHRISTIAN_URMI",
+      "HULAULA"
+    ],
+    "depth": 0.137987364636882,
+    "beyond_horizon": false,
+    "pairs_scored": 45
+  },
+  "Peninsular Arabic": {
+    "lists": 10,
+    "lower_d": 0.44657426579014947,
+    "full_d": 0.5245385766029358,
+    "pair": [
+      "DHOFARI_ARABIC",
+      "YEMEN_SANAANI_ARABIC"
+    ],
+    "depth": 0.20086852921279463,
+    "beyond_horizon": false,
+    "pairs_scored": 45
+  },
+  "Nubian": {
+    "lists": 11,
+    "lower_d": 0.8898922850106673,
+    "full_d": 0.944654643535614,
+    "pair": [
+      "MEIDOB_NUBIAN",
+      "NOBIIN"
+    ],
+    "depth": 0.75577065177917,
+    "beyond_horizon": false,
+    "pairs_scored": 55
+  },
+  "Heibanic": {
+    "lists": 11,
+    "lower_d": 0.770565123717143,
+    "full_d": 0.8237395286560059,
+    "pair": [
+      "KO1",
+      "LARU_SUDAN"
+    ],
+    "depth": 0.6358235485368688,
+    "beyond_horizon": false,
+    "pairs_scored": 55
+  },
+  "North African Arabic": {
+    "lists": 11,
+    "lower_d": 0.5460075610881309,
+    "full_d": 0.6230843663215637,
+    "pair": [
+      "MALTESE",
+      "MOROCCAN_ARABIC_2"
+    ],
+    "depth": 0.2750681211164705,
+    "beyond_horizon": false,
+    "pairs_scored": 55
+  },
+  "German dialects": {
+    "lists": 11,
+    "lower_d": 0.47258414664322973,
+    "full_d": 0.5176761150360107,
+    "pair": [
+      "BAVARIAN_GERMAN_2",
+      "RIPUARIAN_GERMAN"
+    ],
+    "depth": 0.22181724352762,
+    "beyond_horizon": false,
+    "pairs_scored": 55
+  },
+  "Songhay": {
+    "lists": 13,
+    "lower_d": 0.576175494911048,
+    "full_d": 0.6767256855964661,
+    "pair": [
+      "DENDI_2",
+      "KORANDJE"
+    ],
+    "depth": 0.31461037045951423,
+    "beyond_horizon": false,
+    "pairs_scored": 78
+  },
+  "Cochimi-Yuman": {
+    "lists": 13,
+    "lower_d": 0.7864832202844096,
+    "full_d": 0.8311721086502075,
+    "pair": [
+      "COCHIMI",
+      "MOHAVE"
+    ],
+    "depth": 0.658221959374304,
+    "beyond_horizon": false,
+    "pairs_scored": 78
+  },
+  "Khoe-Kwadi": {
+    "lists": 15,
+    "lower_d": 0.7626336943549507,
+    "full_d": 0.8424634337425232,
+    "pair": [
+      "MASARWA_TATI",
+      "XIRI"
+    ],
+    "depth": 0.6241211580546653,
+    "beyond_horizon": false,
+    "pairs_scored": 105
+  },
+  "Saami": {
+    "lists": 15,
+    "lower_d": 0.6933083778417545,
+    "full_d": 0.734245240688324,
+    "pair": [
+      "KILDIN_SAAMI",
+      "SAAMI_UME"
+    ],
+    "depth": 0.5032319586924785,
+    "beyond_horizon": false,
+    "pairs_scored": 105
+  },
+  "Eskimo-Aleut": {
+    "lists": 16,
+    "lower_d": 0.9775580259216761,
+    "full_d": 1.013364553451538,
+    "pair": [
+      "ALEUT_2",
+      "YUPIK_CENTRAL_SIBERIAN_CHAPLINO"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 120
+  },
+  "South Ethiopic": {
+    "lists": 16,
+    "lower_d": 0.7594878911678997,
+    "full_d": 0.8280683159828186,
+    "pair": [
+      "GAFAT",
+      "MESMES_2"
+    ],
+    "depth": 0.6193762100987602,
+    "beyond_horizon": false,
+    "pairs_scored": 92
+  },
+  "Finnic": {
+    "lists": 17,
+    "lower_d": 0.49801973898514285,
+    "full_d": 0.5817385911941528,
+    "pair": [
+      "INGRIAN",
+      "LIVONIAN"
+    ],
+    "depth": 0.24069341982715653,
+    "beyond_horizon": false,
+    "pairs_scored": 136
+  },
+  "Siouan": {
+    "lists": 18,
+    "lower_d": 0.9458309471096402,
+    "full_d": 0.9936460256576538,
+    "pair": [
+      "CATAWBA",
+      "OMAHA_PONCA"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 153
+  },
+  "Kipchak": {
+    "lists": 18,
+    "lower_d": 0.5763157469982375,
+    "full_d": 0.67265784740448,
+    "pair": [
+      "KRIMCHAK",
+      "SIBERIAN_TATAR"
+    ],
+    "depth": 0.31480217550167444,
+    "beyond_horizon": false,
+    "pairs_scored": 153
+  },
+  "Hui": {
+    "lists": 20,
+    "lower_d": 0.571429238877568,
+    "full_d": 0.6415190696716309,
+    "pair": [
+      "HUI_HANGZHOU_SHOUCHANG",
+      "HUI_SHANGRAO_QIUKOU"
+    ],
+    "depth": 0.3080877668310513,
+    "beyond_horizon": false,
+    "pairs_scored": 190
+  },
+  "Gan": {
+    "lists": 21,
+    "lower_d": 0.649592823999494,
+    "full_d": 0.7555716037750244,
+    "pair": [
+      "GAN_JIAN_JISHUI",
+      "GAN_XIANNING"
+    ],
+    "depth": 0.4080183077360984,
+    "beyond_horizon": false,
+    "pairs_scored": 210
+  },
+  "Xiang": {
+    "lists": 22,
+    "lower_d": 0.6517668979754063,
+    "full_d": 0.7389034628868103,
+    "pair": [
+      "XIANG",
+      "XIANG_GUILIN_JIESHOU"
+    ],
+    "depth": 0.41269618641653993,
+    "beyond_horizon": false,
+    "pairs_scored": 231
+  },
+  "Aramaic": {
+    "lists": 22,
+    "lower_d": 0.6263591001183263,
+    "full_d": 0.7013739943504333,
+    "pair": [
+      "CHRISTIAN_URMI",
+      "WESTERN_NEO_ARAMAIC"
+    ],
+    "depth": 0.37992466712549544,
+    "beyond_horizon": false,
+    "pairs_scored": 186
+  },
+  "Ainu": {
+    "lists": 23,
+    "lower_d": 0.38270164847092014,
+    "full_d": 0.47478246688842773,
+    "pair": [
+      "AINU_SARU",
+      "AINU_SHIRAURA"
+    ],
+    "depth": 0.1266852021987963,
+    "beyond_horizon": false,
+    "pairs_scored": 253
+  },
+  "Mixe-Zoque": {
+    "lists": 23,
+    "lower_d": 0.7301534342009567,
+    "full_d": 0.8163278698921204,
+    "pair": [
+      "AYAPANECO",
+      "AYUTLA_MIXE"
+    ],
+    "depth": 0.5717823865695864,
+    "beyond_horizon": false,
+    "pairs_scored": 253
+  },
+  "Jin": {
+    "lists": 23,
+    "lower_d": 0.5628957743789517,
+    "full_d": 0.6452636122703552,
+    "pair": [
+      "JIN_HEBI_HEBIJI",
+      "JIN_LVLIANG_LIULIN"
+    ],
+    "depth": 0.29620401803432805,
+    "beyond_horizon": false,
+    "pairs_scored": 253
+  },
+  "Ethiosemitic": {
+    "lists": 25,
+    "lower_d": 0.8285464925946933,
+    "full_d": 0.8842858672142029,
+    "pair": [
+      "ETHIOPIC",
+      "MESMES"
+    ],
+    "depth": 0.7092081189328913,
+    "beyond_horizon": false,
+    "pairs_scored": 144
+  },
+  "Kru": {
+    "lists": 25,
+    "lower_d": 0.7893182112859723,
+    "full_d": 0.8604506254196167,
+    "pair": [
+      "BETE_GUIBEROUA",
+      "KRUMEN_PYE"
+    ],
+    "depth": 0.6620640572228271,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Northwest Semitic": {
+    "lists": 27,
+    "lower_d": 0.7956381777266502,
+    "full_d": 0.8643801212310791,
+    "pair": [
+      "BIBLICAL_HEBREW",
+      "HERTEVIN"
+    ],
+    "depth": 0.670474390334697,
+    "beyond_horizon": false,
+    "pairs_scored": 104
+  },
+  "Mongolic": {
+    "lists": 29,
+    "lower_d": 0.6676984575261609,
+    "full_d": 0.7265117764472961,
+    "pair": [
+      "BURIAT_RUSSIA_2",
+      "SANTA_MONGOLIAN"
+    ],
+    "depth": 0.44922001532297584,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Tungusic": {
+    "lists": 29,
+    "lower_d": 0.7226827012881213,
+    "full_d": 0.8052948117256165,
+    "pair": [
+      "EWEN",
+      "MANCHU_4"
+    ],
+    "depth": 0.5586934308132709,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Pinghua": {
+    "lists": 29,
+    "lower_d": 0.7172957902628784,
+    "full_d": 0.773010790348053,
+    "pair": [
+      "PINGHUA_NANNING_BINYANG",
+      "TUHUA_SHAOGUAN_GUITOU"
+    ],
+    "depth": 0.5490078437761596,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Salishan": {
+    "lists": 30,
+    "lower_d": 0.9303637888624174,
+    "full_d": 0.9752687215805054,
+    "pair": [
+      "MONTANA_SALISH",
+      "SLIAMMON"
+    ],
+    "depth": 0.7931698851875537,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Min": {
+    "lists": 31,
+    "lower_d": 0.7633075745816204,
+    "full_d": 0.8220708966255188,
+    "pair": [
+      "HAINAN_MINNAN_CHINESE",
+      "YONGAN_CHINESE"
+    ],
+    "depth": 0.6251298820417919,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Japonic": {
+    "lists": 33,
+    "lower_d": 0.5583917166557169,
+    "full_d": 0.6387689113616943,
+    "pair": [
+      "JAPANESE_3",
+      "SHURI"
+    ],
+    "depth": 0.28984956883890023,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "South Semitic": {
+    "lists": 33,
+    "lower_d": 0.888494430297365,
+    "full_d": 0.9415443539619446,
+    "pair": [
+      "HARARI_2",
+      "MEHRI_2"
+    ],
+    "depth": 0.7541550149667109,
+    "beyond_horizon": false,
+    "pairs_scored": 193
+  },
+  "Slavic": {
+    "lists": 34,
+    "lower_d": 0.5539569995665348,
+    "full_d": 0.6337494850158691,
+    "pair": [
+      "BULGARIAN_2",
+      "POLABIAN"
+    ],
+    "depth": 0.2835368948274437,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Oghuz": {
+    "lists": 34,
+    "lower_d": 0.41317752096705723,
+    "full_d": 0.5098748803138733,
+    "pair": [
+      "IRAN_TURKIC",
+      "SALAR_2"
+    ],
+    "depth": 0.16290253904696472,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Algic": {
+    "lists": 35,
+    "lower_d": 0.9530173970030761,
+    "full_d": 0.9773485064506531,
+    "pair": [
+      "CHEYENNE",
+      "KASKASKIA_ILLINOIS"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Ijoid": {
+    "lists": 36,
+    "lower_d": 0.7446812977462738,
+    "full_d": 0.823910653591156,
+    "pair": [
+      "DEFAKA",
+      "IBANI"
+    ],
+    "depth": 0.5961345376970869,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Berber": {
+    "lists": 36,
+    "lower_d": 0.6968726609396462,
+    "full_d": 0.7729076147079468,
+    "pair": [
+      "CHAOUI",
+      "ZENAGA"
+    ],
+    "depth": 0.5103168510329912,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Balto-Slavic": {
+    "lists": 39,
+    "lower_d": 0.8066743090751428,
+    "full_d": 0.8498871326446533,
+    "pair": [
+      "LITHUANIAN_2",
+      "UPPER_SORBIAN"
+    ],
+    "depth": 0.6846620181953864,
+    "beyond_horizon": false,
+    "pairs_scored": 177
+  },
+  "Arabic": {
+    "lists": 41,
+    "lower_d": 0.5889389290995227,
+    "full_d": 0.6965094804763794,
+    "pair": [
+      "JUDEO_TUNISIAN_ARABIC",
+      "SOUKHNE_SYRIAN_ARABIC"
+    ],
+    "depth": 0.3318472975725958,
+    "beyond_horizon": false,
+    "pairs_scored": 223
+  },
+  "Athabaskan-Eyak-Tlingit": {
+    "lists": 45,
+    "lower_d": 0.975806885933942,
+    "full_d": 1.0170611143112183,
+    "pair": [
+      "ILIAMNA_TANAINA",
+      "TLINGIT"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Hakka": {
+    "lists": 46,
+    "lower_d": 0.6750798258819338,
+    "full_d": 0.7630777359008789,
+    "pair": [
+      "HAKKA_GANZHOU_DAYU",
+      "HAKKA_YULIN_XIANDI"
+    ],
+    "depth": 0.46536338685155776,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Malayic": {
+    "lists": 46,
+    "lower_d": 0.5311593412392605,
+    "full_d": 0.613515317440033,
+    "pair": [
+      "KERINCI_2",
+      "SALAKO_BADAMEA"
+    ],
+    "depth": 0.26460165904641053,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Dogon": {
+    "lists": 50,
+    "lower_d": 0.8423745378249193,
+    "full_d": 0.9092398285865784,
+    "pair": [
+      "BUNOGE",
+      "JAMSAY_2"
+    ],
+    "depth": 0.7180940330567882,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Polynesian": {
+    "lists": 51,
+    "lower_d": 0.5229454319369764,
+    "full_d": 0.6165111064910889,
+    "pair": [
+      "HAWAIIAN_2",
+      "RAPA"
+    ],
+    "depth": 0.2587469206647369,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Wu": {
+    "lists": 51,
+    "lower_d": 0.643891740355978,
+    "full_d": 0.7216567993164062,
+    "pair": [
+      "WU_HUZHOU_CHANGXING",
+      "WU_JINHUA_TANGXI"
+    ],
+    "depth": 0.4012448181321514,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Kuki-Chin": {
+    "lists": 53,
+    "lower_d": 0.7194359031776191,
+    "full_d": 0.7799030542373657,
+    "pair": [
+      "HRANGKHOL",
+      "KHUMI_MANGLUNG"
+    ],
+    "depth": 0.5528809289851522,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Formosan": {
+    "lists": 56,
+    "lower_d": 0.94587942779638,
+    "full_d": 0.9913426637649536,
+    "pair": [
+      "HECUO_TAROKO",
+      "MANTAURAN_RUKAI"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Lolo-Burmese": {
+    "lists": 57,
+    "lower_d": 0.891090922889256,
+    "full_d": 0.9600488543510437,
+    "pair": [
+      "BISU_YUNNAN_MENGZHE",
+      "YANGON_BURMESE"
+    ],
+    "depth": 0.7571475759987533,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Germanic": {
+    "lists": 60,
+    "lower_d": 0.6618048205101609,
+    "full_d": 0.7390143275260925,
+    "pair": [
+      "ICELANDIC_2",
+      "WYMYSORYS"
+    ],
+    "depth": 0.43598109941804264,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Nakh-Daghestanian": {
+    "lists": 61,
+    "lower_d": 0.9000894952351115,
+    "full_d": 0.9341667890548706,
+    "pair": [
+      "CHECHEN_2",
+      "KUBA_LEZGI"
+    ],
+    "depth": 0.7672397142422867,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Quechuan": {
+    "lists": 61,
+    "lower_d": 0.26378719564331166,
+    "full_d": 0.34224873781204224,
+    "pair": [
+      "QUECHUA_NORTH_JUNIN_TARMA",
+      "QUICHUA_CANYAR"
+    ],
+    "depth": 0.04992091515794295,
+    "beyond_horizon": false,
+    "pairs_scored": 512
+  },
+  "Romance": {
+    "lists": 62,
+    "lower_d": 0.699734521954483,
+    "full_d": 0.7557730078697205,
+    "pair": [
+      "FRENCH_2",
+      "VLACH"
+    ],
+    "depth": 0.5159323002495464,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Uralic": {
+    "lists": 64,
+    "lower_d": 0.9682090659515238,
+    "full_d": 1.0045303106307983,
+    "pair": [
+      "NENETS",
+      "SAAMI_PITE"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "South Dravidian": {
+    "lists": 64,
+    "lower_d": 0.8209875684137172,
+    "full_d": 0.8932163119316101,
+    "pair": [
+      "TELUGU_4",
+      "TODA"
+    ],
+    "depth": 0.7021566473766823,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Turkic": {
+    "lists": 71,
+    "lower_d": 0.7821079365617681,
+    "full_d": 0.837346076965332,
+    "pair": [
+      "CHUVASH",
+      "IRAN_TURKIC"
+    ],
+    "depth": 0.652206487529936,
+    "beyond_horizon": false,
+    "pairs_scored": 252
+  },
+  "Central Semitic": {
+    "lists": 72,
+    "lower_d": 0.8124342235124754,
+    "full_d": 0.877622127532959,
+    "pair": [
+      "BIBLICAL_HEBREW",
+      "SOUKHNE_SYRIAN_ARABIC"
+    ],
+    "depth": 0.6918224526037158,
+    "beyond_horizon": false,
+    "pairs_scored": 223
+  },
+  "Uto-Aztecan": {
+    "lists": 75,
+    "lower_d": 0.9250994906360266,
+    "full_d": 0.9743873476982117,
+    "pair": [
+      "NAHUATL_ORIZABA",
+      "UTE_1"
+    ],
+    "depth": 0.7930455261669874,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Dravidian": {
+    "lists": 79,
+    "lower_d": 0.9017948346289577,
+    "full_d": 0.9478195309638977,
+    "pair": [
+      "BRAHUI_2",
+      "MALAYALAM_3"
+    ],
+    "depth": 0.7691044852170098,
+    "beyond_horizon": false,
+    "pairs_scored": 226
+  },
+  "Quichean-Mamean": {
+    "lists": 79,
+    "lower_d": 0.6930602570718372,
+    "full_d": 0.7688089609146118,
+    "pair": [
+      "KEKCHI",
+      "MAM_TACANA_3"
+    ],
+    "depth": 0.5027349581608589,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Cushitic": {
+    "lists": 80,
+    "lower_d": 1.0012342839255488,
+    "full_d": 1.0397913455963135,
+    "pair": [
+      "BOON",
+      "KWADZA"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Celebic": {
+    "lists": 80,
+    "lower_d": 0.8054859239729109,
+    "full_d": 0.8790956139564514,
+    "pair": [
+      "BAHONSUAI",
+      "SOBOYO"
+    ],
+    "depth": 0.6831641000136834,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Bodic": {
+    "lists": 83,
+    "lower_d": 0.9284093220455542,
+    "full_d": 0.9936900734901428,
+    "pair": [
+      "BAIMA_SICHUAN_PINGWU",
+      "RANG_PAS"
+    ],
+    "depth": 0.7931237233551147,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Greater Central Philippine": {
+    "lists": 86,
+    "lower_d": 0.775186372259059,
+    "full_d": 0.8700676560401917,
+    "pair": [
+      "GORONTALO",
+      "UMIRAY_DUMAGET_AGTA"
+    ],
+    "depth": 0.6424732299290286,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Yue": {
+    "lists": 89,
+    "lower_d": 0.607829259163701,
+    "full_d": 0.6919117569923401,
+    "pair": [
+      "YUE_HUAZHOU_CHANGQI",
+      "YUE_JIANGMEN_NIUJIANG"
+    ],
+    "depth": 0.3565661894862522,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "West Semitic": {
+    "lists": 105,
+    "lower_d": 0.936060697004352,
+    "full_d": 0.9698970913887024,
+    "pair": [
+      "INNEMOR",
+      "TUROYO"
+    ],
+    "depth": 0.7933043796037862,
+    "beyond_horizon": false,
+    "pairs_scored": 238
+  },
+  "Mayan": {
+    "lists": 107,
+    "lower_d": 0.8329174289232035,
+    "full_d": 0.9007115364074707,
+    "pair": [
+      "HUASTEC",
+      "MAM_TODOS_SANTOS_CUCHUMATAN_1"
+    ],
+    "depth": 0.7120467501313508,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Semitic": {
+    "lists": 108,
+    "lower_d": 0.936060697004352,
+    "full_d": 0.9698970913887024,
+    "pair": [
+      "INNEMOR",
+      "TUROYO"
+    ],
+    "depth": 0.7933043796037862,
+    "beyond_horizon": false,
+    "pairs_scored": 5
+  },
+  "Otomanguean": {
+    "lists": 109,
+    "lower_d": 1.0361872000533234,
+    "full_d": 1.0738285779953003,
+    "pair": [
+      "TILAPA_OTOMI",
+      "TRIQUI_COPALA"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Hmong-Mien": {
+    "lists": 110,
+    "lower_d": 0.9544864721660896,
+    "full_d": 0.9922042489051819,
+    "pair": [
+      "MIAN_GUANGXI_JINXIU",
+      "MIAO_GUIZHOU_ZIYUN_TUANPO"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Mande": {
+    "lists": 128,
+    "lower_d": 0.9650657182803476,
+    "full_d": 1.0241682529449463,
+    "pair": [
+      "BANDI",
+      "BOKO"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Tai": {
+    "lists": 130,
+    "lower_d": 0.67191157857122,
+    "full_d": 0.7506963014602661,
+    "pair": [
+      "GANGBEI_ZHONGLI",
+      "LVCHUN_TAI"
+    ],
+    "depth": 0.4584930772809802,
+    "beyond_horizon": false,
+    "pairs_scored": 512
+  },
+  "Iranian": {
+    "lists": 135,
+    "lower_d": 0.8794970571876467,
+    "full_d": 0.9213171601295471,
+    "pair": [
+      "OSSETIAN",
+      "SOUTHERN_KURDISH_QORVEH"
+    ],
+    "depth": 0.7434969946521552,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Indo-Aryan": {
+    "lists": 164,
+    "lower_d": 0.8315448348614177,
+    "full_d": 0.9041505455970764,
+    "pair": [
+      "GARAM_CHISHMA_KHOWAR",
+      "NEPALI"
+    ],
+    "depth": 0.711158339359325,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Kam-Tai": {
+    "lists": 179,
+    "lower_d": 0.866782756724668,
+    "full_d": 0.9483415484428406,
+    "pair": [
+      "SHAN_3",
+      "TANGNIAN_SUI"
+    ],
+    "depth": 0.7331213033062087,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Mandarin": {
+    "lists": 182,
+    "lower_d": 0.6810559413856598,
+    "full_d": 0.7585536241531372,
+    "pair": [
+      "MANDARIN",
+      "MANDARIN_NANTONG_2"
+    ],
+    "depth": 0.478086141980668,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Austroasiatic": {
+    "lists": 190,
+    "lower_d": 0.9829516014424436,
+    "full_d": 1.0209380388259888,
+    "pair": [
+      "GATA",
+      "LAMPANGLAMET"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Pama-Nyungan": {
+    "lists": 193,
+    "lower_d": 1.0463234493115836,
+    "full_d": 1.0854332447052002,
+    "pair": [
+      "LOWER_ARANDA",
+      "NGAWUN"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Chadic": {
+    "lists": 204,
+    "lower_d": 0.9967624294106002,
+    "full_d": 1.0522083044052124,
+    "pair": [
+      "GVOKO",
+      "NDAM"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Kra-Dai": {
+    "lists": 214,
+    "lower_d": 0.9807759812299778,
+    "full_d": 1.0393637418746948,
+    "pair": [
+      "DONG_GUIZHOU_ZHANGLU",
+      "LACHI"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Nuclear Trans New Guinea": {
+    "lists": 307,
+    "lower_d": 1.0588822127875703,
+    "full_d": 1.098588228225708,
+    "pair": [
+      "NABAK",
+      "PILA"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Afro-Asiatic": {
+    "lists": 421,
+    "lower_d": 1.031111965938104,
+    "full_d": 1.0648850202560425,
+    "pair": [
+      "BOGA",
+      "GOBEZE"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 254
+  },
+  "Chinese without Min": {
+    "lists": 460,
+    "lower_d": 0.830479408636837,
+    "full_d": 0.894527018070221,
+    "pair": [
+      "MANDARIN_LAIZHOU",
+      "WU_LISHUI_QINGYUAN"
+    ],
+    "depth": 0.7104668537173077,
+    "beyond_horizon": false,
+    "pairs_scored": 256
+  },
+  "Sinitic": {
+    "lists": 485,
+    "lower_d": 0.8409858315486833,
+    "full_d": 0.9033352732658386,
+    "pair": [
+      "HAINAN_MINNAN_CHINESE",
+      "MANDARIN_PINGLIANG_SHUILUO"
+    ],
+    "depth": 0.7172140541976837,
+    "beyond_horizon": false,
+    "pairs_scored": 186
+  },
+  "Indo-European": {
+    "lists": 490,
+    "lower_d": 0.9790556476115444,
+    "full_d": 1.0334092378616333,
+    "pair": [
+      "BERNESE_GERMAN",
+      "LASGERDI"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Oceanic": {
+    "lists": 659,
+    "lower_d": 1.0409651471539303,
+    "full_d": 1.0799435377120972,
+    "pair": [
+      "BLABLANGA",
+      "NOOLI"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Eastern Malayo-Polynesian": {
+    "lists": 707,
+    "lower_d": 1.0409651471539303,
+    "full_d": 1.0799435377120972,
+    "pair": [
+      "BLABLANGA",
+      "NOOLI"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 17
+  },
+  "Sino-Tibetan": {
+    "lists": 883,
+    "lower_d": 1.0457866037551138,
+    "full_d": 1.0995334386825562,
+    "pair": [
+      "HUI_HUANGSHAN_LIUKOU",
+      "SUNWAR_2"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  },
+  "Malayo-Polynesian": {
+    "lists": 1407,
+    "lower_d": 1.0553894120789375,
+    "full_d": 1.0980007648468018,
+    "pair": [
+      "KEDANG",
+      "XARAGURE_2"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 162
+  },
+  "Austronesian": {
+    "lists": 1459,
+    "lower_d": 1.0553894120789375,
+    "full_d": 1.0980007648468018,
+    "pair": [
+      "KEDANG",
+      "XARAGURE_2"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 23
+  },
+  "Atlantic-Congo": {
+    "lists": 2036,
+    "lower_d": 1.0646869613404817,
+    "full_d": 1.110214352607727,
+    "pair": [
+      "BAYNUNK_GUNYAAMOLO_4",
+      "YORUBA_12"
+    ],
+    "depth": 0.7934162671844514,
+    "beyond_horizon": true,
+    "pairs_scored": 256
+  }
+}
