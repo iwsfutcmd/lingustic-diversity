@@ -1942,16 +1942,6 @@
    "flagged": false
   },
   {
-   "id": "BACAMA",
-   "family": "Afro-Asiatic",
-   "nearest_in": 0.6740665435791016,
-   "nearest_in_id": "BACAMA_MULYEN",
-   "nearest_out": 0.8212898373603821,
-   "nearest_out_id": "MERWARI",
-   "nearest_out_family": "Indo-European",
-   "flagged": false
-  },
-  {
    "id": "MOR",
    "family": "Austronesian",
    "nearest_in": 0.7093815803527832,
@@ -2619,16 +2609,6 @@
    "nearest_out": 0.821460485458374,
    "nearest_out_id": "BHILALI",
    "nearest_out_family": "Indo-European",
-   "flagged": false
-  },
-  {
-   "id": "NU",
-   "family": "Tuu",
-   "nearest_in": 0.6973036527633667,
-   "nearest_in_id": "NG_KE",
-   "nearest_out": 0.8739985227584839,
-   "nearest_out_id": "JANGKANG",
-   "nearest_out_family": "Austronesian",
    "flagged": false
   },
   {
@@ -8959,16 +8939,6 @@
    "nearest_out": 0.8342103362083435,
    "nearest_out_id": "JANGKANG",
    "nearest_out_family": "Austronesian",
-   "flagged": false
-  },
-  {
-   "id": "YUE_GUILIN_XINGAN",
-   "family": "Sino-Tibetan",
-   "nearest_in": 0.48483172059059143,
-   "nearest_in_id": "MANDARIN_HEZHOU_FUCHUAN",
-   "nearest_out": 0.8201121091842651,
-   "nearest_out_id": "YAO_GUANGXI_HUANGLONG",
-   "nearest_out_family": "Hmong-Mien",
    "flagged": false
   },
   {

@@ -505,22 +505,22 @@
   },
   {
    "lineage": "Tuu",
-   "n": 10,
-   "raw_widest": 0.8517058491706848,
+   "n": 9,
+   "raw_widest": 0.7390113472938538,
    "raw_pair": [
-    "NU",
+    "AUNI",
     "XOON_MASARWA"
    ],
-   "widest": 0.8411165773868561,
+   "widest": 0.697165310382843,
    "pair": [
-    "MASARWA_KAKIA",
-    "NU"
+    "KAM_KA_KE",
+    "XOON"
    ],
-   "lone": 1,
+   "lone": 0,
    "flagged": [],
    "pair_lone": [
     false,
-    true
+    false
    ]
   },
   {
@@ -883,7 +883,7 @@
   },
   {
    "lineage": "Sino-Tibetan",
-   "n": 881,
+   "n": 880,
    "raw_widest": 1.0995334386825562,
    "raw_pair": [
     "HUI_HUANGSHAN_LIUKOU",
@@ -894,7 +894,7 @@
     "KHWOPA_NEWAR",
     "PUTIAN_CHINESE"
    ],
-   "lone": 93,
+   "lone": 92,
    "flagged": [],
    "pair_lone": [
     true,
@@ -903,7 +903,7 @@
   },
   {
    "lineage": "Afro-Asiatic",
-   "n": 422,
+   "n": 421,
    "raw_widest": 1.0666072368621826,
    "raw_pair": [
     "IRAQW_2",
@@ -914,7 +914,7 @@
     "BOGA",
     "GOBEZE"
    ],
-   "lone": 81,
+   "lone": 80,
    "flagged": [
     "MOGOGODO"
    ],
@@ -1432,7 +1432,7 @@
   },
   {
    "lineage": "Chadic",
-   "n": 205,
+   "n": 204,
    "raw_widest": 1.0522083044052124,
    "raw_pair": [
     "GVOKO",
@@ -1443,7 +1443,7 @@
     "GVOKO",
     "NDAM"
    ],
-   "lone": 69,
+   "lone": 68,
    "flagged": [],
    "pair_lone": [
     true,
@@ -1494,7 +1494,7 @@
   },
   {
    "lineage": "Sinitic",
-   "n": 485,
+   "n": 484,
    "raw_widest": 0.9310448169708252,
    "raw_pair": [
     "JIN_LVLIANG_LIULIN",
@@ -1505,7 +1505,7 @@
     "HUI_HANGZHOU_FENKOU",
     "OLD_CHINESE"
    ],
-   "lone": 10,
+   "lone": 9,
    "flagged": [],
    "pair_lone": [
     true,
@@ -2014,22 +2014,22 @@
   },
   {
    "lineage": "Yue",
-   "n": 91,
-   "raw_widest": 0.7816384434700012,
+   "n": 90,
+   "raw_widest": 0.706820547580719,
    "raw_pair": [
-    "YUE_GUILIN_XINGAN",
-    "YUE_MAOMING"
+    "YUE_HECHI_YIZHOU",
+    "YUE_JIANGMEN_NIUJIANG"
    ],
-   "widest": 0.7556131482124329,
+   "widest": 0.6695520281791687,
    "pair": [
-    "YUE_GUANGZHOU_SHIQIAO",
-    "YUE_GUILIN_XINGAN"
+    "YUE_GUILIN_LIANGJIANG",
+    "YUE_JIANGMEN_HUICHENG"
    ],
-   "lone": 2,
+   "lone": 1,
    "flagged": [],
    "pair_lone": [
-    false,
-    true
+    true,
+    false
    ]
   },
   {
