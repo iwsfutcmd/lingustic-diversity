@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -200,6 +201,31 @@ def main() -> None:
                     # a two-list lineage always splits 1 | 1: no "lone branch" to report there
                     "ret_lone": (x["lone_branch"] or None) if x["lists"] > 2 else None,
                     "ret2": clean(x["retention_2"]), "ret2_beyond": x["beyond_horizon_2"]})
+        dr_path = r / "depth_random.json"
+        if dr_path.exists():                    # constructed sets on the depth scale (scripts/depth_random.py)
+            dr = json.loads(dr_path.read_text(encoding="utf-8"))
+            for n, x in dr["random_unrelated"].items():
+                row = by_name.get(f"Random unrelated, n={n}")
+                if row is not None:
+                    beyond = x["share_beyond_horizon"] >= 0.5
+                    row.update({"ret": x["retention_median"], "tau": -math.log(x["retention_median"]),
+                                "ret_beyond": beyond, "ret_d": x["median_d"]["median"], "ret_split": None,
+                                "ret_small": [], "ret_lone": None, "ret2": None, "ret2_beyond": False,
+                                "ret_note": f"Beyond the horizon in {x['share_beyond_horizon']:.0%} of {x['draws']} draws; "
+                                            f"median distance across the deepest split {x['median_d']['median']:.3f} "
+                                            f"({x['median_d']['q05']:.3f}–{x['median_d']['q95']:.3f})."})
+            for n, x in dr["proposals"].items():
+                row = by_name.get(f"{n} (constructed)")
+                if row is not None:
+                    a, b = x["families_a"], x["families_b"]
+                    small = a if len(a) <= len(b) else b
+                    row.update({"ret": x["retention"], "tau": x["depth"], "ret_beyond": x["beyond_horizon"],
+                                "ret_d": x["median_d"], "ret_split": x["split"], "ret_small": small, "ret_lone": None,
+                                "ret2": None, "ret2_beyond": False,
+                                "ret_note": f"Deepest split: {', '.join(a)} | {', '.join(b)}. Random unions of as many "
+                                            f"unrelated families at least as close across their split: {x['pct_any']:.0%} "
+                                            f"(any depth), {x['pct_shallow']:.0%} (shallow). The baselines are not matched "
+                                            f"for geography, so contact counts too."})
         cal = json.loads((r / "depth_calibration.json").read_text(encoding="utf-8"))
         depth_cal = {"d": cal["d"], "tau": cal["tau"], "horizon_d": cal["horizon_d"], "horizon_depth": cal["horizon_depth"]}
 

@@ -430,10 +430,10 @@ table.cmp tbody tr[tabindex] { cursor: pointer; } table.cmp tbody tr[aria-select
       <dt>Shared basic vocabulary across the deepest split</dt><dd>${d.ret_beyond ? "≤ " + pct(Math.exp(-hz)) + " (beyond the 40-word horizon)" : pct(d.ret)}</dd>
       <dt>Depth τ = −ln retention</dt><dd>${d.ret_beyond ? "≥ " + fmt(hz, 2) : fmt(d.tau, 2)}</dd>
       <dt>Median LDND across the split</dt><dd>${fmt(d.ret_d)}</dd>
-      <dt>Split (lists on each side)</dt><dd>${d.ret_split.join(" | ")}</dd>
-      <dt>Smaller side</dt><dd class="pairnote" dir="auto">${esc(d.ret_small.join(", "))}${d.ret_split[1] > d.ret_small.length ? ", …" : ""}</dd>
+      ${d.ret_split ? `<dt>Split (lists on each side)</dt><dd>${d.ret_split.join(" | ")}</dd>` : ""}
+      ${d.ret_split && d.ret_small.length ? `<dt>Smaller side</dt><dd class="pairnote" dir="auto">${esc(d.ret_small.join(", "))}${d.cat !== "adv" && d.ret_split[1] > d.ret_small.length ? ", …" : ""}</dd>` : ""}
       ${d.ret_lone ? `<dt>Deepest split with ≥ 2 lists per side</dt><dd>${d.ret2 == null ? "–" : d.ret2_beyond ? "beyond the horizon" : pct(d.ret2)}</dd>` : ""}
-    </dl>${d.ret_lone ? `<p class="muted" style="margin:0 0 6px">The deepest branch is one list (<span dir="auto">${esc(d.ret_lone)}</span>): often a real lone branch, sometimes a fast-changing or doubtful list.</p>` : ""}`;
+    </dl>${d.ret_note ? `<p class="muted" style="margin:0 0 6px">${esc(d.ret_note)}</p>` : ""}${d.ret_lone ? `<p class="muted" style="margin:0 0 6px">The deepest branch is one list (<span dir="auto">${esc(d.ret_lone)}</span>): often a real lone branch, sometimes a fast-changing or doubtful list.</p>` : ""}`;
   }
   function auditHtml(name) {
     const ex = DATA.audit.excluded_by_lineage[name] || [], fl = DATA.audit.flagged.filter(f => f.lineage === name);
