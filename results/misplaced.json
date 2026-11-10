@@ -1,7 +1,7 @@
 {
   "k": 3,
-  "checked": 3190,
-  "flagged": 44,
+  "checked": 3188,
+  "flagged": 43,
   "rows": [
     {
       "id": "MIN_NANPING",
@@ -41,7 +41,7 @@
       "glottocode": "yuec1235",
       "family": "Sino-Tibetan",
       "own": "Yue",
-      "own_size": 91,
+      "own_size": 90,
       "d_own_k": 0.49213865399360657,
       "closest_sibling": "Pinghua",
       "d_sibling_k": 0.3688797354698181,
@@ -81,22 +81,6 @@
       "nearest_in_sibling": "MANDARIN_GUILIN_GUANGYANG",
       "d_nearest_in_sibling": 0.3249092400074005,
       "nearest_in_own": "XIANG_ZHANGJIAJIE_CILI",
-      "flag": true
-    },
-    {
-      "id": "YUE_GUILIN_XINGAN",
-      "name": "Yue Chinese",
-      "glottocode": "yuec1235",
-      "family": "Sino-Tibetan",
-      "own": "Yue",
-      "own_size": 91,
-      "d_own_k": 0.6041777531305949,
-      "closest_sibling": "Mandarin",
-      "d_sibling_k": 0.5001205305258433,
-      "margin": 0.10405722260475159,
-      "nearest_in_sibling": "MANDARIN_HEZHOU_FUCHUAN",
-      "d_nearest_in_sibling": 0.48483172059059143,
-      "nearest_in_own": "YUE_QINZHOU_1",
       "flag": true
     },
     {
@@ -569,7 +553,7 @@
       "glottocode": "yuec1235",
       "family": "Sino-Tibetan",
       "own": "Yue",
-      "own_size": 91,
+      "own_size": 90,
       "d_own_k": 0.3637521167596181,
       "closest_sibling": "Pinghua",
       "d_sibling_k": 0.3569674591223399,
