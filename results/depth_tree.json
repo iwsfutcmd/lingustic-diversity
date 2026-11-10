@@ -9,7 +9,11 @@
       4,
       3
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7267049459888292,
+    "boot_depth_q05": 0.6959023267322585,
+    "boot_depth_q95": 0.756301508544647,
+    "boot_set_by": []
   },
   "Afro-Asiatic": {
     "family": "Afro-Asiatic",
@@ -21,7 +25,16 @@
       341,
       80
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7887321692303612,
+    "boot_depth_q05": 0.7855000687720041,
+    "boot_depth_q95": 0.7912990414769603,
+    "boot_set_by": [
+      [
+        "MOGOGODO",
+        0.02
+      ]
+    ]
   },
   "Semitic": {
     "family": "Afro-Asiatic",
@@ -33,7 +46,11 @@
       83,
       16
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7114954167182108,
+    "boot_depth_q05": 0.6778955406921033,
+    "boot_depth_q95": 0.7302480882988293,
+    "boot_set_by": []
   },
   "Arabic": {
     "family": "Afro-Asiatic",
@@ -48,6 +65,23 @@
     "set_by": [
       "MALTESE",
       "MALTESE_ARABIC"
+    ],
+    "boot_depth_median": 0.2986437631924371,
+    "boot_depth_q05": 0.2666172870688293,
+    "boot_depth_q95": 0.3624849008364896,
+    "boot_set_by": [
+      [
+        "MALTESE",
+        0.62
+      ],
+      [
+        "MALTESE_ARABIC",
+        0.62
+      ],
+      [
+        "SOUKHNE_SYRIAN_ARABIC",
+        0.3
+      ]
     ]
   },
   "Chadic": {
@@ -60,7 +94,24 @@
       124,
       79
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7734693701299111,
+    "boot_depth_q05": 0.7642361825506937,
+    "boot_depth_q95": 0.7846830414104845,
+    "boot_set_by": [
+      [
+        "MOKILKO",
+        0.06
+      ],
+      [
+        "KERA",
+        0.04
+      ],
+      [
+        "LELE_CHAD",
+        0.02
+      ]
+    ]
   },
   "Cushitic": {
     "family": "Afro-Asiatic",
@@ -72,7 +123,16 @@
       72,
       8
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7849048546829631,
+    "boot_depth_q05": 0.7731727051800853,
+    "boot_depth_q95": 0.7912990414769603,
+    "boot_set_by": [
+      [
+        "MOGOGODO",
+        0.14
+      ]
+    ]
   },
   "Berber": {
     "family": "Afro-Asiatic",
@@ -87,6 +147,23 @@
     "set_by": [
       "ZENAGA",
       "ZENAGA_2"
+    ],
+    "boot_depth_median": 0.475742739284993,
+    "boot_depth_q05": 0.3917350825596717,
+    "boot_depth_q95": 0.5570247200051163,
+    "boot_set_by": [
+      [
+        "ZENAGA",
+        0.62
+      ],
+      [
+        "ZENAGA_2",
+        0.62
+      ],
+      [
+        "GHADAMES",
+        0.02
+      ]
     ]
   },
   "East Semitic": {
@@ -101,6 +178,15 @@
     ],
     "set_by": [
       "AKKADIAN_3"
+    ],
+    "boot_depth_median": 0.10628700915615708,
+    "boot_depth_q05": 0.053768161974718356,
+    "boot_depth_q95": 0.1920562373327012,
+    "boot_set_by": [
+      [
+        "AKKADIAN_3",
+        1.0
+      ]
     ]
   },
   "West Semitic": {
@@ -113,7 +199,11 @@
       80,
       16
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7114954167182108,
+    "boot_depth_q05": 0.6760164634587839,
+    "boot_depth_q95": 0.7302480882988293,
+    "boot_set_by": []
   },
   "Central Semitic": {
     "family": "Afro-Asiatic",
@@ -125,7 +215,11 @@
       41,
       22
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.5810681796243674,
+    "boot_depth_q05": 0.5030673769284764,
+    "boot_depth_q95": 0.661227737371256,
+    "boot_set_by": []
   },
   "Northwest Semitic": {
     "family": "Afro-Asiatic",
@@ -137,7 +231,11 @@
       22,
       4
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.5789411101668958,
+    "boot_depth_q05": 0.5030673769284764,
+    "boot_depth_q95": 0.661227737371256,
+    "boot_set_by": []
   },
   "Aramaic": {
     "family": "Afro-Asiatic",
@@ -151,6 +249,15 @@
     ],
     "set_by": [
       "WESTERN_NEO_ARAMAIC"
+    ],
+    "boot_depth_median": 0.40612629511280984,
+    "boot_depth_q05": 0.3724884541294763,
+    "boot_depth_q95": 0.4519309698670609,
+    "boot_set_by": [
+      [
+        "WESTERN_NEO_ARAMAIC",
+        1.0
+      ]
     ]
   },
   "North-Eastern Neo-Aramaic": {
@@ -163,7 +270,24 @@
       5,
       4
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.16030303766354342,
+    "boot_depth_q05": 0.11737880486677506,
+    "boot_depth_q95": 0.2198922999380487,
+    "boot_set_by": [
+      [
+        "CHRISTIAN_URMI",
+        0.3
+      ],
+      [
+        "AMEDYA_ARAMAIC",
+        0.04
+      ],
+      [
+        "ARAMAIC",
+        0.04
+      ]
+    ]
   },
   "Canaanite": {
     "family": "Afro-Asiatic",
@@ -177,6 +301,19 @@
     ],
     "set_by": [
       "UGARITIC"
+    ],
+    "boot_depth_median": 0.33276721616474964,
+    "boot_depth_q05": 0.25350419097554283,
+    "boot_depth_q95": 0.5245993408989141,
+    "boot_set_by": [
+      [
+        "UGARITIC",
+        0.8
+      ],
+      [
+        "BIBLICAL_HEBREW",
+        0.2
+      ]
     ]
   },
   "South Semitic": {
@@ -189,7 +326,11 @@
       17,
       16
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7114954167182108,
+    "boot_depth_q05": 0.6760164634587839,
+    "boot_depth_q95": 0.7302480882988293,
+    "boot_set_by": []
   },
   "Ethiosemitic": {
     "family": "Afro-Asiatic",
@@ -201,7 +342,20 @@
       16,
       9
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7081685031534599,
+    "boot_depth_q05": 0.5783582714590196,
+    "boot_depth_q95": 0.7302480882988293,
+    "boot_set_by": [
+      [
+        "MESMES",
+        0.12
+      ],
+      [
+        "MESMES_2",
+        0.12
+      ]
+    ]
   },
   "North Ethiopic": {
     "family": "Afro-Asiatic",
@@ -216,6 +370,23 @@
     "set_by": [
       "TIGRE",
       "TIGRE_2"
+    ],
+    "boot_depth_median": 0.22824015388439806,
+    "boot_depth_q05": 0.1559269166777415,
+    "boot_depth_q95": 0.3070899298177485,
+    "boot_set_by": [
+      [
+        "TIGRIGNA",
+        0.52
+      ],
+      [
+        "TIGRINYA_2",
+        0.52
+      ],
+      [
+        "TIGRE",
+        0.4
+      ]
     ]
   },
   "South Ethiopic": {
@@ -231,6 +402,23 @@
     "set_by": [
       "MESMES",
       "MESMES_2"
+    ],
+    "boot_depth_median": 0.5608461104481947,
+    "boot_depth_q05": 0.49668866376834864,
+    "boot_depth_q95": 0.64037254498904,
+    "boot_set_by": [
+      [
+        "MESMES",
+        0.72
+      ],
+      [
+        "MESMES_2",
+        0.72
+      ],
+      [
+        "GAFAT",
+        0.12
+      ]
     ]
   },
   "Outer South Ethiopic": {
@@ -246,6 +434,23 @@
     "set_by": [
       "MESMES",
       "MESMES_2"
+    ],
+    "boot_depth_median": 0.5606136554796669,
+    "boot_depth_q05": 0.49668866376834864,
+    "boot_depth_q95": 0.64037254498904,
+    "boot_set_by": [
+      [
+        "MESMES",
+        0.74
+      ],
+      [
+        "MESMES_2",
+        0.74
+      ],
+      [
+        "GAFAT",
+        0.26
+      ]
     ]
   },
   "Modern South Arabian": {
@@ -261,6 +466,23 @@
     "set_by": [
       "SOQOTRI",
       "SOQOTRI_2"
+    ],
+    "boot_depth_median": 0.34548904105344874,
+    "boot_depth_q05": 0.27486408176747923,
+    "boot_depth_q95": 0.434482994412014,
+    "boot_set_by": [
+      [
+        "SOQOTRI",
+        0.68
+      ],
+      [
+        "SOQOTRI_2",
+        0.68
+      ],
+      [
+        "SAURI",
+        0.18
+      ]
     ]
   },
   "Peninsular Arabic": {
@@ -275,6 +497,23 @@
     ],
     "set_by": [
       "HIJAZI_ARABIC"
+    ],
+    "boot_depth_median": 0.22606805224327126,
+    "boot_depth_q05": 0.16909191316932792,
+    "boot_depth_q95": 0.28352195733879326,
+    "boot_set_by": [
+      [
+        "HIJAZI_ARABIC",
+        0.74
+      ],
+      [
+        "YEMEN_SANAANI_ARABIC",
+        0.24
+      ],
+      [
+        "ARABIC_KHUZESTANI",
+        0.12
+      ]
     ]
   },
   "Egyptic Arabic": {
@@ -289,6 +528,19 @@
     ],
     "set_by": [
       "SHUWA_CHADIAN_ARABIC_2"
+    ],
+    "boot_depth_median": 0.321505906557548,
+    "boot_depth_q05": 0.2752233298886351,
+    "boot_depth_q95": 0.35630326731230894,
+    "boot_set_by": [
+      [
+        "SHUWA_CHADIAN_ARABIC_2",
+        1.0
+      ],
+      [
+        "NIGERIAN_ARABIC",
+        0.08
+      ]
     ]
   },
   "North African Arabic": {
@@ -304,6 +556,23 @@
     "set_by": [
       "MALTESE",
       "MALTESE_ARABIC"
+    ],
+    "boot_depth_median": 0.2898384639184588,
+    "boot_depth_q05": 0.24598025283582192,
+    "boot_depth_q95": 0.3614788827862305,
+    "boot_set_by": [
+      [
+        "MALTESE",
+        0.98
+      ],
+      [
+        "MALTESE_ARABIC",
+        0.98
+      ],
+      [
+        "TUNISIAN_ARABIC_MAGHRIB",
+        0.02
+      ]
     ]
   },
   "Eastern Arabic": {
@@ -318,6 +587,23 @@
     ],
     "set_by": [
       "SOUKHNE_SYRIAN_ARABIC"
+    ],
+    "boot_depth_median": 0.2702071484883298,
+    "boot_depth_q05": 0.21726469318674366,
+    "boot_depth_q95": 0.3617275574197612,
+    "boot_set_by": [
+      [
+        "SOUKHNE_SYRIAN_ARABIC",
+        0.58
+      ],
+      [
+        "NORTH_MESOPOTAMIAN_ARABIC",
+        0.34
+      ],
+      [
+        "BUCHARA_ARABIC",
+        0.02
+      ]
     ]
   },
   "Levantine Arabic": {
@@ -332,6 +618,23 @@
     ],
     "set_by": [
       "PALESTINIAN_ARABIC"
+    ],
+    "boot_depth_median": 0.15500404501665327,
+    "boot_depth_q05": 0.09566016699916415,
+    "boot_depth_q95": 0.20844643009762942,
+    "boot_set_by": [
+      [
+        "ARABIC_NORTH_LEVANTINE_SPOKEN",
+        0.5
+      ],
+      [
+        "PALESTINIAN_ARABIC",
+        0.46
+      ],
+      [
+        "SYRIAN_ARABIC",
+        0.12
+      ]
     ]
   },
   "Ainu": {
@@ -346,6 +649,19 @@
     ],
     "set_by": [
       "KURIL_AINU"
+    ],
+    "boot_depth_median": 0.16597931165233437,
+    "boot_depth_q05": 0.10083678498546425,
+    "boot_depth_q95": 0.20599191713114748,
+    "boot_set_by": [
+      [
+        "KURIL_AINU",
+        0.86
+      ],
+      [
+        "SAKHALIN_AINU",
+        0.1
+      ]
     ]
   },
   "Algic": {
@@ -361,6 +677,23 @@
     "set_by": [
       "WIYOT",
       "YUROK"
+    ],
+    "boot_depth_median": 0.7783388083137848,
+    "boot_depth_q05": 0.7696520787721606,
+    "boot_depth_q95": 0.7841975198570444,
+    "boot_set_by": [
+      [
+        "YUROK",
+        0.64
+      ],
+      [
+        "WIYOT",
+        0.6
+      ],
+      [
+        "ARAPAHO",
+        0.28
+      ]
     ]
   },
   "Araucanian": {
@@ -375,6 +708,15 @@
     ],
     "set_by": [
       "RANQUELCHE"
+    ],
+    "boot_depth_median": 0.0567775725790467,
+    "boot_depth_q05": 0.029209673443747794,
+    "boot_depth_q95": 0.08891650179286262,
+    "boot_set_by": [
+      [
+        "RANQUELCHE",
+        1.0
+      ]
     ]
   },
   "Athabaskan-Eyak-Tlingit": {
@@ -389,6 +731,19 @@
     ],
     "set_by": [
       "TLINGIT"
+    ],
+    "boot_depth_median": 0.7846378114944155,
+    "boot_depth_q05": 0.7711214269350217,
+    "boot_depth_q95": 0.7912056439588504,
+    "boot_set_by": [
+      [
+        "TLINGIT",
+        1.0
+      ],
+      [
+        "EYAK",
+        0.12
+      ]
     ]
   },
   "Atlantic-Congo": {
@@ -401,7 +756,24 @@
       2033,
       3
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7905018280546633,
+    "boot_depth_q05": 0.7889433151233115,
+    "boot_depth_q95": 0.7916781389305093,
+    "boot_set_by": [
+      [
+        "ADIOUKROU",
+        0.26
+      ],
+      [
+        "ADIOUKROU_2",
+        0.26
+      ],
+      [
+        "LALA_NIGERIA",
+        0.1
+      ]
+    ]
   },
   "Austroasiatic": {
     "family": "Austroasiatic",
@@ -413,7 +785,20 @@
       186,
       4
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7635691111364866,
+    "boot_depth_q05": 0.7438257467784031,
+    "boot_depth_q95": 0.7776863991912659,
+    "boot_set_by": [
+      [
+        "BUGAN",
+        0.04
+      ],
+      [
+        "BUGAN_2",
+        0.04
+      ]
+    ]
   },
   "Austronesian": {
     "family": "Austronesian",
@@ -427,6 +812,23 @@
     ],
     "set_by": [
       "YAUR"
+    ],
+    "boot_depth_median": 0.7909435988576883,
+    "boot_depth_q05": 0.7856563894875982,
+    "boot_depth_q95": 0.7925601662067239,
+    "boot_set_by": [
+      [
+        "YAUR",
+        0.68
+      ],
+      [
+        "BUDIBUD",
+        0.08
+      ],
+      [
+        "KELA",
+        0.06
+      ]
     ]
   },
   "Oceanic": {
@@ -439,7 +841,24 @@
       629,
       23
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7868683259400753,
+    "boot_depth_q05": 0.7828666180972913,
+    "boot_depth_q95": 0.789375101635286,
+    "boot_set_by": [
+      [
+        "KELA",
+        0.16
+      ],
+      [
+        "BUDIBUD",
+        0.14
+      ],
+      [
+        "AYIWO",
+        0.02
+      ]
+    ]
   },
   "Polynesian": {
     "family": "Austronesian",
@@ -453,6 +872,23 @@
     ],
     "set_by": [
       "TUAMOTUAN"
+    ],
+    "boot_depth_median": 0.2672666329819363,
+    "boot_depth_q05": 0.2412755301564614,
+    "boot_depth_q95": 0.3629269554406797,
+    "boot_set_by": [
+      [
+        "TUAMOTUAN",
+        0.44
+      ],
+      [
+        "RAPA",
+        0.3
+      ],
+      [
+        "NUKUORO",
+        0.1
+      ]
     ]
   },
   "Malayo-Polynesian": {
@@ -467,6 +903,23 @@
     ],
     "set_by": [
       "YAUR"
+    ],
+    "boot_depth_median": 0.7909435988576883,
+    "boot_depth_q05": 0.7856563894875982,
+    "boot_depth_q95": 0.7925601662067239,
+    "boot_set_by": [
+      [
+        "YAUR",
+        0.68
+      ],
+      [
+        "BUDIBUD",
+        0.08
+      ],
+      [
+        "KELA",
+        0.06
+      ]
     ]
   },
   "Formosan": {
@@ -479,7 +932,11 @@
       39,
       16
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.771262221628491,
+    "boot_depth_q05": 0.7550009476889558,
+    "boot_depth_q95": 0.7804656147751798,
+    "boot_set_by": []
   },
   "Eastern Malayo-Polynesian": {
     "family": "Austronesian",
@@ -493,6 +950,23 @@
     ],
     "set_by": [
       "YAUR"
+    ],
+    "boot_depth_median": 0.7909435988576883,
+    "boot_depth_q05": 0.7856563894875982,
+    "boot_depth_q95": 0.7925601662067239,
+    "boot_set_by": [
+      [
+        "YAUR",
+        0.68
+      ],
+      [
+        "BUDIBUD",
+        0.08
+      ],
+      [
+        "KELA",
+        0.06
+      ]
     ]
   },
   "Greater Central Philippine": {
@@ -505,7 +979,24 @@
       74,
       8
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.6097078276402582,
+    "boot_depth_q05": 0.5444526456728078,
+    "boot_depth_q95": 0.6796154538447172,
+    "boot_set_by": [
+      [
+        "INAGTA_ALABAT",
+        0.22
+      ],
+      [
+        "UMIRAY_DUMAGET_AGTA",
+        0.1
+      ],
+      [
+        "TAWBUID",
+        0.06
+      ]
+    ]
   },
   "Malayic": {
     "family": "Austronesian",
@@ -519,6 +1010,23 @@
     ],
     "set_by": [
       "HAJI"
+    ],
+    "boot_depth_median": 0.2466345517043131,
+    "boot_depth_q05": 0.20409198212059573,
+    "boot_depth_q95": 0.4227577026162579,
+    "boot_set_by": [
+      [
+        "HAJI",
+        0.52
+      ],
+      [
+        "SALAKO_BADAMEA",
+        0.16
+      ],
+      [
+        "BACANESE_MALAY",
+        0.12
+      ]
     ]
   },
   "Celebic": {
@@ -534,6 +1042,19 @@
     "set_by": [
       "KADAI",
       "SOBOYO"
+    ],
+    "boot_depth_median": 0.6806422679168258,
+    "boot_depth_q05": 0.6339137808408281,
+    "boot_depth_q95": 0.7203793972699025,
+    "boot_set_by": [
+      [
+        "KADAI",
+        0.84
+      ],
+      [
+        "SOBOYO",
+        0.84
+      ]
     ]
   },
   "Basque": {
@@ -548,6 +1069,15 @@
     ],
     "set_by": [
       "BASQUE"
+    ],
+    "boot_depth_median": 0.0,
+    "boot_depth_q05": 0.0,
+    "boot_depth_q95": 0.008092039535840187,
+    "boot_set_by": [
+      [
+        "BASQUE",
+        1.0
+      ]
     ]
   },
   "Burushaski": {
@@ -562,6 +1092,19 @@
     ],
     "set_by": [
       "BURUSHASKI_2"
+    ],
+    "boot_depth_median": 0.11498004100407061,
+    "boot_depth_q05": 0.08583299625950801,
+    "boot_depth_q95": 0.12393588337927093,
+    "boot_set_by": [
+      [
+        "BURUSHASKI_2",
+        1.0
+      ],
+      [
+        "BURUSHASKI",
+        0.52
+      ]
     ]
   },
   "Chukotko-Kamchatkan": {
@@ -574,7 +1117,11 @@
       4,
       3
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.6936507445592681,
+    "boot_depth_q05": 0.6368628281179034,
+    "boot_depth_q95": 0.7164739673427681,
+    "boot_set_by": []
   },
   "Cochimi-Yuman": {
     "family": "Cochimi-Yuman",
@@ -588,6 +1135,19 @@
     ],
     "set_by": [
       "COCHIMI"
+    ],
+    "boot_depth_median": 0.6481121116887254,
+    "boot_depth_q05": 0.6266856756899333,
+    "boot_depth_q95": 0.6551783852473854,
+    "boot_set_by": [
+      [
+        "COCHIMI",
+        1.0
+      ],
+      [
+        "KILIWA",
+        0.02
+      ]
     ]
   },
   "Dogon": {
@@ -600,7 +1160,11 @@
       27,
       23
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.659329239099215,
+    "boot_depth_q05": 0.6532582396907732,
+    "boot_depth_q95": 0.6757430043558232,
+    "boot_set_by": []
   },
   "Dravidian": {
     "family": "Dravidian",
@@ -615,6 +1179,19 @@
     "set_by": [
       "BRAHUI",
       "BRAHUI_2"
+    ],
+    "boot_depth_median": 0.7240406469065244,
+    "boot_depth_q05": 0.6968758603380089,
+    "boot_depth_q95": 0.7499861268722329,
+    "boot_set_by": [
+      [
+        "BRAHUI",
+        1.0
+      ],
+      [
+        "BRAHUI_2",
+        1.0
+      ]
     ]
   },
   "South Dravidian": {
@@ -630,6 +1207,19 @@
     "set_by": [
       "TODA",
       "TODA_2"
+    ],
+    "boot_depth_median": 0.5832999852538735,
+    "boot_depth_q05": 0.5490393269669088,
+    "boot_depth_q95": 0.6179436603385395,
+    "boot_set_by": [
+      [
+        "TODA",
+        0.38
+      ],
+      [
+        "TODA_2",
+        0.38
+      ]
     ]
   },
   "Eskimo-Aleut": {
@@ -645,6 +1235,19 @@
     "set_by": [
       "ALEUT",
       "ALEUT_2"
+    ],
+    "boot_depth_median": 0.7902372116803291,
+    "boot_depth_q05": 0.7832032541042733,
+    "boot_depth_q95": 0.7931971848831103,
+    "boot_set_by": [
+      [
+        "ALEUT",
+        1.0
+      ],
+      [
+        "ALEUT_2",
+        1.0
+      ]
     ]
   },
   "Great Andamanese": {
@@ -657,7 +1260,20 @@
       7,
       3
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.6748020264162569,
+    "boot_depth_q05": 0.6191996122888017,
+    "boot_depth_q95": 0.7274057100166009,
+    "boot_set_by": [
+      [
+        "AKA_KORA",
+        0.16
+      ],
+      [
+        "GREAT_ANDAMANESE",
+        0.14
+      ]
+    ]
   },
   "Haida": {
     "family": "Haida",
@@ -671,6 +1287,15 @@
     ],
     "set_by": [
       "HAIDA"
+    ],
+    "boot_depth_median": 0.06745245802251537,
+    "boot_depth_q05": 0.04149879225613076,
+    "boot_depth_q95": 0.1418749638591729,
+    "boot_set_by": [
+      [
+        "HAIDA",
+        1.0
+      ]
     ]
   },
   "Heibanic": {
@@ -686,6 +1311,23 @@
     "set_by": [
       "KO1",
       "WARNANG"
+    ],
+    "boot_depth_median": 0.6544354715865861,
+    "boot_depth_q05": 0.6043247936499232,
+    "boot_depth_q95": 0.7084024839525339,
+    "boot_set_by": [
+      [
+        "WARNANG",
+        0.92
+      ],
+      [
+        "KO1",
+        0.7
+      ],
+      [
+        "TIRO",
+        0.08
+      ]
     ]
   },
   "Hmong-Mien": {
@@ -698,7 +1340,11 @@
       77,
       33
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7245819834775195,
+    "boot_depth_q05": 0.7125558796151449,
+    "boot_depth_q95": 0.7328311375687245,
+    "boot_set_by": []
   },
   "Ijoid": {
     "family": "Ijoid",
@@ -712,6 +1358,15 @@
     ],
     "set_by": [
       "DEFAKA"
+    ],
+    "boot_depth_median": 0.6103852465447912,
+    "boot_depth_q05": 0.5288590117367705,
+    "boot_depth_q95": 0.7018448498173344,
+    "boot_set_by": [
+      [
+        "DEFAKA",
+        1.0
+      ]
     ]
   },
   "Romance": {
@@ -724,7 +1379,16 @@
       56,
       4
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.4042781034333316,
+    "boot_depth_q05": 0.3449047479996291,
+    "boot_depth_q95": 0.46728200930021807,
+    "boot_set_by": [
+      [
+        "NONES_GARDENESE",
+        0.1
+      ]
+    ]
   },
   "Germanic": {
     "family": "Indo-European",
@@ -738,6 +1402,15 @@
     ],
     "set_by": [
       "GOTHIC"
+    ],
+    "boot_depth_median": 0.3798018662813408,
+    "boot_depth_q05": 0.2944333169680618,
+    "boot_depth_q95": 0.41680989013395553,
+    "boot_set_by": [
+      [
+        "GOTHIC",
+        0.6
+      ]
     ]
   },
   "Slavic": {
@@ -752,6 +1425,23 @@
     ],
     "set_by": [
       "POLABIAN"
+    ],
+    "boot_depth_median": 0.2887508559827597,
+    "boot_depth_q05": 0.24951169673393542,
+    "boot_depth_q95": 0.36095854154158996,
+    "boot_set_by": [
+      [
+        "POLABIAN",
+        0.92
+      ],
+      [
+        "UKRAINIAN",
+        0.04
+      ],
+      [
+        "UKRAINIAN_2",
+        0.04
+      ]
     ]
   },
   "Indo-European": {
@@ -764,7 +1454,24 @@
       479,
       11
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7727266166115119,
+    "boot_depth_q05": 0.7585425666550122,
+    "boot_depth_q95": 0.7828550355371395,
+    "boot_set_by": [
+      [
+        "TOCHARIAN_A",
+        0.04
+      ],
+      [
+        "TOCHARIAN_B",
+        0.04
+      ],
+      [
+        "HITTITE",
+        0.04
+      ]
+    ]
   },
   "Indo-Aryan": {
     "family": "Indo-European",
@@ -776,7 +1483,20 @@
       153,
       6
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.6437310700608723,
+    "boot_depth_q05": 0.6072769724273588,
+    "boot_depth_q95": 0.6959415039893712,
+    "boot_set_by": [
+      [
+        "JADGALI",
+        0.06
+      ],
+      [
+        "BROK_SKAD",
+        0.02
+      ]
+    ]
   },
   "Iranian": {
     "family": "Indo-European",
@@ -791,6 +1511,19 @@
     "set_by": [
       "AVESTAN",
       "AVESTAN_2"
+    ],
+    "boot_depth_median": 0.7157691052562434,
+    "boot_depth_q05": 0.6754149436984659,
+    "boot_depth_q95": 0.7425668060901438,
+    "boot_set_by": [
+      [
+        "AVESTAN",
+        0.28
+      ],
+      [
+        "AVESTAN_2",
+        0.28
+      ]
     ]
   },
   "Celtic": {
@@ -803,7 +1536,11 @@
       5,
       4
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7104836686389032,
+    "boot_depth_q05": 0.6634568517891225,
+    "boot_depth_q95": 0.7803567146620854,
+    "boot_set_by": []
   },
   "Balto-Slavic": {
     "family": "Indo-European",
@@ -815,7 +1552,11 @@
       34,
       5
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.6670628589089861,
+    "boot_depth_q05": 0.6165016022951866,
+    "boot_depth_q95": 0.7105161945545115,
+    "boot_set_by": []
   },
   "German dialects": {
     "family": "Indo-European",
@@ -830,6 +1571,23 @@
     "set_by": [
       "EASTERN_FRISIAN",
       "NORTHERN_LOW_SAXON"
+    ],
+    "boot_depth_median": 0.19863892086763602,
+    "boot_depth_q05": 0.1750069640901638,
+    "boot_depth_q95": 0.2512900030921896,
+    "boot_set_by": [
+      [
+        "NORTHERN_LOW_SAXON",
+        0.46
+      ],
+      [
+        "EASTERN_FRISIAN",
+        0.36
+      ],
+      [
+        "BAVARIAN_GERMAN_2",
+        0.24
+      ]
     ]
   },
   "English": {
@@ -844,6 +1602,19 @@
     ],
     "set_by": [
       "ENGLISH_2"
+    ],
+    "boot_depth_median": 0.03835398275416402,
+    "boot_depth_q05": 0.021195230670342076,
+    "boot_depth_q95": 0.057647337443333044,
+    "boot_set_by": [
+      [
+        "ENGLISH_2",
+        0.68
+      ],
+      [
+        "SCOTS",
+        0.32
+      ]
     ]
   },
   "Iroquoian": {
@@ -858,6 +1629,15 @@
     ],
     "set_by": [
       "CHEROKEE"
+    ],
+    "boot_depth_median": 0.7788033705487822,
+    "boot_depth_q05": 0.7620180290249348,
+    "boot_depth_q95": 0.7902342372671274,
+    "boot_set_by": [
+      [
+        "CHEROKEE",
+        1.0
+      ]
     ]
   },
   "Japonic": {
@@ -870,7 +1650,24 @@
       27,
       6
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.27294920842198156,
+    "boot_depth_q05": 0.22021225570676478,
+    "boot_depth_q95": 0.34127782268646617,
+    "boot_set_by": [
+      [
+        "NORTHERN_AMAMI_OSHIMA",
+        0.22
+      ],
+      [
+        "YONAGUNI",
+        0.14
+      ],
+      [
+        "HATERUMA_YAEYAMA",
+        0.04
+      ]
+    ]
   },
   "Jarawa-Onge": {
     "family": "Jarawa-Onge",
@@ -884,6 +1681,15 @@
     ],
     "set_by": [
       "JARAWA"
+    ],
+    "boot_depth_median": 0.18032368957290001,
+    "boot_depth_q05": 0.11081730634781976,
+    "boot_depth_q95": 0.25340358772627714,
+    "boot_set_by": [
+      [
+        "JARAWA",
+        1.0
+      ]
     ]
   },
   "Kartvelian": {
@@ -898,6 +1704,15 @@
     ],
     "set_by": [
       "SVAN"
+    ],
+    "boot_depth_median": 0.6813732037765269,
+    "boot_depth_q05": 0.6100765139708962,
+    "boot_depth_q95": 0.7288999966059361,
+    "boot_set_by": [
+      [
+        "SVAN",
+        1.0
+      ]
     ]
   },
   "Katla-Tima": {
@@ -912,6 +1727,15 @@
     ],
     "set_by": [
       "KATLA"
+    ],
+    "boot_depth_median": 0.5121581244034256,
+    "boot_depth_q05": 0.36593134373129016,
+    "boot_depth_q95": 0.660329215060969,
+    "boot_set_by": [
+      [
+        "KATLA",
+        1.0
+      ]
     ]
   },
   "Khoe-Kwadi": {
@@ -926,6 +1750,15 @@
     ],
     "set_by": [
       "KWADI"
+    ],
+    "boot_depth_median": 0.659992473634899,
+    "boot_depth_q05": 0.6381709067220478,
+    "boot_depth_q95": 0.6849015876358557,
+    "boot_set_by": [
+      [
+        "KWADI",
+        1.0
+      ]
     ]
   },
   "Koreanic": {
@@ -940,6 +1773,15 @@
     ],
     "set_by": [
       "JEJUEO"
+    ],
+    "boot_depth_median": 0.17695053082678852,
+    "boot_depth_q05": 0.09673469419212934,
+    "boot_depth_q95": 0.24217289055070845,
+    "boot_set_by": [
+      [
+        "JEJUEO",
+        1.0
+      ]
     ]
   },
   "Kru": {
@@ -952,7 +1794,11 @@
       17,
       8
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.591631707529993,
+    "boot_depth_q05": 0.5678760825928805,
+    "boot_depth_q95": 0.6116774648733975,
+    "boot_set_by": []
   },
   "Kuliak": {
     "family": "Kuliak",
@@ -967,6 +1813,19 @@
     "set_by": [
       "NYANGI",
       "TEPES"
+    ],
+    "boot_depth_median": 0.5836046555718973,
+    "boot_depth_q05": 0.5303536557645798,
+    "boot_depth_q95": 0.6244896097805226,
+    "boot_set_by": [
+      [
+        "NYANGI",
+        1.0
+      ],
+      [
+        "TEPES",
+        1.0
+      ]
     ]
   },
   "Kusunda": {
@@ -981,6 +1840,15 @@
     ],
     "set_by": [
       "KUSUNDA"
+    ],
+    "boot_depth_median": 0.0683820710053632,
+    "boot_depth_q05": 0.0683820710053632,
+    "boot_depth_q95": 0.0683820710053632,
+    "boot_set_by": [
+      [
+        "KUSUNDA",
+        1.0
+      ]
     ]
   },
   "Kxa": {
@@ -996,6 +1864,19 @@
     "set_by": [
       "HOAN",
       "HOAN_HUC"
+    ],
+    "boot_depth_median": 0.7074451648724648,
+    "boot_depth_q05": 0.6504984247924441,
+    "boot_depth_q95": 0.7571126191833728,
+    "boot_set_by": [
+      [
+        "HOAN",
+        1.0
+      ],
+      [
+        "HOAN_HUC",
+        1.0
+      ]
     ]
   },
   "Mande": {
@@ -1008,7 +1889,11 @@
       117,
       11
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7413028573095759,
+    "boot_depth_q05": 0.725686919424271,
+    "boot_depth_q95": 0.7492081096782752,
+    "boot_set_by": []
   },
   "Mayan": {
     "family": "Mayan",
@@ -1020,7 +1905,11 @@
       103,
       4
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.6867251542942696,
+    "boot_depth_q05": 0.6408827833149657,
+    "boot_depth_q95": 0.7240749982628406,
+    "boot_set_by": []
   },
   "Quichean-Mamean": {
     "family": "Mayan",
@@ -1032,7 +1921,11 @@
       54,
       25
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.4118384874933045,
+    "boot_depth_q05": 0.34104557063747687,
+    "boot_depth_q95": 0.5309757307790461,
+    "boot_set_by": []
   },
   "Miwok-Costanoan": {
     "family": "Miwok-Costanoan",
@@ -1047,6 +1940,19 @@
     "set_by": [
       "MUTSUN",
       "RUMSEN"
+    ],
+    "boot_depth_median": 0.7010220832042482,
+    "boot_depth_q05": 0.6649120799562692,
+    "boot_depth_q95": 0.7211199445355068,
+    "boot_set_by": [
+      [
+        "MUTSUN",
+        1.0
+      ],
+      [
+        "RUMSEN",
+        1.0
+      ]
     ]
   },
   "Mixe-Zoque": {
@@ -1061,6 +1967,19 @@
     ],
     "set_by": [
       "TAPACHULTEC"
+    ],
+    "boot_depth_median": 0.440106264382207,
+    "boot_depth_q05": 0.39157008854652603,
+    "boot_depth_q95": 0.5117530431378075,
+    "boot_set_by": [
+      [
+        "TAPACHULTEC",
+        0.92
+      ],
+      [
+        "AYAPANECO",
+        0.04
+      ]
     ]
   },
   "Mongolic": {
@@ -1073,7 +1992,20 @@
       16,
       13
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.3799135454303223,
+    "boot_depth_q05": 0.3540208880200066,
+    "boot_depth_q95": 0.44093322246499506,
+    "boot_set_by": [
+      [
+        "SANTA_MONGOLIAN",
+        0.04
+      ],
+      [
+        "KALMYK",
+        0.02
+      ]
+    ]
   },
   "Nakh-Daghestanian": {
     "family": "Nakh-Daghestanian",
@@ -1085,7 +2017,24 @@
       56,
       5
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7412866864882525,
+    "boot_depth_q05": 0.7151464647931092,
+    "boot_depth_q95": 0.7685496130633312,
+    "boot_set_by": [
+      [
+        "LAK",
+        0.02
+      ],
+      [
+        "LAK_2",
+        0.02
+      ],
+      [
+        "UDI",
+        0.02
+      ]
+    ]
   },
   "Narrow Talodi": {
     "family": "Narrow Talodi",
@@ -1097,7 +2046,20 @@
       5,
       4
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.42329736199206097,
+    "boot_depth_q05": 0.36678264578951475,
+    "boot_depth_q95": 0.4817708174496283,
+    "boot_set_by": [
+      [
+        "LUMUN_2",
+        0.18
+      ],
+      [
+        "TOCHO_2",
+        0.14
+      ]
+    ]
   },
   "Nihali": {
     "family": "Nihali",
@@ -1111,6 +2073,15 @@
     ],
     "set_by": [
       "NIHALI"
+    ],
+    "boot_depth_median": 0.0551132233431636,
+    "boot_depth_q05": 0.025969571156302634,
+    "boot_depth_q95": 0.10289971394889695,
+    "boot_set_by": [
+      [
+        "NIHALI",
+        1.0
+      ]
     ]
   },
   "Nivkh": {
@@ -1125,6 +2096,23 @@
     ],
     "set_by": [
       "GILYAK"
+    ],
+    "boot_depth_median": 0.13122041910696947,
+    "boot_depth_q05": 0.11219276029912509,
+    "boot_depth_q95": 0.1568117786094814,
+    "boot_set_by": [
+      [
+        "GILYAK",
+        0.72
+      ],
+      [
+        "GILYAK_SOUTH_SAKHALIN",
+        0.28
+      ],
+      [
+        "GILYAK_EAST_SAKHALIN",
+        0.22
+      ]
     ]
   },
   "Nubian": {
@@ -1139,6 +2127,15 @@
     ],
     "set_by": [
       "MEIDOB_NUBIAN"
+    ],
+    "boot_depth_median": 0.739499451217908,
+    "boot_depth_q05": 0.7142424613349854,
+    "boot_depth_q95": 0.7639776598966543,
+    "boot_set_by": [
+      [
+        "MEIDOB_NUBIAN",
+        0.58
+      ]
     ]
   },
   "Nuclear Trans New Guinea": {
@@ -1151,7 +2148,16 @@
       293,
       14
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7917541349789807,
+    "boot_depth_q05": 0.7902684293899626,
+    "boot_depth_q95": 0.7928807134127309,
+    "boot_set_by": [
+      [
+        "WAGARABAI",
+        0.02
+      ]
+    ]
   },
   "Otomanguean": {
     "family": "Otomanguean",
@@ -1163,7 +2169,11 @@
       103,
       6
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.793592705835376,
+    "boot_depth_q05": 0.792155513219084,
+    "boot_depth_q95": 0.7942141228615732,
+    "boot_set_by": []
   },
   "Pama-Nyungan": {
     "family": "Pama-Nyungan",
@@ -1175,7 +2185,16 @@
       174,
       19
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7887420003414345,
+    "boot_depth_q05": 0.786909023667847,
+    "boot_depth_q95": 0.7901212230848916,
+    "boot_set_by": [
+      [
+        "OLKOLA",
+        0.02
+      ]
+    ]
   },
   "Quechuan": {
     "family": "Quechuan",
@@ -1187,7 +2206,24 @@
       46,
       15
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.04990735567429516,
+    "boot_depth_q05": 0.039168430423737424,
+    "boot_depth_q95": 0.0681209849023297,
+    "boot_set_by": [
+      [
+        "QUECHUA_SAN_MARTIN",
+        0.02
+      ],
+      [
+        "QUECHUA_NORTH_JUNIN_TARMA",
+        0.02
+      ],
+      [
+        "QUECHUA_ARGENTINA",
+        0.02
+      ]
+    ]
   },
   "Rashad": {
     "family": "Rashad",
@@ -1201,6 +2237,15 @@
     ],
     "set_by": [
       "ORIG"
+    ],
+    "boot_depth_median": 0.32935022463308894,
+    "boot_depth_q05": 0.24825338450689183,
+    "boot_depth_q95": 0.4375389267199558,
+    "boot_set_by": [
+      [
+        "ORIG",
+        1.0
+      ]
     ]
   },
   "Saharan": {
@@ -1216,6 +2261,19 @@
     "set_by": [
       "BERIA",
       "BERTI"
+    ],
+    "boot_depth_median": 0.7192598042835451,
+    "boot_depth_q05": 0.7003560228559608,
+    "boot_depth_q95": 0.7360645086979586,
+    "boot_set_by": [
+      [
+        "BERIA",
+        1.0
+      ],
+      [
+        "BERTI",
+        1.0
+      ]
     ]
   },
   "Salishan": {
@@ -1228,7 +2286,20 @@
       20,
       10
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7597452036471981,
+    "boot_depth_q05": 0.7453357875187826,
+    "boot_depth_q95": 0.7739301753230398,
+    "boot_set_by": [
+      [
+        "BELLA_COOLA",
+        0.22
+      ],
+      [
+        "TILLAMOOK",
+        0.04
+      ]
+    ]
   },
   "Sino-Tibetan": {
     "family": "Sino-Tibetan",
@@ -1240,7 +2311,24 @@
       507,
       374
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7775115360875546,
+    "boot_depth_q05": 0.7684743680695387,
+    "boot_depth_q95": 0.7865749292424047,
+    "boot_set_by": [
+      [
+        "KORO_INDIA_2",
+        0.04
+      ],
+      [
+        "LEINONG",
+        0.04
+      ],
+      [
+        "GONG",
+        0.02
+      ]
+    ]
   },
   "Sinitic": {
     "family": "Sino-Tibetan",
@@ -1254,6 +2342,23 @@
     ],
     "set_by": [
       "GAN_SHAOWU"
+    ],
+    "boot_depth_median": 0.5771213009351969,
+    "boot_depth_q05": 0.5420223642327907,
+    "boot_depth_q95": 0.620000931804952,
+    "boot_set_by": [
+      [
+        "GAN_SHAOWU",
+        0.26
+      ],
+      [
+        "MANDARIN_GUILIN_LONGSHENG",
+        0.1
+      ],
+      [
+        "HAKKA_GANZHOU_DAYU",
+        0.08
+      ]
     ]
   },
   "Min": {
@@ -1269,6 +2374,23 @@
     "set_by": [
       "MIN_NANPING",
       "YONGAN_CHINESE"
+    ],
+    "boot_depth_median": 0.5665966148970332,
+    "boot_depth_q05": 0.5316571272992685,
+    "boot_depth_q95": 0.6052421635637809,
+    "boot_set_by": [
+      [
+        "MIN_NANPING",
+        0.94
+      ],
+      [
+        "YONGAN_CHINESE",
+        0.44
+      ],
+      [
+        "MIN_NANPING_SHIBEI",
+        0.02
+      ]
     ]
   },
   "Lolo-Burmese": {
@@ -1283,6 +2405,19 @@
     ],
     "set_by": [
       "GONG"
+    ],
+    "boot_depth_median": 0.7494990573400431,
+    "boot_depth_q05": 0.6768729656863685,
+    "boot_depth_q95": 0.7738881021048785,
+    "boot_set_by": [
+      [
+        "GONG",
+        0.96
+      ],
+      [
+        "PHUNOI",
+        0.02
+      ]
     ]
   },
   "Bodic": {
@@ -1295,7 +2430,24 @@
       77,
       3
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7033937108588464,
+    "boot_depth_q05": 0.6538432412509656,
+    "boot_depth_q95": 0.7430400046361005,
+    "boot_set_by": [
+      [
+        "KHENGKHA",
+        0.02
+      ],
+      [
+        "KURTOP",
+        0.02
+      ],
+      [
+        "KAIKE",
+        0.02
+      ]
+    ]
   },
   "Kuki-Chin": {
     "family": "Sino-Tibetan",
@@ -1307,7 +2459,24 @@
       48,
       4
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.467374453721899,
+    "boot_depth_q05": 0.40460609193094826,
+    "boot_depth_q95": 0.5422126514497826,
+    "boot_set_by": [
+      [
+        "CHOTHE",
+        0.14
+      ],
+      [
+        "LAMKANG",
+        0.12
+      ],
+      [
+        "ZOTUNG",
+        0.1
+      ]
+    ]
   },
   "Mandarin": {
     "family": "Sino-Tibetan",
@@ -1319,7 +2488,24 @@
       177,
       3
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.3607585390646711,
+    "boot_depth_q05": 0.2970308568284658,
+    "boot_depth_q95": 0.47012490700254456,
+    "boot_set_by": [
+      [
+        "MANDARIN_CHENZHOU_GUIYANG",
+        0.32
+      ],
+      [
+        "MANDARIN_NANTONG_1",
+        0.18
+      ],
+      [
+        "MANDARIN_NANTONG_2",
+        0.18
+      ]
+    ]
   },
   "Jin": {
     "family": "Sino-Tibetan",
@@ -1331,7 +2517,24 @@
       17,
       5
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.3450350725524186,
+    "boot_depth_q05": 0.3105846771793274,
+    "boot_depth_q95": 0.4236036091698804,
+    "boot_set_by": [
+      [
+        "JIN_LVLIANG_LIULIN",
+        0.34
+      ],
+      [
+        "JIN_TAIYUAN_YANGQU",
+        0.14
+      ],
+      [
+        "JIN_JINZHONG_MAFANG",
+        0.12
+      ]
+    ]
   },
   "Wu": {
     "family": "Sino-Tibetan",
@@ -1345,6 +2548,23 @@
     ],
     "set_by": [
       "WU_XUANCHENG_JINPAI"
+    ],
+    "boot_depth_median": 0.44790820474364484,
+    "boot_depth_q05": 0.3959219218045427,
+    "boot_depth_q95": 0.5881617549044992,
+    "boot_set_by": [
+      [
+        "WU_XUANCHENG_JINPAI",
+        0.68
+      ],
+      [
+        "WU_DANYANG",
+        0.16
+      ],
+      [
+        "WU_LISHUI_QINGYUAN",
+        0.08
+      ]
     ]
   },
   "Hui": {
@@ -1360,6 +2580,23 @@
     "set_by": [
       "HUI_HUANGSHAN_DAFU",
       "HUI_HUANGSHAN_WUCHENG"
+    ],
+    "boot_depth_median": 0.3609755368820079,
+    "boot_depth_q05": 0.3134896372179238,
+    "boot_depth_q95": 0.5401462722317064,
+    "boot_set_by": [
+      [
+        "HUI_HUANGSHAN_DAFU",
+        0.38
+      ],
+      [
+        "HUI_HUANGSHAN_WUCHENG",
+        0.32
+      ],
+      [
+        "HUI_HUANGSHAN_HONGCUN",
+        0.3
+      ]
     ]
   },
   "Gan": {
@@ -1375,6 +2612,23 @@
     "set_by": [
       "GAN_ANQING_SUSONG",
       "GAN_XIANNING"
+    ],
+    "boot_depth_median": 0.44703244107359413,
+    "boot_depth_q05": 0.41949855087533944,
+    "boot_depth_q95": 0.5107573052296334,
+    "boot_set_by": [
+      [
+        "GAN_LEIYANG",
+        0.22
+      ],
+      [
+        "GAN_XIANNING",
+        0.18
+      ],
+      [
+        "GAN_ANQING_SUSONG",
+        0.14
+      ]
     ]
   },
   "Xiang": {
@@ -1387,7 +2641,24 @@
       7,
       5
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.33856514326297793,
+    "boot_depth_q05": 0.26720435303042317,
+    "boot_depth_q95": 0.4209857684333544,
+    "boot_set_by": [
+      [
+        "XIANG",
+        0.2
+      ],
+      [
+        "XIANG_GUILIN_JIESHOU",
+        0.06
+      ],
+      [
+        "XIANG_XIANGXIANG",
+        0.04
+      ]
+    ]
   },
   "Hakka": {
     "family": "Sino-Tibetan",
@@ -1401,6 +2672,23 @@
     ],
     "set_by": [
       "HAKKA_GANZHOU_DAYU"
+    ],
+    "boot_depth_median": 0.43158381813910035,
+    "boot_depth_q05": 0.3314237898342017,
+    "boot_depth_q95": 0.5854253770914286,
+    "boot_set_by": [
+      [
+        "HAKKA_GANZHOU_YUDU_1",
+        0.4
+      ],
+      [
+        "HAKKA_GANZHOU_YUDU_2",
+        0.4
+      ],
+      [
+        "HAKKA_GANZHOU_DAYU",
+        0.24
+      ]
     ]
   },
   "Yue": {
@@ -1415,6 +2703,23 @@
     ],
     "set_by": [
       "YUE_WUZHOU_CANGWU_1"
+    ],
+    "boot_depth_median": 0.2603509322086585,
+    "boot_depth_q05": 0.2476094816213629,
+    "boot_depth_q95": 0.32564497790013053,
+    "boot_set_by": [
+      [
+        "YUE_WUZHOU_CANGWU_1",
+        0.5
+      ],
+      [
+        "YUE_HECHI_YIZHOU",
+        0.02
+      ],
+      [
+        "YUE_LIANZHOU",
+        0.02
+      ]
     ]
   },
   "Pinghua": {
@@ -1427,7 +2732,20 @@
       17,
       8
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.509346891328798,
+    "boot_depth_q05": 0.4391689531314353,
+    "boot_depth_q95": 0.5410470627827446,
+    "boot_set_by": [
+      [
+        "PINGHUA_YONGZHOU_NINGYUAN",
+        0.36
+      ],
+      [
+        "PINGHUA_YONGZHOU_SHOUYAN",
+        0.36
+      ]
+    ]
   },
   "Chinese without Min": {
     "family": "Sino-Tibetan",
@@ -1439,7 +2757,24 @@
       446,
       8
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.5377477436686533,
+    "boot_depth_q05": 0.4766334966558027,
+    "boot_depth_q95": 0.6069655871761316,
+    "boot_set_by": [
+      [
+        "MANDARIN_GUILIN_LONGSHENG",
+        0.34
+      ],
+      [
+        "HAKKA_GANZHOU_DAYU",
+        0.12
+      ],
+      [
+        "PINGHUA_YONGZHOU_NINGYUAN",
+        0.12
+      ]
+    ]
   },
   "Siouan": {
     "family": "Siouan",
@@ -1453,6 +2788,15 @@
     ],
     "set_by": [
       "CATAWBA"
+    ],
+    "boot_depth_median": 0.784541263212311,
+    "boot_depth_q05": 0.7721150045311574,
+    "boot_depth_q95": 0.7899689647756849,
+    "boot_set_by": [
+      [
+        "CATAWBA",
+        1.0
+      ]
     ]
   },
   "Songhay": {
@@ -1467,6 +2811,19 @@
     ],
     "set_by": [
       "KORANDJE"
+    ],
+    "boot_depth_median": 0.2934558621963317,
+    "boot_depth_q05": 0.256229651377308,
+    "boot_depth_q95": 0.3713652167179311,
+    "boot_set_by": [
+      [
+        "KORANDJE",
+        0.64
+      ],
+      [
+        "TASAWAQ",
+        0.04
+      ]
     ]
   },
   "Kra-Dai": {
@@ -1479,7 +2836,16 @@
       197,
       17
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.7520171633109074,
+    "boot_depth_q05": 0.7379946686395235,
+    "boot_depth_q95": 0.7650308101091287,
+    "boot_set_by": [
+      [
+        "MULAO_KADAI",
+        0.04
+      ]
+    ]
   },
   "Kam-Tai": {
     "family": "Kra-Dai",
@@ -1491,7 +2857,20 @@
       132,
       45
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.6291685132840323,
+    "boot_depth_q05": 0.5725299710302196,
+    "boot_depth_q95": 0.6893456097875096,
+    "boot_set_by": [
+      [
+        "JINXIU_LAKKIA",
+        0.22
+      ],
+      [
+        "LAKKJA",
+        0.22
+      ]
+    ]
   },
   "Tai": {
     "family": "Kra-Dai",
@@ -1506,6 +2885,23 @@
     "set_by": [
       "WUSEHUA",
       "WUSE_GUANGXI_RONGSHUI_SIMO"
+    ],
+    "boot_depth_median": 0.413346671629515,
+    "boot_depth_q05": 0.35044883440992103,
+    "boot_depth_q95": 0.4858265776468635,
+    "boot_set_by": [
+      [
+        "WUSEHUA",
+        0.84
+      ],
+      [
+        "WUSE_GUANGXI_RONGSHUI_SIMO",
+        0.84
+      ],
+      [
+        "YONG",
+        0.02
+      ]
     ]
   },
   "Tarascan": {
@@ -1520,6 +2916,23 @@
     ],
     "set_by": [
       "TARASCAN"
+    ],
+    "boot_depth_median": 0.040423413757916915,
+    "boot_depth_q05": 0.020819486506139274,
+    "boot_depth_q95": 0.06169897419018993,
+    "boot_set_by": [
+      [
+        "TARASCAN",
+        0.64
+      ],
+      [
+        "PUREPECHA",
+        0.36
+      ],
+      [
+        "PURHEPECHA",
+        0.36
+      ]
     ]
   },
   "Totonacan": {
@@ -1532,7 +2945,16 @@
       7,
       3
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.24301807791431512,
+    "boot_depth_q05": 0.1761154367796693,
+    "boot_depth_q95": 0.31489108997388576,
+    "boot_set_by": [
+      [
+        "TOTONAC_MISANTLA",
+        0.02
+      ]
+    ]
   },
   "Tungusic": {
     "family": "Tungusic",
@@ -1547,6 +2969,23 @@
     "set_by": [
       "EVEN",
       "EWEN"
+    ],
+    "boot_depth_median": 0.4919243583780681,
+    "boot_depth_q05": 0.41178645338986625,
+    "boot_depth_q95": 0.5525865009662377,
+    "boot_set_by": [
+      [
+        "EVEN",
+        0.82
+      ],
+      [
+        "EWEN",
+        0.82
+      ],
+      [
+        "OROCH",
+        0.08
+      ]
     ]
   },
   "Turkic": {
@@ -1562,6 +3001,23 @@
     "set_by": [
       "CHUVASH",
       "CHUVASH_2"
+    ],
+    "boot_depth_median": 0.6293147633798466,
+    "boot_depth_q05": 0.5162095914016404,
+    "boot_depth_q95": 0.6785353888244151,
+    "boot_set_by": [
+      [
+        "CHUVASH",
+        0.96
+      ],
+      [
+        "CHUVASH_2",
+        0.96
+      ],
+      [
+        "SIBERIAN_TATAR",
+        0.02
+      ]
     ]
   },
   "Oghuz": {
@@ -1576,6 +3032,23 @@
     ],
     "set_by": [
       "IRAN_TURKIC"
+    ],
+    "boot_depth_median": 0.16440938537086852,
+    "boot_depth_q05": 0.10849081532092461,
+    "boot_depth_q95": 0.23094132395082365,
+    "boot_set_by": [
+      [
+        "SALAR_2",
+        0.38
+      ],
+      [
+        "IRAN_TURKIC",
+        0.32
+      ],
+      [
+        "TURKMEN_2",
+        0.04
+      ]
     ]
   },
   "Kipchak": {
@@ -1590,6 +3063,23 @@
     ],
     "set_by": [
       "SIBERIAN_TATAR"
+    ],
+    "boot_depth_median": 0.46022566249798114,
+    "boot_depth_q05": 0.38549933357507316,
+    "boot_depth_q95": 0.5288028754294541,
+    "boot_set_by": [
+      [
+        "SIBERIAN_TATAR",
+        0.98
+      ],
+      [
+        "KAZAKH_2",
+        0.06
+      ],
+      [
+        "KRIMCHAK",
+        0.02
+      ]
     ]
   },
   "Tuu": {
@@ -1602,7 +3092,11 @@
       5,
       4
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.42513017634846073,
+    "boot_depth_q05": 0.35546132173290107,
+    "boot_depth_q95": 0.4990892229700691,
+    "boot_set_by": []
   },
   "Uralic": {
     "family": "Uralic",
@@ -1614,7 +3108,11 @@
       54,
       10
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.755486617793296,
+    "boot_depth_q05": 0.7280684516370188,
+    "boot_depth_q95": 0.7722172467130743,
+    "boot_set_by": []
   },
   "Finnic": {
     "family": "Uralic",
@@ -1628,6 +3126,23 @@
     ],
     "set_by": [
       "INGRIAN"
+    ],
+    "boot_depth_median": 0.2520692299045862,
+    "boot_depth_q05": 0.19991508150553075,
+    "boot_depth_q95": 0.316335917492258,
+    "boot_set_by": [
+      [
+        "INGRIAN",
+        0.58
+      ],
+      [
+        "LUDIAN",
+        0.24
+      ],
+      [
+        "VOTIC_2",
+        0.2
+      ]
     ]
   },
   "Saami": {
@@ -1642,6 +3157,23 @@
     ],
     "set_by": [
       "SAAMI_UME"
+    ],
+    "boot_depth_median": 0.4448993756855234,
+    "boot_depth_q05": 0.3769983467292788,
+    "boot_depth_q95": 0.515477040885736,
+    "boot_set_by": [
+      [
+        "SAAMI_UME",
+        0.54
+      ],
+      [
+        "SOUTHERN_SAAMI",
+        0.32
+      ],
+      [
+        "SOUTH_SAAMI",
+        0.32
+      ]
     ]
   },
   "Samoyedic": {
@@ -1654,7 +3186,24 @@
       7,
       3
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.6378034526453598,
+    "boot_depth_q05": 0.5953373364994632,
+    "boot_depth_q95": 0.6746345072972448,
+    "boot_set_by": [
+      [
+        "MATORISCH",
+        0.3
+      ],
+      [
+        "KARAGASSISCH",
+        0.3
+      ],
+      [
+        "NGANASAN",
+        0.08
+      ]
+    ]
   },
   "Uto-Aztecan": {
     "family": "Uto-Aztecan",
@@ -1666,7 +3215,11 @@
       57,
       18
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.744416288695475,
+    "boot_depth_q05": 0.7321900135250945,
+    "boot_depth_q95": 0.7605638345625026,
+    "boot_set_by": []
   },
   "Yeniseian": {
     "family": "Yeniseian",
@@ -1678,7 +3231,11 @@
       6,
       3
     ],
-    "set_by": []
+    "set_by": [],
+    "boot_depth_median": 0.48346942756412753,
+    "boot_depth_q05": 0.44678970752858943,
+    "boot_depth_q95": 0.5245485983013796,
+    "boot_set_by": []
   },
   "Yukaghir": {
     "family": "Yukaghir",
@@ -1693,6 +3250,23 @@
     "set_by": [
       "KOLYMA_YUKAGIR",
       "SOUTHERN_YUKAGHIR"
+    ],
+    "boot_depth_median": 0.43455338337902033,
+    "boot_depth_q05": 0.32226466077523513,
+    "boot_depth_q95": 0.5959236789605885,
+    "boot_set_by": [
+      [
+        "KOLYMA_YUKAGIR",
+        0.68
+      ],
+      [
+        "SOUTHERN_YUKAGHIR",
+        0.68
+      ],
+      [
+        "NORTHERN_YUKAGHIR",
+        0.32
+      ]
     ]
   }
 }
