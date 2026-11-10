@@ -423,9 +423,10 @@ Glottolog also makes it a primary branch; a relative-rate test against an outgro
 farther from the outgroup than its sisters, a fast-changing or noisy list is); and the list itself (another list of
 its language that disagrees with it, a sibling group or another family nearer than its own). Of 46 cases (43 since the
 three bad lists below were excluded), 15 are real lone branches (Tlingit, Cherokee, Catawba, Svan, Kwadi, Cochimí,
-Defaka, Jeju, Gong, Ugaritic…). Three are bad lists: `BACAMA` (0.67 from the other Bacama list, which sits normally
-among its Biu-Mandara relatives), `NU` (0.70 from the other Nǁng list, which is 0.23 from Kam-ka-ke) and
-`YUE_GUILIN_XINGAN` (0.60 from every Yue list, 0.49 from Mandarin). Others are misfiled or transitional (Xiang Guilin
+Defaka, Jeju, Gong, Ugaritic…). Two are bad lists, now excluded: `BACAMA` (0.67 from the other Bacama list, which sits
+normally among its Biu-Mandara relatives) and `NU` (0.70 from the other Nǁng list, which is 0.23 from Kam-ka-ke). One
+is misfiled and now removed from Yue only (see `config/lineage_overrides.tsv`): `YUE_GUILIN_XINGAN` (0.60 from every
+Yue list, 0.49 from Mandarin). Others are misfiled or transitional (Xiang Guilin
 Jieshou nearer Guilin Mandarin, Hui Fenkou nearer Wu, Mandarin Chenzhou Guiyang nearer Xiang), one is a fast changer
 (Ume Saami, relative-rate z = 2.9), and the rest are inconclusive: Polabian is nested in West Slavic but no faster
 than its sisters against Baltic (z = 1.6), so its depth points at its sparse, philological record more than at change.
@@ -587,9 +588,8 @@ doculects by how much removing them lowers their lineage's D_max (also flags thi
 - mixed languages: `AYNU` (Turkic–Persian), `MICHIF` (French–Cree), `WUTUN`, `DAO_SICHUAN_YAJIANG` (Daohua) and
   `TANGWANG_GANSU_TANGWANG` (Sinitic with Tibetan or Mongolic), `ANGLOROMANI`, `INNER_MBUGU_BUMBULI` (Ma'a);
 - data errors found by `misplaced.py` and the audit's contact check: `ATAYAL_TAIWAN_YILAN` (a Polynesian list),
-  `TAMASHEQ_2` (largely Hausa), `BALDEMU` (a Bantu list), `MIN_FUZHOU_QINJIANG` (Standard Mandarin),
-  `MANDARIN_GUILIN_LONGSHENG` (likely Pinghua); and from `lone_branches.py`, `YUE_GUILIN_XINGAN` (misfiled),
-  `BACAMA` and `NU` (each far from the other list of its own language, which sits with its relatives);
+  `TAMASHEQ_2` (largely Hausa), `BALDEMU` (a Bantu list); and from `lone_branches.py`, `BACAMA` and `NU` (each far
+  from the other list of its own language, which sits with its relatives);
 - creoles and pidgins (73 lists): English-, French-, Iberian-, Dutch-, Arabic-, Malay- and other-lexified creoles,
   pidgins and creolized vehicular languages (Sango, Kituba, Nagamese). Riverain Sango (the Ngbandi variety), Normal
   Mbugu and Afrikaans are kept;
@@ -602,9 +602,12 @@ its nearest Northern Iroquoian list (Mohawk, 0.895) is almost at the detection l
 A doculect with no weight in the D_max optimum cannot lower it, so only weighted candidates get a leave-one-out solve.
 
 `config/lineage_overrides.tsv` (`id<TAB>remove|add<TAB>lineage<TAB>reason`) changes membership in one lineage
-only, for lists Glottolog files in a group their vocabulary does not fit. Currently: `GAN_SHAOWU` (Shaowu, a Min–Gan
-transitional variety that many dialectologists classify as Min) is removed from Gan, and so from "Chinese without
-Min", and kept in Sinitic.
+only, for lists Glottolog files in a group their vocabulary does not fit. A list that is surely in a family but cannot be placed
+inside it is removed from the subgroup only, never from the family. Currently: `GAN_SHAOWU` (Shaowu, a Min–Gan
+transitional variety that many dialectologists classify as Min) out of Gan, and so out of "Chinese without Min";
+`YUE_GUILIN_XINGAN` and `YUE_GUILIN_LIANGJIANG` (Guilin-area lists nearer Pinghua or Mandarin than any Yue list) out
+of Yue; `MANDARIN_GUILIN_LONGSHENG` (likely Pinghua) out of Mandarin; `MIN_FUZHOU_QINJIANG` (Mandarin-like data under a
+Min label) out of Min. All stay in Sinitic and Sino-Tibetan.
 
 `scripts/misplaced.py` looks one level down: a doculect is flagged when a *sibling* group of the same family (Pinghua
 for a Mandarin list, Chadic for a Berber one) is closer than its own, by the mean distance to the 3 nearest lists in

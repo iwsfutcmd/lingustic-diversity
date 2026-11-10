@@ -3,8 +3,6 @@ AYNU	Mixed Turkic-Iranic lect (classified as Turkic by Glottolog, contested): ma
 ATAYAL_TAIWAN_YILAN	Data error: a Polynesian list (au 'I', koe 'you', ika 'fish', mata 'eye', nifo 'tooth'), 0.12 from Niuafo'ou and 0.75 from the rest of Formosan (misplaced.py)
 TAMASHEQ_2	Data error: largely Hausa (kifi 'fish', kunne 'ear', hanci 'nose', hakori 'tooth'), 0.42 from Hausa, closer to Chadic than to Berber (misplaced.py)
 BALDEMU	Data error: a Bantu list (noun-class prefixes: di-to 'ear', di-so 'eye', ma-kia 'blood', e-kobo 'skin'), 0.21 from Oroko (KUNDU); 0.85 from the nearest Chadic list (audit.py contact check)
-MIN_FUZHOU_QINJIANG	Data error: Standard Mandarin, not Eastern Min (wo 'I', nimen, women, xie 'blood', gutou 'bone', yanjing 'eye'); 0.30 from Mandarin lists, 0.53 from Min (misplaced.py)
-MANDARIN_GUILIN_LONGSHENG	Likely mislabel: a local Pinghua/tuhua variety (nga 'I', lhui 'water'); its nearest Sinitic lists are all Pinghua (0.58) and it is 0.70 from the median Mandarin list (misplaced.py)
 XIANG_YONGZHOU_SHOUYAN	Duplicate: word-for-word identical to PINGHUA_YONGZHOU_SHOUYAN (different transcriber); kept under Pinghua, which is closer without the twin (3 nearest 0.538 vs Xiang 0.584)
 MICHIF	Mixed language (French noun phrases, Cree verb phrases); closer to a French creole (0.59) than to Cree (0.76)
 WUTUN	Mixed language: Sinitic restructured by Amdo Tibetan and Mongolic
@@ -85,6 +83,5 @@ MOBILIAN_JARGON	Creole/pidgin, outside the lineage pools; excluded so the world-
 MOTU_HIRI	Creole/pidgin, outside the lineage pools; excluded so the world-wide checks (widest, contact) skip it too (Hiri Motu)
 NDYUKA_TRIO_PIDGIN	Creole/pidgin, outside the lineage pools; excluded so the world-wide checks (widest, contact) skip it too (Ndyuka-Trio Pidgin)
 PIDGIN_DELAWARE	Creole/pidgin, outside the lineage pools; excluded so the world-wide checks (widest, contact) skip it too (Pidgin Delaware)
-YUE_GUILIN_XINGAN	Misfiled: 0.60 from every other Yue list (which agree with each other, median 0.38) and 0.49 from Mandarin; no faster than the rest of Sinitic against an outgroup, so not a fast changer (lone_branches.py)
 BACAMA	Doubtful list: 0.67 from the other Bacama list (BACAMA_MULYEN), which sits among its Biu-Mandara relatives (0.60); this one is far from every Chadic list (lone_branches.py)
 NU	Doubtful list: 0.70 from the other N||ng list (NG_KE), which is 0.23 from Kam-ka-ke; this one is far from every Tuu list (lone_branches.py)
