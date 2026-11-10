@@ -1,0 +1,151 @@
+{
+  "groups": [
+    {
+      "name": "German dialects",
+      "note": "High and Low German of Germany, Austria, Switzerland and Alsace (Glottolog classification), no speech islands or diaspora.",
+      "lists": 11,
+      "glottocodes": 9,
+      "d_max": 1.3219170804859255,
+      "representatives": [
+        [
+          "BAVARIAN_GERMAN_2",
+          0.371
+        ],
+        [
+          "EASTERN_FRISIAN",
+          0.284
+        ],
+        [
+          "RIPUARIAN_GERMAN",
+          0.263
+        ],
+        [
+          "ALSATIAN",
+          0.051
+        ],
+        [
+          "BERNESE_GERMAN",
+          0.031
+        ]
+      ],
+      "depth": 0.1526334306747773,
+      "retention": 0.8584443435062798,
+      "median_d_across_root": 0.39505892992019653,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        9,
+        2
+      ],
+      "smaller_branch": [
+        "EASTERN_FRISIAN",
+        "NORTHERN_LOW_SAXON"
+      ],
+      "lone_branch": "",
+      "depth_2": 0.1526334306747773,
+      "retention_2": 0.8584443435062798
+    },
+    {
+      "name": "English",
+      "note": "English and Scots; ASJP has no regional English lists, and creoles are excluded.",
+      "lists": 4,
+      "glottocodes": 2,
+      "d_max": 1.0547327420030208,
+      "representatives": [
+        [
+          "ENGLISH_2",
+          0.5
+        ],
+        [
+          "SCOTS_2",
+          0.5
+        ]
+      ],
+      "depth": 0.044227554955618115,
+      "retention": 0.9567362226319859,
+      "median_d_across_root": 0.24827229976654053,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        2,
+        2
+      ],
+      "smaller_branch": [
+        "ENGLISH",
+        "ENGLISH_2"
+      ],
+      "lone_branch": "",
+      "depth_2": 0.044227554955618115,
+      "retention_2": 0.9567362226319859
+    },
+    {
+      "name": "Chinese without Min",
+      "note": "Middle Chinese and its descendants: Sinitic without Min (every list under Glottolog's Min node) and without Old Chinese.",
+      "lists": 460,
+      "glottocodes": 11,
+      "d_max": 3.674346140158376,
+      "representatives": [
+        [
+          "TUHUA_SHAOGUAN_GUITOU",
+          0.126
+        ],
+        [
+          "HAKKA_JIEYANG_JIEXI",
+          0.07
+        ],
+        [
+          "MIDDLE_CHINESE",
+          0.069
+        ],
+        [
+          "HAKKA_GANZHOU_DAYU",
+          0.065
+        ],
+        [
+          "GAN_SHAOWU",
+          0.059
+        ],
+        [
+          "XIANG_GUILIN_JIESHOU",
+          0.056
+        ],
+        [
+          "MANDARIN",
+          0.055
+        ],
+        [
+          "JIN_JINZHONG_MAFANG",
+          0.051
+        ],
+        [
+          "WU_LISHUI_SUICHANG",
+          0.051
+        ],
+        [
+          "JIN_SHUOZHOU_PINGLU",
+          0.049
+        ],
+        [
+          "MANDARIN_PINGLIANG_SHUILUO",
+          0.047
+        ],
+        [
+          "MANDARIN_HEZE_DINGTAO",
+          0.042
+        ]
+      ],
+      "depth": 0.8531599403387795,
+      "retention": 0.42606645793464926,
+      "median_d_across_root": 0.7314030528068542,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        458,
+        1
+      ],
+      "smaller_branch": [
+        "GAN_SHAOWU"
+      ],
+      "lone_branch": "GAN_SHAOWU",
+      "depth_2": 0.6323319353223411,
+      "retention_2": 0.5313512783452019
+    }
+  ]
+}

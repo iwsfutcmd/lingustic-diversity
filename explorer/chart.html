@@ -1,0 +1,30 @@
+  <section id="view-chart" aria-labelledby="tab-chart" hidden>
+    <div class="panel">
+      <h2>Chart maker</h2>
+      <p class="muted" style="margin:0 0 12px;max-inline-size:78ch">Build a bar chart of any lineages on this page, in up to three groups, by breadth (D_max: how many lineages' worth) or depth (shared basic vocabulary across the deepest split). Labels can be edited. The chart is drawn at 1600 pixels wide for sharing.</p>
+      <div class="chart-ctl">
+        <label>Measure <select id="ch-measure"><option value="depth">Depth: shared vocabulary across the deepest split</option><option value="dmax">Breadth: D_max, lineages' worth</option></select></label>
+        <label>Order <select id="ch-sort"><option value="value">By value</option><option value="entry">As entered</option></select></label>
+        <button type="button" class="chip" id="ch-preset">Load the example chart</button>
+        <button type="button" class="chip" id="ch-clear">Clear</button>
+      </div>
+      <div class="chart-ctl">
+        <label class="grow">Title <input id="ch-title" type="text" dir="auto" autocomplete="off"></label>
+      </div>
+      <div class="chart-ctl">
+        <label class="grow">Subtitle <textarea id="ch-sub" rows="2" dir="auto"></textarea></label>
+      </div>
+      <datalist id="ch-names"></datalist>
+      <div class="chart-groups" id="ch-groups"></div>
+      <div class="chart-ctl">
+        <button type="button" class="chip" id="ch-png" aria-pressed="true">Download PNG</button>
+        <button type="button" class="chip" id="ch-copy">Copy image</button>
+        <span class="muted" id="ch-status" role="status"></span>
+      </div>
+      <div class="chart-preview" id="ch-preview"></div>
+      <details class="muted" style="margin-block-start:10px"><summary>Image file</summary>
+        <p style="margin:6px 0">Where downloads are blocked (inside an embedded page), save this image with your browser's own image menu (right-click or long-press).</p>
+        <img id="ch-img" alt="" style="max-inline-size:100%;border:1px solid var(--rule)">
+      </details>
+    </div>
+  </section>

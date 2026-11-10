@@ -106,6 +106,7 @@ Iranian,sub,135,3.894,89.305,0.033
 Finnic,sub,17,1.526,17.154,0.033
 Central Semitic,sub,72,2.906,58.300,0.033
 Jin,sub,23,1.655,21.408,0.032
+German dialects,cus,11,1.322,11.026,0.032
 Kuki-Chin,sub,53,2.385,45.436,0.031
 North-Eastern Neo-Aramaic,sub,10,1.268,9.685,0.031
 Greater Central Philippine,sub,86,2.914,66.341,0.029
@@ -125,8 +126,10 @@ Slavic,ctl,34,1.606,30.497,0.021
 Araucanian,oth,4,1.063,3.976,0.021
 Arabic,sub,45,1.798,39.182,0.021
 Sinitic,sub,484,4.287,158.923,0.021
+English,cus,4,1.055,3.976,0.018
 Burushaski,iso,10,1.148,9.685,0.017
 Tarascan,oth,4,1.051,3.976,0.017
+Chinese without Min,cus,460,3.674,156.461,0.017
 Polynesian,sub,51,1.670,43.966,0.016
 Quichean-Mamean,sub,79,1.998,62.434,0.016
 Malayic,sub,46,1.595,40.022,0.015

@@ -557,6 +557,12 @@ ASJP does not use itself (`zho`, `ara`, `msa`) stands for its member codes (`con
 registry). Examples: Japanese ↔ English 0.974 (unrelated), Japanese ↔ Central Okinawan 0.485 (32 list pairs; at the
 edge of the same-language band), Japanese against itself 0.293.
 
+
+**Chart maker** (explorer tab): grouped bar charts of D_max or depth for any lineages on the page, in up to three
+labelled groups, drawn at 1600 px for sharing (Download PNG, Copy image, or save the rendered image). Ad hoc groups that
+are not lineages (German dialects, English, Chinese without Min) are defined in `config/custom/custom_groups.tsv` and
+scored like lineages by `scripts/custom_groups.py` (`results/custom_groups.json`); they appear in the explorer as
+"Custom groups".
 ## Explorer and cross-family check
 
 - `scripts/cross_family.py` compares lineages with each other: mean distance within and between the 128 lineages

@@ -179,6 +179,19 @@ def main() -> None:
             })
             profiles_all[name] = {"d_max": x["profile_d_max"], "uniform": x["profile_uniform"]}
 
+    cg_path = r / "custom_groups.json"
+    if cg_path.exists():                        # ad hoc groups (config/custom/custom_groups.tsv, scripts/custom_groups.py)
+        for g in json.loads(cg_path.read_text(encoding="utf-8"))["groups"]:
+            lone = g["lone_branch"] or None
+            lineages.append({
+                "name": g["name"], "cat": "cus", "family": "", "n": g["lists"], "glotto": g["glottocodes"],
+                "max_ldnd": None, "spread": None, "rare3": None, "d_max": g["d_max"], "uniform": None, "lo": None,
+                "hi": None, "d_max_kcal": None, "within": None, "reps": g["representatives"], "note": g["note"],
+                "ret": g["retention"], "tau": g["depth"], "ret_beyond": g["beyond_horizon"],
+                "ret_d": g["median_d_across_root"], "ret_split": g["root_split_sizes"], "ret_small": g["smaller_branch"],
+                "ret_lone": lone, "ret2": clean(g["retention_2"]) if lone else None, "ret2_beyond": False,
+            })
+
     wide_path = r / "widest.json"
     if wide_path.exists():                      # robust widest pair on the distance scale (scripts/widest.py)
         by_name = {d["name"]: d for d in lineages}
@@ -265,7 +278,9 @@ def main() -> None:
     # inserted after the label substitution above, so the distance names inside them are not rewritten
     html = (html.replace("<!--__COMPARE_HTML__-->", (EXPLORER / "compare.html").read_text(encoding="utf-8"))
             .replace("/*__COMPARE_JS__*/", (EXPLORER / "compare.js").read_text(encoding="utf-8"))
-            .replace("/*__DISTANCE_JS__*/", (EXPLORER / "distance.js").read_text(encoding="utf-8")))
+            .replace("/*__DISTANCE_JS__*/", (EXPLORER / "distance.js").read_text(encoding="utf-8"))
+            .replace("<!--__CHART_HTML__-->", (EXPLORER / "chart.html").read_text(encoding="utf-8"))
+            .replace("/*__CHART_JS__*/", (EXPLORER / "chart.js").read_text(encoding="utf-8")))
     args.out.write_text(html, encoding="utf-8")
     print(f"{args.out}: {len(html) / 1024:.0f} KB, {len(lineages)} lineages, {len(pairs)} pairs")
 
