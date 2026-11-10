@@ -795,7 +795,7 @@
    ]
   },
   {
-   "lineage": "Tai-Kadai",
+   "lineage": "Kra-Dai",
    "n": 214,
    "raw_widest": 1.0393637418746948,
    "raw_pair": [
@@ -883,7 +883,7 @@
   },
   {
    "lineage": "Sino-Tibetan",
-   "n": 880,
+   "n": 883,
    "raw_widest": 1.0995334386825562,
    "raw_pair": [
     "HUI_HUANGSHAN_LIUKOU",
@@ -894,7 +894,7 @@
     "KHWOPA_NEWAR",
     "PUTIAN_CHINESE"
    ],
-   "lone": 92,
+   "lone": 94,
    "flagged": [],
    "pair_lone": [
     true,
@@ -1494,7 +1494,7 @@
   },
   {
    "lineage": "Sinitic",
-   "n": 484,
+   "n": 487,
    "raw_widest": 0.9310448169708252,
    "raw_pair": [
     "JIN_LVLIANG_LIULIN",
@@ -1505,7 +1505,7 @@
     "HUI_HANGZHOU_FENKOU",
     "OLD_CHINESE"
    ],
-   "lone": 9,
+   "lone": 11,
    "flagged": [],
    "pair_lone": [
     true,
@@ -1954,22 +1954,22 @@
   },
   {
    "lineage": "Gan",
-   "n": 22,
-   "raw_widest": 0.7814624309539795,
+   "n": 21,
+   "raw_widest": 0.7555716037750244,
    "raw_pair": [
-    "GAN_SHAOWU",
+    "GAN_JIAN_JISHUI",
     "GAN_XIANNING"
    ],
-   "widest": 0.7736329436302185,
+   "widest": 0.6414133906364441,
    "pair": [
     "GAN_LEIYANG",
-    "GAN_SHAOWU"
+    "GAN_NANCHANG_ANYI"
    ],
-   "lone": 2,
+   "lone": 1,
    "flagged": [],
    "pair_lone": [
     true,
-    true
+    false
    ]
   },
   {
@@ -2014,21 +2014,21 @@
   },
   {
    "lineage": "Yue",
-   "n": 90,
+   "n": 89,
    "raw_widest": 0.706820547580719,
    "raw_pair": [
     "YUE_HECHI_YIZHOU",
     "YUE_JIANGMEN_NIUJIANG"
    ],
-   "widest": 0.6695520281791687,
+   "widest": 0.5772894620895386,
    "pair": [
-    "YUE_GUILIN_LIANGJIANG",
-    "YUE_JIANGMEN_HUICHENG"
+    "YUE_JIANGMEN_HUICHENG",
+    "YUE_YULIN_SHATIAN"
    ],
-   "lone": 1,
+   "lone": 0,
    "flagged": [],
    "pair_lone": [
-    true,
+    false,
     false
    ]
   },

@@ -6372,6 +6372,16 @@
    "flagged": false
   },
   {
+   "id": "MANDARIN_GUILIN_LONGSHENG",
+   "family": "Sino-Tibetan",
+   "nearest_in": 0.561957597732544,
+   "nearest_in_id": "PINGHUA_NANNING_TINGZI",
+   "nearest_out": 0.8460052609443665,
+   "nearest_out_id": "BUNA_SOUTHERN",
+   "nearest_out_family": "Nuclear Torricelli",
+   "flagged": false
+  },
+  {
    "id": "PAME_DE_JILIAPAN_1767",
    "family": "Otomanguean",
    "nearest_in": 0.5251294374465942,
@@ -8942,6 +8952,16 @@
    "flagged": false
   },
   {
+   "id": "YUE_GUILIN_XINGAN",
+   "family": "Sino-Tibetan",
+   "nearest_in": 0.48483172059059143,
+   "nearest_in_id": "MANDARIN_HEZHOU_FUCHUAN",
+   "nearest_out": 0.8201121091842651,
+   "nearest_out_id": "YAO_GUANGXI_HUANGLONG",
+   "nearest_out_family": "Hmong-Mien",
+   "flagged": false
+  },
+  {
    "id": "TANI",
    "family": "Nuclear Trans New Guinea",
    "nearest_in": 0.49250951409339905,
@@ -10447,16 +10467,6 @@
    "nearest_in": 0.34169745445251465,
    "nearest_in_id": "KUNJEN",
    "nearest_out": 0.8694572448730469,
-   "nearest_out_id": "PAPORA_2",
-   "nearest_out_family": "Austronesian",
-   "flagged": false
-  },
-  {
-   "id": "YUE_GUILIN_LIANGJIANG",
-   "family": "Sino-Tibetan",
-   "nearest_in": 0.269351601600647,
-   "nearest_in_id": "PINGHUA_GUILIN_LINGUI",
-   "nearest_out": 0.7992151379585266,
    "nearest_out_id": "PAPORA_2",
    "nearest_out_family": "Austronesian",
    "flagged": false
