@@ -1,7 +1,7 @@
 {
   "calibration": "depth_calibration.json",
-  "horizon_d": 0.9412470786626413,
-  "horizon_depth": 1.5771001851545803,
+  "horizon_d": 0.9411171561960424,
+  "horizon_depth": 1.5770853505230689,
   "lineages": [
     {
       "lineage": "Basque",
@@ -820,6 +820,25 @@
       ]
     },
     {
+      "lineage": "Yue",
+      "lists": 90,
+      "depth": 0.4097662803999171,
+      "retention": 0.6638053763346865,
+      "median_d_across_root": 0.5922099947929382,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        89,
+        1
+      ],
+      "lone_branch": "YUE_GUILIN_LIANGJIANG",
+      "depth_2": 0.2908196862147433,
+      "retention_2": 0.7476504775522751,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "YUE_GUILIN_LIANGJIANG"
+      ]
+    },
+    {
       "lineage": "Rashad",
       "lists": 2,
       "depth": 0.4202435021275107,
@@ -1112,6 +1131,28 @@
       ]
     },
     {
+      "lineage": "Tuu",
+      "lists": 9,
+      "depth": 0.6263871748132245,
+      "retention": 0.5345194420982763,
+      "median_d_across_root": 0.6751342117786407,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        5,
+        4
+      ],
+      "lone_branch": "",
+      "depth_2": 0.6263871748132245,
+      "retention_2": 0.5345194420982763,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "AUNI",
+        "BATWA",
+        "KAM_KA_KE",
+        "NG_KE"
+      ]
+    },
+    {
       "lineage": "Tungusic",
       "lists": 29,
       "depth": 0.6363332233635718,
@@ -1235,25 +1276,6 @@
       ]
     },
     {
-      "lineage": "Yue",
-      "lists": 91,
-      "depth": 0.7355497689015127,
-      "retention": 0.47924191423643275,
-      "median_d_across_root": 0.7022205889225006,
-      "beyond_horizon": false,
-      "root_split_sizes": [
-        90,
-        1
-      ],
-      "lone_branch": "YUE_GUILIN_XINGAN",
-      "depth_2": 0.2908196862147433,
-      "retention_2": 0.7476504775522751,
-      "beyond_horizon_2": false,
-      "smaller_branch": [
-        "YUE_GUILIN_XINGAN"
-      ]
-    },
-    {
       "lineage": "South Ethiopic",
       "lists": 16,
       "depth": 0.8068670771407436,
@@ -1299,18 +1321,18 @@
     },
     {
       "lineage": "Sinitic",
-      "lists": 483,
-      "depth": 0.8436739065929562,
-      "retention": 0.4301273692518198,
-      "median_d_across_root": 0.7290492951869965,
+      "lists": 482,
+      "depth": 0.8438601945725428,
+      "retention": 0.4300472491561741,
+      "median_d_across_root": 0.7290955185890198,
       "beyond_horizon": false,
       "root_split_sizes": [
-        462,
+        461,
         21
       ],
       "lone_branch": "",
-      "depth_2": 0.8436739065929562,
-      "retention_2": 0.4301273692518198,
+      "depth_2": 0.8438601945725428,
+      "retention_2": 0.4300472491561741,
       "beyond_horizon_2": false,
       "smaller_branch": [
         "AMOY_MINNAN_CHINESE",
@@ -1698,25 +1720,6 @@
         "LITHUANIAN",
         "LITHUANIAN_2",
         "OLD_PRUSSIAN"
-      ]
-    },
-    {
-      "lineage": "Tuu",
-      "lists": 10,
-      "depth": 1.1269207470215923,
-      "retention": 0.32402949058054126,
-      "median_d_across_root": 0.7998560070991516,
-      "beyond_horizon": false,
-      "root_split_sizes": [
-        9,
-        1
-      ],
-      "lone_branch": "NU",
-      "depth_2": 0.6263871748132245,
-      "retention_2": 0.5345194420982763,
-      "beyond_horizon_2": false,
-      "smaller_branch": [
-        "NU"
       ]
     },
     {
@@ -2299,6 +2302,30 @@
       ]
     },
     {
+      "lineage": "Chadic",
+      "lists": 204,
+      "depth": 1.525289487461591,
+      "retention": 0.21755806741566003,
+      "median_d_across_root": 0.9144091010093689,
+      "beyond_horizon": false,
+      "root_split_sizes": [
+        179,
+        25
+      ],
+      "lone_branch": "",
+      "depth_2": 1.525289487461591,
+      "retention_2": 0.21755806741566003,
+      "beyond_horizon_2": false,
+      "smaller_branch": [
+        "BADE",
+        "BADE_2",
+        "BADE_3",
+        "BIDIYA",
+        "BIRGIT",
+        "BODE_DOEI"
+      ]
+    },
+    {
       "lineage": "Algic",
       "lists": 35,
       "depth": 1.5540175157063727,
@@ -2339,18 +2366,18 @@
     },
     {
       "lineage": "Sino-Tibetan",
-      "lists": 881,
-      "depth": 1.5628692469826526,
-      "retention": 0.20953400306666173,
-      "median_d_across_root": 0.9223762452602386,
+      "lists": 880,
+      "depth": 1.5632230688255022,
+      "retention": 0.20945987847378036,
+      "median_d_across_root": 0.9224512577056885,
       "beyond_horizon": false,
       "root_split_sizes": [
-        506,
+        505,
         375
       ],
       "lone_branch": "",
-      "depth_2": 1.5628692469826526,
-      "retention_2": 0.20953400306666173,
+      "depth_2": 1.5632230688255022,
+      "retention_2": 0.20945987847378036,
       "beyond_horizon_2": false,
       "smaller_branch": [
         "ACHANG",
@@ -2448,25 +2475,6 @@
       ]
     },
     {
-      "lineage": "Chadic",
-      "lists": 205,
-      "depth": 1.5776345545445913,
-      "retention": 0.20646289776904062,
-      "median_d_across_root": 0.9459271132946014,
-      "beyond_horizon": true,
-      "root_split_sizes": [
-        204,
-        1
-      ],
-      "lone_branch": "BACAMA",
-      "depth_2": 1.525289487461591,
-      "retention_2": 0.21755806741566003,
-      "beyond_horizon_2": false,
-      "smaller_branch": [
-        "BACAMA"
-      ]
-    },
-    {
       "lineage": "Eskimo-Aleut",
       "lists": 16,
       "depth": 1.5783674022064607,
@@ -2545,21 +2553,26 @@
     },
     {
       "lineage": "Afro-Asiatic",
-      "lists": 422,
-      "depth": 1.5788298901520224,
-      "retention": 0.20621625275687439,
-      "median_d_across_root": 0.9563959240913391,
+      "lists": 421,
+      "depth": 1.578778942704255,
+      "retention": 0.2062267592162769,
+      "median_d_across_root": 0.9559497237205505,
       "beyond_horizon": true,
       "root_split_sizes": [
-        421,
-        1
+        341,
+        80
       ],
-      "lone_branch": "BACAMA",
+      "lone_branch": "",
       "depth_2": 1.578778942704255,
       "retention_2": 0.2062267592162769,
       "beyond_horizon_2": true,
       "smaller_branch": [
-        "BACAMA"
+        "AASAX",
+        "AFAR",
+        "AFAR_2",
+        "AFAR_3",
+        "ALAABA",
+        "ALAGWA"
       ]
     },
     {
