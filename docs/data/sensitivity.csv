@@ -1,33 +1,33 @@
 scenario,lineage,n,n_removed,d_max,d_max_without,delta,d_max_kcal,d_max_kcal_without,resampling_width
 long_extinct,Canaanite,4,2,1.441,1.000,-0.441,1.180,1.047,0.120
-long_extinct,Indo-European,490,16,14.068,13.657,-0.411,1.506,1.505,1.723
-long_extinct,Semitic,108,16,5.235,4.928,-0.307,1.436,1.430,0.546
-long_extinct,Sinitic,485,2,4.284,4.028,-0.256,1.419,1.413,0.570
-long_extinct,Central Semitic,72,9,2.905,2.697,-0.208,1.359,1.349,0.379
-long_extinct,Northwest Semitic,27,5,2.365,2.179,-0.185,1.318,1.299,0.292
-long_extinct,Germanic,61,8,2.160,1.979,-0.181,1.302,1.286,0.186
-long_extinct,West Semitic,105,13,5.067,4.928,-0.139,1.432,1.430,0.559
-long_extinct,Afro-Asiatic,422,16,34.065,33.987,-0.078,1.546,1.546,1.779
-long_extinct,Ethiosemitic,25,4,2.673,2.612,-0.061,1.343,1.338,0.372
-long_extinct,Iranian,135,2,3.892,3.838,-0.054,1.405,1.403,0.948
+long_extinct,Indo-European,490,16,14.088,13.677,-0.412,1.506,1.505,1.725
+long_extinct,Semitic,108,16,5.239,4.932,-0.307,1.436,1.430,0.546
+long_extinct,Sinitic,484,2,4.287,4.030,-0.256,1.419,1.413,0.541
+long_extinct,Central Semitic,72,9,2.906,2.698,-0.208,1.359,1.349,0.380
+long_extinct,Northwest Semitic,27,5,2.365,2.180,-0.186,1.318,1.299,0.292
+long_extinct,Germanic,61,8,2.160,1.980,-0.181,1.302,1.286,0.186
+long_extinct,West Semitic,105,13,5.071,4.932,-0.139,1.432,1.430,0.560
+long_extinct,Afro-Asiatic,421,16,33.525,33.445,-0.080,1.546,1.546,2.153
+long_extinct,Ethiosemitic,25,4,2.674,2.613,-0.061,1.343,1.338,0.373
+long_extinct,Iranian,135,2,3.894,3.840,-0.054,1.405,1.403,0.949
 long_extinct,North Ethiopic,9,4,1.407,1.355,-0.052,1.185,1.164,0.102
-long_extinct,South Semitic,33,4,3.497,3.456,-0.041,1.386,1.385,0.636
-long_extinct,Romance,64,2,2.136,2.098,-0.039,1.307,1.304,0.267
+long_extinct,South Semitic,33,4,3.498,3.457,-0.041,1.386,1.385,0.636
+long_extinct,Romance,64,2,2.137,2.098,-0.039,1.307,1.304,0.267
 long_extinct,Aramaic,23,3,1.798,1.775,-0.023,1.260,1.258,0.290
-long_extinct,Indo-Aryan,165,2,3.652,3.643,-0.009,1.395,1.395,0.705
-long_extinct,Tungusic,29,1,2.253,2.252,-0.000,1.308,1.307,0.415
-long_extinct,Eastern Malayo-Polynesian,707,1,36.147,36.147,-0.000,1.544,1.544,2.187
-long_extinct,Sino-Tibetan,881,2,21.389,21.389,-0.000,1.528,1.528,1.636
-long_extinct,Uto-Aztecan,75,1,5.422,5.422,-0.000,1.440,1.440,0.813
+long_extinct,Indo-Aryan,165,2,3.654,3.645,-0.009,1.395,1.395,0.706
+long_extinct,Tungusic,29,1,2.253,2.253,-0.000,1.308,1.307,0.415
+long_extinct,Arabic,45,4,1.798,1.798,-0.000,1.264,1.263,0.283
 long_extinct,Slavic,34,1,1.606,1.606,+0.000,1.238,1.237,0.192
-long_extinct,Austroasiatic,190,1,11.282,11.282,+0.000,1.495,1.495,2.330
-long_extinct,Austronesian,1459,3,43.659,43.659,+0.000,1.549,1.549,1.691
+long_extinct,Uto-Aztecan,75,1,5.426,5.426,+0.000,1.440,1.440,0.814
+long_extinct,Austronesian,1459,3,43.759,43.759,+0.000,1.549,1.549,1.693
+long_extinct,Sino-Tibetan,880,2,21.428,21.428,+0.000,1.528,1.528,1.651
 long_extinct,Sumerian,1,1,1.000,,,1.000,,0.000
 long_extinct,Elamite,1,1,1.000,,,1.000,,0.000
 long_extinct,Etruscan,1,1,1.000,,,1.000,,0.000
-long_extinct,Arabic,45,4,1.798,1.798,+0.000,1.264,1.263,0.283
-long_extinct,Balto-Slavic,39,1,2.577,2.577,+0.000,1.335,1.335,0.413
-long_extinct,Oceanic,659,1,33.671,33.671,+0.000,1.542,1.542,1.851
-long_extinct,Malayo-Polynesian,1407,3,40.922,40.922,+0.000,1.547,1.547,1.645
-long_extinct,East Semitic,3,3,1.111,,,1.095,,0.117
+long_extinct,Oceanic,659,1,33.743,33.743,+0.000,1.542,1.542,1.853
 long_extinct,Polynesian,51,1,1.670,1.670,+0.000,1.249,1.249,0.205
+long_extinct,Malayo-Polynesian,1407,3,41.014,41.014,+0.000,1.547,1.547,1.647
+long_extinct,Eastern Malayo-Polynesian,707,1,36.226,36.226,+0.000,1.544,1.544,2.190
+long_extinct,East Semitic,3,3,1.111,,,1.095,,0.117
+long_extinct,Balto-Slavic,39,1,2.578,2.578,+0.000,1.335,1.335,0.413
+long_extinct,Austroasiatic,190,1,11.298,11.298,+0.000,1.495,1.495,2.333
