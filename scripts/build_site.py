@@ -84,7 +84,7 @@ DOWNLOADS = [
     ("sensitivity.csv", "D_max with and without long-extinct and contact-restructured doculects."),
     ("rarefaction.csv", "D_max at equal numbers of distinct languages, for comparing lineages of different size."),
     ("adversarial.csv", "Random unrelated sets and proposed groupings (Altaic, Niger-Congo, …) on the same scale."),
-    ("depth.csv", "Depth: shared basic vocabulary across each lineage's deepest split, and where that split falls."),
+    ("depth.csv", "Depth: basic vocabulary no longer shared across each lineage's deepest split (retention column: still shared), and where that split falls."),
     ("cross_family.csv", "Mean distance and combined D_max for every pair of lineages."),
     ("relatedness.csv", "Union shortfall for every pair of lineages, against size-matched unrelated neighbours."),
     ("audit.csv", "Doculects ranked by how much they move their lineage's score."),

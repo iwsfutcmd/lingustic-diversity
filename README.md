@@ -24,7 +24,7 @@
    (see [Whole pools, nesting and size](#whole-pools-nesting-and-size)).
 3. **Similarity anchored by evidence, not by a clock or a fitted constant:** Z = 1 at the median distance between
    two doculects of the *same* language (same Glottocode, entries named X / X_2; PMI-LDND 0.228) and falls linearly
-   to Z = 0 at **0.940**, the distance at which a permutation test detects a related pair half the time
+   to Z = 0 at **0.941**, the distance at which a permutation test detects a related pair half the time
    (`scripts/regularity_eval.py`). Pairs farther apart than that are indistinguishable from unrelated ones, so they
    count as fully distinct: **n unrelated lects score about n, and D_max reads as the effective number of lineages a
    lineage's word lists cannot tie together** (see [Calibrated similarity](#calibrated-similarity)). The older
@@ -129,7 +129,7 @@ in between-lineage tables).
 
 **Ancient and single-list isolates** (`scripts/single_lists.py`). A single list has D_max = 1 by definition, so only
 its distance to everything else is informative. For a random list from a known family, the nearest unrelated
-lineage sits at mean PMI-LDND 0.908 (5–95%: 0.857–0.937). Sumerian (nearest Etruscan 0.880), Etruscan (Nivkh 0.863;
+lineage sits at median PMI-LDND 0.908 (5–95%: 0.857–0.937). Sumerian (nearest Etruscan 0.880), Etruscan (Nivkh 0.863;
 24 concepts), Hruso, Kusunda and Nihali are within chance. Elamite is closest to Basque (0.851, bottom 5%, as expected
 for one of six isolates by chance) and only 14th of 69 to Dravidian (0.925): no Elamo-Dravidian signal.
 
@@ -248,13 +248,13 @@ reading.
 and 400 random unrelated pairs (half within 1000 km), and tests each with a permutation test: shuffle which concept
 is matched with which, 499 times, and ask whether the real same-meaning similarity beats the shuffles. Detection is
 almost entirely a function of the distance: 100% of related pairs at 0.85–0.90, 88% at 0.90–0.92, 77% at 0.92–0.94,
-37% at 0.94–0.96 and none above. A logistic fit puts the 50% point at **0.940**. Similarity falls linearly from 1 at
+37% at 0.94–0.96 and none above. A logistic fit puts the 50% point at **0.941**. Similarity falls linearly from 1 at
 the same-language median (0.228) to 0 there (`isodiv.kernel`). Both anchors are measured, nothing is fitted to the
 results, and random sets of n unrelated lists score close to n (`results/adversarial.json`).
 
 **Reading it.** D_max is the effective number of lineages that 40-word lists cannot tie together. For shallow
 lineages it measures diversity; for deep ones it also measures how much of the family is beyond the resolution of
-the data, since branches farther apart than 0.940 count as separate lineages. A large deep family can therefore
+the data, since branches farther apart than 0.941 count as separate lineages. A large deep family can therefore
 outscore a few unrelated languages: it holds more lineages the data cannot tie together. The fair "as diverse as
 random?" comparison is at equal size, where every real family is below an unrelated set
 (`results/relative.csv`, the explorer's "Share of the unrelated maximum").
@@ -443,17 +443,17 @@ Quechua 4% (Central vs Southern Quechua is as close as two lists of one language
 Japonic 26%, Arabic 28%, Slavic 28%, Germanic 30%, Wu 31%, Mandarin 31% (25% without its one-list root branch),
 Romance 38%, Min 44%, Sinitic 57% (Southern Min against the rest), Turkic 62% (Chuvash against the rest), Indo-Aryan
 66%, Semitic 72%, Uralic 75%, Indo-European 77% (Anatolian, Tocharian, Greek and Armenian against the rest).
-Austronesian, Atlantic-Congo, Afro-Asiatic, Pama-Nyungan, Nuclear Trans New Guinea and Otomanguean are beyond the
-horizon.
+Austronesian, Atlantic-Congo, Afro-Asiatic, Pama-Nyungan, Nuclear Trans New Guinea, Otomanguean and Eskimo-Aleut are
+beyond the horizon.
 
 **Constructed sets** (`scripts/depth_random.py`, `results/depth_random.json`; the same draws as the adversarial
 check). Random sets of unrelated lects, one per family, are beyond the horizon at their deepest split in every draw,
 at a median distance of 0.99 across it for 5 lects and 0.99 for 80: depth does not grow with the number of
-languages, where D_max does (about n). For the proposals the deepest split is between member families, and its
+languages, where D_max does (about n). For the proposals the deepest split is usually between member families, and its
 median distance is compared with random unions of as many unrelated families: Altaic (0.940, Turkic against
 Mongolic and Tungusic), "Khoisan" (0.944), Elamo-Dravidian (0.923, one Elamite list) and Niger-Congo
-(0.971, the Kordofanian groups against the rest) are closer across their split than any random union
-(about 0.99), while Macro-Altaic (0.995, Japonic against the rest) and Paleo-Siberian (0.995) are not. Neither is
+(0.971, the Kordofanian groups against the rest) are closer across their split than nearly all random unions
+(about 0.99; 7% of unions of shallow families are as close as Niger-Congo), while Macro-Altaic (0.995, Japonic against the rest) and Paleo-Siberian (0.995) are not. Neither is
 Austro-Tai (0.966), whose deepest split is not between its members at all but one Austronesian list against the rest.
 The baselines are not matched for geography, so contact counts here too (see the relatedness section, which uses
 size-matched neighbours), and all of these are at or beyond the horizon in depth.
